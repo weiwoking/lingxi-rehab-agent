@@ -1,0 +1,24 @@
+idf_component_register(
+    SRCS
+        "src/rehab_audio_output_service.c"
+        "src/rehab_audio_prompt_store.c"
+        "src/rehab_audio_memory_source.c"
+        "src/rehab_audio_tts_client.c"
+        "src/rehab_audio_player_adapter.c"
+        "src/rehab_audio_capabilities.c"
+    INCLUDE_DIRS
+        "include"
+    PRIV_INCLUDE_DIRS
+        "src"
+    REQUIRES
+        claw_cap
+        claw_core
+        claw_event_router
+        esp_audio_simple_player
+        esp_asrc
+        esp_board_manager
+        esp_codec_dev
+        esp_http_client
+        esp_timer
+        json
+)

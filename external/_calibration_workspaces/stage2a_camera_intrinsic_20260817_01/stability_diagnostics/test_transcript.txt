@@ -1,0 +1,53 @@
+test_duplicate_pose_id_fails_before_scan_access_and_preserves_manifest (test_stage2a_dynamic_poses.DynamicPoseDatasetTest.test_duplicate_pose_id_fails_before_scan_access_and_preserves_manifest) ... ok
+test_run_all_candidate_and_compare_include_pose_21 (test_stage2a_dynamic_poses.DynamicPoseDatasetTest.test_run_all_candidate_and_compare_include_pose_21) ... ok
+test_safe_dynamic_pose_ids_and_illegal_ids (test_stage2a_dynamic_poses.DynamicPoseDatasetTest.test_safe_dynamic_pose_ids_and_illegal_ids) ... ok
+test_status_and_rank_enumerate_all_21_registered_poses (test_stage2a_dynamic_poses.DynamicPoseDatasetTest.test_status_and_rank_enumerate_all_21_registered_poses) ... ok
+test_empty_selection_writes_readable_header_only_csv (test_stage2a_rank_coverage.CoverageCsvRegressionTest.test_empty_selection_writes_readable_header_only_csv) ... ok
+test_partial_dataset_projects_full_ranking_row_to_coverage_schema (test_stage2a_rank_coverage.CoverageCsvRegressionTest.test_partial_dataset_projects_full_ranking_row_to_coverage_schema) ... ok
+test_different_brown_solutions_return_dense_stats_without_nan (test_stage2a_stability_diagnostics.MappingTests.test_different_brown_solutions_return_dense_stats_without_nan) ... ok
+test_fx_perturbation_is_small_near_center_and_nonzero_at_edges (test_stage2a_stability_diagnostics.MappingTests.test_fx_perturbation_is_small_near_center_and_nonzero_at_edges) ... ok
+test_identity_is_zero_and_finite (test_stage2a_stability_diagnostics.MappingTests.test_identity_is_zero_and_finite) ... ok
+test_complete_diagnostics_are_dynamic_and_read_only_for_25_28_30 (test_stage2a_stability_diagnostics.ReadOnlyCommandTests.test_complete_diagnostics_are_dynamic_and_read_only_for_25_28_30) ... ok
+test_dynamic_subset_size_uses_ceil_rule (test_stage2a_stability_diagnostics.SelectionTests.test_dynamic_subset_size_uses_ceil_rule) ... ok
+test_historical_subsets_are_explicit_and_ignore_current_extras (test_stage2a_stability_diagnostics.SelectionTests.test_historical_subsets_are_explicit_and_ignore_current_extras) ... ok
+test_lopo_has_n_runs_and_removed_pose_is_absent (test_stage2a_stability_diagnostics.SelectionTests.test_lopo_has_n_runs_and_removed_pose_is_absent) ... ok
+test_preedge22_excludes_only_three_named_poses (test_stage2a_stability_diagnostics.SelectionTests.test_preedge22_excludes_only_three_named_poses) ... ok
+test_subsets_are_deterministic_unique_and_fixed_size (test_stage2a_stability_diagnostics.SelectionTests.test_subsets_are_deterministic_unique_and_fixed_size) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 1.249s
+
+OK
+registered=21 selected=21 heldout=21 extras=1
+legacy/planned registered=20/20 (informational only; no maximum)
+A01 SELECTED scan=scan_A01 fit=frame_000000 heldout=frame_000001
+A02 SELECTED scan=scan_A02 fit=frame_000000 heldout=frame_000001
+A03 SELECTED scan=scan_A03 fit=frame_000000 heldout=frame_000001
+A04 SELECTED scan=scan_A04 fit=frame_000000 heldout=frame_000001
+B01 SELECTED scan=scan_B01 fit=frame_000000 heldout=frame_000001
+B02 SELECTED scan=scan_B02 fit=frame_000000 heldout=frame_000001
+B03 SELECTED scan=scan_B03 fit=frame_000000 heldout=frame_000001
+B04 SELECTED scan=scan_B04 fit=frame_000000 heldout=frame_000001
+B05 SELECTED scan=scan_B05 fit=frame_000000 heldout=frame_000001
+B06 SELECTED scan=scan_B06 fit=frame_000000 heldout=frame_000001
+B07 SELECTED scan=scan_B07 fit=frame_000000 heldout=frame_000001
+B08 SELECTED scan=scan_B08 fit=frame_000000 heldout=frame_000001
+C01 SELECTED scan=scan_C01 fit=frame_000000 heldout=frame_000001
+C02 SELECTED scan=scan_C02 fit=frame_000000 heldout=frame_000001
+C03 SELECTED scan=scan_C03 fit=frame_000000 heldout=frame_000001
+C04 SELECTED scan=scan_C04 fit=frame_000000 heldout=frame_000001
+C05 SELECTED scan=scan_C05 fit=frame_000000 heldout=frame_000001
+C06 SELECTED scan=scan_C06 fit=frame_000000 heldout=frame_000001
+C07 SELECTED scan=scan_C07 fit=frame_000000 heldout=frame_000001
+C08 SELECTED scan=scan_C08 fit=frame_000000 heldout=frame_000001
+C09 SELECTED scan=scan_C09 fit=frame_000000 heldout=frame_000001
+ranked 0 frames; outputs: pose_frame_ranking.csv, previews/, dataset_coverage.png
+candidate written: C:\Users\Weiwo\AppData\Local\Temp\tmplku_74m6\candidate\camera_intrinsics.stage2a_candidate.v1.json
+{
+  "validated_at": "2026-08-17T13:42:21.860903Z",
+  "candidate": "C:\\Users\\Weiwo\\AppData\\Local\\Temp\\tmplku_74m6\\candidate\\camera_intrinsics.stage2a_candidate.v1.json",
+  "valid": true,
+  "errors": [],
+  "file_sha256": "01c3a7d4ed5dfbbe9826e61ed7fcf1117dd76b483f67acd9f004ac1cce077722"
+}
+comparison written: C:\Users\Weiwo\AppData\Local\Temp\tmplku_74m6\comparison

@@ -1,0 +1,981 @@
+﻿[CmdletBinding()]
+param(
+    [switch]$SelfTest,
+    [switch]$ValidationMode,
+    [int]$HotspotWaitSeconds = 0,
+    [int]$HealthTimeoutSeconds = 60,
+    [int]$P4ScanBudgetSeconds = 12,
+    [int]$P4RetrySeconds = 30,
+    [int]$ProbeTimeoutMs = 450
+)
+
+$ErrorActionPreference = "Stop"
+$script:OwnedProcess = $null
+$script:RuntimeDir = $null
+$script:StatusPath = $null
+$script:ServiceStdoutPath = $null
+$script:ServiceLogPath = $null
+
+function Write-Step([string]$Message) {
+    Write-Host "`n=== $Message ===" -ForegroundColor Cyan
+}
+
+function Write-Info([string]$Message) {
+    Write-Host "[信息] $Message"
+}
+
+function Write-Good([string]$Message) {
+    Write-Host "[完成] $Message" -ForegroundColor Green
+}
+
+function Write-Warn([string]$Message) {
+    Write-Host "[提示] $Message" -ForegroundColor Yellow
+}
+
+function Write-Bad([string]$Message) {
+    Write-Host "[错误] $Message" -ForegroundColor Red
+}
+
+function Test-UsableIPv4([string]$IP) {
+    $parsed = $null
+    if (-not [System.Net.IPAddress]::TryParse($IP, [ref]$parsed)) {
+        return $false
+    }
+    if ($parsed.AddressFamily -ne [System.Net.Sockets.AddressFamily]::InterNetwork) {
+        return $false
+    }
+    $parts = $IP.Split('.')
+    return $parts.Count -eq 4 -and [int]$parts[0] -ne 0 -and
+        [int]$parts[0] -ne 127 -and [int]$parts[3] -gt 0 -and [int]$parts[3] -lt 255
+}
+
+function Get-SubnetPrefix([string]$IP) {
+    if (-not (Test-UsableIPv4 -IP $IP)) {
+        return $null
+    }
+    $parts = $IP.Split('.')
+    return "$($parts[0]).$($parts[1]).$($parts[2])"
+}
+
+function Test-IPInSubnet([string]$IP, [string]$Subnet) {
+    return (Test-UsableIPv4 -IP $IP) -and $IP.StartsWith("$Subnet.", [System.StringComparison]::Ordinal)
+}
+
+function Select-HotspotAddress {
+    param([AllowNull()][object[]]$Entries)
+
+    $usable = @($Entries | Where-Object {
+        $_.IPAddress -and
+        (Test-UsableIPv4 -IP ([string]$_.IPAddress)) -and
+        ([string]$_.IPAddress -notlike '169.254.*') -and
+        (-not $_.AddressState -or [string]$_.AddressState -eq 'Preferred')
+    })
+
+    $preferred = @($usable | Where-Object { [string]$_.IPAddress -eq '192.168.137.1' }) | Select-Object -First 1
+    if ($preferred) {
+        return $preferred
+    }
+
+    $hotspotAliasPattern = '(?i)(local area connection\*|mobile hotspot|wi-?fi direct|本地连接\*|移动热点)'
+    return @($usable | Where-Object {
+        [string]$_.InterfaceAlias -match $hotspotAliasPattern -and [int]$_.PrefixLength -ge 24
+    } | Sort-Object InterfaceIndex) | Select-Object -First 1
+}
+
+function Get-HotspotAddress {
+    $entries = @(Get-NetIPAddress -AddressFamily IPv4 -ErrorAction SilentlyContinue |
+        Select-Object IPAddress, PrefixLength, InterfaceAlias, InterfaceIndex, AddressState)
+    return Select-HotspotAddress -Entries $entries
+}
+
+function Wait-HotspotAddress([int]$WaitSeconds) {
+    $started = Get-Date
+    $lastReminder = [datetime]::MinValue
+    while ($true) {
+        $entry = Get-HotspotAddress
+        if ($entry) {
+            return $entry
+        }
+
+        if ($lastReminder -eq [datetime]::MinValue -or ((Get-Date) - $lastReminder).TotalSeconds -ge 12) {
+            Write-Warn "未检测到 Windows 移动热点 IPv4。请在 Windows 设置中打开“移动热点”，启动器会自动重试，无需输入 IP。"
+            $lastReminder = Get-Date
+        }
+        if ($WaitSeconds -gt 0 -and ((Get-Date) - $started).TotalSeconds -ge $WaitSeconds) {
+            throw "等待移动热点超过 $WaitSeconds 秒。请打开热点后重新双击启动器。"
+        }
+        Start-Sleep -Seconds 3
+    }
+}
+
+function Invoke-JsonGet {
+    param(
+        [Parameter(Mandatory = $true)][string]$Url,
+        [int]$TimeoutMs = 1500
+    )
+
+    try {
+        $request = [System.Net.HttpWebRequest]::Create($Url)
+        $request.Method = 'GET'
+        $request.Timeout = [Math]::Max(200, $TimeoutMs)
+        $request.ReadWriteTimeout = [Math]::Max(200, $TimeoutMs)
+        $request.UserAgent = 'ESP-Claw-Vision-Launcher/1.0'
+        $request.KeepAlive = $false
+        $response = $request.GetResponse()
+        try {
+            if ([int]$response.StatusCode -lt 200 -or [int]$response.StatusCode -ge 300) {
+                return $null
+            }
+            $reader = New-Object System.IO.StreamReader($response.GetResponseStream())
+            try {
+                return ($reader.ReadToEnd() | ConvertFrom-Json)
+            } finally {
+                $reader.Dispose()
+            }
+        } finally {
+            $response.Dispose()
+        }
+    } catch {
+        return $null
+    }
+}
+
+function Test-PersonFollowOpenApiObject([AllowNull()][object]$OpenApi) {
+    if ($null -eq $OpenApi -or $null -eq $OpenApi.paths) {
+        return $false
+    }
+    return @($OpenApi.paths.PSObject.Properties.Name) -contains '/api/v1/person-follow/detect'
+}
+
+function Get-PersonFollowOpenApi([string]$Base, [int]$TimeoutMs = 2500) {
+    return Invoke-JsonGet -Url "$Base/openapi.json" -TimeoutMs $TimeoutMs
+}
+
+function Test-VisionHealthObject([AllowNull()][object]$Health) {
+    if ($null -eq $Health) {
+        return $false
+    }
+    return [string]$Health.status -eq 'ok' -and $Health.model_ready -eq $true -and
+        [int]$Health.image.width -eq 640 -and [int]$Health.image.height -eq 360 -and
+        [string]$Health.image.pixel_format -eq 'RGB565' -and
+        [string]$Health.tof.resolution -eq '8x8' -and
+        [int]$Health.tof.rows -eq 8 -and [int]$Health.tof.cols -eq 8
+}
+
+function Get-VisionReadyBannerLines {
+    param(
+        [bool]$PortWasAvailable,
+        [AllowNull()][object]$Health,
+        [AllowNull()][object]$OpenApi
+    )
+    if (-not $PortWasAvailable -or
+        -not (Test-VisionHealthObject -Health $Health) -or
+        -not (Test-PersonFollowOpenApiObject -OpenApi $OpenApi)) {
+        return @()
+    }
+    return @(
+        '============================================================',
+        'Vision PC 已就绪',
+        '接口文档:       http://127.0.0.1:8000/docs',
+        '追人实时查看:   http://127.0.0.1:8000/person-follow-view',
+        '============================================================'
+    )
+}
+
+function Write-VisionReadyBanner {
+    param(
+        [bool]$PortWasAvailable,
+        [AllowNull()][object]$Health,
+        [AllowNull()][object]$OpenApi
+    )
+    $lines = @(Get-VisionReadyBannerLines `
+        -PortWasAvailable $PortWasAvailable -Health $Health -OpenApi $OpenApi)
+    if ($lines.Count -eq 0) {
+        throw 'Vision PC 就绪横幅校验失败；不会打印已就绪网址。'
+    }
+    Write-Host ''
+    foreach ($line in $lines) {
+        Write-Host $line -ForegroundColor Green
+    }
+    Write-Host ''
+}
+
+function Get-VisionHealth([string]$Base, [int]$TimeoutMs = 1800) {
+    $health = Invoke-JsonGet -Url "$Base/api/v1/vision/health" -TimeoutMs $TimeoutMs
+    if (Test-VisionHealthObject -Health $health) {
+        return $health
+    }
+    return $null
+}
+
+function Wait-VisionHealth([string]$Base, [int]$WaitSeconds) {
+    $deadline = (Get-Date).AddSeconds($WaitSeconds)
+    while ((Get-Date) -lt $deadline) {
+        $health = Get-VisionHealth -Base $Base -TimeoutMs 1800
+        if ($health) {
+            return $health
+        }
+        if ($script:OwnedProcess -and $script:OwnedProcess.HasExited) {
+            throw "Uvicorn 已提前退出，退出码 $($script:OwnedProcess.ExitCode)。请查看日志：$script:ServiceLogPath"
+        }
+        Start-Sleep -Milliseconds 500
+    }
+    return $null
+}
+
+function Get-PortListeners([int]$Port) {
+    return @(Get-NetTCPConnection -State Listen -LocalPort $Port -ErrorAction SilentlyContinue |
+        Select-Object LocalAddress, LocalPort, OwningProcess -Unique)
+}
+
+function Read-LauncherStatusFile([string]$Path) {
+    if (-not $Path -or -not (Test-Path -LiteralPath $Path -PathType Leaf)) {
+        return $null
+    }
+    try {
+        return (Get-Content -LiteralPath $Path -Raw -Encoding UTF8 | ConvertFrom-Json)
+    } catch {
+        return $null
+    }
+}
+
+function Get-VisionProcessInfo([int]$ProcessId) {
+    return Get-CimInstance Win32_Process -Filter "ProcessId = $ProcessId" -ErrorAction SilentlyContinue |
+        Select-Object -First 1 ProcessId, ExecutablePath, CommandLine
+}
+
+function Test-KnownVisionProcessObject {
+    param(
+        [AllowNull()][object]$Process,
+        [Parameter(Mandatory = $true)][string]$ExpectedPython
+    )
+    if ($null -eq $Process) {
+        return $false
+    }
+    $executable = [string]$Process.ExecutablePath
+    $commandLine = [string]$Process.CommandLine
+    if ([string]::IsNullOrWhiteSpace($executable) -or
+        [string]::IsNullOrWhiteSpace($commandLine) -or
+        -not [string]::Equals($executable, $ExpectedPython,
+            [System.StringComparison]::OrdinalIgnoreCase)) {
+        return $false
+    }
+    return $commandLine -match '(?i)(^|\s)-m\s+uvicorn(?:\s|$)' -and
+        $commandLine -match '(?i)(^|\s)app\.main:app(?:\s|$)' -and
+        $commandLine -match '(?i)(^|\s)--port(?:\s+|=)8000(?:\s|$)'
+}
+
+function Resolve-KnownVisionProcess {
+    param(
+        [AllowNull()][object[]]$Listeners,
+        [AllowNull()][object]$Status,
+        [Parameter(Mandatory = $true)][string]$ExpectedPython,
+        [scriptblock]$ProcessLookup = { param([int]$Id) Get-VisionProcessInfo -ProcessId $Id }
+    )
+    $listenerPids = @($Listeners | ForEach-Object { [int]$_.OwningProcess } |
+        Sort-Object -Unique)
+    if ($listenerPids.Count -ne 1) {
+        return $null
+    }
+    $listenerPid = [int]$listenerPids[0]
+
+    $statusPid = 0
+    if ($null -ne $Status -and $null -ne $Status.service_pid) {
+        try { $statusPid = [int]$Status.service_pid } catch { $statusPid = 0 }
+    }
+    if ($statusPid -gt 0 -and $statusPid -eq $listenerPid) {
+        $process = & $ProcessLookup $listenerPid
+        if (Test-KnownVisionProcessObject -Process $process -ExpectedPython $ExpectedPython) {
+            return [pscustomobject]@{
+                ProcessId = $listenerPid
+                Source = 'launcher_status'
+                ExecutablePath = [string]$process.ExecutablePath
+                CommandLine = [string]$process.CommandLine
+            }
+        }
+    }
+
+    $process = & $ProcessLookup $listenerPid
+    if (Test-KnownVisionProcessObject -Process $process -ExpectedPython $ExpectedPython) {
+        return [pscustomobject]@{
+            ProcessId = $listenerPid
+            Source = 'listener_signature'
+            ExecutablePath = [string]$process.ExecutablePath
+            CommandLine = [string]$process.CommandLine
+        }
+    }
+    return $null
+}
+
+function Format-PortOwnerDetails {
+    param(
+        [AllowNull()][object[]]$Listeners,
+        [scriptblock]$ProcessLookup = { param([int]$Id) Get-VisionProcessInfo -ProcessId $Id }
+    )
+    $details = @()
+    $listenerPids = @($Listeners | ForEach-Object { [int]$_.OwningProcess } |
+        Sort-Object -Unique)
+    foreach ($listenerPid in $listenerPids) {
+        $process = & $ProcessLookup $listenerPid
+        $path = if ($null -ne $process -and $process.ExecutablePath) {
+            [string]$process.ExecutablePath
+        } else { '<unavailable>' }
+        $command = if ($null -ne $process -and $process.CommandLine) {
+            ([string]$process.CommandLine) -replace '[\r\n]+', ' '
+        } else { '<unavailable>' }
+        $details += "PID=$listenerPid, ExecutablePath=$path, CommandLine=$command"
+    }
+    return ($details -join '; ')
+}
+
+function Wait-VisionProcessAndPortReleased {
+    param(
+        [int]$ProcessId,
+        [int]$Port = 8000,
+        [int]$TimeoutMs = 5000,
+        [int]$PollMs = 100,
+        [scriptblock]$ListenerProvider = { param([int]$Value) @(Get-PortListeners -Port $Value) },
+        [scriptblock]$ProcessExists = { param([int]$Id) $null -ne (Get-Process -Id $Id -ErrorAction SilentlyContinue) }
+    )
+    $watch = [System.Diagnostics.Stopwatch]::StartNew()
+    while ($true) {
+        $processAlive = [bool](& $ProcessExists $ProcessId)
+        $listeners = @(& $ListenerProvider $Port)
+        if (-not $processAlive -and $listeners.Count -eq 0) {
+            return $true
+        }
+        if ($watch.ElapsedMilliseconds -ge $TimeoutMs) {
+            return $false
+        }
+        Start-Sleep -Milliseconds ([Math]::Max(1, $PollMs))
+    }
+}
+
+function Stop-KnownVisionProcess {
+    param(
+        [int]$ProcessId,
+        [int]$Port = 8000,
+        [int]$TimeoutMs = 5000,
+        [scriptblock]$StopAction = { param([int]$Id) Stop-Process -Id $Id -ErrorAction Stop },
+        [scriptblock]$ListenerProvider = { param([int]$Value) @(Get-PortListeners -Port $Value) },
+        [scriptblock]$ProcessExists = { param([int]$Id) $null -ne (Get-Process -Id $Id -ErrorAction SilentlyContinue) }
+    )
+    try {
+        & $StopAction $ProcessId
+    } catch {
+        throw "关闭旧 Vision PC 失败：PID=$ProcessId，$($_.Exception.Message)"
+    }
+    if (-not (Wait-VisionProcessAndPortReleased -ProcessId $ProcessId -Port $Port `
+        -TimeoutMs $TimeoutMs -ListenerProvider $ListenerProvider `
+        -ProcessExists $ProcessExists)) {
+        throw "旧 Vision PC PID=$ProcessId 已请求关闭，但端口 $Port 在 $TimeoutMs ms 内仍未释放。"
+    }
+}
+
+function Write-LauncherStatus {
+    param(
+        [string]$State,
+        [string]$HotspotIP = '',
+        [string]$P4IP = '',
+        [AllowNull()][object]$Health = $null,
+        [string]$Message = ''
+    )
+    if (-not $script:StatusPath) {
+        return
+    }
+    $status = [ordered]@{
+        updated_at = (Get-Date).ToString('o')
+        state = $State
+        message = $Message
+        hotspot_ip = $HotspotIP
+        service_url = if ($HotspotIP) { "http://${HotspotIP}:8000" } else { '' }
+        service_reused = $false
+        service_pid = if ($script:OwnedProcess) { $script:OwnedProcess.Id } else { $null }
+        health_status = if ($Health) { [string]$Health.status } else { '' }
+        model_ready = if ($Health) { [bool]$Health.model_ready } else { $false }
+        p4_ip = $P4IP
+    }
+    $status | ConvertTo-Json -Depth 6 | Set-Content -LiteralPath $script:StatusPath -Encoding UTF8
+}
+
+function Test-P4IdentityObjects {
+    param(
+        [AllowNull()][object]$Camera,
+        [AllowNull()][object]$Tof
+    )
+    if ($null -eq $Camera -or $null -eq $Tof) {
+        return $false
+    }
+    $cameraSignature = [string]$Camera.capture_mode -eq 'on_demand' -and
+        [int]$Camera.output_width -eq 640 -and [int]$Camera.output_height -eq 360 -and
+        [string]$Camera.output_pixel_format -eq 'RGB565' -and
+        [string]$Camera.output_byte_order -eq 'little_endian'
+    $tofSignature = $Tof.ok -eq $true -and [string]$Tof.capture_mode -eq 'on_demand' -and
+        [int]$Tof.resolution.width -eq 8 -and [int]$Tof.resolution.height -eq 8 -and
+        @($Tof.distance_mm).Count -eq 64 -and @($Tof.status_code).Count -eq 64
+    return $cameraSignature -and $tofSignature
+}
+
+function Test-P4IP([string]$IP, [int]$TimeoutMs = 450) {
+    if (-not (Test-UsableIPv4 -IP $IP)) {
+        return $false
+    }
+    $camera = Invoke-JsonGet -Url "http://$IP/api/camera/status" -TimeoutMs $TimeoutMs
+    if ($null -eq $camera) {
+        return $false
+    }
+    $tof = Invoke-JsonGet -Url "http://$IP/api/tof/status" -TimeoutMs $TimeoutMs
+    return Test-P4IdentityObjects -Camera $camera -Tof $tof
+}
+
+$script:P4ConcurrentProbe = @'
+param([string]$IP, [int]$TimeoutMs)
+function Get-Json([string]$Url, [int]$Timeout) {
+    try {
+        $request = [System.Net.HttpWebRequest]::Create($Url)
+        $request.Method = 'GET'
+        $request.Timeout = [Math]::Max(200, $Timeout)
+        $request.ReadWriteTimeout = [Math]::Max(200, $Timeout)
+        $request.UserAgent = 'ESP-Claw-Vision-Launcher/1.0'
+        $request.KeepAlive = $false
+        $response = $request.GetResponse()
+        try {
+            if ([int]$response.StatusCode -lt 200 -or [int]$response.StatusCode -ge 300) { return $null }
+            $reader = New-Object System.IO.StreamReader($response.GetResponseStream())
+            try { return ($reader.ReadToEnd() | ConvertFrom-Json) } finally { $reader.Dispose() }
+        } finally { $response.Dispose() }
+    } catch { return $null }
+}
+$camera = Get-Json "http://$IP/api/camera/status" $TimeoutMs
+if ($null -eq $camera) { return [pscustomobject]@{ Found = $false; IP = $IP } }
+$tof = Get-Json "http://$IP/api/tof/status" $TimeoutMs
+$cameraSignature = $null -ne $camera -and [string]$camera.capture_mode -eq 'on_demand' -and
+    [int]$camera.output_width -eq 640 -and [int]$camera.output_height -eq 360 -and
+    [string]$camera.output_pixel_format -eq 'RGB565' -and
+    [string]$camera.output_byte_order -eq 'little_endian'
+$tofSignature = $null -ne $tof -and $tof.ok -eq $true -and [string]$tof.capture_mode -eq 'on_demand' -and
+    [int]$tof.resolution.width -eq 8 -and [int]$tof.resolution.height -eq 8 -and
+    @($tof.distance_mm).Count -eq 64 -and @($tof.status_code).Count -eq 64
+return [pscustomobject]@{ Found = [bool]($cameraSignature -and $tofSignature); IP = $IP }
+'@
+
+function Get-P4NeighborCandidates([string]$Subnet, [string]$HotspotIP) {
+    $candidates = New-Object 'System.Collections.Generic.List[string]'
+    try {
+        foreach ($neighbor in @(Get-NetNeighbor -AddressFamily IPv4 -ErrorAction Stop)) {
+            $ip = [string]$neighbor.IPAddress
+            if ($ip -eq $HotspotIP -or -not (Test-IPInSubnet -IP $ip -Subnet $Subnet)) {
+                continue
+            }
+            if ([string]$neighbor.State -in @('Reachable', 'Stale', 'Delay', 'Probe', 'Permanent')) {
+                [void]$candidates.Add($ip)
+            }
+        }
+    } catch {
+        Write-Warn "读取 NetNeighbor 失败，将继续使用 ARP 和子网扫描。"
+    }
+    try {
+        foreach ($line in @(& arp.exe -a 2>$null)) {
+            foreach ($match in [regex]::Matches([string]$line, '\b(?:\d{1,3}\.){3}\d{1,3}\b')) {
+                $ip = $match.Value
+                if ($ip -ne $HotspotIP -and (Test-IPInSubnet -IP $ip -Subnet $Subnet)) {
+                    [void]$candidates.Add($ip)
+                }
+            }
+        }
+    } catch {
+        Write-Warn "读取 ARP 表失败，将继续扫描当前热点子网。"
+    }
+    return @($candidates | Select-Object -Unique)
+}
+
+function Search-P4CandidatesConcurrent {
+    param(
+        [string[]]$Candidates,
+        [datetime]$Deadline,
+        [int]$TimeoutMs,
+        [int]$MaxConcurrency = 32
+    )
+    if (-not $Candidates -or (Get-Date) -ge $Deadline) {
+        return $null
+    }
+
+    $pool = [runspacefactory]::CreateRunspacePool(1, $MaxConcurrency)
+    $jobs = New-Object 'System.Collections.Generic.List[object]'
+    try {
+        $pool.Open()
+        foreach ($ip in @($Candidates | Select-Object -Unique)) {
+            $worker = [powershell]::Create()
+            $worker.RunspacePool = $pool
+            [void]$worker.AddScript($script:P4ConcurrentProbe).AddArgument($ip).AddArgument($TimeoutMs)
+            $handle = $worker.BeginInvoke()
+            [void]$jobs.Add([pscustomobject]@{ Worker = $worker; Handle = $handle; IP = $ip })
+        }
+
+        while ($jobs.Count -gt 0 -and (Get-Date) -lt $Deadline) {
+            foreach ($job in @($jobs.ToArray())) {
+                if (-not $job.Handle.IsCompleted) {
+                    continue
+                }
+                $results = @($job.Worker.EndInvoke($job.Handle))
+                [void]$jobs.Remove($job)
+                $job.Worker.Dispose()
+                foreach ($result in $results) {
+                    if ($result.Found) {
+                        return [string]$result.IP
+                    }
+                }
+            }
+            Start-Sleep -Milliseconds 30
+        }
+    } finally {
+        foreach ($job in @($jobs.ToArray())) {
+            try { $job.Worker.Stop() } catch { }
+            try { $job.Worker.Dispose() } catch { }
+        }
+        try { $pool.Close() } catch { }
+        try { $pool.Dispose() } catch { }
+    }
+    return $null
+}
+
+function Read-P4Cache([string]$Path) {
+    if (-not (Test-Path -LiteralPath $Path -PathType Leaf)) {
+        return $null
+    }
+    try {
+        $ip = (Get-Content -LiteralPath $Path -Raw).Trim()
+        if (Test-UsableIPv4 -IP $ip) {
+            return $ip
+        }
+    } catch { }
+    return $null
+}
+
+function Save-P4Cache([string]$Path, [string]$IP) {
+    if (-not (Test-UsableIPv4 -IP $IP)) {
+        throw "拒绝缓存无效 P4 IP：$IP"
+    }
+    Set-Content -LiteralPath $Path -Value $IP -Encoding ASCII
+}
+
+function Find-P4Once {
+    param(
+        [string]$HotspotIP,
+        [string]$CachePath,
+        [int]$BudgetSeconds,
+        [int]$TimeoutMs
+    )
+    $subnet = Get-SubnetPrefix -IP $HotspotIP
+    $deadline = (Get-Date).AddSeconds([Math]::Max(2, $BudgetSeconds))
+
+    $cached = Read-P4Cache -Path $CachePath
+    if ($cached -and (Test-IPInSubnet -IP $cached -Subnet $subnet)) {
+        Write-Info "先验证缓存的 P4 地址：$cached"
+        if (Test-P4IP -IP $cached -TimeoutMs $TimeoutMs) {
+            return $cached
+        }
+        Write-Warn "缓存地址已失效，P4 可能因 DHCP 改变了 IP；继续自动发现。"
+    }
+
+    $neighbors = @(Get-P4NeighborCandidates -Subnet $subnet -HotspotIP $HotspotIP)
+    if ($neighbors.Count -gt 0) {
+        Write-Info "验证 ARP/NetNeighbor 候选：$($neighbors -join ', ')"
+        foreach ($ip in $neighbors) {
+            if ((Get-Date) -ge $deadline) { break }
+            if (Test-P4IP -IP $ip -TimeoutMs $TimeoutMs) {
+                Save-P4Cache -Path $CachePath -IP $ip
+                return $ip
+            }
+        }
+    }
+
+    if ((Get-Date) -lt $deadline) {
+        $all = for ($suffix = 1; $suffix -le 254; $suffix++) {
+            $ip = "$subnet.$suffix"
+            if ($ip -ne $HotspotIP -and $ip -notin $neighbors -and $ip -ne $cached) { $ip }
+        }
+        Write-Info "在 $subnet.0/24 内进行一次有界只读扫描（仅 GET 状态接口）。"
+        $found = Search-P4CandidatesConcurrent -Candidates $all -Deadline $deadline -TimeoutMs $TimeoutMs
+        if ($found) {
+            Save-P4Cache -Path $CachePath -IP $found
+            return $found
+        }
+    }
+    return $null
+}
+
+function Get-DescendantProcessIds([int]$RootPID) {
+    $all = @(Get-CimInstance Win32_Process -ErrorAction SilentlyContinue | Select-Object ProcessId, ParentProcessId)
+    $result = New-Object 'System.Collections.Generic.List[int]'
+    $frontier = @($RootPID)
+    while ($frontier.Count -gt 0) {
+        $next = @()
+        foreach ($parent in $frontier) {
+            foreach ($child in @($all | Where-Object { [int]$_.ParentProcessId -eq [int]$parent })) {
+                if (-not $result.Contains([int]$child.ProcessId)) {
+                    [void]$result.Add([int]$child.ProcessId)
+                    $next += [int]$child.ProcessId
+                }
+            }
+        }
+        $frontier = $next
+    }
+    return @($result)
+}
+
+function Stop-OwnedVisionProcess {
+    if (-not $script:OwnedProcess) {
+        return
+    }
+    $pidToStop = [int]$script:OwnedProcess.Id
+    if ($script:OwnedProcess.HasExited) {
+        return
+    }
+    Write-Warn "Ctrl+C/退出正在清理本次启动的 Uvicorn（PID $pidToStop）及其子进程……"
+    $descendants = @(Get-DescendantProcessIds -RootPID $pidToStop)
+    [array]::Reverse($descendants)
+    foreach ($childPid in $descendants) {
+        Stop-Process -Id $childPid -Force -ErrorAction SilentlyContinue
+    }
+    Stop-Process -Id $pidToStop -Force -ErrorAction SilentlyContinue
+    try { $script:OwnedProcess.WaitForExit(5000) } catch { }
+    Write-Good "本次启动的视觉服务已停止。"
+}
+
+function Assert-Path([string]$Path, [string]$Description, [switch]$Container) {
+    $pathType = if ($Container) { 'Container' } else { 'Leaf' }
+    if (-not (Test-Path -LiteralPath $Path -PathType $pathType)) {
+        throw "$Description 不存在：$Path"
+    }
+}
+
+function Invoke-SelfTest {
+    param([string]$RepoRoot, [string]$ProjectRoot, [string]$Python)
+    Write-Step "启动器自检"
+    $failures = New-Object 'System.Collections.Generic.List[string]'
+    function Check([bool]$Condition, [string]$Name) {
+        if ($Condition) { Write-Good $Name } else { Write-Bad $Name; [void]$failures.Add($Name) }
+    }
+
+    Check (Test-Path -LiteralPath $RepoRoot -PathType Container) '仓库路径'
+    Check (Test-Path -LiteralPath $ProjectRoot -PathType Container) 'PC 工程路径'
+    Check (Test-Path -LiteralPath $Python -PathType Leaf) 'Conda 环境 Python 路径'
+
+    $fake = @(
+        [pscustomobject]@{ IPAddress = '10.10.10.1'; PrefixLength = 24; InterfaceAlias = 'Mobile Hotspot'; InterfaceIndex = 9; AddressState = 'Preferred' },
+        [pscustomobject]@{ IPAddress = '192.168.137.1'; PrefixLength = 24; InterfaceAlias = '本地连接* 2'; InterfaceIndex = 10; AddressState = 'Preferred' }
+    )
+    $selected = Select-HotspotAddress -Entries $fake
+    Check ([string]$selected.IPAddress -eq '192.168.137.1') '热点地址优先级（192.168.137.1）'
+    Check (Test-IPInSubnet -IP '192.168.137.97' -Subnet '192.168.137') '热点 /24 子网判断'
+
+    $tempDir = Join-Path $env:TEMP ("espclaw_vision_launcher_test_" + [guid]::NewGuid().ToString('N'))
+    New-Item -ItemType Directory -Path $tempDir -Force | Out-Null
+    try {
+        $cache = Join-Path $tempDir 'last_p4_ip.txt'
+        Save-P4Cache -Path $cache -IP '192.168.137.97'
+        Check ((Read-P4Cache -Path $cache) -eq '192.168.137.97') 'P4 IP 缓存读写'
+
+        $corruptStatusPath = Join-Path $tempDir 'corrupt_status.json'
+        Set-Content -LiteralPath $corruptStatusPath -Value '{broken' -Encoding UTF8
+        Check ($null -eq (Read-LauncherStatusFile -Path $corruptStatusPath)) '损坏状态文件安全降级'
+
+        $savedStatusPath = $script:StatusPath
+        $savedOwnedProcess = $script:OwnedProcess
+        try {
+            $script:StatusPath = Join-Path $tempDir 'written_status.json'
+            $script:OwnedProcess = [pscustomobject]@{ Id = 43210 }
+            Write-LauncherStatus -State 'service_starting' -Message 'self-test'
+            $writtenStatus = Read-LauncherStatusFile -Path $script:StatusPath
+            Check ([int]$writtenStatus.service_pid -eq 43210) '新服务 PID 写回 launcher 状态文件'
+        } finally {
+            $script:StatusPath = $savedStatusPath
+            $script:OwnedProcess = $savedOwnedProcess
+        }
+    } finally {
+        Remove-Item -LiteralPath $tempDir -Recurse -Force -ErrorAction SilentlyContinue
+    }
+
+    $camera = [pscustomobject]@{ capture_mode = 'on_demand'; output_width = 640; output_height = 360; output_pixel_format = 'RGB565'; output_byte_order = 'little_endian' }
+    $tof = [pscustomobject]@{ ok = $true; capture_mode = 'on_demand'; resolution = [pscustomobject]@{ width = 8; height = 8 }; distance_mm = @(1..64); status_code = @(1..64) }
+    Check (Test-P4IdentityObjects -Camera $camera -Tof $tof) 'P4 双端点身份签名'
+    Check ($script:P4ConcurrentProbe -notmatch '(?i)POST|upload-once|snapshot') '发现脚本仅使用只读状态接口'
+
+    $newOpenApi = '{"paths":{"/api/v1/vision/health":{},"/api/v1/person-follow/detect":{}}}' | ConvertFrom-Json
+    $oldOpenApi = '{"paths":{"/api/v1/vision/health":{},"/api/v1/vision/fuse":{}}}' | ConvertFrom-Json
+    Check (Test-PersonFollowOpenApiObject -OpenApi $newOpenApi) 'OpenAPI 可识别 person-follow 路由'
+    Check (-not (Test-PersonFollowOpenApiObject -OpenApi $oldOpenApi)) 'OpenAPI 可发现旧服务缺少 person-follow 路由'
+
+    $readyHealth = '{"status":"ok","model_ready":true,"image":{"width":640,"height":360,"pixel_format":"RGB565"},"tof":{"resolution":"8x8","rows":8,"cols":8}}' | ConvertFrom-Json
+    $readyBanner = @(Get-VisionReadyBannerLines -PortWasAvailable $true -Health $readyHealth -OpenApi $newOpenApi)
+    Check ($readyBanner -contains 'Vision PC 已就绪') '成功门禁后输出 Vision PC 已就绪'
+    Check ($readyBanner -contains '接口文档:       http://127.0.0.1:8000/docs') '成功门禁后输出接口文档网址'
+    Check ($readyBanner -contains '追人实时查看:   http://127.0.0.1:8000/person-follow-view') '成功门禁后输出追人实时查看网址'
+    Check (@(Get-VisionReadyBannerLines -PortWasAvailable $true -Health $null -OpenApi $newOpenApi).Count -eq 0) 'health 失败不生成已就绪横幅'
+    Check (@(Get-VisionReadyBannerLines -PortWasAvailable $true -Health $readyHealth -OpenApi $oldOpenApi).Count -eq 0) '路由缺失不生成已就绪横幅'
+    Check (@(Get-VisionReadyBannerLines -PortWasAvailable $false -Health $readyHealth -OpenApi $newOpenApi).Count -eq 0) '端口占用不生成已就绪横幅'
+
+    $knownPid = 31001
+    $knownProcess = [pscustomobject]@{
+        ProcessId = $knownPid
+        ExecutablePath = $Python
+        CommandLine = "`"$Python`" -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 1"
+    }
+    $knownListeners = @([pscustomobject]@{
+        LocalAddress = '0.0.0.0'; LocalPort = 8000; OwningProcess = $knownPid
+    })
+    $knownLookup = { param([int]$Id) if ($Id -eq $knownPid) { return $knownProcess } }
+    $matchingStatus = [pscustomobject]@{ service_pid = $knownPid }
+    $statusCandidate = Resolve-KnownVisionProcess -Listeners $knownListeners `
+        -Status $matchingStatus -ExpectedPython $Python -ProcessLookup $knownLookup
+    Check ($null -ne $statusCandidate -and $statusCandidate.Source -eq 'launcher_status') '状态文件 PID 匹配时确认旧 Vision PC'
+
+    $staleStatus = [pscustomobject]@{ service_pid = 99999 }
+    $fallbackCandidate = Resolve-KnownVisionProcess -Listeners $knownListeners `
+        -Status $staleStatus -ExpectedPython $Python -ProcessLookup $knownLookup
+    Check ($null -ne $fallbackCandidate -and $fallbackCandidate.Source -eq 'listener_signature') '状态 PID 过期时使用 listener 签名'
+    $corruptFallback = Resolve-KnownVisionProcess -Listeners $knownListeners `
+        -Status $null -ExpectedPython $Python -ProcessLookup $knownLookup
+    Check ($null -ne $corruptFallback -and $corruptFallback.Source -eq 'listener_signature') '状态损坏时使用 listener 签名'
+
+    $otherPython = [pscustomobject]@{
+        ProcessId = $knownPid
+        ExecutablePath = 'C:\other\python.exe'
+        CommandLine = 'C:\other\python.exe -m uvicorn app.main:app --port 8000'
+    }
+    $otherPythonLookup = { param([int]$Id) return $otherPython }
+    Check ($null -eq (Resolve-KnownVisionProcess -Listeners $knownListeners `
+        -Status $matchingStatus -ExpectedPython $Python -ProcessLookup $otherPythonLookup)) '其他 Python 环境不允许关闭'
+
+    $otherApp = [pscustomobject]@{
+        ProcessId = $knownPid
+        ExecutablePath = $Python
+        CommandLine = "`"$Python`" -m uvicorn other.main:app --port 8000"
+    }
+    $otherAppLookup = { param([int]$Id) return $otherApp }
+    Check ($null -eq (Resolve-KnownVisionProcess -Listeners $knownListeners `
+        -Status $matchingStatus -ExpectedPython $Python -ProcessLookup $otherAppLookup)) '其他 Uvicorn app 不允许关闭'
+    Check ($null -eq (Resolve-KnownVisionProcess -Listeners $knownListeners `
+        -Status $matchingStatus -ExpectedPython $Python -ProcessLookup { param([int]$Id) return $null })) '路径或命令行无法确认时不允许关闭'
+    Check ($null -eq (Resolve-KnownVisionProcess -Listeners $knownListeners `
+        -Status $matchingStatus -ExpectedPython $Python -ProcessLookup $otherAppLookup)) '状态 PID 被其他进程复用时不允许关闭'
+
+    $otherDetails = Format-PortOwnerDetails -Listeners $knownListeners -ProcessLookup $otherAppLookup
+    Check ($otherDetails -match 'PID=31001' -and
+        $otherDetails -match 'ExecutablePath=' -and
+        $otherDetails -match 'CommandLine=') '无关进程错误证据包含 PID 路径和命令行'
+
+    $releaseState = [pscustomobject]@{ Calls = 0 }
+    $releaseProvider = {
+        param([int]$Port)
+        ++$releaseState.Calls
+        if ($releaseState.Calls -eq 1) { return $knownListeners }
+        return @()
+    }
+    Check (Wait-VisionProcessAndPortReleased -ProcessId $knownPid -TimeoutMs 100 `
+        -PollMs 1 -ListenerProvider $releaseProvider `
+        -ProcessExists { param([int]$Id) return $false }) '等待进程退出与端口释放后继续'
+    Check (-not (Wait-VisionProcessAndPortReleased -ProcessId $knownPid -TimeoutMs 5 `
+        -PollMs 1 -ListenerProvider { param([int]$Port) return $knownListeners } `
+        -ProcessExists { param([int]$Id) return $false })) '端口持续占用时超时失败'
+
+    $stopFailed = $false
+    try {
+        Stop-KnownVisionProcess -ProcessId $knownPid -TimeoutMs 10 `
+            -StopAction { param([int]$Id) throw 'access denied' } `
+            -ListenerProvider { param([int]$Port) return @() } `
+            -ProcessExists { param([int]$Id) return $false }
+    } catch {
+        $stopFailed = $_.Exception.Message -match '关闭旧 Vision PC 失败' -and
+            $_.Exception.Message -match 'PID=31001'
+    }
+    Check $stopFailed 'Stop-Process 失败时明确报错'
+
+    $stopState = [pscustomobject]@{ Called = $false }
+    Stop-KnownVisionProcess -ProcessId $knownPid -TimeoutMs 20 `
+        -StopAction { param([int]$Id) $stopState.Called = $true } `
+        -ListenerProvider { param([int]$Port) return @() } `
+        -ProcessExists { param([int]$Id) return $false }
+    Check $stopState.Called '已知旧服务使用 mock Stop-Process 自动关闭'
+
+    $listeners = @(Get-PortListeners -Port 8000)
+    Write-Info "当前 8000 端口监听数量：$($listeners.Count)"
+    Write-Info '自检只读取端口状态并使用 mock Stop-Process，不会结束当前监听进程。'
+
+    if ($failures.Count -gt 0) {
+        throw "启动器自检失败：$($failures -join ', ')"
+    }
+    Write-Good '全部启动器自检通过。'
+}
+
+function Show-ManualP4Command([string]$IP) {
+    Write-Step "需要时手动执行的 P4 测试命令（启动器不会执行）"
+    Write-Host ('$ip = "{0}"' -f $IP) -ForegroundColor White
+    Write-Host 'Invoke-RestMethod -Method Post `' -ForegroundColor White
+    Write-Host '  -Uri "http://$ip/api/perception/upload-once" `' -ForegroundColor White
+    Write-Host '  -TimeoutSec 60' -ForegroundColor White
+}
+
+$exitCode = 0
+$hotspotIP = ''
+$p4IP = ''
+$health = $null
+$portWasAvailable = $false
+try {
+    $scriptDir = Split-Path -Parent $PSCommandPath
+    $repoRoot = (Resolve-Path (Join-Path $scriptDir '..\..')).Path
+    $projectRoot = Join-Path $repoRoot 'pc\vision_interpreter'
+    $condaExe = 'C:\ProgramData\anaconda3\Scripts\conda.exe'
+    $envRoot = 'C:\ec\_conda_envs\vision_interpreter'
+    $python = Join-Path $envRoot 'python.exe'
+    $configPath = Join-Path $projectRoot 'config\vision_config.json'
+    $modelPaths = @(
+        (Join-Path $projectRoot 'models\yolo11n.pt'),
+        (Join-Path $projectRoot 'models\identity\best_zxl_identity.pt'),
+        (Join-Path $projectRoot 'models\identity\yolo11n-cls.pt')
+    )
+
+    if (-not $env:LOCALAPPDATA) {
+        throw 'LOCALAPPDATA 未定义，无法创建仓库外运行目录。'
+    }
+    $script:RuntimeDir = Join-Path $env:LOCALAPPDATA 'ESP-Claw\vision_launcher'
+    New-Item -ItemType Directory -Path $script:RuntimeDir -Force | Out-Null
+    $cachePath = Join-Path $script:RuntimeDir 'last_p4_ip.txt'
+    $script:StatusPath = Join-Path $script:RuntimeDir 'launcher_status.json'
+    $script:ServiceLogPath = Join-Path $script:RuntimeDir 'vision_service.log'
+    $script:ServiceStdoutPath = Join-Path $script:RuntimeDir 'vision_service.stdout.log'
+    $previousLauncherStatus = Read-LauncherStatusFile -Path $script:StatusPath
+
+    if ($SelfTest) {
+        Invoke-SelfTest -RepoRoot $repoRoot -ProjectRoot $projectRoot -Python $python
+        exit 0
+    }
+
+    Write-Step "ESP-Claw PC 视觉服务启动器"
+    Write-Info "仓库：$repoRoot"
+    Write-Info "运行日志与缓存：$script:RuntimeDir"
+    Write-LauncherStatus -State 'validating' -Message '正在验证路径和依赖'
+
+    Assert-Path -Path $condaExe -Description 'Conda'
+    Assert-Path -Path $envRoot -Description 'Conda 环境' -Container
+    Assert-Path -Path $python -Description 'Conda 环境 Python'
+    Assert-Path -Path $projectRoot -Description 'PC 视觉工程' -Container
+    Assert-Path -Path $configPath -Description '视觉配置文件'
+    foreach ($modelPath in $modelPaths) {
+        Assert-Path -Path $modelPath -Description '模型文件'
+    }
+
+    $pythonVersion = (& $python --version 2>&1 | Out-String).Trim()
+    if ($LASTEXITCODE -ne 0) {
+        throw "Conda 环境 Python 无法运行：$python"
+    }
+    Write-Good "Conda、环境、Python、工程和模型路径均有效（$pythonVersion）。"
+    $dependencyOutput = (& $python -c 'import fastapi, uvicorn, torch, ultralytics, cv2, numpy' 2>&1 | Out-String).Trim()
+    if ($LASTEXITCODE -ne 0) {
+        throw "Python 依赖错误：$dependencyOutput"
+    }
+    Write-Good 'Python 核心依赖导入成功。'
+
+    Write-Step "8000 端口"
+    $listeners = @(Get-PortListeners -Port 8000)
+    if ($listeners.Count -gt 0) {
+        $candidate = Resolve-KnownVisionProcess -Listeners $listeners `
+            -Status $previousLauncherStatus -ExpectedPython $python
+        if ($null -eq $candidate) {
+            $details = Format-PortOwnerDetails -Listeners $listeners
+            throw "8000 端口被无法确认的进程占用；为避免误杀，启动器拒绝关闭。进程信息：$details"
+        }
+        Write-Info "检测到旧 Vision PC：PID=$($candidate.ProcessId)，来源=$($candidate.Source)"
+        Write-Info '正在关闭旧服务……'
+        Stop-KnownVisionProcess -ProcessId $candidate.ProcessId -Port 8000 -TimeoutMs 5000
+        Write-Good '8000 端口已释放。'
+        Write-LauncherStatus -State 'restarting' `
+            -Message "旧 Vision PC PID=$($candidate.ProcessId) 已关闭，正在启动当前源码"
+        $portWasAvailable = $true
+    } else {
+        $portWasAvailable = $true
+        Write-Info '8000 端口为空，可以启动视觉服务。'
+    }
+
+    Write-Step "Windows 移动热点"
+    $hotspot = Wait-HotspotAddress -WaitSeconds $HotspotWaitSeconds
+    $hotspotIP = [string]$hotspot.IPAddress
+    Write-Good "热点网卡：$($hotspot.InterfaceAlias)，IPv4：$hotspotIP/$($hotspot.PrefixLength)"
+
+    Write-Step "启动 Uvicorn"
+    Remove-Item -LiteralPath $script:ServiceLogPath -Force -ErrorAction SilentlyContinue
+    Remove-Item -LiteralPath $script:ServiceStdoutPath -Force -ErrorAction SilentlyContinue
+    $arguments = @('-m', 'uvicorn', 'app.main:app', '--host', '0.0.0.0', '--port', '8000', '--workers', '1')
+    $script:OwnedProcess = Start-Process -FilePath $python -ArgumentList $arguments -WorkingDirectory $projectRoot -PassThru -WindowStyle Hidden -RedirectStandardOutput $script:ServiceStdoutPath -RedirectStandardError $script:ServiceLogPath
+    Write-Info "已从 $projectRoot 启动 $python -m uvicorn app.main:app，PID $($script:OwnedProcess.Id)。"
+    Write-LauncherStatus -State 'service_starting' `
+        -Message "当前源码 Vision PC 已启动，PID=$($script:OwnedProcess.Id)，正在等待 health"
+
+    Write-Step "服务健康检查"
+    $health = Wait-VisionHealth -Base 'http://127.0.0.1:8000' -WaitSeconds $HealthTimeoutSeconds
+    if (-not $health) {
+        throw "本机 health 在 $HealthTimeoutSeconds 秒内未通过：http://127.0.0.1:8000/api/v1/vision/health"
+    }
+    Write-Good "本机 health：$($health.status)，model_ready=$($health.model_ready)"
+    $openApi = Get-PersonFollowOpenApi -Base 'http://127.0.0.1:8000' -TimeoutMs 3000
+    if (-not (Test-PersonFollowOpenApiObject -OpenApi $openApi)) {
+        throw '当前服务不是包含person-follow的新版本：/openapi.json 缺少 /api/v1/person-follow/detect。'
+    }
+    Write-Good 'OpenAPI 已包含 /api/v1/person-follow/detect。'
+    $hotspotHealth = Get-VisionHealth -Base "http://${hotspotIP}:8000" -TimeoutMs 3000
+    if (-not $hotspotHealth) {
+        throw "热点地址 health 失败：http://${hotspotIP}:8000/api/v1/vision/health。启动器不会修改防火墙。"
+    }
+    Write-Good "热点 health：$($hotspotHealth.status)，model_ready=$($hotspotHealth.model_ready)"
+    Write-VisionReadyBanner -PortWasAvailable $portWasAvailable -Health $health -OpenApi $openApi
+    Write-Host "PC 热点 IP：$hotspotIP"
+    Write-Host "PC 服务 URL：http://${hotspotIP}:8000"
+    Write-LauncherStatus -State 'service_ready' -HotspotIP $hotspotIP -Health $health -Message '视觉服务已就绪，正在发现 P4'
+
+    Write-Step "自动发现 P4"
+    $p4IP = Find-P4Once -HotspotIP $hotspotIP -CachePath $cachePath -BudgetSeconds $P4ScanBudgetSeconds -TimeoutMs $ProbeTimeoutMs
+    if ($p4IP) {
+        Write-Good "P4 已发现：$p4IP（已缓存到 $cachePath）"
+        Show-ManualP4Command -IP $p4IP
+        Write-LauncherStatus -State 'ready' -HotspotIP $hotspotIP -P4IP $p4IP -Health $health -Message '视觉服务与 P4 均已就绪'
+    } else {
+        Write-Warn "P4 尚未发现；视觉服务继续运行，等待 P4 连接热点。"
+        Write-Info "将每 $P4RetrySeconds 秒执行一次有界只读重试，不会触发采集或控制。"
+        Write-LauncherStatus -State 'waiting_for_p4' -HotspotIP $hotspotIP -Health $health -Message '等待 P4 连接热点'
+    }
+
+    if ($ValidationMode) {
+        Write-Good '有界验证模式完成。'
+    } else {
+        Write-Step "运行中"
+        Write-Info '视觉服务保持运行。按 Ctrl+C 可可靠停止本次启动的 Uvicorn。'
+        $nextRetry = (Get-Date).AddSeconds([Math]::Max(10, $P4RetrySeconds))
+        while ($true) {
+            if ($script:OwnedProcess -and $script:OwnedProcess.HasExited) {
+                throw "Uvicorn 意外退出，退出码 $($script:OwnedProcess.ExitCode)。请查看日志：$script:ServiceLogPath"
+            }
+            if (-not $p4IP -and (Get-Date) -ge $nextRetry) {
+                Write-Info '再次查找 P4……'
+                $p4IP = Find-P4Once -HotspotIP $hotspotIP -CachePath $cachePath -BudgetSeconds $P4ScanBudgetSeconds -TimeoutMs $ProbeTimeoutMs
+                if ($p4IP) {
+                    Write-Good "P4 已发现：$p4IP（已缓存）"
+                    Show-ManualP4Command -IP $p4IP
+                    Write-LauncherStatus -State 'ready' -HotspotIP $hotspotIP -P4IP $p4IP -Health $health -Message '视觉服务与 P4 均已就绪'
+                } else {
+                    Write-Warn '仍未发现 P4；视觉服务继续运行，等待 P4 连接热点。'
+                    $nextRetry = (Get-Date).AddSeconds([Math]::Max(10, $P4RetrySeconds))
+                }
+            }
+            Start-Sleep -Seconds 1
+        }
+    }
+} catch {
+    $exitCode = 1
+    Write-Bad $_.Exception.Message
+    Write-LauncherStatus -State 'error' -HotspotIP $hotspotIP -P4IP $p4IP -Health $health -Message $_.Exception.Message
+} finally {
+    Stop-OwnedVisionProcess
+}
+
+exit $exitCode

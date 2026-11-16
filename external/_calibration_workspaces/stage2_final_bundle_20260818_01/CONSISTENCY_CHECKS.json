@@ -1,0 +1,351 @@
+{
+  "schema_version": "stage2_final_consistency_checks.v1",
+  "generated_at": "2026-08-17T17:57:16.924306Z",
+  "status": "PASS",
+  "check_count": 29,
+  "failed_count": 0,
+  "checks": [
+    {
+      "name": "authority_hash::camera_intrinsics.stage2a_candidate.v1.json",
+      "status": "PASS",
+      "detail": {
+        "expected": "99e5fe45e56b9f9a5a05f26179a9ee124610c3d4524b4e257b88c7b149979f6b",
+        "actual": "99e5fe45e56b9f9a5a05f26179a9ee124610c3d4524b4e257b88c7b149979f6b"
+      }
+    },
+    {
+      "name": "authority_hash::camera_tof.stage2b_all16_candidate.v2.json",
+      "status": "PASS",
+      "detail": {
+        "expected": "b518d878be175d42906dd17f9c7e9ead74f33eef77ad11165dc5b2aacd76543e",
+        "actual": "b518d878be175d42906dd17f9c7e9ead74f33eef77ad11165dc5b2aacd76543e"
+      }
+    },
+    {
+      "name": "authority_hash::deltar_fr.stage2b_all16_candidate.v2.json",
+      "status": "PASS",
+      "detail": {
+        "expected": "90c6d7d57f70178231843fbc000d6aedd23ec262837c14df1f62a5f6c762ec9c",
+        "actual": "90c6d7d57f70178231843fbc000d6aedd23ec262837c14df1f62a5f6c762ec9c"
+      }
+    },
+    {
+      "name": "authority_hash::validation.stage2c.json",
+      "status": "PASS",
+      "detail": {
+        "expected": "d19a0aef2ab86069897325279dd14c98ccfd4c4e3b455e2afd68348b4a4a8637",
+        "actual": "d19a0aef2ab86069897325279dd14c98ccfd4c4e3b455e2afd68348b4a4a8637"
+      }
+    },
+    {
+      "name": "authority_hash::summary.stage2c.json",
+      "status": "PASS",
+      "detail": {
+        "expected": "8b7b8d58ecc94f2a303cc5c4b0e2120976e2f8ff99711b27c0c2b0d42bea6568",
+        "actual": "8b7b8d58ecc94f2a303cc5c4b0e2120976e2f8ff99711b27c0c2b0d42bea6568"
+      }
+    },
+    {
+      "name": "authority_hash::coverage.stage2c.json",
+      "status": "PASS",
+      "detail": {
+        "expected": "3ed91129ef2503955ac55a5950d4dfd05460ef2d93dae1e07fb45631592c4d62",
+        "actual": "3ed91129ef2503955ac55a5950d4dfd05460ef2d93dae1e07fb45631592c4d62"
+      }
+    },
+    {
+      "name": "authority_hash::frozen_authority_manifest.json",
+      "status": "PASS",
+      "detail": {
+        "expected": "a43538db5d817e7704f99192dadb63ba06d32a5cc1a2bf69fad60680bdbf4e23",
+        "actual": "a43538db5d817e7704f99192dadb63ba06d32a5cc1a2bf69fad60680bdbf4e23"
+      }
+    },
+    {
+      "name": "bundle_json_round_trip",
+      "status": "PASS",
+      "detail": {
+        "sha256": "63c974cd2ff64dd0f135d47d8c92eb170d06658cb315563fb93588862ba8b057"
+      }
+    },
+    {
+      "name": "all_numeric_values_finite",
+      "status": "PASS",
+      "detail": "recursive finite-value scan"
+    },
+    {
+      "name": "stage2a_schema",
+      "status": "PASS",
+      "detail": "stage2a_camera_intrinsics_candidate.v1"
+    },
+    {
+      "name": "stage2b_schema",
+      "status": "PASS",
+      "detail": "camera_tof.stage2b_all16_candidate.v2"
+    },
+    {
+      "name": "stage2b_fr_schema",
+      "status": "PASS",
+      "detail": "deltar_fr.stage2b_all16_candidate.v2"
+    },
+    {
+      "name": "stage2c_evidence_status",
+      "status": "PASS",
+      "detail": "VALIDATION_EVIDENCE_READY"
+    },
+    {
+      "name": "no_promotion_or_stage3",
+      "status": "PASS",
+      "detail": {
+        "workspace": "C:\\ec\\_calibration_workspaces\\stage2_final_bundle_20260818_01",
+        "source_mode": "frozen_authorities_copied_without_refit",
+        "promotion_executed": false,
+        "stage3_started": false,
+        "runtime_modified": false,
+        "formal_calibration_modified": false
+      }
+    },
+    {
+      "name": "raw_zone_count_and_order",
+      "status": "PASS",
+      "detail": {
+        "count": 64,
+        "first": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "last": [
+          60,
+          61,
+          62,
+          63
+        ]
+      }
+    },
+    {
+      "name": "raw_row_col_consistency",
+      "status": "PASS",
+      "detail": "raw_index = raw_row*8+raw_col"
+    },
+    {
+      "name": "canonical_identity_gauge",
+      "status": "PASS",
+      "detail": {
+        "physical_D4_orientation": "UNRESOLVED_GAUGE",
+        "canonical_gauge": "identity",
+        "mapping_authority": "raw_zone_index_to_camera_frame_ray",
+        "raw_index_for_canonical_index": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63
+        ]
+      }
+    },
+    {
+      "name": "physical_d4_unresolved",
+      "status": "PASS",
+      "detail": "UNRESOLVED_GAUGE"
+    },
+    {
+      "name": "axial_z_semantics",
+      "status": "PASS",
+      "detail": {
+        "camera_tof": "axial_z",
+        "fr": "axial_z"
+      }
+    },
+    {
+      "name": "rotation_is_proper_orthonormal",
+      "status": "PASS",
+      "detail": {
+        "max_RtR_error": 2.220446049250313e-16,
+        "determinant": 1.0
+      }
+    },
+    {
+      "name": "transform_convention_and_units",
+      "status": "PASS",
+      "detail": {
+        "direction": "T_camera_from_tof",
+        "convention": "column_vector: p_camera=R*p_tof+t",
+        "units": {
+          "rotation": "dimensionless",
+          "translation": "mm"
+        }
+      }
+    },
+    {
+      "name": "all_model_rays_unit_length",
+      "status": "PASS",
+      "detail": {
+        "max_norm_error": 2.220446049250313e-16
+      }
+    },
+    {
+      "name": "fr_center_projection_regeneration",
+      "status": "PASS",
+      "detail": {
+        "max_abs_px_error": 2.2737367544323206e-13
+      }
+    },
+    {
+      "name": "fr_rectangle_regeneration",
+      "status": "PASS",
+      "detail": {
+        "max_abs_px_error": 2.2737367544323206e-13
+      }
+    },
+    {
+      "name": "fr_shape_and_positive_extents::400mm",
+      "status": "PASS",
+      "detail": {
+        "rows": 64,
+        "field_order": [
+          "sy",
+          "sx",
+          "ey",
+          "ex"
+        ]
+      }
+    },
+    {
+      "name": "fr_shape_and_positive_extents::600mm",
+      "status": "PASS",
+      "detail": {
+        "rows": 64,
+        "field_order": [
+          "sy",
+          "sx",
+          "ey",
+          "ex"
+        ]
+      }
+    },
+    {
+      "name": "fr_shape_and_positive_extents::1000mm",
+      "status": "PASS",
+      "detail": {
+        "rows": 64,
+        "field_order": [
+          "sy",
+          "sx",
+          "ey",
+          "ex"
+        ]
+      }
+    },
+    {
+      "name": "stage2c_no_catastrophic_core_collapse",
+      "status": "PASS",
+      "detail": {
+        "p95_abs_mm": 12.77757135802206,
+        "max_abs_mm": 25.16970766337556,
+        "interpretation": "diagnostic only; not a promotion gate"
+      }
+    },
+    {
+      "name": "stage2c_comparison_is_not_hard_gate",
+      "status": "PASS",
+      "detail": {
+        "values": {
+          "median_mm": 3.120055107373446,
+          "p95_mm": 9.042760056480166,
+          "rms_mm": 4.682742765466878,
+          "max_mm": 19.971951045488254
+        },
+        "comparison": {
+          "median_abs_mm": {
+            "stage2c": 4.715919613334449,
+            "stage2b_scan_heldout": 3.120055107373446,
+            "delta_mm": 1.5958645059610035,
+            "ratio": 1.511485999779167
+          },
+          "p95_abs_mm": {
+            "stage2c": 12.77757135802206,
+            "stage2b_scan_heldout": 9.042760056480166,
+            "delta_mm": 3.7348113015418942,
+            "ratio": 1.4130167424784734
+          },
+          "rms_mm": {
+            "stage2c": 6.701913715920044,
+            "stage2b_scan_heldout": 4.682742765466878,
+            "delta_mm": 2.0191709504531667,
+            "ratio": 1.4311940782533785
+          },
+          "max_abs_mm": {
+            "stage2c": 25.16970766337556,
+            "stage2b_scan_heldout": 19.971951045488254,
+            "delta_mm": 5.197756617887308,
+            "ratio": 1.2602528218724782
+          }
+        },
+        "diagnostic_label": "WORSE_THAN_STAGE2B_REFERENCE",
+        "hard_pass_gate": false,
+        "decision_owner": "GPT + user"
+      }
+    }
+  ]
+}

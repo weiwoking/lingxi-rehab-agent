@@ -1,0 +1,18 @@
+idf_component_register(
+    SRCS
+        "src/rehab_system.c"
+        "src/rehab_capabilities.c"
+        "src/rehab_fatigue.c"
+        "src/rehab_fatigue_rules.c"
+    INCLUDE_DIRS
+        "include"
+    REQUIRES
+        claw_cap
+        claw_core
+        freertos
+        json
+        rehab_business_audio
+        rehab_score_bridge
+        rehab_sensor_recording
+        rehab_task_decision
+)

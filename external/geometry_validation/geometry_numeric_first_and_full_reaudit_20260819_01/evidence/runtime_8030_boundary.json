@@ -1,0 +1,346 @@
+{
+  "clean_parent_probe_command": "C:\\ec\\_conda_envs\\vision_interpreter\\python.exe -c <import boundary probe>",
+  "clean_parent_probe_returncode": 0,
+  "clean_parent_probe_stderr": "",
+  "clean_parent_probe_stdout": "{\"title\": \"DELTAR PC Scan Service\", \"heavy_imports\": []}",
+  "expected_parent": "C:\\ec\\_conda_envs\\vision_interpreter\\python.exe",
+  "expected_worker": "C:\\ec\\_deltar_formal\\envs\\deltar_py311_torch271_cu128\\python.exe",
+  "health": {
+    "active_service_job_id": null,
+    "authority_config_ready": true,
+    "busy": false,
+    "frozen_scan_runtime": {
+      "generation": 1,
+      "gpu": {
+        "allocated_bytes": 97470976,
+        "reserved_bytes": 517996544
+      },
+      "jobs_completed": 6,
+      "last_error": null,
+      "process_alive": true,
+      "ready": true,
+      "recoveries": 0,
+      "runtime_identity": {
+        "calibrations": {},
+        "checkpoint": {
+          "mtime_ns": 1784286230064620600,
+          "path": "C:\\ec\\_deltar_formal\\assets\\nyu.pt",
+          "sha256": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+          "size": 79564407
+        },
+        "cuda": "12.8",
+        "deltar_worktree": {
+          "commit": "f3c517562bcb2dfb9e4bbf74965f2ee76a2dd096",
+          "path": "C:\\ec\\_deltar_formal\\work\\deltar_f3c5175_win_cu128"
+        },
+        "device": "cuda:0",
+        "profiles": {
+          "algorithm_profile.json": {
+            "mtime_ns": 1787065093004501700,
+            "path": "C:\\ec\\_deltar_p4_pipeline\\profiles\\algorithm_profile.json",
+            "sha256": "a4f61609c1a8f22d0577889b392e7ada9cea0059f3a348e036677d3c3a3fdb06",
+            "size": 1212
+          },
+          "formal_geometry_region_profile.json": {
+            "mtime_ns": 1787063781381870900,
+            "path": "C:\\ec\\_deltar_p4_pipeline\\profiles\\formal_geometry_region_profile.json",
+            "sha256": "b44b3a087857083c7c28bf7a98b0d877c8d029b51fc2bbbeaad225bcaf91fc95",
+            "size": 338
+          },
+          "formal_stage2_frame_profile.json": {
+            "mtime_ns": 1787063565517556900,
+            "path": "C:\\ec\\_deltar_p4_pipeline\\profiles\\formal_stage2_frame_profile.json",
+            "sha256": "60b5a7f32c3f6cdfcef2f101a3a7debf4c4b4c123633c2e84f2d151e103930cf",
+            "size": 1346
+          },
+          "model_manifest.json": {
+            "mtime_ns": 1786087182069598600,
+            "path": "C:\\ec\\_deltar_p4_pipeline\\profiles\\model_manifest.json",
+            "sha256": "0be8eff315194cf498ae77b188186b2a16d3ffefe8bc639b29dfc3eb00ce2b46",
+            "size": 1197
+          },
+          "scan_strategy_profile.json": {
+            "mtime_ns": 1784350248672538200,
+            "path": "C:\\ec\\_deltar_p4_pipeline\\profiles\\scan_strategy_profile.json",
+            "sha256": "3365ebbb8b539609b1ff0568703204be4be24e08059f1d2a615ff396115a10e5",
+            "size": 508
+          },
+          "stage7d_horizontal_plane_profile.json": {
+            "mtime_ns": 1787063174959120100,
+            "path": "C:\\ec\\_deltar_p4_pipeline\\profiles\\stage7d_horizontal_plane_profile.json",
+            "sha256": "ae90befc7f59ecadf8d24987bbdec1f541009734be8ccb62983007675f0dc8f9",
+            "size": 564
+          },
+          "stage8b1_yolo_runtime_profile.json": {
+            "mtime_ns": 1786087182070885300,
+            "path": "C:\\ec\\_deltar_p4_pipeline\\profiles\\stage8b1_yolo_runtime_profile.json",
+            "sha256": "3c3a473f35072f28a267dbd16871416fc59c0cb9d1ab27abe5145c12f1fca2f4",
+            "size": 695
+          },
+          "stage8b4a_scene_object_fusion_profile.json": {
+            "mtime_ns": 1784988243684617500,
+            "path": "C:\\ec\\_deltar_p4_pipeline\\profiles\\stage8b4a_scene_object_fusion_profile.json",
+            "sha256": "170bb386eaee306a44ee5ff5232741989f2a4c5b36a411f7ea97f1eac9fd171d",
+            "size": 1181
+          },
+          "stage8b_p4_object_whitelist.json": {
+            "mtime_ns": 1786012669405727100,
+            "path": "C:\\ec\\_deltar_p4_pipeline\\profiles\\stage8b_p4_object_whitelist.json",
+            "sha256": "a793ad266ce24478132867c66b36fbfff8a297ef670018e45164ae6a66e07c90",
+            "size": 255
+          }
+        },
+        "python": {
+          "mtime_ns": 1781191031700869300,
+          "path": "C:\\ec\\_deltar_formal\\envs\\deltar_py311_torch271_cu128\\python.exe",
+          "size": 105288,
+          "version": "3.11.15"
+        },
+        "runtime_sha256": "fa1fae09615dfb653063256f6ab1b312c5cd4f671d9f62c7effb1ec36efc7a4f",
+        "torch": "2.7.1+cu128"
+      },
+      "schema_version": "deltar_frozen_scan_runtime_status.v1",
+      "startup_timing": {
+        "checkpoint_identity_ms": 100.35560000687838,
+        "checkpoint_load_ms": 92.83149999100715,
+        "cuda_init_ms": 115.09000003570691,
+        "imports_ms": 2226.0960999992676,
+        "model_construct_ms": 181.394100014586,
+        "process_start_ms": 0.0,
+        "runtime_ready_total_ms": 5770.744699984789,
+        "static_config_load_ms": 85.2059000171721,
+        "warmup_ms": 919.553299958352
+      },
+      "state": "READY",
+      "worker_pid": 14768
+    },
+    "last_job": {
+      "created_at": "2026-08-19T11:43:33.044Z",
+      "error": null,
+      "finished_at": "2026-08-19T11:43:48.894Z",
+      "scan_id": "scan_20260819_085223_numericfirst01",
+      "service_job_id": "svc_4ae872035e484764a30dc78375442ae5",
+      "status": "completed"
+    },
+    "limits": {
+      "max_frames": 11,
+      "max_objects": 100,
+      "max_result_bytes": 262144,
+      "max_upload_bytes": 6291456
+    },
+    "local_runtime": {
+      "assets": [
+        {
+          "label": "DELTAR checkpoint",
+          "local": true,
+          "path": "C:\\ec\\_deltar_formal\\assets\\nyu.pt",
+          "sha256": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+          "size_bytes": 79564407
+        },
+        {
+          "label": "YOLO detect",
+          "local": true,
+          "path": "C:\\ec\\_deltar_p4_pipeline\\models\\rehab_scan_yolo11n_coco80_volleyball_detect_v5b_exp.pt",
+          "sha256": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+          "size_bytes": 21024452
+        },
+        {
+          "label": "YOLO segment",
+          "local": true,
+          "path": "C:\\ec\\_deltar_p4_pipeline\\models\\yolo11n-seg.pt",
+          "sha256": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152",
+          "size_bytes": 6182636
+        },
+        {
+          "label": "formal geometry authority stage2",
+          "local": true,
+          "path": "C:\\ec\\_deltar_p4_pipeline\\profiles\\formal_geometry_v2\\stage2_calibration.json",
+          "sha256": "63c974cd2ff64dd0f135d47d8c92eb170d06658cb315563fb93588862ba8b057",
+          "size_bytes": 673898
+        },
+        {
+          "label": "formal geometry authority stage3a",
+          "local": true,
+          "path": "C:\\ec\\_deltar_p4_pipeline\\profiles\\formal_geometry_v2\\stage3a_gravity.json",
+          "sha256": "a00f9cc7099dfb5eed1a85210d1f78a6220a468c95fb85d0d40f827cf9972112",
+          "size_bytes": 25929
+        },
+        {
+          "label": "formal geometry authority all_object_v2",
+          "local": true,
+          "path": "C:\\ec\\_deltar_p4_pipeline\\profiles\\formal_geometry_v2\\all_object_geometry_v2.json",
+          "sha256": "7280833404b4272b6b187aa3ffc387e2fb6c6cab72798ada3ba7460ef67a85a0",
+          "size_bytes": 3841
+        }
+      ],
+      "checked_at": "2026-08-19T08:50:41.841Z",
+      "checkpoint_key_audit": {
+        "checkpoint_state_keys": 968,
+        "missing_keys": [],
+        "model_state_keys": 968,
+        "shape_mismatches": [],
+        "unexpected_keys": []
+      },
+      "cuda": {
+        "available": true,
+        "device": "cuda:0",
+        "name": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+        "required": true
+      },
+      "error": null,
+      "network_attempts": [],
+      "network_deny_active": true,
+      "processing_mode": "local_only",
+      "ready": true,
+      "required": true,
+      "runtime_import_paths": {
+        "dataloader_utils_module_path": null,
+        "encoder_source_path": "C:\\ec\\_deltar_formal\\work\\deltar_f3c5175_win_cu128\\src\\models\\encoder.py",
+        "model_io_module_path": "C:\\ec\\_deltar_formal\\work\\deltar_f3c5175_win_cu128\\src\\utils\\model_io.py",
+        "model_module_path": "C:\\ec\\_deltar_formal\\work\\deltar_f3c5175_win_cu128\\src\\models\\deltar.py",
+        "worktree_path": "C:\\ec\\_deltar_formal\\work\\deltar_f3c5175_win_cu128"
+      },
+      "runtime_network_required": false,
+      "schema_version": "deltar_local_runtime_preflight.v1",
+      "source": {
+        "checkpoint_sha256": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+        "encoder_pretrained": false,
+        "formal_geometry": {
+          "fusion": "D_TRUE_READ_OFFICIAL_WRITE",
+          "payloads": {
+            "all_object_v2": {
+              "promoted_sha256": "7280833404b4272b6b187aa3ffc387e2fb6c6cab72798ada3ba7460ef67a85a0",
+              "source_sha256": "db5ea57de070002df6ae3ea80101283f2c1974405443b6280bf3ac5ec3980a21"
+            },
+            "stage2": {
+              "promoted_sha256": "63c974cd2ff64dd0f135d47d8c92eb170d06658cb315563fb93588862ba8b057",
+              "source_sha256": "63c974cd2ff64dd0f135d47d8c92eb170d06658cb315563fb93588862ba8b057"
+            },
+            "stage3a": {
+              "promoted_sha256": "a00f9cc7099dfb5eed1a85210d1f78a6220a468c95fb85d0d40f827cf9972112",
+              "source_sha256": "d2df3939a0af4eea4b584bddf6053b45094cb457b8ecbc1080e5c82431f1a464"
+            }
+          },
+          "profile_id": "formal_geometry_stage2_d_stage3a_allobject_v2_20260818",
+          "promoted_payload_set_sha256": "70ed050f7cfdfd0fd3786dc5fc3f879be094198a194d6a03da78e41e097f4b73",
+          "range_semantics": "axial_z",
+          "schema_version": "deltar_formal_geometry_authority.v2"
+        },
+        "worktree_commit": "f3c517562bcb2dfb9e4bbf74965f2ee76a2dd096"
+      },
+      "status": "ready",
+      "timing_seconds": {
+        "checkpoint_load": 0.08703669998794794,
+        "model_construct": 0.17080399999395013,
+        "preflight": 2.4588847999693826
+      }
+    },
+    "performance_guard": {
+      "cancel_requested": false,
+      "idle_grace_s": 5,
+      "last_check_completed_at": null,
+      "last_check_result": null,
+      "last_check_started_at": null,
+      "last_job_wall_ms": null,
+      "last_ok_at": null,
+      "last_source": null,
+      "message": "性能尚未检查",
+      "next_check_due_at": null,
+      "paused_for_real_traffic": false,
+      "periodic_interval_s": 600,
+      "ready": false,
+      "recovery_attempt": 0,
+      "status": "unknown",
+      "threshold_ms": 20000
+    },
+    "pipeline_version": "deltar_pc_pipeline.stage6.2",
+    "runtime_bootstrap": {
+      "errors": [],
+      "finished_at": "2026-08-19T11:42:16.754Z",
+      "performance_guard_started": false,
+      "ready": true,
+      "schema_version": "deltar_scan_runtime_bootstrap.v1",
+      "started_at": "2026-08-19T11:42:05.962Z",
+      "state": "READY"
+    },
+    "schema_version": "deltar_scan_service_health.v1",
+    "service_alive": true,
+    "status": "ok",
+    "worker_boundary": {
+      "checks": {
+        "module_entrypoint": true,
+        "persistent_entrypoint": true,
+        "pipeline_root": true,
+        "profile_bundle": true,
+        "worker_executable": true
+      },
+      "cwd": "C:\\ec\\_deltar_p4_pipeline",
+      "executable": "C:\\ec\\_deltar_formal\\envs\\deltar_py311_torch271_cu128\\python.exe",
+      "module": "deltar_p4_pipeline.cli",
+      "one_shot_command_prefix": [
+        "C:\\ec\\_deltar_formal\\envs\\deltar_py311_torch271_cu128\\python.exe",
+        "-m",
+        "deltar_p4_pipeline.cli",
+        "scan-run"
+      ],
+      "persistent_command_prefix": [
+        "C:\\ec\\_deltar_formal\\envs\\deltar_py311_torch271_cu128\\python.exe",
+        "C:\\ec\\_deltar_p4_pipeline\\workers\\frozen_scan_runtime_worker.py",
+        "--serve"
+      ],
+      "pythonpath": "C:\\ec\\_deltar_p4_pipeline\\src",
+      "ready": true,
+      "schema_version": "deltar_worker_boundary.v1"
+    },
+    "yolo_runtime": {
+      "endpoint": "127.0.0.1:50061",
+      "generation": 1,
+      "jobs_completed": 6,
+      "last_error": null,
+      "launcher_pid": 35068,
+      "model_identity": {
+        "detect": {
+          "mtime_ns": 1786087167558648900,
+          "path": "C:\\ec\\_deltar_p4_pipeline\\models\\rehab_scan_yolo11n_coco80_volleyball_detect_v5b_exp.pt",
+          "sha256": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+          "size": 21024452
+        },
+        "segment": {
+          "mtime_ns": 1784318444759921300,
+          "path": "C:\\ec\\_deltar_p4_pipeline\\models\\yolo11n-seg.pt",
+          "sha256": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152",
+          "size": 6182636
+        }
+      },
+      "process_alive": true,
+      "ready": true,
+      "recoveries": 0,
+      "schema_version": "deltar_yolo_runtime_status.v1",
+      "startup_timing": {
+        "cuda_init_ms": null,
+        "detect_model_load_ms": 148.99089996470138,
+        "imports_ms": 3985.7827000087127,
+        "process_start_ms": 4884.251200011931,
+        "runtime_ready_total_ms": 4884.251200011931,
+        "segment_model_load_ms": 129.49289998505265,
+        "warmup_ms": 570.2454999554902
+      },
+      "state": "READY",
+      "worker_pid": 27796
+    }
+  },
+  "health_error": null,
+  "health_http_pass": true,
+  "heavy_imports": [],
+  "parent_heavy_import_boundary_pass": true,
+  "parent_process_exact_pass": true,
+  "parent_processes": [
+    {
+      "CommandLine": "\"C:\\ec\\_conda_envs\\vision_interpreter\\python.exe\" scripts\\run_scan_service.py --host 127.0.0.1 --port 8030 --require-local-preflight --disable-performance-guard",
+      "ExecutablePath": "C:\\ec\\_conda_envs\\vision_interpreter\\python.exe",
+      "ProcessId": 38248
+    }
+  ],
+  "runtime_regression_pass": true,
+  "worker_path_visible_in_health": true
+}

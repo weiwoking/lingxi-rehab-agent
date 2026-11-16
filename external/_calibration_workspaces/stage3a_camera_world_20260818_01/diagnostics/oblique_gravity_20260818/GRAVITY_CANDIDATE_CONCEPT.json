@@ -1,0 +1,24 @@
+{
+  "schema_version": "stage3a_gravity_authority_concept.v1",
+  "concept_only": true,
+  "real_w04g_exists": false,
+  "gravity_authority": {
+    "u_up_camera": null,
+    "uncertainty_deg": null,
+    "source_pose": "W04G",
+    "representation_policy": "VECTOR_FIRST",
+    "vector_first": true,
+    "matrix_first": false,
+    "full_camera_world_rotation_authority": false
+  },
+  "gravity_status": "AWAITING_SINGLE_APPROVED_W04G",
+  "yaw_status": "SEPARATE_LOW_CONFIDENCE",
+  "required_followup_validation": [
+    "gravity-fixed image-only fits for W01/W02/W03",
+    "independent active-bottom and active-top height comparison",
+    "distance-slope suppression",
+    "camera-height sensitivity 962/972/982 mm"
+  ],
+  "failure_policy": "NO_CANDIDATE_AND_NO_SECOND_OBLIQUE_CAPTURE",
+  "promotion": false
+}

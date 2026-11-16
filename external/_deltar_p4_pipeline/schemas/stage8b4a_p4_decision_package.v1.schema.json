@@ -1,0 +1,394 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "stage8b4a_p4_decision_package.v1.schema.json",
+  "title": "Stage 8B-4A compact P4 object decision package",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "scan_id",
+    "status",
+    "generated_at",
+    "whitelist",
+    "source",
+    "selection_policy_id",
+    "class_summaries",
+    "objects"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "stage8b4a_p4_decision_package.v1"
+    },
+    "scan_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "const": "decision_ready"
+    },
+    "generated_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "whitelist": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "classes",
+        "profile_sha256"
+      ],
+      "properties": {
+        "classes": {
+          "const": [
+            "cup",
+            "bottle",
+            "book",
+            "sports ball"
+          ]
+        },
+        "profile_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "frame_count",
+        "candidate_set_sha256",
+        "scene_objects_sha256",
+        "scene_objects_semantic_sha256"
+      ],
+      "properties": {
+        "frame_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "candidate_set_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "scene_objects_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "scene_objects_semantic_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "selection_policy_id": {
+      "enum": [
+        "class_geometry_fallback_then_p4_whitelist_v1",
+        "one_best_per_class_v1"
+      ]
+    },
+    "selection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "recommended_target_object_id"
+      ],
+      "properties": {
+        "recommended_target_object_id": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^scene_object_(cup|bottle|book|sports ball)_[0-9a-f]{16}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "class_summaries": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "prefixItems": [
+        {
+          "$ref": "#/$defs/cupSummary"
+        },
+        {
+          "$ref": "#/$defs/bottleSummary"
+        },
+        {
+          "$ref": "#/$defs/bookSummary"
+        },
+        {
+          "$ref": "#/$defs/sportsBallSummary"
+        }
+      ]
+    },
+    "objects": {
+      "type": "array",
+      "description": "Array contract intentionally permits multiple objects with the same class_name.",
+      "items": {
+        "$ref": "#/$defs/packageObject"
+      }
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "className": {
+      "enum": [
+        "cup",
+        "bottle",
+        "book",
+        "sports ball"
+      ]
+    },
+    "summaryBase": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "class_name",
+        "present",
+        "observation_count",
+        "fused_object_count",
+        "selected_object_id"
+      ],
+      "properties": {
+        "class_name": {
+          "$ref": "#/$defs/className"
+        },
+        "present": {
+          "type": "boolean"
+        },
+        "observation_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "fused_object_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "selected_object_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "cupSummary": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/summaryBase"
+        },
+        {
+          "properties": {
+            "class_name": {
+              "const": "cup"
+            }
+          }
+        }
+      ]
+    },
+    "bottleSummary": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/summaryBase"
+        },
+        {
+          "properties": {
+            "class_name": {
+              "const": "bottle"
+            }
+          }
+        }
+      ]
+    },
+    "bookSummary": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/summaryBase"
+        },
+        {
+          "properties": {
+            "class_name": {
+              "const": "book"
+            }
+          }
+        }
+      ]
+    },
+    "sportsBallSummary": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/summaryBase"
+        },
+        {
+          "properties": {
+            "class_name": {
+              "const": "sports ball"
+            }
+          }
+        }
+      ]
+    },
+    "bbox": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 640
+        },
+        {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 360
+        },
+        {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 640
+        },
+        {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 360
+        }
+      ],
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "geometry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "valid",
+        "object_height_mm",
+        "support_height_mm",
+        "top_height_above_floor_mm",
+        "distance_mm",
+        "distance_status"
+      ],
+      "properties": {
+        "valid": {
+          "type": "boolean"
+        },
+        "object_height_mm": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "support_height_mm": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "top_height_above_floor_mm": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "distance_mm": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "distance_status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "geometry_confidence": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "visibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "full_extent_visible",
+        "touches_border"
+      ],
+      "properties": {
+        "full_extent_visible": {
+          "type": "boolean"
+        },
+        "touches_border": {
+          "type": "boolean"
+        }
+      }
+    },
+    "packageObject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "object_id",
+        "class_name",
+        "display_name_zh",
+        "confidence",
+        "observation_count",
+        "source_frame_id",
+        "source_frame_sequence",
+        "bbox_xyxy",
+        "geometry",
+        "visibility",
+        "warnings"
+      ],
+      "properties": {
+        "object_id": {
+          "type": "string",
+          "pattern": "^scene_object_(cup|bottle|book|sports ball)_[0-9a-f]{16}$"
+        },
+        "class_name": {
+          "$ref": "#/$defs/className"
+        },
+        "display_name_zh": {
+          "type": "string",
+          "minLength": 1
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "observation_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "source_frame_id": {
+          "type": "string",
+          "pattern": "^frame_[0-9]{6}$"
+        },
+        "source_frame_sequence": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "bbox_xyxy": {
+          "$ref": "#/$defs/bbox"
+        },
+        "geometry": {
+          "$ref": "#/$defs/geometry"
+        },
+        "visibility": {
+          "$ref": "#/$defs/visibility"
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}

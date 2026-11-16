@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "stage8b4a_selected_objects.v2.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "scan_id", "selection_policy_id", "whitelist_profile", "source", "sanitizer", "items"],
+  "properties": {
+    "schema_version": {"const": "stage8b4a_selected_objects.v2"},
+    "scan_id": {"type": "string", "minLength": 1},
+    "selection_policy_id": {"const": "class_geometry_fallback_then_p4_whitelist_v1"},
+    "whitelist_profile": {"type": "object"},
+    "source": {"type": "object"},
+    "sanitizer": {"type": "object"},
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["object_id", "class_name", "source_frame_id", "logical_object_id", "bbox_xyxy", "geometry", "visibility", "confidence", "warnings", "gate1_outcome"],
+        "properties": {
+          "object_id": {"type": "string"},
+          "class_name": {"enum": ["book", "cup", "bottle"]},
+          "source_frame_id": {"pattern": "^frame_0000(0[0-9]|10)$"},
+          "logical_object_id": {"type": "string", "minLength": 1},
+          "bbox_xyxy": {"type": "array", "minItems": 4, "maxItems": 4},
+          "geometry": {"type": "object"},
+          "visibility": {"type": "object"},
+          "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+          "warnings": {"type": "array", "items": {"type": "string"}},
+          "gate1_outcome": {"enum": ["pass_success", "pass_failure_fallback"]}
+        }
+      }
+    }
+  }
+}

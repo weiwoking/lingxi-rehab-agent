@@ -1,0 +1,62 @@
+﻿
+  tests\test_camera_world_integration.py:319:            )
+  tests\test_camera_world_integration.py:320:
+> tests\test_camera_world_integration.py:321:    def test_single_orientation_outlier_passes_and_remains_diagnostic(self
+) -> None:
+  tests\test_camera_world_integration.py:322:        manifest, poses, metadata = _synthetic_capture(
+  tests\test_camera_world_integration.py:323:            orientation_outlier_counts=(0, 0, 1)
+  tests\test_camera_world_integration.py:324:        )
+  tests\test_camera_world_integration.py:325:        with tempfile.TemporaryDirectory() as temporary:
+  tests\test_camera_world_integration.py:326:            output = Path(temporary) / "output"
+  tests\test_camera_world_integration.py:327:            with patch(
+  tests\test_camera_world_integration.py:328:                "deltar_p4_pipeline.camera_world_calibration.load_capture_
+observations",
+  tests\test_camera_world_integration.py:329:                return_value=(manifest, poses, metadata),
+  tests\test_camera_world_integration.py:330:            ):
+  tests\test_camera_world_integration.py:331:                report = calibrate_capture(
+  tests\test_camera_world_integration.py:332:                    Path(temporary) / "capture.json",
+  tests\test_camera_world_integration.py:333:                    CAMERA_PROFILE,
+  tests\test_camera_world_integration.py:334:                    FROZEN_CAMERA_TOF_PROFILE,
+  tests\test_camera_world_integration.py:335:                    BOARD_MANIFEST,
+  tests\test_camera_world_integration.py:336:                    output,
+  tests\test_camera_world_integration.py:337:                    profile_bundle_path=ROOT / "profiles",
+  tests\test_camera_world_integration.py:363:            self.assertEqual(rejected[0]["pose_name"], "far")
+  tests\test_camera_world_integration.py:364:
+> tests\test_camera_world_integration.py:365:    def test_three_orientation_inliers_in_one_pose_fails(self) -> None:
+  tests\test_camera_world_integration.py:366:        manifest, poses, metadata = _synthetic_capture(
+  tests\test_camera_world_integration.py:367:            orientation_outlier_counts=(0, 0, 2)
+  tests\test_camera_world_integration.py:368:        )
+  tests\test_camera_world_integration.py:369:        self._assert_gate_failure(
+  tests\test_camera_world_integration.py:370:            manifest,
+  tests\test_camera_world_integration.py:371:            poses,
+  tests\test_camera_world_integration.py:372:            metadata,
+  tests\test_camera_world_integration.py:373:            "per_pose_orientation_inlier_count",
+  tests\test_camera_world_integration.py:374:        )
+  tests\test_camera_world_integration.py:375:
+> tests\test_camera_world_integration.py:376:    def test_thirteen_total_orientation_inliers_fails(self) -> None:
+  tests\test_camera_world_integration.py:377:        manifest, poses, metadata = _synthetic_capture(
+  tests\test_camera_world_integration.py:378:            orientation_outlier_counts=(0, 1, 1)
+  tests\test_camera_world_integration.py:379:        )
+  tests\test_camera_world_integration.py:380:        self._assert_gate_failure(
+  tests\test_camera_world_integration.py:381:            manifest, poses, metadata, "valid_frame_count"
+  tests\test_camera_world_integration.py:382:        )
+  tests\test_camera_world_integration.py:383:
+> tests\test_camera_world_integration.py:384:    def test_fourteen_base_valid_frames_still_fails(self) -> None:
+  tests\test_camera_world_integration.py:385:        manifest, poses, metadata = _synthetic_capture(
+  tests\test_camera_world_integration.py:386:            base_invalid_counts=(0, 0, 1)
+  tests\test_camera_world_integration.py:387:        )
+  tests\test_camera_world_integration.py:388:        self._assert_gate_failure(
+  tests\test_camera_world_integration.py:389:            manifest, poses, metadata, "frame_quality"
+  tests\test_camera_world_integration.py:390:        )
+  tests\test_camera_world_integration.py:391:
+  tests\test_camera_world_integration.py:392:    def _assert_gate_failure(
+  tests\test_camera_world_integration.py:393:        self,
+  tests\test_camera_world_integration.py:394:        manifest: dict,
+  tests\test_camera_world_integration.py:395:        poses: list[PoseObservation],
+  tests\test_camera_world_integration.py:396:        metadata: dict,
+  tests\test_camera_world_integration.py:397:        gate_name: str,
+  tests\test_camera_world_integration.py:398:    ) -> None:
+  tests\test_camera_world_integration.py:399:        with tempfile.TemporaryDirectory() as temporary:
+  tests\test_camera_world_integration.py:400:            output = Path(temporary) / "output"
+
+

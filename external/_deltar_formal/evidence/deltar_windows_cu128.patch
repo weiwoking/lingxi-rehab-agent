@@ -1,0 +1,83 @@
+﻿diff --git a/configs/test_demo_compat.txt b/configs/test_demo_compat.txt
+new file mode 100644
+index 0000000..8a21da1
+--- /dev/null
++++ b/configs/test_demo_compat.txt
+@@ -0,0 +1,13 @@
++--data_path_eval data/demo
++--filenames_file_eval data/demo/data.json
++--input_height 480
++--input_width 640
++--max_depth 10
++--min_depth 1e-3
++--n_bins 256
++--min_depth_eval 1e-3
++--max_depth_eval 10
++--zone_sample_num 16
++--weight_path weights/nyu.pt
++--save_dir C:/ec/_deltar_formal/outputs/full_demo
++--save_for_demo
+diff --git a/evaluate.py b/evaluate.py
+index 918ba68..65c4d92 100644
+--- a/evaluate.py
++++ b/evaluate.py
+@@ -42,7 +42,7 @@ def predict_tta(model, input_data, args):
+ 
+ def eval(model, test_loader, args, device):
+     if args.save_dir is not None and not os.path.exists(f'{args.save_dir}'):
+-        os.system(f'mkdir -p {args.save_dir}')
++        os.makedirs(args.save_dir, exist_ok=True)
+ 
+     metrics = RunningAverageDict()
+     with torch.no_grad():
+@@ -67,7 +67,7 @@ def eval(model, test_loader, args, device):
+             im_subfolder = batch['image_folder'][0]
+             vis_folder = f'{im_subfolder}'
+             if not os.path.exists(f'{args.save_dir}/{vis_folder}'):
+-                os.system(f'mkdir -p {args.save_dir}/{vis_folder}')
++                os.makedirs(os.path.join(args.save_dir, vis_folder), exist_ok=True)
+ 
+             if args.save_pred:
+                 pred_path = os.path.join(args.save_dir, vis_folder, f"{impath}_pred.png")
+diff --git a/src/models/encoder.py b/src/models/encoder.py
+index 567041a..77acce5 100644
+--- a/src/models/encoder.py
++++ b/src/models/encoder.py
+@@ -54,7 +54,7 @@ class HistogramEncoder(nn.Module):
+ class ImageEncoder(nn.Module):
+     def __init__(self):
+         super(ImageEncoder, self).__init__()
+-        net = timm.create_model('tf_efficientnetv2_b3', pretrained=True)
++        net = timm.create_model('tf_efficientnetv2_b3', pretrained=False)
+         self.conv0 = nn.Sequential(
+             net._modules['conv_stem'],
+             net._modules['bn1'],
+diff --git a/src/utils/model_io.py b/src/utils/model_io.py
+index f481beb..9f2a012 100644
+--- a/src/utils/model_io.py
++++ b/src/utils/model_io.py
+@@ -12,7 +12,7 @@ def save_weights(model, fpath):
+ 
+ 
+ def load_weights(model, fpath):
+-    state_dict = torch.load(fpath)
++    state_dict = torch.load(fpath, map_location='cpu', weights_only=True)
+     model.load_state_dict(state_dict)
+     return model
+ 
+@@ -32,7 +32,7 @@ def save_checkpoint(model, optimizer, epoch, fpath):
+ 
+ 
+ def load_checkpoint(model, fpath, optimizer=None):
+-    ckpt = torch.load(fpath, map_location='cpu')
++    ckpt = torch.load(fpath, map_location='cpu', weights_only=True)
+     if optimizer is None:
+         optimizer = ckpt.get('optimizer', None)
+     else:
+@@ -50,4 +50,4 @@ def load_checkpoint(model, fpath, optimizer=None):
+             load_dict[k] = v
+ 
+     model.load_state_dict(load_dict)
+-    return model, optimizer, epoch
+\ No newline at end of file
++    return model, optimizer, epoch

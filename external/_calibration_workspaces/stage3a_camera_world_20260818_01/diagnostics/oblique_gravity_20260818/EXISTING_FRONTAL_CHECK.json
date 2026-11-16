@@ -1,0 +1,2438 @@
+{
+  "W01": {
+    "schema_version": "stage3a_oblique_gravity_preview.v1",
+    "decision": "TOO_FRONTAL",
+    "confidence": "LOW",
+    "confidence_value_0_1": 0.048131795612375114,
+    "action": "Move the vehicle sideways more and aim back at the fixed board.",
+    "valid_frame_count": 11,
+    "input_frame_count": 11,
+    "shape": {
+      "obliquity_proxy": {
+        "count": 11,
+        "min": 0.04565666660343057,
+        "p05": 0.046462058127618944,
+        "median": 0.052517372178009294,
+        "p95": 0.05493803963426118,
+        "max": 0.05507838769197355,
+        "rms": 0.0514101856129557
+      },
+      "signed_obliquity_proxy": {
+        "count": 11,
+        "min": 0.04565666660343057,
+        "p05": 0.046462058127618944,
+        "median": 0.052517372178009294,
+        "p95": 0.05493803963426118,
+        "max": 0.05507838769197355,
+        "rms": 0.0514101856129557
+      },
+      "trapezoid_asymmetry": {
+        "count": 11,
+        "min": 0.013262668094436067,
+        "p05": 0.013492295722901289,
+        "median": 0.015237191658134402,
+        "p95": 0.015968181211000985,
+        "max": 0.015981375229369436,
+        "rms": 0.014945699758618588
+      },
+      "minimum_outer_edge_px": {
+        "count": 11,
+        "min": 177.5008201650738,
+        "p05": 177.51737549545044,
+        "median": 177.70785497942467,
+        "p95": 178.85600274736677,
+        "max": 179.08153782947358,
+        "rms": 177.9337287226736
+      },
+      "minimum_margin_px": {
+        "count": 11,
+        "min": 36.433934369195924,
+        "p05": 37.49834949649151,
+        "median": 42.104991522224935,
+        "p95": 42.40944900789744,
+        "max": 42.434409311315086,
+        "rms": 41.16840097313388
+      },
+      "board_center_x_px": {
+        "count": 11,
+        "min": 265.8858028593979,
+        "p05": 267.5749820411613,
+        "median": 275.4436408906432,
+        "p95": 276.41958535790127,
+        "max": 276.5119973071274,
+        "rms": 273.79186961024624
+      },
+      "corner_count": {
+        "count": 11,
+        "min": 20.0,
+        "p05": 20.0,
+        "median": 22.0,
+        "p95": 24.0,
+        "max": 24.0,
+        "rms": 22.425634682414028
+      },
+      "homography_rms_px": {
+        "count": 11,
+        "min": 0.0872428525904415,
+        "p05": 0.08954309196164478,
+        "median": 0.10343417062606315,
+        "p95": 0.12092562293404398,
+        "max": 0.122150261344089,
+        "rms": 0.10411979962554052
+      }
+    },
+    "solver": {
+      "core_methods": [
+        "ITERATIVE",
+        "IPPE",
+        "SQPNP"
+      ],
+      "epnp_role": "diagnostic_only",
+      "aggregate_gravity_by_method": {
+        "ITERATIVE": [
+          -0.007287301358074668,
+          -0.9998049989905721,
+          -0.018353725299749712
+        ],
+        "IPPE": [
+          -0.009936582561977469,
+          -0.9992926912187273,
+          0.0362681899716888
+        ],
+        "SQPNP": [
+          -0.007311147526593354,
+          -0.9998151547944024,
+          -0.01778210801028695
+        ],
+        "EPNP": [
+          -0.0066010443907709776,
+          -0.9994120944663237,
+          -0.0336435974204179
+        ]
+      },
+      "core_aggregate_disagreement_deg": 3.133812288813161,
+      "frame_to_frame_gravity_spread_deg": {
+        "count": 11,
+        "min": 0.11910291589137822,
+        "p05": 0.16112432227622248,
+        "median": 0.48808710104585007,
+        "p95": 0.6333554700841006,
+        "max": 0.6467173478367685,
+        "rms": 0.46154064689753893
+      },
+      "lopo_gravity_change_from_nominal_deg": {
+        "count": 0
+      }
+    },
+    "gravity_authority": null,
+    "frames": [
+      {
+        "frame": "frame_000000",
+        "shape": {
+          "obliquity_proxy": 0.054797691576548804,
+          "signed_obliquity_proxy": 0.054797691576548804,
+          "trapezoid_asymmetry": 0.015954987192632532,
+          "minimum_outer_edge_px": 178.16630899666154,
+          "minimum_margin_px": 39.66422868453668,
+          "board_center_x_px": 270.7488207195506,
+          "corner_count": 24,
+          "homography_rms_px": 0.09824640139505447
+        },
+        "core_gravity": [
+          -0.010083384953777008,
+          -0.9999445523311836,
+          0.0030360518873485554
+        ],
+        "core_solver_disagreement_deg": 3.4676316455405427,
+        "methods": {
+          "ITERATIVE": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.009602554244236405,
+              -0.9998038354158922,
+              -0.017322864649297706
+            ],
+            "selected_reprojection_rms_px": 0.18847390809976264
+          },
+          "IPPE": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.011009047432248453,
+              -0.9990071740115918,
+              0.04316789487579434
+            ],
+            "selected_reprojection_rms_px": 0.2912456339229716
+          },
+          "SQPNP": {
+            "solution_count": 3,
+            "selected_gravity": [
+              -0.009626360473307111,
+              -0.9998135262702411,
+              -0.016740545723000374
+            ],
+            "selected_reprojection_rms_px": 0.1884716781738748
+          },
+          "EPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.008923101820360114,
+              -0.9993754880043053,
+              -0.03419082084507679
+            ],
+            "selected_reprojection_rms_px": 0.19872480521734193
+          }
+        },
+        "ippe_branch": {
+          "solution_count": 2,
+          "reprojection_gap_px": 0.12302921619417218,
+          "gravity_separation_deg": 11.425964668105914
+        }
+      },
+      {
+        "frame": "frame_000001",
+        "shape": {
+          "obliquity_proxy": 0.05018381216999039,
+          "signed_obliquity_proxy": 0.05018381216999039,
+          "trapezoid_asymmetry": 0.014694624569127636,
+          "minimum_outer_edge_px": 179.08153782947358,
+          "minimum_margin_px": 36.433934369195924,
+          "board_center_x_px": 265.8858028593979,
+          "corner_count": 22,
+          "homography_rms_px": 0.1060893172875411
+        },
+        "core_gravity": [
+          -0.014660527305858151,
+          -0.9998925279251168,
+          3.922541916749265e-05
+        ],
+        "core_solver_disagreement_deg": 3.0302848157059845,
+        "methods": {
+          "ITERATIVE": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.013272122448231656,
+              -0.9997543256317893,
+              -0.017752158917872775
+            ],
+            "selected_reprojection_rms_px": 0.18154515399502938
+          },
+          "IPPE": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.01739702777127464,
+              -0.9992370537732876,
+              0.03496646666744347
+            ],
+            "selected_reprojection_rms_px": 0.24948428615129073
+          },
+          "SQPNP": {
+            "solution_count": 3,
+            "selected_gravity": [
+              -0.013298930676811135,
+              -0.9997653936795927,
+              -0.017096667615135754
+            ],
+            "selected_reprojection_rms_px": 0.18154540982451825
+          },
+          "EPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.012538892301260915,
+              -0.9994329901806236,
+              -0.03124858906374682
+            ],
+            "selected_reprojection_rms_px": 0.1923827181080056
+          }
+        },
+        "ippe_branch": {
+          "solution_count": 2,
+          "reprojection_gap_px": 0.19163654285098294,
+          "gravity_separation_deg": 11.488081324535818
+        }
+      },
+      {
+        "frame": "frame_000002",
+        "shape": {
+          "obliquity_proxy": 0.05050287819851568,
+          "signed_obliquity_proxy": 0.05050287819851568,
+          "trapezoid_asymmetry": 0.014747733439288781,
+          "minimum_outer_edge_px": 178.63046766525997,
+          "minimum_margin_px": 38.56276462378709,
+          "board_center_x_px": 269.26416122292466,
+          "corner_count": 24,
+          "homography_rms_px": 0.10573172087678746
+        },
+        "core_gravity": [
+          -0.011647928205548724,
+          -0.999880074817027,
+          -0.010205966510566454
+        ],
+        "core_solver_disagreement_deg": 3.409474606887519,
+        "methods": {
+          "ITERATIVE": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.010468464080184729,
+              -0.9994847148206889,
+              -0.030343304032488912
+            ],
+            "selected_reprojection_rms_px": 0.16838433697012203
+          },
+          "IPPE": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.01394762459044936,
+              -0.9994805683305316,
+              0.02905266421451985
+            ],
+            "selected_reprojection_rms_px": 0.26054058156721266
+          },
+          "SQPNP": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.010514182380771332,
+              -0.9995149114314134,
+              -0.02931541906775003
+            ],
+            "selected_reprojection_rms_px": 0.16838751633149032
+          },
+          "EPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.009913377464438577,
+              -0.9990648037633862,
+              -0.04208613582255138
+            ],
+            "selected_reprojection_rms_px": 0.1748362626586314
+          }
+        },
+        "ippe_branch": {
+          "solution_count": 2,
+          "reprojection_gap_px": 0.13767091517344915,
+          "gravity_separation_deg": 9.916943759330966
+        }
+      },
+      {
+        "frame": "frame_000003",
+        "shape": {
+          "obliquity_proxy": 0.04565666660343057,
+          "signed_obliquity_proxy": 0.04565666660343057,
+          "trapezoid_asymmetry": 0.013262668094436067,
+          "minimum_outer_edge_px": 177.90698175437902,
+          "minimum_margin_px": 42.104991522224935,
+          "board_center_x_px": 275.0947076616725,
+          "corner_count": 20,
+          "homography_rms_px": 0.10343417062606315
+        },
+        "core_gravity": [
+          -0.007039229665519578,
+          -0.9999317843058629,
+          -0.009320728544987392
+        ],
+        "core_solver_disagreement_deg": 3.764709365932638,
+        "methods": {
+          "ITERATIVE": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.005689592245846543,
+              -0.9994921705973533,
+              -0.03135330053865584
+            ],
+            "selected_reprojection_rms_px": 0.16025620880145822
+          },
+          "IPPE": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.009701164083596989,
+              -0.9993672824675708,
+              0.03421873973140675
+            ],
+            "selected_reprojection_rms_px": 0.24179845293759394
+          },
+          "SQPNP": {
+            "solution_count": 3,
+            "selected_gravity": [
+              -0.005716886134385725,
+              -0.9995087767332869,
+              -0.030814322093061813
+            ],
+            "selected_reprojection_rms_px": 0.16025531087519562
+          },
+          "EPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.00519147341022586,
+              -0.9991432007083978,
+              -0.04105987191905634
+            ],
+            "selected_reprojection_rms_px": 0.1627592772587634
+          }
+        },
+        "ippe_branch": {
+          "solution_count": 2,
+          "reprojection_gap_px": 0.06011830984673727,
+          "gravity_separation_deg": 10.126768190986553
+        }
+      },
+      {
+        "frame": "frame_000004",
+        "shape": {
+          "obliquity_proxy": 0.05507838769197355,
+          "signed_obliquity_proxy": 0.05507838769197355,
+          "trapezoid_asymmetry": 0.015981375229369436,
+          "minimum_outer_edge_px": 177.68536247905553,
+          "minimum_margin_px": 41.98697159197513,
+          "board_center_x_px": 275.3288898144753,
+          "corner_count": 20,
+          "homography_rms_px": 0.122150261344089
+        },
+        "core_gravity": [
+          -0.006010852893152543,
+          -0.9999454157872857,
+          -0.008546057189672565
+        ],
+        "core_solver_disagreement_deg": 2.3552959939178932,
+        "methods": {
+          "ITERATIVE": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.005585958817384585,
+              -0.9997346319066258,
+              -0.02234866507453946
+            ],
+            "selected_reprojection_rms_px": 0.16120715650187667
+          },
+          "IPPE": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.006837552227957183,
+              -0.9998010666125541,
+              0.018736997623133654
+            ],
+            "selected_reprojection_rms_px": 0.21608229520597713
+          },
+          "SQPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.005605688752558465,
+              -0.9997417765228093,
+              -0.022021728556740058
+            ],
+            "selected_reprojection_rms_px": 0.16120907665230524
+          },
+          "EPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.005114548343731728,
+              -0.9994143150492895,
+              -0.03383590208342664
+            ],
+            "selected_reprojection_rms_px": 0.16546275413932163
+          }
+        },
+        "ippe_branch": {
+          "solution_count": 2,
+          "reprojection_gap_px": 0.2704978828047674,
+          "gravity_separation_deg": 9.275852096720369
+        }
+      },
+      {
+        "frame": "frame_000005",
+        "shape": {
+          "obliquity_proxy": 0.05393362801268318,
+          "signed_obliquity_proxy": 0.05393362801268318,
+          "trapezoid_asymmetry": 0.01565910918687976,
+          "minimum_outer_edge_px": 177.70349636906184,
+          "minimum_margin_px": 42.16151477493006,
+          "board_center_x_px": 275.4743282329547,
+          "corner_count": 24,
+          "homography_rms_px": 0.10691549588199625
+        },
+        "core_gravity": [
+          -0.007419742273866357,
+          -0.9999559180450395,
+          0.005754076058913209
+        ],
+        "core_solver_disagreement_deg": 2.601897118054193,
+        "methods": {
+          "ITERATIVE": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.006687687666193568,
+              -0.9999326350068318,
+              -0.009486847841804782
+            ],
+            "selected_reprojection_rms_px": 0.1641857943767846
+          },
+          "IPPE": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.008865540681362218,
+              -0.9993173372353884,
+              0.03586449064464932
+            ],
+            "selected_reprojection_rms_px": 0.22968300750715825
+          },
+          "SQPNP": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.006700939349059802,
+              -0.9999359654927269,
+              -0.00911933802248069
+            ],
+            "selected_reprojection_rms_px": 0.16418960611214445
+          },
+          "EPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.005876371603652061,
+              -0.9996080264410734,
+              -0.027372645676994496
+            ],
+            "selected_reprojection_rms_px": 0.17431065466601922
+          }
+        },
+        "ippe_branch": {
+          "solution_count": 2,
+          "reprojection_gap_px": 0.2261249060712302,
+          "gravity_separation_deg": 10.298261201579225
+        }
+      },
+      {
+        "frame": "frame_000006",
+        "shape": {
+          "obliquity_proxy": 0.048945895342592506,
+          "signed_obliquity_proxy": 0.048945895342592506,
+          "trapezoid_asymmetry": 0.014211594226456353,
+          "minimum_outer_edge_px": 177.7588795016113,
+          "minimum_margin_px": 42.19715991289225,
+          "board_center_x_px": 275.4436408906432,
+          "corner_count": 24,
+          "homography_rms_px": 0.11970098452399895
+        },
+        "core_gravity": [
+          -0.007072253149710633,
+          -0.9999593911738233,
+          0.005585627866483817
+        ],
+        "core_solver_disagreement_deg": 2.9145904576111112,
+        "methods": {
+          "ITERATIVE": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.00632301911873584,
+              -0.9999132612521937,
+              -0.011553761345393616
+            ],
+            "selected_reprojection_rms_px": 0.18036064020542908
+          },
+          "IPPE": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.008544010209126603,
+              -0.9991926442868195,
+              0.03925633060615527
+            ],
+            "selected_reprojection_rms_px": 0.2515480408853913
+          },
+          "SQPNP": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.006343701851343839,
+              -0.9999199193748708,
+              -0.010950446756787193
+            ],
+            "selected_reprojection_rms_px": 0.18036603521230385
+          },
+          "EPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.005572553751163264,
+              -0.9995498812726772,
+              -0.02947849203177507
+            ],
+            "selected_reprojection_rms_px": 0.188272819238057
+          }
+        },
+        "ippe_branch": {
+          "solution_count": 2,
+          "reprojection_gap_px": 0.18656077325905873,
+          "gravity_separation_deg": 10.692459962072213
+        }
+      },
+      {
+        "frame": "frame_000007",
+        "shape": {
+          "obliquity_proxy": 0.052517372178009294,
+          "signed_obliquity_proxy": 0.052517372178009294,
+          "trapezoid_asymmetry": 0.015237191658134402,
+          "minimum_outer_edge_px": 177.58829247072,
+          "minimum_margin_px": 42.086914485672246,
+          "board_center_x_px": 275.5607212195806,
+          "corner_count": 24,
+          "homography_rms_px": 0.09184333133284805
+        },
+        "core_gravity": [
+          -0.00610411859558201,
+          -0.9999476049695256,
+          -0.008217484522681064
+        ],
+        "core_solver_disagreement_deg": 3.875653135871472,
+        "methods": {
+          "ITERATIVE": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.0054020355325104,
+              -0.9995091889239185,
+              -0.030857726240865954
+            ],
+            "selected_reprojection_rms_px": 0.16819727661272865
+          },
+          "IPPE": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.007486564041652648,
+              -0.9992968212655942,
+              0.036739819914220415
+            ],
+            "selected_reprojection_rms_px": 0.2776893355440984
+          },
+          "SQPNP": {
+            "solution_count": 3,
+            "selected_gravity": [
+              -0.00541449347704197,
+              -0.9995194275458217,
+              -0.03052207756461237
+            ],
+            "selected_reprojection_rms_px": 0.1681984599190835
+          },
+          "EPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.0049807851301963005,
+              -0.99912746397735,
+              -0.04146688444621749
+            ],
+            "selected_reprojection_rms_px": 0.17199112438512987
+          }
+        },
+        "ippe_branch": {
+          "solution_count": 2,
+          "reprojection_gap_px": 0.09511501650766208,
+          "gravity_separation_deg": 10.403994556761255
+        }
+      },
+      {
+        "frame": "frame_000008",
+        "shape": {
+          "obliquity_proxy": 0.047267449651807326,
+          "signed_obliquity_proxy": 0.047267449651807326,
+          "trapezoid_asymmetry": 0.013721923351366511,
+          "minimum_outer_edge_px": 177.70785497942467,
+          "minimum_margin_px": 42.34475321331837,
+          "board_center_x_px": 275.8455923860875,
+          "corner_count": 20,
+          "homography_rms_px": 0.10187810299513472
+        },
+        "core_gravity": [
+          -0.00741158837619136,
+          -0.9999086283246106,
+          0.011305014804836422
+        ],
+        "core_solver_disagreement_deg": 2.96063685423757,
+        "methods": {
+          "ITERATIVE": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.006406157717402617,
+              -0.9999602685367588,
+              -0.006198587838615813
+            ],
+            "selected_reprojection_rms_px": 0.17447874443272932
+          },
+          "IPPE": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.009376055567432443,
+              -0.9989261258995588,
+              0.04537272944506764
+            ],
+            "selected_reprojection_rms_px": 0.22894363184796257
+          },
+          "SQPNP": {
+            "solution_count": 3,
+            "selected_gravity": [
+              -0.006446072425510785,
+              -0.9999653423975896,
+              -0.005268980352646984
+            ],
+            "selected_reprojection_rms_px": 0.1744826544321941
+          },
+          "EPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.005241752407774022,
+              -0.9995000644274405,
+              -0.0311792437566683
+            ],
+            "selected_reprojection_rms_px": 0.1837864900949581
+          }
+        },
+        "ippe_branch": {
+          "solution_count": 2,
+          "reprojection_gap_px": 0.12138977244439286,
+          "gravity_separation_deg": 11.62457238199098
+        }
+      },
+      {
+        "frame": "frame_000009",
+        "shape": {
+          "obliquity_proxy": 0.0528552278255705,
+          "signed_obliquity_proxy": 0.0528552278255705,
+          "trapezoid_asymmetry": 0.015338795589036303,
+          "minimum_outer_edge_px": 177.5008201650738,
+          "minimum_margin_px": 42.3844887044798,
+          "board_center_x_px": 276.32717340867515,
+          "corner_count": 22,
+          "homography_rms_px": 0.0872428525904415
+        },
+        "core_gravity": [
+          -0.006304817877880504,
+          -0.9999796835682763,
+          0.0009390006479203995
+        ],
+        "core_solver_disagreement_deg": 3.428578486967992,
+        "methods": {
+          "ITERATIVE": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.005209627939820295,
+              -0.9998036737151443,
+              -0.019117369129406037
+            ],
+            "selected_reprojection_rms_px": 0.17284477731278722
+          },
+          "IPPE": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.008473025562072196,
+              -0.9991387034112019,
+              0.040620920516485956
+            ],
+            "selected_reprojection_rms_px": 0.24032846912973657
+          },
+          "SQPNP": {
+            "solution_count": 3,
+            "selected_gravity": [
+              -0.005224329070458111,
+              -0.9998117211103372,
+              -0.01868766213706003
+            ],
+            "selected_reprojection_rms_px": 0.17284143768849883
+          },
+          "EPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.0045495087890812125,
+              -0.9994251908767225,
+              -0.033594490780555215
+            ],
+            "selected_reprojection_rms_px": 0.18180005840116284
+          }
+        },
+        "ippe_branch": {
+          "solution_count": 2,
+          "reprojection_gap_px": 0.18610854808223218,
+          "gravity_separation_deg": 11.242678073002443
+        }
+      },
+      {
+        "frame": "frame_000010",
+        "shape": {
+          "obliquity_proxy": 0.05284579582931143,
+          "signed_obliquity_proxy": 0.05284579582931143,
+          "trapezoid_asymmetry": 0.015326527150095404,
+          "minimum_outer_edge_px": 177.53393082582704,
+          "minimum_margin_px": 42.434409311315086,
+          "board_center_x_px": 276.5119973071274,
+          "corner_count": 22,
+          "homography_rms_px": 0.0967447172818727
+        },
+        "core_gravity": [
+          -0.006234304620093726,
+          -0.9999294105196753,
+          0.010114713227700382
+        ],
+        "core_solver_disagreement_deg": 2.6671253252818934,
+        "methods": {
+          "ITERATIVE": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.005509473749599429,
+              -0.9999694362695549,
+              -0.005547271919704943
+            ],
+            "selected_reprojection_rms_px": 0.16600627486833996
+          },
+          "IPPE": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.0076615877199670964,
+              -0.999132177420827,
+              0.04094132528297439
+            ],
+            "selected_reprojection_rms_px": 0.21539198706545512
+          },
+          "SQPNP": {
+            "solution_count": 3,
+            "selected_gravity": [
+              -0.005527396532964095,
+              -0.9999719362023817,
+              -0.005057142990584899
+            ],
+            "selected_reprojection_rms_px": 0.16600467233667401
+          },
+          "EPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.004707773676729875,
+              -0.9996872821515007,
+              -0.024559616681749868
+            ],
+            "selected_reprojection_rms_px": 0.17487595620267565
+          }
+        },
+        "ippe_branch": {
+          "solution_count": 2,
+          "reprojection_gap_px": 0.22333915134416868,
+          "gravity_separation_deg": 11.277712356070118
+        }
+      }
+    ],
+    "capture_or_registration_performed": false
+  },
+  "W02": {
+    "schema_version": "stage3a_oblique_gravity_preview.v1",
+    "decision": "TOO_FRONTAL",
+    "confidence": "LOW",
+    "confidence_value_0_1": 0.19594495652855048,
+    "action": "Move the vehicle sideways more and aim back at the fixed board.",
+    "valid_frame_count": 11,
+    "input_frame_count": 11,
+    "shape": {
+      "obliquity_proxy": {
+        "count": 11,
+        "min": 0.01807413841353658,
+        "p05": 0.018883611459342947,
+        "median": 0.028673645337609518,
+        "p95": 0.03675735797606805,
+        "max": 0.0374764176220634,
+        "rms": 0.02910541678108332
+      },
+      "signed_obliquity_proxy": {
+        "count": 11,
+        "min": 0.01807413841353658,
+        "p05": 0.018883611459342947,
+        "median": 0.028673645337609518,
+        "p95": 0.03675735797606805,
+        "max": 0.0374764176220634,
+        "rms": 0.02910541678108332
+      },
+      "trapezoid_asymmetry": {
+        "count": 11,
+        "min": 0.003985870285480099,
+        "p05": 0.0041698381388139225,
+        "median": 0.006324271003221473,
+        "p95": 0.00810415224105272,
+        "max": 0.00826691873920135,
+        "rms": 0.006417540722984923
+      },
+      "minimum_outer_edge_px": {
+        "count": 11,
+        "min": 135.40518511575004,
+        "p05": 135.44888120877744,
+        "median": 135.56448703825237,
+        "p95": 135.8082884287315,
+        "max": 135.81253799564337,
+        "rms": 135.62328576265713
+      },
+      "minimum_margin_px": {
+        "count": 11,
+        "min": 62.94581131911298,
+        "p05": 63.2961260328392,
+        "median": 63.76016176876482,
+        "p95": 63.941248388132465,
+        "max": 63.94828314722853,
+        "rms": 63.70797616775316
+      },
+      "board_center_x_px": {
+        "count": 11,
+        "min": 335.9259420817977,
+        "p05": 336.3682206771707,
+        "median": 337.07009391589713,
+        "p95": 337.19462371773693,
+        "max": 337.2108048741052,
+        "rms": 336.9144617816226
+      },
+      "corner_count": {
+        "count": 11,
+        "min": 12.0,
+        "p05": 16.5,
+        "median": 24.0,
+        "p95": 24.0,
+        "max": 24.0,
+        "rms": 22.258808266718717
+      },
+      "homography_rms_px": {
+        "count": 11,
+        "min": 0.09483948851669192,
+        "p05": 0.09708560212340575,
+        "median": 0.10606732016769146,
+        "p95": 0.12632390571727514,
+        "max": 0.12636140989211964,
+        "rms": 0.10843642869144185
+      }
+    },
+    "solver": {
+      "core_methods": [
+        "ITERATIVE",
+        "IPPE",
+        "SQPNP"
+      ],
+      "epnp_role": "diagnostic_only",
+      "aggregate_gravity_by_method": {
+        "ITERATIVE": [
+          -0.006969366551348233,
+          -0.999974374892357,
+          0.001636303307110383
+        ],
+        "IPPE": [
+          -0.005754467312564168,
+          -0.9994777044611702,
+          0.0317994401047918
+        ],
+        "SQPNP": [
+          -0.006969032319112063,
+          -0.9999735522655857,
+          0.0020802302471097994
+        ],
+        "EPNP": [
+          -0.007352981654030049,
+          -0.9994447689922855,
+          -0.03249749828452409
+        ]
+      },
+      "core_aggregate_disagreement_deg": 1.7299214932308906,
+      "frame_to_frame_gravity_spread_deg": {
+        "count": 11,
+        "min": 0.021685183748511107,
+        "p05": 0.04339732317358399,
+        "median": 0.36600951966168643,
+        "p95": 0.8050958419649721,
+        "max": 0.9464836888017106,
+        "rms": 0.4537388927991654
+      },
+      "lopo_gravity_change_from_nominal_deg": {
+        "count": 0
+      }
+    },
+    "gravity_authority": null,
+    "frames": [
+      {
+        "frame": "frame_000000",
+        "shape": {
+          "obliquity_proxy": 0.01807413841353658,
+          "signed_obliquity_proxy": 0.01807413841353658,
+          "trapezoid_asymmetry": 0.003985870285480099,
+          "minimum_outer_edge_px": 135.76528376385667,
+          "minimum_margin_px": 63.646440746565425,
+          "board_center_x_px": 337.2108048741052,
+          "corner_count": 21,
+          "homography_rms_px": 0.09935183267015814
+        },
+        "core_gravity": [
+          -0.006561209573055964,
+          -0.999807753623212,
+          0.018477183872147862
+        ],
+        "core_solver_disagreement_deg": 1.4492621430182802,
+        "methods": {
+          "ITERATIVE": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.006685405363330613,
+              -0.9999290797136009,
+              0.009856008230478774
+            ],
+            "selected_reprojection_rms_px": 0.1397256350016302
+          },
+          "IPPE": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.006309534642165077,
+              -0.9993624611586651,
+              0.03514058906015994
+            ],
+            "selected_reprojection_rms_px": 0.14975640530698264
+          },
+          "SQPNP": {
+            "solution_count": 3,
+            "selected_gravity": [
+              -0.006687320523681013,
+              -0.9999232329880177,
+              0.01043110133227407
+            ],
+            "selected_reprojection_rms_px": 0.13972595526183423
+          },
+          "EPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.006956911265920419,
+              -0.9993037984736535,
+              -0.03665405491573666
+            ],
+            "selected_reprojection_rms_px": 0.1661390985022384
+          }
+        },
+        "ippe_branch": {
+          "solution_count": 2,
+          "reprojection_gap_px": 0.1756367091187515,
+          "gravity_separation_deg": 10.726644858076899
+        }
+      },
+      {
+        "frame": "frame_000001",
+        "shape": {
+          "obliquity_proxy": 0.028673645337609518,
+          "signed_obliquity_proxy": 0.028673645337609518,
+          "trapezoid_asymmetry": 0.006324271003221473,
+          "minimum_outer_edge_px": 135.52478020345166,
+          "minimum_margin_px": 63.76016176876482,
+          "board_center_x_px": 337.07009391589713,
+          "corner_count": 12,
+          "homography_rms_px": 0.12636140989211964
+        },
+        "core_gravity": [
+          -0.006150874346125399,
+          -0.999579121193595,
+          0.028350435951117556
+        ],
+        "core_solver_disagreement_deg": 1.3876783443423715,
+        "methods": {
+          "ITERATIVE": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.006280509355145482,
+              -0.9997784938717746,
+              0.020087767265819484
+            ],
+            "selected_reprojection_rms_px": 0.1870021914578711
+          },
+          "IPPE": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.005896532286123355,
+              -0.9990012610231415,
+              0.04429121110527356
+            ],
+            "selected_reprojection_rms_px": 0.1961267609205052
+          },
+          "SQPNP": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.006274406819640642,
+              -0.999766728000313,
+              0.02066691565304348
+            ],
+            "selected_reprojection_rms_px": 0.18700224191973272
+          },
+          "EPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.007141997301536291,
+              -0.9996816327493468,
+              -0.0241996904555611
+            ],
+            "selected_reprojection_rms_px": 0.2180071818049778
+          }
+        },
+        "ippe_branch": {
+          "solution_count": 2,
+          "reprojection_gap_px": 0.242904264674232,
+          "gravity_separation_deg": 12.684395939298904
+        }
+      },
+      {
+        "frame": "frame_000002",
+        "shape": {
+          "obliquity_proxy": 0.02567648421434731,
+          "signed_obliquity_proxy": 0.02567648421434731,
+          "trapezoid_asymmetry": 0.005664442659836331,
+          "minimum_outer_edge_px": 135.7713869251705,
+          "minimum_margin_px": 63.72028177542411,
+          "board_center_x_px": 336.8437778832813,
+          "corner_count": 24,
+          "homography_rms_px": 0.12628640154243065
+        },
+        "core_gravity": [
+          -0.0059981063507488575,
+          -0.9999401788801029,
+          0.009146659577827196
+        ],
+        "core_solver_disagreement_deg": 1.6502536682802007,
+        "methods": {
+          "ITERATIVE": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.006452760777368779,
+              -0.9999790438255958,
+              -0.0005232475488516115
+            ],
+            "selected_reprojection_rms_px": 0.15809221200456297
+          },
+          "IPPE": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.005086800712937161,
+              -0.9995881424457614,
+              0.0282430511867808
+            ],
+            "selected_reprojection_rms_px": 0.1885980455654731
+          },
+          "SQPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.006453112712158399,
+              -0.9999791385945518,
+              -0.0002823331762478984
+            ],
+            "selected_reprojection_rms_px": 0.15809231590317704
+          },
+          "EPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.006838467045783506,
+              -0.9996257792487465,
+              -0.026486540540433916
+            ],
+            "selected_reprojection_rms_px": 0.175595612247475
+          }
+        },
+        "ippe_branch": {
+          "solution_count": 2,
+          "reprojection_gap_px": 0.1641185882057592,
+          "gravity_separation_deg": 9.348887973214444
+        }
+      },
+      {
+        "frame": "frame_000003",
+        "shape": {
+          "obliquity_proxy": 0.03289022517414318,
+          "signed_obliquity_proxy": 0.03289022517414318,
+          "trapezoid_asymmetry": 0.007252707810753397,
+          "minimum_outer_edge_px": 135.65826088770254,
+          "minimum_margin_px": 63.67561326278298,
+          "board_center_x_px": 336.81049927254367,
+          "corner_count": 24,
+          "homography_rms_px": 0.11377109540921482
+        },
+        "core_gravity": [
+          -0.006619950622802998,
+          -0.9999772231822162,
+          0.001315055335650903
+        ],
+        "core_solver_disagreement_deg": 1.7536415706208384,
+        "methods": {
+          "ITERATIVE": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.007158001420645612,
+              -0.9999341371108665,
+              -0.00897131294788565
+            ],
+            "selected_reprojection_rms_px": 0.1512139812584718
+          },
+          "IPPE": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.00554091996866452,
+              -0.9997515322441536,
+              0.021591016218974017
+            ],
+            "selected_reprojection_rms_px": 0.1950968742549668
+          },
+          "SQPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.007158883184121525,
+              -0.9999367458688814,
+              -0.008674943959946096
+            ],
+            "selected_reprojection_rms_px": 0.15121381189057798
+          },
+          "EPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.007482603012071156,
+              -0.9995400669566464,
+              -0.02938818130586754
+            ],
+            "selected_reprojection_rms_px": 0.16974235228162074
+          }
+        },
+        "ippe_branch": {
+          "solution_count": 2,
+          "reprojection_gap_px": 0.15041772420953642,
+          "gravity_separation_deg": 8.587572680045092
+        }
+      },
+      {
+        "frame": "frame_000004",
+        "shape": {
+          "obliquity_proxy": 0.019693084505149318,
+          "signed_obliquity_proxy": 0.019693084505149318,
+          "trapezoid_asymmetry": 0.004353805992147746,
+          "minimum_outer_edge_px": 135.81253799564337,
+          "minimum_margin_px": 62.94581131911298,
+          "board_center_x_px": 335.9259420817977,
+          "corner_count": 24,
+          "homography_rms_px": 0.11035958115200054
+        },
+        "core_gravity": [
+          -0.007736369778551507,
+          -0.9999632479982234,
+          0.0036947578395422767
+        ],
+        "core_solver_disagreement_deg": 2.7213638755969463,
+        "methods": {
+          "ITERATIVE": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.008087455847332174,
+              -0.99989079354509,
+              -0.012369076024002746
+            ],
+            "selected_reprojection_rms_px": 0.16696285490758608
+          },
+          "IPPE": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.007026246387068902,
+              -0.9993588111542595,
+              0.035108381193858756
+            ],
+            "selected_reprojection_rms_px": 0.20484849575323894
+          },
+          "SQPNP": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.00808967565189522,
+              -0.9998993217180796,
+              -0.011657768893379494
+            ],
+            "selected_reprojection_rms_px": 0.16696034816182456
+          },
+          "EPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.00833461374567601,
+              -0.9986205810069927,
+              -0.05184080827848535
+            ],
+            "selected_reprojection_rms_px": 0.1910126954370423
+          }
+        },
+        "ippe_branch": {
+          "solution_count": 2,
+          "reprojection_gap_px": 0.12163185013260425,
+          "gravity_separation_deg": 10.190855408948298
+        }
+      },
+      {
+        "frame": "frame_000005",
+        "shape": {
+          "obliquity_proxy": 0.02130499697831775,
+          "signed_obliquity_proxy": 0.02130499697831775,
+          "trapezoid_asymmetry": 0.004699056232839103,
+          "minimum_outer_edge_px": 135.80403886181958,
+          "minimum_margin_px": 63.65940362839309,
+          "board_center_x_px": 336.8291034014503,
+          "corner_count": 24,
+          "homography_rms_px": 0.10880733256960515
+        },
+        "core_gravity": [
+          -0.006213950158125788,
+          -0.9998953235877945,
+          0.013066318941912786
+        ],
+        "core_solver_disagreement_deg": 1.5922792260283947,
+        "methods": {
+          "ITERATIVE": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.006665122176687197,
+              -0.999970830626312,
+              0.0037301531997493134
+            ],
+            "selected_reprojection_rms_px": 0.14322321213295552
+          },
+          "IPPE": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.005312139095261509,
+              -0.9994901818019103,
+              0.03148265649237821
+            ],
+            "selected_reprojection_rms_px": 0.17293293603687068
+          },
+          "SQPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.006663003932355805,
+              -0.9999698703328224,
+              0.0039828137234845995
+            ],
+            "selected_reprojection_rms_px": 0.1432234378085984
+          },
+          "EPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.007130702244629333,
+              -0.9997054291256761,
+              -0.023199311673976687
+            ],
+            "selected_reprojection_rms_px": 0.1618941750989238
+          }
+        },
+        "ippe_branch": {
+          "solution_count": 2,
+          "reprojection_gap_px": 0.16961895579840244,
+          "gravity_separation_deg": 9.722473182034719
+        }
+      },
+      {
+        "frame": "frame_000006",
+        "shape": {
+          "obliquity_proxy": 0.0374764176220634,
+          "signed_obliquity_proxy": 0.0374764176220634,
+          "trapezoid_asymmetry": 0.00826691873920135,
+          "minimum_outer_edge_px": 135.54695595654084,
+          "minimum_margin_px": 63.81080063650256,
+          "board_center_x_px": 336.855219616177,
+          "corner_count": 24,
+          "homography_rms_px": 0.10606732016769146
+        },
+        "core_gravity": [
+          -0.007032986376904683,
+          -0.9999752329550279,
+          0.0002656673865449695
+        ],
+        "core_solver_disagreement_deg": 2.049515513069322,
+        "methods": {
+          "ITERATIVE": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.007586848680849371,
+              -0.999901581497193,
+              -0.011801145982755498
+            ],
+            "selected_reprojection_rms_px": 0.1545066869124864
+          },
+          "IPPE": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.005921626606483053,
+              -0.9996961376340366,
+              0.02392836680433664
+            ],
+            "selected_reprojection_rms_px": 0.20466538601503143
+          },
+          "SQPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.007587523181657455,
+              -0.9999070222289381,
+              -0.011330330499396293
+            ],
+            "selected_reprojection_rms_px": 0.1545051724507429
+          },
+          "EPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.007809349486799274,
+              -0.9993208518232266,
+              -0.036011792122774076
+            ],
+            "selected_reprojection_rms_px": 0.17780159729470743
+          }
+        },
+        "ippe_branch": {
+          "solution_count": 2,
+          "reprojection_gap_px": 0.14773045609586366,
+          "gravity_separation_deg": 8.83472704404068
+        }
+      },
+      {
+        "frame": "frame_000007",
+        "shape": {
+          "obliquity_proxy": 0.0337413991875002,
+          "signed_obliquity_proxy": 0.0337413991875002,
+          "trapezoid_asymmetry": 0.007426607240287605,
+          "minimum_outer_edge_px": 135.40518511575004,
+          "minimum_margin_px": 63.94828314722853,
+          "board_center_x_px": 337.0970413140428,
+          "corner_count": 21,
+          "homography_rms_px": 0.09933171573011956
+        },
+        "core_gravity": [
+          -0.006467040260178872,
+          -0.999812969692164,
+          0.018226437545752563
+        ],
+        "core_solver_disagreement_deg": 1.0552200276786101,
+        "methods": {
+          "ITERATIVE": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.006959924308530283,
+              -0.9999029089824757,
+              0.012071953528845209
+            ],
+            "selected_reprojection_rms_px": 0.13484222990893094
+          },
+          "IPPE": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.005478052250482191,
+              -0.9995220381751948,
+              0.030425090725344408
+            ],
+            "selected_reprojection_rms_px": 0.16765679251007173
+          },
+          "SQPNP": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.0069624172984686684,
+              -0.9999015786538986,
+              0.012180219653334204
+            ],
+            "selected_reprojection_rms_px": 0.13484253681457686
+          },
+          "EPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.007386593650487658,
+              -0.9996337488022047,
+              -0.02603471701197017
+            ],
+            "selected_reprojection_rms_px": 0.16617969970910398
+          }
+        },
+        "ippe_branch": {
+          "solution_count": 2,
+          "reprojection_gap_px": 0.16299927710054404,
+          "gravity_separation_deg": 10.170931920736566
+        }
+      },
+      {
+        "frame": "frame_000008",
+        "shape": {
+          "obliquity_proxy": 0.036038298330072695,
+          "signed_obliquity_proxy": 0.036038298330072695,
+          "trapezoid_asymmetry": 0.007941385742904088,
+          "minimum_outer_edge_px": 135.49257730180483,
+          "minimum_margin_px": 63.93421362903639,
+          "board_center_x_px": 337.1350201120265,
+          "corner_count": 22,
+          "homography_rms_px": 0.10106248277022227
+        },
+        "core_gravity": [
+          -0.006712910080083059,
+          -0.9999200788904705,
+          0.010713200732359584
+        ],
+        "core_solver_disagreement_deg": 1.3923043034586682,
+        "methods": {
+          "ITERATIVE": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.0071761186028727565,
+              -0.9999712990292837,
+              0.0024299052418558943
+            ],
+            "selected_reprojection_rms_px": 0.14065282356882686
+          },
+          "IPPE": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.005787295825411744,
+              -0.9996270743766748,
+              0.02668743862118114
+            ],
+            "selected_reprojection_rms_px": 0.1717331691409992
+          },
+          "SQPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.007174025770495875,
+              -0.9999697054155988,
+              0.0030201995438831346
+            ],
+            "selected_reprojection_rms_px": 0.14065071128234719
+          },
+          "EPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.007542297376421977,
+              -0.9995976568044408,
+              -0.027342974625249306
+            ],
+            "selected_reprojection_rms_px": 0.16576212142617952
+          }
+        },
+        "ippe_branch": {
+          "solution_count": 2,
+          "reprojection_gap_px": 0.16970772026868428,
+          "gravity_separation_deg": 9.469569014629512
+        }
+      },
+      {
+        "frame": "frame_000009",
+        "shape": {
+          "obliquity_proxy": 0.030505912847857093,
+          "signed_obliquity_proxy": 0.030505912847857093,
+          "trapezoid_asymmetry": 0.006722673358954715,
+          "minimum_outer_edge_px": 135.5098813709631,
+          "minimum_margin_px": 63.779680826330114,
+          "board_center_x_px": 337.1012018033016,
+          "corner_count": 22,
+          "homography_rms_px": 0.09483948851669192
+        },
+        "core_gravity": [
+          -0.006305220571478091,
+          -0.9998707286802648,
+          0.014790879687877113
+        ],
+        "core_solver_disagreement_deg": 1.8571342153069443,
+        "methods": {
+          "ITERATIVE": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.006721404936737907,
+              -0.9999703534441147,
+              0.003756986628786089
+            ],
+            "selected_reprojection_rms_px": 0.15055889554646407
+          },
+          "IPPE": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.005472533254284818,
+              -0.9993318137334638,
+              0.03613830986593814
+            ],
+            "selected_reprojection_rms_px": 0.1761876803308497
+          },
+          "SQPNP": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.006719563099030316,
+              -0.9999674225851262,
+              0.004472274613435079
+            ],
+            "selected_reprojection_rms_px": 0.15055593941126985
+          },
+          "EPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.007058102817458388,
+              -0.9992263774010078,
+              -0.038688885880532924
+            ],
+            "selected_reprojection_rms_px": 0.1793753092552128
+          }
+        },
+        "ippe_branch": {
+          "solution_count": 2,
+          "reprojection_gap_px": 0.15382740598356065,
+          "gravity_separation_deg": 10.56955990785685
+        }
+      },
+      {
+        "frame": "frame_000010",
+        "shape": {
+          "obliquity_proxy": 0.02853809629875606,
+          "signed_obliquity_proxy": 0.02853809629875606,
+          "trapezoid_asymmetry": 0.006298311686934363,
+          "minimum_outer_edge_px": 135.56448703825237,
+          "minimum_margin_px": 63.90113795480914,
+          "board_center_x_px": 337.1784425613687,
+          "corner_count": 24,
+          "homography_rms_px": 0.10133827941460187
+        },
+        "core_gravity": [
+          -0.006413627788249312,
+          -0.9999051698955744,
+          0.01218673847656763
+        ],
+        "core_solver_disagreement_deg": 2.123134674817492,
+        "methods": {
+          "ITERATIVE": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.00688590280306715,
+              -0.9999762555755561,
+              -0.00026949522608001026
+            ],
+            "selected_reprojection_rms_px": 0.15811245200976742
+          },
+          "IPPE": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.005466217024092981,
+              -0.9993095088295136,
+              0.036750864402918894
+            ],
+            "selected_reprojection_rms_px": 0.1966583333755423
+          },
+          "SQPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.006885854965369112,
+              -0.9999762895317242,
+              7.331958213416422e-05
+            ],
+            "selected_reprojection_rms_px": 0.15811282610117863
+          },
+          "EPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.0071984373850329545,
+              -0.9992664348659523,
+              -0.037613490259522674
+            ],
+            "selected_reprojection_rms_px": 0.18652052750464124
+          }
+        },
+        "ippe_branch": {
+          "solution_count": 2,
+          "reprojection_gap_px": 0.15723540051421434,
+          "gravity_separation_deg": 10.300356412743893
+        }
+      }
+    ],
+    "capture_or_registration_performed": false
+  },
+  "W03": {
+    "schema_version": "stage3a_oblique_gravity_preview.v1",
+    "decision": "TOO_FRONTAL",
+    "confidence": "LOW",
+    "confidence_value_0_1": 0.4060615085386368,
+    "action": "Move the vehicle sideways more and aim back at the fixed board.",
+    "valid_frame_count": 11,
+    "input_frame_count": 11,
+    "shape": {
+      "obliquity_proxy": {
+        "count": 11,
+        "min": 0.0010820848384968528,
+        "p05": 0.004798008003927562,
+        "median": 0.030879186975210762,
+        "p95": 0.061605860309927984,
+        "max": 0.07066621902986157,
+        "rms": 0.03502387020673893
+      },
+      "signed_obliquity_proxy": {
+        "count": 11,
+        "min": 0.0010820848384968528,
+        "p05": 0.004798008003927562,
+        "median": 0.030879186975210762,
+        "p95": 0.061605860309927984,
+        "max": 0.07066621902986157,
+        "rms": 0.03502387020673893
+      },
+      "trapezoid_asymmetry": {
+        "count": 11,
+        "min": 0.0001904914033413808,
+        "p05": 0.0008513584620999803,
+        "median": 0.0055074136359252145,
+        "p95": 0.010998537111022465,
+        "max": 0.012611928391572559,
+        "rms": 0.00625418424303374
+      },
+      "minimum_outer_edge_px": {
+        "count": 11,
+        "min": 109.28716630446549,
+        "p05": 109.3843075736172,
+        "median": 109.73397235206711,
+        "p95": 109.959286923326,
+        "max": 110.00858636854127,
+        "rms": 109.72539559957032
+      },
+      "minimum_margin_px": {
+        "count": 11,
+        "min": 76.64749930630515,
+        "p05": 76.68903609729722,
+        "median": 76.88730169313924,
+        "p95": 77.12668236800786,
+        "max": 77.15007845990355,
+        "rms": 76.89234504504024
+      },
+      "board_center_x_px": {
+        "count": 11,
+        "min": 342.89971574245465,
+        "p05": 342.944459898613,
+        "median": 343.6813884358984,
+        "p95": 344.61852466858795,
+        "max": 344.6975006910121,
+        "rms": 343.78002000742794
+      },
+      "corner_count": {
+        "count": 11,
+        "min": 12.0,
+        "p05": 12.5,
+        "median": 18.0,
+        "p95": 20.0,
+        "max": 20.0,
+        "rms": 16.95448452340989
+      },
+      "homography_rms_px": {
+        "count": 11,
+        "min": 0.07388182808591134,
+        "p05": 0.07962405531601466,
+        "median": 0.0986646060245369,
+        "p95": 0.12826569875725471,
+        "max": 0.1334204554769858,
+        "rms": 0.10241179928802463
+      }
+    },
+    "solver": {
+      "core_methods": [
+        "ITERATIVE",
+        "IPPE",
+        "SQPNP"
+      ],
+      "epnp_role": "diagnostic_only",
+      "aggregate_gravity_by_method": {
+        "ITERATIVE": [
+          -0.003849671091430106,
+          -0.9998380997838728,
+          0.017577094556896784
+        ],
+        "IPPE": [
+          -0.0024585507144522776,
+          -0.999384616348166,
+          0.034990629245748896
+        ],
+        "SQPNP": [
+          -0.0038570185490640328,
+          -0.999830976923834,
+          0.0179761228145464
+        ],
+        "EPNP": [
+          -0.004527777816924117,
+          -0.9994444031265226,
+          -0.033020967386035695
+        ]
+      },
+      "core_aggregate_disagreement_deg": 1.0012506319915608,
+      "frame_to_frame_gravity_spread_deg": {
+        "count": 11,
+        "min": 0.06621677354443022,
+        "p05": 0.10026084781282818,
+        "median": 0.7329865531413188,
+        "p95": 1.3395289113448177,
+        "max": 1.380850317858185,
+        "rms": 0.8002236915669786
+      },
+      "lopo_gravity_change_from_nominal_deg": {
+        "count": 0
+      }
+    },
+    "gravity_authority": null,
+    "frames": [
+      {
+        "frame": "frame_000000",
+        "shape": {
+          "obliquity_proxy": 0.01416134377349865,
+          "signed_obliquity_proxy": 0.01416134377349865,
+          "trapezoid_asymmetry": 0.002528676710972448,
+          "minimum_outer_edge_px": 110.00858636854127,
+          "minimum_margin_px": 76.7305728882893,
+          "board_center_x_px": 342.9892040547713,
+          "corner_count": 18,
+          "homography_rms_px": 0.12311094203752361
+        },
+        "core_gravity": [
+          -0.003302197256363185,
+          -0.9996902560114025,
+          0.02466753998955833
+        ],
+        "core_solver_disagreement_deg": 0.6088115005451754,
+        "methods": {
+          "ITERATIVE": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.00354393701093036,
+              -0.9997715651878135,
+              0.02107742755584859
+            ],
+            "selected_reprojection_rms_px": 0.13625618316295976
+          },
+          "IPPE": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.0028174695462597358,
+              -0.9994942612488528,
+              0.03167465226275052
+            ],
+            "selected_reprojection_rms_px": 0.1393697320634116
+          },
+          "SQPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.003545062908252822,
+              -0.9997679160190169,
+              0.021249626537150883
+            ],
+            "selected_reprojection_rms_px": 0.136257091212639
+          },
+          "EPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.004519866264861609,
+              -0.999749739391531,
+              -0.02190957314768298
+            ],
+            "selected_reprojection_rms_px": 0.15557785433828208
+          }
+        },
+        "ippe_branch": {
+          "solution_count": 2,
+          "reprojection_gap_px": 0.14618841534232044,
+          "gravity_separation_deg": 10.899646740283153
+        }
+      },
+      {
+        "frame": "frame_000001",
+        "shape": {
+          "obliquity_proxy": 0.008513931169358271,
+          "signed_obliquity_proxy": 0.008513931169358271,
+          "trapezoid_asymmetry": 0.0015122255208585799,
+          "minimum_outer_edge_px": 109.85730081339575,
+          "minimum_margin_px": 76.64749930630515,
+          "board_center_x_px": 342.89971574245465,
+          "corner_count": 20,
+          "homography_rms_px": 0.08536628254611797
+        },
+        "core_gravity": [
+          -0.0031098855259630667,
+          -0.9996348356681204,
+          0.026842576828344147
+        ],
+        "core_solver_disagreement_deg": 1.0569706421751228,
+        "methods": {
+          "ITERATIVE": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.003947004268847111,
+              -0.9997804099590678,
+              0.020580403771063453
+            ],
+            "selected_reprojection_rms_px": 0.13005512025134128
+          },
+          "IPPE": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.0014553803928465886,
+              -0.9992439610984241,
+              0.038850843957929156
+            ],
+            "selected_reprojection_rms_px": 0.1456471026354765
+          },
+          "SQPNP": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.00392692864259888,
+              -0.9997697948290107,
+              0.021093519834153
+            ],
+            "selected_reprojection_rms_px": 0.1300543897061548
+          },
+          "EPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.006042310567683594,
+              -0.9998863316529729,
+              -0.01381355336489919
+            ],
+            "selected_reprojection_rms_px": 0.15926694789440593
+          }
+        },
+        "ippe_branch": {
+          "solution_count": 2,
+          "reprojection_gap_px": 0.08981071716628042,
+          "gravity_separation_deg": 11.184933253762669
+        }
+      },
+      {
+        "frame": "frame_000002",
+        "shape": {
+          "obliquity_proxy": 0.03123615224854631,
+          "signed_obliquity_proxy": 0.03123615224854631,
+          "trapezoid_asymmetry": 0.005590220969896167,
+          "minimum_outer_edge_px": 109.67825507772415,
+          "minimum_margin_px": 76.88009975135977,
+          "board_center_x_px": 343.1997984482431,
+          "corner_count": 13,
+          "homography_rms_px": 0.07388182808591134
+        },
+        "core_gravity": [
+          -0.003810358658822774,
+          -0.9998599863752228,
+          0.016293827439566252
+        ],
+        "core_solver_disagreement_deg": 1.7316827049216925,
+        "methods": {
+          "ITERATIVE": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.0038093143339111165,
+              -0.9999740921805548,
+              0.00610770758803268
+            ],
+            "selected_reprojection_rms_px": 0.10631460474817091
+          },
+          "IPPE": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.003799534788908287,
+              -0.9993328675439445,
+              0.036323317329026765
+            ],
+            "selected_reprojection_rms_px": 0.11606106605048377
+          },
+          "SQPNP": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.0038210794980954557,
+              -0.9999719267172639,
+              0.006445551088330278
+            ],
+            "selected_reprojection_rms_px": 0.10631529859115622
+          },
+          "EPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.004026678806149386,
+              -0.9983906429937701,
+              -0.05656774558243003
+            ],
+            "selected_reprojection_rms_px": 0.1622125872509954
+          }
+        },
+        "ippe_branch": {
+          "solution_count": 2,
+          "reprojection_gap_px": 0.19277017084716008,
+          "gravity_separation_deg": 11.724594883188402
+        }
+      },
+      {
+        "frame": "frame_000003",
+        "shape": {
+          "obliquity_proxy": 0.0010820848384968528,
+          "signed_obliquity_proxy": 0.0010820848384968528,
+          "trapezoid_asymmetry": 0.0001904914033413808,
+          "minimum_outer_edge_px": 109.90998747811075,
+          "minimum_margin_px": 76.88730169313924,
+          "board_center_x_px": 343.6813884358984,
+          "corner_count": 20,
+          "homography_rms_px": 0.11643761908607571
+        },
+        "core_gravity": [
+          -0.0031090494425312924,
+          -0.9993361164312329,
+          0.0362995896354946
+        ],
+        "core_solver_disagreement_deg": 1.6018908098639064,
+        "methods": {
+          "ITERATIVE": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.0034634947115373006,
+              -0.9996327085605474,
+              0.026878470571943883
+            ],
+            "selected_reprojection_rms_px": 0.1498825872303772
+          },
+          "IPPE": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.002404204100830162,
+              -0.9984948641729386,
+              0.05479257269837172
+            ],
+            "selected_reprojection_rms_px": 0.16204849533159063
+          },
+          "SQPNP": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.0034586491849846637,
+              -0.9996235278639671,
+              0.02721838141058238
+            ],
+            "selected_reprojection_rms_px": 0.14988471442244572
+          },
+          "EPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.005069834437072249,
+              -0.9996274471673863,
+              -0.026819091117989503
+            ],
+            "selected_reprojection_rms_px": 0.17493045847907984
+          }
+        },
+        "ippe_branch": {
+          "solution_count": 2,
+          "reprojection_gap_px": 0.0691826669997036,
+          "gravity_separation_deg": 12.40140845331583
+        }
+      },
+      {
+        "frame": "frame_000004",
+        "shape": {
+          "obliquity_proxy": 0.020149404688523685,
+          "signed_obliquity_proxy": 0.020149404688523685,
+          "trapezoid_asymmetry": 0.0035956007635828185,
+          "minimum_outer_edge_px": 109.73397235206711,
+          "minimum_margin_px": 76.78623136185463,
+          "board_center_x_px": 343.2518685502448,
+          "corner_count": 15,
+          "homography_rms_px": 0.09807566876334703
+        },
+        "core_gravity": [
+          -0.0029232880047152217,
+          -0.9996625363933724,
+          0.025812162226569024
+        ],
+        "core_solver_disagreement_deg": 1.3633397392626567,
+        "methods": {
+          "ITERATIVE": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.0032049171314514247,
+              -0.9998353193515522,
+              0.017862325810488976
+            ],
+            "selected_reprojection_rms_px": 0.13129951924331223
+          },
+          "IPPE": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.002352585476701203,
+              -0.9991302924246217,
+              0.041630807115221304
+            ],
+            "selected_reprojection_rms_px": 0.14018689692254685
+          },
+          "SQPNP": {
+            "solution_count": 3,
+            "selected_gravity": [
+              -0.0032118114554305147,
+              -0.9998339334932594,
+              0.017938497779110458
+            ],
+            "selected_reprojection_rms_px": 0.13130029732423468
+          },
+          "EPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.00401626111015397,
+              -0.9990510867313711,
+              -0.04336814208104358
+            ],
+            "selected_reprojection_rms_px": 0.16528366512310208
+          }
+        },
+        "ippe_branch": {
+          "solution_count": 2,
+          "reprojection_gap_px": 0.13942108885564478,
+          "gravity_separation_deg": 12.748460854768584
+        }
+      },
+      {
+        "frame": "frame_000005",
+        "shape": {
+          "obliquity_proxy": 0.041629749597938685,
+          "signed_obliquity_proxy": 0.041629749597938685,
+          "trapezoid_asymmetry": 0.007439655823499503,
+          "minimum_outer_edge_px": 109.73039849827668,
+          "minimum_margin_px": 76.8209175327799,
+          "board_center_x_px": 343.51755469860467,
+          "corner_count": 18,
+          "homography_rms_px": 0.09898088125527926
+        },
+        "core_gravity": [
+          -0.004915797961284597,
+          -0.999959288651094,
+          0.007566767526616944
+        ],
+        "core_solver_disagreement_deg": 1.7748350617291473,
+        "methods": {
+          "ITERATIVE": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.005664016328165062,
+              -0.9999801511074815,
+              -0.0027597663112667345
+            ],
+            "selected_reprojection_rms_px": 0.1402059387748409
+          },
+          "IPPE": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.003424203958540694,
+              -0.9995983445636174,
+              0.028132265691302775
+            ],
+            "selected_reprojection_rms_px": 0.16334608717454685
+          },
+          "SQPNP": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.005657605632205937,
+              -0.999980418787334,
+              -0.0026746103302570617
+            ],
+            "selected_reprojection_rms_px": 0.1402050610854462
+          },
+          "EPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.006661661524507135,
+              -0.9994458152239837,
+              -0.0326141793856529
+            ],
+            "selected_reprojection_rms_px": 0.1745037952593128
+          }
+        },
+        "ippe_branch": {
+          "solution_count": 2,
+          "reprojection_gap_px": 0.08102310770750104,
+          "gravity_separation_deg": 9.678978006329906
+        }
+      },
+      {
+        "frame": "frame_000006",
+        "shape": {
+          "obliquity_proxy": 0.052545501589994395,
+          "signed_obliquity_proxy": 0.052545501589994395,
+          "trapezoid_asymmetry": 0.009385145830472372,
+          "minimum_outer_edge_px": 109.48144884276891,
+          "minimum_margin_px": 77.15007845990355,
+          "board_center_x_px": 344.35267780412283,
+          "corner_count": 14,
+          "homography_rms_px": 0.09654463448299522
+        },
+        "core_gravity": [
+          -0.003494116604602571,
+          -0.9999937258471173,
+          -0.0005825938152434778
+        ],
+        "core_solver_disagreement_deg": 1.1857760149941408,
+        "methods": {
+          "ITERATIVE": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.004085597952207428,
+              -0.999963346173187,
+              -0.007524240791999376
+            ],
+            "selected_reprojection_rms_px": 0.14505383549128953
+          },
+          "IPPE": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.002294926617333367,
+              -0.9999116441137713,
+              0.013093405879139501
+            ],
+            "selected_reprojection_rms_px": 0.16161883522315704
+          },
+          "SQPNP": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.004101331289842691,
+              -0.9999648206713694,
+              -0.0073168641730568685
+            ],
+            "selected_reprojection_rms_px": 0.14505445534216496
+          },
+          "EPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.0054488470977783554,
+              -0.9999000695072049,
+              -0.013044579900934387
+            ],
+            "selected_reprojection_rms_px": 0.1800972958726982
+          }
+        },
+        "ippe_branch": {
+          "solution_count": 2,
+          "reprojection_gap_px": 0.21028543658118234,
+          "gravity_separation_deg": 8.864752217091825
+        }
+      },
+      {
+        "frame": "frame_000007",
+        "shape": {
+          "obliquity_proxy": 0.07066621902986157,
+          "signed_obliquity_proxy": 0.07066621902986157,
+          "trapezoid_asymmetry": 0.012611928391572559,
+          "minimum_outer_edge_px": 109.28716630446549,
+          "minimum_margin_px": 76.90898032976547,
+          "board_center_x_px": 343.9601504230363,
+          "corner_count": 12,
+          "homography_rms_px": 0.1334204554769858
+        },
+        "core_gravity": [
+          -0.005291930757254215,
+          -0.9996281746116259,
+          0.02674898112992754
+        ],
+        "core_solver_disagreement_deg": 0.7847392990852303,
+        "methods": {
+          "ITERATIVE": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.005759834346919422,
+              -0.9995236227065718,
+              0.03032081726845223
+            ],
+            "selected_reprojection_rms_px": 0.15523705200208407
+          },
+          "IPPE": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.004269483816804579,
+              -0.999825942110244,
+              0.018161965513152422
+            ],
+            "selected_reprojection_rms_px": 0.1621921506415374
+          },
+          "SQPNP": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.0058461743844783216,
+              -0.9994783422312525,
+              0.03176264560349874
+            ],
+            "selected_reprojection_rms_px": 0.15524252144464135
+          },
+          "EPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.0016719152036973417,
+              -0.9962603410603802,
+              -0.08638597993775812
+            ],
+            "selected_reprojection_rms_px": 0.2109531750770304
+          }
+        },
+        "ippe_branch": {
+          "solution_count": 2,
+          "reprojection_gap_px": 0.16549941026886777,
+          "gravity_separation_deg": 10.385007948488889
+        }
+      },
+      {
+        "frame": "frame_000008",
+        "shape": {
+          "obliquity_proxy": 0.030879186975210762,
+          "signed_obliquity_proxy": 0.030879186975210762,
+          "trapezoid_asymmetry": 0.0055074136359252145,
+          "minimum_outer_edge_px": 109.83951970644608,
+          "minimum_margin_px": 76.94845004635404,
+          "board_center_x_px": 344.5395486461638,
+          "corner_count": 16,
+          "homography_rms_px": 0.0986646060245369
+        },
+        "core_gravity": [
+          -0.002308206790187181,
+          -0.9999656893553808,
+          0.00795564538123008
+        ],
+        "core_solver_disagreement_deg": 0.7742110033905714,
+        "methods": {
+          "ITERATIVE": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.0030581137929424677,
+              -0.9999898215347574,
+              0.003317343351797378
+            ],
+            "selected_reprojection_rms_px": 0.12905656516047706
+          },
+          "IPPE": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.0008213080520163094,
+              -0.9998611628973192,
+              0.016642727622125403
+            ],
+            "selected_reprojection_rms_px": 0.14483731800985855
+          },
+          "SQPNP": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.003045063837345341,
+              -0.99998773373372,
+              0.003906400942724346
+            ],
+            "selected_reprojection_rms_px": 0.12905621970682132
+          },
+          "EPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.004305034311336297,
+              -0.9998226090889127,
+              -0.018336221917765284
+            ],
+            "selected_reprojection_rms_px": 0.14567827808684675
+          }
+        },
+        "ippe_branch": {
+          "solution_count": 2,
+          "reprojection_gap_px": 0.07655825410206712,
+          "gravity_separation_deg": 8.947701756021852
+        }
+      },
+      {
+        "frame": "frame_000009",
+        "shape": {
+          "obliquity_proxy": 0.01056671708446248,
+          "signed_obliquity_proxy": 0.01056671708446248,
+          "trapezoid_asymmetry": 0.001883481073041166,
+          "minimum_outer_edge_px": 109.82711325786084,
+          "minimum_margin_px": 76.95094442886645,
+          "board_center_x_px": 344.6975006910121,
+          "corner_count": 20,
+          "homography_rms_px": 0.09915111447085345
+        },
+        "core_gravity": [
+          -0.0028705660266387517,
+          -0.9991585303388237,
+          0.040914436350124365
+        ],
+        "core_solver_disagreement_deg": 1.378529430305226,
+        "methods": {
+          "ITERATIVE": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.0032063617579213815,
+              -0.99945800292595,
+              0.03276308336450104
+            ],
+            "selected_reprojection_rms_px": 0.13662261509537366
+          },
+          "IPPE": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.002202552517527129,
+              -0.9983844301946939,
+              0.05677744540945734
+            ],
+            "selected_reprojection_rms_px": 0.1459765918845474
+          },
+          "SQPNP": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.003202239676896763,
+              -0.9994437632959144,
+              0.03319502477709416
+            ],
+            "selected_reprojection_rms_px": 0.13662392271496668
+          },
+          "EPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.004805088804721359,
+              -0.9991927235591836,
+              -0.03988498850394202
+            ],
+            "selected_reprojection_rms_px": 0.16960290938943226
+          }
+        },
+        "ippe_branch": {
+          "solution_count": 2,
+          "reprojection_gap_px": 0.03891423273329203,
+          "gravity_separation_deg": 12.629038756260616
+        }
+      },
+      {
+        "frame": "frame_000010",
+        "shape": {
+          "obliquity_proxy": 0.03584032675801169,
+          "signed_obliquity_proxy": 0.03584032675801169,
+          "trapezoid_asymmetry": 0.006402929568259263,
+          "minimum_outer_edge_px": 109.62369239784555,
+          "minimum_margin_px": 77.10328627611216,
+          "board_center_x_px": 344.4844570509326,
+          "corner_count": 18,
+          "homography_rms_px": 0.08835388523022852
+        },
+        "core_gravity": [
+          -0.002134822489434211,
+          -0.9989334133629131,
+          0.046124594307788265
+        ],
+        "core_solver_disagreement_deg": 0.24712025865870524,
+        "methods": {
+          "ITERATIVE": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.0025987347628078417,
+              -0.9989970134006243,
+              0.0447013847018799
+            ],
+            "selected_reprojection_rms_px": 0.10784287663400845
+          },
+          "IPPE": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.001199594204897751,
+              -0.9988089800275578,
+              0.04877686326582832
+            ],
+            "selected_reprojection_rms_px": 0.12403701893657493
+          },
+          "SQPNP": {
+            "solution_count": 2,
+            "selected_gravity": [
+              -0.0026061257921560616,
+              -0.9989883000835527,
+              0.04489526037934528
+            ],
+            "selected_reprojection_rms_px": 0.10784419823771524
+          },
+          "EPNP": {
+            "solution_count": 1,
+            "selected_gravity": [
+              -0.0032261843458033243,
+              -0.9999407141817936,
+              -0.010399993085162115
+            ],
+            "selected_reprojection_rms_px": 0.16341050128488935
+          }
+        },
+        "ippe_branch": {
+          "solution_count": 2,
+          "reprojection_gap_px": 0.15970219923872336,
+          "gravity_separation_deg": 12.695275780245423
+        }
+      }
+    ],
+    "capture_or_registration_performed": false
+  }
+}

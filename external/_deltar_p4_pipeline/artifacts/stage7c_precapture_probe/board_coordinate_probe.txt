@@ -1,0 +1,19 @@
+Stage 7C pre-capture board coordinate probe
+verdict: PASS
+OpenCV: 4.10.0
+manifest: C:\ec\_deltar_p4_pipeline\board_assets\board_manifest.json
+manifest SHA256: db5dafdf1c1dd5208f883850919d0182efaf9a20f9b06d6a6debf39735cbd37a
+board: 7x5 squares, square=25.0 mm, legacy_pattern=False
+first object points (m): [[0.02500000037252903, 0.02500000037252903, 0.0], [0.05000000074505806, 0.02500000037252903, 0.0], [0.07500000298023224, 0.02500000037252903, 0.0], [0.10000000149011612, 0.02500000037252903, 0.0], [0.125, 0.02500000037252903, 0.0], [0.15000000596046448, 0.02500000037252903, 0.0], [0.02500000037252903, 0.05000000074505806, 0.0], [0.05000000074505806, 0.05000000074505806, 0.0]]
+ID0: {'id': 0, 'object_point_m': [0.02500000037252903, 0.02500000037252903, 0.0]}
+same-row right: {'id': 1, 'object_point_m': [0.05000000074505806, 0.02500000037252903, 0.0], 'delta_from_id0_m': [0.02500000037252903, 0.0, 0.0]}
+next row: {'id': 6, 'object_point_m': [0.02500000037252903, 0.05000000074505806, 0.0], 'delta_from_id0_m': [0.0, 0.02500000037252903, 0.0]}
++X_board: toward printed-board right: +X object increment matches increasing x pixel in board.generateImage()
++Y_board: toward printed-board down: +Y object increment matches increasing y pixel in board.generateImage()
++Z_board: right-hand +X cross +Y; through the printed board away from the Camera/vehicle when the printed front faces it
+R_world_from_board: [[1.0, 0.0, 0.0], [0.0, 0.0, 1.0], [0.0, -1.0, 0.0]]
+mapping consistent with actual object points: True
+front/back world rotation separation: 179.999999683 deg
+front passes mechanical gate: True
+back passes mechanical gate: False
+front/back conclusion: tvec.z>0 alone does not encode printed front/back. The full solved rotation is preserved by the world mapping: the obvious flip differs by 180 degrees and fails the existing absolute roll/pitch/yaw <=5 degree formal gates.

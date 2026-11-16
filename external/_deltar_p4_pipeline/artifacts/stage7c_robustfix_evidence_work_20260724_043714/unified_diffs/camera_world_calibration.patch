@@ -1,0 +1,112 @@
+﻿git.exe : warning: in the working copy of 'C:\ec\_deltar_p4_pipeline\artifacts\stage7c_robustfix_evidence_work_20260724
+_043714\before_after\before\src\deltar_p4_pipeline\camera_world_calibration.py', LF will be replaced by CRLF the next t
+ime Git touches it
+At line:2 char:15
++ ... iffOutput = & git diff --no-index -- 'C:\ec\_deltar_p4_pipeline\artif ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (warning: in the... Git touches it:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+warning: in the working copy of 'C:\ec\_deltar_p4_pipeline\artifacts\stage7c_robustfix_evidence_work_20260724_043714\be
+fore_after\after\src\deltar_p4_pipeline\camera_world_calibration.py', LF will be replaced by CRLF the next time Git tou
+ches it
+diff --git "a/C:\\ec\\_deltar_p4_pipeline\\artifacts\\stage7c_robustfix_evidence_work_20260724_043714\\before_after\\before\\src\\deltar_p4_pipeline\\camera_world_calibration.py" "b/C:\\ec\\_deltar_p4_pipeline\\artifacts\\stage7c_robustfix_evidence_work_20260724_043714\\before_after\\after\\src\\deltar_p4_pipeline\\camera_world_calibration.py"
+index 81a38b3..d7dd483 100644
+--- "a/C:\\ec\\_deltar_p4_pipeline\\artifacts\\stage7c_robustfix_evidence_work_20260724_043714\\before_after\\before\\src\\deltar_p4_pipeline\\camera_world_calibration.py"
++++ "b/C:\\ec\\_deltar_p4_pipeline\\artifacts\\stage7c_robustfix_evidence_work_20260724_043714\\before_after\\after\\src\\deltar_p4_pipeline\\camera_world_calibration.py"
+@@ -38,6 +38,9 @@ from .camera_world_contracts import (
+     FROZEN_CAMERA_TOF_PROFILE,
+     FROZEN_CAMERA_TOF_PROFILE_ID,
+     MATRIX_CONVENTION,
++    MIN_CAPTURED_FRAME_COUNT,
++    MIN_ORIENTATION_INLIER_COUNT,
++    MIN_ORIENTATION_INLIERS_PER_POSE,
+     PROFILE_SCHEMA,
+     REPORT_SCHEMA,
+     TOOL_VERSION,
+@@ -896,6 +899,7 @@ def solve_world_capture(
+         },
+     }
+     valid_frame_count = int(np.count_nonzero(inlier_mask))
++    base_valid_frame_count = len(all_frames)
+     frame_count = sum(pose.total_frame_count for pose in poses)
+     capture_summary = {
+         "pose_count": len(poses),
+@@ -903,11 +907,14 @@ def solve_world_capture(
+         "valid_frame_count": valid_frame_count,
+         "rejected_frame_count": frame_count - valid_frame_count,
+     }
+-    finite_frame_quality = all(
+-        item.get("valid") is True
+-        and item.get("detected_corners", 0) >= 8
+-        and item.get("reprojection_rms_px", math.inf) <= 0.5
+-        for item in all_diagnostics
++    finite_frame_quality = (
++        base_valid_frame_count >= MIN_CAPTURED_FRAME_COUNT
++        and all(
++            item.get("valid") is True
++            and item.get("detected_corners", 0) >= 8
++            and item.get("reprojection_rms_px", math.inf) <= 0.5
++            for item in all_diagnostics
++        )
+     )
+     reprojection_values = [
+         float(item["reprojection_rms_px"])
+@@ -933,7 +940,9 @@ def solve_world_capture(
+             len(poses) >= 3, len(poses), "pose_count >= 3"
+         ),
+         "frame_count": _gate(
+-            frame_count >= 15, frame_count, "frame_count >= 15"
++            frame_count >= MIN_CAPTURED_FRAME_COUNT,
++            frame_count,
++            f"frame_count >= {MIN_CAPTURED_FRAME_COUNT}",
+         ),
+         "five_frames_per_pose": _gate(
+             all(pose.total_frame_count >= 5 for pose in poses),
+@@ -947,6 +956,7 @@ def solve_world_capture(
+             finite_frame_quality,
+             {
+                 "all_frames_pass": finite_frame_quality,
++                "base_valid_frame_count": base_valid_frame_count,
+                 "minimum_corners": min(
+                     (
+                         item.get("detected_corners", 0)
+@@ -958,12 +968,35 @@ def solve_world_capture(
+                     reprojection_values
+                 ) if reprojection_values else None,
+             },
+-            "every frame corners >= 8, finite pose, reprojection RMS <= 0.5 px",
++            (
++                f"base_valid_frame_count >= {MIN_CAPTURED_FRAME_COUNT}; "
++                "every frame corners >= 8, finite pose, "
++                "reprojection RMS <= 0.5 px"
++            ),
+         ),
+         "valid_frame_count": _gate(
+-            valid_frame_count >= 15,
++            valid_frame_count >= MIN_ORIENTATION_INLIER_COUNT,
+             valid_frame_count,
+-            "robust orientation inlier frame count >= 15",
++            (
++                "robust orientation inlier frame count >= "
++                f"{MIN_ORIENTATION_INLIER_COUNT}"
++            ),
++        ),
++        "per_pose_orientation_inlier_count": _gate(
++            len(pose_orientation) >= 3
++            and all(
++                value["inlier_frame_count"]
++                >= MIN_ORIENTATION_INLIERS_PER_POSE
++                for value in pose_orientation.values()
++            ),
++            {
++                name: value["inlier_frame_count"]
++                for name, value in pose_orientation.items()
++            },
++            (
++                "each pose robust orientation inlier frame count >= "
++                f"{MIN_ORIENTATION_INLIERS_PER_POSE}"
++            ),
+         ),
+         "orientation_rms": _gate(
+             orientation_inlier_metrics["rms_deg"] is not None

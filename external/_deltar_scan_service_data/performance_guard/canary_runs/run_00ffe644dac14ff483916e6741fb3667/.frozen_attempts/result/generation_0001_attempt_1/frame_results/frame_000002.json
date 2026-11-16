@@ -1,0 +1,2898 @@
+{
+  "decoded_image": {
+    "height": 360,
+    "payload_bytes": 460800,
+    "payload_sha256": "a310ef57f2175a973242f7e89ccf917be1a338d9618a8a19d92e383cad172270",
+    "pixel_format": "RGB565_LE",
+    "width": 640
+  },
+  "deltar_repeatability": {
+    "direct_640x360": {
+      "float_exact_equal": true,
+      "formal_d_fusion": {
+        "cross_atten1": {
+          "fusion": "D_TRUE_READ_OFFICIAL_WRITE",
+          "layout_covered_feature_values": 452160,
+          "layout_interpolate": true,
+          "new_learnable_parameters": 0,
+          "official_forward_used": false,
+          "read_path": "stage2_true_per_zone_vectorized_grid_sample",
+          "resolution": [
+            90,
+            160
+          ],
+          "uniform_equivalence_path": false,
+          "valid_zone_count": 21,
+          "write_path": "official_8x8_dense_layout",
+          "zone_patch_shape": [
+            23,
+            23
+          ]
+        },
+        "cross_atten2": {
+          "fusion": "D_TRUE_READ_OFFICIAL_WRITE",
+          "layout_covered_feature_values": 224640,
+          "layout_interpolate": true,
+          "new_learnable_parameters": 0,
+          "official_forward_used": false,
+          "read_path": "stage2_true_per_zone_vectorized_grid_sample",
+          "resolution": [
+            45,
+            80
+          ],
+          "uniform_equivalence_path": false,
+          "valid_zone_count": 21,
+          "write_path": "official_8x8_dense_layout",
+          "zone_patch_shape": [
+            12,
+            12
+          ]
+        },
+        "cross_atten3": {
+          "fusion": "D_TRUE_READ_OFFICIAL_WRITE",
+          "layout_covered_feature_values": 109824,
+          "layout_interpolate": true,
+          "new_learnable_parameters": 0,
+          "official_forward_used": false,
+          "read_path": "stage2_true_per_zone_vectorized_grid_sample",
+          "resolution": [
+            23,
+            40
+          ],
+          "uniform_equivalence_path": false,
+          "valid_zone_count": 21,
+          "write_path": "official_8x8_dense_layout",
+          "zone_patch_shape": [
+            6,
+            6
+          ]
+        }
+      },
+      "gpu_peak_memory_mb": 273.00732421875,
+      "max_absolute_difference_m": 0.0,
+      "mean_absolute_difference_m": 0.0,
+      "model_timing_ms": {
+        "forward_first_ms": 2140.5064999707974,
+        "forward_second_ms": 2415.8400999731384,
+        "model_load_ms": 446.0968999774195,
+        "model_plus_postprocess_first_ms": 2167.692099988926,
+        "model_plus_postprocess_second_ms": 2425.340999965556
+      },
+      "raw_sha256_first": "81d1a931d51fe6b8cefaa4123244ea8089a2ae55d9f84fb8b89b105481b383ac",
+      "raw_sha256_second": "81d1a931d51fe6b8cefaa4123244ea8089a2ae55d9f84fb8b89b105481b383ac"
+    },
+    "letterbox_640x480": {
+      "float_exact_equal": true,
+      "formal_d_fusion": {
+        "cross_atten1": {
+          "fusion": "D_TRUE_READ_OFFICIAL_WRITE",
+          "layout_covered_feature_values": 527520,
+          "layout_interpolate": true,
+          "new_learnable_parameters": 0,
+          "official_forward_used": false,
+          "read_path": "stage2_true_per_zone_vectorized_grid_sample",
+          "resolution": [
+            120,
+            160
+          ],
+          "uniform_equivalence_path": false,
+          "valid_zone_count": 21,
+          "write_path": "official_8x8_dense_layout",
+          "zone_patch_shape": [
+            23,
+            23
+          ]
+        },
+        "cross_atten2": {
+          "fusion": "D_TRUE_READ_OFFICIAL_WRITE",
+          "layout_covered_feature_values": 259584,
+          "layout_interpolate": true,
+          "new_learnable_parameters": 0,
+          "official_forward_used": false,
+          "read_path": "stage2_true_per_zone_vectorized_grid_sample",
+          "resolution": [
+            60,
+            80
+          ],
+          "uniform_equivalence_path": false,
+          "valid_zone_count": 21,
+          "write_path": "official_8x8_dense_layout",
+          "zone_patch_shape": [
+            12,
+            12
+          ]
+        },
+        "cross_atten3": {
+          "fusion": "D_TRUE_READ_OFFICIAL_WRITE",
+          "layout_covered_feature_values": 129792,
+          "layout_interpolate": true,
+          "new_learnable_parameters": 0,
+          "official_forward_used": false,
+          "read_path": "stage2_true_per_zone_vectorized_grid_sample",
+          "resolution": [
+            30,
+            40
+          ],
+          "uniform_equivalence_path": false,
+          "valid_zone_count": 21,
+          "write_path": "official_8x8_dense_layout",
+          "zone_patch_shape": [
+            6,
+            6
+          ]
+        }
+      },
+      "gpu_peak_memory_mb": 332.6787109375,
+      "max_absolute_difference_m": 0.0,
+      "mean_absolute_difference_m": 0.0,
+      "model_timing_ms": {
+        "forward_first_ms": 2042.189200001303,
+        "forward_second_ms": 1764.1240999801084,
+        "model_load_ms": 446.0968999774195,
+        "model_plus_postprocess_first_ms": 2060.2141999988817,
+        "model_plus_postprocess_second_ms": 1771.6819000197574
+      },
+      "raw_sha256_first": "c68717959e3a589e99d24d6153c8e0207be844d91fb029fec3dd8cd1076321b5",
+      "raw_sha256_second": "c68717959e3a589e99d24d6153c8e0207be844d91fb029fec3dd8cd1076321b5"
+    }
+  },
+  "detections": {
+    "detect_count": 9,
+    "detect_instances": [
+      {
+        "bbox_normalized": [
+          0.042059320211410525,
+          0.4574796040852865,
+          0.20260276794433593,
+          0.7357577006022136
+        ],
+        "bbox_xyxy": [
+          26.917964935302734,
+          164.69265747070312,
+          129.665771484375,
+          264.8727722167969
+        ],
+        "class_id": 32,
+        "class_name": "sports ball",
+        "confidence": 0.9504492282867432,
+        "instance_id": 0,
+        "mask_key": null
+      },
+      {
+        "bbox_normalized": [
+          0.8345766067504883,
+          0.6382538265652127,
+          1.0,
+          0.7863101535373264
+        ],
+        "bbox_xyxy": [
+          534.1290283203125,
+          229.77137756347656,
+          640.0,
+          283.0716552734375
+        ],
+        "class_id": 66,
+        "class_name": "keyboard",
+        "confidence": 0.9332528710365295,
+        "instance_id": 1,
+        "mask_key": null
+      },
+      {
+        "bbox_normalized": [
+          0.5839115142822265,
+          0.6123162163628473,
+          0.883519458770752,
+          0.9931950887044271
+        ],
+        "bbox_xyxy": [
+          373.703369140625,
+          220.433837890625,
+          565.4524536132812,
+          357.55023193359375
+        ],
+        "class_id": 56,
+        "class_name": "chair",
+        "confidence": 0.8550407290458679,
+        "instance_id": 2,
+        "mask_key": null
+      },
+      {
+        "bbox_normalized": [
+          0.2180234432220459,
+          0.5158346388075087,
+          0.26494832038879396,
+          0.7735869513617621
+        ],
+        "bbox_xyxy": [
+          139.53500366210938,
+          185.70046997070312,
+          169.56692504882812,
+          278.4913024902344
+        ],
+        "class_id": 39,
+        "class_name": "bottle",
+        "confidence": 0.653529703617096,
+        "instance_id": 3,
+        "mask_key": null
+      },
+      {
+        "bbox_normalized": [
+          0.5930394649505615,
+          0.3013821919759115,
+          0.7401662349700928,
+          0.574300045437283
+        ],
+        "bbox_xyxy": [
+          379.5452575683594,
+          108.49758911132812,
+          473.7063903808594,
+          206.74801635742188
+        ],
+        "class_id": 62,
+        "class_name": "tv",
+        "confidence": 0.6343150734901428,
+        "instance_id": 4,
+        "mask_key": null
+      },
+      {
+        "bbox_normalized": [
+          0.7301101207733154,
+          0.2934907701280382,
+          0.8706668853759766,
+          0.5607562594943576
+        ],
+        "bbox_xyxy": [
+          467.2704772949219,
+          105.65667724609375,
+          557.226806640625,
+          201.87225341796875
+        ],
+        "class_id": 62,
+        "class_name": "tv",
+        "confidence": 0.4409281015396118,
+        "instance_id": 5,
+        "mask_key": null
+      },
+      {
+        "bbox_normalized": [
+          0.04029692113399506,
+          0.04877971013387044,
+          0.09097524881362914,
+          0.27426461113823786
+        ],
+        "bbox_xyxy": [
+          25.790029525756836,
+          17.56069564819336,
+          58.224159240722656,
+          98.73526000976562
+        ],
+        "class_id": 39,
+        "class_name": "bottle",
+        "confidence": 0.411525160074234,
+        "instance_id": 6,
+        "mask_key": null
+      },
+      {
+        "bbox_normalized": [
+          0.7353579521179199,
+          0.5828197903103298,
+          0.7782063484191895,
+          0.6287322998046875
+        ],
+        "bbox_xyxy": [
+          470.62908935546875,
+          209.81512451171875,
+          498.05206298828125,
+          226.3436279296875
+        ],
+        "class_id": 64,
+        "class_name": "mouse",
+        "confidence": 0.3623960614204407,
+        "instance_id": 7,
+        "mask_key": null
+      },
+      {
+        "bbox_normalized": [
+          0.8215024948120118,
+          0.008177354600694445,
+          0.9415380477905273,
+          0.5858058505588107
+        ],
+        "bbox_xyxy": [
+          525.7615966796875,
+          2.94384765625,
+          602.5843505859375,
+          210.89010620117188
+        ],
+        "class_id": 72,
+        "class_name": "refrigerator",
+        "confidence": 0.29450637102127075,
+        "instance_id": 8,
+        "mask_key": null
+      }
+    ],
+    "matched_count": 7,
+    "segment_count": 10,
+    "segment_instances": [
+      {
+        "bbox_normalized": [
+          0.8337139129638672,
+          0.6382171630859375,
+          0.9992900848388672,
+          0.7873348659939237
+        ],
+        "bbox_xyxy": [
+          533.576904296875,
+          229.7581787109375,
+          639.545654296875,
+          283.4405517578125
+        ],
+        "class_id": 66,
+        "class_name": "keyboard",
+        "confidence": 0.8892081379890442,
+        "instance_id": 0,
+        "mask_key": "instance_000"
+      },
+      {
+        "bbox_normalized": [
+          0.5832910537719727,
+          0.6159792158338758,
+          0.8851266860961914,
+          0.9963719685872395
+        ],
+        "bbox_xyxy": [
+          373.3062744140625,
+          221.7525177001953,
+          566.4810791015625,
+          358.69390869140625
+        ],
+        "class_id": 56,
+        "class_name": "chair",
+        "confidence": 0.7737647294998169,
+        "instance_id": 1,
+        "mask_key": "instance_001"
+      },
+      {
+        "bbox_normalized": [
+          0.5980284690856934,
+          0.30129354265001085,
+          0.7389287948608398,
+          0.5792291429307725
+        ],
+        "bbox_xyxy": [
+          382.73822021484375,
+          108.4656753540039,
+          472.9144287109375,
+          208.52249145507812
+        ],
+        "class_id": 62,
+        "class_name": "tv",
+        "confidence": 0.6913182735443115,
+        "instance_id": 2,
+        "mask_key": "instance_002"
+      },
+      {
+        "bbox_normalized": [
+          0.5152476310729981,
+          0.2596993340386285,
+          0.5861794471740722,
+          0.5269776238335504
+        ],
+        "bbox_xyxy": [
+          329.75848388671875,
+          93.49176025390625,
+          375.15484619140625,
+          189.71194458007812
+        ],
+        "class_id": 62,
+        "class_name": "tv",
+        "confidence": 0.49655085802078247,
+        "instance_id": 3,
+        "mask_key": "instance_003"
+      },
+      {
+        "bbox_normalized": [
+          0.5631686210632324,
+          0.3002237531873915,
+          0.7391825675964355,
+          0.6106286366780599
+        ],
+        "bbox_xyxy": [
+          360.42791748046875,
+          108.08055114746094,
+          473.07684326171875,
+          219.82630920410156
+        ],
+        "class_id": 63,
+        "class_name": "laptop",
+        "confidence": 0.47386434674263,
+        "instance_id": 4,
+        "mask_key": "instance_004"
+      },
+      {
+        "bbox_normalized": [
+          0.7294065475463867,
+          0.29509150187174477,
+          0.8704208374023438,
+          0.5774041069878473
+        ],
+        "bbox_xyxy": [
+          466.8201904296875,
+          106.23294067382812,
+          557.0693359375,
+          207.865478515625
+        ],
+        "class_id": 62,
+        "class_name": "tv",
+        "confidence": 0.46229687333106995,
+        "instance_id": 5,
+        "mask_key": "instance_005"
+      },
+      {
+        "bbox_normalized": [
+          0.7302227973937988,
+          0.5817320929633246,
+          0.7784243583679199,
+          0.6305524190266927
+        ],
+        "bbox_xyxy": [
+          467.34259033203125,
+          209.42355346679688,
+          498.19158935546875,
+          226.99887084960938
+        ],
+        "class_id": 64,
+        "class_name": "mouse",
+        "confidence": 0.3917078971862793,
+        "instance_id": 6,
+        "mask_key": "instance_006"
+      },
+      {
+        "bbox_normalized": [
+          0.9218137741088868,
+          0.23623828887939452,
+          0.9995588302612305,
+          0.6188206990559896
+        ],
+        "bbox_xyxy": [
+          589.9608154296875,
+          85.04578399658203,
+          639.7176513671875,
+          222.77545166015625
+        ],
+        "class_id": 62,
+        "class_name": "tv",
+        "confidence": 0.3648350238800049,
+        "instance_id": 7,
+        "mask_key": "instance_007"
+      },
+      {
+        "bbox_normalized": [
+          0.041082021594047544,
+          0.05782623291015625,
+          0.09029524326324463,
+          0.273220698038737
+        ],
+        "bbox_xyxy": [
+          26.29249382019043,
+          20.81744384765625,
+          57.78895568847656,
+          98.35945129394531
+        ],
+        "class_id": 39,
+        "class_name": "bottle",
+        "confidence": 0.36364179849624634,
+        "instance_id": 8,
+        "mask_key": "instance_008"
+      },
+      {
+        "bbox_normalized": [
+          0.21878981590270996,
+          0.5163120693630643,
+          0.26574997901916503,
+          0.7773910522460937
+        ],
+        "bbox_xyxy": [
+          140.02548217773438,
+          185.87234497070312,
+          170.07998657226562,
+          279.86077880859375
+        ],
+        "class_id": 39,
+        "class_name": "bottle",
+        "confidence": 0.3509279787540436,
+        "instance_id": 9,
+        "mask_key": "instance_009"
+      }
+    ]
+  },
+  "errors": [],
+  "frame_id": "frame_000002",
+  "gt_used_for_inference": false,
+  "logical_object_groups": [
+    {
+      "class_id": 66,
+      "class_name": "keyboard",
+      "detection_fallback": {
+        "available": true,
+        "bbox_xyxy": [
+          534.1290283203125,
+          229.77137756347656,
+          640.0,
+          283.0716552734375
+        ],
+        "class_id": 66,
+        "class_name": "keyboard",
+        "confidence": 0.9332528710365295,
+        "detect_instance_id": 1,
+        "mask_key": null,
+        "model_sha256": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+        "region_method": "bbox_full",
+        "statistic_method": "median"
+      },
+      "logical_object_id": "frame_000002:logical:000",
+      "match": {
+        "iou": 0.9835222455112412,
+        "status": "matched"
+      },
+      "provenance": {
+        "detection_object_id": "frame_000002:detection:001",
+        "frame_id": "frame_000002",
+        "gt_used_for_inference": false,
+        "model_hashes": {
+          "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+          "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+          "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+        },
+        "segmentation_object_id": "frame_000002:segmentation:000",
+        "stage3_schema": "deltar_stage3_1_object_depth.v1",
+        "stage4_function": "all_object_geometry.measure_logical_object_v2",
+        "stage4_group_schema": "deltar_stage4_object_group_input.v1.1"
+      },
+      "segmentation_primary": {
+        "available": true,
+        "bbox_xyxy": [
+          533.576904296875,
+          229.7581787109375,
+          639.545654296875,
+          283.4405517578125
+        ],
+        "class_id": 66,
+        "class_name": "keyboard",
+        "confidence": 0.8892081379890442,
+        "mask_key": "instance_000",
+        "model_sha256": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152",
+        "region_method": "segment_eroded_3px",
+        "segment_instance_id": 0,
+        "statistic_method": "mad_median"
+      }
+    },
+    {
+      "class_id": 56,
+      "class_name": "chair",
+      "detection_fallback": {
+        "available": true,
+        "bbox_xyxy": [
+          373.703369140625,
+          220.433837890625,
+          565.4524536132812,
+          357.55023193359375
+        ],
+        "class_id": 56,
+        "class_name": "chair",
+        "confidence": 0.8550407290458679,
+        "detect_instance_id": 2,
+        "mask_key": null,
+        "model_sha256": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+        "region_method": "bbox_full",
+        "statistic_method": "median"
+      },
+      "logical_object_id": "frame_000002:logical:001",
+      "match": {
+        "iou": 0.975010009771675,
+        "status": "matched"
+      },
+      "provenance": {
+        "detection_object_id": "frame_000002:detection:002",
+        "frame_id": "frame_000002",
+        "gt_used_for_inference": false,
+        "model_hashes": {
+          "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+          "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+          "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+        },
+        "segmentation_object_id": "frame_000002:segmentation:001",
+        "stage3_schema": "deltar_stage3_1_object_depth.v1",
+        "stage4_function": "all_object_geometry.measure_logical_object_v2",
+        "stage4_group_schema": "deltar_stage4_object_group_input.v1.1"
+      },
+      "segmentation_primary": {
+        "available": true,
+        "bbox_xyxy": [
+          373.3062744140625,
+          221.7525177001953,
+          566.4810791015625,
+          358.69390869140625
+        ],
+        "class_id": 56,
+        "class_name": "chair",
+        "confidence": 0.7737647294998169,
+        "mask_key": "instance_001",
+        "model_sha256": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152",
+        "region_method": "segment_eroded_3px",
+        "segment_instance_id": 1,
+        "statistic_method": "mad_median"
+      }
+    },
+    {
+      "class_id": 62,
+      "class_name": "tv",
+      "detection_fallback": {
+        "available": true,
+        "bbox_xyxy": [
+          379.5452575683594,
+          108.49758911132812,
+          473.7063903808594,
+          206.74801635742188
+        ],
+        "class_id": 62,
+        "class_name": "tv",
+        "confidence": 0.6343150734901428,
+        "detect_instance_id": 4,
+        "mask_key": null,
+        "model_sha256": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+        "region_method": "bbox_full",
+        "statistic_method": "median"
+      },
+      "logical_object_id": "frame_000002:logical:002",
+      "match": {
+        "iou": 0.9411091758261588,
+        "status": "matched"
+      },
+      "provenance": {
+        "detection_object_id": "frame_000002:detection:004",
+        "frame_id": "frame_000002",
+        "gt_used_for_inference": false,
+        "model_hashes": {
+          "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+          "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+          "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+        },
+        "segmentation_object_id": "frame_000002:segmentation:002",
+        "stage3_schema": "deltar_stage3_1_object_depth.v1",
+        "stage4_function": "all_object_geometry.measure_logical_object_v2",
+        "stage4_group_schema": "deltar_stage4_object_group_input.v1.1"
+      },
+      "segmentation_primary": {
+        "available": true,
+        "bbox_xyxy": [
+          382.73822021484375,
+          108.4656753540039,
+          472.9144287109375,
+          208.52249145507812
+        ],
+        "class_id": 62,
+        "class_name": "tv",
+        "confidence": 0.6913182735443115,
+        "mask_key": "instance_002",
+        "model_sha256": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152",
+        "region_method": "segment_eroded_3px",
+        "segment_instance_id": 2,
+        "statistic_method": "mad_median"
+      }
+    },
+    {
+      "class_id": 62,
+      "class_name": "tv",
+      "detection_fallback": {
+        "available": false,
+        "bbox_xyxy": [],
+        "class_id": null,
+        "class_name": null,
+        "confidence": null,
+        "detect_instance_id": null,
+        "mask_key": null,
+        "model_sha256": null,
+        "region_method": null,
+        "statistic_method": null
+      },
+      "logical_object_id": "frame_000002:logical:003",
+      "match": {
+        "iou": null,
+        "status": "unmatched_segmentation"
+      },
+      "provenance": {
+        "detection_object_id": null,
+        "frame_id": "frame_000002",
+        "gt_used_for_inference": false,
+        "model_hashes": {
+          "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+          "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+          "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+        },
+        "segmentation_object_id": "frame_000002:segmentation:003",
+        "stage3_schema": "deltar_stage3_1_object_depth.v1",
+        "stage4_function": "all_object_geometry.measure_logical_object_v2",
+        "stage4_group_schema": "deltar_stage4_object_group_input.v1.1"
+      },
+      "segmentation_primary": {
+        "available": true,
+        "bbox_xyxy": [
+          329.75848388671875,
+          93.49176025390625,
+          375.15484619140625,
+          189.71194458007812
+        ],
+        "class_id": 62,
+        "class_name": "tv",
+        "confidence": 0.49655085802078247,
+        "mask_key": "instance_003",
+        "model_sha256": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152",
+        "region_method": "segment_eroded_3px",
+        "segment_instance_id": 3,
+        "statistic_method": "mad_median"
+      }
+    },
+    {
+      "class_id": 63,
+      "class_name": "laptop",
+      "detection_fallback": {
+        "available": false,
+        "bbox_xyxy": [],
+        "class_id": null,
+        "class_name": null,
+        "confidence": null,
+        "detect_instance_id": null,
+        "mask_key": null,
+        "model_sha256": null,
+        "region_method": null,
+        "statistic_method": null
+      },
+      "logical_object_id": "frame_000002:logical:004",
+      "match": {
+        "iou": null,
+        "status": "unmatched_segmentation"
+      },
+      "provenance": {
+        "detection_object_id": null,
+        "frame_id": "frame_000002",
+        "gt_used_for_inference": false,
+        "model_hashes": {
+          "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+          "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+          "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+        },
+        "segmentation_object_id": "frame_000002:segmentation:004",
+        "stage3_schema": "deltar_stage3_1_object_depth.v1",
+        "stage4_function": "all_object_geometry.measure_logical_object_v2",
+        "stage4_group_schema": "deltar_stage4_object_group_input.v1.1"
+      },
+      "segmentation_primary": {
+        "available": true,
+        "bbox_xyxy": [
+          360.42791748046875,
+          108.08055114746094,
+          473.07684326171875,
+          219.82630920410156
+        ],
+        "class_id": 63,
+        "class_name": "laptop",
+        "confidence": 0.47386434674263,
+        "mask_key": "instance_004",
+        "model_sha256": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152",
+        "region_method": "segment_eroded_3px",
+        "segment_instance_id": 4,
+        "statistic_method": "mad_median"
+      }
+    },
+    {
+      "class_id": 62,
+      "class_name": "tv",
+      "detection_fallback": {
+        "available": true,
+        "bbox_xyxy": [
+          467.2704772949219,
+          105.65667724609375,
+          557.226806640625,
+          201.87225341796875
+        ],
+        "class_id": 62,
+        "class_name": "tv",
+        "confidence": 0.4409281015396118,
+        "detect_instance_id": 5,
+        "mask_key": null,
+        "model_sha256": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+        "region_method": "bbox_full",
+        "statistic_method": "median"
+      },
+      "logical_object_id": "frame_000002:logical:005",
+      "match": {
+        "iou": 0.9295554678341649,
+        "status": "matched"
+      },
+      "provenance": {
+        "detection_object_id": "frame_000002:detection:005",
+        "frame_id": "frame_000002",
+        "gt_used_for_inference": false,
+        "model_hashes": {
+          "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+          "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+          "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+        },
+        "segmentation_object_id": "frame_000002:segmentation:005",
+        "stage3_schema": "deltar_stage3_1_object_depth.v1",
+        "stage4_function": "all_object_geometry.measure_logical_object_v2",
+        "stage4_group_schema": "deltar_stage4_object_group_input.v1.1"
+      },
+      "segmentation_primary": {
+        "available": true,
+        "bbox_xyxy": [
+          466.8201904296875,
+          106.23294067382812,
+          557.0693359375,
+          207.865478515625
+        ],
+        "class_id": 62,
+        "class_name": "tv",
+        "confidence": 0.46229687333106995,
+        "mask_key": "instance_005",
+        "model_sha256": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152",
+        "region_method": "segment_eroded_3px",
+        "segment_instance_id": 5,
+        "statistic_method": "mad_median"
+      }
+    },
+    {
+      "class_id": 64,
+      "class_name": "mouse",
+      "detection_fallback": {
+        "available": true,
+        "bbox_xyxy": [
+          470.62908935546875,
+          209.81512451171875,
+          498.05206298828125,
+          226.3436279296875
+        ],
+        "class_id": 64,
+        "class_name": "mouse",
+        "confidence": 0.3623960614204407,
+        "detect_instance_id": 7,
+        "mask_key": null,
+        "model_sha256": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+        "region_method": "bbox_full",
+        "statistic_method": "median"
+      },
+      "logical_object_id": "frame_000002:logical:006",
+      "match": {
+        "iou": 0.8359952787746775,
+        "status": "matched"
+      },
+      "provenance": {
+        "detection_object_id": "frame_000002:detection:007",
+        "frame_id": "frame_000002",
+        "gt_used_for_inference": false,
+        "model_hashes": {
+          "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+          "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+          "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+        },
+        "segmentation_object_id": "frame_000002:segmentation:006",
+        "stage3_schema": "deltar_stage3_1_object_depth.v1",
+        "stage4_function": "all_object_geometry.measure_logical_object_v2",
+        "stage4_group_schema": "deltar_stage4_object_group_input.v1.1"
+      },
+      "segmentation_primary": {
+        "available": true,
+        "bbox_xyxy": [
+          467.34259033203125,
+          209.42355346679688,
+          498.19158935546875,
+          226.99887084960938
+        ],
+        "class_id": 64,
+        "class_name": "mouse",
+        "confidence": 0.3917078971862793,
+        "mask_key": "instance_006",
+        "model_sha256": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152",
+        "region_method": "segment_eroded_3px",
+        "segment_instance_id": 6,
+        "statistic_method": "mad_median"
+      }
+    },
+    {
+      "class_id": 62,
+      "class_name": "tv",
+      "detection_fallback": {
+        "available": false,
+        "bbox_xyxy": [],
+        "class_id": null,
+        "class_name": null,
+        "confidence": null,
+        "detect_instance_id": null,
+        "mask_key": null,
+        "model_sha256": null,
+        "region_method": null,
+        "statistic_method": null
+      },
+      "logical_object_id": "frame_000002:logical:007",
+      "match": {
+        "iou": null,
+        "status": "unmatched_segmentation"
+      },
+      "provenance": {
+        "detection_object_id": null,
+        "frame_id": "frame_000002",
+        "gt_used_for_inference": false,
+        "model_hashes": {
+          "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+          "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+          "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+        },
+        "segmentation_object_id": "frame_000002:segmentation:007",
+        "stage3_schema": "deltar_stage3_1_object_depth.v1",
+        "stage4_function": "all_object_geometry.measure_logical_object_v2",
+        "stage4_group_schema": "deltar_stage4_object_group_input.v1.1"
+      },
+      "segmentation_primary": {
+        "available": true,
+        "bbox_xyxy": [
+          589.9608154296875,
+          85.04578399658203,
+          639.7176513671875,
+          222.77545166015625
+        ],
+        "class_id": 62,
+        "class_name": "tv",
+        "confidence": 0.3648350238800049,
+        "mask_key": "instance_007",
+        "model_sha256": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152",
+        "region_method": "segment_eroded_3px",
+        "segment_instance_id": 7,
+        "statistic_method": "mad_median"
+      }
+    },
+    {
+      "class_id": 39,
+      "class_name": "bottle",
+      "detection_fallback": {
+        "available": true,
+        "bbox_xyxy": [
+          25.790029525756836,
+          17.56069564819336,
+          58.224159240722656,
+          98.73526000976562
+        ],
+        "class_id": 39,
+        "class_name": "bottle",
+        "confidence": 0.411525160074234,
+        "detect_instance_id": 6,
+        "mask_key": null,
+        "model_sha256": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+        "region_method": "bbox_full",
+        "statistic_method": "median"
+      },
+      "logical_object_id": "frame_000002:logical:008",
+      "match": {
+        "iou": 0.9276338641428447,
+        "status": "matched"
+      },
+      "provenance": {
+        "detection_object_id": "frame_000002:detection:006",
+        "frame_id": "frame_000002",
+        "gt_used_for_inference": false,
+        "model_hashes": {
+          "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+          "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+          "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+        },
+        "segmentation_object_id": "frame_000002:segmentation:008",
+        "stage3_schema": "deltar_stage3_1_object_depth.v1",
+        "stage4_function": "all_object_geometry.measure_logical_object_v2",
+        "stage4_group_schema": "deltar_stage4_object_group_input.v1.1"
+      },
+      "segmentation_primary": {
+        "available": true,
+        "bbox_xyxy": [
+          26.29249382019043,
+          20.81744384765625,
+          57.78895568847656,
+          98.35945129394531
+        ],
+        "class_id": 39,
+        "class_name": "bottle",
+        "confidence": 0.36364179849624634,
+        "mask_key": "instance_008",
+        "model_sha256": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152",
+        "region_method": "segment_eroded_3px",
+        "segment_instance_id": 8,
+        "statistic_method": "mad_median"
+      }
+    },
+    {
+      "class_id": 39,
+      "class_name": "bottle",
+      "detection_fallback": {
+        "available": true,
+        "bbox_xyxy": [
+          139.53500366210938,
+          185.70046997070312,
+          169.56692504882812,
+          278.4913024902344
+        ],
+        "class_id": 39,
+        "class_name": "bottle",
+        "confidence": 0.653529703617096,
+        "detect_instance_id": 3,
+        "mask_key": null,
+        "model_sha256": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+        "region_method": "bbox_full",
+        "statistic_method": "median"
+      },
+      "logical_object_id": "frame_000002:logical:009",
+      "match": {
+        "iou": 0.9515652816834038,
+        "status": "matched"
+      },
+      "provenance": {
+        "detection_object_id": "frame_000002:detection:003",
+        "frame_id": "frame_000002",
+        "gt_used_for_inference": false,
+        "model_hashes": {
+          "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+          "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+          "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+        },
+        "segmentation_object_id": "frame_000002:segmentation:009",
+        "stage3_schema": "deltar_stage3_1_object_depth.v1",
+        "stage4_function": "all_object_geometry.measure_logical_object_v2",
+        "stage4_group_schema": "deltar_stage4_object_group_input.v1.1"
+      },
+      "segmentation_primary": {
+        "available": true,
+        "bbox_xyxy": [
+          140.02548217773438,
+          185.87234497070312,
+          170.07998657226562,
+          279.86077880859375
+        ],
+        "class_id": 39,
+        "class_name": "bottle",
+        "confidence": 0.3509279787540436,
+        "mask_key": "instance_009",
+        "model_sha256": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152",
+        "region_method": "segment_eroded_3px",
+        "segment_instance_id": 9,
+        "statistic_method": "mad_median"
+      }
+    },
+    {
+      "class_id": 32,
+      "class_name": "sports ball",
+      "detection_fallback": {
+        "available": true,
+        "bbox_xyxy": [
+          26.917964935302734,
+          164.69265747070312,
+          129.665771484375,
+          264.8727722167969
+        ],
+        "class_id": 32,
+        "class_name": "sports ball",
+        "confidence": 0.9504492282867432,
+        "detect_instance_id": 0,
+        "mask_key": null,
+        "model_sha256": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+        "region_method": "bbox_full",
+        "statistic_method": "median"
+      },
+      "logical_object_id": "frame_000002:logical:010",
+      "match": {
+        "iou": null,
+        "status": "unmatched_detection"
+      },
+      "provenance": {
+        "detection_object_id": "frame_000002:detection:000",
+        "frame_id": "frame_000002",
+        "gt_used_for_inference": false,
+        "model_hashes": {
+          "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+          "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+          "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+        },
+        "segmentation_object_id": null,
+        "stage3_schema": "deltar_stage3_1_object_depth.v1",
+        "stage4_function": "all_object_geometry.measure_logical_object_v2",
+        "stage4_group_schema": "deltar_stage4_object_group_input.v1.1"
+      },
+      "segmentation_primary": {
+        "available": false,
+        "bbox_xyxy": [],
+        "class_id": null,
+        "class_name": null,
+        "confidence": null,
+        "mask_key": null,
+        "model_sha256": null,
+        "region_method": null,
+        "segment_instance_id": null,
+        "statistic_method": null
+      }
+    },
+    {
+      "class_id": 72,
+      "class_name": "refrigerator",
+      "detection_fallback": {
+        "available": true,
+        "bbox_xyxy": [
+          525.7615966796875,
+          2.94384765625,
+          602.5843505859375,
+          210.89010620117188
+        ],
+        "class_id": 72,
+        "class_name": "refrigerator",
+        "confidence": 0.29450637102127075,
+        "detect_instance_id": 8,
+        "mask_key": null,
+        "model_sha256": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+        "region_method": "bbox_full",
+        "statistic_method": "median"
+      },
+      "logical_object_id": "frame_000002:logical:011",
+      "match": {
+        "iou": null,
+        "status": "unmatched_detection"
+      },
+      "provenance": {
+        "detection_object_id": "frame_000002:detection:008",
+        "frame_id": "frame_000002",
+        "gt_used_for_inference": false,
+        "model_hashes": {
+          "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+          "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+          "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+        },
+        "segmentation_object_id": null,
+        "stage3_schema": "deltar_stage3_1_object_depth.v1",
+        "stage4_function": "all_object_geometry.measure_logical_object_v2",
+        "stage4_group_schema": "deltar_stage4_object_group_input.v1.1"
+      },
+      "segmentation_primary": {
+        "available": false,
+        "bbox_xyxy": [],
+        "class_id": null,
+        "class_name": null,
+        "confidence": null,
+        "mask_key": null,
+        "model_sha256": null,
+        "region_method": null,
+        "segment_instance_id": null,
+        "statistic_method": null
+      }
+    }
+  ],
+  "models": {
+    "depth": {
+      "sha256": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+      "task": "depth"
+    },
+    "detect": {
+      "sha256": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+      "task": "detect"
+    },
+    "segment": {
+      "sha256": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152",
+      "task": "segment"
+    }
+  },
+  "objects": [
+    {
+      "bbox_xyxy": [
+        533.576904296875,
+        229.7581787109375,
+        639.545654296875,
+        283.4405517578125
+      ],
+      "bottom_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.7092454368733369
+      },
+      "centroid_3d_m": null,
+      "class_id": 66,
+      "class_name": "keyboard",
+      "class_scope": "supported_but_not_core",
+      "confidence": 0.8892081379890442,
+      "depth_compactness": 0.8986804774317171,
+      "distance_m": 1.7293047904968262,
+      "distance_semantics": "camera_axial_z_median",
+      "errors": [],
+      "formal_geometry": {
+        "absolute_geometry_valid": true,
+        "attempts": [
+          {
+            "automatic_geometry_valid": true,
+            "canvas_selection_status": "agreed",
+            "critical_geometry_rejections": [],
+            "selected_canvas": "direct_640x360",
+            "single_canvas_only": false,
+            "source": "all_object_geometry_v2",
+            "success": true
+          }
+        ],
+        "automatic_geometry_valid": true,
+        "canvas_selection_status": "agreed",
+        "critical_geometry_rejections": [],
+        "fallback_reason": null,
+        "fallback_used": false,
+        "provenance": {
+          "detection_object_id": "frame_000002:detection:001",
+          "frame_id": "frame_000002",
+          "gt_used_for_inference": false,
+          "model_hashes": {
+            "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+            "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+            "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+          },
+          "segmentation_object_id": "frame_000002:segmentation:000",
+          "stage3_schema": "deltar_stage3_1_object_depth.v1",
+          "stage4_function": "all_object_geometry.measure_logical_object_v2",
+          "stage4_group_schema": "deltar_stage4_object_group_input.v1.1"
+        },
+        "schema_version": "deltar_stage4_geometry.v1.1",
+        "selected_canvas": "direct_640x360",
+        "selected_geometry": {
+          "bottom_height_m": 0.7092454368733369,
+          "distance_m": 1.7293047904968262,
+          "mask_support": 3125,
+          "object_height_m": 0.06616652360417015,
+          "point_count": 3125
+        },
+        "selected_source": "segmentation",
+        "selection_is_provisional": false,
+        "single_canvas_only": false,
+        "status": "success"
+      },
+      "frame_object_id": "frame_000002:logical:000",
+      "geometry_point_count": 3125,
+      "logical_object_id": "frame_000002:logical:000",
+      "object_role": "operable_object",
+      "object_source": "segmentation",
+      "physical_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.06616652360417015
+      },
+      "placement_level": "elevated",
+      "provenance": {
+        "frame_id": "frame_000002",
+        "model_hashes": {
+          "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+          "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+          "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+        },
+        "stage4_function": "all_object_geometry.measure_logical_object_v2"
+      },
+      "rejection_reason": null,
+      "visibility": {
+        "bottom_height_m": 0.7092454368733369,
+        "bottom_height_valid": true,
+        "bottom_visible": true,
+        "distance_semantics": "visible_surface_distance",
+        "distance_valid": true,
+        "full_extent_visible": false,
+        "occlusion_ratio_estimate": null,
+        "partial_object": true,
+        "physical_height_m": 0.06616652360417015,
+        "physical_height_valid": true,
+        "schema_version": "deltar_partial_object_visibility.v1",
+        "top_visible": true,
+        "touches_bottom": false,
+        "touches_image_border": true,
+        "touches_left": false,
+        "touches_right": true,
+        "touches_top": false,
+        "visibility_status": "partial",
+        "visible_height_valid": true,
+        "warnings": [
+          "partial_or_unknown_extent",
+          "distance_is_visible_surface_only",
+          "visible_height_is_not_physical_height"
+        ]
+      },
+      "visible_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.06616652360417015
+      },
+      "warnings": [
+        "W_PARTIAL_OBJECT"
+      ]
+    },
+    {
+      "bbox_xyxy": [
+        373.3062744140625,
+        221.7525177001953,
+        566.4810791015625,
+        358.69390869140625
+      ],
+      "bottom_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.6774351930791409
+      },
+      "centroid_3d_m": null,
+      "class_id": 56,
+      "class_name": "chair",
+      "class_scope": "core_now",
+      "confidence": 0.7737647294998169,
+      "depth_compactness": 0.8629188036623454,
+      "distance_m": 1.2638483047485352,
+      "distance_semantics": "camera_axial_z_median",
+      "errors": [],
+      "formal_geometry": {
+        "absolute_geometry_valid": true,
+        "attempts": [
+          {
+            "automatic_geometry_valid": true,
+            "canvas_selection_status": "agreed",
+            "critical_geometry_rejections": [],
+            "selected_canvas": "direct_640x360",
+            "single_canvas_only": false,
+            "source": "all_object_geometry_v2",
+            "success": true
+          }
+        ],
+        "automatic_geometry_valid": true,
+        "canvas_selection_status": "agreed",
+        "critical_geometry_rejections": [],
+        "fallback_reason": null,
+        "fallback_used": false,
+        "provenance": {
+          "detection_object_id": "frame_000002:detection:002",
+          "frame_id": "frame_000002",
+          "gt_used_for_inference": false,
+          "model_hashes": {
+            "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+            "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+            "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+          },
+          "segmentation_object_id": "frame_000002:segmentation:001",
+          "stage3_schema": "deltar_stage3_1_object_depth.v1",
+          "stage4_function": "all_object_geometry.measure_logical_object_v2",
+          "stage4_group_schema": "deltar_stage4_object_group_input.v1.1"
+        },
+        "schema_version": "deltar_stage4_geometry.v1.1",
+        "selected_canvas": "direct_640x360",
+        "selected_geometry": {
+          "bottom_height_m": 0.6774351930791409,
+          "distance_m": 1.2638483047485352,
+          "mask_support": 12135,
+          "object_height_m": 0.1164262474288571,
+          "point_count": 12135
+        },
+        "selected_source": "segmentation",
+        "selection_is_provisional": false,
+        "single_canvas_only": false,
+        "status": "success"
+      },
+      "frame_object_id": "frame_000002:logical:001",
+      "geometry_point_count": 12135,
+      "logical_object_id": "frame_000002:logical:001",
+      "object_role": "operable_object",
+      "object_source": "segmentation",
+      "physical_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.1164262474288571
+      },
+      "placement_level": "elevated",
+      "provenance": {
+        "frame_id": "frame_000002",
+        "model_hashes": {
+          "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+          "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+          "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+        },
+        "stage4_function": "all_object_geometry.measure_logical_object_v2"
+      },
+      "rejection_reason": null,
+      "visibility": {
+        "bottom_height_m": 0.6774351930791409,
+        "bottom_height_valid": true,
+        "bottom_visible": true,
+        "distance_semantics": "visible_surface_distance",
+        "distance_valid": true,
+        "full_extent_visible": true,
+        "occlusion_ratio_estimate": null,
+        "partial_object": false,
+        "physical_height_m": 0.1164262474288571,
+        "physical_height_valid": true,
+        "schema_version": "deltar_partial_object_visibility.v1",
+        "top_visible": true,
+        "touches_bottom": false,
+        "touches_image_border": false,
+        "touches_left": false,
+        "touches_right": false,
+        "touches_top": false,
+        "visibility_status": "complete",
+        "visible_height_valid": true,
+        "warnings": []
+      },
+      "visible_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.1164262474288571
+      },
+      "warnings": []
+    },
+    {
+      "bbox_xyxy": [
+        382.73822021484375,
+        108.4656753540039,
+        472.9144287109375,
+        208.52249145507812
+      ],
+      "bottom_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.7993478200786104
+      },
+      "centroid_3d_m": null,
+      "class_id": 62,
+      "class_name": "tv",
+      "class_scope": "core_now",
+      "confidence": 0.6913182735443115,
+      "depth_compactness": 0.9746511471188993,
+      "distance_m": 2.065635919570923,
+      "distance_semantics": "camera_axial_z_median",
+      "errors": [],
+      "formal_geometry": {
+        "absolute_geometry_valid": true,
+        "attempts": [
+          {
+            "automatic_geometry_valid": true,
+            "canvas_selection_status": "agreed",
+            "critical_geometry_rejections": [],
+            "selected_canvas": "direct_640x360",
+            "single_canvas_only": false,
+            "source": "all_object_geometry_v2",
+            "success": true
+          }
+        ],
+        "automatic_geometry_valid": true,
+        "canvas_selection_status": "agreed",
+        "critical_geometry_rejections": [],
+        "fallback_reason": null,
+        "fallback_used": false,
+        "provenance": {
+          "detection_object_id": "frame_000002:detection:004",
+          "frame_id": "frame_000002",
+          "gt_used_for_inference": false,
+          "model_hashes": {
+            "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+            "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+            "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+          },
+          "segmentation_object_id": "frame_000002:segmentation:002",
+          "stage3_schema": "deltar_stage3_1_object_depth.v1",
+          "stage4_function": "all_object_geometry.measure_logical_object_v2",
+          "stage4_group_schema": "deltar_stage4_object_group_input.v1.1"
+        },
+        "schema_version": "deltar_stage4_geometry.v1.1",
+        "selected_canvas": "direct_640x360",
+        "selected_geometry": {
+          "bottom_height_m": 0.7993478200786104,
+          "distance_m": 2.065635919570923,
+          "mask_support": 7096,
+          "object_height_m": 0.23446311815744444,
+          "point_count": 7096
+        },
+        "selected_source": "segmentation",
+        "selection_is_provisional": false,
+        "single_canvas_only": false,
+        "status": "success"
+      },
+      "frame_object_id": "frame_000002:logical:002",
+      "geometry_point_count": 7096,
+      "logical_object_id": "frame_000002:logical:002",
+      "object_role": "operable_object",
+      "object_source": "segmentation",
+      "physical_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.23446311815744444
+      },
+      "placement_level": "elevated",
+      "provenance": {
+        "frame_id": "frame_000002",
+        "model_hashes": {
+          "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+          "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+          "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+        },
+        "stage4_function": "all_object_geometry.measure_logical_object_v2"
+      },
+      "rejection_reason": null,
+      "visibility": {
+        "bottom_height_m": 0.7993478200786104,
+        "bottom_height_valid": true,
+        "bottom_visible": true,
+        "distance_semantics": "visible_surface_distance",
+        "distance_valid": true,
+        "full_extent_visible": true,
+        "occlusion_ratio_estimate": null,
+        "partial_object": false,
+        "physical_height_m": 0.23446311815744444,
+        "physical_height_valid": true,
+        "schema_version": "deltar_partial_object_visibility.v1",
+        "top_visible": true,
+        "touches_bottom": false,
+        "touches_image_border": false,
+        "touches_left": false,
+        "touches_right": false,
+        "touches_top": false,
+        "visibility_status": "complete",
+        "visible_height_valid": true,
+        "warnings": []
+      },
+      "visible_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.23446311815744444
+      },
+      "warnings": []
+    },
+    {
+      "bbox_xyxy": [
+        329.75848388671875,
+        93.49176025390625,
+        375.15484619140625,
+        189.71194458007812
+      ],
+      "bottom_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.7993478200786104
+      },
+      "centroid_3d_m": null,
+      "class_id": 62,
+      "class_name": "tv",
+      "class_scope": "core_now",
+      "confidence": 0.49655085802078247,
+      "depth_compactness": 0.9732339456752528,
+      "distance_m": 2.184152364730835,
+      "distance_semantics": "camera_axial_z_median",
+      "errors": [],
+      "formal_geometry": {
+        "absolute_geometry_valid": true,
+        "attempts": [
+          {
+            "automatic_geometry_valid": true,
+            "canvas_selection_status": "agreed",
+            "critical_geometry_rejections": [],
+            "selected_canvas": "direct_640x360",
+            "single_canvas_only": false,
+            "source": "all_object_geometry_v2",
+            "success": true
+          }
+        ],
+        "automatic_geometry_valid": true,
+        "canvas_selection_status": "agreed",
+        "critical_geometry_rejections": [],
+        "fallback_reason": null,
+        "fallback_used": false,
+        "provenance": {
+          "detection_object_id": null,
+          "frame_id": "frame_000002",
+          "gt_used_for_inference": false,
+          "model_hashes": {
+            "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+            "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+            "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+          },
+          "segmentation_object_id": "frame_000002:segmentation:003",
+          "stage3_schema": "deltar_stage3_1_object_depth.v1",
+          "stage4_function": "all_object_geometry.measure_logical_object_v2",
+          "stage4_group_schema": "deltar_stage4_object_group_input.v1.1"
+        },
+        "schema_version": "deltar_stage4_geometry.v1.1",
+        "selected_canvas": "direct_640x360",
+        "selected_geometry": {
+          "bottom_height_m": 0.7993478200786104,
+          "distance_m": 2.184152364730835,
+          "mask_support": 3139,
+          "object_height_m": 0.27294542682023976,
+          "point_count": 3139
+        },
+        "selected_source": "segmentation",
+        "selection_is_provisional": false,
+        "single_canvas_only": false,
+        "status": "success"
+      },
+      "frame_object_id": "frame_000002:logical:003",
+      "geometry_point_count": 3139,
+      "logical_object_id": "frame_000002:logical:003",
+      "object_role": "operable_object",
+      "object_source": "segmentation",
+      "physical_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.27294542682023976
+      },
+      "placement_level": "elevated",
+      "provenance": {
+        "frame_id": "frame_000002",
+        "model_hashes": {
+          "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+          "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+          "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+        },
+        "stage4_function": "all_object_geometry.measure_logical_object_v2"
+      },
+      "rejection_reason": null,
+      "visibility": {
+        "bottom_height_m": 0.7993478200786104,
+        "bottom_height_valid": true,
+        "bottom_visible": true,
+        "distance_semantics": "visible_surface_distance",
+        "distance_valid": true,
+        "full_extent_visible": true,
+        "occlusion_ratio_estimate": null,
+        "partial_object": false,
+        "physical_height_m": 0.27294542682023976,
+        "physical_height_valid": true,
+        "schema_version": "deltar_partial_object_visibility.v1",
+        "top_visible": true,
+        "touches_bottom": false,
+        "touches_image_border": false,
+        "touches_left": false,
+        "touches_right": false,
+        "touches_top": false,
+        "visibility_status": "complete",
+        "visible_height_valid": true,
+        "warnings": []
+      },
+      "visible_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.27294542682023976
+      },
+      "warnings": []
+    },
+    {
+      "bbox_xyxy": [
+        360.42791748046875,
+        108.08055114746094,
+        473.07684326171875,
+        219.82630920410156
+      ],
+      "bottom_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.7993478200786104
+      },
+      "centroid_3d_m": null,
+      "class_id": 63,
+      "class_name": "laptop",
+      "class_scope": "supported_but_not_core",
+      "confidence": 0.47386434674263,
+      "depth_compactness": 0.9736230870760787,
+      "distance_m": 2.0661635398864746,
+      "distance_semantics": "camera_axial_z_median",
+      "errors": [],
+      "formal_geometry": {
+        "absolute_geometry_valid": true,
+        "attempts": [
+          {
+            "automatic_geometry_valid": true,
+            "canvas_selection_status": "agreed",
+            "critical_geometry_rejections": [],
+            "selected_canvas": "direct_640x360",
+            "single_canvas_only": false,
+            "source": "all_object_geometry_v2",
+            "success": true
+          }
+        ],
+        "automatic_geometry_valid": true,
+        "canvas_selection_status": "agreed",
+        "critical_geometry_rejections": [],
+        "fallback_reason": null,
+        "fallback_used": false,
+        "provenance": {
+          "detection_object_id": null,
+          "frame_id": "frame_000002",
+          "gt_used_for_inference": false,
+          "model_hashes": {
+            "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+            "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+            "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+          },
+          "segmentation_object_id": "frame_000002:segmentation:004",
+          "stage3_schema": "deltar_stage3_1_object_depth.v1",
+          "stage4_function": "all_object_geometry.measure_logical_object_v2",
+          "stage4_group_schema": "deltar_stage4_object_group_input.v1.1"
+        },
+        "schema_version": "deltar_stage4_geometry.v1.1",
+        "selected_canvas": "direct_640x360",
+        "selected_geometry": {
+          "bottom_height_m": 0.7993478200786104,
+          "distance_m": 2.0661635398864746,
+          "mask_support": 7137,
+          "object_height_m": 0.23276717573815142,
+          "point_count": 7137
+        },
+        "selected_source": "segmentation",
+        "selection_is_provisional": false,
+        "single_canvas_only": false,
+        "status": "success"
+      },
+      "frame_object_id": "frame_000002:logical:004",
+      "geometry_point_count": 7137,
+      "logical_object_id": "frame_000002:logical:004",
+      "object_role": "operable_object",
+      "object_source": "segmentation",
+      "physical_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.23276717573815142
+      },
+      "placement_level": "elevated",
+      "provenance": {
+        "frame_id": "frame_000002",
+        "model_hashes": {
+          "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+          "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+          "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+        },
+        "stage4_function": "all_object_geometry.measure_logical_object_v2"
+      },
+      "rejection_reason": null,
+      "visibility": {
+        "bottom_height_m": 0.7993478200786104,
+        "bottom_height_valid": true,
+        "bottom_visible": true,
+        "distance_semantics": "visible_surface_distance",
+        "distance_valid": true,
+        "full_extent_visible": true,
+        "occlusion_ratio_estimate": null,
+        "partial_object": false,
+        "physical_height_m": 0.23276717573815142,
+        "physical_height_valid": true,
+        "schema_version": "deltar_partial_object_visibility.v1",
+        "top_visible": true,
+        "touches_bottom": false,
+        "touches_image_border": false,
+        "touches_left": false,
+        "touches_right": false,
+        "touches_top": false,
+        "visibility_status": "complete",
+        "visible_height_valid": true,
+        "warnings": []
+      },
+      "visible_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.23276717573815142
+      },
+      "warnings": []
+    },
+    {
+      "bbox_xyxy": [
+        466.8201904296875,
+        106.23294067382812,
+        557.0693359375,
+        207.865478515625
+      ],
+      "bottom_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.7993478200786104
+      },
+      "centroid_3d_m": null,
+      "class_id": 62,
+      "class_name": "tv",
+      "class_scope": "core_now",
+      "confidence": 0.46229687333106995,
+      "depth_compactness": 0.9537368813836505,
+      "distance_m": 2.1261050701141357,
+      "distance_semantics": "camera_axial_z_median",
+      "errors": [],
+      "formal_geometry": {
+        "absolute_geometry_valid": true,
+        "attempts": [
+          {
+            "automatic_geometry_valid": true,
+            "canvas_selection_status": "agreed",
+            "critical_geometry_rejections": [],
+            "selected_canvas": "direct_640x360",
+            "single_canvas_only": false,
+            "source": "all_object_geometry_v2",
+            "success": true
+          }
+        ],
+        "automatic_geometry_valid": true,
+        "canvas_selection_status": "agreed",
+        "critical_geometry_rejections": [],
+        "fallback_reason": null,
+        "fallback_used": false,
+        "provenance": {
+          "detection_object_id": "frame_000002:detection:005",
+          "frame_id": "frame_000002",
+          "gt_used_for_inference": false,
+          "model_hashes": {
+            "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+            "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+            "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+          },
+          "segmentation_object_id": "frame_000002:segmentation:005",
+          "stage3_schema": "deltar_stage3_1_object_depth.v1",
+          "stage4_function": "all_object_geometry.measure_logical_object_v2",
+          "stage4_group_schema": "deltar_stage4_object_group_input.v1.1"
+        },
+        "schema_version": "deltar_stage4_geometry.v1.1",
+        "selected_canvas": "direct_640x360",
+        "selected_geometry": {
+          "bottom_height_m": 0.7993478200786104,
+          "distance_m": 2.1261050701141357,
+          "mask_support": 6489,
+          "object_height_m": 0.23913188811359204,
+          "point_count": 6489
+        },
+        "selected_source": "segmentation",
+        "selection_is_provisional": false,
+        "single_canvas_only": false,
+        "status": "success"
+      },
+      "frame_object_id": "frame_000002:logical:005",
+      "geometry_point_count": 6489,
+      "logical_object_id": "frame_000002:logical:005",
+      "object_role": "operable_object",
+      "object_source": "segmentation",
+      "physical_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.23913188811359204
+      },
+      "placement_level": "elevated",
+      "provenance": {
+        "frame_id": "frame_000002",
+        "model_hashes": {
+          "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+          "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+          "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+        },
+        "stage4_function": "all_object_geometry.measure_logical_object_v2"
+      },
+      "rejection_reason": null,
+      "visibility": {
+        "bottom_height_m": 0.7993478200786104,
+        "bottom_height_valid": true,
+        "bottom_visible": true,
+        "distance_semantics": "visible_surface_distance",
+        "distance_valid": true,
+        "full_extent_visible": true,
+        "occlusion_ratio_estimate": null,
+        "partial_object": false,
+        "physical_height_m": 0.23913188811359204,
+        "physical_height_valid": true,
+        "schema_version": "deltar_partial_object_visibility.v1",
+        "top_visible": true,
+        "touches_bottom": false,
+        "touches_image_border": false,
+        "touches_left": false,
+        "touches_right": false,
+        "touches_top": false,
+        "visibility_status": "complete",
+        "visible_height_valid": true,
+        "warnings": []
+      },
+      "visible_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.23913188811359204
+      },
+      "warnings": []
+    },
+    {
+      "bbox_xyxy": [
+        467.34259033203125,
+        209.42355346679688,
+        498.19158935546875,
+        226.99887084960938
+      ],
+      "bottom_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.7993478200786104
+      },
+      "centroid_3d_m": null,
+      "class_id": 64,
+      "class_name": "mouse",
+      "class_scope": "supported_but_not_core",
+      "confidence": 0.3917078971862793,
+      "depth_compactness": 0.9652354590159926,
+      "distance_m": 2.0546799898147583,
+      "distance_semantics": "camera_axial_z_median",
+      "errors": [],
+      "formal_geometry": {
+        "absolute_geometry_valid": true,
+        "attempts": [
+          {
+            "automatic_geometry_valid": true,
+            "canvas_selection_status": "agreed",
+            "critical_geometry_rejections": [],
+            "selected_canvas": "direct_640x360",
+            "single_canvas_only": false,
+            "source": "all_object_geometry_v2",
+            "success": true
+          }
+        ],
+        "automatic_geometry_valid": true,
+        "canvas_selection_status": "agreed",
+        "critical_geometry_rejections": [],
+        "fallback_reason": null,
+        "fallback_used": false,
+        "provenance": {
+          "detection_object_id": "frame_000002:detection:007",
+          "frame_id": "frame_000002",
+          "gt_used_for_inference": false,
+          "model_hashes": {
+            "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+            "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+            "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+          },
+          "segmentation_object_id": "frame_000002:segmentation:006",
+          "stage3_schema": "deltar_stage3_1_object_depth.v1",
+          "stage4_function": "all_object_geometry.measure_logical_object_v2",
+          "stage4_group_schema": "deltar_stage4_object_group_input.v1.1"
+        },
+        "schema_version": "deltar_stage4_geometry.v1.1",
+        "selected_canvas": "direct_640x360",
+        "selected_geometry": {
+          "bottom_height_m": 0.7993478200786104,
+          "distance_m": 2.0546799898147583,
+          "mask_support": 322,
+          "object_height_m": 0.005882870167011902,
+          "point_count": 322
+        },
+        "selected_source": "segmentation",
+        "selection_is_provisional": false,
+        "single_canvas_only": false,
+        "status": "success"
+      },
+      "frame_object_id": "frame_000002:logical:006",
+      "geometry_point_count": 322,
+      "logical_object_id": "frame_000002:logical:006",
+      "object_role": "operable_object",
+      "object_source": "segmentation",
+      "physical_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.005882870167011902
+      },
+      "placement_level": "elevated",
+      "provenance": {
+        "frame_id": "frame_000002",
+        "model_hashes": {
+          "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+          "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+          "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+        },
+        "stage4_function": "all_object_geometry.measure_logical_object_v2"
+      },
+      "rejection_reason": null,
+      "visibility": {
+        "bottom_height_m": 0.7993478200786104,
+        "bottom_height_valid": true,
+        "bottom_visible": true,
+        "distance_semantics": "visible_surface_distance",
+        "distance_valid": true,
+        "full_extent_visible": true,
+        "occlusion_ratio_estimate": null,
+        "partial_object": false,
+        "physical_height_m": 0.005882870167011902,
+        "physical_height_valid": true,
+        "schema_version": "deltar_partial_object_visibility.v1",
+        "top_visible": true,
+        "touches_bottom": false,
+        "touches_image_border": false,
+        "touches_left": false,
+        "touches_right": false,
+        "touches_top": false,
+        "visibility_status": "complete",
+        "visible_height_valid": true,
+        "warnings": []
+      },
+      "visible_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.005882870167011902
+      },
+      "warnings": []
+    },
+    {
+      "bbox_xyxy": [
+        589.9608154296875,
+        85.04578399658203,
+        639.7176513671875,
+        222.77545166015625
+      ],
+      "bottom_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.7993478200786104
+      },
+      "centroid_3d_m": null,
+      "class_id": 62,
+      "class_name": "tv",
+      "class_scope": "core_now",
+      "confidence": 0.3648350238800049,
+      "depth_compactness": 0.9067392553159924,
+      "distance_m": 2.1863616704940796,
+      "distance_semantics": "camera_axial_z_median",
+      "errors": [],
+      "formal_geometry": {
+        "absolute_geometry_valid": true,
+        "attempts": [
+          {
+            "automatic_geometry_valid": true,
+            "canvas_selection_status": "agreed",
+            "critical_geometry_rejections": [],
+            "selected_canvas": "direct_640x360",
+            "single_canvas_only": false,
+            "source": "all_object_geometry_v2",
+            "success": true
+          }
+        ],
+        "automatic_geometry_valid": true,
+        "canvas_selection_status": "agreed",
+        "critical_geometry_rejections": [],
+        "fallback_reason": null,
+        "fallback_used": false,
+        "provenance": {
+          "detection_object_id": null,
+          "frame_id": "frame_000002",
+          "gt_used_for_inference": false,
+          "model_hashes": {
+            "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+            "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+            "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+          },
+          "segmentation_object_id": "frame_000002:segmentation:007",
+          "stage3_schema": "deltar_stage3_1_object_depth.v1",
+          "stage4_function": "all_object_geometry.measure_logical_object_v2",
+          "stage4_group_schema": "deltar_stage4_object_group_input.v1.1"
+        },
+        "schema_version": "deltar_stage4_geometry.v1.1",
+        "selected_canvas": "direct_640x360",
+        "selected_geometry": {
+          "bottom_height_m": 0.7993478200786104,
+          "distance_m": 2.1863616704940796,
+          "mask_support": 4448,
+          "object_height_m": 0.29295979627808255,
+          "point_count": 4448
+        },
+        "selected_source": "segmentation",
+        "selection_is_provisional": false,
+        "single_canvas_only": false,
+        "status": "success"
+      },
+      "frame_object_id": "frame_000002:logical:007",
+      "geometry_point_count": 4448,
+      "logical_object_id": "frame_000002:logical:007",
+      "object_role": "operable_object",
+      "object_source": "segmentation",
+      "physical_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.29295979627808255
+      },
+      "placement_level": "elevated",
+      "provenance": {
+        "frame_id": "frame_000002",
+        "model_hashes": {
+          "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+          "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+          "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+        },
+        "stage4_function": "all_object_geometry.measure_logical_object_v2"
+      },
+      "rejection_reason": null,
+      "visibility": {
+        "bottom_height_m": 0.7993478200786104,
+        "bottom_height_valid": true,
+        "bottom_visible": true,
+        "distance_semantics": "visible_surface_distance",
+        "distance_valid": true,
+        "full_extent_visible": false,
+        "occlusion_ratio_estimate": null,
+        "partial_object": true,
+        "physical_height_m": 0.29295979627808255,
+        "physical_height_valid": true,
+        "schema_version": "deltar_partial_object_visibility.v1",
+        "top_visible": true,
+        "touches_bottom": false,
+        "touches_image_border": true,
+        "touches_left": false,
+        "touches_right": true,
+        "touches_top": false,
+        "visibility_status": "partial",
+        "visible_height_valid": true,
+        "warnings": [
+          "partial_or_unknown_extent",
+          "distance_is_visible_surface_only",
+          "visible_height_is_not_physical_height"
+        ]
+      },
+      "visible_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.29295979627808255
+      },
+      "warnings": [
+        "W_PARTIAL_OBJECT"
+      ]
+    },
+    {
+      "bbox_xyxy": [
+        26.29249382019043,
+        20.81744384765625,
+        57.78895568847656,
+        98.35945129394531
+      ],
+      "bottom_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 1.0408965807286117
+      },
+      "centroid_3d_m": null,
+      "class_id": 39,
+      "class_name": "bottle",
+      "class_scope": "core_now",
+      "confidence": 0.36364179849624634,
+      "depth_compactness": 0.9464462829685074,
+      "distance_m": 1.6116247177124023,
+      "distance_semantics": "camera_axial_z_median",
+      "errors": [],
+      "formal_geometry": {
+        "absolute_geometry_valid": true,
+        "attempts": [
+          {
+            "automatic_geometry_valid": true,
+            "canvas_selection_status": "agreed",
+            "critical_geometry_rejections": [],
+            "selected_canvas": "direct_640x360",
+            "single_canvas_only": false,
+            "source": "all_object_geometry_v2",
+            "success": true
+          }
+        ],
+        "automatic_geometry_valid": true,
+        "canvas_selection_status": "agreed",
+        "critical_geometry_rejections": [],
+        "fallback_reason": null,
+        "fallback_used": false,
+        "provenance": {
+          "detection_object_id": "frame_000002:detection:006",
+          "frame_id": "frame_000002",
+          "gt_used_for_inference": false,
+          "model_hashes": {
+            "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+            "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+            "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+          },
+          "segmentation_object_id": "frame_000002:segmentation:008",
+          "stage3_schema": "deltar_stage3_1_object_depth.v1",
+          "stage4_function": "all_object_geometry.measure_logical_object_v2",
+          "stage4_group_schema": "deltar_stage4_object_group_input.v1.1"
+        },
+        "schema_version": "deltar_stage4_geometry.v1.1",
+        "selected_canvas": "direct_640x360",
+        "selected_geometry": {
+          "bottom_height_m": 1.0408965807286117,
+          "distance_m": 1.6116247177124023,
+          "mask_support": 1775,
+          "object_height_m": 0.107,
+          "point_count": 1775
+        },
+        "selected_source": "segmentation",
+        "selection_is_provisional": false,
+        "single_canvas_only": false,
+        "status": "success"
+      },
+      "frame_object_id": "frame_000002:logical:008",
+      "geometry_point_count": 1775,
+      "logical_object_id": "frame_000002:logical:008",
+      "object_role": "operable_object",
+      "object_source": "segmentation",
+      "physical_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.107
+      },
+      "placement_level": "elevated",
+      "provenance": {
+        "frame_id": "frame_000002",
+        "model_hashes": {
+          "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+          "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+          "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+        },
+        "stage4_function": "all_object_geometry.measure_logical_object_v2"
+      },
+      "rejection_reason": null,
+      "visibility": {
+        "bottom_height_m": 1.0408965807286117,
+        "bottom_height_valid": true,
+        "bottom_visible": true,
+        "distance_semantics": "visible_surface_distance",
+        "distance_valid": true,
+        "full_extent_visible": true,
+        "occlusion_ratio_estimate": null,
+        "partial_object": false,
+        "physical_height_m": 0.107,
+        "physical_height_valid": true,
+        "schema_version": "deltar_partial_object_visibility.v1",
+        "top_visible": true,
+        "touches_bottom": false,
+        "touches_image_border": false,
+        "touches_left": false,
+        "touches_right": false,
+        "touches_top": false,
+        "visibility_status": "complete",
+        "visible_height_valid": true,
+        "warnings": []
+      },
+      "visible_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.107
+      },
+      "warnings": []
+    },
+    {
+      "bbox_xyxy": [
+        140.02548217773438,
+        185.87234497070312,
+        170.07998657226562,
+        279.86077880859375
+      ],
+      "bottom_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.7092454368733369
+      },
+      "centroid_3d_m": null,
+      "class_id": 39,
+      "class_name": "bottle",
+      "class_scope": "core_now",
+      "confidence": 0.3509279787540436,
+      "depth_compactness": 0.982648399259014,
+      "distance_m": 1.7592451572418213,
+      "distance_semantics": "camera_axial_z_median",
+      "errors": [],
+      "formal_geometry": {
+        "absolute_geometry_valid": true,
+        "attempts": [
+          {
+            "automatic_geometry_valid": true,
+            "canvas_selection_status": "agreed",
+            "critical_geometry_rejections": [],
+            "selected_canvas": "direct_640x360",
+            "single_canvas_only": false,
+            "source": "all_object_geometry_v2",
+            "success": true
+          }
+        ],
+        "automatic_geometry_valid": true,
+        "canvas_selection_status": "agreed",
+        "critical_geometry_rejections": [],
+        "fallback_reason": null,
+        "fallback_used": false,
+        "provenance": {
+          "detection_object_id": "frame_000002:detection:003",
+          "frame_id": "frame_000002",
+          "gt_used_for_inference": false,
+          "model_hashes": {
+            "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+            "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+            "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+          },
+          "segmentation_object_id": "frame_000002:segmentation:009",
+          "stage3_schema": "deltar_stage3_1_object_depth.v1",
+          "stage4_function": "all_object_geometry.measure_logical_object_v2",
+          "stage4_group_schema": "deltar_stage4_object_group_input.v1.1"
+        },
+        "schema_version": "deltar_stage4_geometry.v1.1",
+        "selected_canvas": "direct_640x360",
+        "selected_geometry": {
+          "bottom_height_m": 0.7092454368733369,
+          "distance_m": 1.7592451572418213,
+          "mask_support": 2077,
+          "object_height_m": 0.176,
+          "point_count": 2077
+        },
+        "selected_source": "segmentation",
+        "selection_is_provisional": false,
+        "single_canvas_only": false,
+        "status": "success"
+      },
+      "frame_object_id": "frame_000002:logical:009",
+      "geometry_point_count": 2077,
+      "logical_object_id": "frame_000002:logical:009",
+      "object_role": "operable_object",
+      "object_source": "segmentation",
+      "physical_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.176
+      },
+      "placement_level": "elevated",
+      "provenance": {
+        "frame_id": "frame_000002",
+        "model_hashes": {
+          "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+          "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+          "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+        },
+        "stage4_function": "all_object_geometry.measure_logical_object_v2"
+      },
+      "rejection_reason": null,
+      "visibility": {
+        "bottom_height_m": 0.7092454368733369,
+        "bottom_height_valid": true,
+        "bottom_visible": true,
+        "distance_semantics": "visible_surface_distance",
+        "distance_valid": true,
+        "full_extent_visible": true,
+        "occlusion_ratio_estimate": null,
+        "partial_object": false,
+        "physical_height_m": 0.176,
+        "physical_height_valid": true,
+        "schema_version": "deltar_partial_object_visibility.v1",
+        "top_visible": true,
+        "touches_bottom": false,
+        "touches_image_border": false,
+        "touches_left": false,
+        "touches_right": false,
+        "touches_top": false,
+        "visibility_status": "complete",
+        "visible_height_valid": true,
+        "warnings": []
+      },
+      "visible_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.176
+      },
+      "warnings": []
+    },
+    {
+      "bbox_xyxy": [
+        26.917964935302734,
+        164.69265747070312,
+        129.665771484375,
+        264.8727722167969
+      ],
+      "bottom_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.7092454368733369
+      },
+      "centroid_3d_m": null,
+      "class_id": 32,
+      "class_name": "sports ball",
+      "class_scope": "supported_but_not_core",
+      "confidence": 0.9504492282867432,
+      "depth_compactness": 0.948897947585672,
+      "distance_m": 1.5874382257461548,
+      "distance_semantics": "camera_axial_z_median",
+      "errors": [],
+      "formal_geometry": {
+        "absolute_geometry_valid": true,
+        "attempts": [
+          {
+            "automatic_geometry_valid": true,
+            "canvas_selection_status": "agreed",
+            "critical_geometry_rejections": [],
+            "selected_canvas": "direct_640x360",
+            "single_canvas_only": false,
+            "source": "all_object_geometry_v2",
+            "success": true
+          }
+        ],
+        "automatic_geometry_valid": true,
+        "canvas_selection_status": "agreed",
+        "critical_geometry_rejections": [],
+        "fallback_reason": null,
+        "fallback_used": false,
+        "provenance": {
+          "detection_object_id": "frame_000002:detection:000",
+          "frame_id": "frame_000002",
+          "gt_used_for_inference": false,
+          "model_hashes": {
+            "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+            "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+            "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+          },
+          "segmentation_object_id": null,
+          "stage3_schema": "deltar_stage3_1_object_depth.v1",
+          "stage4_function": "all_object_geometry.measure_logical_object_v2",
+          "stage4_group_schema": "deltar_stage4_object_group_input.v1.1"
+        },
+        "schema_version": "deltar_stage4_geometry.v1.1",
+        "selected_canvas": "direct_640x360",
+        "selected_geometry": {
+          "bottom_height_m": 0.7092454368733369,
+          "distance_m": 1.5874382257461548,
+          "mask_support": 6002,
+          "object_height_m": 0.20426811613975918,
+          "point_count": 6002
+        },
+        "selected_source": "detection",
+        "selection_is_provisional": false,
+        "single_canvas_only": false,
+        "status": "success"
+      },
+      "frame_object_id": "frame_000002:logical:010",
+      "geometry_point_count": 6002,
+      "logical_object_id": "frame_000002:logical:010",
+      "object_role": "operable_object",
+      "object_source": "detection",
+      "physical_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.20426811613975918
+      },
+      "placement_level": "elevated",
+      "provenance": {
+        "frame_id": "frame_000002",
+        "model_hashes": {
+          "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+          "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+          "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+        },
+        "stage4_function": "all_object_geometry.measure_logical_object_v2"
+      },
+      "rejection_reason": null,
+      "visibility": {
+        "bottom_height_m": 0.7092454368733369,
+        "bottom_height_valid": true,
+        "bottom_visible": true,
+        "distance_semantics": "visible_surface_distance",
+        "distance_valid": true,
+        "full_extent_visible": true,
+        "occlusion_ratio_estimate": null,
+        "partial_object": false,
+        "physical_height_m": 0.20426811613975918,
+        "physical_height_valid": true,
+        "schema_version": "deltar_partial_object_visibility.v1",
+        "top_visible": true,
+        "touches_bottom": false,
+        "touches_image_border": false,
+        "touches_left": false,
+        "touches_right": false,
+        "touches_top": false,
+        "visibility_status": "complete",
+        "visible_height_valid": true,
+        "warnings": []
+      },
+      "visible_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.20426811613975918
+      },
+      "warnings": []
+    },
+    {
+      "bbox_xyxy": [
+        525.7615966796875,
+        2.94384765625,
+        602.5843505859375,
+        210.89010620117188
+      ],
+      "bottom_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.7993478200786104
+      },
+      "centroid_3d_m": null,
+      "class_id": 72,
+      "class_name": "refrigerator",
+      "class_scope": "supported_but_not_core",
+      "confidence": 0.29450637102127075,
+      "depth_compactness": 0.9362670252528229,
+      "distance_m": 2.2233352661132812,
+      "distance_semantics": "camera_axial_z_median",
+      "errors": [],
+      "formal_geometry": {
+        "absolute_geometry_valid": true,
+        "attempts": [
+          {
+            "automatic_geometry_valid": true,
+            "canvas_selection_status": "agreed",
+            "critical_geometry_rejections": [],
+            "selected_canvas": "direct_640x360",
+            "single_canvas_only": false,
+            "source": "all_object_geometry_v2",
+            "success": true
+          }
+        ],
+        "automatic_geometry_valid": true,
+        "canvas_selection_status": "agreed",
+        "critical_geometry_rejections": [],
+        "fallback_reason": null,
+        "fallback_used": false,
+        "provenance": {
+          "detection_object_id": "frame_000002:detection:008",
+          "frame_id": "frame_000002",
+          "gt_used_for_inference": false,
+          "model_hashes": {
+            "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+            "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+            "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+          },
+          "segmentation_object_id": null,
+          "stage3_schema": "deltar_stage3_1_object_depth.v1",
+          "stage4_function": "all_object_geometry.measure_logical_object_v2",
+          "stage4_group_schema": "deltar_stage4_object_group_input.v1.1"
+        },
+        "schema_version": "deltar_stage4_geometry.v1.1",
+        "selected_canvas": "direct_640x360",
+        "selected_geometry": {
+          "bottom_height_m": 0.7993478200786104,
+          "distance_m": 2.2233352661132812,
+          "mask_support": 10811,
+          "object_height_m": 0.5312073712182468,
+          "point_count": 10811
+        },
+        "selected_source": "detection",
+        "selection_is_provisional": false,
+        "single_canvas_only": false,
+        "status": "success"
+      },
+      "frame_object_id": "frame_000002:logical:011",
+      "geometry_point_count": 10811,
+      "logical_object_id": "frame_000002:logical:011",
+      "object_role": "operable_object",
+      "object_source": "detection",
+      "physical_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.5312073712182468
+      },
+      "placement_level": "elevated",
+      "provenance": {
+        "frame_id": "frame_000002",
+        "model_hashes": {
+          "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+          "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+          "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+        },
+        "stage4_function": "all_object_geometry.measure_logical_object_v2"
+      },
+      "rejection_reason": null,
+      "visibility": {
+        "bottom_height_m": 0.7993478200786104,
+        "bottom_height_valid": true,
+        "bottom_visible": true,
+        "distance_semantics": "visible_surface_distance",
+        "distance_valid": true,
+        "full_extent_visible": true,
+        "occlusion_ratio_estimate": null,
+        "partial_object": false,
+        "physical_height_m": 0.5312073712182468,
+        "physical_height_valid": true,
+        "schema_version": "deltar_partial_object_visibility.v1",
+        "top_visible": true,
+        "touches_bottom": false,
+        "touches_image_border": false,
+        "touches_left": false,
+        "touches_right": false,
+        "touches_top": false,
+        "visibility_status": "complete",
+        "visible_height_valid": true,
+        "warnings": []
+      },
+      "visible_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.5312073712182468
+      },
+      "warnings": []
+    }
+  ],
+  "processing_ms": {
+    "all_object_geometry_ms": 21345.926100038923,
+    "decode_rgb565_ms": 7.626799982972443,
+    "deltar_direct_ms": 4954.780499974731,
+    "deltar_letterbox_ms": 4281.683700042777,
+    "deltar_total_ms": 9236.930100014433,
+    "frame_total_ms": 21785.089699958917,
+    "stage7d_axial_ms": 1049.8872000025585,
+    "stage7d_debug_write_ms": 1199.6377000468783,
+    "stage7d_diagnostics_enabled": 0.0,
+    "stage7d_radial_ms": 0.0,
+    "stage7d_total_critical_ms": 2249.5812999550253,
+    "yolo_cache_lookup_ms": 0.000800006091594696,
+    "yolo_ms": 0.0
+  },
+  "processing_status": {
+    "capture_status": "CAPTURE_OK",
+    "degradation_mode": "NORMAL",
+    "deltar_status": "DELTAR_OK",
+    "detection_status": "DETECTION_OK",
+    "geometry_status": "GEOMETRY_DEGRADED",
+    "reason_codes": [],
+    "tof_diagnostics": {
+      "borrowed_age_ms": null,
+      "borrowed_from_frame_id": null,
+      "confidence": 0.57282196186948,
+      "degradation_mode": "NORMAL",
+      "formal_valid_count": 21,
+      "pose_gate": null,
+      "reason_codes": [],
+      "source": "current",
+      "tof_status": "TOF_NORMAL"
+    },
+    "tof_status": "TOF_NORMAL"
+  },
+  "profiles": {
+    "calibration_status": "measured",
+    "ids": {
+      "algorithm_profile_id": "algorithm_stage6_official_v1",
+      "calibration_profile_id": "calibration_unverified_stage6_v1",
+      "camera_profile_id": "camera_sc2336_640x360_rgb565_v1",
+      "scan_strategy_profile_id": "scan_strategy_stage6_guidance_v1",
+      "tof_profile_id": "tof_vl53l5cx_orientation_identity_v1"
+    },
+    "sha256": {
+      "algorithm_profile.json": "a4f61609c1a8f22d0577889b392e7ada9cea0059f3a348e036677d3c3a3fdb06",
+      "formal_stage2_frame_profile.json": "60b5a7f32c3f6cdfcef2f101a3a7debf4c4b4c123633c2e84f2d151e103930cf",
+      "model_manifest.json": "0be8eff315194cf498ae77b188186b2a16d3ffefe8bc639b29dfc3eb00ce2b46",
+      "scan_strategy_profile.json": "3365ebbb8b539609b1ff0568703204be4be24e08059f1d2a615ff396115a10e5"
+    }
+  },
+  "region_validation": [
+    {
+      "object_id": "frame_000002:detection:000",
+      "region_method": "bbox_full",
+      "source": "detection",
+      "statistic_method": "median"
+    },
+    {
+      "object_id": "frame_000002:detection:001",
+      "region_method": "bbox_full",
+      "source": "detection",
+      "statistic_method": "median"
+    },
+    {
+      "object_id": "frame_000002:detection:002",
+      "region_method": "bbox_full",
+      "source": "detection",
+      "statistic_method": "median"
+    },
+    {
+      "object_id": "frame_000002:detection:003",
+      "region_method": "bbox_full",
+      "source": "detection",
+      "statistic_method": "median"
+    },
+    {
+      "object_id": "frame_000002:detection:004",
+      "region_method": "bbox_full",
+      "source": "detection",
+      "statistic_method": "median"
+    },
+    {
+      "object_id": "frame_000002:detection:005",
+      "region_method": "bbox_full",
+      "source": "detection",
+      "statistic_method": "median"
+    },
+    {
+      "object_id": "frame_000002:detection:006",
+      "region_method": "bbox_full",
+      "source": "detection",
+      "statistic_method": "median"
+    },
+    {
+      "object_id": "frame_000002:detection:007",
+      "region_method": "bbox_full",
+      "source": "detection",
+      "statistic_method": "median"
+    },
+    {
+      "object_id": "frame_000002:detection:008",
+      "region_method": "bbox_full",
+      "source": "detection",
+      "statistic_method": "median"
+    },
+    {
+      "formal_region_sha256": "034a1cf970dd1444e26819a46b2ee31706e9296e210887a481904efca90c360c",
+      "frozen_region_pixel_count": 2538,
+      "frozen_region_sha256": "034a1cf970dd1444e26819a46b2ee31706e9296e210887a481904efca90c360c",
+      "object_id": "frame_000002:segmentation:000",
+      "raw_mask_pixel_count": 3431,
+      "region_method": "segment_eroded_3px",
+      "source": "segmentation",
+      "stage3_stage4_region_exact_equal": true,
+      "stage3_valid_region_pixel_count": {
+        "direct_640x360": 2538,
+        "letterbox_640x480": 2538
+      },
+      "statistic_method": "mad_median"
+    },
+    {
+      "formal_region_sha256": "bf0daa974e8aedfcab79f860f65588e4c0cc75a5733f987b5abdacc9ef81810d",
+      "frozen_region_pixel_count": 11580,
+      "frozen_region_sha256": "bf0daa974e8aedfcab79f860f65588e4c0cc75a5733f987b5abdacc9ef81810d",
+      "object_id": "frame_000002:segmentation:001",
+      "raw_mask_pixel_count": 13464,
+      "region_method": "segment_eroded_3px",
+      "source": "segmentation",
+      "stage3_stage4_region_exact_equal": true,
+      "stage3_valid_region_pixel_count": {
+        "direct_640x360": 11580,
+        "letterbox_640x480": 11580
+      },
+      "statistic_method": "mad_median"
+    },
+    {
+      "formal_region_sha256": "6a9c96b387b0048391db3da49a48827b61c763b9f18dc476f413080a832e8083",
+      "frozen_region_pixel_count": 6554,
+      "frozen_region_sha256": "6a9c96b387b0048391db3da49a48827b61c763b9f18dc476f413080a832e8083",
+      "object_id": "frame_000002:segmentation:002",
+      "raw_mask_pixel_count": 7631,
+      "region_method": "segment_eroded_3px",
+      "source": "segmentation",
+      "stage3_stage4_region_exact_equal": true,
+      "stage3_valid_region_pixel_count": {
+        "direct_640x360": 6554,
+        "letterbox_640x480": 6554
+      },
+      "statistic_method": "mad_median"
+    },
+    {
+      "formal_region_sha256": "6d90a1d0c52f45a62fa6fda90c1dd080d49ff9f236b7b35b5d90412f884195d2",
+      "frozen_region_pixel_count": 2735,
+      "frozen_region_sha256": "6d90a1d0c52f45a62fa6fda90c1dd080d49ff9f236b7b35b5d90412f884195d2",
+      "object_id": "frame_000002:segmentation:003",
+      "raw_mask_pixel_count": 3658,
+      "region_method": "segment_eroded_3px",
+      "source": "segmentation",
+      "stage3_stage4_region_exact_equal": true,
+      "stage3_valid_region_pixel_count": {
+        "direct_640x360": 2735,
+        "letterbox_640x480": 2735
+      },
+      "statistic_method": "mad_median"
+    },
+    {
+      "formal_region_sha256": "3798964301971d64da0afaf6d4e1a1e68b04e04b81466d8b69144c7cd308b751",
+      "frozen_region_pixel_count": 6515,
+      "frozen_region_sha256": "3798964301971d64da0afaf6d4e1a1e68b04e04b81466d8b69144c7cd308b751",
+      "object_id": "frame_000002:segmentation:004",
+      "raw_mask_pixel_count": 7755,
+      "region_method": "segment_eroded_3px",
+      "source": "segmentation",
+      "stage3_stage4_region_exact_equal": true,
+      "stage3_valid_region_pixel_count": {
+        "direct_640x360": 6515,
+        "letterbox_640x480": 6515
+      },
+      "statistic_method": "mad_median"
+    },
+    {
+      "formal_region_sha256": "684d4ab50848c8d2b2e944d5881c87ab2aa42e50b9c269342847a0398065531a",
+      "frozen_region_pixel_count": 5845,
+      "frozen_region_sha256": "684d4ab50848c8d2b2e944d5881c87ab2aa42e50b9c269342847a0398065531a",
+      "object_id": "frame_000002:segmentation:005",
+      "raw_mask_pixel_count": 7001,
+      "region_method": "segment_eroded_3px",
+      "source": "segmentation",
+      "stage3_stage4_region_exact_equal": true,
+      "stage3_valid_region_pixel_count": {
+        "direct_640x360": 5845,
+        "letterbox_640x480": 5845
+      },
+      "statistic_method": "mad_median"
+    },
+    {
+      "formal_region_sha256": "7d5cdc8f67f372644efed399f14cde7095d7a663e31e032fce17440698aebb66",
+      "frozen_region_pixel_count": 172,
+      "frozen_region_sha256": "7d5cdc8f67f372644efed399f14cde7095d7a663e31e032fce17440698aebb66",
+      "object_id": "frame_000002:segmentation:006",
+      "raw_mask_pixel_count": 410,
+      "region_method": "segment_eroded_3px",
+      "source": "segmentation",
+      "stage3_stage4_region_exact_equal": true,
+      "stage3_valid_region_pixel_count": {
+        "direct_640x360": 172,
+        "letterbox_640x480": 172
+      },
+      "statistic_method": "mad_median"
+    },
+    {
+      "formal_region_sha256": "035708e0c0447a828c19cc001f8083e472bb121f62ac8236283b5fb4ebf04f06",
+      "frozen_region_pixel_count": 3767,
+      "frozen_region_sha256": "035708e0c0447a828c19cc001f8083e472bb121f62ac8236283b5fb4ebf04f06",
+      "object_id": "frame_000002:segmentation:007",
+      "raw_mask_pixel_count": 4802,
+      "region_method": "segment_eroded_3px",
+      "source": "segmentation",
+      "stage3_stage4_region_exact_equal": true,
+      "stage3_valid_region_pixel_count": {
+        "direct_640x360": 3767,
+        "letterbox_640x480": 3767
+      },
+      "statistic_method": "mad_median"
+    },
+    {
+      "formal_region_sha256": "922f6f43c7d9b07faf85c4008a5d357ab180e2e96eb82984c9030553d58db7cf",
+      "frozen_region_pixel_count": 1411,
+      "frozen_region_sha256": "922f6f43c7d9b07faf85c4008a5d357ab180e2e96eb82984c9030553d58db7cf",
+      "object_id": "frame_000002:segmentation:008",
+      "raw_mask_pixel_count": 1969,
+      "region_method": "segment_eroded_3px",
+      "source": "segmentation",
+      "stage3_stage4_region_exact_equal": true,
+      "stage3_valid_region_pixel_count": {
+        "direct_640x360": 1411,
+        "letterbox_640x480": 1411
+      },
+      "statistic_method": "mad_median"
+    },
+    {
+      "formal_region_sha256": "a7c7edbf77e1a03f5122e4971a32c0e1f20a3547dbf5a6e62a30ca5be57f010a",
+      "frozen_region_pixel_count": 1724,
+      "frozen_region_sha256": "a7c7edbf77e1a03f5122e4971a32c0e1f20a3547dbf5a6e62a30ca5be57f010a",
+      "object_id": "frame_000002:segmentation:009",
+      "raw_mask_pixel_count": 2396,
+      "region_method": "segment_eroded_3px",
+      "source": "segmentation",
+      "stage3_stage4_region_exact_equal": true,
+      "stage3_valid_region_pixel_count": {
+        "direct_640x360": 1724,
+        "letterbox_640x480": 1724
+      },
+      "statistic_method": "mad_median"
+    }
+  ],
+  "rejections": [],
+  "schema_version": "deltar_scan_frame_result.v1.1",
+  "sequence": 2,
+  "status": "success",
+  "timestamps": {
+    "camera_timestamp_us": 93394973,
+    "pair_delta_us": 5014,
+    "tof_timestamp_us": 93399987
+  },
+  "tof_summary": {
+    "median_distance_mm": 1935.0,
+    "valid_zone_count": 21
+  },
+  "warnings": [
+    "W_PARTIAL_OBJECT"
+  ]
+}

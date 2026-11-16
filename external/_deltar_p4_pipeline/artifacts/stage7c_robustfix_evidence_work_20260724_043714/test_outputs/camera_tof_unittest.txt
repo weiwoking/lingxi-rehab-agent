@@ -1,0 +1,69 @@
+﻿COMMAND: python -m unittest discover -s tests -p "test_camera_tof*.py" -v
+python.exe : test_status_6_is_opt_in (test_camera_tof_calibration.AggregationTests.test_status_6_is_opt_in) ... ok
+At line:2 char:53
++ ... ne\src'; $o=& 'C:\ec\_deltar_formal\envs\deltar_py311_torch271_cu128\ ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (test_status_6_i..._opt_in) ... ok:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+test_status_rejections_and_median_mad (test_camera_tof_calibration.AggregationTests.test_status_rejections_and_median_m
+ad) ... ok
+test_all_eight_are_unique_bijections_and_invertible (test_camera_tof_calibration.D4Tests.test_all_eight_are_unique_bije
+ctions_and_invertible) ... ok
+test_corner_contract (test_camera_tof_calibration.D4Tests.test_corner_contract) ... ok
+test_axial_and_radial_construction (test_camera_tof_calibration.RayAndPlaneTests.test_axial_and_radial_construction) ..
+. ok
+test_board_polygon_uses_same_metre_unit_as_solvepnp_tvec (test_camera_tof_calibration.RayAndPlaneTests.test_board_polyg
+on_uses_same_metre_unit_as_solvepnp_tvec) ... ok
+test_board_pose_metres_produces_camera_plane_millimetres (test_camera_tof_calibration.RayAndPlaneTests.test_board_pose_
+metres_produces_camera_plane_millimetres) ... ok
+test_board_pose_to_plane_and_transform_roundtrip (test_camera_tof_calibration.RayAndPlaneTests.test_board_pose_to_plane
+_and_transform_roundtrip) ... ok
+test_dominant_plane_rejects_outliers (test_camera_tof_calibration.RayAndPlaneTests.test_dominant_plane_rejects_outliers
+) ... ok
+test_mechanical_sign_uses_camera_x_not_observer_x (test_camera_tof_calibration.RayAndPlaneTests.test_mechanical_sign_us
+es_camera_x_not_observer_x) ... ok
+test_ray_symmetry_and_unit_length (test_camera_tof_calibration.RayAndPlaneTests.test_ray_symmetry_and_unit_length) ... 
+ok
+test_real_scale_plane_offsets_are_not_fractional_millimetres (test_camera_tof_calibration.RayAndPlaneTests.test_real_sc
+ale_plane_offsets_are_not_fractional_millimetres) ... ok
+test_analytic_jacobian_matches_finite_difference (test_camera_tof_calibration.SolverTests.test_analytic_jacobian_matche
+s_finite_difference) ... ok
+test_noiseless_recovery (test_camera_tof_calibration.SolverTests.test_noiseless_recovery) ... ok
+test_noisy_outlier_recovery (test_camera_tof_calibration.SolverTests.test_noisy_outlier_recovery) ... ok
+test_parallel_planes_are_unobservable (test_camera_tof_calibration.SolverTests.test_parallel_planes_are_unobservable) .
+.. ok
+test_single_plane_is_unobservable (test_camera_tof_calibration.SolverTests.test_single_plane_is_unobservable) ... ok
+test_capture_is_closed_world_and_hash_checked (test_camera_tof_contracts.ContractTests.test_capture_is_closed_world_and
+_hash_checked) ... ok
+test_manifest_template_uses_actual_900_by_600_backer (test_camera_tof_contracts.ContractTests.test_manifest_template_us
+es_actual_900_by_600_backer) ... ok
+test_output_no_overwrite (test_camera_tof_contracts.ContractTests.test_output_no_overwrite) ... ok
+test_profile_transform_flags_and_closed_world (test_camera_tof_contracts.ContractTests.test_profile_transform_flags_and
+_closed_world) ... ok
+test_report_is_closed_world_and_keeps_world_unresolved (test_camera_tof_contracts.ContractTests.test_report_is_closed_w
+orld_and_keeps_world_unresolved) ... ok
+test_candidate_enumeration_reports_gauge_and_rejects_wrong_parity (test_camera_tof_integration.IntegrationTests.test_ca
+ndidate_enumeration_reports_gauge_and_rejects_wrong_parity) ... ok
+test_formal_pose_gate_requires_8_train_and_4_heldout (test_camera_tof_integration.IntegrationTests.test_formal_pose_gat
+e_requires_8_train_and_4_heldout) ... ok
+test_gauge_tie_break_prefers_expected_negative_camera_x (test_camera_tof_integration.IntegrationTests.test_gauge_tie_br
+eak_prefers_expected_negative_camera_x) ... ok
+test_heldout_never_selects_internal_solution (test_camera_tof_integration.IntegrationTests.test_heldout_never_selects_i
+nternal_solution) ... ok
+test_heldout_planes_do_not_participate_in_optimization (test_camera_tof_integration.IntegrationTests.test_heldout_plane
+s_do_not_participate_in_optimization) ... ok
+test_input_failure_never_writes_formal_profile (test_camera_tof_integration.IntegrationTests.test_input_failure_never_w
+rites_formal_profile) ... ok
+test_nonfinite_board_polygon_is_skipped_without_cast_warning (test_camera_tof_integration.IntegrationTests.test_nonfini
+te_board_polygon_is_skipped_without_cast_warning) ... ok
+test_synthetic_pass_profile_keeps_world_flags_false_and_writes_overlays (test_camera_tof_integration.IntegrationTests.t
+est_synthetic_pass_profile_keeps_world_flags_false_and_writes_overlays) ... ok
+test_synthetic_pass_writes_profile_and_pose_gate_fail_does_not (test_camera_tof_integration.IntegrationTests.test_synth
+etic_pass_writes_profile_and_pose_gate_fail_does_not) ... ok
+
+----------------------------------------------------------------------
+Ran 31 tests in 12.576s
+
+OK
+EXIT_CODE=0

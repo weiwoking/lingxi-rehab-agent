@@ -1,0 +1,242 @@
+{
+  "session_id": "USER_V212_MIXED_20260806_115813",
+  "generated_at": "2026-08-06T03:58:18.710517Z",
+  "source_session_path": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\标准\\喝水标准动作数据集_裁剪版_校正版_20260805\\05_正常-代偿-正常_2组\\喝水_正常-前倾代偿-正常_01_seq8739-10307.csv",
+  "source_sha256": "d0347f05a131c409ff618bbfae6a7cdca82eeddcc21fe1686f16245ad7d5fa8c",
+  "source_row_count": 1569,
+  "source_column_count": 86,
+  "source_mode": "offline_validation",
+  "source_origin": "v2_1_2_session_orchestrator",
+  "baseline_version": "drink_water_v2.1.2",
+  "baseline_template_path": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\drink_water_v1\\baseline_v2_1_2_sensor_mapping_fixed\\drink_water_baseline_v2_1_2_scoring_template.json",
+  "baseline_template_sha256": "e5bc6de2ed7c05c4039928005e37beefec3d5873fa9e69b4e92d447aafe8e1e5",
+  "segmentation_version": "drink_hybrid_segmentation_v2_1",
+  "sensor_mapping_version": "rehab_sensor_mapping_20260806",
+  "segmentation_method": "drink_hybrid_segmentation_v2_1",
+  "segmented_candidate_count": 3,
+  "segmentation_valid_repetition_count": 3,
+  "rejected_repetition_count": 0,
+  "scoring_rejection_count": 0,
+  "segmentation_diagnostic": {
+    "method": "drink_hybrid_segmentation_v2_1",
+    "fallback_used": false,
+    "repetition_count": 3,
+    "incomplete_cycle": false,
+    "diagnostic": null,
+    "initial_baseline": {
+      "start_time_s": 0.0,
+      "end_time_s": 0.5
+    },
+    "departure_threshold_deg": {
+      "forearm": 10.0,
+      "hand_wrist": 10.0
+    },
+    "start_motion_threshold_deg_s": 25.0,
+    "quiet_motion_threshold_deg_s": 90.0,
+    "return_peak_ratio": 0.65,
+    "quiet_confirm_s": 3.0,
+    "last_confirmation_time_s": 29.22,
+    "base_method": "drink_complete_cycle_dynamic_rest_v1",
+    "base_repetition_count": 3,
+    "base_segments": [
+      {
+        "action_index": 1,
+        "start_index": 150,
+        "end_index": 453,
+        "start_time_s": 3.08,
+        "end_time_s": 9.14
+      },
+      {
+        "action_index": 2,
+        "start_index": 560,
+        "end_index": 905,
+        "start_time_s": 11.28,
+        "end_time_s": 18.18
+      },
+      {
+        "action_index": 3,
+        "start_index": 1016,
+        "end_index": 1332,
+        "start_time_s": 20.4,
+        "end_time_s": 26.72
+      }
+    ],
+    "hybrid_v2_enabled": true,
+    "imu_mapping": {
+      "upperarm": "imu1",
+      "trunk": "imu2",
+      "forearm": "imu3",
+      "hand_wrist": "imu4"
+    },
+    "motion_envelope_sources": [
+      "imu1_upperarm",
+      "imu3_forearm",
+      "imu4_wrist"
+    ],
+    "trunk_imu_role": "imu2_trunk_quality_only_not_primary_cycle_signal",
+    "boundary_count": 0,
+    "boundaries": [],
+    "boundary_clusters": [],
+    "cycle_candidates": [
+      {
+        "start_index": 150,
+        "end_index": 453,
+        "start_boundary": null,
+        "end_boundary": null,
+        "full_cycle_quality": {
+          "full_cycle_score": 0.807546,
+          "duration_score": 0.944118,
+          "departure_score": 1.0,
+          "peak_score": 1.0,
+          "return_score": 0.796116,
+          "start_boundary_quality": 0.35,
+          "end_boundary_quality": 0.35,
+          "activity_coverage": 0.914474,
+          "valid": true,
+          "invalid_reason": null,
+          "incomplete_candidate": false,
+          "merged_candidate": false,
+          "confidence": 0.807546,
+          "duration_ms": 6060.0
+        }
+      },
+      {
+        "start_index": 560,
+        "end_index": 905,
+        "start_boundary": null,
+        "end_boundary": null,
+        "full_cycle_quality": {
+          "full_cycle_score": 0.838855,
+          "duration_score": 0.973529,
+          "departure_score": 1.0,
+          "peak_score": 1.0,
+          "return_score": 1.0,
+          "start_boundary_quality": 0.35,
+          "end_boundary_quality": 0.35,
+          "activity_coverage": 0.705202,
+          "valid": true,
+          "invalid_reason": null,
+          "incomplete_candidate": false,
+          "merged_candidate": false,
+          "confidence": 0.838855,
+          "duration_ms": 6900.0
+        }
+      },
+      {
+        "start_index": 1016,
+        "end_index": 1332,
+        "start_boundary": null,
+        "end_boundary": null,
+        "full_cycle_quality": {
+          "full_cycle_score": 0.844776,
+          "duration_score": 0.969608,
+          "departure_score": 1.0,
+          "peak_score": 1.0,
+          "return_score": 0.994426,
+          "start_boundary_quality": 0.35,
+          "end_boundary_quality": 0.35,
+          "activity_coverage": 0.899054,
+          "valid": true,
+          "invalid_reason": null,
+          "incomplete_candidate": false,
+          "merged_candidate": false,
+          "confidence": 0.844776,
+          "duration_ms": 6320.0
+        }
+      }
+    ],
+    "global_selection": [
+      {
+        "start_index": 150,
+        "end_index": 453,
+        "start_boundary": null,
+        "end_boundary": null,
+        "full_cycle_quality": {
+          "full_cycle_score": 0.807546,
+          "duration_score": 0.944118,
+          "departure_score": 1.0,
+          "peak_score": 1.0,
+          "return_score": 0.796116,
+          "start_boundary_quality": 0.35,
+          "end_boundary_quality": 0.35,
+          "activity_coverage": 0.914474,
+          "valid": true,
+          "invalid_reason": null,
+          "incomplete_candidate": false,
+          "merged_candidate": false,
+          "confidence": 0.807546,
+          "duration_ms": 6060.0
+        }
+      },
+      {
+        "start_index": 560,
+        "end_index": 905,
+        "start_boundary": null,
+        "end_boundary": null,
+        "full_cycle_quality": {
+          "full_cycle_score": 0.838855,
+          "duration_score": 0.973529,
+          "departure_score": 1.0,
+          "peak_score": 1.0,
+          "return_score": 1.0,
+          "start_boundary_quality": 0.35,
+          "end_boundary_quality": 0.35,
+          "activity_coverage": 0.705202,
+          "valid": true,
+          "invalid_reason": null,
+          "incomplete_candidate": false,
+          "merged_candidate": false,
+          "confidence": 0.838855,
+          "duration_ms": 6900.0
+        }
+      },
+      {
+        "start_index": 1016,
+        "end_index": 1332,
+        "start_boundary": null,
+        "end_boundary": null,
+        "full_cycle_quality": {
+          "full_cycle_score": 0.844776,
+          "duration_score": 0.969608,
+          "departure_score": 1.0,
+          "peak_score": 1.0,
+          "return_score": 0.994426,
+          "start_boundary_quality": 0.35,
+          "end_boundary_quality": 0.35,
+          "activity_coverage": 0.899054,
+          "valid": true,
+          "invalid_reason": null,
+          "incomplete_candidate": false,
+          "merged_candidate": false,
+          "confidence": 0.844776,
+          "duration_ms": 6320.0
+        }
+      }
+    ],
+    "cycle_duration_prior": {
+      "source": "bootstrap_template_manifest",
+      "sample_count": 10,
+      "median_duration_ms": 6630.0,
+      "q1": 6505.0,
+      "q3": 7004.75,
+      "iqr": 499.75,
+      "robust_min_cycle_duration_ms": 5755.375,
+      "robust_max_cycle_duration_ms": 7754.375,
+      "merged_duration_threshold_ms": 10276.5,
+      "boundary_cluster_window_ms": 1060.8
+    },
+    "rejected_cycle_candidates": [],
+    "config": {
+      "strong_quiet_min_ms": 450,
+      "weak_quiet_min_ms": 180,
+      "motion_valley_prominence": 0.28,
+      "pose_return_threshold": 0.35,
+      "merged_duration_factor": 1.55,
+      "min_cycle_duration_ms": 1400,
+      "max_cycle_duration_ms": 9500,
+      "min_peak_distance_ms": 1200,
+      "boundary_cluster_window_factor": 0.16,
+      "full_cycle_valid_threshold": 0.62
+    }
+  }
+}

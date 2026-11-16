@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "stage2a_camera_intrinsics_candidate.v1.schema.json",
+  "title": "Stage2A camera intrinsics candidate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "candidate_status", "created_at", "camera", "board",
+    "source_pose_ids", "source_scan_ids", "selected_frames", "heldout_frames",
+    "selection_strategy", "solver", "metrics", "outlier_diagnostics",
+    "strategy_stability", "per_fit_frame", "heldout", "provenance", "candidate_sha256"
+  ],
+  "properties": {
+    "schema_version": {"const": "stage2a_camera_intrinsics_candidate.v1"},
+    "candidate_status": {"const": "CANDIDATE_NOT_PROMOTED"},
+    "created_at": {"type": "string", "format": "date-time"},
+    "camera": {
+      "type": "object",
+      "required": ["resolution", "source_raster_provenance", "intrinsics"],
+      "properties": {
+        "resolution": {
+          "type": "object", "additionalProperties": false,
+          "required": ["width", "height"],
+          "properties": {"width": {"const": 640}, "height": {"const": 360}}
+        },
+        "source_raster_provenance": {"type": "object"},
+        "intrinsics": {
+          "type": "object", "additionalProperties": false,
+          "required": ["model", "fx", "fy", "cx", "cy", "distortion"],
+          "properties": {
+            "model": {"const": "opencv_brown_5"},
+            "fx": {"type": "number", "exclusiveMinimum": 0},
+            "fy": {"type": "number", "exclusiveMinimum": 0},
+            "cx": {"type": "number"}, "cy": {"type": "number"},
+            "distortion": {
+              "type": "object", "additionalProperties": false,
+              "required": ["k1", "k2", "p1", "p2", "k3"],
+              "properties": {
+                "k1": {"type": "number"}, "k2": {"type": "number"},
+                "p1": {"type": "number"}, "p2": {"type": "number"},
+                "k3": {"type": "number"}
+              }
+            }
+          }
+        }
+      }
+    },
+    "board": {
+      "type": "object", "additionalProperties": false,
+      "required": ["family", "dictionary", "squares_x", "squares_y", "square_length_mm", "marker_length_mm", "active_width_mm", "active_height_mm"],
+      "properties": {
+        "family": {"const": "opencv_charuco"}, "dictionary": {"const": "DICT_5X5_100"},
+        "squares_x": {"const": 7}, "squares_y": {"const": 5},
+        "square_length_mm": {"const": 25.0}, "marker_length_mm": {"const": 18.0},
+        "active_width_mm": {"const": 175.0}, "active_height_mm": {"const": 125.0}
+      }
+    },
+    "source_pose_ids": {"type": "array", "items": {"type": "string"}},
+    "source_scan_ids": {"type": "array", "items": {"type": "string"}},
+    "selected_frames": {"type": "array", "items": {"type": "object"}},
+    "heldout_frames": {"type": "array", "items": {"type": "object"}},
+    "selection_strategy": {"type": "object"}, "solver": {"type": "object"},
+    "metrics": {"type": "object"}, "outlier_diagnostics": {"type": "object"},
+    "strategy_stability": {"type": "object"}, "per_fit_frame": {"type": "array"},
+    "heldout": {"type": "object"}, "provenance": {"type": "object"},
+    "candidate_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

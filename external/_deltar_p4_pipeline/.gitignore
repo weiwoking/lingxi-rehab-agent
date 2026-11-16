@@ -1,0 +1,47 @@
+# Python/test/tool caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Root-local environments and secrets (none are present in this baseline)
+/.venv/
+/venv/
+/env/
+/.env
+/.env.*
+!/.env.example
+
+# Generated runtime, scan, benchmark, and audit outputs
+/outputs/
+/outputs_scan_service/
+/outputs_stage3/
+/outputs_stage3_1/
+/outputs_stage4/
+/outputs_stage4_1/
+/outputs_stage5/
+/outputs_stage5_1/
+/outputs_stage5_2a/
+/outputs_stage5_2b/
+/outputs_stage6/
+/outputs_stage6_1/
+/outputs_stage6_2/
+/outputs_stage7a/
+/tmp/
+/_codex_tmp_stage5_yolo/
+
+# Project models are preserved by the root archive (exact Git LFS paths).
+
+# Large generated benchmark corpora. Small bounded fixtures under samples/
+# (official_reverse, synthetic, stage5_assets, stage5_1_assets) stay tracked.
+/samples/stage3_official/
+/samples/stage5_analytic/
+/samples/stage5_appearance/
+/samples/stage5_1_analytic/
+/samples/stage5_1_appearance/
+*.egg-info/
+/build/
+/dist/

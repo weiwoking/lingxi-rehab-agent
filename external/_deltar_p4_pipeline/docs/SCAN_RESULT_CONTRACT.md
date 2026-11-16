@@ -1,0 +1,11 @@
+# Stage 6 scan result contract
+
+`result.json` uses `deltar_scan_result.v1` and status `success`, `partial_success`, `rejected`, or `failed`. A scan whose valid frames finish normally is successful even when detection, geometry, selection, or the final trustworthy-object set is empty. `partial_success` means at least one frame was technically rejected while another completed successfully; `rejected` means no frame completed successfully. Corrupt input, model/profile/hash failure, unhandled processing failure, or output failure remains a rejection/failure according to its existing frame/job boundary.
+
+Every scan object carries its class and `class_scope`, observation count/frame IDs, transparent best-observation score/reasons, per-frame distances and visibility states, and provenance. `person` is `context_person`. Final objects default to the seven core classes: person, chair, dining table, cup, bottle, book, and tv; other COCO objects remain in frame debug results and are filtered from scan objects unless the profile opts in.
+
+Distance semantics are always `visible_surface_distance`. Visible, physical and bottom height each have `value_m`, `available`, and `absolute_valid`. A partial object never receives a physical height. Physical height requires one complete best observation with top, bottom and full extent visible, valid geometry, and measured calibration. Values are never assembled from different frames. Without measured calibration all absolute-valid flags are false and placement is `unknown`.
+
+Warnings remain warnings; they never masquerade as errors. Frozen warnings include `W_SCAN_DISTANCE_OUTSIDE_RECOMMENDED`, `W_PARTIAL_OBJECT`, `W_OBJECT_TOUCHES_BORDER`, `W_TOP_NOT_VISIBLE`, `W_BOTTOM_NOT_VISIBLE`, `W_PHYSICAL_HEIGHT_UNAVAILABLE`, `W_UNMEASURED_CALIBRATION`, `W_SINGLE_CANVAS_ONLY`, `W_CANVAS_DISAGREEMENT`, `W_DETECTION_FALLBACK`, `W_NON_CORE_CLASS_FILTERED`, and `W_MULTIFRAME_AMBIGUOUS_ASSOCIATION`.
+
+`job_report.json` uses `deltar_pc_job_report.v1`. It describes one non-interactive process execution; there is no persistent queue, daemon, background watchdog, or resume. Final JSON files are written to a same-directory temporary file, flushed, then atomically replaced.

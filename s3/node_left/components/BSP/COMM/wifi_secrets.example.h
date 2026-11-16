@@ -1,0 +1,4 @@
+#pragma once
+
+#define REHAB_WIFI_SSID      "YOUR_WIFI_SSID"
+#define REHAB_WIFI_PASSWORD  "YOUR_WIFI_PASSWORD"

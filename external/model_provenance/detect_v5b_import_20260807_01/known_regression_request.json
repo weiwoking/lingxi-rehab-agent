@@ -1,0 +1,29 @@
+{
+  "schema_version": "deltar_stage3_1_yolo_worker_request.v1",
+  "model_path": "C:\\ec\\_deltar_p4_pipeline\\models\\rehab_scan_yolo11n_coco80_volleyball_detect_v5b_exp.pt",
+  "expected_sha256": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+  "expected_task": "detect",
+  "device": "cuda:0",
+  "confidence": 0.20,
+  "images": [
+    "C:\\ec\\_codex_reports\\detect_v4_holdout_package_20260806_190251\\detect_v4_holdout_inputs\\rgb\\scan_20260806_080807_000\\frame_000002.png",
+    "C:\\ec\\_codex_reports\\detect_v4_holdout_package_20260806_190251\\detect_v4_holdout_inputs\\rgb\\scan_20260806_083851_000\\frame_000000.png",
+    "C:\\ec\\_codex_reports\\detect_v4_holdout_package_20260806_190251\\detect_v4_holdout_inputs\\rgb\\scan_20260806_083851_000\\frame_000007.png"
+  ],
+  "output_dir": "C:\\ec\\_codex_reports\\detect_v5b_import_20260807_01\\known_regression_outputs_formal",
+  "imgsz": 640,
+  "batch_size": 11,
+  "half": false,
+  "require_cuda": true,
+  "expected_gpu_name": "RTX 5070 Ti",
+  "required_class_ids": [
+    0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+    10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
+    20, 21, 22, 23, 24, 25, 26, 27, 28, 29,
+    30, 31, 32, 33, 34, 35, 36, 37, 38, 39,
+    40, 41, 42, 43, 44, 45, 46, 47, 48, 49,
+    50, 51, 52, 53, 54, 55, 56, 57, 58, 59,
+    60, 61, 62, 63, 64, 65, 66, 67, 68, 69,
+    70, 71, 72, 73, 74, 75, 76, 77, 78, 79
+  ]
+}

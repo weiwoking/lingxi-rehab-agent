@@ -1,0 +1,140 @@
+{
+  "session_id": "20260807_TASK008",
+  "generated_at": "2026-08-07T11:18:37.377754Z",
+  "source_session_path": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK008\\DATA_SEQ0000005890.csv",
+  "source_sha256": "dafc43076f8f9affe0770bcd7ab822b9d7b9e5284892e3011f1e6db670e1d819",
+  "source_row_count": 684,
+  "source_column_count": 86,
+  "source_mode": "offline_validation",
+  "source_origin": "v2_1_2_session_orchestrator",
+  "baseline_version": "drink_water_v2.1.2",
+  "baseline_template_path": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\template\\MHH_healthy_template.json",
+  "baseline_template_sha256": "d7a6237aa9af6e91e203d320045198991ea265322986b1afd7bb3ef61884fbcf",
+  "segmentation_version": "drink_hybrid_segmentation_v2_1",
+  "sensor_mapping_version": "rehab_sensor_mapping_20260806",
+  "segmentation_method": "drink_hybrid_segmentation_v2_1_1",
+  "segmented_candidate_count": 1,
+  "segmentation_valid_repetition_count": 1,
+  "rejected_repetition_count": 0,
+  "scoring_rejection_count": 0,
+  "segmentation_diagnostic": {
+    "method": "drink_hybrid_segmentation_v2_1_1",
+    "fallback_used": false,
+    "repetition_count": 1,
+    "incomplete_cycle": false,
+    "diagnostic": null,
+    "initial_baseline": {
+      "start_time_s": 0.0,
+      "end_time_s": 0.501
+    },
+    "departure_threshold_deg": {
+      "forearm": 10.0,
+      "hand_wrist": 10.0
+    },
+    "start_motion_threshold_deg_s": 25.0,
+    "quiet_motion_threshold_deg_s": 90.0,
+    "return_peak_ratio": 0.65,
+    "quiet_confirm_s": 3.0,
+    "last_confirmation_time_s": 11.221,
+    "base_method": "drink_complete_cycle_dynamic_rest_v1",
+    "base_repetition_count": 1,
+    "base_segments": [
+      {
+        "action_index": 1,
+        "start_index": 143,
+        "end_index": 433,
+        "start_time_s": 2.901,
+        "end_time_s": 8.721
+      }
+    ],
+    "hybrid_v2_enabled": true,
+    "imu_mapping": {
+      "upperarm": "imu1",
+      "trunk": "imu2",
+      "forearm": "imu3",
+      "hand_wrist": "imu4"
+    },
+    "motion_envelope_sources": [
+      "imu1_upperarm",
+      "imu3_forearm",
+      "imu4_wrist"
+    ],
+    "trunk_imu_role": "imu2_trunk_quality_only_not_primary_cycle_signal",
+    "boundary_count": 0,
+    "boundaries": [],
+    "boundary_clusters": [],
+    "cycle_candidates": [
+      {
+        "start_index": 143,
+        "end_index": 433,
+        "start_boundary": null,
+        "end_boundary": null,
+        "full_cycle_quality": {
+          "full_cycle_score": 0.832156,
+          "duration_score": 0.920588,
+          "departure_score": 1.0,
+          "peak_score": 1.0,
+          "return_score": 0.972436,
+          "start_boundary_quality": 0.35,
+          "end_boundary_quality": 0.35,
+          "activity_coverage": 0.965636,
+          "valid": true,
+          "invalid_reason": null,
+          "incomplete_candidate": false,
+          "merged_candidate": false,
+          "confidence": 0.832156,
+          "duration_ms": 5820.0
+        }
+      }
+    ],
+    "global_selection": [
+      {
+        "start_index": 143,
+        "end_index": 433,
+        "start_boundary": null,
+        "end_boundary": null,
+        "full_cycle_quality": {
+          "full_cycle_score": 0.832156,
+          "duration_score": 0.920588,
+          "departure_score": 1.0,
+          "peak_score": 1.0,
+          "return_score": 0.972436,
+          "start_boundary_quality": 0.35,
+          "end_boundary_quality": 0.35,
+          "activity_coverage": 0.965636,
+          "valid": true,
+          "invalid_reason": null,
+          "incomplete_candidate": false,
+          "merged_candidate": false,
+          "confidence": 0.832156,
+          "duration_ms": 5820.0
+        }
+      }
+    ],
+    "cycle_duration_prior": {
+      "source": "bootstrap_template_manifest",
+      "sample_count": 10,
+      "median_duration_ms": 6630.0,
+      "q1": 6505.0,
+      "q3": 7004.75,
+      "iqr": 499.75,
+      "robust_min_cycle_duration_ms": 5755.375,
+      "robust_max_cycle_duration_ms": 7754.375,
+      "merged_duration_threshold_ms": 10276.5,
+      "boundary_cluster_window_ms": 1060.8
+    },
+    "rejected_cycle_candidates": [],
+    "config": {
+      "strong_quiet_min_ms": 450,
+      "weak_quiet_min_ms": 180,
+      "motion_valley_prominence": 0.28,
+      "pose_return_threshold": 0.35,
+      "merged_duration_factor": 1.55,
+      "min_cycle_duration_ms": 1400,
+      "max_cycle_duration_ms": 9500,
+      "min_peak_distance_ms": 1200,
+      "boundary_cluster_window_factor": 0.16,
+      "full_cycle_valid_threshold": 0.62
+    }
+  }
+}

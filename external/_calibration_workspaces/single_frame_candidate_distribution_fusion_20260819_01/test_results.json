@@ -1,0 +1,82 @@
+{
+  "device_write_operations_run": false,
+  "idf_commands_run": false,
+  "pass": true,
+  "results": [
+    {
+      "command": [
+        "C:\\ec\\_deltar_formal\\envs\\deltar_py311_torch271_cu128\\python.exe",
+        "-m",
+        "py_compile",
+        "C:\\ec\\_calibration_workspaces\\single_frame_candidate_distribution_fusion_20260819_01\\audit_candidate_fusion.py",
+        "C:\\ec\\_calibration_workspaces\\single_frame_candidate_distribution_fusion_20260819_01\\evaluate_frozen_fusion.py",
+        "C:\\ec\\_calibration_workspaces\\single_frame_candidate_distribution_fusion_20260819_01\\build_historical_evidence_index.py",
+        "C:\\ec\\_calibration_workspaces\\single_frame_candidate_distribution_fusion_20260819_01\\test_single_frame_independence.py",
+        "C:\\ec\\_calibration_workspaces\\single_frame_candidate_distribution_fusion_20260819_01\\run_validation.py"
+      ],
+      "cwd": "C:\\ec\\_calibration_workspaces\\single_frame_candidate_distribution_fusion_20260819_01",
+      "exit_code": 0,
+      "name": "audit_script_compile",
+      "pass": true,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "C:\\ec\\_deltar_formal\\envs\\deltar_py311_torch271_cu128\\python.exe",
+        "C:\\ec\\_calibration_workspaces\\single_frame_candidate_distribution_fusion_20260819_01\\test_single_frame_independence.py"
+      ],
+      "cwd": "C:\\ec\\_calibration_workspaces\\single_frame_candidate_distribution_fusion_20260819_01",
+      "exit_code": 0,
+      "name": "single_frame_independence",
+      "pass": true,
+      "stderr": "",
+      "stdout": "{\n  \"pass\": true,\n  \"frames\": 66,\n  \"static_hits\": []\n}\n"
+    },
+    {
+      "command": [
+        "C:\\ec\\_deltar_formal\\envs\\deltar_py311_torch271_cu128\\python.exe",
+        "-c",
+        "import importlib.util; print('worker_pytest_available=', bool(importlib.util.find_spec('pytest'))); print('Tests use the repository test interpreter; the frozen CUDA worker remains dependency-minimal.')"
+      ],
+      "cwd": "C:\\ec\\_calibration_workspaces\\single_frame_candidate_distribution_fusion_20260819_01",
+      "exit_code": 0,
+      "name": "worker_pytest_ownership_probe",
+      "pass": true,
+      "stderr": "",
+      "stdout": "worker_pytest_available= False\nTests use the repository test interpreter; the frozen CUDA worker remains dependency-minimal.\n"
+    },
+    {
+      "command": [
+        "C:\\ProgramData\\anaconda3\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_support_authority_generic.py",
+        "tests/test_tof_degraded_mode.py",
+        "tests/test_runtime_import_boundaries.py",
+        "tests/test_chatgpt_review_bundle.py"
+      ],
+      "cwd": "C:\\ec\\_deltar_p4_pipeline",
+      "exit_code": 0,
+      "name": "focused_production_regression",
+      "pass": true,
+      "stderr": "",
+      "stdout": "..............................................                           [100%]\n============================== warnings summary ===============================\n..\\..\\Users\\Weiwo\\AppData\\Roaming\\Python\\Python313\\site-packages\\fastapi\\testclient.py:1\n  C:\\Users\\Weiwo\\AppData\\Roaming\\Python\\Python313\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\ntests/test_runtime_import_boundaries.py::test_worker_start_failure_keeps_http_health_diagnostic\n  C:\\ec\\_deltar_p4_pipeline\\src\\deltar_p4_pipeline\\scan_service.py:572: DeprecationWarning: \n          on_event is deprecated, use lifespan event handlers instead.\n  \n          Read more about it in the\n          [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n          \n    @app.on_event(\"startup\")\n\ntests/test_runtime_import_boundaries.py::test_worker_start_failure_keeps_http_health_diagnostic\ntests/test_runtime_import_boundaries.py::test_worker_start_failure_keeps_http_health_diagnostic\n  C:\\Users\\Weiwo\\AppData\\Roaming\\Python\\Python313\\site-packages\\fastapi\\applications.py:4681: DeprecationWarning: \n          on_event is deprecated, use lifespan event handlers instead.\n  \n          Read more about it in the\n          [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n          \n    return self.router.on_event(event_type)  # ty: ignore[deprecated]\n\ntests/test_runtime_import_boundaries.py::test_worker_start_failure_keeps_http_health_diagnostic\n  C:\\ec\\_deltar_p4_pipeline\\src\\deltar_p4_pipeline\\scan_service.py:664: DeprecationWarning: \n          on_event is deprecated, use lifespan event handlers instead.\n  \n          Read more about it in the\n          [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n          \n    @app.on_event(\"shutdown\")\n\ntests/test_chatgpt_review_bundle.py::test_validator_rejects_duplicate_archive_paths\n  C:\\ProgramData\\anaconda3\\Lib\\zipfile\\__init__.py:1642: UserWarning: Duplicate name: 'same.json'\n    return self._open_to_write(zinfo, force_zip64=force_zip64)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n46 passed, 6 warnings in 2.65s\n"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "C:\\ec\\_deltar_p4_pipeline",
+      "exit_code": 0,
+      "name": "pipeline_diff_check",
+      "pass": true,
+      "stderr": "",
+      "stdout": ""
+    }
+  ],
+  "schema_version": "candidate_distribution_fusion_validation.v1"
+}

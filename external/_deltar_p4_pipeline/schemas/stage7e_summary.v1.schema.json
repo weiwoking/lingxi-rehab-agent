@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "stage7e_summary.v1.schema.json",
+  "title": "DELTAR Stage 7E scan summary",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "scan_id",
+    "processed_frames",
+    "eligible_instance_count",
+    "measured_instance_count",
+    "rejected_instance_count",
+    "class_counts",
+    "measured_objects",
+    "height_method_counts",
+    "silhouette_measured_count",
+    "dense_depth_only_diagnostic_count",
+    "warnings",
+    "absolute_geometry_validation_profile",
+    "selected_depth_semantics"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "stage7e_summary.v1"
+    },
+    "scan_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "processed_frames": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "eligible_instance_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "measured_instance_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "rejected_instance_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "class_counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cup",
+        "bottle"
+      ],
+      "properties": {
+        "cup": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "bottle": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "measured_objects": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "height_method_counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "upright_silhouette_support_plane"
+      ],
+      "properties": {
+        "upright_silhouette_support_plane": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "silhouette_measured_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "dense_depth_only_diagnostic_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "absolute_geometry_validation_profile": {
+      "type": "object"
+    },
+    "selected_depth_semantics": {
+      "const": "axial_z"
+    }
+  }
+}

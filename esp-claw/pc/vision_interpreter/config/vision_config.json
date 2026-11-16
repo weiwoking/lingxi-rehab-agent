@@ -1,0 +1,126 @@
+{
+  "schema_version": "vision_config.v2",
+  "image": {
+    "width": 640,
+    "height": 360,
+    "pixel_format": "RGB565",
+    "byte_order": "little_endian"
+  },
+  "camera": {
+    "calibration_ready": true,
+    "fx": 500.0,
+    "fy": 500.0,
+    "cx": 320.0,
+    "cy": 180.0,
+    "distortion": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "camera_mount": {
+    "calibration_ready": true,
+    "height_from_ground_cm": 80.0,
+    "x_from_origin_cm": 0.0,
+    "y_from_origin_cm": 0.0,
+    "pitch_deg": 0.0,
+    "roll_deg": 0.0,
+    "yaw_deg": 0.0
+  },
+  "tof": {
+    "resolution": "8x8",
+    "rows": 8,
+    "cols": 8,
+    "flip_horizontal": true,
+    "flip_vertical": true,
+    "max_pair_offset_ms": 100,
+    "invalid_status_codes": [
+      255
+    ],
+    "min_distance_mm": 100,
+    "max_distance_mm": 4000
+  },
+  "tof_to_camera": {
+    "calibration_ready": true,
+    "translation_cm": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rotation_deg": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "fusion": {
+    "minimum_valid_zones": 1,
+    "distance_method": "median",
+    "outlier_mad_scale": 3.0,
+    "left_boundary": 0.35,
+    "right_boundary": 0.65
+  },
+  "geometry": {
+    "algorithm": "opencv_pinhole_backprojection",
+    "distance_definition": "tof_radial_aligned",
+    "ground_tolerance_cm": 3.0,
+    "minimum_object_height_cm": 1.0,
+    "maximum_object_height_cm": 250.0,
+    "minimum_bottom_height_cm": -10.0,
+    "maximum_bottom_height_cm": 300.0
+  },
+  "model": {
+    "path": "models/yolo11n.pt",
+    "device": "cpu",
+    "image_size": 640,
+    "confidence_threshold": 0.35,
+    "allowed_classes": [
+      "person",
+      "bottle",
+      "cup",
+      "chair",
+      "bed",
+      "table",
+      "remote",
+      "phone",
+      "book"
+    ],
+    "zxl_class_name": "zxl",
+    "normal_person_class_name": "person"
+  },
+  "person_follow": {
+    "enabled": true,
+    "logical_model_slot": "person_follow",
+    "model_id": "coco-yolo11n",
+    "model_path": "models/yolo11n.pt",
+    "target_class": "person",
+    "confidence_threshold": 0.35,
+    "image_size": 640,
+    "device": "cpu",
+    "half": false,
+    "max_image_bytes": 131072,
+    "warmup": true
+  },
+  "identity": {
+    "enabled": true,
+    "model_path": "models/identity/best_zxl_identity.pt",
+    "class_names": {
+      "0": "person",
+      "1": "zxl"
+    },
+    "input_size": 320,
+    "zxl_class_index": 1,
+    "person_class_index": 0,
+    "bbox_expand_ratio": 0.05,
+    "zxl_threshold": 0.95,
+    "zxl_threshold_note": "provisional prototype threshold; not final product threshold",
+    "safety_threshold": 0.86,
+    "balanced_threshold": 0.74,
+    "demo_threshold": 0.59,
+    "max_zxl_per_image": 1,
+    "minimum_crop_side_px": 32,
+    "fail_open_as_person": true
+  }
+}

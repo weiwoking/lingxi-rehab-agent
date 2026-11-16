@@ -1,0 +1,15 @@
+The first Camera-world unittest invocation used the mandated Python executable
+without a process-local PYTHONPATH. The repository is not installed in that
+environment, so unittest discovery stopped at import with
+ModuleNotFoundError: deltar_p4_pipeline and no test logic ran.
+
+No dependency was installed. All authoritative test and CLI invocations used:
+
+PYTHONPATH=C:\ec\_deltar_p4_pipeline\src
+
+The authoritative Camera-world rerun completed 30/30 PASS with exit code 0.
+
+The first Stage 7A summary wrapper validated the profile successfully, then
+attempted to display a non-existent top-level world_pose_resolved field. The
+authoritative evidence wrapper was corrected to read world_pose.status and
+completed with exit code 0. No profile was modified.

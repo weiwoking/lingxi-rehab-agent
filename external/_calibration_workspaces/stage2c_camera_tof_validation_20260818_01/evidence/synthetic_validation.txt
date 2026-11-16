@@ -1,0 +1,71 @@
+exit_code=0
+$ C:\ec\_deltar_formal\envs\deltar_py311_torch271_cu128\python.exe run_synthetic_validation.py
+{
+  "schema_version": "stage2c_synthetic_validation.v1",
+  "perfect_frozen_geometry": {
+    "count": 2112,
+    "median_abs_mm": 5.684341886080802e-14,
+    "p90_abs_mm": 2.2737367544323206e-13,
+    "p95_abs_mm": 2.2737367544323206e-13,
+    "p99_abs_mm": 3.410605131648481e-13,
+    "rms_mm": 1.1167055650319719e-13,
+    "max_abs_mm": 4.547473508864641e-13,
+    "signed_mean_mm": -2.338869838543663e-14,
+    "absolute_mean_mm": 7.075821410277665e-14
+  },
+  "measurement_noise_4mm_axial": {
+    "count": 4220,
+    "median_abs_mm": 2.7357575537848504,
+    "p90_abs_mm": 6.471222742904865,
+    "p95_abs_mm": 7.7605518384057595,
+    "p99_abs_mm": 9.989474151929146,
+    "rms_mm": 3.9820196606690312,
+    "max_abs_mm": 13.364514485581822,
+    "signed_mean_mm": 0.0032711142460592276,
+    "absolute_mean_mm": 3.201301423979408
+  },
+  "perturbed_candidate_tx15mm_yaw2deg": {
+    "count": 64,
+    "median_abs_mm": 14.580757171992843,
+    "p90_abs_mm": 25.819783172008204,
+    "p95_abs_mm": 26.330870476473667,
+    "p99_abs_mm": 26.799481884787173,
+    "rms_mm": 16.546141010558376,
+    "max_abs_mm": 26.924811296529697,
+    "signed_mean_mm": -15.097418967033601,
+    "absolute_mean_mm": 15.097418967033601
+  },
+  "outside_background": {
+    "all_broad": {
+      "count": 5632,
+      "median_abs_mm": 2.2696521446719657,
+      "p90_abs_mm": 275.43400251709,
+      "p95_abs_mm": 290.1666144367187,
+      "p99_abs_mm": 316.42824532832026,
+      "rms_mm": 102.12783396745397,
+      "max_abs_mm": 336.82084652849665,
+      "signed_mean_mm": -36.02179718347099,
+      "absolute_mean_mm": 38.022630329777435
+    },
+    "core": {
+      "count": 4928,
+      "median_abs_mm": 1.9274877231778191,
+      "p90_abs_mm": 4.669383957664422,
+      "p95_abs_mm": 5.610407369182114,
+      "p99_abs_mm": 7.457321751326259,
+      "rms_mm": 2.860524429511531,
+      "max_abs_mm": 9.787363571789342,
+      "signed_mean_mm": 0.002249910465284986,
+      "absolute_mean_mm": 2.2844165424563796
+    },
+    "automatic_blacklist": false
+  },
+  "dynamic_pose_counts_exercised": [
+    3,
+    6,
+    8,
+    12
+  ],
+  "pose_capacity": "dynamic_unbounded",
+  "parameter_recovery_attempted": false
+}

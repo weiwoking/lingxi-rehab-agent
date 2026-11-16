@@ -1,0 +1,27 @@
+Fixed Python:
+C:\ec\_deltar_formal\envs\deltar_py311_torch271_cu128\python.exe
+
+Authoritative commands/checks:
+- python -m unittest discover -s tests -p "test_camera_world*.py" -v
+- python -m unittest discover -s tests -p "test_camera_tof*.py" -v
+- python -m compileall C:\ec\_deltar_p4_pipeline\src\deltar_p4_pipeline
+- Stage 7A load_strict_json + validate_calibration_v2
+- Frozen Stage 7B load_strict_json + validate_profile(require_pass=True)
+- scan-validate on world_front_near, world_front_mid, and world_front_far
+- camera-world-calibrate using the existing 15-frame capture manifest
+- formal Stage 7C load_strict_json + validate_profile(require_pass=True)
+- camera-world-validate against the original capture manifest
+- read-only git rev-parse/status/diff on C:\ec\esp-claw before and after
+
+PYTHONPATH was set only for each process:
+C:\ec\_deltar_p4_pipeline\src
+
+Not executed:
+- generic full-repository pytest/unittest
+- dependency installation
+- network download
+- build
+- flash
+- monitor
+- Git write operation
+- Stage 7D implementation

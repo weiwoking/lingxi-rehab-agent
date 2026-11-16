@@ -1,0 +1,85 @@
+﻿
+  src\deltar_p4_pipeline\camera_world_calibration.py:37:    CAPTURE_SCHEMA,
+  src\deltar_p4_pipeline\camera_world_calibration.py:38:    FROZEN_CAMERA_TOF_PROFILE,
+  src\deltar_p4_pipeline\camera_world_calibration.py:39:    FROZEN_CAMERA_TOF_PROFILE_ID,
+  src\deltar_p4_pipeline\camera_world_calibration.py:40:    MATRIX_CONVENTION,
+  src\deltar_p4_pipeline\camera_world_calibration.py:41:    MIN_CAPTURED_FRAME_COUNT,
+> src\deltar_p4_pipeline\camera_world_calibration.py:42:    MIN_ORIENTATION_INLIER_COUNT,
+  src\deltar_p4_pipeline\camera_world_calibration.py:43:    MIN_ORIENTATION_INLIERS_PER_POSE,
+  src\deltar_p4_pipeline\camera_world_calibration.py:44:    PROFILE_SCHEMA,
+  src\deltar_p4_pipeline\camera_world_calibration.py:45:    REPORT_SCHEMA,
+  src\deltar_p4_pipeline\camera_world_calibration.py:46:    TOOL_VERSION,
+  src\deltar_p4_pipeline\camera_world_calibration.py:47:    WORLD_FRAME,
+  src\deltar_p4_pipeline\camera_world_calibration.py:48:    CameraWorldError,
+  src\deltar_p4_pipeline\camera_world_calibration.py:49:    canonical_sha256,
+  src\deltar_p4_pipeline\camera_world_calibration.py:50:    fail,
+  src\deltar_p4_pipeline\camera_world_calibration.py:897:            }
+  src\deltar_p4_pipeline\camera_world_calibration.py:898:            for pose in poses
+  src\deltar_p4_pipeline\camera_world_calibration.py:899:        },
+  src\deltar_p4_pipeline\camera_world_calibration.py:900:    }
+  src\deltar_p4_pipeline\camera_world_calibration.py:901:    valid_frame_count = int(np.count_nonzero(inlier_mask))
+> src\deltar_p4_pipeline\camera_world_calibration.py:902:    base_valid_frame_count = len(all_frames)
+  src\deltar_p4_pipeline\camera_world_calibration.py:903:    frame_count = sum(pose.total_frame_count for pose in poses
+)
+  src\deltar_p4_pipeline\camera_world_calibration.py:904:    capture_summary = {
+  src\deltar_p4_pipeline\camera_world_calibration.py:905:        "pose_count": len(poses),
+  src\deltar_p4_pipeline\camera_world_calibration.py:906:        "frame_count": frame_count,
+  src\deltar_p4_pipeline\camera_world_calibration.py:907:        "valid_frame_count": valid_frame_count,
+  src\deltar_p4_pipeline\camera_world_calibration.py:908:        "rejected_frame_count": frame_count - valid_frame_coun
+t,
+  src\deltar_p4_pipeline\camera_world_calibration.py:909:    }
+  src\deltar_p4_pipeline\camera_world_calibration.py:910:    finite_frame_quality = (
+> src\deltar_p4_pipeline\camera_world_calibration.py:911:        base_valid_frame_count >= MIN_CAPTURED_FRAME_COUNT
+  src\deltar_p4_pipeline\camera_world_calibration.py:912:        and all(
+  src\deltar_p4_pipeline\camera_world_calibration.py:913:            item.get("valid") is True
+  src\deltar_p4_pipeline\camera_world_calibration.py:914:            and item.get("detected_corners", 0) >= 8
+  src\deltar_p4_pipeline\camera_world_calibration.py:915:            and item.get("reprojection_rms_px", math.inf) <= 0
+.5
+  src\deltar_p4_pipeline\camera_world_calibration.py:916:            for item in all_diagnostics
+  src\deltar_p4_pipeline\camera_world_calibration.py:917:        )
+  src\deltar_p4_pipeline\camera_world_calibration.py:918:    )
+  src\deltar_p4_pipeline\camera_world_calibration.py:919:    reprojection_values = [
+  src\deltar_p4_pipeline\camera_world_calibration.py:954:        ),
+  src\deltar_p4_pipeline\camera_world_calibration.py:955:        "frame_quality": _gate(
+  src\deltar_p4_pipeline\camera_world_calibration.py:956:            finite_frame_quality,
+  src\deltar_p4_pipeline\camera_world_calibration.py:957:            {
+  src\deltar_p4_pipeline\camera_world_calibration.py:958:                "all_frames_pass": finite_frame_quality,
+> src\deltar_p4_pipeline\camera_world_calibration.py:959:                "base_valid_frame_count": base_valid_frame_cou
+nt,
+  src\deltar_p4_pipeline\camera_world_calibration.py:960:                "minimum_corners": min(
+  src\deltar_p4_pipeline\camera_world_calibration.py:961:                    (
+  src\deltar_p4_pipeline\camera_world_calibration.py:962:                        item.get("detected_corners", 0)
+  src\deltar_p4_pipeline\camera_world_calibration.py:963:                        for item in all_diagnostics
+  src\deltar_p4_pipeline\camera_world_calibration.py:964:                    ),
+  src\deltar_p4_pipeline\camera_world_calibration.py:965:                    default=0,
+  src\deltar_p4_pipeline\camera_world_calibration.py:966:                ),
+  src\deltar_p4_pipeline\camera_world_calibration.py:967:                "maximum_reprojection_rms_px": max(
+  src\deltar_p4_pipeline\camera_world_calibration.py:968:                    reprojection_values
+  src\deltar_p4_pipeline\camera_world_calibration.py:969:                ) if reprojection_values else None,
+  src\deltar_p4_pipeline\camera_world_calibration.py:970:            },
+  src\deltar_p4_pipeline\camera_world_calibration.py:971:            (
+> src\deltar_p4_pipeline\camera_world_calibration.py:972:                f"base_valid_frame_count >= {MIN_CAPTURED_FRAM
+E_COUNT}; "
+  src\deltar_p4_pipeline\camera_world_calibration.py:973:                "every frame corners >= 8, finite pose, "
+  src\deltar_p4_pipeline\camera_world_calibration.py:974:                "reprojection RMS <= 0.5 px"
+  src\deltar_p4_pipeline\camera_world_calibration.py:975:            ),
+  src\deltar_p4_pipeline\camera_world_calibration.py:976:        ),
+  src\deltar_p4_pipeline\camera_world_calibration.py:977:        "valid_frame_count": _gate(
+> src\deltar_p4_pipeline\camera_world_calibration.py:978:            valid_frame_count >= MIN_ORIENTATION_INLIER_COUNT,
+  src\deltar_p4_pipeline\camera_world_calibration.py:979:            valid_frame_count,
+  src\deltar_p4_pipeline\camera_world_calibration.py:980:            (
+  src\deltar_p4_pipeline\camera_world_calibration.py:981:                "robust orientation inlier frame count >= "
+> src\deltar_p4_pipeline\camera_world_calibration.py:982:                f"{MIN_ORIENTATION_INLIER_COUNT}"
+  src\deltar_p4_pipeline\camera_world_calibration.py:983:            ),
+  src\deltar_p4_pipeline\camera_world_calibration.py:984:        ),
+> src\deltar_p4_pipeline\camera_world_calibration.py:985:        "per_pose_orientation_inlier_count": _gate(
+  src\deltar_p4_pipeline\camera_world_calibration.py:986:            len(pose_orientation) >= 3
+  src\deltar_p4_pipeline\camera_world_calibration.py:987:            and all(
+  src\deltar_p4_pipeline\camera_world_calibration.py:988:                value["inlier_frame_count"]
+  src\deltar_p4_pipeline\camera_world_calibration.py:989:                >= MIN_ORIENTATION_INLIERS_PER_POSE
+  src\deltar_p4_pipeline\camera_world_calibration.py:990:                for value in pose_orientation.values()
+  src\deltar_p4_pipeline\camera_world_calibration.py:991:            ),
+  src\deltar_p4_pipeline\camera_world_calibration.py:992:            {
+  src\deltar_p4_pipeline\camera_world_calibration.py:993:                name: value["inlier_frame_count"]
+
+

@@ -1,0 +1,49 @@
+{
+  "evaluation_version": "lateral_transfer_drink_reuse_evaluation_v1",
+  "drink_segmentation_version": "drink_hybrid_segmentation_v2_1_1",
+  "drink_authority_file": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\tools\\drink_water_v1_pipeline.py",
+  "exact_drink_reuse": true,
+  "compatibility_adapter_used": false,
+  "expected_count_used_by_segmenter": false,
+  "task_id_used_by_segmenter": false,
+  "parameter_sweep": false,
+  "session_count": 33,
+  "expected_rep_total": 61,
+  "matched_session_count": 31,
+  "mismatch_session_count": 2,
+  "session_match_rate": 0.9393939393939394,
+  "actual_rep_total": 59,
+  "total_abs_count_error": 2,
+  "group_summary": {
+    "normal_single": {
+      "matched": 14,
+      "total": 16,
+      "match_text": "14/16"
+    },
+    "normal_3": {
+      "matched": 4,
+      "total": 4,
+      "match_text": "4/4"
+    },
+    "normal_5": {
+      "matched": 2,
+      "total": 2,
+      "match_text": "2/2"
+    },
+    "mixed_normal_lf_normal": {
+      "matched": 6,
+      "total": 6,
+      "match_text": "6/6"
+    },
+    "tremor_single": {
+      "matched": 5,
+      "total": 5,
+      "match_text": "5/5"
+    }
+  },
+  "output_files": {
+    "sessions_csv": "drink_reuse_sessions.csv",
+    "repetitions_csv": "drink_reuse_repetitions.csv",
+    "mismatch_csv": "drink_reuse_mismatch.csv"
+  }
+}

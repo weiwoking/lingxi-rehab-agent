@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "scene_truth.stage3b.schema.json",
+  "title": "Stage3B scene truth",
+  "type": "object",
+  "required": ["schema_version", "measurement_method", "targets"],
+  "properties": {
+    "schema_version": {"const": "scene_truth.stage3b.v1"},
+    "measurement_method": {"const": "manual_tape_visual"},
+    "targets": {
+      "type": "object",
+      "required": ["upper_bottle", "lower_bottle", "lower_volleyball"],
+      "additionalProperties": false
+    }
+  }
+}

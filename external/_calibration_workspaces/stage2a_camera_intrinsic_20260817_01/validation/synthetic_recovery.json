@@ -1,0 +1,77 @@
+{
+  "schema_version": "stage2a_synthetic_recovery.v1",
+  "generated_at": "2026-08-17T08:34:42.211470Z",
+  "opencv_version": "4.10.0",
+  "api": "cv2.aruco.CharucoDetector + CharucoBoard.matchImagePoints + cv2.calibrateCameraExtended",
+  "views": 67,
+  "noise_sigma_px": 0.01,
+  "rms_px": 0.012757991617829745,
+  "truth_K": [
+    [
+      620.0,
+      0.0,
+      319.5
+    ],
+    [
+      0.0,
+      615.0,
+      179.5
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "recovered_K": [
+    [
+      620.0400650994392,
+      0.0,
+      319.7124287202554
+    ],
+    [
+      0.0,
+      615.075408531333,
+      179.8666158917182
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "truth_distortion": [
+    -0.12,
+    0.045,
+    0.0015,
+    -0.001,
+    -0.012
+  ],
+  "recovered_distortion": [
+    -0.11930300792715583,
+    0.04072872357665095,
+    0.0015549468876676605,
+    -0.000950847166381435,
+    -0.005366008923491499
+  ],
+  "parameter_errors": {
+    "fx": 0.040065099439175356,
+    "fy": 0.07540853133298242,
+    "cx": 0.21242872025538873,
+    "cy": 0.3666158917181974,
+    "k1": 0.0006969920728441686,
+    "k2": -0.004271276423349048,
+    "p1": 5.494688766766046e-05,
+    "p2": 4.9152833618565026e-05,
+    "k3": 0.0066339910765085015
+  },
+  "board_generation_detection": {
+    "detected_charuco_corners": 24,
+    "pass": true
+  },
+  "synthetic_candidate_schema_validation": {
+    "pass": true,
+    "errors": []
+  },
+  "verdict": "PASS"
+}

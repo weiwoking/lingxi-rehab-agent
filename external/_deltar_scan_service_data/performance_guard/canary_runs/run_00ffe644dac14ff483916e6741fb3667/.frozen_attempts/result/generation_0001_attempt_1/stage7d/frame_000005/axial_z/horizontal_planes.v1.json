@@ -1,0 +1,278 @@
+{
+  "camera_profile": {
+    "authority": "STAGE2",
+    "profile_id": "formal_geometry_stage2_d_stage3a_allobject_v2_20260818",
+    "sha256": "63c974cd2ff64dd0f135d47d8c92eb170d06658cb315563fb93588862ba8b057"
+  },
+  "camera_tof_profile": {
+    "authority": "STAGE2",
+    "range_semantics": "axial_z",
+    "sha256": "63c974cd2ff64dd0f135d47d8c92eb170d06658cb315563fb93588862ba8b057",
+    "zone_order": "raw_index_0_to_63_identity"
+  },
+  "camera_world_profile": {
+    "authority": "STAGE3A_GRAVITY",
+    "camera_height_mm": 972.0,
+    "full_world_rotation_authority": false,
+    "sha256": "a00f9cc7099dfb5eed1a85210d1f78a6220a468c95fb85d0d40f827cf9972112"
+  },
+  "depth_hypothesis": "axial_z",
+  "depth_unit": "m",
+  "frame_id": "frame_000005",
+  "planes": [],
+  "rejected_candidates": [
+    {
+      "bbox_xyxy": [
+        0,
+        0,
+        639,
+        359
+      ],
+      "confidence_diagnostics": {
+        "component_span_xy_px": [
+          640,
+          360
+        ],
+        "normal_tilt_deg": 40.71044029775184,
+        "residual_threshold_mm": 30.0,
+        "sample_inlier_count": 24995,
+        "visible_span_px": 640
+      },
+      "contour_xy": [
+        [
+          0,
+          31
+        ],
+        [
+          1,
+          359
+        ],
+        [
+          639,
+          356
+        ],
+        [
+          638,
+          0
+        ],
+        [
+          88,
+          0
+        ]
+      ],
+      "height": 921.7940072012382,
+      "normal": [
+        -0.03370606805992309,
+        0.6513650305327133,
+        0.7580154998250744
+      ],
+      "pixel_count": 224118,
+      "reason": "non_horizontal"
+    },
+    {
+      "bbox_xyxy": [
+        231,
+        140,
+        269,
+        216
+      ],
+      "confidence_diagnostics": {
+        "component_span_xy_px": [
+          39,
+          77
+        ],
+        "normal_tilt_deg": 41.87499466202976,
+        "residual_threshold_mm": 30.0,
+        "sample_inlier_count": 588,
+        "visible_span_px": 77
+      },
+      "contour_xy": [
+        [
+          246,
+          140
+        ],
+        [
+          244,
+          141
+        ],
+        [
+          239,
+          154
+        ],
+        [
+          238,
+          169
+        ],
+        [
+          231,
+          192
+        ],
+        [
+          232,
+          208
+        ],
+        [
+          237,
+          216
+        ],
+        [
+          253,
+          214
+        ],
+        [
+          259,
+          206
+        ],
+        [
+          261,
+          195
+        ],
+        [
+          269,
+          190
+        ],
+        [
+          266,
+          180
+        ],
+        [
+          262,
+          177
+        ],
+        [
+          267,
+          169
+        ],
+        [
+          267,
+          166
+        ],
+        [
+          264,
+          160
+        ]
+      ],
+      "height": 858.6471536091165,
+      "normal": [
+        -0.12740845988792832,
+        0.6552354953080544,
+        0.7446029344807843
+      ],
+      "pixel_count": 1941,
+      "reason": "non_horizontal"
+    },
+    {
+      "bbox_xyxy": [
+        225,
+        66,
+        254,
+        102
+      ],
+      "confidence_diagnostics": {
+        "component_span_xy_px": [
+          30,
+          37
+        ],
+        "normal_tilt_deg": 44.23932782958589,
+        "residual_threshold_mm": 30.0,
+        "sample_inlier_count": 97,
+        "visible_span_px": 37
+      },
+      "contour_xy": [
+        [
+          254,
+          67
+        ],
+        [
+          252,
+          66
+        ],
+        [
+          248,
+          69
+        ],
+        [
+          242,
+          66
+        ],
+        [
+          240,
+          68
+        ],
+        [
+          225,
+          70
+        ],
+        [
+          225,
+          72
+        ],
+        [
+          230,
+          78
+        ],
+        [
+          230,
+          95
+        ],
+        [
+          235,
+          102
+        ],
+        [
+          246,
+          101
+        ],
+        [
+          254,
+          97
+        ],
+        [
+          253,
+          90
+        ],
+        [
+          250,
+          86
+        ],
+        [
+          250,
+          78
+        ],
+        [
+          254,
+          72
+        ]
+      ],
+      "height": 1242.4049001966541,
+      "normal": [
+        -0.06616835816226398,
+        0.6945121125313883,
+        0.7164319045975678
+      ],
+      "pixel_count": 807,
+      "reason": "non_horizontal"
+    }
+  ],
+  "scan_id": "scan_20260809_124024_000",
+  "schema_version": "deltar_horizontal_planes.v2",
+  "warnings": [
+    "W_STAGE7D_NO_CLASSIFIED_HORIZONTAL_PLANE",
+    "W_STAGE7D_NO_GROUND_CANDIDATE",
+    "W_STAGE7D_NO_SUPPORT_SURFACE_CANDIDATE"
+  ],
+  "world_frame": {
+    "full_world_rotation_authority": false,
+    "origin": "world_z_ground_below_camera; x/y are not world-authoritative",
+    "x_axis": "camera_x_metric_parameterization_only",
+    "y_axis": "camera_y_metric_parameterization_only",
+    "z_axis": "up"
+  },
+  "world_geometry_unit": "mm",
+  "world_height_statistics": {
+    "max_mm": 1601.2042620466796,
+    "median_mm": 923.7356522745712,
+    "min_mm": 554.2045191071705,
+    "valid_pixel_count": 230400
+  }
+}

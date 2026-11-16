@@ -1,0 +1,72 @@
+{
+  "completed_at": "2026-11-15T08:40:15.019620Z",
+  "exact": {
+    "files": [
+      {
+        "actual_sha256": "02ab0950ec38e01ceb05b5b06535db739610739f52ccd1e4f1d753f3bae36ae5",
+        "historical_reference_match": false,
+        "normalized_authority_sha256": "1a31429b41336e493b7834516c925c2a32522d14b047cb3cb763034176bea37f",
+        "path": "stage7d/stage7d_summary.v1.json",
+        "reference_sha256": null
+      },
+      {
+        "actual_sha256": "7754f6500a08f918ede9f66e9d9a41da2ee7176fea6d4fd1e7a14a6e4bcdc9cf",
+        "historical_reference_match": false,
+        "normalized_authority_sha256": "4d556f66eaa2f55212896e77640de462de7aa1e0f9672981f644df05035ef912",
+        "path": "stage8b_all_object_geometry.v1.json",
+        "reference_sha256": null
+      },
+      {
+        "actual_sha256": "0f46df41f13c0089bb373a218bc90a65b6ac8cf25093958e595bd6a9b00cbd6e",
+        "historical_reference_match": false,
+        "normalized_authority_sha256": "64c788f8e28ed78ef59b5c5cf189387844b8920e07a6adf62c7e426e40899cbb",
+        "path": "stage8b4a_selected_objects.v2.json",
+        "reference_sha256": null
+      }
+    ],
+    "historical_reference_all_match": false,
+    "runtime_contract_pass": true
+  },
+  "formal_output_published": true,
+  "isolated_root": "C:\\RehabProject\\external\\_deltar_scan_service_data\\performance_guard\\canary_runs\\run_590803f32bf047f5a004ad49030d264a",
+  "job_wall_ms": 13655.115900037345,
+  "p4_delivery_used": false,
+  "progress_store_used": false,
+  "published_to_user_history": false,
+  "result": "success",
+  "runtime_response_status": "success",
+  "scan_id": "scan_20260809_124024_000",
+  "schema_version": "deltar_performance_canary_evidence.v1",
+  "source": "startup_canary",
+  "stage_timing": {
+    "aggregation_result_ms": 1.2765999999828637,
+    "all_object_geometry_ms": 9969.456499966327,
+    "deltar_d_forward_ms": 1939.635699847713,
+    "deltar_d_letterbox_ms": 2197.9980999603868,
+    "frozen_worker_job_wall_ms": 13655.115900037345,
+    "m3_mode_generation_ms": null,
+    "m3_w4_exact_comparison_authority": "current_minus_m0_all_object_geometry_ms",
+    "notes": [
+      "Timings are non-additive because DELTAR/Stage7D lookahead overlaps work.",
+      "M3 and W4 are included in all_object_geometry_ms; exact attribution uses the M3-vs-M0 delta.",
+      "The startup canary disables full visualization and does not build a Review ZIP."
+    ],
+    "package_write_ms": 384.757,
+    "payload_load": {
+      "copy_input_ms": 32.16719999909401,
+      "manifest_receipt_ms": 272.9717000038363,
+      "worker_asset_validation_ms": 107.221
+    },
+    "pipeline_total_ms": 13597.07379998872,
+    "review_zip_ms": 0.0,
+    "schema_version": "deltar_performance_canary_stage_timing.v1",
+    "source_rgb_tof_decode_ms": 292.922,
+    "stage2_world_z_stage7d_ms": 2994.975899986457,
+    "visualization_png_ms": 0.0,
+    "w4_combine_ms": null,
+    "yolo_detect_ms": 681.562,
+    "yolo_segment_ms": 681.635
+  },
+  "started_at": "2026-11-15T08:40:01.056678Z",
+  "worker_generation": 1
+}

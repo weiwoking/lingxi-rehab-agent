@@ -1,0 +1,1199 @@
+{
+  "title": "上肢康复训练评估报告",
+  "patient": {
+    "patient_id": "P-0217",
+    "affected_side": "右侧上肢",
+    "brs": "",
+    "task": "饮水动作训练",
+    "difficulty": "",
+    "training_time": "2026-07-14T08:24:00+00:00",
+    "session_id": "20260714_TASK002",
+    "device_id": "P4_REHAB_01"
+  },
+  "completion": {
+    "planned_reps": 10,
+    "completed_reps": 16,
+    "valid_reps": 16,
+    "duration_sec": 74.0,
+    "pause_count": null,
+    "fully_completed": true,
+    "end_reason": "user_stop"
+  },
+  "score": {
+    "session_id": "20260714_TASK002",
+    "score_version": "v3.0",
+    "valid": true,
+    "final_score": 44.42,
+    "subscores": {},
+    "available_metrics": [
+      "final_score",
+      "imu_dtw_score",
+      "emg_score",
+      "compensation",
+      "feedback"
+    ],
+    "compensation": {
+      "events": [],
+      "action_count": 0,
+      "detected": false
+    },
+    "fatigue": {},
+    "brs": null,
+    "feedback": [
+      "IMU 动作时序与模板差异较大，建议按标准动作节奏重新完成。",
+      "肌肉激活模式与健康模板差异较大。",
+      "肌肉激活模式存在一定偏差。"
+    ],
+    "data_quality_level": "use_with_caution",
+    "warnings": [
+      "large sampling gaps over 100 ms detected"
+    ],
+    "completed_at": null
+  },
+  "available_metrics": [
+    "final_score",
+    "imu_dtw_score",
+    "emg_score",
+    "compensation",
+    "feedback"
+  ],
+  "action_summaries": [
+    {
+      "rep_index": 1,
+      "valid": true,
+      "final_score": 42.7,
+      "imu_dtw_score": 29.69,
+      "emg_score": 13.01,
+      "compensation": {
+        "detected": false,
+        "events": [],
+        "quality_findings": [
+          "abnormal_muscle_recruitment",
+          "excessive_pauses",
+          "forearm_coordination_abnormal",
+          "insufficient_upperarm_ROM"
+        ],
+        "details": {
+          "insufficient_upperarm_ROM": {
+            "value": 0.0999999999999841,
+            "template_mean": 197.2701361318977,
+            "reason": "上臂活动范围低于模板，可能存在关节活动度不足"
+          },
+          "forearm_coordination_abnormal": {
+            "value": 0.0999999999999841,
+            "template_mean": 301.58320986366175,
+            "reason": "前臂旋转范围偏离健康模板，可能存在肩肘腕协调异常"
+          },
+          "pause_compensation": {
+            "pause_count": 3.0,
+            "reason": "动作中停顿较多，可能存在发力不足或代偿调整"
+          },
+          "abnormal_muscle_recruitment": [
+            {
+              "muscle": "Extensor_digitorum",
+              "feature": "RMS",
+              "z_score": 7.487,
+              "reason": "Extensor_digitorum 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Biceps_brachii",
+              "feature": "RMS",
+              "z_score": 4.607,
+              "reason": "Biceps_brachii 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Triceps_brachii",
+              "feature": "RMS",
+              "z_score": 4.608,
+              "reason": "Triceps_brachii 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Extensor_carpi_ulnaris",
+              "feature": "RMS",
+              "z_score": 8.524,
+              "reason": "Extensor_carpi_ulnaris 激活明显高于模板，可能存在异常募集或代偿"
+            }
+          ]
+        }
+      },
+      "feedback": [
+        "IMU 动作时序与模板差异较大，建议按标准动作节奏重新完成。",
+        "肌肉激活模式与健康模板差异较大。"
+      ]
+    },
+    {
+      "rep_index": 2,
+      "valid": true,
+      "final_score": 47.32,
+      "imu_dtw_score": 32.7,
+      "emg_score": 14.62,
+      "compensation": {
+        "detected": false,
+        "events": [],
+        "quality_findings": [
+          "abnormal_muscle_recruitment",
+          "forearm_coordination_abnormal",
+          "insufficient_upperarm_ROM"
+        ],
+        "details": {
+          "insufficient_upperarm_ROM": {
+            "value": 0.060000000000001164,
+            "template_mean": 197.2701361318977,
+            "reason": "上臂活动范围低于模板，可能存在关节活动度不足"
+          },
+          "forearm_coordination_abnormal": {
+            "value": 0.019999999999990886,
+            "template_mean": 301.58320986366175,
+            "reason": "前臂旋转范围偏离健康模板，可能存在肩肘腕协调异常"
+          },
+          "abnormal_muscle_recruitment": [
+            {
+              "muscle": "Extensor_digitorum",
+              "feature": "RMS",
+              "z_score": 11.203,
+              "reason": "Extensor_digitorum 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Biceps_brachii",
+              "feature": "RMS",
+              "z_score": 3.901,
+              "reason": "Biceps_brachii 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Extensor_carpi_ulnaris",
+              "feature": "RMS",
+              "z_score": 8.478,
+              "reason": "Extensor_carpi_ulnaris 激活明显高于模板，可能存在异常募集或代偿"
+            }
+          ]
+        }
+      },
+      "feedback": [
+        "IMU 动作时序与模板差异较大，建议按标准动作节奏重新完成。",
+        "肌肉激活模式与健康模板差异较大。"
+      ]
+    },
+    {
+      "rep_index": 3,
+      "valid": true,
+      "final_score": 43.83,
+      "imu_dtw_score": 28.93,
+      "emg_score": 14.9,
+      "compensation": {
+        "detected": false,
+        "events": [],
+        "quality_findings": [
+          "abnormal_muscle_recruitment",
+          "forearm_coordination_abnormal",
+          "insufficient_upperarm_ROM"
+        ],
+        "details": {
+          "insufficient_upperarm_ROM": {
+            "value": 0.030000000000001137,
+            "template_mean": 197.2701361318977,
+            "reason": "上臂活动范围低于模板，可能存在关节活动度不足"
+          },
+          "forearm_coordination_abnormal": {
+            "value": 0.0,
+            "template_mean": 301.58320986366175,
+            "reason": "前臂旋转范围偏离健康模板，可能存在肩肘腕协调异常"
+          },
+          "abnormal_muscle_recruitment": [
+            {
+              "muscle": "Extensor_digitorum",
+              "feature": "RMS",
+              "z_score": 10.028,
+              "reason": "Extensor_digitorum 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Biceps_brachii",
+              "feature": "RMS",
+              "z_score": 3.962,
+              "reason": "Biceps_brachii 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Extensor_carpi_ulnaris",
+              "feature": "RMS",
+              "z_score": 7.946,
+              "reason": "Extensor_carpi_ulnaris 激活明显高于模板，可能存在异常募集或代偿"
+            }
+          ]
+        }
+      },
+      "feedback": [
+        "IMU 动作时序与模板差异较大，建议按标准动作节奏重新完成。",
+        "肌肉激活模式与健康模板差异较大。"
+      ]
+    },
+    {
+      "rep_index": 4,
+      "valid": true,
+      "final_score": 43.75,
+      "imu_dtw_score": 27.87,
+      "emg_score": 15.88,
+      "compensation": {
+        "detected": false,
+        "events": [],
+        "quality_findings": [
+          "abnormal_muscle_recruitment",
+          "forearm_coordination_abnormal",
+          "insufficient_upperarm_ROM"
+        ],
+        "details": {
+          "insufficient_upperarm_ROM": {
+            "value": 0.020000000000005097,
+            "template_mean": 197.2701361318977,
+            "reason": "上臂活动范围低于模板，可能存在关节活动度不足"
+          },
+          "forearm_coordination_abnormal": {
+            "value": 0.0,
+            "template_mean": 301.58320986366175,
+            "reason": "前臂旋转范围偏离健康模板，可能存在肩肘腕协调异常"
+          },
+          "abnormal_muscle_recruitment": [
+            {
+              "muscle": "Extensor_digitorum",
+              "feature": "RMS",
+              "z_score": 10.191,
+              "reason": "Extensor_digitorum 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Biceps_brachii",
+              "feature": "RMS",
+              "z_score": 4.573,
+              "reason": "Biceps_brachii 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Extensor_carpi_ulnaris",
+              "feature": "RMS",
+              "z_score": 7.592,
+              "reason": "Extensor_carpi_ulnaris 激活明显高于模板，可能存在异常募集或代偿"
+            }
+          ]
+        }
+      },
+      "feedback": [
+        "IMU 动作时序与模板差异较大，建议按标准动作节奏重新完成。",
+        "肌肉激活模式存在一定偏差。"
+      ]
+    },
+    {
+      "rep_index": 5,
+      "valid": true,
+      "final_score": 45.62,
+      "imu_dtw_score": 30.48,
+      "emg_score": 15.14,
+      "compensation": {
+        "detected": false,
+        "events": [],
+        "quality_findings": [
+          "abnormal_muscle_recruitment",
+          "forearm_coordination_abnormal",
+          "insufficient_upperarm_ROM"
+        ],
+        "details": {
+          "insufficient_upperarm_ROM": {
+            "value": 0.020000000000010232,
+            "template_mean": 197.2701361318977,
+            "reason": "上臂活动范围低于模板，可能存在关节活动度不足"
+          },
+          "forearm_coordination_abnormal": {
+            "value": 0.0,
+            "template_mean": 301.58320986366175,
+            "reason": "前臂旋转范围偏离健康模板，可能存在肩肘腕协调异常"
+          },
+          "abnormal_muscle_recruitment": [
+            {
+              "muscle": "Extensor_digitorum",
+              "feature": "RMS",
+              "z_score": 9.282,
+              "reason": "Extensor_digitorum 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Biceps_brachii",
+              "feature": "RMS",
+              "z_score": 3.773,
+              "reason": "Biceps_brachii 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Extensor_carpi_ulnaris",
+              "feature": "RMS",
+              "z_score": 7.117,
+              "reason": "Extensor_carpi_ulnaris 激活明显高于模板，可能存在异常募集或代偿"
+            }
+          ]
+        }
+      },
+      "feedback": [
+        "IMU 动作时序与模板差异较大，建议按标准动作节奏重新完成。",
+        "肌肉激活模式存在一定偏差。"
+      ]
+    },
+    {
+      "rep_index": 6,
+      "valid": true,
+      "final_score": 44.4,
+      "imu_dtw_score": 29.84,
+      "emg_score": 14.56,
+      "compensation": {
+        "detected": false,
+        "events": [],
+        "quality_findings": [
+          "abnormal_muscle_recruitment",
+          "excessive_pauses",
+          "forearm_coordination_abnormal",
+          "insufficient_upperarm_ROM"
+        ],
+        "details": {
+          "insufficient_upperarm_ROM": {
+            "value": 0.08000000000003069,
+            "template_mean": 197.2701361318977,
+            "reason": "上臂活动范围低于模板，可能存在关节活动度不足"
+          },
+          "forearm_coordination_abnormal": {
+            "value": 0.15999999999999548,
+            "template_mean": 301.58320986366175,
+            "reason": "前臂旋转范围偏离健康模板，可能存在肩肘腕协调异常"
+          },
+          "pause_compensation": {
+            "pause_count": 5.0,
+            "reason": "动作中停顿较多，可能存在发力不足或代偿调整"
+          },
+          "abnormal_muscle_recruitment": [
+            {
+              "muscle": "Extensor_digitorum",
+              "feature": "RMS",
+              "z_score": 9.383,
+              "reason": "Extensor_digitorum 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Biceps_brachii",
+              "feature": "RMS",
+              "z_score": 3.952,
+              "reason": "Biceps_brachii 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Extensor_carpi_ulnaris",
+              "feature": "RMS",
+              "z_score": 7.825,
+              "reason": "Extensor_carpi_ulnaris 激活明显高于模板，可能存在异常募集或代偿"
+            }
+          ]
+        }
+      },
+      "feedback": [
+        "IMU 动作时序与模板差异较大，建议按标准动作节奏重新完成。",
+        "肌肉激活模式与健康模板差异较大。"
+      ]
+    },
+    {
+      "rep_index": 7,
+      "valid": true,
+      "final_score": 42.39,
+      "imu_dtw_score": 27.79,
+      "emg_score": 14.6,
+      "compensation": {
+        "detected": false,
+        "events": [],
+        "quality_findings": [
+          "abnormal_muscle_recruitment",
+          "excessive_pauses",
+          "forearm_coordination_abnormal",
+          "insufficient_upperarm_ROM"
+        ],
+        "details": {
+          "insufficient_upperarm_ROM": {
+            "value": 0.09000000000000624,
+            "template_mean": 197.2701361318977,
+            "reason": "上臂活动范围低于模板，可能存在关节活动度不足"
+          },
+          "forearm_coordination_abnormal": {
+            "value": 0.059999999999972714,
+            "template_mean": 301.58320986366175,
+            "reason": "前臂旋转范围偏离健康模板，可能存在肩肘腕协调异常"
+          },
+          "pause_compensation": {
+            "pause_count": 4.0,
+            "reason": "动作中停顿较多，可能存在发力不足或代偿调整"
+          },
+          "abnormal_muscle_recruitment": [
+            {
+              "muscle": "Extensor_digitorum",
+              "feature": "RMS",
+              "z_score": 8.946,
+              "reason": "Extensor_digitorum 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Biceps_brachii",
+              "feature": "RMS",
+              "z_score": 3.973,
+              "reason": "Biceps_brachii 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Extensor_carpi_ulnaris",
+              "feature": "RMS",
+              "z_score": 8.594,
+              "reason": "Extensor_carpi_ulnaris 激活明显高于模板，可能存在异常募集或代偿"
+            }
+          ]
+        }
+      },
+      "feedback": [
+        "IMU 动作时序与模板差异较大，建议按标准动作节奏重新完成。",
+        "肌肉激活模式与健康模板差异较大。"
+      ]
+    },
+    {
+      "rep_index": 8,
+      "valid": true,
+      "final_score": 46.02,
+      "imu_dtw_score": 30.25,
+      "emg_score": 15.77,
+      "compensation": {
+        "detected": false,
+        "events": [],
+        "quality_findings": [
+          "abnormal_muscle_recruitment",
+          "forearm_coordination_abnormal",
+          "insufficient_upperarm_ROM"
+        ],
+        "details": {
+          "insufficient_upperarm_ROM": {
+            "value": 0.019999999999990886,
+            "template_mean": 197.2701361318977,
+            "reason": "上臂活动范围低于模板，可能存在关节活动度不足"
+          },
+          "forearm_coordination_abnormal": {
+            "value": 0.009999999999990905,
+            "template_mean": 301.58320986366175,
+            "reason": "前臂旋转范围偏离健康模板，可能存在肩肘腕协调异常"
+          },
+          "abnormal_muscle_recruitment": [
+            {
+              "muscle": "Extensor_digitorum",
+              "feature": "RMS",
+              "z_score": 8.437,
+              "reason": "Extensor_digitorum 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Biceps_brachii",
+              "feature": "RMS",
+              "z_score": 3.645,
+              "reason": "Biceps_brachii 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Extensor_carpi_ulnaris",
+              "feature": "RMS",
+              "z_score": 8.619,
+              "reason": "Extensor_carpi_ulnaris 激活明显高于模板，可能存在异常募集或代偿"
+            }
+          ]
+        }
+      },
+      "feedback": [
+        "IMU 动作时序与模板差异较大，建议按标准动作节奏重新完成。",
+        "肌肉激活模式存在一定偏差。"
+      ]
+    },
+    {
+      "rep_index": 9,
+      "valid": true,
+      "final_score": 43.84,
+      "imu_dtw_score": 28.5,
+      "emg_score": 15.34,
+      "compensation": {
+        "detected": false,
+        "events": [],
+        "quality_findings": [
+          "abnormal_muscle_recruitment",
+          "forearm_coordination_abnormal",
+          "insufficient_upperarm_ROM"
+        ],
+        "details": {
+          "insufficient_upperarm_ROM": {
+            "value": 0.0,
+            "template_mean": 197.2701361318977,
+            "reason": "上臂活动范围低于模板，可能存在关节活动度不足"
+          },
+          "forearm_coordination_abnormal": {
+            "value": 0.009999999999990905,
+            "template_mean": 301.58320986366175,
+            "reason": "前臂旋转范围偏离健康模板，可能存在肩肘腕协调异常"
+          },
+          "abnormal_muscle_recruitment": [
+            {
+              "muscle": "Extensor_digitorum",
+              "feature": "RMS",
+              "z_score": 8.747,
+              "reason": "Extensor_digitorum 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Biceps_brachii",
+              "feature": "RMS",
+              "z_score": 2.993,
+              "reason": "Biceps_brachii 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Extensor_carpi_ulnaris",
+              "feature": "RMS",
+              "z_score": 8.789,
+              "reason": "Extensor_carpi_ulnaris 激活明显高于模板，可能存在异常募集或代偿"
+            }
+          ]
+        }
+      },
+      "feedback": [
+        "IMU 动作时序与模板差异较大，建议按标准动作节奏重新完成。",
+        "肌肉激活模式存在一定偏差。"
+      ]
+    },
+    {
+      "rep_index": 10,
+      "valid": true,
+      "final_score": 47.62,
+      "imu_dtw_score": 31.97,
+      "emg_score": 15.65,
+      "compensation": {
+        "detected": false,
+        "events": [],
+        "quality_findings": [
+          "abnormal_muscle_recruitment",
+          "forearm_coordination_abnormal",
+          "insufficient_upperarm_ROM"
+        ],
+        "details": {
+          "insufficient_upperarm_ROM": {
+            "value": 0.04999999999999205,
+            "template_mean": 197.2701361318977,
+            "reason": "上臂活动范围低于模板，可能存在关节活动度不足"
+          },
+          "forearm_coordination_abnormal": {
+            "value": 0.009999999999999981,
+            "template_mean": 301.58320986366175,
+            "reason": "前臂旋转范围偏离健康模板，可能存在肩肘腕协调异常"
+          },
+          "abnormal_muscle_recruitment": [
+            {
+              "muscle": "Extensor_digitorum",
+              "feature": "RMS",
+              "z_score": 6.004,
+              "reason": "Extensor_digitorum 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Biceps_brachii",
+              "feature": "RMS",
+              "z_score": 3.691,
+              "reason": "Biceps_brachii 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Extensor_carpi_ulnaris",
+              "feature": "RMS",
+              "z_score": 9.718,
+              "reason": "Extensor_carpi_ulnaris 激活明显高于模板，可能存在异常募集或代偿"
+            }
+          ]
+        }
+      },
+      "feedback": [
+        "IMU 动作时序与模板差异较大，建议按标准动作节奏重新完成。",
+        "肌肉激活模式存在一定偏差。"
+      ]
+    },
+    {
+      "rep_index": 11,
+      "valid": true,
+      "final_score": 42.49,
+      "imu_dtw_score": 26.79,
+      "emg_score": 15.7,
+      "compensation": {
+        "detected": false,
+        "events": [],
+        "quality_findings": [
+          "abnormal_muscle_recruitment",
+          "forearm_coordination_abnormal",
+          "insufficient_upperarm_ROM"
+        ],
+        "details": {
+          "insufficient_upperarm_ROM": {
+            "value": 0.04999999999999205,
+            "template_mean": 197.2701361318977,
+            "reason": "上臂活动范围低于模板，可能存在关节活动度不足"
+          },
+          "forearm_coordination_abnormal": {
+            "value": 0.009999999999999981,
+            "template_mean": 301.58320986366175,
+            "reason": "前臂旋转范围偏离健康模板，可能存在肩肘腕协调异常"
+          },
+          "abnormal_muscle_recruitment": [
+            {
+              "muscle": "Extensor_digitorum",
+              "feature": "RMS",
+              "z_score": 8.771,
+              "reason": "Extensor_digitorum 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Biceps_brachii",
+              "feature": "RMS",
+              "z_score": 3.872,
+              "reason": "Biceps_brachii 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Extensor_carpi_ulnaris",
+              "feature": "RMS",
+              "z_score": 8.14,
+              "reason": "Extensor_carpi_ulnaris 激活明显高于模板，可能存在异常募集或代偿"
+            }
+          ]
+        }
+      },
+      "feedback": [
+        "IMU 动作时序与模板差异较大，建议按标准动作节奏重新完成。",
+        "肌肉激活模式存在一定偏差。"
+      ]
+    },
+    {
+      "rep_index": 12,
+      "valid": true,
+      "final_score": 42.38,
+      "imu_dtw_score": 27.44,
+      "emg_score": 14.94,
+      "compensation": {
+        "detected": false,
+        "events": [],
+        "quality_findings": [
+          "abnormal_muscle_recruitment",
+          "forearm_coordination_abnormal",
+          "insufficient_upperarm_ROM"
+        ],
+        "details": {
+          "insufficient_upperarm_ROM": {
+            "value": 0.04000000000001536,
+            "template_mean": 197.2701361318977,
+            "reason": "上臂活动范围低于模板，可能存在关节活动度不足"
+          },
+          "forearm_coordination_abnormal": {
+            "value": 0.010000000000000009,
+            "template_mean": 301.58320986366175,
+            "reason": "前臂旋转范围偏离健康模板，可能存在肩肘腕协调异常"
+          },
+          "abnormal_muscle_recruitment": [
+            {
+              "muscle": "Extensor_digitorum",
+              "feature": "RMS",
+              "z_score": 8.647,
+              "reason": "Extensor_digitorum 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Biceps_brachii",
+              "feature": "RMS",
+              "z_score": 3.972,
+              "reason": "Biceps_brachii 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Extensor_carpi_ulnaris",
+              "feature": "RMS",
+              "z_score": 7.529,
+              "reason": "Extensor_carpi_ulnaris 激活明显高于模板，可能存在异常募集或代偿"
+            }
+          ]
+        }
+      },
+      "feedback": [
+        "IMU 动作时序与模板差异较大，建议按标准动作节奏重新完成。",
+        "肌肉激活模式与健康模板差异较大。"
+      ]
+    },
+    {
+      "rep_index": 13,
+      "valid": true,
+      "final_score": 46.89,
+      "imu_dtw_score": 30.52,
+      "emg_score": 16.37,
+      "compensation": {
+        "detected": false,
+        "events": [],
+        "quality_findings": [
+          "abnormal_muscle_recruitment",
+          "forearm_coordination_abnormal",
+          "insufficient_upperarm_ROM"
+        ],
+        "details": {
+          "insufficient_upperarm_ROM": {
+            "value": 0.0,
+            "template_mean": 197.2701361318977,
+            "reason": "上臂活动范围低于模板，可能存在关节活动度不足"
+          },
+          "forearm_coordination_abnormal": {
+            "value": 0.009999999999990905,
+            "template_mean": 301.58320986366175,
+            "reason": "前臂旋转范围偏离健康模板，可能存在肩肘腕协调异常"
+          },
+          "abnormal_muscle_recruitment": [
+            {
+              "muscle": "Extensor_digitorum",
+              "feature": "RMS",
+              "z_score": 5.17,
+              "reason": "Extensor_digitorum 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Biceps_brachii",
+              "feature": "RMS",
+              "z_score": 3.429,
+              "reason": "Biceps_brachii 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Extensor_carpi_ulnaris",
+              "feature": "RMS",
+              "z_score": 7.318,
+              "reason": "Extensor_carpi_ulnaris 激活明显高于模板，可能存在异常募集或代偿"
+            }
+          ]
+        }
+      },
+      "feedback": [
+        "IMU 动作时序与模板差异较大，建议按标准动作节奏重新完成。",
+        "肌肉激活模式存在一定偏差。"
+      ]
+    },
+    {
+      "rep_index": 14,
+      "valid": true,
+      "final_score": 40.69,
+      "imu_dtw_score": 26.83,
+      "emg_score": 13.86,
+      "compensation": {
+        "detected": false,
+        "events": [],
+        "quality_findings": [
+          "abnormal_muscle_recruitment",
+          "forearm_coordination_abnormal",
+          "insufficient_upperarm_ROM"
+        ],
+        "details": {
+          "insufficient_upperarm_ROM": {
+            "value": 0.010000000000000009,
+            "template_mean": 197.2701361318977,
+            "reason": "上臂活动范围低于模板，可能存在关节活动度不足"
+          },
+          "forearm_coordination_abnormal": {
+            "value": 0.019999999999990914,
+            "template_mean": 301.58320986366175,
+            "reason": "前臂旋转范围偏离健康模板，可能存在肩肘腕协调异常"
+          },
+          "abnormal_muscle_recruitment": [
+            {
+              "muscle": "Extensor_digitorum",
+              "feature": "RMS",
+              "z_score": 10.173,
+              "reason": "Extensor_digitorum 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Biceps_brachii",
+              "feature": "RMS",
+              "z_score": 4.807,
+              "reason": "Biceps_brachii 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Extensor_carpi_ulnaris",
+              "feature": "RMS",
+              "z_score": 7.206,
+              "reason": "Extensor_carpi_ulnaris 激活明显高于模板，可能存在异常募集或代偿"
+            }
+          ]
+        }
+      },
+      "feedback": [
+        "IMU 动作时序与模板差异较大，建议按标准动作节奏重新完成。",
+        "肌肉激活模式与健康模板差异较大。"
+      ]
+    },
+    {
+      "rep_index": 15,
+      "valid": true,
+      "final_score": 45.45,
+      "imu_dtw_score": 30.25,
+      "emg_score": 15.2,
+      "compensation": {
+        "detected": false,
+        "events": [],
+        "quality_findings": [
+          "abnormal_muscle_recruitment",
+          "forearm_coordination_abnormal",
+          "insufficient_upperarm_ROM"
+        ],
+        "details": {
+          "insufficient_upperarm_ROM": {
+            "value": 0.0,
+            "template_mean": 197.2701361318977,
+            "reason": "上臂活动范围低于模板，可能存在关节活动度不足"
+          },
+          "forearm_coordination_abnormal": {
+            "value": 0.010000000000000009,
+            "template_mean": 301.58320986366175,
+            "reason": "前臂旋转范围偏离健康模板，可能存在肩肘腕协调异常"
+          },
+          "abnormal_muscle_recruitment": [
+            {
+              "muscle": "Extensor_digitorum",
+              "feature": "RMS",
+              "z_score": 8.662,
+              "reason": "Extensor_digitorum 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Biceps_brachii",
+              "feature": "RMS",
+              "z_score": 6.423,
+              "reason": "Biceps_brachii 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Extensor_carpi_ulnaris",
+              "feature": "RMS",
+              "z_score": 7.752,
+              "reason": "Extensor_carpi_ulnaris 激活明显高于模板，可能存在异常募集或代偿"
+            }
+          ]
+        }
+      },
+      "feedback": [
+        "IMU 动作时序与模板差异较大，建议按标准动作节奏重新完成。",
+        "肌肉激活模式存在一定偏差。"
+      ]
+    },
+    {
+      "rep_index": 16,
+      "valid": true,
+      "final_score": 45.37,
+      "imu_dtw_score": 28.68,
+      "emg_score": 16.69,
+      "compensation": {
+        "detected": false,
+        "events": [],
+        "quality_findings": [
+          "abnormal_muscle_recruitment",
+          "forearm_coordination_abnormal",
+          "insufficient_upperarm_ROM"
+        ],
+        "details": {
+          "insufficient_upperarm_ROM": {
+            "value": 0.06999999999999207,
+            "template_mean": 197.2701361318977,
+            "reason": "上臂活动范围低于模板，可能存在关节活动度不足"
+          },
+          "forearm_coordination_abnormal": {
+            "value": 0.08000000000001137,
+            "template_mean": 301.58320986366175,
+            "reason": "前臂旋转范围偏离健康模板，可能存在肩肘腕协调异常"
+          },
+          "abnormal_muscle_recruitment": [
+            {
+              "muscle": "Extensor_digitorum",
+              "feature": "RMS",
+              "z_score": 8.821,
+              "reason": "Extensor_digitorum 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Biceps_brachii",
+              "feature": "RMS",
+              "z_score": 3.39,
+              "reason": "Biceps_brachii 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Extensor_carpi_ulnaris",
+              "feature": "RMS",
+              "z_score": 6.884,
+              "reason": "Extensor_carpi_ulnaris 激活明显高于模板，可能存在异常募集或代偿"
+            }
+          ]
+        }
+      },
+      "feedback": [
+        "IMU 动作时序与模板差异较大，建议按标准动作节奏重新完成。",
+        "肌肉激活模式存在一定偏差。"
+      ]
+    }
+  ],
+  "rep_details": [
+    {
+      "rep_index": 1,
+      "final_score": 42.7,
+      "ROM": "暂无数据",
+      "smoothness": "暂无数据",
+      "coordination": "暂无数据",
+      "muscle_performance": "暂无数据",
+      "fatigue": {
+        "level": "暂无数据",
+        "trend": "暂无数据"
+      },
+      "compensation": {
+        "risk": "暂无数据",
+        "status": "not_detected"
+      }
+    },
+    {
+      "rep_index": 2,
+      "final_score": 47.32,
+      "ROM": "暂无数据",
+      "smoothness": "暂无数据",
+      "coordination": "暂无数据",
+      "muscle_performance": "暂无数据",
+      "fatigue": {
+        "level": "暂无数据",
+        "trend": "暂无数据"
+      },
+      "compensation": {
+        "risk": "暂无数据",
+        "status": "not_detected"
+      }
+    },
+    {
+      "rep_index": 3,
+      "final_score": 43.83,
+      "ROM": "暂无数据",
+      "smoothness": "暂无数据",
+      "coordination": "暂无数据",
+      "muscle_performance": "暂无数据",
+      "fatigue": {
+        "level": "暂无数据",
+        "trend": "暂无数据"
+      },
+      "compensation": {
+        "risk": "暂无数据",
+        "status": "not_detected"
+      }
+    },
+    {
+      "rep_index": 4,
+      "final_score": 43.75,
+      "ROM": "暂无数据",
+      "smoothness": "暂无数据",
+      "coordination": "暂无数据",
+      "muscle_performance": "暂无数据",
+      "fatigue": {
+        "level": "暂无数据",
+        "trend": "暂无数据"
+      },
+      "compensation": {
+        "risk": "暂无数据",
+        "status": "not_detected"
+      }
+    },
+    {
+      "rep_index": 5,
+      "final_score": 45.62,
+      "ROM": "暂无数据",
+      "smoothness": "暂无数据",
+      "coordination": "暂无数据",
+      "muscle_performance": "暂无数据",
+      "fatigue": {
+        "level": "暂无数据",
+        "trend": "暂无数据"
+      },
+      "compensation": {
+        "risk": "暂无数据",
+        "status": "not_detected"
+      }
+    },
+    {
+      "rep_index": 6,
+      "final_score": 44.4,
+      "ROM": "暂无数据",
+      "smoothness": "暂无数据",
+      "coordination": "暂无数据",
+      "muscle_performance": "暂无数据",
+      "fatigue": {
+        "level": "暂无数据",
+        "trend": "暂无数据"
+      },
+      "compensation": {
+        "risk": "暂无数据",
+        "status": "not_detected"
+      }
+    },
+    {
+      "rep_index": 7,
+      "final_score": 42.39,
+      "ROM": "暂无数据",
+      "smoothness": "暂无数据",
+      "coordination": "暂无数据",
+      "muscle_performance": "暂无数据",
+      "fatigue": {
+        "level": "暂无数据",
+        "trend": "暂无数据"
+      },
+      "compensation": {
+        "risk": "暂无数据",
+        "status": "not_detected"
+      }
+    },
+    {
+      "rep_index": 8,
+      "final_score": 46.02,
+      "ROM": "暂无数据",
+      "smoothness": "暂无数据",
+      "coordination": "暂无数据",
+      "muscle_performance": "暂无数据",
+      "fatigue": {
+        "level": "暂无数据",
+        "trend": "暂无数据"
+      },
+      "compensation": {
+        "risk": "暂无数据",
+        "status": "not_detected"
+      }
+    },
+    {
+      "rep_index": 9,
+      "final_score": 43.84,
+      "ROM": "暂无数据",
+      "smoothness": "暂无数据",
+      "coordination": "暂无数据",
+      "muscle_performance": "暂无数据",
+      "fatigue": {
+        "level": "暂无数据",
+        "trend": "暂无数据"
+      },
+      "compensation": {
+        "risk": "暂无数据",
+        "status": "not_detected"
+      }
+    },
+    {
+      "rep_index": 10,
+      "final_score": 47.62,
+      "ROM": "暂无数据",
+      "smoothness": "暂无数据",
+      "coordination": "暂无数据",
+      "muscle_performance": "暂无数据",
+      "fatigue": {
+        "level": "暂无数据",
+        "trend": "暂无数据"
+      },
+      "compensation": {
+        "risk": "暂无数据",
+        "status": "not_detected"
+      }
+    },
+    {
+      "rep_index": 11,
+      "final_score": 42.49,
+      "ROM": "暂无数据",
+      "smoothness": "暂无数据",
+      "coordination": "暂无数据",
+      "muscle_performance": "暂无数据",
+      "fatigue": {
+        "level": "暂无数据",
+        "trend": "暂无数据"
+      },
+      "compensation": {
+        "risk": "暂无数据",
+        "status": "not_detected"
+      }
+    },
+    {
+      "rep_index": 12,
+      "final_score": 42.38,
+      "ROM": "暂无数据",
+      "smoothness": "暂无数据",
+      "coordination": "暂无数据",
+      "muscle_performance": "暂无数据",
+      "fatigue": {
+        "level": "暂无数据",
+        "trend": "暂无数据"
+      },
+      "compensation": {
+        "risk": "暂无数据",
+        "status": "not_detected"
+      }
+    },
+    {
+      "rep_index": 13,
+      "final_score": 46.89,
+      "ROM": "暂无数据",
+      "smoothness": "暂无数据",
+      "coordination": "暂无数据",
+      "muscle_performance": "暂无数据",
+      "fatigue": {
+        "level": "暂无数据",
+        "trend": "暂无数据"
+      },
+      "compensation": {
+        "risk": "暂无数据",
+        "status": "not_detected"
+      }
+    },
+    {
+      "rep_index": 14,
+      "final_score": 40.69,
+      "ROM": "暂无数据",
+      "smoothness": "暂无数据",
+      "coordination": "暂无数据",
+      "muscle_performance": "暂无数据",
+      "fatigue": {
+        "level": "暂无数据",
+        "trend": "暂无数据"
+      },
+      "compensation": {
+        "risk": "暂无数据",
+        "status": "not_detected"
+      }
+    },
+    {
+      "rep_index": 15,
+      "final_score": 45.45,
+      "ROM": "暂无数据",
+      "smoothness": "暂无数据",
+      "coordination": "暂无数据",
+      "muscle_performance": "暂无数据",
+      "fatigue": {
+        "level": "暂无数据",
+        "trend": "暂无数据"
+      },
+      "compensation": {
+        "risk": "暂无数据",
+        "status": "not_detected"
+      }
+    },
+    {
+      "rep_index": 16,
+      "final_score": 45.37,
+      "ROM": "暂无数据",
+      "smoothness": "暂无数据",
+      "coordination": "暂无数据",
+      "muscle_performance": "暂无数据",
+      "fatigue": {
+        "level": "暂无数据",
+        "trend": "暂无数据"
+      },
+      "compensation": {
+        "risk": "暂无数据",
+        "status": "not_detected"
+      }
+    }
+  ],
+  "kinematics": {},
+  "emg_analysis": {},
+  "compensation_analysis": {
+    "events": [],
+    "action_count": 0,
+    "detected": false
+  },
+  "fatigue_analysis": {},
+  "summary": "",
+  "next_recommendations": [
+    "IMU 动作时序与模板差异较大，建议按标准动作节奏重新完成。",
+    "肌肉激活模式与健康模板差异较大。",
+    "肌肉激活模式存在一定偏差。"
+  ],
+  "versions": {
+    "source_mode": "device",
+    "source_origin": "pc_udp_6006_ingest",
+    "score_version": "v3.0",
+    "schema_version": "cloud_session_result_v3",
+    "device_id": "P4_REHAB_01",
+    "generated_at": "2026-07-26T01:39:16.260754+00:00",
+    "raw_score_result_path": "score_result.json",
+    "compact_score_result_path": "score_job_result.json"
+  },
+  "disclaimer": "报告仅供康复专业人员参考。",
+  "demo_notice": ""
+}

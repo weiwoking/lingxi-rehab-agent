@@ -1,0 +1,171 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "deltar_object_geometry.v1.schema.json",
+  "title": "DELTAR Stage 7E per-frame object geometry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "scan_id",
+    "frame_id",
+    "selected_depth_semantics",
+    "world_geometry_unit",
+    "distance_unit",
+    "profile_provenance",
+    "objects",
+    "warnings"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "deltar_object_geometry.v1"
+    },
+    "scan_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "frame_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selected_depth_semantics": {
+      "const": "axial_z"
+    },
+    "world_geometry_unit": {
+      "const": "mm"
+    },
+    "distance_unit": {
+      "const": "mm"
+    },
+    "profile_provenance": {
+      "type": "object"
+    },
+    "objects": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/object"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "nullableNumber": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "object": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "object_id",
+        "class_name",
+        "detection_confidence",
+        "geometry_status",
+        "bbox_xyxy",
+        "mask_pixel_count",
+        "eroded_mask_pixel_count",
+        "valid_depth_pixel_count",
+        "valid_coverage_ratio",
+        "height_method",
+        "object_height_mm",
+        "support",
+        "geometry",
+        "silhouette_height",
+        "dense_depth_diagnostics",
+        "rejection_reason",
+        "warnings"
+      ],
+      "properties": {
+        "object_id": {
+          "type": "string"
+        },
+        "class_name": {
+          "enum": [
+            "cup",
+            "bottle"
+          ]
+        },
+        "detection_confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "geometry_status": {
+          "enum": [
+            "measured",
+            "insufficient_mask",
+            "insufficient_depth",
+            "support_not_found",
+            "height_out_of_demo_range",
+            "unsupported_pose_or_support",
+            "silhouette_height_failed"
+          ]
+        },
+        "bbox_xyxy": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "number"
+          }
+        },
+        "mask_pixel_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "eroded_mask_pixel_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "valid_depth_pixel_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "valid_coverage_ratio": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "height_method": {
+          "enum": [
+            "upright_silhouette_support_plane",
+            null
+          ]
+        },
+        "object_height_mm": {
+          "$ref": "#/$defs/nullableNumber"
+        },
+        "support": {
+          "type": "object"
+        },
+        "geometry": {
+          "type": "object"
+        },
+        "silhouette_height": {
+          "type": "object"
+        },
+        "dense_depth_diagnostics": {
+          "type": "object"
+        },
+        "rejection_reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

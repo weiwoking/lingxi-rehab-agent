@@ -1,0 +1,402 @@
+{
+  "schema_version": "stage3a_constrained_solver_result.v1",
+  "generated_at": "2026-08-17T20:08:34.948953Z",
+  "status": "CANDIDATE_NOT_PROMOTED",
+  "promotion": false,
+  "model": {
+    "shared": [
+      "camera gravity roll component",
+      "camera gravity pitch component"
+    ],
+    "per_pose": [
+      "board/vehicle relative yaw nuisance",
+      "board origin X",
+      "board origin Y"
+    ],
+    "fixed": {
+      "K_D": "Stage2 final candidate",
+      "camera_height_mm": 972.0,
+      "active_bottom_height_mm": 912.0,
+      "board_vertical": true,
+      "board_geometry_mm": [
+        175.0,
+        125.0
+      ]
+    },
+    "parameter_count": 11,
+    "observation_scalar_count": 1344,
+    "yaw_gauge": "shared camera yaw fixed to zero; per-pose yaw is relative nuisance"
+  },
+  "fit": {
+    "success": true,
+    "message": "`ftol` termination condition is satisfied.",
+    "cost": 1799.4929591660562,
+    "optimality": 0.00020393412536989786,
+    "nfev": 16,
+    "shared_R_world_from_camera": [
+      [
+        0.9999853281169062,
+        -0.0054152354762923805,
+        -0.00013702430379245654
+      ],
+      [
+        -0.00013702430379245654,
+        -0.05057420825025115,
+        0.998720296521604
+      ],
+      [
+        -0.0054152354762923805,
+        -0.9987056246385101,
+        -0.05057420825025115
+      ]
+    ],
+    "shared_orientation_gauge_yaw_zero": {
+      "roll_deg": 0.31066921976438244,
+      "pitch_deg": -2.898925369693367,
+      "yaw_deg": -0.007860973964490776
+    },
+    "shared_gravity_parameters_rad": [
+      -0.05059604022387215,
+      0.005417573135786424
+    ],
+    "per_pose": {
+      "W01": {
+        "nuisance_board_yaw_deg": 3.187239207900697,
+        "board_origin_world_x_mm": -106.04341593793424,
+        "board_origin_world_y_mm": 600.2971409040636,
+        "board_plane_distance_proxy_mm": 609.5915546014223,
+        "reprojection": {
+          "count": 246,
+          "rms_px": 3.7262299719376077,
+          "median_px": 2.248430136308344,
+          "p95_px": 8.78999728531915,
+          "max_px": 9.651933998861372
+        }
+      },
+      "W02": {
+        "nuisance_board_yaw_deg": 0.5912716074301124,
+        "board_origin_world_x_mm": -54.83085775681739,
+        "board_origin_world_y_mm": 796.658687987105,
+        "board_plane_distance_proxy_mm": 798.5433539311964,
+        "reprojection": {
+          "count": 242,
+          "rms_px": 0.5780386284942032,
+          "median_px": 0.5049626882407355,
+          "p95_px": 1.0043012417446058,
+          "max_px": 1.4517840499052197
+        }
+      },
+      "W03": {
+        "nuisance_board_yaw_deg": 1.8627585150927377,
+        "board_origin_world_x_mm": -39.47547175805975,
+        "board_origin_world_y_mm": 980.4582860744902,
+        "board_plane_distance_proxy_mm": 981.2526502398085,
+        "reprojection": {
+          "count": 184,
+          "rms_px": 0.74625329307418,
+          "median_px": 0.7486325104337354,
+          "p95_px": 1.0925720022836107,
+          "max_px": 1.1646722216955856
+        }
+      }
+    },
+    "all_corner_reprojection": {
+      "count": 672,
+      "rms_px": 2.3142242343908324,
+      "median_px": 0.8161640103029228,
+      "p95_px": 4.977169812516044,
+      "max_px": 9.651933998861372
+    }
+  },
+  "diagnostic_free_shared_relative_height_fit": {
+    "diagnostic_only": true,
+    "must_not_be_used_as_height_authority": true,
+    "success": true,
+    "message": "`ftol` termination condition is satisfied.",
+    "nfev": 11,
+    "shared_orientation_gauge_yaw_zero": {
+      "roll_deg": 0.32582418948047986,
+      "pitch_deg": -2.8854830883307225,
+      "yaw_deg": -0.008206201976224682
+    },
+    "fitted_board_top_minus_camera_height_mm": 65.1727648774186,
+    "nominal_board_top_minus_camera_height_mm": 64.99999999999994,
+    "implied_board_bottom_mm_if_camera_height_is_972": 912.1727648774184,
+    "implied_camera_height_mm_if_board_bottom_is_912": 971.8272351225816,
+    "per_pose_reprojection": {
+      "W01": {
+        "count": 246,
+        "rms_px": 3.7246312768321768,
+        "median_px": 2.273309115639054,
+        "p95_px": 8.759000175683802,
+        "max_px": 9.637309005539839
+      },
+      "W02": {
+        "count": 242,
+        "rms_px": 0.5714510315541218,
+        "median_px": 0.49806764275914683,
+        "p95_px": 1.0187313369367264,
+        "max_px": 1.4438987890572443
+      },
+      "W03": {
+        "count": 184,
+        "rms_px": 0.760688608157631,
+        "median_px": 0.7684619994760812,
+        "p95_px": 1.0987630353420546,
+        "max_px": 1.2051504140951994
+      }
+    },
+    "all_corner_reprojection": {
+      "count": 672,
+      "rms_px": 2.3139798102373077,
+      "median_px": 0.828615418302107,
+      "p95_px": 4.957719652900541,
+      "max_px": 9.637309005539839
+    }
+  },
+  "diagnostic_common_gravity_free_per_pose_height": {
+    "diagnostic_only": true,
+    "per_pose_height_was_freed": true,
+    "must_not_be_exported": true,
+    "shared_orientation_gauge_yaw_zero": {
+      "roll_deg": 0.41616376458584553,
+      "pitch_deg": -0.952459185303436,
+      "yaw_deg": -0.0034591541855804
+    },
+    "per_pose": {
+      "W01": {
+        "nuisance_yaw_deg": 3.038197495873311,
+        "distance_proxy_mm": 609.297450717326,
+        "implied_board_bottom_mm_with_camera_origin_z_972": 932.7380695592278,
+        "signed_residual_from_912_mm": 20.738069559227824,
+        "reprojection": {
+          "count": 246,
+          "rms_px": 3.7205177215498835,
+          "median_px": 2.3251675273725443,
+          "p95_px": 8.607078900772427,
+          "max_px": 9.772320600819873
+        }
+      },
+      "W02": {
+        "nuisance_yaw_deg": 0.8032280366169314,
+        "distance_proxy_mm": 796.8656227028646,
+        "implied_board_bottom_mm_with_camera_origin_z_972": 938.7224849622758,
+        "signed_residual_from_912_mm": 26.722484962275757,
+        "reprojection": {
+          "count": 242,
+          "rms_px": 0.45146834926659707,
+          "median_px": 0.2622376292129641,
+          "p95_px": 1.1594487674596445,
+          "max_px": 1.4646700248477442
+        }
+      },
+      "W03": {
+        "nuisance_yaw_deg": 1.9230099844741504,
+        "distance_proxy_mm": 981.0391823957061,
+        "implied_board_bottom_mm_with_camera_origin_z_972": 945.6378748899818,
+        "signed_residual_from_912_mm": 33.637874889981845,
+        "reprojection": {
+          "count": 184,
+          "rms_px": 0.7087523822747767,
+          "median_px": 0.6810771412007524,
+          "p95_px": 1.069221981173894,
+          "max_px": 1.1835661315693444
+        }
+      }
+    },
+    "implied_height_slope_mm_per_m": 34.69240062940006,
+    "all_corner_reprojection": {
+      "count": 672,
+      "rms_px": 2.297432591926059,
+      "median_px": 0.7669462877674869,
+      "p95_px": 4.8504762478265535,
+      "max_px": 9.772320600819873
+    },
+    "interpretation": "a good image fit with distance-dependent inferred height is planar rotation/translation coupling, not a valid height calibration"
+  },
+  "constrained_common_gravity_with_frame_xy_nuisance": {
+    "success": true,
+    "parameter_count": 71,
+    "model_delta_from_preferred": "per-frame XY nuisance added because raw W01 image centre moves during scan; yaw remains per-pose",
+    "shared_orientation_gauge_yaw_zero": {
+      "roll_deg": 0.283799370853834,
+      "pitch_deg": -2.899125359012545,
+      "yaw_deg": -0.007181569308443994
+    },
+    "per_pose": {
+      "W01": {
+        "nuisance_yaw_deg": 2.5436937901854835,
+        "frame_xy_std_mm": [
+          2.2164025633388373,
+          2.771799331113626
+        ],
+        "reprojection": {
+          "count": 246,
+          "rms_px": 1.5436164617125658,
+          "median_px": 0.8676865359192155,
+          "p95_px": 3.6968689173449896,
+          "max_px": 4.541975547807827
+        }
+      },
+      "W02": {
+        "nuisance_yaw_deg": 0.4927434632996598,
+        "frame_xy_std_mm": [
+          0.34593201782423966,
+          0.7503433405994838
+        ],
+        "reprojection": {
+          "count": 242,
+          "rms_px": 0.4397098417905157,
+          "median_px": 0.4153044596160362,
+          "p95_px": 0.6344120573859503,
+          "max_px": 0.8070929852004708
+        }
+      },
+      "W03": {
+        "nuisance_yaw_deg": 0.6162851938961565,
+        "frame_xy_std_mm": [
+          0.7842630330364779,
+          1.0145403990246917
+        ],
+        "reprojection": {
+          "count": 184,
+          "rms_px": 0.3170791121419721,
+          "median_px": 0.2785648404850676,
+          "p95_px": 0.5627870005600341,
+          "max_px": 0.7494950626359242
+        }
+      }
+    },
+    "all_corner_reprojection": {
+      "count": 672,
+      "rms_px": 0.9845877585146707,
+      "median_px": 0.488243747887527,
+      "p95_px": 2.1185641749996336,
+      "max_px": 4.541975547807827
+    },
+    "fixed_height_residual_by_construction_mm": 0.0
+  },
+  "diagnostic_common_gravity_with_frame_xy_yaw_nuisance": {
+    "success": true,
+    "parameter_count": 101,
+    "model_delta_from_preferred": "per-frame yaw and XY are diagnostic acquisition nuisances; gravity and heights remain shared/fixed",
+    "shared_orientation_gauge_yaw_zero": {
+      "roll_deg": 0.2825763784088081,
+      "pitch_deg": -2.8987907630755783,
+      "yaw_deg": -0.0071497956211107805
+    },
+    "per_pose": {
+      "W01": {
+        "frame_yaw_median_deg": 2.732656893846512,
+        "frame_yaw_std_deg": 2.6666832428329323,
+        "reprojection": {
+          "count": 246,
+          "rms_px": 1.5317479979443058,
+          "median_px": 0.8592142311310399,
+          "p95_px": 3.3926587988796997,
+          "max_px": 5.138014599545474
+        }
+      },
+      "W02": {
+        "frame_yaw_median_deg": 0.5042941777659616,
+        "frame_yaw_std_deg": 0.3298535185141927,
+        "reprojection": {
+          "count": 242,
+          "rms_px": 0.43530495363709665,
+          "median_px": 0.40927417835180385,
+          "p95_px": 0.6384399054578059,
+          "max_px": 0.78959169205063
+        }
+      },
+      "W03": {
+        "frame_yaw_median_deg": 1.1725147914131597,
+        "frame_yaw_std_deg": 1.1223682960731147,
+        "reprojection": {
+          "count": 184,
+          "rms_px": 0.31881567952456985,
+          "median_px": 0.27153847653032714,
+          "p95_px": 0.5877758253907547,
+          "max_px": 0.7556125840701611
+        }
+      }
+    },
+    "all_corner_reprojection": {
+      "count": 672,
+      "rms_px": 0.9772235363904472,
+      "median_px": 0.48131799297314154,
+      "p95_px": 2.129590010019497,
+      "max_px": 5.138014599545474
+    },
+    "fixed_height_residual_by_construction_mm": 0.0
+  },
+  "leave_one_pose_out": [
+    {
+      "omitted_pose_id": "W01",
+      "training_shared_orientation": {
+        "roll_deg": 0.3899969560480757,
+        "pitch_deg": -2.8895209288007764,
+        "yaw_deg": -0.009836218557200396
+      },
+      "held_out_refit_only_nuisance": {
+        "nuisance_board_yaw_deg": 3.254618929172576,
+        "board_origin_world_x_mm": -106.00285047680472,
+        "board_origin_world_y_mm": 600.0608756127483,
+        "board_plane_distance_proxy_mm": 609.3518349445959,
+        "reprojection": {
+          "count": 246,
+          "rms_px": 3.738405503772407,
+          "median_px": 2.224220698818021,
+          "p95_px": 8.854633092777917,
+          "max_px": 9.67641590319499
+        }
+      },
+      "shared_orientation_delta_from_full_deg": 0.07980859225364847
+    },
+    {
+      "omitted_pose_id": "W02",
+      "training_shared_orientation": {
+        "roll_deg": 0.3520053737356985,
+        "pitch_deg": -2.9120122719811836,
+        "yaw_deg": -0.008947150259825069
+      },
+      "held_out_refit_only_nuisance": {
+        "nuisance_board_yaw_deg": 0.5461918654500111,
+        "board_origin_world_x_mm": -54.805453663809615,
+        "board_origin_world_y_mm": 797.0245352280386,
+        "board_plane_distance_proxy_mm": 798.9065949826468,
+        "reprojection": {
+          "count": 242,
+          "rms_px": 0.7270964060192732,
+          "median_px": 0.7000179036891738,
+          "p95_px": 1.014370971942827,
+          "max_px": 1.446207862695411
+        }
+      },
+      "shared_orientation_delta_from_full_deg": 0.043319427155584254
+    },
+    {
+      "omitted_pose_id": "W03",
+      "training_shared_orientation": {
+        "roll_deg": 0.27509511145587306,
+        "pitch_deg": -2.892960113978973,
+        "yaw_deg": -0.006946496231926854
+      },
+      "held_out_refit_only_nuisance": {
+        "nuisance_board_yaw_deg": 2.2359587907950664,
+        "board_origin_world_x_mm": -39.503890272699856,
+        "board_origin_world_y_mm": 979.0515956462101,
+        "board_plane_distance_proxy_mm": 979.8482455380872,
+        "reprojection": {
+          "count": 184,
+          "rms_px": 0.7898882747595697,
+          "median_px": 0.7795157286272303,
+          "p95_px": 1.132306407293231,
+          "max_px": 1.2412855387400201
+        }
+      },
+      "shared_orientation_delta_from_full_deg": 0.03603679475132104
+    }
+  ],
+  "height_residual_by_construction_mm": 0.0,
+  "warning": "known height is a constraint, not an independent post-fit validation metric"
+}

@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "deltar_geometry_calibration.v2.schema.json",
+  "title": "DELTAR geometry calibration v2 - Stage 7A camera subset",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "profile_id", "measurement_status", "absolute_geometry_valid", "camera", "camera_tof_extrinsics", "world_pose", "quality", "provenance"],
+  "properties": {
+    "schema_version": {"const": "deltar_geometry_calibration.v2"},
+    "profile_id": {"type": "string", "minLength": 1},
+    "measurement_status": {"enum": ["measured", "unverified"]},
+    "absolute_geometry_valid": {"const": false},
+    "camera": {
+      "type": "object", "additionalProperties": false, "required": ["resolution", "orientation", "intrinsics"],
+      "properties": {
+        "resolution": {"type": "object", "additionalProperties": false, "required": ["width", "height"], "properties": {"width": {"const": 640}, "height": {"const": 360}}},
+        "orientation": {"type": "object", "additionalProperties": false, "required": ["physical", "software_rotation_degrees", "scene_upright_confirmed"], "properties": {"physical": {"const": "landscape"}, "software_rotation_degrees": {"const": 0}, "scene_upright_confirmed": {"const": true}}},
+        "intrinsics": {
+          "type": "object", "additionalProperties": false, "required": ["model", "fx", "fy", "cx", "cy", "distortion"],
+          "properties": {
+            "model": {"const": "opencv_brown"}, "fx": {"type": "number", "exclusiveMinimum": 0}, "fy": {"type": "number", "exclusiveMinimum": 0},
+            "cx": {"type": "number", "minimum": 0, "exclusiveMaximum": 640}, "cy": {"type": "number", "minimum": 0, "exclusiveMaximum": 360},
+            "distortion": {"type": "object", "additionalProperties": false, "required": ["k1", "k2", "p1", "p2", "k3"], "properties": {"k1": {"type": "number"}, "k2": {"type": "number"}, "p1": {"type": "number"}, "p2": {"type": "number"}, "k3": {"type": "number"}}}
+          }
+        }
+      }
+    },
+    "camera_tof_extrinsics": {"$ref": "#/$defs/unresolved"},
+    "world_pose": {"$ref": "#/$defs/unresolved"},
+    "quality": {
+      "type": "object", "additionalProperties": false,
+      "required": ["fit_rms_px", "heldout_rms_px", "heldout_p95_px", "accepted_images", "fit_images", "heldout_images", "quality_status"],
+      "properties": {
+        "fit_rms_px": {"type": "number", "minimum": 0}, "heldout_rms_px": {"type": "number", "minimum": 0}, "heldout_p95_px": {"type": "number", "minimum": 0},
+        "accepted_images": {"type": "integer", "minimum": 1}, "fit_images": {"type": "integer", "minimum": 1}, "heldout_images": {"type": "integer", "minimum": 1},
+        "quality_status": {"enum": ["PASS", "PASS_DEMO_ONLY"]}
+      }
+    },
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["board_manifest_sha256", "orientation_manifest_sha256", "accepted_images_manifest_sha256", "accepted_image_sha256", "python_version", "opencv_version", "cli_parameters", "seed", "fit_images", "heldout_images", "generated_at", "tool_version", "source_path"],
+      "properties": {
+        "board_manifest_sha256": {"$ref": "#/$defs/sha256"}, "orientation_manifest_sha256": {"$ref": "#/$defs/sha256"}, "accepted_images_manifest_sha256": {"$ref": "#/$defs/sha256"},
+        "accepted_image_sha256": {"type": "object", "minProperties": 1, "additionalProperties": {"$ref": "#/$defs/sha256"}},
+        "python_version": {"type": "string"}, "opencv_version": {"type": "string"}, "cli_parameters": {"type": "object"}, "seed": {"type": "integer"},
+        "fit_images": {"type": "array", "items": {"type": "string"}}, "heldout_images": {"type": "array", "items": {"type": "string"}},
+        "generated_at": {"type": "string", "format": "date-time"}, "tool_version": {"type": "string"}, "source_path": {"type": "string"}
+      }
+    }
+  },
+  "$defs": {
+    "unresolved": {"type": "object", "additionalProperties": false, "required": ["status"], "properties": {"status": {"const": "unresolved"}}},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

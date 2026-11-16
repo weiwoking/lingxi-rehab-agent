@@ -1,0 +1,223 @@
+{
+  "schema_version": "deltar_stage3_yolo.v1",
+  "model": {
+    "path": "C:\\ec\\_deltar_p4_pipeline\\models\\yolo11n-seg.pt",
+    "sha256": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152",
+    "expected_sha256": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152",
+    "hash_verified": true,
+    "size_bytes": 6182636,
+    "task": "segment",
+    "expected_task": "segment",
+    "task_verified": true,
+    "device": "cuda:0",
+    "actual_model_device": "cuda:0",
+    "precision": "FP32",
+    "half": false,
+    "ultralytics_version": "8.4.93",
+    "torch_version": "2.7.1+cu128",
+    "class_names": {
+      "0": "person",
+      "1": "bicycle",
+      "2": "car",
+      "3": "motorcycle",
+      "4": "airplane",
+      "5": "bus",
+      "6": "train",
+      "7": "truck",
+      "8": "boat",
+      "9": "traffic light",
+      "10": "fire hydrant",
+      "11": "stop sign",
+      "12": "parking meter",
+      "13": "bench",
+      "14": "bird",
+      "15": "cat",
+      "16": "dog",
+      "17": "horse",
+      "18": "sheep",
+      "19": "cow",
+      "20": "elephant",
+      "21": "bear",
+      "22": "zebra",
+      "23": "giraffe",
+      "24": "backpack",
+      "25": "umbrella",
+      "26": "handbag",
+      "27": "tie",
+      "28": "suitcase",
+      "29": "frisbee",
+      "30": "skis",
+      "31": "snowboard",
+      "32": "sports ball",
+      "33": "kite",
+      "34": "baseball bat",
+      "35": "baseball glove",
+      "36": "skateboard",
+      "37": "surfboard",
+      "38": "tennis racket",
+      "39": "bottle",
+      "40": "wine glass",
+      "41": "cup",
+      "42": "fork",
+      "43": "knife",
+      "44": "spoon",
+      "45": "bowl",
+      "46": "banana",
+      "47": "apple",
+      "48": "sandwich",
+      "49": "orange",
+      "50": "broccoli",
+      "51": "carrot",
+      "52": "hot dog",
+      "53": "pizza",
+      "54": "donut",
+      "55": "cake",
+      "56": "chair",
+      "57": "couch",
+      "58": "potted plant",
+      "59": "bed",
+      "60": "dining table",
+      "61": "toilet",
+      "62": "tv",
+      "63": "laptop",
+      "64": "mouse",
+      "65": "remote",
+      "66": "keyboard",
+      "67": "cell phone",
+      "68": "microwave",
+      "69": "oven",
+      "70": "toaster",
+      "71": "sink",
+      "72": "refrigerator",
+      "73": "book",
+      "74": "clock",
+      "75": "vase",
+      "76": "scissors",
+      "77": "teddy bear",
+      "78": "hair drier",
+      "79": "toothbrush"
+    }
+  },
+  "image": {
+    "path": "C:\\ec\\_deltar_scan_service_data\\performance_guard\\canary_runs\\run_00ffe644dac14ff483916e6741fb3667\\.frozen_attempts\\result\\generation_0001_attempt_1\\logs\\frame_000004\\source_rgb.png",
+    "width": 640,
+    "height": 360
+  },
+  "instances": [
+    {
+      "instance_id": 0,
+      "class_id": 63,
+      "class_name": "laptop",
+      "confidence": 0.7350102066993713,
+      "bbox_xyxy": [
+        208.66586303710938,
+        129.82763671875,
+        262.74249267578125,
+        180.9638671875
+      ],
+      "bbox_normalized": [
+        0.3260404109954834,
+        0.36063232421875,
+        0.4105351448059082,
+        0.5026774088541667
+      ],
+      "mask_key": "instance_000"
+    },
+    {
+      "instance_id": 1,
+      "class_id": 62,
+      "class_name": "tv",
+      "confidence": 0.364688903093338,
+      "bbox_xyxy": [
+        534.555908203125,
+        117.9912109375,
+        632.0279541015625,
+        170.27276611328125
+      ],
+      "bbox_normalized": [
+        0.8352436065673828,
+        0.3277533637152778,
+        0.9875436782836914,
+        0.4729799058702257
+      ],
+      "mask_key": "instance_001"
+    },
+    {
+      "instance_id": 2,
+      "class_id": 62,
+      "class_name": "tv",
+      "confidence": 0.2763545513153076,
+      "bbox_xyxy": [
+        257.4078369140625,
+        118.93252563476562,
+        357.7679443359375,
+        187.54690551757812
+      ],
+      "bbox_normalized": [
+        0.40219974517822266,
+        0.33036812676323785,
+        0.5590124130249023,
+        0.520963626437717
+      ],
+      "mask_key": "instance_002"
+    },
+    {
+      "instance_id": 3,
+      "class_id": 73,
+      "class_name": "book",
+      "confidence": 0.2351653128862381,
+      "bbox_xyxy": [
+        496.97393798828125,
+        247.94384765625,
+        577.2844848632812,
+        274.095703125
+      ],
+      "bbox_normalized": [
+        0.7765217781066894,
+        0.68873291015625,
+        0.902007007598877,
+        0.761376953125
+      ],
+      "mask_key": "instance_003"
+    },
+    {
+      "instance_id": 4,
+      "class_id": 0,
+      "class_name": "person",
+      "confidence": 0.23008355498313904,
+      "bbox_xyxy": [
+        368.11456298828125,
+        71.26705169677734,
+        437.0438232421875,
+        161.95529174804688
+      ],
+      "bbox_normalized": [
+        0.5751790046691895,
+        0.1979640324910482,
+        0.682880973815918,
+        0.4498758104112413
+      ],
+      "mask_key": "instance_004"
+    },
+    {
+      "instance_id": 5,
+      "class_id": 73,
+      "class_name": "book",
+      "confidence": 0.21187971532344818,
+      "bbox_xyxy": [
+        581.62158203125,
+        260.9740905761719,
+        639.5511474609375,
+        280.6908874511719
+      ],
+      "bbox_normalized": [
+        0.9087837219238282,
+        0.7249280293782552,
+        0.9992986679077148,
+        0.7796969095865885
+      ],
+      "mask_key": "instance_005"
+    }
+  ],
+  "warnings": []
+}

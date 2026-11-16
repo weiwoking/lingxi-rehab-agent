@@ -1,0 +1,19 @@
+exit_code=0
+$ C:\ec\_deltar_formal\envs\deltar_py311_torch271_cu128\python.exe C:\ec\_calibration_workspaces\stage2c_camera_tof_validation_20260818_01\stage2c_camera_tof_validate.py --help
+usage: stage2c_camera_tof_validate.py [-h]
+                                      {register,status,inspect,coverage,validate,summary,suggest-next}
+                                      ...
+
+Stage2C independent validation of frozen Stage2A/Stage2B Camera<->ToF geometry
+
+positional arguments:
+  {register,status,inspect,coverage,validate,summary,suggest-next}
+    register            register a complete formal 11-frame scan (hardlink
+                        preferred)
+    status              show dynamic registry and frozen-authority state
+    inspect             detect ChArUco planes and generate frame overlays
+    suggest-next        suggest an independent-coverage capture, never a
+                        parameter-estimation pose
+
+options:
+  -h, --help            show this help message and exit

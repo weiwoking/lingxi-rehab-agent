@@ -1,0 +1,18 @@
+{
+  "schema_version": "rehab.task_decision.typed_get_vectors.v2",
+  "cases": [
+    {
+      "name": "stage3_selected",
+      "input": {
+        "task_id": "OT_CUP_TRANSFER_L1",
+        "task_name": "水杯横向取放训练（一级）"
+      },
+      "expected_task_name": "水杯横向取放训练（一级）"
+    },
+    {
+      "name": "unknown_task_rejected",
+      "input": {"task_id": "UNKNOWN"},
+      "expected": "invalid"
+    }
+  ]
+}

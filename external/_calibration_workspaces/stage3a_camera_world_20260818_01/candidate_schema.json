@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "camera_world_pose.stage3a_candidate.v1",
+  "title": "Stage3A Camera to World Candidate",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "candidate_status",
+    "world_pose_resolved",
+    "absolute_geometry_valid",
+    "no_promotion",
+    "board_mode",
+    "board_moved_between_poses",
+    "capture_mode",
+    "distance_coverage",
+    "optional_reposition_holdout",
+    "fixed_board_active_bottom_height_mm",
+    "fixed_board_height_uncertainty_mm",
+    "stage2_bundle",
+    "camera_height_mm",
+    "camera_height_uncertainty_mm",
+    "world_contract",
+    "R_world_from_camera",
+    "t_world_from_camera_mm",
+    "T_world_from_camera",
+    "source_physical_poses",
+    "fixed_height_consistency",
+    "orientation_vs_distance",
+    "leave_one_physical_pose_out",
+    "height_sensitivity",
+    "sign_and_convention_checks"
+  ],
+  "properties": {
+    "schema_version": {"const": "camera_world_pose.stage3a_candidate.v1"},
+    "candidate_status": {"const": "CANDIDATE_NOT_PROMOTED"},
+    "world_pose_resolved": {"const": true},
+    "absolute_geometry_valid": {"const": false},
+    "no_promotion": {"const": true},
+    "board_mode": {"const": "FIXED_VERTICAL_BOARD"},
+    "board_moved_between_poses": {"const": false},
+    "capture_mode": {"const": "VEHICLE_MULTI_DISTANCE"},
+    "distance_coverage": {"const": "near_mid_far"},
+    "optional_reposition_holdout": {"const": "W04"},
+    "fixed_board_active_bottom_height_mm": {"const": 912.0},
+    "fixed_board_height_uncertainty_mm": {"const": 5.0},
+    "camera_height_mm": {"type": "number"},
+    "camera_height_uncertainty_mm": {"type": "number", "minimum": 0},
+    "R_world_from_camera": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number"}}
+    },
+    "t_world_from_camera_mm": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {"type": "number"}
+    },
+    "T_world_from_camera": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "number"}}
+    }
+  },
+  "additionalProperties": true
+}

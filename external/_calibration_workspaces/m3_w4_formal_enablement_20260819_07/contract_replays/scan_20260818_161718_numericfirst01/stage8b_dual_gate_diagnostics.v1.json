@@ -1,0 +1,90 @@
+{
+  "authority": {
+    "path": "stage8b_all_object_geometry.v1.json",
+    "sha256": "f740a30e58b4bd5fa9299fe5e622b4b6051d157d69ea6116cf9c387df7199118"
+  },
+  "dual_gate": {
+    "object_count": 25,
+    "path": "stage8b_dual_gate_selection.v1.json",
+    "sha256": "468fd7861783bbcf00fdc366f3d1b03f70b6e7be853f9f3725a17a388d2a2165"
+  },
+  "inference_invocations": {
+    "deltar": 0,
+    "stage7d_recompute": 0,
+    "yolo_detect": 0,
+    "yolo_segment": 0
+  },
+  "metadata_adapter": {
+    "files": [
+      {
+        "path": "frame_results/frame_000000.json",
+        "sha256": "973e4164105b84f7ce0ab4c5920a0d7b9f0df865898630ca1278a56528378f8d"
+      },
+      {
+        "path": "frame_results/frame_000001.json",
+        "sha256": "f1f33cf15c3b29074d7ed6c3cbcf1ad5672f44251e94334b84d6cc88f00b0777"
+      },
+      {
+        "path": "frame_results/frame_000002.json",
+        "sha256": "1271cdf04d5a9ff3ad373a1b82578f5f2329cf53d98fa9152e3c2767aeb42ef1"
+      },
+      {
+        "path": "frame_results/frame_000003.json",
+        "sha256": "5735d632aa174e69abbeab68f4a2487ef0693ce835ca784812cc17754f385bc3"
+      },
+      {
+        "path": "frame_results/frame_000004.json",
+        "sha256": "474886335c43168f15de5942ea8c1426c120491de2d82236874bf6356734f096"
+      },
+      {
+        "path": "frame_results/frame_000005.json",
+        "sha256": "eb97fe17029b0b1e55823d1ef56bf063d37b7f62e2c33bdf608cb8564b498d08"
+      },
+      {
+        "path": "frame_results/frame_000006.json",
+        "sha256": "399114af85b37ee9d92f065d3a132d11d8e9c86213b7138eb1c38f0be7fde2dd"
+      },
+      {
+        "path": "frame_results/frame_000007.json",
+        "sha256": "a8623bb7a30fb6abc77929935e910a08c0252a74d3d95a5709c0024b344ab384"
+      },
+      {
+        "path": "frame_results/frame_000008.json",
+        "sha256": "eb3efab99f6408464de3975dd449be264868b5486391f2f443e111415f8f5921"
+      },
+      {
+        "path": "frame_results/frame_000009.json",
+        "sha256": "f624d8be9128179d051dd0493f4468482477dcdf6503063b469c9b412cd85c6a"
+      },
+      {
+        "path": "frame_results/frame_000010.json",
+        "sha256": "b966465e43600314cd640ae0c044c494adc13e41a93898afef70587cb1aa06ae"
+      }
+    ],
+    "join": "exact_source_frame_id_and_logical_object_id",
+    "row_count": 25,
+    "schema_version": "stage8b_exact_metadata_adapter.v1",
+    "sha256": "3225b1c41cb912c9c39061cbff37937e72753601aa5fd28ff2a2ff169cd7a1a3"
+  },
+  "packet": {
+    "bytes": 23566,
+    "object_count": 25,
+    "path": "stage8b4a_p4_decision_package.v1.json",
+    "sha256": "6994caf122f1066e716203309cfef0493b03792ad130d77908e80e020d8bc7eb"
+  },
+  "sanitizer": {
+    "drop_reasons": {},
+    "dropped": [],
+    "dropped_count": 0,
+    "final_count": 25,
+    "input_count": 25
+  },
+  "scan_id": "scan_20260818_161718_numericfirst01",
+  "schema_version": "stage8b_dual_gate_diagnostics.v1",
+  "selected": {
+    "object_count": 25,
+    "path": "stage8b4a_selected_objects.v2.json",
+    "sha256": "700e445c65dd885f3bb7514186525f331867a1f0ab6f56028ca85711ba75df84"
+  },
+  "selection_policy_id": "class_geometry_fallback_then_p4_whitelist_v1"
+}

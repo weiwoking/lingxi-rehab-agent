@@ -1,0 +1,35 @@
+{
+  "schema_version": "scene_truth.stage3b.v1",
+  "measurement_method": "manual_tape_visual",
+  "support_truth_uncertainty_mm": 5.0,
+  "scene_contract": {
+    "cabinet_and_objects_remain_fixed_across_registered_samples": true,
+    "vehicle_is_the_only_moved_element": true,
+    "distance_is_diagnostic_only": true
+  },
+  "targets": {
+    "upper_bottle": {
+      "detector_class_name": "bottle",
+      "expected_support_mm": 1065.0,
+      "expected_object_height_mm": 180.0,
+      "diagnostic_expected_top_z_mm": 1245.0,
+      "truth_uncertainty_mm": 5.0
+    },
+    "lower_bottle": {
+      "detector_class_name": "bottle",
+      "expected_support_mm": 725.0,
+      "expected_object_height_mm": 180.0,
+      "diagnostic_expected_top_z_mm": 905.0,
+      "truth_uncertainty_mm": 5.0
+    },
+    "lower_volleyball": {
+      "detector_class_name": "sports ball",
+      "expected_support_mm": 725.0,
+      "expected_object_height_mm": 195.0,
+      "diagnostic_expected_top_z_mm": 920.0,
+      "truth_uncertainty_mm": 5.0
+    }
+  },
+  "top_z_is_consistency_diagnostic_only": true,
+  "object_height_truth_is_separate_from_top_z": true
+}

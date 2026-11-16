@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deltar-p4-pipeline"
+version = "0.1.0"
+description = "Strict repository-external fake-P4 adapter for official DELTAR"
+requires-python = ">=3.10"
+dependencies = ["numpy", "Pillow", "torch", "torchvision", "h5py"]
+
+[project.optional-dependencies]
+service = ["fastapi", "uvicorn", "python-multipart", "httpx"]
+
+[project.scripts]
+deltar-p4 = "deltar_p4_pipeline.cli:main"
+camera-orientation-check = "deltar_p4_pipeline.camera_cli:main_orientation"
+generate-charuco-board = "deltar_p4_pipeline.camera_cli:main_generate_board"
+camera-calibrate-charuco = "deltar_p4_pipeline.camera_cli:main_calibrate"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,29 @@
+{
+  "schema_version": "deltar_geometry_calibration.v1",
+  "profile_id": "formal_stage2_frame_metadata_20260818",
+  "profile_version": "2.0.0",
+  "calibration_status": "measured",
+  "absolute_geometry_valid": false,
+  "physical_height_valid": false,
+  "bottom_height_valid": false,
+  "image": {"width": 640, "height": 360},
+  "camera_model": {
+    "model": "opencv_brown",
+    "fx": 868.6083708422947,
+    "fy": 867.5423504351968,
+    "cx": 301.64638304931754,
+    "cy": 178.8685576885749,
+    "distortion": [0.06470939303026187, -0.07937107551146777, 0.00660415543035739, -0.006674189708110315, -0.7517780193167731]
+  },
+  "depth": {
+    "semantics": "axial_z",
+    "semantics_status": "PROVEN",
+    "scale_to_meter": 1.0
+  },
+  "transforms": {
+    "T_ground_from_camera": [[1.0, 0.0, 0.0, 0.0], [0.0, 1.0, 0.0, 0.0], [0.0, 0.0, 1.0, 0.0], [0.0, 0.0, 0.0, 1.0]],
+    "T_camera_from_tof": [[-0.03778376622142478, -0.9989290445910782, -0.02670488499283198, -0.01254913096946248], [0.9763858639841366, -0.03121635253898063, -0.2137666577044069, 0.03620713244559829], [0.21270409404164203, -0.034151181626961916, 0.9765196696285265, -0.004923927265477731], [0.0, 0.0, 0.0, 1.0]]
+  },
+  "ground": {"plane_z_m": 0.0},
+  "warning": "Stage2 K/D and Camera-ToF are authoritative; T_ground is identity-only and never consumed by formal height Geometry."
+}

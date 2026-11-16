@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "charuco_board_manifest.v1.schema.json",
+  "title": "Stage 7A ChArUco board manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "board_id", "family", "dictionary", "squares_x", "squares_y", "square_length_mm", "marker_length_mm", "page_size", "print_scale", "render_dpi", "board_image", "board_sha256", "generated_at", "print_measurement"],
+  "properties": {
+    "schema_version": {"const": "charuco_board_manifest.v1"},
+    "board_id": {"type": "string", "pattern": "^charuco_[0-9a-f]{16}$"},
+    "family": {"const": "opencv_charuco"},
+    "dictionary": {"type": "string", "pattern": "^DICT_[456]X[456]_(50|100|250)$"},
+    "squares_x": {"type": "integer", "minimum": 3},
+    "squares_y": {"type": "integer", "minimum": 3},
+    "square_length_mm": {"type": "number", "exclusiveMinimum": 0},
+    "marker_length_mm": {"type": "number", "exclusiveMinimum": 0},
+    "page_size": {"const": "A4"},
+    "print_scale": {"const": 1.0},
+    "render_dpi": {"type": "integer", "minimum": 150, "maximum": 1200},
+    "board_image": {"const": "board.png"},
+    "board_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "print_measurement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["confirmed", "measured_square_length_mm", "measured_board_width_mm", "measured_board_height_mm", "measured_at", "tolerance_percent"],
+      "properties": {
+        "confirmed": {"type": "boolean"},
+        "measured_square_length_mm": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "measured_board_width_mm": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "measured_board_height_mm": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "measured_at": {"type": ["string", "null"], "format": "date-time"},
+        "tolerance_percent": {"type": "number", "minimum": 0}
+      }
+    }
+  }
+}

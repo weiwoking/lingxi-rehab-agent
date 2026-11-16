@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "camera_tof.stage2b_candidate.v1",
+  "title": "Stage2B Camera-ToF candidate (never a promotion artifact)",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "status",
+    "camera_intrinsics_ref",
+    "camera_intrinsics_sha256",
+    "transform",
+    "raw_zone_orientation",
+    "orientation_candidate_scores",
+    "range_semantics",
+    "range_semantics_scores",
+    "tof_ray_model",
+    "metrics",
+    "broad_vs_strict",
+    "pair_delta_diagnostics",
+    "source_pose_ids",
+    "source_scan_ids",
+    "source_hashes",
+    "promotion"
+  ],
+  "properties": {
+    "schema_version": {"const": "camera_tof.stage2b_candidate.v1"},
+    "status": {"const": "CANDIDATE_NOT_PROMOTED"},
+    "camera_intrinsics_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "transform": {
+      "type": "object",
+      "required": ["direction", "units", "convention", "R", "t"],
+      "properties": {
+        "direction": {"const": "T_camera_from_tof"},
+        "units": {"const": "mm"},
+        "convention": {"const": "column_vector"},
+        "R": {"type": "array", "minItems": 3, "maxItems": 3},
+        "t": {"type": "array", "minItems": 3, "maxItems": 3}
+      }
+    },
+    "promotion": {"const": false}
+  }
+}

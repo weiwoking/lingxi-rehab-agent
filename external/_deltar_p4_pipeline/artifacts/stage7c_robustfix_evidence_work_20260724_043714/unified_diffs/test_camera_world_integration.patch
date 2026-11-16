@@ -1,0 +1,205 @@
+﻿git.exe : warning: in the working copy of 'C:\ec\_deltar_p4_pipeline\artifacts\stage7c_robustfix_evidence_work_20260724
+_043714\before_after\before\tests\test_camera_world_integration.py', LF will be replaced by CRLF the next time Git touc
+hes it
+At line:2 char:15
++ ... iffOutput = & git diff --no-index -- 'C:\ec\_deltar_p4_pipeline\artif ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (warning: in the... Git touches it:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+warning: in the working copy of 'C:\ec\_deltar_p4_pipeline\artifacts\stage7c_robustfix_evidence_work_20260724_043714\be
+fore_after\after\tests\test_camera_world_integration.py', LF will be replaced by CRLF the next time Git touches it
+diff --git "a/C:\\ec\\_deltar_p4_pipeline\\artifacts\\stage7c_robustfix_evidence_work_20260724_043714\\before_after\\before\\tests\\test_camera_world_integration.py" "b/C:\\ec\\_deltar_p4_pipeline\\artifacts\\stage7c_robustfix_evidence_work_20260724_043714\\before_after\\after\\tests\\test_camera_world_integration.py"
+index 7b0f568..c9e705d 100644
+--- "a/C:\\ec\\_deltar_p4_pipeline\\artifacts\\stage7c_robustfix_evidence_work_20260724_043714\\before_after\\before\\tests\\test_camera_world_integration.py"
++++ "b/C:\\ec\\_deltar_p4_pipeline\\artifacts\\stage7c_robustfix_evidence_work_20260724_043714\\before_after\\after\\tests\\test_camera_world_integration.py"
+@@ -44,6 +44,8 @@ def _synthetic_capture(
+     pose_count: int = 3,
+     frames_per_pose: int = 5,
+     roll_deg: float = 0.0,
++    orientation_outlier_counts: tuple[int, ...] = (),
++    base_invalid_counts: tuple[int, ...] = (),
+     tof_usable: int = 24,
+     tof_rms: float = 1.0,
+     reprojection_rms: float = 0.1,
+@@ -53,40 +55,68 @@ def _synthetic_capture(
+         "world_front_mid",
+         "world_front_far",
+     ][:pose_count]
+-    rotation = rotation_from_diagnostics(roll_deg, 0.0, 0.0)
+     poses: list[PoseObservation] = []
+     for pose_index, role in enumerate(roles):
+         pose_name = role.removeprefix("world_front_")
+         frames: list[FrameObservation] = []
+         diagnostics: list[dict] = []
++        orientation_outlier_count = (
++            orientation_outlier_counts[pose_index]
++            if pose_index < len(orientation_outlier_counts)
++            else 0
++        )
++        base_invalid_count = (
++            base_invalid_counts[pose_index]
++            if pose_index < len(base_invalid_counts)
++            else 0
++        )
+         for frame_index in range(frames_per_pose):
+             frame_name = f"frame_{frame_index:06d}"
++            base_valid = (
++                reprojection_rms <= 0.5
++                and frame_index < frames_per_pose - base_invalid_count
++            )
++            orientation_outlier = (
++                base_valid
++                and frame_index
++                >= frames_per_pose
++                - base_invalid_count
++                - orientation_outlier_count
++            )
++            frame_rotation = rotation_from_diagnostics(
++                roll_deg + (3.0 if orientation_outlier else 0.0),
++                0.0,
++                0.0,
++            )
++            frame_reprojection_rms = (
++                reprojection_rms if base_valid else 0.6
++            )
+             diagnostic = {
+                 "pose_name": pose_name,
+                 "role": role,
+                 "frame_name": frame_name,
+                 "scan_dir": f"C:\\synthetic\\{pose_name}",
+-                "valid": reprojection_rms <= 0.5,
++                "valid": base_valid,
+                 "detected_corners": 20,
+                 "marker_count": 12,
+-                "reprojection_mean_px": reprojection_rms * 0.8,
+-                "reprojection_rms_px": reprojection_rms,
+-                "reprojection_p95_px": reprojection_rms * 1.2,
+-                "reprojection_max_px": reprojection_rms * 1.5,
++                "reprojection_mean_px": frame_reprojection_rms * 0.8,
++                "reprojection_rms_px": frame_reprojection_rms,
++                "reprojection_p95_px": frame_reprojection_rms * 1.2,
++                "reprojection_max_px": frame_reprojection_rms * 1.5,
+                 "tvec_z_m": 0.8,
+                 "finite_pose": True,
+-                "rotation_world_from_camera": rotation.tolist(),
++                "rotation_world_from_camera": frame_rotation.tolist(),
+                 "translation_world_from_camera_mm": [0.0, 0.0, 969.0],
+             }
+             diagnostics.append(diagnostic)
+-            if reprojection_rms <= 0.5:
++            if base_valid:
+                 frames.append(
+                     FrameObservation(
+                         pose_name=pose_name,
+                         role=role,
+                         frame_name=frame_name,
+                         scan_dir=Path(f"C:\\synthetic\\{pose_name}"),
+-                        rotation_world_from_camera=rotation.copy(),
++                        rotation_world_from_camera=frame_rotation.copy(),
+                         rotation_camera_from_board=np.eye(3),
+                         translation_camera_from_board_m=np.asarray(
+                             [0.0, 0.0, 0.8]
+@@ -288,6 +318,102 @@ class CameraWorldIntegrationTests(unittest.TestCase):
+                 (validation_output / "camera_world_pose.v1.json").exists()
+             )
+ 
++    def test_single_orientation_outlier_passes_and_remains_diagnostic(self) -> None:
++        manifest, poses, metadata = _synthetic_capture(
++            orientation_outlier_counts=(0, 0, 1)
++        )
++        with tempfile.TemporaryDirectory() as temporary:
++            output = Path(temporary) / "output"
++            with patch(
++                "deltar_p4_pipeline.camera_world_calibration.load_capture_observations",
++                return_value=(manifest, poses, metadata),
++            ):
++                report = calibrate_capture(
++                    Path(temporary) / "capture.json",
++                    CAMERA_PROFILE,
++                    FROZEN_CAMERA_TOF_PROFILE,
++                    BOARD_MANIFEST,
++                    output,
++                    profile_bundle_path=ROOT / "profiles",
++                )
++            self.assertEqual(report["status"], "PASS")
++            self.assertTrue((output / "camera_world_pose.v1.json").is_file())
++            self.assertEqual(report["capture_summary"]["frame_count"], 15)
++            self.assertEqual(
++                report["gates"]["frame_quality"]["actual"][
++                    "base_valid_frame_count"
++                ],
++                15,
++            )
++            self.assertEqual(report["capture_summary"]["valid_frame_count"], 14)
++            self.assertEqual(report["capture_summary"]["rejected_frame_count"], 1)
++            self.assertEqual(
++                report["gates"]["per_pose_orientation_inlier_count"]["actual"],
++                {"near": 5, "mid": 5, "far": 4},
++            )
++            diagnostics = load_strict_json(
++                output / "frame_diagnostics.json"
++            )["frames"]
++            rejected = [
++                item
++                for item in diagnostics
++                if item["valid"] and not item["orientation_inlier"]
++            ]
++            self.assertEqual(len(rejected), 1)
++            self.assertEqual(rejected[0]["pose_name"], "far")
++
++    def test_three_orientation_inliers_in_one_pose_fails(self) -> None:
++        manifest, poses, metadata = _synthetic_capture(
++            orientation_outlier_counts=(0, 0, 2)
++        )
++        self._assert_gate_failure(
++            manifest,
++            poses,
++            metadata,
++            "per_pose_orientation_inlier_count",
++        )
++
++    def test_thirteen_total_orientation_inliers_fails(self) -> None:
++        manifest, poses, metadata = _synthetic_capture(
++            orientation_outlier_counts=(0, 1, 1)
++        )
++        self._assert_gate_failure(
++            manifest, poses, metadata, "valid_frame_count"
++        )
++
++    def test_fourteen_base_valid_frames_still_fails(self) -> None:
++        manifest, poses, metadata = _synthetic_capture(
++            base_invalid_counts=(0, 0, 1)
++        )
++        self._assert_gate_failure(
++            manifest, poses, metadata, "frame_quality"
++        )
++
++    def _assert_gate_failure(
++        self,
++        manifest: dict,
++        poses: list[PoseObservation],
++        metadata: dict,
++        gate_name: str,
++    ) -> None:
++        with tempfile.TemporaryDirectory() as temporary:
++            output = Path(temporary) / "output"
++            with patch(
++                "deltar_p4_pipeline.camera_world_calibration.load_capture_observations",
++                return_value=(manifest, poses, metadata),
++            ):
++                report = calibrate_capture(
++                    Path(temporary) / "capture.json",
++                    CAMERA_PROFILE,
++                    FROZEN_CAMERA_TOF_PROFILE,
++                    BOARD_MANIFEST,
++                    output,
++                    profile_bundle_path=ROOT / "profiles",
++                )
++            self.assertEqual(report["status"], "FAIL")
++            self.assertFalse(report["gates"][gate_name]["passed"])
++            self.assertFalse((output / "camera_world_pose.v1.json").exists())
++
+     def test_synthetic_fail_never_writes_formal_profile(self) -> None:
+         cases = {
+             "fewer_than_3_poses": {"pose_count": 2},

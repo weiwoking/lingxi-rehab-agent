@@ -1,0 +1,90 @@
+{
+  "authority": {
+    "path": "stage8b_all_object_geometry.v1.json",
+    "sha256": "f7275235fc52da06c79948a5c33700a48b0047b30962b69c9c7fa4f93e845cb4"
+  },
+  "dual_gate": {
+    "object_count": 55,
+    "path": "stage8b_dual_gate_selection.v1.json",
+    "sha256": "f053db3659e057b9e54cc177ec5a213d090edcd6fa49bae134ddca8c2e26b0e1"
+  },
+  "inference_invocations": {
+    "deltar": 0,
+    "stage7d_recompute": 0,
+    "yolo_detect": 0,
+    "yolo_segment": 0
+  },
+  "metadata_adapter": {
+    "files": [
+      {
+        "path": "frame_results/frame_000000.json",
+        "sha256": "041d5f0c916a8757b5281d4d90b74e825432c0b0a525d567ff86cc8c76f1abf8"
+      },
+      {
+        "path": "frame_results/frame_000001.json",
+        "sha256": "898f88b745f995a1cc6203e6db6dcdc4a57e338eb4101effee2e3e2683835cc9"
+      },
+      {
+        "path": "frame_results/frame_000002.json",
+        "sha256": "b653a9a2990e22cba2935adad83ed85905c13d6adbf185be92d162597370f33b"
+      },
+      {
+        "path": "frame_results/frame_000003.json",
+        "sha256": "887d09d611c28d2b876573d9849a7d6836ee968b762168fff142a8a00fadc493"
+      },
+      {
+        "path": "frame_results/frame_000004.json",
+        "sha256": "0cc9c70a88b5ac48477a8ee26bdc529563c34f8ac2181c51066546f007c7eb89"
+      },
+      {
+        "path": "frame_results/frame_000005.json",
+        "sha256": "4a22f574df5dbfc8cde00ee4224e56d1c8c2a8a466b1c1fe4d0747d52792c130"
+      },
+      {
+        "path": "frame_results/frame_000006.json",
+        "sha256": "da2f0dbac73f53baddbe376a8e4b278888a0f083febca8b850d63b85983b84eb"
+      },
+      {
+        "path": "frame_results/frame_000007.json",
+        "sha256": "f4d72ed2b70762085ec7219493fcfc65ee0009a7c755ee437d8d83c8def030d6"
+      },
+      {
+        "path": "frame_results/frame_000008.json",
+        "sha256": "313dc066ae9ca428c363579ec5483e83f2d630933ce17bb04945865f9e3c0943"
+      },
+      {
+        "path": "frame_results/frame_000009.json",
+        "sha256": "861f27b20d0820778aa6d0f4973e7ef27de1f37ba5c03627f289c18b5b68a9fb"
+      },
+      {
+        "path": "frame_results/frame_000010.json",
+        "sha256": "7a12fa9b3ecd33275e6e64c4dbffa7779e1520a5799be49bd911288687ffb46e"
+      }
+    ],
+    "join": "exact_source_frame_id_and_logical_object_id",
+    "row_count": 55,
+    "schema_version": "stage8b_exact_metadata_adapter.v1",
+    "sha256": "c15244f5fab5546acb7a18ef05a315e4feb209c7c52301c9bfc6a38f34d76b03"
+  },
+  "packet": {
+    "bytes": 49756,
+    "object_count": 55,
+    "path": "stage8b4a_p4_decision_package.v1.json",
+    "sha256": "4a7b130353f8107881e3324ec770756d20012a6c09fda77f3d09d7a3a8c3d6af"
+  },
+  "sanitizer": {
+    "drop_reasons": {},
+    "dropped": [],
+    "dropped_count": 0,
+    "final_count": 55,
+    "input_count": 55
+  },
+  "scan_id": "scan_20260818_165011_numericfirst01",
+  "schema_version": "stage8b_dual_gate_diagnostics.v1",
+  "selected": {
+    "object_count": 55,
+    "path": "stage8b4a_selected_objects.v2.json",
+    "sha256": "3426a266d285fa33c8d2b7432e7b0cea74570b059cdca1b7e82836a0635c8e9a"
+  },
+  "selection_policy_id": "class_geometry_fallback_then_p4_whitelist_v1"
+}

@@ -1,0 +1,182 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "stage8b2_scene_candidates.v1.schema.json",
+  "title": "Stage 8B-2 complete scene candidate fact layer",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "scan_id",
+    "generated_at",
+    "source",
+    "limits",
+    "candidate_count",
+    "class_counts",
+    "candidate_set_sha256",
+    "candidates",
+    "processing"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "stage8b2_scene_candidates.v1"
+    },
+    "scan_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
+      "type": "object"
+    },
+    "limits": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "max_candidates",
+        "overflow_policy"
+      ],
+      "properties": {
+        "max_candidates": {
+          "const": 100
+        },
+        "overflow_policy": {
+          "const": "fail_without_truncation"
+        }
+      }
+    },
+    "candidate_count": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "candidate_set_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "class_counts": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 1
+      }
+    },
+    "candidates": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "candidate_id",
+          "class_id",
+          "class_name",
+          "object_role",
+          "source_frame_id",
+          "source_frame_sequence",
+          "source_frame_object_id",
+          "selected_source",
+          "confidence",
+          "bbox_xyxy",
+          "geometry",
+          "decision_usable",
+          "provenance"
+        ],
+        "properties": {
+          "candidate_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "class_id": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "class_name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "object_role": {
+            "enum": [
+              "operable_object",
+              "person",
+              "context_object"
+            ]
+          },
+          "source_frame_id": {
+            "type": "string"
+          },
+          "source_frame_sequence": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "source_frame_object_id": {
+            "type": "string"
+          },
+          "selected_source": {
+            "enum": [
+              "segmentation",
+              "detection"
+            ]
+          },
+          "detect_confidence": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "segment_confidence": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "detect_segment_agreed": {
+            "type": "boolean"
+          },
+          "bbox_xyxy": {
+            "type": "array",
+            "minItems": 4,
+            "maxItems": 4
+          },
+          "mask_summary": {
+            "type": "object"
+          },
+          "visibility": {
+            "type": "object"
+          },
+          "touches_border": {
+            "type": "boolean"
+          },
+          "canvas_agreement": {
+            "type": "string"
+          },
+          "support_surface_available": {
+            "type": "boolean"
+          },
+          "geometry": {
+            "type": "object"
+          },
+          "decision_usable": {
+            "type": "boolean"
+          },
+          "warnings": {
+            "type": "array"
+          },
+          "provenance": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "processing": {
+      "type": "object"
+    }
+  }
+}

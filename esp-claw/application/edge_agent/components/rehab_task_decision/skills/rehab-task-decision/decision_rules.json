@@ -1,0 +1,92 @@
+{
+  "schema_version": "rehab.task_decision.formal_rules.v1",
+  "decision_rules_version": "rehab.stage4.final_business_alignment.rules.v4",
+  "recent_score_window": 3,
+  "scoring_guidance": {
+    "difficulty_max": 35.0,
+    "difficulty_easier_step": 8.0,
+    "difficulty_harder_step": 21.0,
+    "advice_match": 25.0,
+    "advice_neutral": 20.0,
+    "advice_mismatch": 16.0,
+    "compensation_max": 20.0,
+    "compensation_severity_1": 0.3,
+    "compensation_severity_2": 0.9,
+    "compensation_severity_3_plus": 1.0,
+    "relatedness_exact_task": 1.0,
+    "relatedness_same_action_family": 0.8,
+    "relatedness_same_object_group": 0.6,
+    "frequency_0": 10.0,
+    "frequency_1": 6.0,
+    "frequency_2": 5.0,
+    "frequency_3": 0.0,
+    "perception_min": 6.0,
+    "perception_span": 4.0,
+    "perception_geometry_weight": 0.5,
+    "perception_detection_weight": 0.3,
+    "perception_height_weight": 0.2,
+    "fallback_detection_weight": 0.6,
+    "fallback_height_weight": 0.4,
+    "score_decimal_places": 3,
+    "validation_tolerance": 0.01
+  },
+  "height_policy": {
+    "low_min_mm": 550,
+    "low_max_mm_inclusive": 890,
+    "low_center_mm": 710,
+    "high_min_exclusive_mm": 890,
+    "high_center_mm": 1070,
+    "confidence": "clamp(1-abs(support_height_mm-center_mm)/200,0,1)"
+  },
+  "semantic_groups": {
+    "cup": ["cup", "bottle"],
+    "ball": ["sports ball", "ball", "volleyball"]
+  },
+  "tasks": [
+    {
+      "task_id": "OT_CUP_TRANSFER_L1",
+      "task_name": "水杯横向取放训练（一级）",
+      "difficulty": "easy",
+      "level": 1,
+      "semantic_group": "cup",
+      "action_family": "lateral_transfer",
+      "plane": "low"
+    },
+    {
+      "task_id": "OT_CUP_DRINK_L2",
+      "task_name": "水杯拿取与饮水训练（二级）",
+      "difficulty": "medium",
+      "level": 2,
+      "semantic_group": "cup",
+      "action_family": "drink_water",
+      "plane": "low"
+    },
+    {
+      "task_id": "OT_CUP_DRINK_L3",
+      "task_name": "水杯拿取与饮水训练（三级）",
+      "difficulty": "hard",
+      "level": 3,
+      "semantic_group": "cup",
+      "action_family": "drink_water",
+      "plane": "high"
+    },
+    {
+      "task_id": "OT_BALL_TRANSFER_L1",
+      "task_name": "球类横向取放训练（一级）",
+      "difficulty": "easy",
+      "level": 1,
+      "semantic_group": "ball",
+      "action_family": "lateral_transfer",
+      "plane": "low"
+    },
+    {
+      "task_id": "OT_BALL_TRANSFER_L2",
+      "task_name": "球类横向取放训练（二级）",
+      "difficulty": "medium",
+      "level": 2,
+      "semantic_group": "ball",
+      "action_family": "lateral_transfer",
+      "plane": "high"
+    }
+  ]
+}

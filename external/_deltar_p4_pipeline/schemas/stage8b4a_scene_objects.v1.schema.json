@@ -1,0 +1,500 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "stage8b4a_scene_objects.v1.schema.json",
+  "title": "Stage 8B-4A conservative cross-frame scene objects",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "scan_id",
+    "generated_at",
+    "source",
+    "whitelist_profile",
+    "fusion_profile",
+    "observation_count",
+    "scene_object_count",
+    "class_counts",
+    "objects",
+    "processing",
+    "warnings"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "stage8b4a_scene_objects.v1"
+    },
+    "scan_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_set_path",
+        "candidate_set_sha256",
+        "candidate_semantic_sha256",
+        "candidate_count",
+        "frame_count",
+        "dual_gate_selection_sha256",
+        "selected_objects_sha256",
+        "stage7e_summary_sha256",
+        "stage8b1_yolo_manifest_sha256"
+      ],
+      "properties": {
+        "candidate_set_path": {
+          "const": "stage8b2_scene_candidates.v1.json"
+        },
+        "candidate_set_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "candidate_semantic_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "candidate_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "frame_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "dual_gate_selection_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "selected_objects_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "stage7e_summary_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "stage8b1_yolo_manifest_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "whitelist_profile": {
+      "$ref": "#/$defs/profileReference"
+    },
+    "fusion_profile": {
+      "$ref": "#/$defs/profileReference"
+    },
+    "observation_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "scene_object_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "class_counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cup",
+        "bottle",
+        "book",
+        "sports ball"
+      ],
+      "properties": {
+        "cup": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "bottle": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "book": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sports ball": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "objects": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/sceneObject"
+      }
+    },
+    "processing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "wall_clock_timing_recorded",
+        "stage8b4a_total_ms",
+        "inference_invocations"
+      ],
+      "properties": {
+        "mode": {
+          "const": "cached_artifacts_only"
+        },
+        "wall_clock_timing_recorded": {
+          "const": false
+        },
+        "stage8b4a_total_ms": {
+          "type": "null"
+        },
+        "inference_invocations": {
+          "$ref": "#/$defs/inferenceInvocations"
+        }
+      }
+    },
+    "warnings": {
+      "$ref": "#/$defs/stringArray"
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "profileReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "profile_id",
+        "sha256"
+      ],
+      "properties": {
+        "profile_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "className": {
+      "enum": [
+        "cup",
+        "bottle",
+        "book",
+        "sports ball"
+      ]
+    },
+    "bbox": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 640
+        },
+        {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 360
+        },
+        {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 640
+        },
+        {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 360
+        }
+      ],
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "geometry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "valid",
+        "method",
+        "support_height_mm",
+        "object_height_mm",
+        "top_height_above_floor_mm",
+        "distance_mm",
+        "distance_status",
+        "stage7e_object_id"
+      ],
+      "properties": {
+        "valid": {
+          "type": "boolean"
+        },
+        "method": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "support_height_mm": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "object_height_mm": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "top_height_above_floor_mm": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "distance_mm": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "distance_status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "stage7e_object_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "visibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "top_visible",
+        "bottom_visible",
+        "full_extent_visible",
+        "touches_border"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "complete",
+            "partial",
+            "unknown"
+          ]
+        },
+        "top_visible": {
+          "type": "boolean"
+        },
+        "bottom_visible": {
+          "type": "boolean"
+        },
+        "full_extent_visible": {
+          "type": "boolean"
+        },
+        "touches_border": {
+          "type": "boolean"
+        }
+      }
+    },
+    "fieldSources": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "confidence",
+        "geometry",
+        "representative_image",
+        "bbox_xyxy",
+        "visibility"
+      ],
+      "properties": {
+        "confidence": {
+          "type": "string",
+          "minLength": 1
+        },
+        "geometry": {
+          "type": "string",
+          "minLength": 1
+        },
+        "representative_image": {
+          "type": "string",
+          "minLength": 1
+        },
+        "bbox_xyxy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "visibility": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "selectionFeatures": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "detect_segment_agreed",
+        "mask_quality_available"
+      ],
+      "properties": {
+        "detect_segment_agreed": {
+          "type": "boolean"
+        },
+        "mask_quality_available": {
+          "type": "boolean"
+        }
+      }
+    },
+    "stringArray": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "inferenceInvocations": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "yolo_detect",
+        "yolo_segment",
+        "deltar",
+        "stage7d_recompute",
+        "stage7e_recompute"
+      ],
+      "properties": {
+        "yolo_detect": {
+          "const": 0
+        },
+        "yolo_segment": {
+          "const": 0
+        },
+        "deltar": {
+          "const": 0
+        },
+        "stage7d_recompute": {
+          "const": 0
+        },
+        "stage7e_recompute": {
+          "const": 0
+        }
+      }
+    },
+    "sceneObject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "object_id",
+        "class_name",
+        "display_name_zh",
+        "observation_ids",
+        "observation_count",
+        "confidence",
+        "confidence_method",
+        "decision_usable",
+        "representative_observation_id",
+        "source_frame_id",
+        "source_frame_sequence",
+        "bbox_xyxy",
+        "geometry",
+        "visibility",
+        "support_surface_available",
+        "selection_features",
+        "field_sources",
+        "fusion_status",
+        "fusion_quality",
+        "fusion_reasons",
+        "warnings"
+      ],
+      "properties": {
+        "object_id": {
+          "type": "string",
+          "pattern": "^scene_object_(cup|bottle|book|sports ball)_[0-9a-f]{16}$"
+        },
+        "class_name": {
+          "$ref": "#/$defs/className"
+        },
+        "display_name_zh": {
+          "type": "string",
+          "minLength": 1
+        },
+        "observation_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "observation_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "confidence_method": {
+          "const": "maximum_reliable_observation_v1"
+        },
+        "decision_usable": {
+          "type": "boolean"
+        },
+        "representative_observation_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_frame_id": {
+          "type": "string",
+          "pattern": "^frame_[0-9]{6}$"
+        },
+        "source_frame_sequence": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "bbox_xyxy": {
+          "$ref": "#/$defs/bbox"
+        },
+        "geometry": {
+          "$ref": "#/$defs/geometry"
+        },
+        "visibility": {
+          "$ref": "#/$defs/visibility"
+        },
+        "support_surface_available": {
+          "type": "boolean"
+        },
+        "selection_features": {
+          "$ref": "#/$defs/selectionFeatures"
+        },
+        "field_sources": {
+          "$ref": "#/$defs/fieldSources"
+        },
+        "fusion_status": {
+          "enum": [
+            "fused",
+            "singleton_conservative"
+          ]
+        },
+        "fusion_quality": {
+          "enum": [
+            "high_same_view",
+            "not_fused"
+          ]
+        },
+        "fusion_reasons": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "warnings": {
+          "$ref": "#/$defs/stringArray"
+        }
+      }
+    }
+  }
+}

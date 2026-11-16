@@ -1,0 +1,33 @@
+{
+  "schema_version": "stage3a_vehicle_straightness_attribution.v1",
+  "vehicle_misalignment_importance": "LOW",
+  "misalignment_can_explain_height_slope": "LITTLE",
+  "yaw_misalignment_can_explain": "LITTLE",
+  "one_new_capture_useful": false,
+  "w04s_recommended": false,
+  "user_needs_to_measure_angle": false,
+  "user_needs_to_measure_left_right_distance": false,
+  "formal_runtime_modified": false,
+  "promotion": false,
+  "per_pose": {
+    "W01": {"decision": "STRAIGHT_ENOUGH", "score_0_100": 55.0, "confidence": "HIGH", "signed_image_proxy_deg_internal": 3.01645829222819},
+    "W02": {"decision": "STRAIGHT_ENOUGH", "score_0_100": 83.7, "confidence": "HIGH", "signed_image_proxy_deg_internal": 1.64567779171118},
+    "W03": {"decision": "STRAIGHT_ENOUGH", "score_0_100": 81.4, "confidence": "MEDIUM", "signed_image_proxy_deg_internal": 1.77078242055668}
+  },
+  "w03_is_image_frontal": true,
+  "straight_enough_region": {"absolute_image_proxy_limit_deg_internal": 3.25, "expected_user_difficulty": "LOW"},
+  "observed_height_slope_mm_per_m": 52.89366143717401,
+  "synthetic_current_nuisance_range": {
+    "absolute_yaw_amplitude_deg_internal": 3.0,
+    "paired_height_slope_delta_mm_per_m": {"median": 0.919364920575986, "p95": 7.972893626252639, "max": 12.569064658837592},
+    "paired_inferred_pitch_span_delta_deg": {"median": 0.10104066673333345, "p95": 1.0059964396871632, "max": 2.172057588688814}
+  },
+  "synthetic_full_range": {
+    "absolute_yaw_amplitude_deg_internal": 5.0,
+    "paired_height_slope_delta_mm_per_m": {"median": 1.5039287415271474, "p95": 10.320609208999608, "max": 22.096023175643317},
+    "paired_inferred_pitch_span_delta_deg": {"median": 0.1601111000080655, "p95": 1.2885060244726654, "max": 2.732873682804456}
+  },
+  "zero_noise_yaw_only_effect": "NUMERICALLY_ZERO",
+  "next_path": "NO_CAPTURE_GRAVITY_FIRST_OR_ALTERNATIVE_REFERENCE",
+  "capture_or_registration_performed": false
+}

@@ -1,0 +1,405 @@
+{
+  "session_id": "20260807_TASK006",
+  "rep_index": 2,
+  "source_session_path": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK006\\DATA_SEQ0000001600.csv",
+  "rep": {
+    "rep_index": 2,
+    "start_index": 437,
+    "end_index": 798,
+    "index_convention": "inclusive",
+    "source_row_number_convention": "zero_based_data_row_index_excluding_header; original CSV line number is index + 2",
+    "start_time_ms": 191552,
+    "end_time_ms": 198772,
+    "duration_ms": 7220.0,
+    "valid": true,
+    "invalid_reason": null,
+    "confidence": 0.952921,
+    "action_source": "complete_cycle",
+    "split_method": "drink_hybrid_segmentation_v2_1_1",
+    "merged_candidate": false,
+    "incomplete_candidate": false,
+    "candidate_assessment": "full_cycle_gate_v2_1",
+    "start_boundary": {
+      "boundary_index": 436,
+      "boundary_time_ms": 191532,
+      "boundary_sources": [
+        "motion_valley_between_peaks",
+        "pose_return",
+        "strong_quiet",
+        "weak_quiet"
+      ],
+      "quiet_duration_ms": 1560.0,
+      "motion_valley_score": 0.992184,
+      "pose_return_score": 1.0,
+      "confidence": 0.92,
+      "candidate_cluster": {
+        "candidate_indexes": [
+          435,
+          436,
+          460
+        ],
+        "candidate_payloads": [
+          {
+            "boundary_index": 435,
+            "boundary_time_ms": 191512,
+            "boundary_sources": [
+              "weak_quiet",
+              "pose_return"
+            ],
+            "quiet_duration_ms": 1560.0,
+            "motion_valley_score": 0.965898,
+            "pose_return_score": 1.0,
+            "confidence": 0.76
+          },
+          {
+            "boundary_index": 436,
+            "boundary_time_ms": 191532,
+            "boundary_sources": [
+              "strong_quiet"
+            ],
+            "quiet_duration_ms": 1360.0,
+            "motion_valley_score": 0.968828,
+            "pose_return_score": 1.0,
+            "confidence": 0.92
+          },
+          {
+            "boundary_index": 460,
+            "boundary_time_ms": 192012,
+            "boundary_sources": [
+              "motion_valley_between_peaks",
+              "pose_return"
+            ],
+            "quiet_duration_ms": null,
+            "motion_valley_score": 0.992184,
+            "pose_return_score": 1.0,
+            "confidence": 0.82
+          }
+        ],
+        "selected_index": 436,
+        "selected_time_ms": 191532,
+        "combined_sources": [
+          "motion_valley_between_peaks",
+          "pose_return",
+          "strong_quiet",
+          "weak_quiet"
+        ],
+        "quiet_duration_ms": 1560.0,
+        "motion_valley_score": 0.992184,
+        "pose_return_score": 1.0,
+        "confidence": 0.92,
+        "selection_reason": "strong_quiet_priority"
+      },
+      "boundary_origin": "detected_candidate",
+      "detected_from_signal_candidate": true
+    },
+    "end_boundary": {
+      "boundary_index": 798,
+      "boundary_time_ms": 198772,
+      "boundary_sources": [
+        "motion_valley_between_peaks",
+        "pose_return",
+        "strong_quiet"
+      ],
+      "quiet_duration_ms": 2020.0,
+      "motion_valley_score": 0.987628,
+      "pose_return_score": 0.999943,
+      "confidence": 0.92,
+      "candidate_cluster": {
+        "candidate_indexes": [
+          798,
+          808
+        ],
+        "candidate_payloads": [
+          {
+            "boundary_index": 798,
+            "boundary_time_ms": 198772,
+            "boundary_sources": [
+              "strong_quiet"
+            ],
+            "quiet_duration_ms": 2020.0,
+            "motion_valley_score": 0.974543,
+            "pose_return_score": 0.997774,
+            "confidence": 0.92
+          },
+          {
+            "boundary_index": 808,
+            "boundary_time_ms": 198972,
+            "boundary_sources": [
+              "motion_valley_between_peaks",
+              "pose_return"
+            ],
+            "quiet_duration_ms": null,
+            "motion_valley_score": 0.987628,
+            "pose_return_score": 0.999943,
+            "confidence": 0.82
+          }
+        ],
+        "selected_index": 798,
+        "selected_time_ms": 198772,
+        "combined_sources": [
+          "motion_valley_between_peaks",
+          "pose_return",
+          "strong_quiet"
+        ],
+        "quiet_duration_ms": 2020.0,
+        "motion_valley_score": 0.987628,
+        "pose_return_score": 0.999943,
+        "confidence": 0.92,
+        "selection_reason": "strong_quiet_priority"
+      },
+      "boundary_origin": "detected_candidate",
+      "detected_from_signal_candidate": true
+    },
+    "local_supporting_candidates": [
+      {
+        "boundary_index": 542,
+        "boundary_time_ms": 193652,
+        "boundary_sources": [
+          "motion_valley_between_peaks",
+          "pose_return"
+        ],
+        "quiet_duration_ms": null,
+        "motion_valley_score": 0.769181,
+        "pose_return_score": 0.3608,
+        "confidence": 0.82,
+        "candidate_cluster": {
+          "candidate_indexes": [
+            542
+          ],
+          "candidate_payloads": [
+            {
+              "boundary_index": 542,
+              "boundary_time_ms": 193652,
+              "boundary_sources": [
+                "motion_valley_between_peaks",
+                "pose_return"
+              ],
+              "quiet_duration_ms": null,
+              "motion_valley_score": 0.769181,
+              "pose_return_score": 0.3608,
+              "confidence": 0.82
+            }
+          ],
+          "selected_index": 542,
+          "selected_time_ms": 193652,
+          "combined_sources": [
+            "motion_valley_between_peaks",
+            "pose_return"
+          ],
+          "quiet_duration_ms": null,
+          "motion_valley_score": 0.769181,
+          "pose_return_score": 0.3608,
+          "confidence": 0.82,
+          "selection_reason": "highest_priority_then_confidence"
+        }
+      },
+      {
+        "boundary_index": 798,
+        "boundary_time_ms": 198772,
+        "boundary_sources": [
+          "motion_valley_between_peaks",
+          "pose_return",
+          "strong_quiet"
+        ],
+        "quiet_duration_ms": 2020.0,
+        "motion_valley_score": 0.987628,
+        "pose_return_score": 0.999943,
+        "confidence": 0.92,
+        "candidate_cluster": {
+          "candidate_indexes": [
+            798,
+            808
+          ],
+          "candidate_payloads": [
+            {
+              "boundary_index": 798,
+              "boundary_time_ms": 198772,
+              "boundary_sources": [
+                "strong_quiet"
+              ],
+              "quiet_duration_ms": 2020.0,
+              "motion_valley_score": 0.974543,
+              "pose_return_score": 0.997774,
+              "confidence": 0.92
+            },
+            {
+              "boundary_index": 808,
+              "boundary_time_ms": 198972,
+              "boundary_sources": [
+                "motion_valley_between_peaks",
+                "pose_return"
+              ],
+              "quiet_duration_ms": null,
+              "motion_valley_score": 0.987628,
+              "pose_return_score": 0.999943,
+              "confidence": 0.82
+            }
+          ],
+          "selected_index": 798,
+          "selected_time_ms": 198772,
+          "combined_sources": [
+            "motion_valley_between_peaks",
+            "pose_return",
+            "strong_quiet"
+          ],
+          "quiet_duration_ms": 2020.0,
+          "motion_valley_score": 0.987628,
+          "pose_return_score": 0.999943,
+          "confidence": 0.92,
+          "selection_reason": "strong_quiet_priority"
+        }
+      }
+    ],
+    "full_cycle_quality": {
+      "full_cycle_score": 0.952921,
+      "duration_score": 0.942157,
+      "departure_score": 1.0,
+      "peak_score": 1.0,
+      "return_score": 0.975033,
+      "start_boundary_quality": 0.92,
+      "end_boundary_quality": 0.92,
+      "activity_coverage": 0.709945,
+      "valid": true,
+      "invalid_reason": null,
+      "incomplete_candidate": false,
+      "merged_candidate": false,
+      "confidence": 0.952921,
+      "duration_ms": 7220.0
+    },
+    "quality": {
+      "row_count": 362,
+      "column_count": 86,
+      "columns": [
+        "log_seq",
+        "time_ms",
+        "output_rate_hz",
+        "flags",
+        "node1_rx",
+        "node1_tx_seq",
+        "node1_tx_gap",
+        "node1_age_ms",
+        "node2_rx",
+        "node2_tx_seq",
+        "node2_tx_gap",
+        "node2_age_ms",
+        "emg_valid",
+        "emg_latest_1",
+        "emg_latest_2",
+        "emg_latest_3",
+        "emg_latest_4",
+        "emg_rms_1",
+        "emg_rms_2",
+        "emg_rms_3",
+        "emg_rms_4",
+        "emg_mav_1",
+        "emg_mav_2",
+        "emg_mav_3",
+        "emg_mav_4",
+        "emg_peak_1",
+        "emg_peak_2",
+        "emg_peak_3",
+        "emg_peak_4",
+        "emg_n",
+        "imu1_valid",
+        "imu1_age_ms",
+        "imu1_roll",
+        "imu1_pitch",
+        "imu1_yaw",
+        "imu1_gx",
+        "imu1_gy",
+        "imu1_gz",
+        "imu1_ax",
+        "imu1_ay",
+        "imu1_az",
+        "imu1_lax",
+        "imu1_lay",
+        "imu1_laz",
+        "imu2_valid",
+        "imu2_age_ms",
+        "imu2_roll",
+        "imu2_pitch",
+        "imu2_yaw",
+        "imu2_gx",
+        "imu2_gy",
+        "imu2_gz",
+        "imu2_ax",
+        "imu2_ay",
+        "imu2_az",
+        "imu2_lax",
+        "imu2_lay",
+        "imu2_laz",
+        "imu3_valid",
+        "imu3_age_ms",
+        "imu3_roll",
+        "imu3_pitch",
+        "imu3_yaw",
+        "imu3_gx",
+        "imu3_gy",
+        "imu3_gz",
+        "imu3_ax",
+        "imu3_ay",
+        "imu3_az",
+        "imu3_lax",
+        "imu3_lay",
+        "imu3_laz",
+        "imu4_valid",
+        "imu4_age_ms",
+        "imu4_roll",
+        "imu4_pitch",
+        "imu4_yaw",
+        "imu4_gx",
+        "imu4_gy",
+        "imu4_gz",
+        "imu4_ax",
+        "imu4_ay",
+        "imu4_az",
+        "imu4_lax",
+        "imu4_lay",
+        "imu4_laz"
+      ],
+      "log_seq_start": 2037,
+      "log_seq_end": 2398,
+      "time_ms_start": 191552,
+      "time_ms_end": 198772,
+      "duration_ms": 7220.0,
+      "imu1_valid_rate": 1.0,
+      "imu2_valid_rate": 1.0,
+      "imu3_valid_rate": 1.0,
+      "imu4_valid_rate": 1.0,
+      "imu_all_valid_rate": 1.0,
+      "emg_valid_rate": 1.0,
+      "time_ms_strictly_increasing_rate": 1.0,
+      "log_seq_strictly_increasing_rate": 1.0,
+      "log_seq_exact_continuity_rate": 1.0,
+      "log_seq_gap_event_count": 0,
+      "log_seq_total_gap": 0,
+      "log_seq_max_gap": 0,
+      "time_ms_nonpositive_diff_count": 0,
+      "time_ms_median_step_ms": 20.0,
+      "time_ms_max_step_ms": 33.0,
+      "imu_actual_refresh": {
+        "imu1_actual_refresh_hz": 9.4183,
+        "imu2_actual_refresh_hz": 9.6953,
+        "imu3_actual_refresh_hz": 9.6953,
+        "imu4_actual_refresh_hz": 9.6953
+      },
+      "emg_feature_actual_refresh_hz": 16.482,
+      "max_age_ms": {
+        "node1_age_ms": 109,
+        "node2_age_ms": 108,
+        "imu1_age_ms": 182,
+        "imu2_age_ms": 195,
+        "imu3_age_ms": 183,
+        "imu4_age_ms": 200
+      },
+      "longest_imu_freeze_ms": 100.0,
+      "longest_emg_freeze_ms": 100.0,
+      "nan_count": 362,
+      "inf_count": 0,
+      "empty_row_count": 0
+    }
+  },
+  "source_mode": "offline_validation",
+  "source_origin": "v2_1_2_session_orchestrator",
+  "segmentation_version": "drink_hybrid_segmentation_v2_1"
+}

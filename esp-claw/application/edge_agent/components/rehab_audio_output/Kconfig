@@ -1,0 +1,32 @@
+menu "Rehabilitation audio output"
+
+    config REHAB_AUDIO_TTS_BASE_URL
+        string "PC TTS service base URL"
+        default "http://192.168.137.1:8765"
+        help
+            Centralized HTTP origin for the PC-side P4 Rehab TTS service.
+
+    config REHAB_AUDIO_TTS_TIMEOUT_MS
+        int "TTS request timeout (ms)"
+        range 1000 30000
+        default 10000
+
+    config REHAB_AUDIO_OUTPUT_VOLUME
+        int "TTS output volume"
+        range 0 100
+        default 100
+        help
+            Frozen Phase 1 value is 100. It may be lowered temporarily for the
+            user's first hardware safety check without changing board gain.
+
+    config REHAB_AUDIO_OUTPUT_CODEC_BOOST_DB_X10
+        int "Experimental codec output boost (0.1 dB)"
+        range 0 20
+        default 20
+        help
+            Raises the esp_codec_dev output volume-curve endpoint without
+            changing the 0-100 business volume protocol or board PA metadata.
+            The V1 hardware experiment default is 20 (+2.0 dB). Set to 0 to
+            restore the stock 0.0 dB endpoint.
+
+endmenu

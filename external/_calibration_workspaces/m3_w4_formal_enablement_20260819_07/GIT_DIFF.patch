@@ -1,0 +1,273 @@
+diff --git a/src/deltar_p4_pipeline/all_object_geometry.py b/src/deltar_p4_pipeline/all_object_geometry.py
+index 4e1598d..1e9a279 100644
+--- a/src/deltar_p4_pipeline/all_object_geometry.py
++++ b/src/deltar_p4_pipeline/all_object_geometry.py
+@@ -25,6 +25,10 @@ from .geometry_v2.generic_support import (
+     estimate_support,
+     group_same_surfaces,
+ )
++from .geometry_v2.multimodal_support import (
++    combine_context_distributions,
++    context_clusters,
++)
+ from .geometry_v2.ball_extent import estimate_ball_extent
+ from .geometry_v2.shape_router import route_shape
+ from .geometry_v2.upright_container import estimate_upright_container
+@@ -233,34 +237,20 @@ def _selected_v2_region(
+     ), bbox, meta
+ 
+ 
+-def measure_logical_object_v2(
++def _finalize_v2_record(
+     group: dict[str, Any],
+-    segment_masks: dict[str, np.ndarray],
+-    camera_axial_z_mm: np.ndarray,
+-    world_points_mm: np.ndarray,
+-    support_planes: list[dict[str, Any]],
+-    profile: dict[str, Any],
++    axial: np.ndarray,
++    world: np.ndarray,
++    region: np.ndarray,
++    valid: np.ndarray,
++    raw_mask: np.ndarray | None,
++    bbox: list[float],
++    meta: dict[str, Any],
+     camera: dict[str, Any],
+     gravity: dict[str, Any],
+     config: dict[str, Any],
++    support: dict[str, Any],
+ ) -> dict[str, Any]:
+-    axial = np.asarray(camera_axial_z_mm, dtype=np.float64)
+-    world = np.asarray(world_points_mm, dtype=np.float64)
+-    if axial.shape != IMAGE_SHAPE or world.shape != (*IMAGE_SHAPE, 3):
+-        raise ValueError("formal Geometry v2 input shape invalid")
+-    region, valid, raw_mask, bbox, meta = _selected_v2_region(
+-        group, segment_masks, axial, world, profile
+-    )
+-    support = estimate_support(
+-        raw_mask if raw_mask is not None else region,
+-        bbox,
+-        axial,
+-        world,
+-        valid,
+-        support_planes,
+-        config["generic_support"],
+-        gravity,
+-    )
+     generic = estimate_generic_extent(
+         valid,
+         world[..., 2],
+@@ -400,8 +390,152 @@ def measure_logical_object_v2(
+         "final": final,
+         "same_surface_group_id": None,
+         "consensus_used": False,
++        "_measurement_inputs": {
++            "group": group,
++            "axial": axial,
++            "world": world,
++            "region": region,
++            "valid": valid,
++            "raw_mask": raw_mask,
++            "bbox": bbox,
++            "meta": meta,
++            "camera": camera,
++            "gravity": gravity,
++            "config": config,
++        },
+     }
+ 
++
++def measure_logical_object_v2(
++    group: dict[str, Any],
++    segment_masks: dict[str, np.ndarray],
++    camera_axial_z_mm: np.ndarray,
++    world_points_mm: np.ndarray,
++    support_planes: list[dict[str, Any]],
++    profile: dict[str, Any],
++    camera: dict[str, Any],
++    gravity: dict[str, Any],
++    config: dict[str, Any],
++) -> dict[str, Any]:
++    axial = np.asarray(camera_axial_z_mm, dtype=np.float64)
++    world = np.asarray(world_points_mm, dtype=np.float64)
++    if axial.shape != IMAGE_SHAPE or world.shape != (*IMAGE_SHAPE, 3):
++        raise ValueError("formal Geometry v2 input shape invalid")
++    region, valid, raw_mask, bbox, meta = _selected_v2_region(
++        group, segment_masks, axial, world, profile
++    )
++    support = estimate_support(
++        raw_mask if raw_mask is not None else region,
++        bbox,
++        axial,
++        world,
++        valid,
++        support_planes,
++        config["generic_support"],
++        gravity,
++        object_id=str(group["logical_object_id"]),
++        class_name=str(group["class_name"]),
++    )
++    distribution = support.pop("_m3_object_distribution")
++    record = _finalize_v2_record(
++        group,
++        axial,
++        world,
++        region,
++        valid,
++        raw_mask,
++        bbox,
++        meta,
++        camera,
++        gravity,
++        config,
++        support,
++    )
++    record["_m3_object_distribution"] = distribution
++    return record
++
++
++def _apply_m3_w4_context_support(
++    objects: list[dict[str, Any]],
++    records_by_index: dict[int, dict[str, Any]],
++    frame_id: str,
++) -> None:
++    """Replace M0 support with frozen same-frame M3 modes and W4 output."""
++    for context_index, members in enumerate(context_clusters(objects)):
++        distributions = [
++            records_by_index[index]["_m3_object_distribution"]
++            for index in members
++            if index in records_by_index
++            and records_by_index[index].get("_m3_object_distribution")
++        ]
++        if not distributions:
++            continue
++        combined = combine_context_distributions(distributions)
++        context_id = f"{frame_id}:m3_w4_context:{context_index:02d}"
++        compact_modes = [
++            {
++                key: float(mode[key]) if key != "candidate_count" else int(mode[key])
++                for key in (
++                    "center_mm",
++                    "probability",
++                    "spread_mm",
++                    "mass",
++                    "candidate_count",
++                    "grid_peak_mm",
++                )
++            }
++            for mode in combined["retained_modes"]
++        ]
++        for index in members:
++            old_record = records_by_index.get(index)
++            if old_record is None:
++                continue
++            old_support = old_record["generic_support"]
++            support = dict(old_support)
++            support["support_mm"] = float(combined["support_mm"])
++            support["source"] = "m3_continuous_multimodal_w4"
++            diagnostics = dict(old_support.get("diagnostics") or {})
++            diagnostics["m3_w4"] = {
++                "context_id": context_id,
++                "member_object_ids": [
++                    str(objects[member].get("logical_object_id") or "")
++                    for member in members
++                ],
++                "member_classes": [
++                    str(objects[member].get("class_name") or "unknown")
++                    for member in members
++                ],
++                "candidate_count": int(combined["candidate_count"]),
++                "independent_object_count": int(combined["independent_object_count"]),
++                "retained_mode_count": int(combined["retained_mode_count"]),
++                "retained_modes": compact_modes,
++                "combiner": combined["combiner"],
++                "formula": combined["formula"],
++                "support_mm": float(combined["support_mm"]),
++                "runtime_uses_cross_frame_information": False,
++            }
++            support["diagnostics"] = diagnostics
++            inputs = old_record["_measurement_inputs"]
++            new_record = _finalize_v2_record(
++                inputs["group"],
++                inputs["axial"],
++                inputs["world"],
++                inputs["region"],
++                inputs["valid"],
++                inputs["raw_mask"],
++                inputs["bbox"],
++                inputs["meta"],
++                inputs["camera"],
++                inputs["gravity"],
++                inputs["config"],
++                support,
++            )
++            new_record["_m3_object_distribution"] = old_record[
++                "_m3_object_distribution"
++            ]
++            records_by_index[index] = new_record
++            objects[index] = new_record["public"]
++
+ @dataclass
+ class AllObjectGeometryProcessor:
+     output_root: Path
+@@ -441,8 +575,8 @@ class AllObjectGeometryProcessor:
+             rebuilt[..., 2] = world
+             world = rebuilt
+         objects: list[dict[str, Any]] = []
+-        v2_records: list[dict[str, Any]] = []
+-        for group in logical_groups:
++        records_by_index: dict[int, dict[str, Any]] = {}
++        for object_index, group in enumerate(logical_groups):
+             try:
+                 record = measure_logical_object_v2(
+                     group,
+@@ -456,7 +590,7 @@ class AllObjectGeometryProcessor:
+                     self.v2_config,
+                 )
+                 measured = record["public"]
+-                v2_records.append(record)
++                records_by_index[object_index] = record
+             except SupportUnavailable as exc:
+                 measured = _failure_object(
+                     group,
+@@ -468,6 +602,8 @@ class AllObjectGeometryProcessor:
+                     group, f"geometry_runtime_exception:{type(exc).__name__}"
+                 )
+             objects.append(measured)
++        _apply_m3_w4_context_support(objects, records_by_index, frame_id)
++        v2_records = [records_by_index[index] for index in sorted(records_by_index)]
+         group_same_surfaces(v2_records, self.v2_config["same_surface"], frame_id)
+         for record in v2_records:
+             public = record["public"]
+diff --git a/src/deltar_p4_pipeline/geometry_v2/generic_support.py b/src/deltar_p4_pipeline/geometry_v2/generic_support.py
+index a97764b..6f3f659 100644
+--- a/src/deltar_p4_pipeline/geometry_v2/generic_support.py
++++ b/src/deltar_p4_pipeline/geometry_v2/generic_support.py
+@@ -7,6 +7,7 @@ import numpy as np
+ 
+ from .contact_evidence import evaluate_contact
+ from .environment_surfaces import bbox_mask, bottom_contour, extract_environment_surfaces
++from .multimodal_support import build_object_distribution
+ from .support_selector import SupportUnavailable, select_support
+ from .surface_identity import associate_same_surfaces
+ 
+@@ -20,6 +21,9 @@ def estimate_support(
+     support_planes: list[dict[str, Any]],
+     cfg: dict[str, Any],
+     gravity: dict[str, Any] | None = None,
++    *,
++    object_id: str = "",
++    class_name: str = "unknown",
+ ) -> dict[str, Any]:
+     world = np.asarray(world_points_mm)
+     world_z = np.asarray(world[..., 2] if world.ndim == 3 else world, dtype=np.float64)
+@@ -39,6 +43,9 @@ def estimate_support(
+         exc.diagnostics["surface_extraction"] = extraction
+         raise
+     result["diagnostics"]["surface_extraction"] = extraction
++    result["_m3_object_distribution"] = build_object_distribution(
++        observations, evidence, cfg, object_id, class_name
++    )
+     return result
+ 
+ 

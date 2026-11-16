@@ -1,0 +1,39 @@
+stage3b_competition_geometry_20260818_01\
+  FORMAL_GEOMETRY_SOURCE_AUDIT.md
+  README_STAGE3B.md
+  WORKSPACE_TREE.txt
+  frozen_authorities.json
+  registry.json
+  scene_truth.stage3b.json
+  stage2_dynamic_fr_adapter.py
+  stage3b_competition_geometry.py
+  target_matching.py
+  z_only_geometry_adapter.py
+  diagnostics\
+    dynamic_fr_reference_parity.json
+    exact_interpreter_smoke.json
+    protected_hashes.after.json
+    protected_integrity_check.json
+  results\
+    SUMMARY.stage3b.json
+  schemas\
+    registry.stage3b.schema.json
+    sample_result.stage3b.schema.json
+    scene_truth.stage3b.schema.json
+  tests\
+    test_stage3b.py
+  transcripts\
+    unit_tests.txt
+    wrapper_smoke.txt
+  wrappers\
+    EXPORT_RESULTS.ps1
+    REGISTER_AND_ANALYZE_LATEST.ps1
+    REGISTER_LATEST.ps1
+    STATUS.ps1
+    SUMMARY.ps1
+
+Runtime-created only after a real registration:
+  results\Gxxx\candidate_chain_attempt_NN\...
+  exports\stage3b_results_<timestamp>.zip
+
+Generated Python __pycache__ folders are not evidence and are excluded from the evidence ZIP.

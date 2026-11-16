@@ -1,0 +1,136 @@
+{
+  "session_id": "PROD_WIRING_NORMAL3",
+  "rep_index": 2,
+  "source_session_path": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\标准\\喝水标准动作数据集_裁剪版_校正版_20260805\\02_正常三次连续_3组\\喝水_正常三次连续_01_seq6195-7850.csv",
+  "source_mode": "offline_validation",
+  "source_origin": "v2_1_2_session_orchestrator",
+  "segmentation_version": "drink_hybrid_segmentation_v2_1",
+  "start_index": 557,
+  "end_index": 932,
+  "start_time_ms": 2777718,
+  "end_time_ms": 2785218,
+  "duration_ms": 7500.0,
+  "start_boundary": {
+    "boundary_index": 556,
+    "boundary_time_ms": 2777698,
+    "boundary_sources": [
+      "motion_valley_between_peaks",
+      "pose_return",
+      "strong_quiet",
+      "weak_quiet"
+    ],
+    "quiet_duration_ms": 2260.0,
+    "motion_valley_score": 0.986778,
+    "pose_return_score": 1.0,
+    "confidence": 0.92,
+    "candidate_cluster": {
+      "candidate_indexes": [
+        554,
+        556,
+        590
+      ],
+      "candidate_payloads": [
+        {
+          "boundary_index": 554,
+          "boundary_time_ms": 2777659,
+          "boundary_sources": [
+            "weak_quiet",
+            "pose_return"
+          ],
+          "quiet_duration_ms": 2260.0,
+          "motion_valley_score": 0.975929,
+          "pose_return_score": 0.999758,
+          "confidence": 0.76
+        },
+        {
+          "boundary_index": 556,
+          "boundary_time_ms": 2777698,
+          "boundary_sources": [
+            "strong_quiet"
+          ],
+          "quiet_duration_ms": 2100.0,
+          "motion_valley_score": 0.973256,
+          "pose_return_score": 0.999758,
+          "confidence": 0.92
+        },
+        {
+          "boundary_index": 590,
+          "boundary_time_ms": 2778378,
+          "boundary_sources": [
+            "motion_valley_between_peaks",
+            "pose_return"
+          ],
+          "quiet_duration_ms": null,
+          "motion_valley_score": 0.986778,
+          "pose_return_score": 1.0,
+          "confidence": 0.82
+        }
+      ],
+      "selected_index": 556,
+      "selected_time_ms": 2777698,
+      "combined_sources": [
+        "motion_valley_between_peaks",
+        "pose_return",
+        "strong_quiet",
+        "weak_quiet"
+      ],
+      "quiet_duration_ms": 2260.0,
+      "motion_valley_score": 0.986778,
+      "pose_return_score": 1.0,
+      "confidence": 0.92,
+      "selection_reason": "strong_quiet_priority"
+    },
+    "boundary_origin": "detected_candidate",
+    "detected_from_signal_candidate": true
+  },
+  "end_boundary": {
+    "boundary_index": 932,
+    "boundary_time_ms": 2785218,
+    "boundary_sources": [
+      "pose_return",
+      "weak_quiet"
+    ],
+    "quiet_duration_ms": 180.0,
+    "motion_valley_score": 0.757495,
+    "pose_return_score": 0.99253,
+    "confidence": 0.76,
+    "candidate_cluster": {
+      "candidate_indexes": [
+        932
+      ],
+      "candidate_payloads": [
+        {
+          "boundary_index": 932,
+          "boundary_time_ms": 2785218,
+          "boundary_sources": [
+            "weak_quiet",
+            "pose_return"
+          ],
+          "quiet_duration_ms": 180.0,
+          "motion_valley_score": 0.757495,
+          "pose_return_score": 0.99253,
+          "confidence": 0.76
+        }
+      ],
+      "selected_index": 932,
+      "selected_time_ms": 2785218,
+      "combined_sources": [
+        "pose_return",
+        "weak_quiet"
+      ],
+      "quiet_duration_ms": 180.0,
+      "motion_valley_score": 0.757495,
+      "pose_return_score": 0.99253,
+      "confidence": 0.76,
+      "selection_reason": "highest_priority_then_confidence"
+    },
+    "boundary_origin": "detected_candidate",
+    "detected_from_signal_candidate": true
+  },
+  "baseline_version": "drink_water_v2.1.2",
+  "baseline_template_path": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\drink_water_v1\\baseline_v2_1_2_sensor_mapping_fixed\\drink_water_baseline_v2_1_2_scoring_template.json",
+  "baseline_template_sha256": "e5bc6de2ed7c05c4039928005e37beefec3d5873fa9e69b4e92d447aafe8e1e5",
+  "sensor_mapping_version": "rehab_sensor_mapping_20260806",
+  "rep_csv_file": "rep_02.csv",
+  "score_file": "rep_02_score.json"
+}

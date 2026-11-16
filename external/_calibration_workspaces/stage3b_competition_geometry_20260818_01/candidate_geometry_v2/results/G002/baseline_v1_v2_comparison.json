@@ -1,0 +1,224 @@
+{
+  "ground_truth_used_for_fit": false,
+  "ground_truth_used_for_parameter_selection": false,
+  "role": "ROBUSTNESS_EXTRA",
+  "same_surface_consistency": {
+    "consensus_used": true,
+    "group_discovered_geometrically": true,
+    "group_ids": [
+      "frame_000000:surface:01",
+      "frame_000001:surface:01",
+      "frame_000002:surface:01",
+      "frame_000003:surface:01",
+      "frame_000004:surface:01",
+      "frame_000005:surface:01",
+      "frame_000006:surface:01",
+      "frame_000007:surface:01",
+      "frame_000008:surface:01",
+      "frame_000009:surface:01",
+      "frame_000010:surface:01"
+    ],
+    "support_delta_between_grouped_target_medians_mm": 0.0
+  },
+  "sample_id": "G002",
+  "targets": {
+    "lower_bottle": {
+      "baseline": {
+        "object_height_error_mm": -18.694437868859268,
+        "object_height_mm": 161.30556213114073,
+        "support_error_mm": -24.122863849107375,
+        "support_mm": 700.8771361508926,
+        "support_source": "point_p5_fallback",
+        "top_mm": 862.1826982820334
+      },
+      "candidate_v1": {
+        "available": true,
+        "height_method": "gravity_only_upright_silhouette",
+        "object_height_error_mm": -2.306502544958221,
+        "object_height_error_percent": -1.2813903027545672,
+        "object_height_mm": 177.69349745504178,
+        "pre_consensus_object_height_mm": 189.0,
+        "pre_consensus_support_mm": 705.0481956168251,
+        "same_layer_consensus_applied": true,
+        "source_counts": {
+          "instance_mask": 11
+        },
+        "support_error_mm": -8.675947250969557,
+        "support_mm": 716.3240527490304,
+        "support_source": "candidate_same_layer_consensus",
+        "top_error_mm": -10.982449795927778,
+        "top_mm": 894.0175502040722
+      },
+      "candidate_v2": {
+        "consensus_used": true,
+        "extent_confidence_median": 0.95,
+        "family_confidence_median": 0.9884909817474842,
+        "frame_count": 11,
+        "object_height_error_mm": 13.472552135918363,
+        "object_height_error_percent": 7.484751186621313,
+        "object_height_mm": 193.47255213591836,
+        "same_surface_group_ids": [
+          "frame_000000:surface:01",
+          "frame_000001:surface:01",
+          "frame_000002:surface:01",
+          "frame_000003:surface:01",
+          "frame_000004:surface:01",
+          "frame_000005:surface:01",
+          "frame_000006:surface:01",
+          "frame_000007:surface:01",
+          "frame_000008:surface:01",
+          "frame_000009:surface:01",
+          "frame_000010:surface:01"
+        ],
+        "selected_shape_family": "upright_slender",
+        "shape_family_counts": {
+          "upright_slender": 11
+        },
+        "support_error_mm": -26.922446773848606,
+        "support_estimator_path": "generic_support->upright_slender",
+        "support_mm": 698.0775532261514,
+        "support_source": "same_surface_consensus",
+        "support_source_counts": {
+          "same_surface_consensus": 11
+        },
+        "top_error_mm": -13.449894637930242,
+        "top_mm": 891.5501053620698
+      },
+      "truth": {
+        "detector_class_name": "bottle",
+        "diagnostic_expected_top_z_mm": 905.0,
+        "expected_object_height_mm": 180.0,
+        "expected_support_mm": 725.0,
+        "truth_uncertainty_mm": 5.0
+      }
+    },
+    "lower_volleyball": {
+      "baseline": {
+        "object_height_error_mm": -50.95547524465064,
+        "object_height_mm": 144.04452475534936,
+        "support_error_mm": 15.04175393997275,
+        "support_mm": 740.0417539399728,
+        "support_source": "point_p5_fallback",
+        "top_mm": 884.0862786953221
+      },
+      "candidate_v1": {
+        "available": true,
+        "height_method": "gravity_only_sphere_envelope",
+        "object_height_error_mm": 14.017045097864525,
+        "object_height_error_percent": 7.188228255315141,
+        "object_height_mm": 209.01704509786452,
+        "pre_consensus_object_height_mm": 197.5,
+        "pre_consensus_support_mm": 727.5999098812358,
+        "same_layer_consensus_applied": true,
+        "source_counts": {
+          "detector_ellipse": 11
+        },
+        "support_error_mm": -8.675947250969557,
+        "support_mm": 716.3240527490304,
+        "support_source": "candidate_same_layer_consensus",
+        "top_error_mm": 5.341097846894968,
+        "top_mm": 925.341097846895
+      },
+      "candidate_v2": {
+        "consensus_used": true,
+        "extent_confidence_median": 0.85,
+        "family_confidence_median": 0.793536938589497,
+        "frame_count": 11,
+        "object_height_error_mm": 18.232900123609852,
+        "object_height_error_percent": 9.350205191594796,
+        "object_height_mm": 213.23290012360985,
+        "same_surface_group_ids": [
+          "frame_000000:surface:01",
+          "frame_000001:surface:01",
+          "frame_000002:surface:01",
+          "frame_000003:surface:01",
+          "frame_000004:surface:01",
+          "frame_000005:surface:01",
+          "frame_000006:surface:01",
+          "frame_000007:surface:01",
+          "frame_000008:surface:01",
+          "frame_000009:surface:01",
+          "frame_000010:surface:01"
+        ],
+        "selected_shape_family": "roughly_spherical",
+        "shape_family_counts": {
+          "roughly_spherical": 11
+        },
+        "support_error_mm": -26.922446773848606,
+        "support_estimator_path": "generic_support->roughly_spherical",
+        "support_mm": 698.0775532261514,
+        "support_source": "same_surface_consensus",
+        "support_source_counts": {
+          "same_surface_consensus": 11
+        },
+        "top_error_mm": -8.689546650238754,
+        "top_mm": 911.3104533497612
+      },
+      "truth": {
+        "detector_class_name": "sports ball",
+        "diagnostic_expected_top_z_mm": 920.0,
+        "expected_object_height_mm": 195.0,
+        "expected_support_mm": 725.0,
+        "truth_uncertainty_mm": 5.0
+      }
+    },
+    "upper_bottle": {
+      "baseline": {
+        "object_height_error_mm": -62.20015241526562,
+        "object_height_mm": 117.79984758473438,
+        "support_error_mm": 43.09965219003652,
+        "support_mm": 1108.0996521900365,
+        "support_source": "point_p5_fallback",
+        "top_mm": 1225.899499774771
+      },
+      "candidate_v1": {
+        "available": true,
+        "height_method": "gravity_only_upright_silhouette",
+        "object_height_error_mm": -35.0,
+        "object_height_error_percent": -19.444444444444443,
+        "object_height_mm": 145.0,
+        "pre_consensus_object_height_mm": 145.0,
+        "pre_consensus_support_mm": 1090.4410114805669,
+        "same_layer_consensus_applied": false,
+        "source_counts": {
+          "instance_mask": 10
+        },
+        "support_error_mm": 25.441011480566885,
+        "support_mm": 1090.4410114805669,
+        "support_source": "candidate_contact_band",
+        "top_error_mm": -9.558988519433115,
+        "top_mm": 1235.4410114805669
+      },
+      "candidate_v2": {
+        "consensus_used": false,
+        "extent_confidence_median": 0.8,
+        "family_confidence_median": 0.9624740804380102,
+        "frame_count": 10,
+        "object_height_error_mm": -19.889517992553692,
+        "object_height_error_percent": -11.049732218085385,
+        "object_height_mm": 160.1104820074463,
+        "same_surface_group_ids": [],
+        "selected_shape_family": "upright_slender",
+        "shape_family_counts": {
+          "upright_slender": 10
+        },
+        "support_error_mm": 10.973104458535772,
+        "support_estimator_path": "generic_support->generic_extent",
+        "support_mm": 1075.9731044585358,
+        "support_source": "local_gravity_support_surface",
+        "support_source_counts": {
+          "local_gravity_support_surface": 10
+        },
+        "top_error_mm": -8.91641353401792,
+        "top_mm": 1236.083586465982
+      },
+      "truth": {
+        "detector_class_name": "bottle",
+        "diagnostic_expected_top_z_mm": 1245.0,
+        "expected_object_height_mm": 180.0,
+        "expected_support_mm": 1065.0,
+        "truth_uncertainty_mm": 5.0
+      }
+    }
+  }
+}

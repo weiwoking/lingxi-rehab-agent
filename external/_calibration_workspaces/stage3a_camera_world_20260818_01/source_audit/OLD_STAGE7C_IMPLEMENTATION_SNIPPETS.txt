@@ -1,0 +1,31 @@
+Read-only source: C:\ec\_deltar_p4_pipeline\src\deltar_p4_pipeline\camera_world_calibration.py
+SHA-256: 6b6726082a97b7a071f3cd994d1ead80c2ccfee9b9f235bea847b1ccdacaadd0
+
+Lines 62-77 (board/world axes and height translation):
+  # OpenCV ChArUco object axes are +X right in the printed board, +Y down,
+  # and right-handed +Z through the board away from its printed front/vehicle.
+  # The board front therefore has normal -Y_world in the frozen world frame.
+  R_WORLD_FROM_BOARD = np.asarray(
+      [[1.0, 0.0, 0.0], [0.0, 0.0, 1.0], [0.0, -1.0, 0.0]],
+      dtype=np.float64,
+  )
+  T_WORLD_FROM_CAMERA_MM = np.asarray([0.0, 0.0, CAMERA_HEIGHT_MM], dtype=np.float64)
+
+Lines 155-171 (matrix direction):
+  def rotation_world_from_camera_from_board_pose(rotation_camera_from_board):
+      result = R_WORLD_FROM_BOARD @ rotation.T
+      u, _, vh = np.linalg.svd(result)
+      result = u @ vh
+      if np.linalg.det(result) < 0:
+          u[:, -1] *= -1
+          result = u @ vh
+      return result
+
+Lines 1091 and 1140-1149 (matrix-first output):
+  transform_wc = make_transform(rotation_wc, T_WORLD_FROM_CAMERA_MM)
+  "T_world_from_camera": transform_wc.tolist(),
+  "rotation_world_from_camera": rotation_wc.tolist(),
+  "translation_world_from_camera_mm": T_WORLD_FROM_CAMERA_MM.tolist(),
+  "camera_height_mm": CAMERA_HEIGHT_MM,
+
+Note: old physical values are intentionally omitted and are not numeric authority.

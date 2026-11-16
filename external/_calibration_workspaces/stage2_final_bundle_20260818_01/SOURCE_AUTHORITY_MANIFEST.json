@@ -1,0 +1,101 @@
+{
+  "schema_version": "stage2_final_source_authority_manifest.v1",
+  "created_at": "2026-08-17T17:57:16.924306Z",
+  "assembly_mode": "read_only_sources_no_refit_no_promotion",
+  "authorities": [
+    {
+      "role": "Stage2A camera intrinsics candidate authority",
+      "path": "C:\\ec\\_calibration_workspaces\\stage2a_camera_intrinsic_20260817_01\\candidate\\camera_intrinsics.stage2a_candidate.v1.json",
+      "sha256": "99e5fe45e56b9f9a5a05f26179a9ee124610c3d4524b4e257b88c7b149979f6b",
+      "schema_version": "stage2a_camera_intrinsics_candidate.v1",
+      "status": "CANDIDATE_NOT_PROMOTED"
+    },
+    {
+      "role": "Stage2A candidate validation",
+      "path": "C:\\ec\\_calibration_workspaces\\stage2a_camera_intrinsic_20260817_01\\validation\\candidate_validation.json",
+      "sha256": "6ef9f14ffef3ad3df54cdcff24a8ffe3fc835b96d73037ba31e61a4bc9704a7f",
+      "schema_version": null,
+      "status": null
+    },
+    {
+      "role": "Stage2A strategy stability diagnostics",
+      "path": "C:\\ec\\_calibration_workspaces\\stage2a_camera_intrinsic_20260817_01\\stability_diagnostics\\stability_summary.json",
+      "sha256": "4f52bc5fae6b53de7b0cb20e28ce67552d5b73f6954565eb9059248f4d31bb4e",
+      "schema_version": "stage2a_stability_summary.v2",
+      "status": null
+    },
+    {
+      "role": "Stage2B camera-to-ToF candidate authority",
+      "path": "C:\\ec\\_calibration_workspaces\\stage2b_camera_tof_20260817_01\\candidate\\camera_tof.stage2b_all16_candidate.v2.json",
+      "sha256": "b518d878be175d42906dd17f9c7e9ead74f33eef77ad11165dc5b2aacd76543e",
+      "schema_version": "camera_tof.stage2b_all16_candidate.v2",
+      "status": "CANDIDATE_NOT_PROMOTED"
+    },
+    {
+      "role": "Stage2B DELTAR fr candidate authority",
+      "path": "C:\\ec\\_calibration_workspaces\\stage2b_camera_tof_20260817_01\\candidate\\deltar_fr.stage2b_all16_candidate.v2.json",
+      "sha256": "90c6d7d57f70178231843fbc000d6aedd23ec262837c14df1f62a5f6c762ec9c",
+      "schema_version": "deltar_fr.stage2b_all16_candidate.v2",
+      "status": "CANDIDATE_NOT_PROMOTED"
+    },
+    {
+      "role": "Stage2B all-16 variant comparison",
+      "path": "C:\\ec\\_calibration_workspaces\\stage2b_camera_tof_20260817_01\\final_all16\\variant_comparison.json",
+      "sha256": "0fa3ecf68524ef2c381d64ea068584714bdac1b86f8a0ee734daede9028cc92c",
+      "schema_version": "stage2b_all16_identifiability.v2",
+      "status": "DIAGNOSTIC_NOT_PROMOTED"
+    },
+    {
+      "role": "Stage2B final protected-hash check",
+      "path": "C:\\ec\\_calibration_workspaces\\stage2b_camera_tof_20260817_01\\final_all16\\protected_hash_check.final.json",
+      "sha256": "2835474d3c0c8fe0657d7e183a5284dab2332f9eb051f96412e27bff04c2169c",
+      "schema_version": null,
+      "status": null
+    },
+    {
+      "role": "Stage2C independent validation detail",
+      "path": "C:\\ec\\_calibration_workspaces\\stage2c_camera_tof_validation_20260818_01\\validation\\validation.stage2c.json",
+      "sha256": "d19a0aef2ab86069897325279dd14c98ccfd4c4e3b455e2afd68348b4a4a8637",
+      "schema_version": "stage2c_validation.v1",
+      "status": null
+    },
+    {
+      "role": "Stage2C validation summary",
+      "path": "C:\\ec\\_calibration_workspaces\\stage2c_camera_tof_validation_20260818_01\\validation\\summary.stage2c.json",
+      "sha256": "8b7b8d58ecc94f2a303cc5c4b0e2120976e2f8ff99711b27c0c2b0d42bea6568",
+      "schema_version": "stage2c_summary.v1",
+      "status": "VALIDATION_EVIDENCE_READY"
+    },
+    {
+      "role": "Stage2C validation coverage",
+      "path": "C:\\ec\\_calibration_workspaces\\stage2c_camera_tof_validation_20260818_01\\coverage\\coverage.stage2c.json",
+      "sha256": "3ed91129ef2503955ac55a5950d4dfd05460ef2d93dae1e07fb45631592c4d62",
+      "schema_version": "stage2c_coverage.v1",
+      "status": null
+    },
+    {
+      "role": "Stage2C frozen authority manifest",
+      "path": "C:\\ec\\_calibration_workspaces\\stage2c_camera_tof_validation_20260818_01\\frozen_authority_manifest.json",
+      "sha256": "a43538db5d817e7704f99192dadb63ba06d32a5cc1a2bf69fad60680bdbf4e23",
+      "schema_version": "stage2c_frozen_authorities.v1",
+      "status": null
+    }
+  ],
+  "formal_runtime_inventory_not_bundle_authority": [
+    {
+      "role": "pre-remount Stage7A inventory",
+      "path": "C:\\calibration\\result_20260719_172703\\calibration_profile.v2.json",
+      "sha256": "5c7ebcd9a86c4e5c7e9a653667c309bf5a7b3f1e3d64208702e95d0dbf5a8cad"
+    },
+    {
+      "role": "pre-remount Stage7B inventory",
+      "path": "C:\\calibration\\stage7b_result_unitfix_20260724_012041\\camera_tof_extrinsics.v1.json",
+      "sha256": "dbcb5792338f50cca953c365e436e17d9f044b2f47bcca716e697308dda7f8b5"
+    },
+    {
+      "role": "stale-after-remount Stage7C inventory; MUST NOT REUSE",
+      "path": "C:\\calibration\\stage7c_world_result_robustfix_20260724_044035\\camera_world_pose.v1.json",
+      "sha256": "5c730171f850ff3e05ab777eecca9849714aa20376c6d1f001da2b378ad24619"
+    }
+  ]
+}

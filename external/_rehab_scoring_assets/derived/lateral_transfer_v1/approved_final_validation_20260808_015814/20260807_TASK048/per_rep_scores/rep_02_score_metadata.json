@@ -1,0 +1,662 @@
+{
+  "rep": {
+    "rep_index": 2,
+    "start_index": 503,
+    "end_index": 1030,
+    "index_convention": "inclusive",
+    "source_row_number_convention": "zero_based_data_row_index_excluding_header; original CSV line number is index + 2",
+    "start_time_ms": 313632,
+    "end_time_ms": 324172,
+    "duration_ms": 10540.0,
+    "valid": true,
+    "invalid_reason": null,
+    "confidence": 0.879675,
+    "action_source": "complete_cycle",
+    "split_method": "lateral_transfer_segmentation_drink_reuse_v1",
+    "merged_candidate": false,
+    "incomplete_candidate": false,
+    "candidate_assessment": "full_cycle_gate_v2_1",
+    "start_boundary": {
+      "boundary_index": 502,
+      "boundary_time_ms": 313612,
+      "boundary_sources": [
+        "motion_valley_between_peaks",
+        "pose_return",
+        "strong_quiet",
+        "weak_quiet"
+      ],
+      "quiet_duration_ms": 2040.0,
+      "motion_valley_score": 0.987657,
+      "pose_return_score": 0.986363,
+      "confidence": 0.92,
+      "candidate_cluster": {
+        "candidate_indexes": [
+          502,
+          503,
+          525
+        ],
+        "candidate_payloads": [
+          {
+            "boundary_index": 502,
+            "boundary_time_ms": 313612,
+            "boundary_sources": [
+              "strong_quiet"
+            ],
+            "quiet_duration_ms": 1956.0,
+            "motion_valley_score": 0.972305,
+            "pose_return_score": 0.985402,
+            "confidence": 0.92
+          },
+          {
+            "boundary_index": 503,
+            "boundary_time_ms": 313632,
+            "boundary_sources": [
+              "weak_quiet",
+              "pose_return"
+            ],
+            "quiet_duration_ms": 2040.0,
+            "motion_valley_score": 0.97188,
+            "pose_return_score": 0.986363,
+            "confidence": 0.76
+          },
+          {
+            "boundary_index": 525,
+            "boundary_time_ms": 314072,
+            "boundary_sources": [
+              "motion_valley_between_peaks",
+              "pose_return"
+            ],
+            "quiet_duration_ms": null,
+            "motion_valley_score": 0.987657,
+            "pose_return_score": 0.984846,
+            "confidence": 0.82
+          }
+        ],
+        "selected_index": 502,
+        "selected_time_ms": 313612,
+        "combined_sources": [
+          "motion_valley_between_peaks",
+          "pose_return",
+          "strong_quiet",
+          "weak_quiet"
+        ],
+        "quiet_duration_ms": 2040.0,
+        "motion_valley_score": 0.987657,
+        "pose_return_score": 0.986363,
+        "confidence": 0.92,
+        "selection_reason": "strong_quiet_priority"
+      },
+      "boundary_origin": "detected_candidate",
+      "detected_from_signal_candidate": true
+    },
+    "end_boundary": {
+      "boundary_index": 1030,
+      "boundary_time_ms": 324172,
+      "boundary_sources": [
+        "motion_valley_between_peaks",
+        "pose_return",
+        "strong_quiet",
+        "weak_quiet"
+      ],
+      "quiet_duration_ms": 2066.0,
+      "motion_valley_score": 0.983132,
+      "pose_return_score": 1.0,
+      "confidence": 0.92,
+      "candidate_cluster": {
+        "candidate_indexes": [
+          1028,
+          1030,
+          1053
+        ],
+        "candidate_payloads": [
+          {
+            "boundary_index": 1028,
+            "boundary_time_ms": 324132,
+            "boundary_sources": [
+              "weak_quiet",
+              "pose_return"
+            ],
+            "quiet_duration_ms": 2066.0,
+            "motion_valley_score": 0.973363,
+            "pose_return_score": 1.0,
+            "confidence": 0.76
+          },
+          {
+            "boundary_index": 1030,
+            "boundary_time_ms": 324172,
+            "boundary_sources": [
+              "strong_quiet"
+            ],
+            "quiet_duration_ms": 1940.0,
+            "motion_valley_score": 0.973685,
+            "pose_return_score": 1.0,
+            "confidence": 0.92
+          },
+          {
+            "boundary_index": 1053,
+            "boundary_time_ms": 324632,
+            "boundary_sources": [
+              "motion_valley_between_peaks",
+              "pose_return"
+            ],
+            "quiet_duration_ms": null,
+            "motion_valley_score": 0.983132,
+            "pose_return_score": 1.0,
+            "confidence": 0.82
+          }
+        ],
+        "selected_index": 1030,
+        "selected_time_ms": 324172,
+        "combined_sources": [
+          "motion_valley_between_peaks",
+          "pose_return",
+          "strong_quiet",
+          "weak_quiet"
+        ],
+        "quiet_duration_ms": 2066.0,
+        "motion_valley_score": 0.983132,
+        "pose_return_score": 1.0,
+        "confidence": 0.92,
+        "selection_reason": "strong_quiet_priority"
+      },
+      "boundary_origin": "detected_candidate",
+      "detected_from_signal_candidate": true
+    },
+    "local_supporting_candidates": [
+      {
+        "boundary_index": 718,
+        "boundary_time_ms": 317932,
+        "boundary_sources": [
+          "motion_valley_between_peaks",
+          "pose_return",
+          "weak_quiet"
+        ],
+        "quiet_duration_ms": 460.0,
+        "motion_valley_score": 0.911963,
+        "pose_return_score": 0.383897,
+        "confidence": 0.76,
+        "candidate_cluster": {
+          "candidate_indexes": [
+            669,
+            718
+          ],
+          "candidate_payloads": [
+            {
+              "boundary_index": 669,
+              "boundary_time_ms": 316952,
+              "boundary_sources": [
+                "motion_valley_between_peaks"
+              ],
+              "quiet_duration_ms": null,
+              "motion_valley_score": 0.911963,
+              "pose_return_score": 0.0,
+              "confidence": 0.72
+            },
+            {
+              "boundary_index": 718,
+              "boundary_time_ms": 317932,
+              "boundary_sources": [
+                "weak_quiet",
+                "pose_return"
+              ],
+              "quiet_duration_ms": 460.0,
+              "motion_valley_score": 0.875953,
+              "pose_return_score": 0.383897,
+              "confidence": 0.76
+            }
+          ],
+          "selected_index": 718,
+          "selected_time_ms": 317932,
+          "combined_sources": [
+            "motion_valley_between_peaks",
+            "pose_return",
+            "weak_quiet"
+          ],
+          "quiet_duration_ms": 460.0,
+          "motion_valley_score": 0.911963,
+          "pose_return_score": 0.383897,
+          "confidence": 0.76,
+          "selection_reason": "highest_priority_then_confidence"
+        }
+      },
+      {
+        "boundary_index": 1030,
+        "boundary_time_ms": 324172,
+        "boundary_sources": [
+          "motion_valley_between_peaks",
+          "pose_return",
+          "strong_quiet",
+          "weak_quiet"
+        ],
+        "quiet_duration_ms": 2066.0,
+        "motion_valley_score": 0.983132,
+        "pose_return_score": 1.0,
+        "confidence": 0.92,
+        "candidate_cluster": {
+          "candidate_indexes": [
+            1028,
+            1030,
+            1053
+          ],
+          "candidate_payloads": [
+            {
+              "boundary_index": 1028,
+              "boundary_time_ms": 324132,
+              "boundary_sources": [
+                "weak_quiet",
+                "pose_return"
+              ],
+              "quiet_duration_ms": 2066.0,
+              "motion_valley_score": 0.973363,
+              "pose_return_score": 1.0,
+              "confidence": 0.76
+            },
+            {
+              "boundary_index": 1030,
+              "boundary_time_ms": 324172,
+              "boundary_sources": [
+                "strong_quiet"
+              ],
+              "quiet_duration_ms": 1940.0,
+              "motion_valley_score": 0.973685,
+              "pose_return_score": 1.0,
+              "confidence": 0.92
+            },
+            {
+              "boundary_index": 1053,
+              "boundary_time_ms": 324632,
+              "boundary_sources": [
+                "motion_valley_between_peaks",
+                "pose_return"
+              ],
+              "quiet_duration_ms": null,
+              "motion_valley_score": 0.983132,
+              "pose_return_score": 1.0,
+              "confidence": 0.82
+            }
+          ],
+          "selected_index": 1030,
+          "selected_time_ms": 324172,
+          "combined_sources": [
+            "motion_valley_between_peaks",
+            "pose_return",
+            "strong_quiet",
+            "weak_quiet"
+          ],
+          "quiet_duration_ms": 2066.0,
+          "motion_valley_score": 0.983132,
+          "pose_return_score": 1.0,
+          "confidence": 0.92,
+          "selection_reason": "strong_quiet_priority"
+        }
+      }
+    ],
+    "full_cycle_quality": {
+      "full_cycle_score": 0.879675,
+      "duration_score": 0.640767,
+      "departure_score": 1.0,
+      "peak_score": 1.0,
+      "return_score": 0.979202,
+      "start_boundary_quality": 0.92,
+      "end_boundary_quality": 0.92,
+      "activity_coverage": 0.670455,
+      "valid": true,
+      "invalid_reason": null,
+      "incomplete_candidate": false,
+      "merged_candidate": false,
+      "confidence": 0.879675,
+      "duration_ms": 10540.0
+    },
+    "quality": {
+      "row_count": 528,
+      "column_count": 86,
+      "columns": [
+        "log_seq",
+        "time_ms",
+        "output_rate_hz",
+        "flags",
+        "node1_rx",
+        "node1_tx_seq",
+        "node1_tx_gap",
+        "node1_age_ms",
+        "node2_rx",
+        "node2_tx_seq",
+        "node2_tx_gap",
+        "node2_age_ms",
+        "emg_valid",
+        "emg_latest_1",
+        "emg_latest_2",
+        "emg_latest_3",
+        "emg_latest_4",
+        "emg_rms_1",
+        "emg_rms_2",
+        "emg_rms_3",
+        "emg_rms_4",
+        "emg_mav_1",
+        "emg_mav_2",
+        "emg_mav_3",
+        "emg_mav_4",
+        "emg_peak_1",
+        "emg_peak_2",
+        "emg_peak_3",
+        "emg_peak_4",
+        "emg_n",
+        "imu1_valid",
+        "imu1_age_ms",
+        "imu1_roll",
+        "imu1_pitch",
+        "imu1_yaw",
+        "imu1_gx",
+        "imu1_gy",
+        "imu1_gz",
+        "imu1_ax",
+        "imu1_ay",
+        "imu1_az",
+        "imu1_lax",
+        "imu1_lay",
+        "imu1_laz",
+        "imu2_valid",
+        "imu2_age_ms",
+        "imu2_roll",
+        "imu2_pitch",
+        "imu2_yaw",
+        "imu2_gx",
+        "imu2_gy",
+        "imu2_gz",
+        "imu2_ax",
+        "imu2_ay",
+        "imu2_az",
+        "imu2_lax",
+        "imu2_lay",
+        "imu2_laz",
+        "imu3_valid",
+        "imu3_age_ms",
+        "imu3_roll",
+        "imu3_pitch",
+        "imu3_yaw",
+        "imu3_gx",
+        "imu3_gy",
+        "imu3_gz",
+        "imu3_ax",
+        "imu3_ay",
+        "imu3_az",
+        "imu3_lax",
+        "imu3_lay",
+        "imu3_laz",
+        "imu4_valid",
+        "imu4_age_ms",
+        "imu4_roll",
+        "imu4_pitch",
+        "imu4_yaw",
+        "imu4_gx",
+        "imu4_gy",
+        "imu4_gz",
+        "imu4_ax",
+        "imu4_ay",
+        "imu4_az",
+        "imu4_lax",
+        "imu4_lay",
+        "imu4_laz"
+      ],
+      "log_seq_start": 6433,
+      "log_seq_end": 6960,
+      "time_ms_start": 313632,
+      "time_ms_end": 324172,
+      "duration_ms": 10540.0,
+      "imu1_valid_rate": 1.0,
+      "imu2_valid_rate": 1.0,
+      "imu3_valid_rate": 1.0,
+      "imu4_valid_rate": 1.0,
+      "imu_all_valid_rate": 1.0,
+      "emg_valid_rate": 1.0,
+      "time_ms_strictly_increasing_rate": 1.0,
+      "log_seq_strictly_increasing_rate": 1.0,
+      "log_seq_exact_continuity_rate": 1.0,
+      "log_seq_gap_event_count": 0,
+      "log_seq_total_gap": 0,
+      "log_seq_max_gap": 0,
+      "time_ms_nonpositive_diff_count": 0,
+      "time_ms_median_step_ms": 20.0,
+      "time_ms_max_step_ms": 36.0,
+      "imu_actual_refresh": {
+        "imu1_actual_refresh_hz": 9.3928,
+        "imu2_actual_refresh_hz": 9.203,
+        "imu3_actual_refresh_hz": 9.5825,
+        "imu4_actual_refresh_hz": 9.4877
+      },
+      "emg_feature_actual_refresh_hz": 14.7059,
+      "max_age_ms": {
+        "node1_age_ms": 113,
+        "node2_age_ms": 110,
+        "imu1_age_ms": 198,
+        "imu2_age_ms": 198,
+        "imu3_age_ms": 200,
+        "imu4_age_ms": 202
+      },
+      "longest_imu_freeze_ms": 100.0,
+      "longest_emg_freeze_ms": 100.0,
+      "nan_count": 528,
+      "inf_count": 0,
+      "empty_row_count": 0
+    },
+    "motion_family": "lateral_transfer",
+    "segmentation_wrapper_version": "lateral_transfer_segmentation_drink_reuse_v1",
+    "segmentation_core_version": "drink_hybrid_segmentation_v2_1_1",
+    "segmentation_strategy": "REUSE_DRINK_HYBRID_SEGMENTATION_V2_1_1",
+    "core_split_method": "drink_hybrid_segmentation_v2_1_1",
+    "segmentation_source": "drink_hybrid_reuse",
+    "expected_count_used_by_segmenter": false,
+    "task_id_used_by_segmenter": false
+  },
+  "details": {
+    "base_score": 68.426575,
+    "penalty": 10.0,
+    "lf": {
+      "version": "drink_water_lf_v2",
+      "detected": true,
+      "status": "detected",
+      "neutral_roll_deg": 102.59,
+      "peak_abs_roll_deg": 19.27000000000001,
+      "max_duration_over_threshold_s": 6.62,
+      "positive_duration_over_threshold_s": 0.0,
+      "negative_duration_over_threshold_s": 6.62,
+      "roll_threshold_deg": 10.0,
+      "min_duration_s": 1.0,
+      "median_window_s": 0.5,
+      "neutral_window_s": 0.75,
+      "valid_sample_count": 528,
+      "estimated_rate_hz": 50.0,
+      "median_dt_ms": 20.0,
+      "max_allowed_gap_ms": 60.0,
+      "insufficient_evidence": false,
+      "uses_interpolation": false,
+      "uses_zero_fill": false,
+      "uses_repeat_last": false,
+      "algorithm_source": "drink_water_lf_v2",
+      "motion_family": "lateral_transfer",
+      "axis": "roll",
+      "threshold_deg": 10.0,
+      "lateral_profile_override": false,
+      "provisional": false
+    },
+    "tremor": {
+      "status": "evaluated",
+      "detected": false,
+      "version": "drink_water_tremor_v1_1",
+      "frequency_band_hz": [
+        3.5,
+        6.0
+      ],
+      "total_motion_band_hz": [
+        0.5,
+        20.0
+      ],
+      "fs_hz": 50.0,
+      "window_seconds": 2.0,
+      "step_seconds": 0.5,
+      "band_ratio_threshold": 0.18,
+      "band_rms_threshold": 5.0,
+      "tremor_fraction_threshold": 0.35,
+      "valid_window_count": 18,
+      "positive_window_count": 3,
+      "tremor_fraction": 0.16666666666666666,
+      "windows": [
+        {
+          "start_index": 0,
+          "end_index": 99,
+          "axis": "gy",
+          "positive": false,
+          "band_ratio": 0.15529541372516373,
+          "band_rms": 10.261232941278422
+        },
+        {
+          "start_index": 25,
+          "end_index": 124,
+          "axis": "gy",
+          "positive": false,
+          "band_ratio": 0.10174910871132331,
+          "band_rms": 9.808724401177088
+        },
+        {
+          "start_index": 50,
+          "end_index": 149,
+          "axis": "gy",
+          "positive": false,
+          "band_ratio": 0.059602358034215444,
+          "band_rms": 4.415091436003889
+        },
+        {
+          "start_index": 75,
+          "end_index": 174,
+          "axis": "gy",
+          "positive": false,
+          "band_ratio": 0.054648827887131414,
+          "band_rms": 1.622543213698131
+        },
+        {
+          "start_index": 100,
+          "end_index": 199,
+          "axis": "gz",
+          "positive": false,
+          "band_ratio": 0.057879653514636774,
+          "band_rms": 1.8345981717125868
+        },
+        {
+          "start_index": 125,
+          "end_index": 224,
+          "axis": "gz",
+          "positive": false,
+          "band_ratio": 0.06486796961169704,
+          "band_rms": 3.214309965091663
+        },
+        {
+          "start_index": 150,
+          "end_index": 249,
+          "axis": "gz",
+          "positive": false,
+          "band_ratio": 0.08182540819651549,
+          "band_rms": 4.121652672265309
+        },
+        {
+          "start_index": 175,
+          "end_index": 274,
+          "axis": "gx",
+          "positive": false,
+          "band_ratio": 0.04960903391367241,
+          "band_rms": 4.763645786300142
+        },
+        {
+          "start_index": 200,
+          "end_index": 299,
+          "axis": "gx",
+          "positive": false,
+          "band_ratio": 0.04852967302000188,
+          "band_rms": 4.297323214829223
+        },
+        {
+          "start_index": 225,
+          "end_index": 324,
+          "axis": "gx",
+          "positive": false,
+          "band_ratio": 0.02024636537441315,
+          "band_rms": 2.2662087909923483
+        },
+        {
+          "start_index": 250,
+          "end_index": 349,
+          "axis": "gx",
+          "positive": false,
+          "band_ratio": 0.021240631647294075,
+          "band_rms": 2.5618764323093326
+        },
+        {
+          "start_index": 275,
+          "end_index": 374,
+          "axis": "gz",
+          "positive": false,
+          "band_ratio": 0.1456975700430003,
+          "band_rms": 4.305162154277952
+        },
+        {
+          "start_index": 300,
+          "end_index": 399,
+          "axis": "gz",
+          "positive": true,
+          "band_ratio": 0.21823968842805233,
+          "band_rms": 5.809139130964164
+        },
+        {
+          "start_index": 325,
+          "end_index": 424,
+          "axis": "gz",
+          "positive": false,
+          "band_ratio": 0.26321352524602587,
+          "band_rms": 3.973837478936695
+        },
+        {
+          "start_index": 350,
+          "end_index": 449,
+          "axis": "gx",
+          "positive": false,
+          "band_ratio": 0.17034571927019262,
+          "band_rms": 2.521015166274062
+        },
+        {
+          "start_index": 375,
+          "end_index": 474,
+          "axis": "gy",
+          "positive": false,
+          "band_ratio": 0.1438604476075915,
+          "band_rms": 5.079947641486482
+        },
+        {
+          "start_index": 400,
+          "end_index": 499,
+          "axis": "gy",
+          "positive": true,
+          "band_ratio": 0.2565849074244046,
+          "band_rms": 10.141852324709467
+        },
+        {
+          "start_index": 425,
+          "end_index": 524,
+          "axis": "gy",
+          "positive": true,
+          "band_ratio": 0.2075002280830563,
+          "band_rms": 7.3881066730314195
+        }
+      ],
+      "algorithm_source": "drink_water_tremor_v1_1",
+      "motion_family": "lateral_transfer",
+      "fraction_threshold": 0.35,
+      "lateral_profile_override": {
+        "band_ratio_threshold": 0.18,
+        "band_rms_threshold": 5.0,
+        "positive_window_fraction": 0.35
+      },
+      "provisional": false
+    },
+    "motion_family": "lateral_transfer",
+    "sensor_mapping_version": "rehab_sensor_mapping_20260806"
+  }
+}

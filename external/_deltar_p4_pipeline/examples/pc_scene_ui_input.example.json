@@ -1,0 +1,60 @@
+{
+  "schema_version": "pc_scene_ui_input.v1",
+  "scan_id": "scan_example_11_frames",
+  "frame_count": 11,
+  "generated_at": "2026-07-31T00:00:00Z",
+  "selected_object_identities": [
+    {"frame_id": "frame_000000", "logical_object_id": "frame_000000:logical:000", "packet_object_id": "example_selected_object"}
+  ],
+  "scan_summary": {"object_count": 2, "geometry_success_count": 1, "geometry_failure_count": 1},
+  "frames": [
+    {
+      "frame_id": "frame_000000",
+      "sequence": 0,
+      "source_image_path": "example_frame.svg",
+      "objects": [
+        {
+          "logical_object_id": "frame_000000:logical:000",
+          "class_name": "bottle",
+          "confidence": 0.86,
+          "bbox_xyxy": [92.0, 78.0, 220.0, 268.0],
+          "selected_for_p4": true,
+          "geometry_status": "success",
+          "distance_mm": 1188.2,
+          "object_height_mm": 246.4,
+          "support_height_mm": 742.1,
+          "top_height_above_floor_mm": 988.5,
+          "geometry_confidence": 0.83,
+          "failure_reason": null,
+          "diagnostics": {"region_source": "mask", "region_method": "mask_eroded_1px_robust"},
+          "overlay_paths": {}
+        },
+        {
+          "logical_object_id": "frame_000000:logical:001",
+          "class_name": "chair",
+          "confidence": 0.67,
+          "bbox_xyxy": [360.0, 92.0, 540.0, 310.0],
+          "selected_for_p4": false,
+          "geometry_status": "failure",
+          "distance_mm": null,
+          "object_height_mm": null,
+          "support_height_mm": null,
+          "top_height_above_floor_mm": null,
+          "geometry_confidence": null,
+          "failure_reason": "insufficient_dense_world_points",
+          "overlay_paths": {}
+        }
+      ]
+    },
+    {"frame_id": "frame_000001", "sequence": 1, "source_image_path": "example_frame.svg", "objects": []},
+    {"frame_id": "frame_000002", "sequence": 2, "source_image_path": "example_frame.svg", "objects": []},
+    {"frame_id": "frame_000003", "sequence": 3, "source_image_path": "example_frame.svg", "objects": []},
+    {"frame_id": "frame_000004", "sequence": 4, "source_image_path": "example_frame.svg", "objects": []},
+    {"frame_id": "frame_000005", "sequence": 5, "source_image_path": "example_frame.svg", "objects": []},
+    {"frame_id": "frame_000006", "sequence": 6, "source_image_path": "example_frame.svg", "objects": []},
+    {"frame_id": "frame_000007", "sequence": 7, "source_image_path": "example_frame.svg", "objects": []},
+    {"frame_id": "frame_000008", "sequence": 8, "source_image_path": "example_frame.svg", "objects": []},
+    {"frame_id": "frame_000009", "sequence": 9, "source_image_path": "example_frame.svg", "objects": []},
+    {"frame_id": "frame_000010", "sequence": 10, "source_image_path": "example_frame.svg", "objects": []}
+  ]
+}

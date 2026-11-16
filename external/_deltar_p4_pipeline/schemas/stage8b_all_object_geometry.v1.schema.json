@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "stage8b_all_object_geometry.v1.schema.json",
+  "title": "PC-local all-object geometry artifact",
+  "type": "object",
+  "required": ["schema_version", "scan_id", "frame_count", "generated_at", "profile", "frames", "summary"],
+  "properties": {
+    "schema_version": {"const": "stage8b_all_object_geometry.v1"},
+    "scan_id": {"type": "string", "minLength": 1},
+    "frame_count": {"const": 11},
+    "frames": {"type": "array"},
+    "summary": {"type": "object"}
+  }
+}

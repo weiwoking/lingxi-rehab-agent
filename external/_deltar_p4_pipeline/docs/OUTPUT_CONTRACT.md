@@ -1,0 +1,9 @@
+# Output contract
+
+Successful `result.json` has schema `deltar_p4_stage2_result.v1.1`, sample/profile identity, raw input metadata, the complete profile, canvas transforms, DELTAR tensor shape/dtype/device, verified worktree/checkpoint/module provenance, mapping evidence labels, meter depth statistics, timing, GPU peak memory, and warnings. `validation_report.json` uses `deltar_p4_stage2_validation.v1.1` and records contract, RGB565, orientation, transform/intrinsics, adapter inputs, official patch info/hypotheses, two-run repeatability, NPY/PNG agreement, optional official-demo sensitivity, warnings, and unverified facts. Version 1.1 adds rejection/provenance fields while retaining successful v1 fields.
+
+`depth_m.npy` is `float32` meters at the actual model input canvas shape. Formal strategies are 480×640; direct probes truthfully retain their actual shape. `depth_mm.png` is a single-channel 16-bit PNG: round-to-nearest millimeter, valid finite positive values clipped to 1..65535, invalid represented as zero. Validation requires exact agreement with this quantization rule.
+
+Visual PNGs are human inspection aids and never replace numeric depth. Their 2nd/98th percentile range is recorded. `depth_source_640x360.npy` is inverse mapped using the recorded canvas transform; its valid mask is nearest-mapped from the canvas valid region.
+
+Rejected inputs produce `status=rejected`, a stable `E_*` code, message, field, `model_forward_called`, `debug_only`, partial-output inventory, and a rejection validation report. `E_NO_VALID_ZONES` and `E_EFFECTIVE_SIGMA_NONPOSITIVE` occur before model forward and produce no depth artifacts. Output preparation removes stale known artifacts; write failures are `E_OUTPUT_WRITE` and partial depth/debug files are minimally cleaned. Inference failures use `E_INFERENCE`; missing/changed model assets, commit, or module source use their distinct pre-inference codes.

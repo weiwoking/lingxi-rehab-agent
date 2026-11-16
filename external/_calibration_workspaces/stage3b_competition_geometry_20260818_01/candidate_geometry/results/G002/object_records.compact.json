@@ -1,0 +1,3777 @@
+[
+  {
+    "baseline": {
+      "object_height_mm": 167.38875427295181,
+      "support_mm": 695.3837100537015,
+      "support_source": "point_p5_fallback",
+      "top_mm": 862.7724643266533
+    },
+    "candidate": {
+      "anchor_count": 22,
+      "available": true,
+      "candidate_height_max_mm": 190.0,
+      "candidate_height_median_mm": 190.0,
+      "candidate_height_min_mm": 174.0,
+      "candidate_height_p25_mm": 190.0,
+      "candidate_height_p75_mm": 190.0,
+      "contact_depth": {
+        "object_lower_interior": {
+          "band_pixel_count": 529,
+          "count": 529,
+          "kept_count": 529,
+          "limit_mm": 95.75632832050323,
+          "mad_mm": 18.453359603881836,
+          "median_mm": 1926.053524017334,
+          "y_range": [
+            249.2,
+            272.24
+          ]
+        },
+        "reason": null,
+        "selected_depth_mm": 1719.1208600997925,
+        "selected_source": "support_context_below_contour",
+        "support_context": {
+          "band_pixel_count": 275,
+          "count": 275,
+          "kept_count": 275,
+          "limit_mm": 223.18873969316482,
+          "mad_mm": 43.01106929779053,
+          "median_mm": 1719.1208600997925
+        }
+      },
+      "height_method": "gravity_only_upright_silhouette",
+      "height_statistic": "median",
+      "object_height_mm": 190.0,
+      "reason": null,
+      "source": "instance_mask",
+      "sphere_fit_fallback_audit": null,
+      "support_anchor_mad_mm": 0.10120441491523025,
+      "support_mm": 705.0481956168251,
+      "support_source": "candidate_contact_band",
+      "top_mm": 895.0481956168251,
+      "valid_anchor_count": 22
+    },
+    "inventory": {
+      "axial_depth_mm": {
+        "median": 1968.1878089904785,
+        "p05": 1902.0566642284393,
+        "p95": 2009.310245513916
+      },
+      "bbox_xyxy": [
+        134.11204528808594,
+        181.64950561523438,
+        167.59117126464844,
+        283.6578063964844
+      ],
+      "class_name": "bottle",
+      "confidence": 0.9568901588419909,
+      "confidence_ingredients": {
+        "axial_depth_dispersion": 0.9628897905349731,
+        "depth_coverage": 1.0,
+        "detect_segment_agreement": 1.0,
+        "has_support_plane": 0.55,
+        "not_touches_border": 1.0,
+        "percentile_stability": 0.8521253464651045,
+        "point_count": 1.0,
+        "world_z_dispersion": 0.7413564727857391
+      },
+      "coverage": 0.9576208178438662,
+      "detect_segment_agreement": true,
+      "frame_id": "frame_000000",
+      "logical_object_id": "frame_000000:logical:000",
+      "lower_tail_pixel_count": 129,
+      "mask_vs_bbox": "mask",
+      "object_pixel_count": 2690,
+      "region_method": "mask_eroded_1px_robust",
+      "region_source": "mask",
+      "target": "lower_bottle",
+      "top_percentile_spatial_median_xy": [
+        151.0,
+        186.0
+      ],
+      "top_points_on_region_boundary_fraction": 0.2248062015503876,
+      "touches_border": false,
+      "upper_tail_pixel_count": 129,
+      "valid_dense_depth_count": 2576,
+      "world_z_iqr_mm": 90.52523452499133,
+      "world_z_mad_mm": 45.30168756908262,
+      "world_z_min_mm": 685.6308201309888,
+      "world_z_mm": {
+        "max": 878.0160651546253,
+        "p01": 688.2505112567344,
+        "p02": 690.3789087457392,
+        "p05": 695.3837100537015,
+        "p10": 701.7967471158807,
+        "p50": 769.6920197875363,
+        "p90": 847.0043033585982,
+        "p95": 862.7724643266533,
+        "p97": 869.1834564403848,
+        "p98": 872.3180543214032,
+        "p99": 875.4399169610657
+      }
+    },
+    "logical_object_id": "frame_000000:logical:000",
+    "sample_frame": "frame_000000",
+    "target": "lower_bottle"
+  },
+  {
+    "baseline": {
+      "object_height_mm": 115.47254871031919,
+      "support_mm": 1107.1175833120765,
+      "support_source": "point_p5_fallback",
+      "top_mm": 1222.5901320223957
+    },
+    "candidate": {
+      "anchor_count": 23,
+      "available": true,
+      "candidate_height_max_mm": 143.0,
+      "candidate_height_median_mm": 143.0,
+      "candidate_height_min_mm": 127.0,
+      "candidate_height_p25_mm": 143.0,
+      "candidate_height_p75_mm": 143.0,
+      "contact_depth": {
+        "object_lower_interior": {
+          "band_pixel_count": 391,
+          "count": 391,
+          "kept_count": 391,
+          "limit_mm": 46.69851508140564,
+          "mad_mm": 8.999347686767578,
+          "median_mm": 1882.7629089355469,
+          "y_range": [
+            63.0,
+            79.8
+          ]
+        },
+        "reason": null,
+        "selected_depth_mm": 1775.3827571868896,
+        "selected_source": "support_context_below_contour",
+        "support_context": {
+          "band_pixel_count": 275,
+          "count": 275,
+          "kept_count": 275,
+          "limit_mm": 70.87111448049545,
+          "mad_mm": 13.657689094543457,
+          "median_mm": 1775.3827571868896
+        }
+      },
+      "height_method": "gravity_only_upright_silhouette",
+      "height_statistic": "median",
+      "object_height_mm": 143.0,
+      "reason": null,
+      "source": "instance_mask",
+      "sphere_fit_fallback_audit": null,
+      "support_anchor_mad_mm": 0.026206287052900734,
+      "support_mm": 1090.4419976363158,
+      "support_source": "candidate_contact_band",
+      "top_mm": 1233.4419976363158,
+      "valid_anchor_count": 23
+    },
+    "inventory": {
+      "axial_depth_mm": {
+        "median": 1824.7534036636353,
+        "p05": 1796.2496638298035,
+        "p95": 1903.1359314918518
+      },
+      "bbox_xyxy": [
+        263.46240234375,
+        2.0338134765625,
+        297.1544189453125,
+        83.71098327636719
+      ],
+      "class_name": "bottle",
+      "confidence": 0.9357442503162943,
+      "confidence_ingredients": {
+        "axial_depth_dispersion": 0.9328666627407074,
+        "depth_coverage": 1.0,
+        "detect_segment_agreement": 0.45,
+        "has_support_plane": 0.55,
+        "not_touches_border": 1.0,
+        "percentile_stability": 0.8950291892619998,
+        "point_count": 0.9677347784456014,
+        "world_z_dispersion": 0.8291967936305835
+      },
+      "coverage": 1.0,
+      "detect_segment_agreement": false,
+      "frame_id": "frame_000000",
+      "logical_object_id": "frame_000000:logical:001",
+      "lower_tail_pixel_count": 98,
+      "mask_vs_bbox": "mask",
+      "object_pixel_count": 1942,
+      "region_method": "mask_eroded_1px_robust",
+      "region_source": "mask",
+      "target": "upper_bottle",
+      "top_percentile_spatial_median_xy": [
+        280.0,
+        18.0
+      ],
+      "top_points_on_region_boundary_fraction": 0.29591836734693877,
+      "touches_border": false,
+      "upper_tail_pixel_count": 98,
+      "valid_dense_depth_count": 1942,
+      "world_z_iqr_mm": 59.78112222929576,
+      "world_z_mad_mm": 29.679143704962826,
+      "world_z_min_mm": 1099.4378156162384,
+      "world_z_mm": {
+        "max": 1236.1791910775223,
+        "p01": 1100.659207072851,
+        "p02": 1102.6558232637979,
+        "p05": 1107.1175833120765,
+        "p10": 1113.2102028980532,
+        "p50": 1160.005971717484,
+        "p90": 1212.9371299976724,
+        "p95": 1222.5901320223957,
+        "p97": 1227.6566300969555,
+        "p98": 1230.0632161054893,
+        "p99": 1232.8258039574287
+      }
+    },
+    "logical_object_id": "frame_000000:logical:001",
+    "sample_frame": "frame_000000",
+    "target": "upper_bottle"
+  },
+  {
+    "baseline": {
+      "object_height_mm": 125.56756784228799,
+      "support_mm": 754.3629495667045,
+      "support_source": "point_p5_fallback",
+      "top_mm": 879.9305174089925
+    },
+    "candidate": {
+      "anchor_count": 24,
+      "available": true,
+      "candidate_height_max_mm": 199.0,
+      "candidate_height_median_mm": 184.5,
+      "candidate_height_min_mm": 146.0,
+      "candidate_height_p25_mm": 170.75,
+      "candidate_height_p75_mm": 196.0,
+      "contact_depth": {
+        "object_lower_interior": {
+          "band_pixel_count": 1872,
+          "count": 1872,
+          "kept_count": 1872,
+          "limit_mm": 335.3416953384876,
+          "mad_mm": 64.62424993515015,
+          "median_mm": 1617.1472668647766,
+          "y_range": [
+            245.89999999999998,
+            271.58
+          ]
+        },
+        "reason": null,
+        "selected_depth_mm": 1616.8259978294373,
+        "selected_source": "support_context_below_contour",
+        "support_context": {
+          "band_pixel_count": 933,
+          "count": 933,
+          "kept_count": 872,
+          "limit_mm": 122.0240884065628,
+          "mad_mm": 23.51546287536621,
+          "median_mm": 1619.032621383667
+        }
+      },
+      "height_method": "gravity_only_sphere_envelope",
+      "height_statistic": "upper_quintile_median",
+      "object_height_mm": 197.5,
+      "reason": null,
+      "source": "detector_ellipse",
+      "sphere_fit_fallback_audit": {
+        "available": false,
+        "reason": "sphere_fit_quality_gate",
+        "sphere_fit": {
+          "gate_pass": false,
+          "jacobian_condition": 3.1349190135508684,
+          "point_count": 6038,
+          "radius_mm": 71.56458964671279,
+          "relative_residual": 0.24892670382788157,
+          "residual_rms_mm": 17.814337411551154,
+          "solver_success": true
+        }
+      },
+      "support_anchor_mad_mm": 6.469335424449355,
+      "support_mm": 727.1730270423263,
+      "support_source": "candidate_contact_band",
+      "top_mm": 924.6730270423263,
+      "valid_anchor_count": 24
+    },
+    "inventory": {
+      "axial_depth_mm": {
+        "median": 1533.2415103912354,
+        "p05": 1476.1500120162964,
+        "p95": 1591.1866068840027
+      },
+      "bbox_xyxy": [
+        246.34002685546875,
+        169.47183227539062,
+        360.70367431640625,
+        278.64508056640625
+      ],
+      "class_name": "sports ball",
+      "confidence": 0.3836575051642774,
+      "confidence_ingredients": {
+        "axial_depth_dispersion": 0.9455509781837463,
+        "depth_coverage": 0.5364075537988582,
+        "detect_segment_agreement": 0.45,
+        "has_support_plane": 0.55,
+        "not_touches_border": 1.0,
+        "percentile_stability": 0.84127995343684,
+        "point_count": 1.0,
+        "world_z_dispersion": 0.8439258856698644
+      },
+      "coverage": 0.48276679841897235,
+      "detect_segment_agreement": false,
+      "frame_id": "frame_000000",
+      "logical_object_id": "frame_000000:logical:002",
+      "lower_tail_pixel_count": 306,
+      "mask_vs_bbox": "bbox",
+      "object_pixel_count": 12650,
+      "region_method": "bbox_main_depth_cluster",
+      "region_source": "bbox",
+      "target": "lower_volleyball",
+      "top_percentile_spatial_median_xy": [
+        290.0,
+        189.0
+      ],
+      "top_points_on_region_boundary_fraction": 0.0,
+      "touches_border": false,
+      "upper_tail_pixel_count": 306,
+      "valid_dense_depth_count": 6107,
+      "world_z_iqr_mm": 54.625940015547485,
+      "world_z_mad_mm": 27.064411987752692,
+      "world_z_min_mm": 723.4839983275524,
+      "world_z_mm": {
+        "max": 893.4183075144485,
+        "p01": 734.779742650747,
+        "p02": 741.388665330547,
+        "p05": 754.3629495667045,
+        "p10": 767.9127278864863,
+        "p50": 825.8449163633923,
+        "p90": 869.6722887443003,
+        "p95": 879.9305174089925,
+        "p97": 884.1463809760454,
+        "p98": 886.7999603211202,
+        "p99": 889.2443449608296
+      }
+    },
+    "logical_object_id": "frame_000000:logical:002",
+    "sample_frame": "frame_000000",
+    "target": "lower_volleyball"
+  },
+  {
+    "baseline": {
+      "object_height_mm": 165.8391168152408,
+      "support_mm": 697.6784263290375,
+      "support_source": "point_p5_fallback",
+      "top_mm": 863.5175431442783
+    },
+    "candidate": {
+      "anchor_count": 22,
+      "available": true,
+      "candidate_height_max_mm": 189.0,
+      "candidate_height_median_mm": 189.0,
+      "candidate_height_min_mm": 165.0,
+      "candidate_height_p25_mm": 189.0,
+      "candidate_height_p75_mm": 189.0,
+      "contact_depth": {
+        "object_lower_interior": {
+          "band_pixel_count": 529,
+          "count": 529,
+          "kept_count": 522,
+          "limit_mm": 63.710947680473325,
+          "mad_mm": 12.277841567993164,
+          "median_mm": 1905.9984683990479,
+          "y_range": [
+            248.5,
+            271.3
+          ]
+        },
+        "reason": null,
+        "selected_depth_mm": 1732.028603553772,
+        "selected_source": "support_context_below_contour",
+        "support_context": {
+          "band_pixel_count": 279,
+          "count": 279,
+          "kept_count": 279,
+          "limit_mm": 169.5193460226059,
+          "mad_mm": 32.668352127075195,
+          "median_mm": 1732.028603553772
+        }
+      },
+      "height_method": "gravity_only_upright_silhouette",
+      "height_statistic": "median",
+      "object_height_mm": 189.0,
+      "reason": null,
+      "source": "instance_mask",
+      "sphere_fit_fallback_audit": null,
+      "support_anchor_mad_mm": 0.10161985896195347,
+      "support_mm": 705.0175502040722,
+      "support_source": "candidate_contact_band",
+      "top_mm": 894.0175502040722,
+      "valid_anchor_count": 22
+    },
+    "inventory": {
+      "axial_depth_mm": {
+        "median": 1929.086685180664,
+        "p05": 1876.7661929130554,
+        "p95": 1978.9003729820251
+      },
+      "bbox_xyxy": [
+        134.52401733398438,
+        181.9197998046875,
+        167.61907958984375,
+        282.6689453125
+      ],
+      "class_name": "bottle",
+      "confidence": 0.9581381454066249,
+      "confidence_ingredients": {
+        "axial_depth_dispersion": 0.955610454082489,
+        "depth_coverage": 1.0,
+        "detect_segment_agreement": 1.0,
+        "has_support_plane": 0.55,
+        "not_touches_border": 1.0,
+        "percentile_stability": 0.8707545797248963,
+        "point_count": 1.0,
+        "world_z_dispersion": 0.742345638133835
+      },
+      "coverage": 0.9893414541301865,
+      "detect_segment_agreement": true,
+      "frame_id": "frame_000001",
+      "logical_object_id": "frame_000001:logical:000",
+      "lower_tail_pixel_count": 130,
+      "mask_vs_bbox": "mask",
+      "object_pixel_count": 2627,
+      "region_method": "mask_eroded_1px_robust",
+      "region_source": "mask",
+      "target": "lower_bottle",
+      "top_percentile_spatial_median_xy": [
+        151.0,
+        186.0
+      ],
+      "top_points_on_region_boundary_fraction": 0.23076923076923078,
+      "touches_border": false,
+      "upper_tail_pixel_count": 130,
+      "valid_dense_depth_count": 2599,
+      "world_z_iqr_mm": 90.17902665315773,
+      "world_z_mad_mm": 45.08657303727932,
+      "world_z_min_mm": 688.8392117604114,
+      "world_z_mm": {
+        "max": 877.8863138117644,
+        "p01": 691.3260523294142,
+        "p02": 693.4273472397283,
+        "p05": 697.6784263290375,
+        "p10": 701.8269001832842,
+        "p50": 773.0565006100785,
+        "p90": 848.2792039572595,
+        "p95": 863.5175431442783,
+        "p97": 869.536718497677,
+        "p98": 872.8081786614689,
+        "p99": 875.664533236562
+      }
+    },
+    "logical_object_id": "frame_000001:logical:000",
+    "sample_frame": "frame_000001",
+    "target": "lower_bottle"
+  },
+  {
+    "baseline": {
+      "object_height_mm": 119.34238749878227,
+      "support_mm": 1106.6165186625735,
+      "support_source": "point_p5_fallback",
+      "top_mm": 1225.9589061613558
+    },
+    "candidate": {
+      "anchor_count": 23,
+      "available": true,
+      "candidate_height_max_mm": 146.0,
+      "candidate_height_median_mm": 146.0,
+      "candidate_height_min_mm": 127.0,
+      "candidate_height_p25_mm": 146.0,
+      "candidate_height_p75_mm": 146.0,
+      "contact_depth": {
+        "object_lower_interior": {
+          "band_pixel_count": 391,
+          "count": 391,
+          "kept_count": 391,
+          "limit_mm": 67.32598135471343,
+          "mad_mm": 12.97450065612793,
+          "median_mm": 1877.9830932617188,
+          "y_range": [
+            62.699999999999996,
+            79.74
+          ]
+        },
+        "reason": null,
+        "selected_depth_mm": 1784.732699394226,
+        "selected_source": "support_context_below_contour",
+        "support_context": {
+          "band_pixel_count": 275,
+          "count": 275,
+          "kept_count": 275,
+          "limit_mm": 78.52924536466598,
+          "mad_mm": 15.133500099182129,
+          "median_mm": 1784.732699394226
+        }
+      },
+      "height_method": "gravity_only_upright_silhouette",
+      "height_statistic": "median",
+      "object_height_mm": 146.0,
+      "reason": null,
+      "source": "instance_mask",
+      "sphere_fit_fallback_audit": null,
+      "support_anchor_mad_mm": 0.02635211344841082,
+      "support_mm": 1091.061369669182,
+      "support_source": "candidate_contact_band",
+      "top_mm": 1237.061369669182,
+      "valid_anchor_count": 23
+    },
+    "inventory": {
+      "axial_depth_mm": {
+        "median": 1825.6528973579407,
+        "p05": 1804.7998547554016,
+        "p95": 1906.3417315483093
+      },
+      "bbox_xyxy": [
+        264.2132568359375,
+        1.2834854125976562,
+        297.25189208984375,
+        83.38729095458984
+      ],
+      "class_name": "bottle",
+      "confidence": 0.9354676904440649,
+      "confidence_ingredients": {
+        "axial_depth_dispersion": 0.9413743019104004,
+        "depth_coverage": 1.0,
+        "detect_segment_agreement": 0.45,
+        "has_support_plane": 0.55,
+        "not_touches_border": 1.0,
+        "percentile_stability": 0.8902144158852086,
+        "point_count": 0.9666779903949047,
+        "world_z_dispersion": 0.8220356458350391
+      },
+      "coverage": 1.0,
+      "detect_segment_agreement": false,
+      "frame_id": "frame_000001",
+      "logical_object_id": "frame_000001:logical:001",
+      "lower_tail_pixel_count": 97,
+      "mask_vs_bbox": "mask",
+      "object_pixel_count": 1926,
+      "region_method": "mask_eroded_1px_robust",
+      "region_source": "mask",
+      "target": "upper_bottle",
+      "top_percentile_spatial_median_xy": [
+        280.0,
+        16.0
+      ],
+      "top_points_on_region_boundary_fraction": 0.28865979381443296,
+      "touches_border": false,
+      "upper_tail_pixel_count": 97,
+      "valid_dense_depth_count": 1926,
+      "world_z_iqr_mm": 62.28752395773631,
+      "world_z_mad_mm": 30.951402907188708,
+      "world_z_min_mm": 1098.5216548730152,
+      "world_z_mm": {
+        "max": 1239.7167443236392,
+        "p01": 1100.680664115268,
+        "p02": 1101.3129587520768,
+        "p05": 1106.6165186625735,
+        "p10": 1113.1533955294672,
+        "p50": 1161.6476617726971,
+        "p90": 1216.0279454110307,
+        "p95": 1225.9589061613558,
+        "p97": 1230.5363904313836,
+        "p98": 1232.897449442484,
+        "p99": 1235.6699123586895
+      }
+    },
+    "logical_object_id": "frame_000001:logical:001",
+    "sample_frame": "frame_000001",
+    "target": "upper_bottle"
+  },
+  {
+    "baseline": {
+      "object_height_mm": 144.04452475534936,
+      "support_mm": 740.0417539399728,
+      "support_source": "point_p5_fallback",
+      "top_mm": 884.0862786953221
+    },
+    "candidate": {
+      "anchor_count": 24,
+      "available": true,
+      "candidate_height_max_mm": 198.0,
+      "candidate_height_median_mm": 184.5,
+      "candidate_height_min_mm": 144.0,
+      "candidate_height_p25_mm": 168.25,
+      "candidate_height_p75_mm": 192.5,
+      "contact_depth": {
+        "object_lower_interior": {
+          "band_pixel_count": 1910,
+          "count": 1910,
+          "kept_count": 1910,
+          "limit_mm": 308.8766053855419,
+          "mad_mm": 59.52411890029907,
+          "median_mm": 1579.3371200561523,
+          "y_range": [
+            245.89999999999998,
+            271.58
+          ]
+        },
+        "reason": null,
+        "selected_depth_mm": 1601.9627451896667,
+        "selected_source": "support_context_below_contour",
+        "support_context": {
+          "band_pixel_count": 955,
+          "count": 955,
+          "kept_count": 878,
+          "limit_mm": 135.4307661652565,
+          "mad_mm": 26.099085807800293,
+          "median_mm": 1607.16712474823
+        }
+      },
+      "height_method": "gravity_only_sphere_envelope",
+      "height_statistic": "upper_quintile_median",
+      "object_height_mm": 198.0,
+      "reason": null,
+      "source": "detector_ellipse",
+      "sphere_fit_fallback_audit": {
+        "available": false,
+        "reason": "sphere_fit_quality_gate",
+        "sphere_fit": {
+          "gate_pass": false,
+          "jacobian_condition": 3.761567919324916,
+          "point_count": 6928,
+          "radius_mm": 82.74681700566192,
+          "relative_residual": 0.20444787854279034,
+          "residual_rms_mm": 16.91741119297607,
+          "solver_success": true
+        }
+      },
+      "support_anchor_mad_mm": 5.5979274184279575,
+      "support_mm": 727.5999098812358,
+      "support_source": "candidate_contact_band",
+      "top_mm": 925.5999098812358,
+      "valid_anchor_count": 24
+    },
+    "inventory": {
+      "axial_depth_mm": {
+        "median": 1531.227946281433,
+        "p05": 1481.300401687622,
+        "p95": 1592.9963886737823
+      },
+      "bbox_xyxy": [
+        245.5006866455078,
+        169.15206909179688,
+        360.92950439453125,
+        279.1451416015625
+      ],
+      "class_name": "sports ball",
+      "confidence": 0.3862700437885024,
+      "confidence_ingredients": {
+        "axial_depth_dispersion": 0.949241578578949,
+        "depth_coverage": 0.6050878464671569,
+        "detect_segment_agreement": 0.45,
+        "has_support_plane": 0.55,
+        "not_touches_border": 1.0,
+        "percentile_stability": 0.7916583876186898,
+        "point_count": 1.0,
+        "world_z_dispersion": 0.8280094040844759
+      },
+      "coverage": 0.5445790618204411,
+      "detect_segment_agreement": false,
+      "frame_id": "frame_000001",
+      "logical_object_id": "frame_000001:logical:002",
+      "lower_tail_pixel_count": 351,
+      "mask_vs_bbox": "bbox",
+      "object_pixel_count": 12876,
+      "region_method": "bbox_main_depth_cluster",
+      "region_source": "bbox",
+      "target": "lower_volleyball",
+      "top_percentile_spatial_median_xy": [
+        300.0,
+        186.0
+      ],
+      "top_points_on_region_boundary_fraction": 0.0,
+      "touches_border": false,
+      "upper_tail_pixel_count": 351,
+      "valid_dense_depth_count": 7012,
+      "world_z_iqr_mm": 60.19670857043343,
+      "world_z_mad_mm": 29.89973963274258,
+      "world_z_min_mm": 718.1133734154919,
+      "world_z_mm": {
+        "max": 899.905801759307,
+        "p01": 722.7294813559814,
+        "p02": 727.0534784555803,
+        "p05": 740.0417539399728,
+        "p10": 759.9101689411634,
+        "p50": 823.9032939800429,
+        "p90": 872.7034518393162,
+        "p95": 884.0862786953221,
+        "p97": 888.3908374605206,
+        "p98": 890.2172844812818,
+        "p99": 892.547020140355
+      }
+    },
+    "logical_object_id": "frame_000001:logical:002",
+    "sample_frame": "frame_000001",
+    "target": "lower_volleyball"
+  },
+  {
+    "baseline": {
+      "object_height_mm": 170.1190440157401,
+      "support_mm": 691.1975286842024,
+      "support_source": "point_p5_fallback",
+      "top_mm": 861.3165726999425
+    },
+    "candidate": {
+      "anchor_count": 22,
+      "available": true,
+      "candidate_height_max_mm": 191.0,
+      "candidate_height_median_mm": 191.0,
+      "candidate_height_min_mm": 169.0,
+      "candidate_height_p25_mm": 191.0,
+      "candidate_height_p75_mm": 191.0,
+      "contact_depth": {
+        "object_lower_interior": {
+          "band_pixel_count": 552,
+          "count": 552,
+          "kept_count": 552,
+          "limit_mm": 120.39410659074782,
+          "mad_mm": 23.201346397399902,
+          "median_mm": 1962.8285765647888,
+          "y_range": [
+            249.2,
+            272.24
+          ]
+        },
+        "reason": null,
+        "selected_depth_mm": 1730.5442690849304,
+        "selected_source": "support_context_below_contour",
+        "support_context": {
+          "band_pixel_count": 288,
+          "count": 288,
+          "kept_count": 288,
+          "limit_mm": 287.22475585341454,
+          "mad_mm": 55.35155534744263,
+          "median_mm": 1730.5442690849304
+        }
+      },
+      "height_method": "gravity_only_upright_silhouette",
+      "height_statistic": "median",
+      "object_height_mm": 191.0,
+      "reason": null,
+      "source": "instance_mask",
+      "sphere_fit_fallback_audit": null,
+      "support_anchor_mad_mm": 0.10187690947304873,
+      "support_mm": 703.274324034223,
+      "support_source": "candidate_contact_band",
+      "top_mm": 894.274324034223,
+      "valid_anchor_count": 22
+    },
+    "inventory": {
+      "axial_depth_mm": {
+        "median": 1996.6567754745483,
+        "p05": 1930.113935470581,
+        "p95": 2058.507215976715
+      },
+      "bbox_xyxy": [
+        133.976318359375,
+        181.46658325195312,
+        167.61541748046875,
+        284.165283203125
+      ],
+      "class_name": "bottle",
+      "confidence": 0.9558294755405417,
+      "confidence_ingredients": {
+        "axial_depth_dispersion": 0.9566246867179871,
+        "depth_coverage": 1.0,
+        "detect_segment_agreement": 1.0,
+        "has_support_plane": 0.55,
+        "not_touches_border": 1.0,
+        "percentile_stability": 0.8468389534656892,
+        "point_count": 1.0,
+        "world_z_dispersion": 0.737408113154679
+      },
+      "coverage": 0.9564262175027463,
+      "detect_segment_agreement": true,
+      "frame_id": "frame_000002",
+      "logical_object_id": "frame_000002:logical:000",
+      "lower_tail_pixel_count": 131,
+      "mask_vs_bbox": "mask",
+      "object_pixel_count": 2731,
+      "region_method": "mask_eroded_1px_robust",
+      "region_source": "mask",
+      "target": "lower_bottle",
+      "top_percentile_spatial_median_xy": [
+        151.0,
+        186.0
+      ],
+      "top_points_on_region_boundary_fraction": 0.22137404580152673,
+      "touches_border": false,
+      "upper_tail_pixel_count": 131,
+      "valid_dense_depth_count": 2612,
+      "world_z_iqr_mm": 91.90716039586232,
+      "world_z_mad_mm": 46.05053680791184,
+      "world_z_min_mm": 682.1199727519231,
+      "world_z_mm": {
+        "max": 876.9023402405608,
+        "p01": 684.4452621862536,
+        "p02": 686.004311955501,
+        "p05": 691.1975286842024,
+        "p10": 697.5239697840274,
+        "p50": 765.0181891097513,
+        "p90": 844.6688568196208,
+        "p95": 861.3165726999425,
+        "p97": 868.037323695908,
+        "p98": 870.5103199509888,
+        "p99": 874.3837731554562
+      }
+    },
+    "logical_object_id": "frame_000002:logical:000",
+    "sample_frame": "frame_000002",
+    "target": "lower_bottle"
+  },
+  {
+    "baseline": {
+      "object_height_mm": 121.22066021056344,
+      "support_mm": 1107.1785424791733,
+      "support_source": "point_p5_fallback",
+      "top_mm": 1228.3992026897367
+    },
+    "candidate": {
+      "anchor_count": 23,
+      "available": true,
+      "candidate_height_max_mm": 150.0,
+      "candidate_height_median_mm": 150.0,
+      "candidate_height_min_mm": 129.0,
+      "candidate_height_p25_mm": 150.0,
+      "candidate_height_p75_mm": 150.0,
+      "contact_depth": {
+        "object_lower_interior": {
+          "band_pixel_count": 425,
+          "count": 425,
+          "kept_count": 425,
+          "limit_mm": 79.71384315490722,
+          "mad_mm": 15.361785888671875,
+          "median_mm": 1898.3500003814697,
+          "y_range": [
+            63.099999999999994,
+            80.61999999999999
+          ]
+        },
+        "reason": null,
+        "selected_depth_mm": 1782.9816341400146,
+        "selected_source": "support_context_below_contour",
+        "support_context": {
+          "band_pixel_count": 297,
+          "count": 297,
+          "kept_count": 297,
+          "limit_mm": 68.01570800542831,
+          "mad_mm": 13.10741901397705,
+          "median_mm": 1782.9816341400146
+        }
+      },
+      "height_method": "gravity_only_upright_silhouette",
+      "height_statistic": "median",
+      "object_height_mm": 150.0,
+      "reason": null,
+      "source": "instance_mask",
+      "sphere_fit_fallback_audit": null,
+      "support_anchor_mad_mm": 0.02656014897706882,
+      "support_mm": 1088.8877896247968,
+      "support_source": "candidate_contact_band",
+      "top_mm": 1238.8877896247968,
+      "valid_anchor_count": 23
+    },
+    "inventory": {
+      "axial_depth_mm": {
+        "median": 1827.9497623443604,
+        "p05": 1809.031629562378,
+        "p95": 1916.6414737701416
+      },
+      "bbox_xyxy": [
+        263.9601135253906,
+        0.7524032592773438,
+        298.1454772949219,
+        84.09573364257812
+      ],
+      "class_name": "bottle",
+      "confidence": 0.917586901944422,
+      "confidence_ingredients": {
+        "axial_depth_dispersion": 0.9403592348098755,
+        "depth_coverage": 1.0,
+        "detect_segment_agreement": 1.0,
+        "has_support_plane": 0.55,
+        "not_touches_border": 0.0,
+        "percentile_stability": 0.8578190414997259,
+        "point_count": 0.9681943895429393,
+        "world_z_dispersion": 0.8274717928622028
+      },
+      "coverage": 0.9447406689287445,
+      "detect_segment_agreement": true,
+      "frame_id": "frame_000002",
+      "logical_object_id": "frame_000002:logical:001",
+      "lower_tail_pixel_count": 98,
+      "mask_vs_bbox": "mask",
+      "object_pixel_count": 2063,
+      "region_method": "mask_eroded_1px_robust",
+      "region_source": "mask",
+      "target": "upper_bottle",
+      "top_percentile_spatial_median_xy": [
+        279.5,
+        15.5
+      ],
+      "top_points_on_region_boundary_fraction": 0.2857142857142857,
+      "touches_border": true,
+      "upper_tail_pixel_count": 98,
+      "valid_dense_depth_count": 1949,
+      "world_z_iqr_mm": 60.384872498229015,
+      "world_z_mad_mm": 29.98070789091412,
+      "world_z_min_mm": 1096.0085410565264,
+      "world_z_mm": {
+        "max": 1243.4647328746582,
+        "p01": 1097.8696958068901,
+        "p02": 1099.9654468485053,
+        "p05": 1107.1785424791733,
+        "p10": 1117.802589193935,
+        "p50": 1164.8150592835825,
+        "p90": 1217.6961056294574,
+        "p95": 1228.3992026897367,
+        "p97": 1233.3817509949497,
+        "p98": 1235.9374900667121,
+        "p99": 1238.5971037361242
+      }
+    },
+    "logical_object_id": "frame_000002:logical:001",
+    "sample_frame": "frame_000002",
+    "target": "upper_bottle"
+  },
+  {
+    "baseline": {
+      "object_height_mm": 210.23678285769142,
+      "support_mm": 696.84282582688,
+      "support_source": "point_p5_fallback",
+      "top_mm": 907.0796086845714
+    },
+    "candidate": {
+      "anchor_count": 24,
+      "available": true,
+      "candidate_height_max_mm": 215.0,
+      "candidate_height_median_mm": 198.0,
+      "candidate_height_min_mm": 156.0,
+      "candidate_height_p25_mm": 183.5,
+      "candidate_height_p75_mm": 211.0,
+      "contact_depth": {
+        "object_lower_interior": {
+          "band_pixel_count": 1800,
+          "count": 1800,
+          "kept_count": 1800,
+          "limit_mm": 263.7013655304909,
+          "mad_mm": 50.81832408905029,
+          "median_mm": 1807.500183582306,
+          "y_range": [
+            245.5,
+            270.7
+          ]
+        },
+        "reason": null,
+        "selected_depth_mm": 1772.6629972457886,
+        "selected_source": "support_context_below_contour",
+        "support_context": {
+          "band_pixel_count": 931,
+          "count": 931,
+          "kept_count": 927,
+          "limit_mm": 240.5048994541168,
+          "mad_mm": 46.34809494018555,
+          "median_mm": 1772.8369235992432
+        }
+      },
+      "height_method": "gravity_only_sphere_envelope",
+      "height_statistic": "upper_quintile_median",
+      "object_height_mm": 213.0,
+      "reason": null,
+      "source": "detector_ellipse",
+      "sphere_fit_fallback_audit": {
+        "available": false,
+        "reason": "sphere_fit_quality_gate",
+        "sphere_fit": {
+          "gate_pass": false,
+          "jacobian_condition": 5.091186217418198,
+          "point_count": 3906,
+          "radius_mm": 109.60650333429322,
+          "relative_residual": 0.15360981257773457,
+          "residual_rms_mm": 16.83663443448162,
+          "solver_success": true
+        }
+      },
+      "support_anchor_mad_mm": 6.911079622083946,
+      "support_mm": 705.4214730029294,
+      "support_source": "candidate_contact_band",
+      "top_mm": 918.4214730029294,
+      "valid_anchor_count": 24
+    },
+    "inventory": {
+      "axial_depth_mm": {
+        "median": 1818.326711654663,
+        "p05": 1757.3482394218445,
+        "p95": 1885.1237893104553
+      },
+      "bbox_xyxy": [
+        246.21246337890625,
+        169.27633666992188,
+        360.88531494140625,
+        278.2533874511719
+      ],
+      "class_name": "sports ball",
+      "confidence": 0.3697446790621223,
+      "confidence_ingredients": {
+        "axial_depth_dispersion": 0.9341939687728882,
+        "depth_coverage": 0.461133069828722,
+        "detect_segment_agreement": 0.45,
+        "has_support_plane": 0.55,
+        "not_touches_border": 1.0,
+        "percentile_stability": 0.9120962618283617,
+        "point_count": 1.0,
+        "world_z_dispersion": 0.5935282188038354
+      },
+      "coverage": 0.4150197628458498,
+      "detect_segment_agreement": false,
+      "frame_id": "frame_000002",
+      "logical_object_id": "frame_000002:logical:002",
+      "lower_tail_pixel_count": 263,
+      "mask_vs_bbox": "bbox",
+      "object_pixel_count": 12650,
+      "region_method": "bbox_main_depth_cluster",
+      "region_source": "bbox",
+      "target": "lower_volleyball",
+      "top_percentile_spatial_median_xy": [
+        295.0,
+        170.0
+      ],
+      "top_points_on_region_boundary_fraction": 0.4296577946768061,
+      "touches_border": false,
+      "upper_tail_pixel_count": 263,
+      "valid_dense_depth_count": 5250,
+      "world_z_iqr_mm": 142.2651234186576,
+      "world_z_mad_mm": 69.0975062859514,
+      "world_z_min_mm": 672.128639962054,
+      "world_z_mm": {
+        "max": 912.0051839816383,
+        "p01": 685.545164619346,
+        "p02": 690.5926616239435,
+        "p05": 696.84282582688,
+        "p10": 705.5723156392907,
+        "p50": 790.6597552040685,
+        "p90": 902.6235377712363,
+        "p95": 907.0796086845714,
+        "p97": 909.1602400533206,
+        "p98": 910.3786527310208,
+        "p99": 911.2652949250074
+      }
+    },
+    "logical_object_id": "frame_000002:logical:002",
+    "sample_frame": "frame_000002",
+    "target": "lower_volleyball"
+  },
+  {
+    "baseline": {
+      "object_height_mm": 145.2788086164088,
+      "support_mm": 724.721267139273,
+      "support_source": "point_p5_fallback",
+      "top_mm": 870.0000757556818
+    },
+    "candidate": {
+      "anchor_count": 22,
+      "available": true,
+      "candidate_height_max_mm": 178.0,
+      "candidate_height_median_mm": 178.0,
+      "candidate_height_min_mm": 152.0,
+      "candidate_height_p25_mm": 178.0,
+      "candidate_height_p75_mm": 178.0,
+      "contact_depth": {
+        "object_lower_interior": {
+          "band_pixel_count": 529,
+          "count": 529,
+          "kept_count": 529,
+          "limit_mm": 117.76262930631637,
+          "mad_mm": 22.69423007965088,
+          "median_mm": 1707.2941064834595,
+          "y_range": [
+            249.2,
+            272.24
+          ]
+        },
+        "reason": null,
+        "selected_depth_mm": 1615.7093048095703,
+        "selected_source": "support_context_below_contour",
+        "support_context": {
+          "band_pixel_count": 279,
+          "count": 279,
+          "kept_count": 279,
+          "limit_mm": 93.21454643011093,
+          "mad_mm": 17.963528633117676,
+          "median_mm": 1615.7093048095703
+        }
+      },
+      "height_method": "gravity_only_upright_silhouette",
+      "height_statistic": "median",
+      "object_height_mm": 178.0,
+      "reason": null,
+      "source": "instance_mask",
+      "sphere_fit_fallback_audit": null,
+      "support_anchor_mad_mm": 0.09511659049780974,
+      "support_mm": 721.1063459886336,
+      "support_source": "candidate_contact_band",
+      "top_mm": 899.1063459886336,
+      "valid_anchor_count": 22
+    },
+    "inventory": {
+      "axial_depth_mm": {
+        "median": 1791.8909788131714,
+        "p05": 1660.075294971466,
+        "p95": 1855.2428245544434
+      },
+      "bbox_xyxy": [
+        134.97947692871094,
+        181.74871826171875,
+        167.5221710205078,
+        283.140380859375
+      ],
+      "class_name": "bottle",
+      "confidence": 0.9577698611558654,
+      "confidence_ingredients": {
+        "axial_depth_dispersion": 0.9252292513847351,
+        "depth_coverage": 1.0,
+        "detect_segment_agreement": 1.0,
+        "has_support_plane": 0.55,
+        "not_touches_border": 1.0,
+        "percentile_stability": 0.8739105804156452,
+        "point_count": 1.0,
+        "world_z_dispersion": 0.7717335017433236
+      },
+      "coverage": 0.9973494888299886,
+      "detect_segment_agreement": true,
+      "frame_id": "frame_000003",
+      "logical_object_id": "frame_000003:logical:000",
+      "lower_tail_pixel_count": 132,
+      "mask_vs_bbox": "mask",
+      "object_pixel_count": 2641,
+      "region_method": "mask_eroded_1px_robust",
+      "region_source": "mask",
+      "target": "lower_bottle",
+      "top_percentile_spatial_median_xy": [
+        151.0,
+        186.0
+      ],
+      "top_points_on_region_boundary_fraction": 0.2196969696969697,
+      "touches_border": false,
+      "upper_tail_pixel_count": 132,
+      "valid_dense_depth_count": 2634,
+      "world_z_iqr_mm": 79.89327438983673,
+      "world_z_mad_mm": 39.23806126300366,
+      "world_z_min_mm": 716.282636328136,
+      "world_z_mm": {
+        "max": 883.1132262475069,
+        "p01": 719.579848632446,
+        "p02": 721.3888610470348,
+        "p05": 724.721267139273,
+        "p10": 729.5459947264408,
+        "p50": 784.5224854327362,
+        "p90": 855.9113904051964,
+        "p95": 870.0000757556818,
+        "p97": 875.6934736290222,
+        "p98": 877.9678151188288,
+        "p99": 880.8779023849714
+      }
+    },
+    "logical_object_id": "frame_000003:logical:000",
+    "sample_frame": "frame_000003",
+    "target": "lower_bottle"
+  },
+  {
+    "baseline": {
+      "object_height_mm": 120.38358525100011,
+      "support_mm": 1109.0724147076148,
+      "support_source": "point_p5_fallback",
+      "top_mm": 1229.455999958615
+    },
+    "candidate": {
+      "anchor_count": 23,
+      "available": true,
+      "candidate_height_max_mm": 145.0,
+      "candidate_height_median_mm": 145.0,
+      "candidate_height_min_mm": 129.0,
+      "candidate_height_p25_mm": 145.0,
+      "candidate_height_p75_mm": 145.0,
+      "contact_depth": {
+        "object_lower_interior": {
+          "band_pixel_count": 391,
+          "count": 391,
+          "kept_count": 391,
+          "limit_mm": 39.949709916114806,
+          "mad_mm": 7.698774337768555,
+          "median_mm": 1906.9212675094604,
+          "y_range": [
+            62.699999999999996,
+            79.74
+          ]
+        },
+        "reason": null,
+        "selected_depth_mm": 1775.353193283081,
+        "selected_source": "support_context_below_contour",
+        "support_context": {
+          "band_pixel_count": 275,
+          "count": 275,
+          "kept_count": 275,
+          "limit_mm": 96.6013207912445,
+          "mad_mm": 18.616199493408203,
+          "median_mm": 1775.353193283081
+        }
+      },
+      "height_method": "gravity_only_upright_silhouette",
+      "height_statistic": "median",
+      "object_height_mm": 145.0,
+      "reason": null,
+      "source": "instance_mask",
+      "sphere_fit_fallback_audit": null,
+      "support_anchor_mad_mm": 0.026205850662563535,
+      "support_mm": 1090.440025324818,
+      "support_source": "candidate_contact_band",
+      "top_mm": 1235.440025324818,
+      "valid_anchor_count": 23
+    },
+    "inventory": {
+      "axial_depth_mm": {
+        "median": 1857.9692244529724,
+        "p05": 1829.6803891658783,
+        "p95": 1925.6574869155884
+      },
+      "bbox_xyxy": [
+        263.61663818359375,
+        1.0102462768554688,
+        297.21624755859375,
+        83.74839782714844
+      ],
+      "class_name": "bottle",
+      "confidence": 0.9356182341190593,
+      "confidence_ingredients": {
+        "axial_depth_dispersion": 0.9428611695766449,
+        "depth_coverage": 1.0,
+        "detect_segment_agreement": 0.45,
+        "has_support_plane": 0.55,
+        "not_touches_border": 1.0,
+        "percentile_stability": 0.8895533539256061,
+        "point_count": 0.9703391391022377,
+        "world_z_dispersion": 0.8188603668025819
+      },
+      "coverage": 1.0,
+      "detect_segment_agreement": false,
+      "frame_id": "frame_000003",
+      "logical_object_id": "frame_000003:logical:001",
+      "lower_tail_pixel_count": 100,
+      "mask_vs_bbox": "mask",
+      "object_pixel_count": 1982,
+      "region_method": "mask_eroded_1px_robust",
+      "region_source": "mask",
+      "target": "upper_bottle",
+      "top_percentile_spatial_median_xy": [
+        280.0,
+        16.5
+      ],
+      "top_points_on_region_boundary_fraction": 0.28,
+      "touches_border": false,
+      "upper_tail_pixel_count": 100,
+      "valid_dense_depth_count": 1982,
+      "world_z_iqr_mm": 63.398871619096326,
+      "world_z_mad_mm": 31.327516113720435,
+      "world_z_min_mm": 1101.2587295254423,
+      "world_z_mm": {
+        "max": 1242.5428616374093,
+        "p01": 1102.688364800844,
+        "p02": 1104.8086500744278,
+        "p05": 1109.0724147076148,
+        "p10": 1115.0842815287863,
+        "p50": 1164.6876990923092,
+        "p90": 1218.9008698686273,
+        "p95": 1229.455999958615,
+        "p97": 1234.1566045986597,
+        "p98": 1236.755154713159,
+        "p99": 1239.6486378093357
+      }
+    },
+    "logical_object_id": "frame_000003:logical:001",
+    "sample_frame": "frame_000003",
+    "target": "upper_bottle"
+  },
+  {
+    "baseline": {
+      "object_height_mm": 123.98010240937276,
+      "support_mm": 756.4324046279495,
+      "support_source": "point_p5_fallback",
+      "top_mm": 880.4125070373223
+    },
+    "candidate": {
+      "anchor_count": 24,
+      "available": true,
+      "candidate_height_max_mm": 195.0,
+      "candidate_height_median_mm": 182.5,
+      "candidate_height_min_mm": 142.0,
+      "candidate_height_p25_mm": 166.25,
+      "candidate_height_p75_mm": 190.5,
+      "contact_depth": {
+        "object_lower_interior": {
+          "band_pixel_count": 1910,
+          "count": 1910,
+          "kept_count": 1910,
+          "limit_mm": 287.31414195299146,
+          "mad_mm": 55.368781089782715,
+          "median_mm": 1543.7787175178528,
+          "y_range": [
+            245.89999999999998,
+            271.58
+          ]
+        },
+        "reason": null,
+        "selected_depth_mm": 1582.8559398651123,
+        "selected_source": "support_context_below_contour",
+        "support_context": {
+          "band_pixel_count": 955,
+          "count": 955,
+          "kept_count": 899,
+          "limit_mm": 101.02794313430786,
+          "mad_mm": 19.469261169433594,
+          "median_mm": 1585.0560665130615
+        }
+      },
+      "height_method": "gravity_only_sphere_envelope",
+      "height_statistic": "upper_quintile_median",
+      "object_height_mm": 195.0,
+      "reason": null,
+      "source": "detector_ellipse",
+      "sphere_fit_fallback_audit": {
+        "available": false,
+        "reason": "sphere_fit_quality_gate",
+        "sphere_fit": {
+          "gate_pass": false,
+          "jacobian_condition": 2.9865138827286346,
+          "point_count": 6148,
+          "radius_mm": 69.06119001633819,
+          "relative_residual": 0.25261842201602236,
+          "residual_rms_mm": 17.446128844476032,
+          "solver_success": true
+        }
+      },
+      "support_anchor_mad_mm": 5.531160254381177,
+      "support_mm": 730.5148996069487,
+      "support_source": "candidate_contact_band",
+      "top_mm": 925.5148996069487,
+      "valid_anchor_count": 24
+    },
+    "inventory": {
+      "axial_depth_mm": {
+        "median": 1487.6516461372375,
+        "p05": 1424.0102887153625,
+        "p95": 1542.1973824501038
+      },
+      "bbox_xyxy": [
+        245.9001007080078,
+        169.11602783203125,
+        360.95941162109375,
+        278.5924072265625
+      ],
+      "class_name": "sports ball",
+      "confidence": 0.3844735163761932,
+      "confidence_ingredients": {
+        "axial_depth_dispersion": 0.9403470754623413,
+        "depth_coverage": 0.5444096133751306,
+        "detect_segment_agreement": 0.45,
+        "has_support_plane": 0.55,
+        "not_touches_border": 1.0,
+        "percentile_stability": 0.8430223289729042,
+        "point_count": 1.0,
+        "world_z_dispersion": 0.8465308753847843
+      },
+      "coverage": 0.4899686520376176,
+      "detect_segment_agreement": false,
+      "frame_id": "frame_000003",
+      "logical_object_id": "frame_000003:logical:002",
+      "lower_tail_pixel_count": 313,
+      "mask_vs_bbox": "bbox",
+      "object_pixel_count": 12760,
+      "region_method": "bbox_main_depth_cluster",
+      "region_source": "bbox",
+      "target": "lower_volleyball",
+      "top_percentile_spatial_median_xy": [
+        290.0,
+        190.0
+      ],
+      "top_points_on_region_boundary_fraction": 0.0,
+      "touches_border": false,
+      "upper_tail_pixel_count": 313,
+      "valid_dense_depth_count": 6252,
+      "world_z_iqr_mm": 53.714193615325485,
+      "world_z_mad_mm": 26.442222943336787,
+      "world_z_min_mm": 729.707587770477,
+      "world_z_mm": {
+        "max": 894.2073771850993,
+        "p01": 739.3628649893011,
+        "p02": 744.7762194427504,
+        "p05": 756.4324046279495,
+        "p10": 770.2207066330425,
+        "p50": 829.0740026739086,
+        "p90": 870.6541583883509,
+        "p95": 880.4125070373223,
+        "p97": 884.9707518213626,
+        "p98": 887.2053978645722,
+        "p99": 889.5693558985288
+      }
+    },
+    "logical_object_id": "frame_000003:logical:002",
+    "sample_frame": "frame_000003",
+    "target": "lower_volleyball"
+  },
+  {
+    "baseline": {
+      "object_height_mm": 159.24661027838943,
+      "support_mm": 703.2527562755021,
+      "support_source": "point_p5_fallback",
+      "top_mm": 862.4993665538915
+    },
+    "candidate": {
+      "anchor_count": 21,
+      "available": true,
+      "candidate_height_max_mm": 188.0,
+      "candidate_height_median_mm": 188.0,
+      "candidate_height_min_mm": 184.0,
+      "candidate_height_p25_mm": 188.0,
+      "candidate_height_p75_mm": 188.0,
+      "contact_depth": {
+        "object_lower_interior": {
+          "band_pixel_count": 529,
+          "count": 529,
+          "kept_count": 529,
+          "limit_mm": 134.81960030794144,
+          "mad_mm": 25.98130702972412,
+          "median_mm": 1919.8801517486572,
+          "y_range": [
+            247.8,
+            270.36
+          ]
+        },
+        "reason": null,
+        "selected_depth_mm": 1740.8363223075867,
+        "selected_source": "support_context_below_contour",
+        "support_context": {
+          "band_pixel_count": 280,
+          "count": 280,
+          "kept_count": 280,
+          "limit_mm": 140.61206699609755,
+          "mad_mm": 27.097582817077637,
+          "median_mm": 1740.8363223075867
+        }
+      },
+      "height_method": "gravity_only_upright_silhouette",
+      "height_statistic": "median",
+      "object_height_mm": 188.0,
+      "reason": null,
+      "source": "instance_mask",
+      "sphere_fit_fallback_audit": null,
+      "support_anchor_mad_mm": 0.09296813651758384,
+      "support_mm": 705.6345556191061,
+      "support_source": "candidate_contact_band",
+      "top_mm": 893.6345556191061,
+      "valid_anchor_count": 21
+    },
+    "inventory": {
+      "axial_depth_mm": {
+        "median": 1972.1705913543701,
+        "p05": 1902.797418832779,
+        "p95": 2032.4521899223328
+      },
+      "bbox_xyxy": [
+        134.81173706054688,
+        181.61764526367188,
+        167.50027465820312,
+        281.4759826660156
+      ],
+      "class_name": "bottle",
+      "confidence": 0.9568075470308199,
+      "confidence_ingredients": {
+        "axial_depth_dispersion": 0.9620871841907501,
+        "depth_coverage": 1.0,
+        "detect_segment_agreement": 1.0,
+        "has_support_plane": 0.55,
+        "not_touches_border": 1.0,
+        "percentile_stability": 0.85162745064542,
+        "point_count": 0.9958450765425745,
+        "world_z_dispersion": 0.7481389809411826
+      },
+      "coverage": 0.9453125,
+      "detect_segment_agreement": true,
+      "frame_id": "frame_000004",
+      "logical_object_id": "frame_000004:logical:000",
+      "lower_tail_pixel_count": 121,
+      "mask_vs_bbox": "mask",
+      "object_pixel_count": 2560,
+      "region_method": "mask_eroded_1px_robust",
+      "region_source": "mask",
+      "target": "lower_bottle",
+      "top_percentile_spatial_median_xy": [
+        151.0,
+        186.0
+      ],
+      "top_points_on_region_boundary_fraction": 0.23140495867768596,
+      "touches_border": false,
+      "upper_tail_pixel_count": 121,
+      "valid_dense_depth_count": 2420,
+      "world_z_iqr_mm": 88.1513566705861,
+      "world_z_mad_mm": 43.977578348888755,
+      "world_z_min_mm": 691.9017902846731,
+      "world_z_mm": {
+        "max": 877.7287765690473,
+        "p01": 695.9468284770888,
+        "p02": 698.1489767249476,
+        "p05": 703.2527562755021,
+        "p10": 709.2791030983406,
+        "p50": 772.8296550837681,
+        "p90": 846.269830973543,
+        "p95": 862.4993665538915,
+        "p97": 868.9190957108804,
+        "p98": 871.6634917600011,
+        "p99": 875.2980763969628
+      }
+    },
+    "logical_object_id": "frame_000004:logical:000",
+    "sample_frame": "frame_000004",
+    "target": "lower_bottle"
+  },
+  {
+    "baseline": {
+      "object_height_mm": 168.5205874472656,
+      "support_mm": 722.9454798402512,
+      "support_source": "point_p5_fallback",
+      "top_mm": 891.4660672875168
+    },
+    "candidate": {
+      "anchor_count": 24,
+      "available": true,
+      "candidate_height_max_mm": 198.0,
+      "candidate_height_median_mm": 185.0,
+      "candidate_height_min_mm": 144.0,
+      "candidate_height_p25_mm": 168.25,
+      "candidate_height_p75_mm": 192.5,
+      "contact_depth": {
+        "object_lower_interior": {
+          "band_pixel_count": 1910,
+          "count": 1910,
+          "kept_count": 1910,
+          "limit_mm": 293.060214471817,
+          "mad_mm": 56.47611618041992,
+          "median_mm": 1608.1302762031555,
+          "y_range": [
+            245.89999999999998,
+            271.58
+          ]
+        },
+        "reason": null,
+        "selected_depth_mm": 1605.0711870193481,
+        "selected_source": "support_context_below_contour",
+        "support_context": {
+          "band_pixel_count": 955,
+          "count": 955,
+          "kept_count": 846,
+          "limit_mm": 114.68205646276473,
+          "mad_mm": 22.10056781768799,
+          "median_mm": 1609.3937158584595
+        }
+      },
+      "height_method": "gravity_only_sphere_envelope",
+      "height_statistic": "upper_quintile_median",
+      "object_height_mm": 198.0,
+      "reason": null,
+      "source": "detector_ellipse",
+      "sphere_fit_fallback_audit": {
+        "available": false,
+        "reason": "sphere_fit_quality_gate",
+        "sphere_fit": {
+          "gate_pass": false,
+          "jacobian_condition": 3.1746350994851897,
+          "point_count": 5608,
+          "radius_mm": 70.21895001717114,
+          "relative_residual": 0.22557178728635452,
+          "residual_rms_mm": 15.839414056744488,
+          "solver_success": true
+        }
+      },
+      "support_anchor_mad_mm": 5.608325346906554,
+      "support_mm": 727.1165146840627,
+      "support_source": "candidate_contact_band",
+      "top_mm": 925.1165146840627,
+      "valid_anchor_count": 24
+    },
+    "inventory": {
+      "axial_depth_mm": {
+        "median": 1616.1534786224365,
+        "p05": 1558.4805071353912,
+        "p95": 1683.4725320339203
+      },
+      "bbox_xyxy": [
+        245.9779510498047,
+        168.8338623046875,
+        361.02838134765625,
+        278.7127380371094
+      ],
+      "class_name": "sports ball",
+      "confidence": 0.37840190578786215,
+      "confidence_ingredients": {
+        "axial_depth_dispersion": 0.9430238306522369,
+        "depth_coverage": 0.5015271681938348,
+        "detect_segment_agreement": 0.45,
+        "has_support_plane": 0.55,
+        "not_touches_border": 1.0,
+        "percentile_stability": 0.8916284899859375,
+        "point_count": 1.0,
+        "world_z_dispersion": 0.7153512043424579
+      },
+      "coverage": 0.45137445137445137,
+      "detect_segment_agreement": false,
+      "frame_id": "frame_000004",
+      "logical_object_id": "frame_000004:logical:001",
+      "lower_tail_pixel_count": 294,
+      "mask_vs_bbox": "bbox",
+      "object_pixel_count": 12987,
+      "region_method": "bbox_main_depth_cluster",
+      "region_source": "bbox",
+      "target": "lower_volleyball",
+      "top_percentile_spatial_median_xy": [
+        301.0,
+        181.0
+      ],
+      "top_points_on_region_boundary_fraction": 0.0,
+      "touches_border": false,
+      "upper_tail_pixel_count": 294,
+      "valid_dense_depth_count": 5862,
+      "world_z_iqr_mm": 99.62707848013974,
+      "world_z_mad_mm": 49.98149968447183,
+      "world_z_min_mm": 703.5253654028224,
+      "world_z_mm": {
+        "max": 900.334160908061,
+        "p01": 711.9462749699059,
+        "p02": 717.109978084841,
+        "p05": 722.9454798402512,
+        "p10": 730.0641778675335,
+        "p50": 807.1034904877176,
+        "p90": 882.3290388126898,
+        "p95": 891.4660672875168,
+        "p97": 894.4145541305376,
+        "p98": 896.1592480293507,
+        "p99": 898.0227015264469
+      }
+    },
+    "logical_object_id": "frame_000004:logical:001",
+    "sample_frame": "frame_000004",
+    "target": "lower_volleyball"
+  },
+  {
+    "baseline": {
+      "object_height_mm": 161.30556213114073,
+      "support_mm": 700.8771361508926,
+      "support_source": "point_p5_fallback",
+      "top_mm": 862.1826982820334
+    },
+    "candidate": {
+      "anchor_count": 21,
+      "available": true,
+      "candidate_height_max_mm": 193.0,
+      "candidate_height_median_mm": 193.0,
+      "candidate_height_min_mm": 187.0,
+      "candidate_height_p25_mm": 193.0,
+      "candidate_height_p75_mm": 193.0,
+      "contact_depth": {
+        "object_lower_interior": {
+          "band_pixel_count": 529,
+          "count": 529,
+          "kept_count": 529,
+          "limit_mm": 139.84872826337815,
+          "mad_mm": 26.950478553771973,
+          "median_mm": 1959.37180519104,
+          "y_range": [
+            248.5,
+            271.3
+          ]
+        },
+        "reason": null,
+        "selected_depth_mm": 1768.8919305801392,
+        "selected_source": "support_context_below_contour",
+        "support_context": {
+          "band_pixel_count": 281,
+          "count": 281,
+          "kept_count": 281,
+          "limit_mm": 207.25141464471815,
+          "mad_mm": 39.9397611618042,
+          "median_mm": 1768.8919305801392
+        }
+      },
+      "height_method": "gravity_only_upright_silhouette",
+      "height_statistic": "median",
+      "object_height_mm": 193.0,
+      "reason": null,
+      "source": "instance_mask",
+      "sphere_fit_fallback_audit": null,
+      "support_anchor_mad_mm": 0.09478835894799431,
+      "support_mm": 699.3258405733698,
+      "support_source": "candidate_contact_band",
+      "top_mm": 892.3258405733698,
+      "valid_anchor_count": 21
+    },
+    "inventory": {
+      "axial_depth_mm": {
+        "median": 2013.2849216461182,
+        "p05": 1957.1467697620392,
+        "p95": 2054.000997543335
+      },
+      "bbox_xyxy": [
+        134.4417724609375,
+        181.68038940429688,
+        167.65234375,
+        282.22930908203125
+      ],
+      "class_name": "bottle",
+      "confidence": 0.9573428184483253,
+      "confidence_ingredients": {
+        "axial_depth_dispersion": 0.9746918082237244,
+        "depth_coverage": 1.0,
+        "detect_segment_agreement": 1.0,
+        "has_support_plane": 0.55,
+        "not_touches_border": 1.0,
+        "percentile_stability": 0.8496425135875112,
+        "point_count": 0.9917687142877328,
+        "world_z_dispersion": 0.7521381042392434
+      },
+      "coverage": 0.905019305019305,
+      "detect_segment_agreement": true,
+      "frame_id": "frame_000005",
+      "logical_object_id": "frame_000005:logical:000",
+      "lower_tail_pixel_count": 118,
+      "mask_vs_bbox": "mask",
+      "object_pixel_count": 2590,
+      "region_method": "mask_eroded_1px_robust",
+      "region_source": "mask",
+      "target": "lower_bottle",
+      "top_percentile_spatial_median_xy": [
+        151.0,
+        186.0
+      ],
+      "top_points_on_region_boundary_fraction": 0.23728813559322035,
+      "touches_border": false,
+      "upper_tail_pixel_count": 118,
+      "valid_dense_depth_count": 2344,
+      "world_z_iqr_mm": 86.75166351626478,
+      "world_z_mad_mm": 43.47238132486268,
+      "world_z_min_mm": 686.6087699537804,
+      "world_z_mm": {
+        "max": 876.586028585538,
+        "p01": 691.1387930290554,
+        "p02": 694.1434472539346,
+        "p05": 700.8771361508926,
+        "p10": 707.623880508666,
+        "p50": 771.8743977903896,
+        "p90": 846.3758196779335,
+        "p95": 862.1826982820334,
+        "p97": 867.622426298469,
+        "p98": 871.2349623534845,
+        "p99": 873.9292601608031
+      }
+    },
+    "logical_object_id": "frame_000005:logical:000",
+    "sample_frame": "frame_000005",
+    "target": "lower_bottle"
+  },
+  {
+    "baseline": {
+      "object_height_mm": 111.04375684716774,
+      "support_mm": 1116.0548610748722,
+      "support_source": "point_p5_fallback",
+      "top_mm": 1227.09861792204
+    },
+    "candidate": {
+      "anchor_count": 24,
+      "available": true,
+      "candidate_height_max_mm": 145.0,
+      "candidate_height_median_mm": 145.0,
+      "candidate_height_min_mm": 129.0,
+      "candidate_height_p25_mm": 144.5,
+      "candidate_height_p75_mm": 145.0,
+      "contact_depth": {
+        "object_lower_interior": {
+          "band_pixel_count": 408,
+          "count": 408,
+          "kept_count": 408,
+          "limit_mm": 70.14303531646728,
+          "mad_mm": 13.517379760742188,
+          "median_mm": 1895.7329988479614,
+          "y_range": [
+            62.699999999999996,
+            79.74
+          ]
+        },
+        "reason": null,
+        "selected_depth_mm": 1777.100384235382,
+        "selected_source": "support_context_below_contour",
+        "support_context": {
+          "band_pixel_count": 286,
+          "count": 286,
+          "kept_count": 286,
+          "limit_mm": 82.57327045798301,
+          "mad_mm": 15.912830829620361,
+          "median_mm": 1777.100384235382
+        }
+      },
+      "height_method": "gravity_only_upright_silhouette",
+      "height_statistic": "median",
+      "object_height_mm": 145.0,
+      "reason": null,
+      "source": "instance_mask",
+      "sphere_fit_fallback_audit": null,
+      "support_anchor_mad_mm": 0.02625586470219332,
+      "support_mm": 1090.5543982782292,
+      "support_source": "candidate_contact_band",
+      "top_mm": 1235.5543982782292,
+      "valid_anchor_count": 24
+    },
+    "inventory": {
+      "axial_depth_mm": {
+        "median": 1826.2230157852173,
+        "p05": 1811.4230036735535,
+        "p95": 1902.400016784668
+      },
+      "bbox_xyxy": [
+        263.4678955078125,
+        1.0793228149414062,
+        297.32421875,
+        83.89328002929688
+      ],
+      "class_name": "bottle",
+      "confidence": 0.9340249319492249,
+      "confidence_ingredients": {
+        "axial_depth_dispersion": 0.9571962058544159,
+        "depth_coverage": 0.9925251503400213,
+        "detect_segment_agreement": 0.45,
+        "has_support_plane": 0.55,
+        "not_touches_border": 1.0,
+        "percentile_stability": 0.8716761410633914,
+        "point_count": 0.9555997368213706,
+        "world_z_dispersion": 0.8397017279574291
+      },
+      "coverage": 0.8932726353060192,
+      "detect_segment_agreement": false,
+      "frame_id": "frame_000005",
+      "logical_object_id": "frame_000005:logical:001",
+      "lower_tail_pixel_count": 89,
+      "mask_vs_bbox": "mask",
+      "object_pixel_count": 1977,
+      "region_method": "mask_eroded_1px_robust",
+      "region_source": "mask",
+      "target": "upper_bottle",
+      "top_percentile_spatial_median_xy": [
+        281.0,
+        16.0
+      ],
+      "top_points_on_region_boundary_fraction": 0.3146067415730337,
+      "touches_border": false,
+      "upper_tail_pixel_count": 89,
+      "valid_dense_depth_count": 1766,
+      "world_z_iqr_mm": 56.104395214899796,
+      "world_z_mad_mm": 28.14280585148822,
+      "world_z_min_mm": 1100.8965928357816,
+      "world_z_mm": {
+        "max": 1238.972037018808,
+        "p01": 1103.4725430479434,
+        "p02": 1107.995657287112,
+        "p05": 1116.0548610748722,
+        "p10": 1125.8341889071457,
+        "p50": 1168.900888090212,
+        "p90": 1217.6293669138222,
+        "p95": 1227.09861792204,
+        "p97": 1231.500347785425,
+        "p98": 1233.9838404532873,
+        "p99": 1236.5233187085528
+      }
+    },
+    "logical_object_id": "frame_000005:logical:001",
+    "sample_frame": "frame_000005",
+    "target": "upper_bottle"
+  },
+  {
+    "baseline": {
+      "object_height_mm": 143.98589481912632,
+      "support_mm": 739.5873000396817,
+      "support_source": "point_p5_fallback",
+      "top_mm": 883.573194858808
+    },
+    "candidate": {
+      "anchor_count": 24,
+      "available": true,
+      "candidate_height_max_mm": 192.0,
+      "candidate_height_median_mm": 180.0,
+      "candidate_height_min_mm": 140.0,
+      "candidate_height_p25_mm": 163.25,
+      "candidate_height_p75_mm": 187.5,
+      "contact_depth": {
+        "object_lower_interior": {
+          "band_pixel_count": 1910,
+          "count": 1910,
+          "kept_count": 1910,
+          "limit_mm": 151.09622138142586,
+          "mad_mm": 29.118001461029053,
+          "median_mm": 1551.7287254333496,
+          "y_range": [
+            245.89999999999998,
+            271.58
+          ]
+        },
+        "reason": null,
+        "selected_depth_mm": 1560.268521308899,
+        "selected_source": "support_context_below_contour",
+        "support_context": {
+          "band_pixel_count": 955,
+          "count": 955,
+          "kept_count": 935,
+          "limit_mm": 162.74827165603637,
+          "mad_mm": 31.363487243652344,
+          "median_mm": 1562.6294612884521
+        }
+      },
+      "height_method": "gravity_only_sphere_envelope",
+      "height_statistic": "upper_quintile_median",
+      "object_height_mm": 192.0,
+      "reason": null,
+      "source": "detector_ellipse",
+      "sphere_fit_fallback_audit": {
+        "available": false,
+        "reason": "sphere_fit_quality_gate",
+        "sphere_fit": {
+          "gate_pass": false,
+          "jacobian_condition": 3.559681201165109,
+          "point_count": 8243,
+          "radius_mm": 84.15714193459799,
+          "relative_residual": 0.19016351632323328,
+          "residual_rms_mm": 16.003618033996585,
+          "solver_success": true
+        }
+      },
+      "support_anchor_mad_mm": 5.451779065504809,
+      "support_mm": 733.9519952654529,
+      "support_source": "candidate_contact_band",
+      "top_mm": 925.9519952654529,
+      "valid_anchor_count": 24
+    },
+    "inventory": {
+      "axial_depth_mm": {
+        "median": 1528.8249254226685,
+        "p05": 1483.1000089645386,
+        "p95": 1587.3900890350342
+      },
+      "bbox_xyxy": [
+        245.7671661376953,
+        169.20401000976562,
+        361.46600341796875,
+        278.7784729003906
+      ],
+      "class_name": "sports ball",
+      "confidence": 0.40177508988317523,
+      "confidence_ingredients": {
+        "axial_depth_dispersion": 0.9449609518051147,
+        "depth_coverage": 0.7214883881550548,
+        "detect_segment_agreement": 0.45,
+        "has_support_plane": 0.55,
+        "not_touches_border": 1.0,
+        "percentile_stability": 0.841735900975557,
+        "point_count": 1.0,
+        "world_z_dispersion": 0.7940594273552584
+      },
+      "coverage": 0.6493395493395493,
+      "detect_segment_agreement": false,
+      "frame_id": "frame_000005",
+      "logical_object_id": "frame_000005:logical:002",
+      "lower_tail_pixel_count": 418,
+      "mask_vs_bbox": "bbox",
+      "object_pixel_count": 12870,
+      "region_method": "bbox_main_depth_cluster",
+      "region_source": "bbox",
+      "target": "lower_volleyball",
+      "top_percentile_spatial_median_xy": [
+        298.0,
+        187.0
+      ],
+      "top_points_on_region_boundary_fraction": 0.0,
+      "touches_border": false,
+      "upper_tail_pixel_count": 418,
+      "valid_dense_depth_count": 8357,
+      "world_z_iqr_mm": 72.07920042565956,
+      "world_z_mad_mm": 36.03096675358893,
+      "world_z_min_mm": 720.1971408922029,
+      "world_z_mm": {
+        "max": 897.9839299304404,
+        "p01": 729.8808353311147,
+        "p02": 732.8171084935964,
+        "p05": 739.5873000396817,
+        "p10": 752.2588743163968,
+        "p50": 817.9112562495629,
+        "p90": 872.5051542818567,
+        "p95": 883.573194858808,
+        "p97": 888.13635742769,
+        "p98": 890.1441875880506,
+        "p99": 892.5136204917433
+      }
+    },
+    "logical_object_id": "frame_000005:logical:002",
+    "sample_frame": "frame_000005",
+    "target": "lower_volleyball"
+  },
+  {
+    "baseline": {
+      "object_height_mm": 148.9091768156843,
+      "support_mm": 718.896121217902,
+      "support_source": "point_p5_fallback",
+      "top_mm": 867.8052980335863
+    },
+    "candidate": {
+      "anchor_count": 23,
+      "available": true,
+      "candidate_height_max_mm": 185.0,
+      "candidate_height_median_mm": 185.0,
+      "candidate_height_min_mm": 157.0,
+      "candidate_height_p25_mm": 185.0,
+      "candidate_height_p75_mm": 185.0,
+      "contact_depth": {
+        "object_lower_interior": {
+          "band_pixel_count": 552,
+          "count": 552,
+          "kept_count": 552,
+          "limit_mm": 93.07629180550575,
+          "mad_mm": 17.936885356903076,
+          "median_mm": 1788.558542728424,
+          "y_range": [
+            248.5,
+            271.3
+          ]
+        },
+        "reason": null,
+        "selected_depth_mm": 1691.182017326355,
+        "selected_source": "support_context_below_contour",
+        "support_context": {
+          "band_pixel_count": 288,
+          "count": 288,
+          "kept_count": 288,
+          "limit_mm": 112.22069113254547,
+          "mad_mm": 21.62623405456543,
+          "median_mm": 1691.182017326355
+        }
+      },
+      "height_method": "gravity_only_upright_silhouette",
+      "height_statistic": "median",
+      "object_height_mm": 185.0,
+      "reason": null,
+      "source": "instance_mask",
+      "sphere_fit_fallback_audit": null,
+      "support_anchor_mad_mm": 0.10761664805852433,
+      "support_mm": 711.3228422821388,
+      "support_source": "candidate_contact_band",
+      "top_mm": 896.3228422821388,
+      "valid_anchor_count": 23
+    },
+    "inventory": {
+      "axial_depth_mm": {
+        "median": 1853.7747859954834,
+        "p05": 1781.3095331192017,
+        "p95": 1895.5316066741943
+      },
+      "bbox_xyxy": [
+        133.9332275390625,
+        181.606689453125,
+        167.56362915039062,
+        282.84869384765625
+      ],
+      "class_name": "bottle",
+      "confidence": 0.9591921390387135,
+      "confidence_ingredients": {
+        "axial_depth_dispersion": 0.9691840410232544,
+        "depth_coverage": 1.0,
+        "detect_segment_agreement": 1.0,
+        "has_support_plane": 0.55,
+        "not_touches_border": 1.0,
+        "percentile_stability": 0.8602419733921813,
+        "point_count": 1.0,
+        "world_z_dispersion": 0.7671866392645692
+      },
+      "coverage": 0.9413313275667544,
+      "detect_segment_agreement": true,
+      "frame_id": "frame_000006",
+      "logical_object_id": "frame_000006:logical:000",
+      "lower_tail_pixel_count": 126,
+      "mask_vs_bbox": "mask",
+      "object_pixel_count": 2659,
+      "region_method": "mask_eroded_1px_robust",
+      "region_source": "mask",
+      "target": "lower_bottle",
+      "top_percentile_spatial_median_xy": [
+        151.0,
+        186.0
+      ],
+      "top_points_on_region_boundary_fraction": 0.23015873015873015,
+      "touches_border": false,
+      "upper_tail_pixel_count": 126,
+      "valid_dense_depth_count": 2503,
+      "world_z_iqr_mm": 81.48467625740079,
+      "world_z_mad_mm": 40.63252599418968,
+      "world_z_min_mm": 703.4664317003901,
+      "world_z_mm": {
+        "max": 881.9705745976673,
+        "p01": 712.5712016807859,
+        "p02": 715.4106056037066,
+        "p05": 718.896121217902,
+        "p10": 725.9121464856157,
+        "p50": 784.708391543364,
+        "p90": 853.8576193101272,
+        "p95": 867.8052980335863,
+        "p97": 873.8459069269181,
+        "p98": 876.7023274395359,
+        "p99": 879.4435406734501
+      }
+    },
+    "logical_object_id": "frame_000006:logical:000",
+    "sample_frame": "frame_000006",
+    "target": "lower_bottle"
+  },
+  {
+    "baseline": {
+      "object_height_mm": 116.35989683260527,
+      "support_mm": 1109.0207619008995,
+      "support_source": "point_p5_fallback",
+      "top_mm": 1225.3806587335048
+    },
+    "candidate": {
+      "anchor_count": 22,
+      "available": true,
+      "candidate_height_max_mm": 144.0,
+      "candidate_height_median_mm": 144.0,
+      "candidate_height_min_mm": 136.0,
+      "candidate_height_p25_mm": 144.0,
+      "candidate_height_p75_mm": 144.0,
+      "contact_depth": {
+        "object_lower_interior": {
+          "band_pixel_count": 374,
+          "count": 374,
+          "kept_count": 374,
+          "limit_mm": 68.41748151183128,
+          "mad_mm": 13.184845447540283,
+          "median_mm": 1887.752115726471,
+          "y_range": [
+            62.699999999999996,
+            79.74
+          ]
+        },
+        "reason": null,
+        "selected_depth_mm": 1759.5987915992737,
+        "selected_source": "support_context_below_contour",
+        "support_context": {
+          "band_pixel_count": 264,
+          "count": 264,
+          "kept_count": 264,
+          "limit_mm": 83.0300983786583,
+          "mad_mm": 16.000866889953613,
+          "median_mm": 1759.5987915992737
+        }
+      },
+      "height_method": "gravity_only_upright_silhouette",
+      "height_statistic": "median",
+      "object_height_mm": 144.0,
+      "reason": null,
+      "source": "instance_mask",
+      "sphere_fit_fallback_audit": null,
+      "support_anchor_mad_mm": 0.023834418494629972,
+      "support_mm": 1089.3868273282196,
+      "support_source": "candidate_contact_band",
+      "top_mm": 1233.3868273282196,
+      "valid_anchor_count": 22
+    },
+    "inventory": {
+      "axial_depth_mm": {
+        "median": 1817.9685473442078,
+        "p05": 1789.8110330104828,
+        "p95": 1922.6570546627045
+      },
+      "bbox_xyxy": [
+        264.13873291015625,
+        1.0977401733398438,
+        297.32977294921875,
+        83.8210220336914
+      ],
+      "class_name": "bottle",
+      "confidence": 0.934698318000674,
+      "confidence_ingredients": {
+        "axial_depth_dispersion": 0.9209304749965668,
+        "depth_coverage": 1.0,
+        "detect_segment_agreement": 0.45,
+        "has_support_plane": 0.55,
+        "not_touches_border": 1.0,
+        "percentile_stability": 0.8945311313292192,
+        "point_count": 0.966412422347794,
+        "world_z_dispersion": 0.8262481275982645
+      },
+      "coverage": 0.99328165374677,
+      "detect_segment_agreement": false,
+      "frame_id": "frame_000006",
+      "logical_object_id": "frame_000006:logical:001",
+      "lower_tail_pixel_count": 97,
+      "mask_vs_bbox": "mask",
+      "object_pixel_count": 1935,
+      "region_method": "mask_eroded_1px_robust",
+      "region_source": "mask",
+      "target": "upper_bottle",
+      "top_percentile_spatial_median_xy": [
+        280.0,
+        16.0
+      ],
+      "top_points_on_region_boundary_fraction": 0.29896907216494845,
+      "touches_border": false,
+      "upper_tail_pixel_count": 97,
+      "valid_dense_depth_count": 1922,
+      "world_z_iqr_mm": 60.81315534060741,
+      "world_z_mad_mm": 30.294340979319372,
+      "world_z_min_mm": 1100.4852461028374,
+      "world_z_mm": {
+        "max": 1240.6621151504487,
+        "p01": 1102.941444204406,
+        "p02": 1103.5811606784855,
+        "p05": 1109.0207619008995,
+        "p10": 1115.2838185483035,
+        "p50": 1161.7494857853687,
+        "p90": 1215.8233850802917,
+        "p95": 1225.3806587335048,
+        "p97": 1230.1268351965057,
+        "p98": 1232.8870212354877,
+        "p99": 1235.7032695089913
+      }
+    },
+    "logical_object_id": "frame_000006:logical:001",
+    "sample_frame": "frame_000006",
+    "target": "upper_bottle"
+  },
+  {
+    "baseline": {
+      "object_height_mm": 146.42317171923582,
+      "support_mm": 740.675484683387,
+      "support_source": "point_p5_fallback",
+      "top_mm": 887.0986564026229
+    },
+    "candidate": {
+      "anchor_count": 24,
+      "available": true,
+      "candidate_height_max_mm": 193.0,
+      "candidate_height_median_mm": 178.5,
+      "candidate_height_min_mm": 141.0,
+      "candidate_height_p25_mm": 165.75,
+      "candidate_height_p75_mm": 189.0,
+      "contact_depth": {
+        "object_lower_interior": {
+          "band_pixel_count": 1872,
+          "count": 1872,
+          "kept_count": 1872,
+          "limit_mm": 194.59384807348252,
+          "mad_mm": 37.50050067901611,
+          "median_mm": 1539.527177810669,
+          "y_range": [
+            245.89999999999998,
+            271.58
+          ]
+        },
+        "reason": null,
+        "selected_depth_mm": 1562.8120303153992,
+        "selected_source": "support_context_below_contour",
+        "support_context": {
+          "band_pixel_count": 933,
+          "count": 933,
+          "kept_count": 930,
+          "limit_mm": 193.67400634288788,
+          "mad_mm": 37.3232364654541,
+          "median_mm": 1563.2944107055664
+        }
+      },
+      "height_method": "gravity_only_sphere_envelope",
+      "height_statistic": "upper_quintile_median",
+      "object_height_mm": 191.0,
+      "reason": null,
+      "source": "detector_ellipse",
+      "sphere_fit_fallback_audit": {
+        "available": false,
+        "reason": "sphere_fit_quality_gate",
+        "sphere_fit": {
+          "gate_pass": false,
+          "jacobian_condition": 2.9162617067264005,
+          "point_count": 8040,
+          "radius_mm": 81.83891927601444,
+          "relative_residual": 0.21710727958646647,
+          "residual_rms_mm": 17.767825128311927,
+          "solver_success": true
+        }
+      },
+      "support_anchor_mad_mm": 6.253039572294767,
+      "support_mm": 735.3609571814326,
+      "support_source": "candidate_contact_band",
+      "top_mm": 926.3609571814326,
+      "valid_anchor_count": 24
+    },
+    "inventory": {
+      "axial_depth_mm": {
+        "median": 1524.5487689971924,
+        "p05": 1468.208134174347,
+        "p95": 1586.6631865501404
+      },
+      "bbox_xyxy": [
+        245.9584197998047,
+        168.9332275390625,
+        360.83758544921875,
+        278.8126220703125
+      ],
+      "class_name": "sports ball",
+      "confidence": 0.3978449146876742,
+      "confidence_ingredients": {
+        "axial_depth_dispersion": 0.9370419979095459,
+        "depth_coverage": 0.6981981981981982,
+        "detect_segment_agreement": 0.45,
+        "has_support_plane": 0.55,
+        "not_touches_border": 1.0,
+        "percentile_stability": 0.8313145534882809,
+        "point_count": 1.0,
+        "world_z_dispersion": 0.7959349601734828
+      },
+      "coverage": 0.6283783783783784,
+      "detect_segment_agreement": false,
+      "frame_id": "frame_000006",
+      "logical_object_id": "frame_000006:logical:002",
+      "lower_tail_pixel_count": 405,
+      "mask_vs_bbox": "bbox",
+      "object_pixel_count": 12876,
+      "region_method": "bbox_main_depth_cluster",
+      "region_source": "bbox",
+      "target": "lower_volleyball",
+      "top_percentile_spatial_median_xy": [
+        300.0,
+        185.0
+      ],
+      "top_points_on_region_boundary_fraction": 0.0,
+      "touches_border": false,
+      "upper_tail_pixel_count": 405,
+      "valid_dense_depth_count": 8091,
+      "world_z_iqr_mm": 71.42276393928103,
+      "world_z_mad_mm": 35.66098587885847,
+      "world_z_min_mm": 720.1241136224689,
+      "world_z_mm": {
+        "max": 901.8149132015774,
+        "p01": 730.8313662597399,
+        "p02": 733.5639465461896,
+        "p05": 740.675484683387,
+        "p10": 753.737619866715,
+        "p50": 818.867625663962,
+        "p90": 874.857974609193,
+        "p95": 887.0986564026229,
+        "p97": 891.2245114131017,
+        "p98": 893.181505248562,
+        "p99": 896.0343206152531
+      }
+    },
+    "logical_object_id": "frame_000006:logical:002",
+    "sample_frame": "frame_000006",
+    "target": "lower_volleyball"
+  },
+  {
+    "baseline": {
+      "object_height_mm": 168.30852433634493,
+      "support_mm": 692.5595870536308,
+      "support_source": "point_p5_fallback",
+      "top_mm": 860.8681113899758
+    },
+    "candidate": {
+      "anchor_count": 22,
+      "available": true,
+      "candidate_height_max_mm": 192.0,
+      "candidate_height_median_mm": 192.0,
+      "candidate_height_min_mm": 164.0,
+      "candidate_height_p25_mm": 192.0,
+      "candidate_height_p75_mm": 192.0,
+      "contact_depth": {
+        "object_lower_interior": {
+          "band_pixel_count": 529,
+          "count": 529,
+          "kept_count": 529,
+          "limit_mm": 103.33218687772751,
+          "mad_mm": 19.913315773010254,
+          "median_mm": 1964.4807577133179,
+          "y_range": [
+            249.2,
+            272.24
+          ]
+        },
+        "reason": null,
+        "selected_depth_mm": 1743.2506084442139,
+        "selected_source": "support_context_below_contour",
+        "support_context": {
+          "band_pixel_count": 279,
+          "count": 279,
+          "kept_count": 279,
+          "limit_mm": 256.250461935997,
+          "mad_mm": 49.38244819641113,
+          "median_mm": 1743.2506084442139
+        }
+      },
+      "height_method": "gravity_only_upright_silhouette",
+      "height_statistic": "median",
+      "object_height_mm": 192.0,
+      "reason": null,
+      "source": "instance_mask",
+      "sphere_fit_fallback_audit": null,
+      "support_anchor_mad_mm": 0.10262492997031814,
+      "support_mm": 701.3012340102507,
+      "support_source": "candidate_contact_band",
+      "top_mm": 893.3012340102507,
+      "valid_anchor_count": 22
+    },
+    "inventory": {
+      "axial_depth_mm": {
+        "median": 2015.4609680175781,
+        "p05": 1953.8175225257874,
+        "p95": 2055.927300453186
+      },
+      "bbox_xyxy": [
+        134.54945373535156,
+        181.37191772460938,
+        167.5753631591797,
+        283.1466369628906
+      ],
+      "class_name": "bottle",
+      "confidence": 0.9565615825648671,
+      "confidence_ingredients": {
+        "axial_depth_dispersion": 0.9686897993087769,
+        "depth_coverage": 1.0,
+        "detect_segment_agreement": 1.0,
+        "has_support_plane": 0.55,
+        "not_touches_border": 1.0,
+        "percentile_stability": 0.8450157322606947,
+        "point_count": 0.9987160372553043,
+        "world_z_dispersion": 0.7418934910769518
+      },
+      "coverage": 0.9367903103709311,
+      "detect_segment_agreement": true,
+      "frame_id": "frame_000007",
+      "logical_object_id": "frame_000007:logical:000",
+      "lower_tail_pixel_count": 124,
+      "mask_vs_bbox": "mask",
+      "object_pixel_count": 2642,
+      "region_method": "mask_eroded_1px_robust",
+      "region_source": "mask",
+      "target": "lower_bottle",
+      "top_percentile_spatial_median_xy": [
+        151.0,
+        186.0
+      ],
+      "top_points_on_region_boundary_fraction": 0.23387096774193547,
+      "touches_border": false,
+      "upper_tail_pixel_count": 124,
+      "valid_dense_depth_count": 2475,
+      "world_z_iqr_mm": 90.33727812306688,
+      "world_z_mad_mm": 44.96956842198506,
+      "world_z_min_mm": 681.0827706174243,
+      "world_z_mm": {
+        "max": 876.0253855319568,
+        "p01": 683.8337362562952,
+        "p02": 686.2376194077942,
+        "p05": 692.5595870536308,
+        "p10": 699.9714306812546,
+        "p50": 766.3194112739773,
+        "p90": 845.0323148567037,
+        "p95": 860.8681113899758,
+        "p97": 867.4620578941668,
+        "p98": 870.6607932545651,
+        "p99": 873.5979261179468
+      }
+    },
+    "logical_object_id": "frame_000007:logical:000",
+    "sample_frame": "frame_000007",
+    "target": "lower_bottle"
+  },
+  {
+    "baseline": {
+      "object_height_mm": 111.16220378468688,
+      "support_mm": 1118.1764332587761,
+      "support_source": "point_p5_fallback",
+      "top_mm": 1229.338637043463
+    },
+    "candidate": {
+      "anchor_count": 23,
+      "available": true,
+      "candidate_height_max_mm": 145.0,
+      "candidate_height_median_mm": 145.0,
+      "candidate_height_min_mm": 133.0,
+      "candidate_height_p25_mm": 145.0,
+      "candidate_height_p75_mm": 145.0,
+      "contact_depth": {
+        "object_lower_interior": {
+          "band_pixel_count": 391,
+          "count": 391,
+          "kept_count": 391,
+          "limit_mm": 51.75114941596985,
+          "mad_mm": 9.97304916381836,
+          "median_mm": 1920.2113151550293,
+          "y_range": [
+            62.699999999999996,
+            79.74
+          ]
+        },
+        "reason": null,
+        "selected_depth_mm": 1776.7269611358643,
+        "selected_source": "support_context_below_contour",
+        "support_context": {
+          "band_pixel_count": 275,
+          "count": 275,
+          "kept_count": 275,
+          "limit_mm": 86.41625415086746,
+          "mad_mm": 16.65341854095459,
+          "median_mm": 1776.7269611358643
+        }
+      },
+      "height_method": "gravity_only_upright_silhouette",
+      "height_statistic": "median",
+      "object_height_mm": 145.0,
+      "reason": null,
+      "source": "instance_mask",
+      "sphere_fit_fallback_audit": null,
+      "support_anchor_mad_mm": 0.02622612874324659,
+      "support_mm": 1090.5316741865147,
+      "support_source": "candidate_contact_band",
+      "top_mm": 1235.5316741865147,
+      "valid_anchor_count": 23
+    },
+    "inventory": {
+      "axial_depth_mm": {
+        "median": 1839.664101600647,
+        "p05": 1820.5846071243286,
+        "p95": 1926.215648651123
+      },
+      "bbox_xyxy": [
+        263.6026611328125,
+        1.260650634765625,
+        296.6630859375,
+        83.81033325195312
+      ],
+      "class_name": "bottle",
+      "confidence": 0.9357595517506111,
+      "confidence_ingredients": {
+        "axial_depth_dispersion": 0.9478607177734375,
+        "depth_coverage": 1.0,
+        "detect_segment_agreement": 0.45,
+        "has_support_plane": 0.55,
+        "not_touches_border": 1.0,
+        "percentile_stability": 0.8870987066748937,
+        "point_count": 0.961328037620927,
+        "world_z_dispersion": 0.8337057524696085
+      },
+      "coverage": 0.9239619809904952,
+      "detect_segment_agreement": false,
+      "frame_id": "frame_000007",
+      "logical_object_id": "frame_000007:logical:001",
+      "lower_tail_pixel_count": 93,
+      "mask_vs_bbox": "mask",
+      "object_pixel_count": 1999,
+      "region_method": "mask_eroded_1px_robust",
+      "region_source": "mask",
+      "target": "upper_bottle",
+      "top_percentile_spatial_median_xy": [
+        281.0,
+        16.0
+      ],
+      "top_points_on_region_boundary_fraction": 0.3010752688172043,
+      "touches_border": false,
+      "upper_tail_pixel_count": 93,
+      "valid_dense_depth_count": 1847,
+      "world_z_iqr_mm": 58.20298663563699,
+      "world_z_mad_mm": 28.795473685125444,
+      "world_z_min_mm": 1101.1460508339767,
+      "world_z_mm": {
+        "max": 1241.4101246231105,
+        "p01": 1102.5143888847715,
+        "p02": 1104.9618535712177,
+        "p05": 1118.1764332587761,
+        "p10": 1125.2523441621079,
+        "p50": 1168.742761212517,
+        "p90": 1219.4793539480288,
+        "p95": 1229.338637043463,
+        "p97": 1233.9243679867227,
+        "p98": 1236.163576849905,
+        "p99": 1238.395358802663
+      }
+    },
+    "logical_object_id": "frame_000007:logical:001",
+    "sample_frame": "frame_000007",
+    "target": "upper_bottle"
+  },
+  {
+    "baseline": {
+      "object_height_mm": 137.8376834029698,
+      "support_mm": 750.7878003294296,
+      "support_source": "point_p5_fallback",
+      "top_mm": 888.6254837323994
+    },
+    "candidate": {
+      "anchor_count": 24,
+      "available": true,
+      "candidate_height_max_mm": 209.0,
+      "candidate_height_median_mm": 193.0,
+      "candidate_height_min_mm": 152.0,
+      "candidate_height_p25_mm": 178.75,
+      "candidate_height_p75_mm": 205.0,
+      "contact_depth": {
+        "object_lower_interior": {
+          "band_pixel_count": 1872,
+          "count": 1872,
+          "kept_count": 1872,
+          "limit_mm": 341.73883270025254,
+          "mad_mm": 65.85705280303955,
+          "median_mm": 1669.5713996887207,
+          "y_range": [
+            245.89999999999998,
+            271.58
+          ]
+        },
+        "reason": null,
+        "selected_depth_mm": 1690.635323524475,
+        "selected_source": "support_context_below_contour",
+        "support_context": {
+          "band_pixel_count": 933,
+          "count": 933,
+          "kept_count": 873,
+          "limit_mm": 92.77472970485687,
+          "mad_mm": 17.87877082824707,
+          "median_mm": 1691.789984703064
+        }
+      },
+      "height_method": "gravity_only_sphere_envelope",
+      "height_statistic": "upper_quintile_median",
+      "object_height_mm": 207.0,
+      "reason": null,
+      "source": "detector_ellipse",
+      "sphere_fit_fallback_audit": {
+        "available": false,
+        "reason": "sphere_fit_quality_gate",
+        "sphere_fit": {
+          "gate_pass": false,
+          "jacobian_condition": 3.272105087252785,
+          "point_count": 6498,
+          "radius_mm": 78.1277554779734,
+          "relative_residual": 0.23240952204661577,
+          "residual_rms_mm": 18.157634309210664,
+          "solver_success": true
+        }
+      },
+      "support_anchor_mad_mm": 6.764479268939567,
+      "support_mm": 716.006114008893,
+      "support_source": "candidate_contact_band",
+      "top_mm": 923.006114008893,
+      "valid_anchor_count": 24
+    },
+    "inventory": {
+      "axial_depth_mm": {
+        "median": 1576.1505365371704,
+        "p05": 1514.2903923988342,
+        "p95": 1639.5305395126343
+      },
+      "bbox_xyxy": [
+        246.08541870117188,
+        169.42398071289062,
+        360.8220520019531,
+        278.62738037109375
+      ],
+      "class_name": "sports ball",
+      "confidence": 0.3871269950146139,
+      "confidence_ingredients": {
+        "axial_depth_dispersion": 0.9392529129981995,
+        "depth_coverage": 0.5723320158102766,
+        "detect_segment_agreement": 0.45,
+        "has_support_plane": 0.55,
+        "not_touches_border": 1.0,
+        "percentile_stability": 0.8464296374216209,
+        "point_count": 1.0,
+        "world_z_dispersion": 0.83200814583677
+      },
+      "coverage": 0.515098814229249,
+      "detect_segment_agreement": false,
+      "frame_id": "frame_000007",
+      "logical_object_id": "frame_000007:logical:002",
+      "lower_tail_pixel_count": 326,
+      "mask_vs_bbox": "bbox",
+      "object_pixel_count": 12650,
+      "region_method": "bbox_main_depth_cluster",
+      "region_source": "bbox",
+      "target": "lower_volleyball",
+      "top_percentile_spatial_median_xy": [
+        299.0,
+        183.0
+      ],
+      "top_points_on_region_boundary_fraction": 0.0,
+      "touches_border": false,
+      "upper_tail_pixel_count": 326,
+      "valid_dense_depth_count": 6516,
+      "world_z_iqr_mm": 58.7971489571305,
+      "world_z_mad_mm": 29.26110624749657,
+      "world_z_min_mm": 719.7052971645762,
+      "world_z_mm": {
+        "max": 901.2503930771649,
+        "p01": 731.3080585742623,
+        "p02": 738.1562556586779,
+        "p05": 750.7878003294296,
+        "p10": 764.8040649669879,
+        "p50": 828.1218058313291,
+        "p90": 879.6061939832008,
+        "p95": 888.6254837323994,
+        "p97": 892.1327797303503,
+        "p98": 893.8856734640635,
+        "p99": 896.5867398149787
+      }
+    },
+    "logical_object_id": "frame_000007:logical:002",
+    "sample_frame": "frame_000007",
+    "target": "lower_volleyball"
+  },
+  {
+    "baseline": {
+      "object_height_mm": 159.90023088760722,
+      "support_mm": 702.7120343445266,
+      "support_source": "point_p5_fallback",
+      "top_mm": 862.6122652321338
+    },
+    "candidate": {
+      "anchor_count": 22,
+      "available": true,
+      "candidate_height_max_mm": 188.0,
+      "candidate_height_median_mm": 188.0,
+      "candidate_height_min_mm": 169.0,
+      "candidate_height_p25_mm": 188.0,
+      "candidate_height_p75_mm": 188.0,
+      "contact_depth": {
+        "object_lower_interior": {
+          "band_pixel_count": 529,
+          "count": 529,
+          "kept_count": 529,
+          "limit_mm": 111.17713161706924,
+          "mad_mm": 21.42512798309326,
+          "median_mm": 1913.3543968200684,
+          "y_range": [
+            248.5,
+            271.3
+          ]
+        },
+        "reason": null,
+        "selected_depth_mm": 1726.1295318603516,
+        "selected_source": "support_context_below_contour",
+        "support_context": {
+          "band_pixel_count": 277,
+          "count": 277,
+          "kept_count": 277,
+          "limit_mm": 202.99799720048904,
+          "mad_mm": 39.12007808685303,
+          "median_mm": 1726.1295318603516
+        }
+      },
+      "height_method": "gravity_only_upright_silhouette",
+      "height_statistic": "median",
+      "object_height_mm": 188.0,
+      "reason": null,
+      "source": "instance_mask",
+      "sphere_fit_fallback_audit": null,
+      "support_anchor_mad_mm": 0.10127375449678766,
+      "support_mm": 705.9268588661807,
+      "support_source": "candidate_contact_band",
+      "top_mm": 893.9268588661807,
+      "valid_anchor_count": 22
+    },
+    "inventory": {
+      "axial_depth_mm": {
+        "median": 1979.365885257721,
+        "p05": 1902.9246389865875,
+        "p95": 2014.051115512848
+      },
+      "bbox_xyxy": [
+        134.0248260498047,
+        181.5694580078125,
+        167.6321563720703,
+        282.87255859375
+      ],
+      "class_name": "bottle",
+      "confidence": 0.9571149388914922,
+      "confidence_ingredients": {
+        "axial_depth_dispersion": 0.9629634022712708,
+        "depth_coverage": 1.0,
+        "detect_segment_agreement": 1.0,
+        "has_support_plane": 0.55,
+        "not_touches_border": 1.0,
+        "percentile_stability": 0.8503778902058131,
+        "point_count": 0.9973147141521502,
+        "world_z_dispersion": 0.753917280770799
+      },
+      "coverage": 0.9276241000378932,
+      "detect_segment_agreement": true,
+      "frame_id": "frame_000008",
+      "logical_object_id": "frame_000008:logical:000",
+      "lower_tail_pixel_count": 123,
+      "mask_vs_bbox": "mask",
+      "object_pixel_count": 2639,
+      "region_method": "mask_eroded_1px_robust",
+      "region_source": "mask",
+      "target": "lower_bottle",
+      "top_percentile_spatial_median_xy": [
+        151.0,
+        186.0
+      ],
+      "top_points_on_region_boundary_fraction": 0.23577235772357724,
+      "touches_border": false,
+      "upper_tail_pixel_count": 123,
+      "valid_dense_depth_count": 2448,
+      "world_z_iqr_mm": 86.12895173022036,
+      "world_z_mad_mm": 42.75603808360597,
+      "world_z_min_mm": 691.4988522643898,
+      "world_z_mm": {
+        "max": 877.2423560288466,
+        "p01": 694.604947706428,
+        "p02": 697.2457369301005,
+        "p05": 702.7120343445266,
+        "p10": 709.647557431838,
+        "p50": 773.6324607199722,
+        "p90": 847.1044718503172,
+        "p95": 862.6122652321338,
+        "p97": 868.2992662683154,
+        "p98": 872.0489752372633,
+        "p99": 874.7540066618124
+      }
+    },
+    "logical_object_id": "frame_000008:logical:000",
+    "sample_frame": "frame_000008",
+    "target": "lower_bottle"
+  },
+  {
+    "baseline": {
+      "object_height_mm": 118.6011947849297,
+      "support_mm": 1106.356610698961,
+      "support_source": "point_p5_fallback",
+      "top_mm": 1224.9578054838908
+    },
+    "candidate": {
+      "anchor_count": 22,
+      "available": true,
+      "candidate_height_max_mm": 143.0,
+      "candidate_height_median_mm": 143.0,
+      "candidate_height_min_mm": 133.0,
+      "candidate_height_p25_mm": 143.0,
+      "candidate_height_p75_mm": 143.0,
+      "contact_depth": {
+        "object_lower_interior": {
+          "band_pixel_count": 374,
+          "count": 374,
+          "kept_count": 374,
+          "limit_mm": 51.414327746629716,
+          "mad_mm": 9.908139705657959,
+          "median_mm": 1864.7159934043884,
+          "y_range": [
+            62.699999999999996,
+            79.74
+          ]
+        },
+        "reason": null,
+        "selected_depth_mm": 1755.4649114608765,
+        "selected_source": "support_context_below_contour",
+        "support_context": {
+          "band_pixel_count": 264,
+          "count": 264,
+          "kept_count": 264,
+          "limit_mm": 96.70586231946945,
+          "mad_mm": 18.636345863342285,
+          "median_mm": 1755.4649114608765
+        }
+      },
+      "height_method": "gravity_only_upright_silhouette",
+      "height_statistic": "median",
+      "object_height_mm": 143.0,
+      "reason": null,
+      "source": "instance_mask",
+      "sphere_fit_fallback_audit": null,
+      "support_anchor_mad_mm": 0.02377842355440407,
+      "support_mm": 1089.1110468057968,
+      "support_source": "candidate_contact_band",
+      "top_mm": 1232.1110468057968,
+      "valid_anchor_count": 22
+    },
+    "inventory": {
+      "axial_depth_mm": {
+        "median": 1814.3998384475708,
+        "p05": 1790.055513381958,
+        "p95": 1890.575110912323
+      },
+      "bbox_xyxy": [
+        264.1380615234375,
+        1.1664199829101562,
+        297.4700927734375,
+        83.88097381591797
+      ],
+      "class_name": "bottle",
+      "confidence": 0.9353807507140477,
+      "confidence_ingredients": {
+        "axial_depth_dispersion": 0.9428452849388123,
+        "depth_coverage": 1.0,
+        "detect_segment_agreement": 0.45,
+        "has_support_plane": 0.55,
+        "not_touches_border": 1.0,
+        "percentile_stability": 0.8872680030654616,
+        "point_count": 0.965679251970222,
+        "world_z_dispersion": 0.8254253173159518
+      },
+      "coverage": 0.9963503649635036,
+      "detect_segment_agreement": false,
+      "frame_id": "frame_000008",
+      "logical_object_id": "frame_000008:logical:001",
+      "lower_tail_pixel_count": 96,
+      "mask_vs_bbox": "mask",
+      "object_pixel_count": 1918,
+      "region_method": "mask_eroded_1px_robust",
+      "region_source": "mask",
+      "target": "upper_bottle",
+      "top_percentile_spatial_median_xy": [
+        280.0,
+        16.0
+      ],
+      "top_points_on_region_boundary_fraction": 0.2916666666666667,
+      "touches_border": false,
+      "upper_tail_pixel_count": 96,
+      "valid_dense_depth_count": 1911,
+      "world_z_iqr_mm": 61.10113893941684,
+      "world_z_mad_mm": 30.556394733331217,
+      "world_z_min_mm": 1098.968089478385,
+      "world_z_mm": {
+        "max": 1237.5489085146735,
+        "p01": 1101.1298061344041,
+        "p02": 1101.730196334306,
+        "p05": 1106.356610698961,
+        "p10": 1112.9480803679357,
+        "p50": 1160.3664961586258,
+        "p90": 1214.6394756126847,
+        "p95": 1224.9578054838908,
+        "p97": 1229.5422636561946,
+        "p98": 1231.9862531316835,
+        "p99": 1234.5433260377854
+      }
+    },
+    "logical_object_id": "frame_000008:logical:001",
+    "sample_frame": "frame_000008",
+    "target": "upper_bottle"
+  },
+  {
+    "baseline": {
+      "object_height_mm": 141.09437787545596,
+      "support_mm": 742.4708768624996,
+      "support_source": "point_p5_fallback",
+      "top_mm": 883.5652547379556
+    },
+    "candidate": {
+      "anchor_count": 24,
+      "available": true,
+      "candidate_height_max_mm": 186.0,
+      "candidate_height_median_mm": 171.5,
+      "candidate_height_min_mm": 134.0,
+      "candidate_height_p25_mm": 158.75,
+      "candidate_height_p75_mm": 182.0,
+      "contact_depth": {
+        "object_lower_interior": {
+          "band_pixel_count": 1800,
+          "count": 1800,
+          "kept_count": 1800,
+          "limit_mm": 101.84881063699721,
+          "mad_mm": 19.62745189666748,
+          "median_mm": 1514.6470069885254,
+          "y_range": [
+            245.5,
+            270.7
+          ]
+        },
+        "reason": null,
+        "selected_depth_mm": 1533.8603854179382,
+        "selected_source": "support_context_below_contour",
+        "support_context": {
+          "band_pixel_count": 931,
+          "count": 931,
+          "kept_count": 874,
+          "limit_mm": 78.94926724433898,
+          "mad_mm": 15.21444320678711,
+          "median_mm": 1536.565899848938
+        }
+      },
+      "height_method": "gravity_only_sphere_envelope",
+      "height_statistic": "upper_quintile_median",
+      "object_height_mm": 184.0,
+      "reason": null,
+      "source": "detector_ellipse",
+      "sphere_fit_fallback_audit": {
+        "available": false,
+        "reason": "sphere_fit_quality_gate",
+        "sphere_fit": {
+          "gate_pass": false,
+          "jacobian_condition": 3.0010719975155355,
+          "point_count": 8430,
+          "radius_mm": 79.97944933831948,
+          "relative_residual": 0.23502646951456377,
+          "residual_rms_mm": 18.797287611704142,
+          "solver_success": true
+        }
+      },
+      "support_anchor_mad_mm": 5.978938098805315,
+      "support_mm": 741.341097846895,
+      "support_source": "candidate_contact_band",
+      "top_mm": 925.341097846895,
+      "valid_anchor_count": 24
+    },
+    "inventory": {
+      "axial_depth_mm": {
+        "median": 1515.002429485321,
+        "p05": 1466.9515788555145,
+        "p95": 1579.956954717636
+      },
+      "bbox_xyxy": [
+        246.01283264160156,
+        169.27398681640625,
+        360.664794921875,
+        278.05950927734375
+      ],
+      "class_name": "sports ball",
+      "confidence": 0.4066411189971927,
+      "confidence_ingredients": {
+        "axial_depth_dispersion": 0.9467463791370392,
+        "depth_coverage": 0.7631093544137023,
+        "detect_segment_agreement": 0.45,
+        "has_support_plane": 0.55,
+        "not_touches_border": 1.0,
+        "percentile_stability": 0.8434900241634735,
+        "point_count": 1.0,
+        "world_z_dispersion": 0.7943660709570064
+      },
+      "coverage": 0.6867984189723321,
+      "detect_segment_agreement": false,
+      "frame_id": "frame_000008",
+      "logical_object_id": "frame_000008:logical:002",
+      "lower_tail_pixel_count": 435,
+      "mask_vs_bbox": "bbox",
+      "object_pixel_count": 12650,
+      "region_method": "bbox_main_depth_cluster",
+      "region_source": "bbox",
+      "target": "lower_volleyball",
+      "top_percentile_spatial_median_xy": [
+        296.0,
+        186.0
+      ],
+      "top_points_on_region_boundary_fraction": 0.0,
+      "touches_border": false,
+      "upper_tail_pixel_count": 435,
+      "valid_dense_depth_count": 8688,
+      "world_z_iqr_mm": 71.97187516504778,
+      "world_z_mad_mm": 35.87973861596521,
+      "world_z_min_mm": 719.3021193416022,
+      "world_z_mm": {
+        "max": 899.899535338396,
+        "p01": 730.381783840547,
+        "p02": 733.4938121040624,
+        "p05": 742.4708768624996,
+        "p10": 754.1249316908926,
+        "p50": 817.2934755398562,
+        "p90": 871.7428131908696,
+        "p95": 883.5652547379556,
+        "p97": 888.7012304323722,
+        "p98": 891.2228781403742,
+        "p99": 894.1309577704393
+      }
+    },
+    "logical_object_id": "frame_000008:logical:002",
+    "sample_frame": "frame_000008",
+    "target": "lower_volleyball"
+  },
+  {
+    "baseline": {
+      "object_height_mm": 167.03009995662194,
+      "support_mm": 692.6667759676791,
+      "support_source": "point_p5_fallback",
+      "top_mm": 859.696875924301
+    },
+    "candidate": {
+      "anchor_count": 21,
+      "available": true,
+      "candidate_height_max_mm": 191.0,
+      "candidate_height_median_mm": 191.0,
+      "candidate_height_min_mm": 191.0,
+      "candidate_height_p25_mm": 191.0,
+      "candidate_height_p75_mm": 191.0,
+      "contact_depth": {
+        "object_lower_interior": {
+          "band_pixel_count": 529,
+          "count": 529,
+          "kept_count": 529,
+          "limit_mm": 107.65179333686828,
+          "mad_mm": 20.74575424194336,
+          "median_mm": 1944.0662860870361,
+          "y_range": [
+            249.5,
+            272.3
+          ]
+        },
+        "reason": null,
+        "selected_depth_mm": 1748.4050989151,
+        "selected_source": "support_context_below_contour",
+        "support_context": {
+          "band_pixel_count": 277,
+          "count": 277,
+          "kept_count": 277,
+          "limit_mm": 194.53384494781494,
+          "mad_mm": 37.48893737792969,
+          "median_mm": 1748.4050989151
+        }
+      },
+      "height_method": "gravity_only_upright_silhouette",
+      "height_statistic": "median",
+      "object_height_mm": 191.0,
+      "reason": null,
+      "source": "instance_mask",
+      "sphere_fit_fallback_audit": null,
+      "support_anchor_mad_mm": 0.09400746729318143,
+      "support_mm": 700.4914667696595,
+      "support_source": "candidate_contact_band",
+      "top_mm": 891.4914667696595,
+      "valid_anchor_count": 21
+    },
+    "inventory": {
+      "axial_depth_mm": {
+        "median": 1986.5009784698486,
+        "p05": 1919.248604774475,
+        "p95": 2038.9743566513062
+      },
+      "bbox_xyxy": [
+        134.57656860351562,
+        182.08599853515625,
+        167.79196166992188,
+        283.9192810058594
+      ],
+      "class_name": "bottle",
+      "confidence": 0.9566109866859436,
+      "confidence_ingredients": {
+        "axial_depth_dispersion": 0.9620988368988037,
+        "depth_coverage": 1.0,
+        "detect_segment_agreement": 1.0,
+        "has_support_plane": 0.55,
+        "not_touches_border": 1.0,
+        "percentile_stability": 0.8499322671532733,
+        "point_count": 1.0,
+        "world_z_dispersion": 0.7406812943050403
+      },
+      "coverage": 0.9553638409602401,
+      "detect_segment_agreement": true,
+      "frame_id": "frame_000009",
+      "logical_object_id": "frame_000009:logical:000",
+      "lower_tail_pixel_count": 128,
+      "mask_vs_bbox": "mask",
+      "object_pixel_count": 2666,
+      "region_method": "mask_eroded_1px_robust",
+      "region_source": "mask",
+      "target": "lower_bottle",
+      "top_percentile_spatial_median_xy": [
+        151.0,
+        187.0
+      ],
+      "top_points_on_region_boundary_fraction": 0.2265625,
+      "touches_border": false,
+      "upper_tail_pixel_count": 128,
+      "valid_dense_depth_count": 2547,
+      "world_z_iqr_mm": 90.76154699323592,
+      "world_z_mad_mm": 45.12037574843305,
+      "world_z_min_mm": 680.2809667131248,
+      "world_z_mm": {
+        "max": 875.2620693657241,
+        "p01": 683.0364885803945,
+        "p02": 685.3102804295143,
+        "p05": 692.6667759676791,
+        "p10": 699.9208307935899,
+        "p50": 767.0611838473502,
+        "p90": 844.4407708232028,
+        "p95": 859.696875924301,
+        "p97": 866.3630495991164,
+        "p98": 868.9448420695387,
+        "p99": 872.5651736380462
+      }
+    },
+    "logical_object_id": "frame_000009:logical:000",
+    "sample_frame": "frame_000009",
+    "target": "lower_bottle"
+  },
+  {
+    "baseline": {
+      "object_height_mm": 119.86632596054756,
+      "support_mm": 1106.093380140284,
+      "support_source": "point_p5_fallback",
+      "top_mm": 1225.9597061008315
+    },
+    "candidate": {
+      "anchor_count": 22,
+      "available": true,
+      "candidate_height_max_mm": 144.0,
+      "candidate_height_median_mm": 144.0,
+      "candidate_height_min_mm": 132.0,
+      "candidate_height_p25_mm": 144.0,
+      "candidate_height_p75_mm": 144.0,
+      "contact_depth": {
+        "object_lower_interior": {
+          "band_pixel_count": 374,
+          "count": 374,
+          "kept_count": 374,
+          "limit_mm": 70.7662636578083,
+          "mad_mm": 13.6374831199646,
+          "median_mm": 1867.794156074524,
+          "y_range": [
+            62.699999999999996,
+            79.74
+          ]
+        },
+        "reason": null,
+        "selected_depth_mm": 1759.8811984062195,
+        "selected_source": "support_context_below_contour",
+        "support_context": {
+          "band_pixel_count": 264,
+          "count": 264,
+          "kept_count": 264,
+          "limit_mm": 78.90627531409264,
+          "mad_mm": 15.20615816116333,
+          "median_mm": 1759.8811984062195
+        }
+      },
+      "height_method": "gravity_only_upright_silhouette",
+      "height_statistic": "median",
+      "object_height_mm": 144.0,
+      "reason": null,
+      "source": "instance_mask",
+      "sphere_fit_fallback_audit": null,
+      "support_anchor_mad_mm": 0.023838243799673364,
+      "support_mm": 1089.4056673269974,
+      "support_source": "candidate_contact_band",
+      "top_mm": 1233.4056673269974,
+      "valid_anchor_count": 22
+    },
+    "inventory": {
+      "axial_depth_mm": {
+        "median": 1823.3627080917358,
+        "p05": 1799.7822284698486,
+        "p95": 1904.5395374298096
+      },
+      "bbox_xyxy": [
+        264.0589294433594,
+        1.0561904907226562,
+        297.8791809082031,
+        83.69529724121094
+      ],
+      "class_name": "bottle",
+      "confidence": 0.9356910926989299,
+      "confidence_ingredients": {
+        "axial_depth_dispersion": 0.9427748918533325,
+        "depth_coverage": 1.0,
+        "detect_segment_agreement": 0.45,
+        "has_support_plane": 0.55,
+        "not_touches_border": 1.0,
+        "percentile_stability": 0.8921265227783245,
+        "point_count": 0.966611650099262,
+        "world_z_dispersion": 0.821256048254797
+      },
+      "coverage": 1.0,
+      "detect_segment_agreement": false,
+      "frame_id": "frame_000009",
+      "logical_object_id": "frame_000009:logical:001",
+      "lower_tail_pixel_count": 97,
+      "mask_vs_bbox": "mask",
+      "object_pixel_count": 1925,
+      "region_method": "mask_eroded_1px_robust",
+      "region_source": "mask",
+      "target": "upper_bottle",
+      "top_percentile_spatial_median_xy": [
+        279.0,
+        16.0
+      ],
+      "top_points_on_region_boundary_fraction": 0.27835051546391754,
+      "touches_border": false,
+      "upper_tail_pixel_count": 97,
+      "valid_dense_depth_count": 1925,
+      "world_z_iqr_mm": 62.56038311082102,
+      "world_z_mad_mm": 31.1709875862623,
+      "world_z_min_mm": 1097.5832404916432,
+      "world_z_mm": {
+        "max": 1242.5162341263522,
+        "p01": 1099.9573538968036,
+        "p02": 1100.5339616834372,
+        "p05": 1106.093380140284,
+        "p10": 1112.8284368662682,
+        "p50": 1161.2155340738748,
+        "p90": 1216.5137412435645,
+        "p95": 1225.9597061008315,
+        "p97": 1231.1616652926912,
+        "p98": 1234.0651096825538,
+        "p99": 1236.9966861738787
+      }
+    },
+    "logical_object_id": "frame_000009:logical:001",
+    "sample_frame": "frame_000009",
+    "target": "upper_bottle"
+  },
+  {
+    "baseline": {
+      "object_height_mm": 149.1952235093405,
+      "support_mm": 739.8213175668056,
+      "support_source": "point_p5_fallback",
+      "top_mm": 889.0165410761462
+    },
+    "candidate": {
+      "anchor_count": 24,
+      "available": true,
+      "candidate_height_max_mm": 195.0,
+      "candidate_height_median_mm": 181.0,
+      "candidate_height_min_mm": 143.0,
+      "candidate_height_p25_mm": 167.75,
+      "candidate_height_p75_mm": 192.0,
+      "contact_depth": {
+        "object_lower_interior": {
+          "band_pixel_count": 1872,
+          "count": 1872,
+          "kept_count": 1872,
+          "limit_mm": 335.6732590019703,
+          "mad_mm": 64.68814611434937,
+          "median_mm": 1581.1360478401184,
+          "y_range": [
+            245.89999999999998,
+            271.58
+          ]
+        },
+        "reason": null,
+        "selected_depth_mm": 1584.3104124069214,
+        "selected_source": "support_context_below_contour",
+        "support_context": {
+          "band_pixel_count": 933,
+          "count": 933,
+          "kept_count": 832,
+          "limit_mm": 108.44420574903488,
+          "mad_mm": 20.89846134185791,
+          "median_mm": 1586.7807865142822
+        }
+      },
+      "height_method": "gravity_only_sphere_envelope",
+      "height_statistic": "upper_quintile_median",
+      "object_height_mm": 193.5,
+      "reason": null,
+      "source": "detector_ellipse",
+      "sphere_fit_fallback_audit": {
+        "available": false,
+        "reason": "sphere_fit_quality_gate",
+        "sphere_fit": {
+          "gate_pass": false,
+          "jacobian_condition": 3.767897353968221,
+          "point_count": 7270,
+          "radius_mm": 83.90486086869704,
+          "relative_residual": 0.21056379104741801,
+          "residual_rms_mm": 17.667325591819004,
+          "solver_success": true
+        }
+      },
+      "support_anchor_mad_mm": 6.339057744250681,
+      "support_mm": 732.1056990559503,
+      "support_source": "candidate_contact_band",
+      "top_mm": 925.6056990559503,
+      "valid_anchor_count": 24
+    },
+    "inventory": {
+      "axial_depth_mm": {
+        "median": 1518.7546014785767,
+        "p05": 1463.4181439876556,
+        "p95": 1591.7981386184692
+      },
+      "bbox_xyxy": [
+        246.10475158691406,
+        169.1097412109375,
+        360.7647705078125,
+        278.15960693359375
+      ],
+      "class_name": "sports ball",
+      "confidence": 0.38937492512101896,
+      "confidence_ingredients": {
+        "axial_depth_dispersion": 0.9333832859992981,
+        "depth_coverage": 0.6529644268774704,
+        "detect_segment_agreement": 0.45,
+        "has_support_plane": 0.55,
+        "not_touches_border": 1.0,
+        "percentile_stability": 0.7874474113643509,
+        "point_count": 1.0,
+        "world_z_dispersion": 0.8113035011500291
+      },
+      "coverage": 0.5876679841897233,
+      "detect_segment_agreement": false,
+      "frame_id": "frame_000009",
+      "logical_object_id": "frame_000009:logical:002",
+      "lower_tail_pixel_count": 372,
+      "mask_vs_bbox": "bbox",
+      "object_pixel_count": 12650,
+      "region_method": "bbox_main_depth_cluster",
+      "region_source": "bbox",
+      "target": "lower_volleyball",
+      "top_percentile_spatial_median_xy": [
+        302.5,
+        184.0
+      ],
+      "top_points_on_region_boundary_fraction": 0.0,
+      "touches_border": false,
+      "upper_tail_pixel_count": 372,
+      "valid_dense_depth_count": 7434,
+      "world_z_iqr_mm": 66.0437745974898,
+      "world_z_mad_mm": 32.60904684178013,
+      "world_z_min_mm": 719.6401476860103,
+      "world_z_mm": {
+        "max": 902.2889964613295,
+        "p01": 723.7363270434558,
+        "p02": 727.3223593158988,
+        "p05": 739.8213175668056,
+        "p10": 761.0988707621184,
+        "p50": 825.5136960614666,
+        "p90": 878.4112059761115,
+        "p95": 889.0165410761462,
+        "p97": 892.2898301873843,
+        "p98": 894.5985008888671,
+        "p99": 897.5783891087118
+      }
+    },
+    "logical_object_id": "frame_000009:logical:002",
+    "sample_frame": "frame_000009",
+    "target": "lower_volleyball"
+  },
+  {
+    "baseline": {
+      "object_height_mm": 154.66026693081608,
+      "support_mm": 711.1274704389878,
+      "support_source": "point_p5_fallback",
+      "top_mm": 865.7877373698038
+    },
+    "candidate": {
+      "anchor_count": 20,
+      "available": true,
+      "candidate_height_max_mm": 183.0,
+      "candidate_height_median_mm": 183.0,
+      "candidate_height_min_mm": 181.0,
+      "candidate_height_p25_mm": 183.0,
+      "candidate_height_p75_mm": 183.0,
+      "contact_depth": {
+        "object_lower_interior": {
+          "band_pixel_count": 529,
+          "count": 529,
+          "kept_count": 529,
+          "limit_mm": 137.567990899086,
+          "mad_mm": 26.510953903198242,
+          "median_mm": 1857.0479154586792,
+          "y_range": [
+            249.2,
+            272.24
+          ]
+        },
+        "reason": null,
+        "selected_depth_mm": 1658.2800149917603,
+        "selected_source": "support_context_below_contour",
+        "support_context": {
+          "band_pixel_count": 279,
+          "count": 279,
+          "kept_count": 279,
+          "limit_mm": 173.07561374902724,
+          "mad_mm": 33.35368633270264,
+          "median_mm": 1658.2800149917603
+        }
+      },
+      "height_method": "gravity_only_upright_silhouette",
+      "height_statistic": "median",
+      "object_height_mm": 183.0,
+      "reason": null,
+      "source": "instance_mask",
+      "sphere_fit_fallback_audit": null,
+      "support_anchor_mad_mm": 0.0884393389443403,
+      "support_mm": 714.4780694911759,
+      "support_source": "candidate_contact_band",
+      "top_mm": 897.4780694911759,
+      "valid_anchor_count": 20
+    },
+    "inventory": {
+      "axial_depth_mm": {
+        "median": 1907.3774814605713,
+        "p05": 1837.7048969268799,
+        "p95": 1958.2443237304688
+      },
+      "bbox_xyxy": [
+        134.16513061523438,
+        181.94918823242188,
+        167.64035034179688,
+        283.4142761230469
+      ],
+      "class_name": "bottle",
+      "confidence": 0.9587106115391345,
+      "confidence_ingredients": {
+        "axial_depth_dispersion": 0.9602996706962585,
+        "depth_coverage": 1.0,
+        "detect_segment_agreement": 1.0,
+        "has_support_plane": 0.55,
+        "not_touches_border": 1.0,
+        "percentile_stability": 0.8678646301080728,
+        "point_count": 0.9985094008696498,
+        "world_z_dispersion": 0.7563924038505706
+      },
+      "coverage": 0.9349224366250473,
+      "detect_segment_agreement": true,
+      "frame_id": "frame_000010",
+      "logical_object_id": "frame_000010:logical:000",
+      "lower_tail_pixel_count": 124,
+      "mask_vs_bbox": "mask",
+      "object_pixel_count": 2643,
+      "region_method": "mask_eroded_1px_robust",
+      "region_source": "mask",
+      "target": "lower_bottle",
+      "top_percentile_spatial_median_xy": [
+        150.5,
+        186.0
+      ],
+      "top_points_on_region_boundary_fraction": 0.23387096774193547,
+      "touches_border": false,
+      "upper_tail_pixel_count": 124,
+      "valid_dense_depth_count": 2471,
+      "world_z_iqr_mm": 85.26265865230027,
+      "world_z_mad_mm": 42.60996424701193,
+      "world_z_min_mm": 699.9752561085197,
+      "world_z_mm": {
+        "max": 880.5472956828927,
+        "p01": 704.4879069967502,
+        "p02": 706.4620984342831,
+        "p05": 711.1274704389878,
+        "p10": 715.7946876850414,
+        "p50": 778.4400127347371,
+        "p90": 850.6346491320684,
+        "p95": 865.7877373698038,
+        "p97": 872.0006298719868,
+        "p98": 874.6328503977157,
+        "p99": 878.2017732831612
+      }
+    },
+    "logical_object_id": "frame_000010:logical:000",
+    "sample_frame": "frame_000010",
+    "target": "lower_bottle"
+  },
+  {
+    "baseline": {
+      "object_height_mm": 116.99850038453906,
+      "support_mm": 1111.255532446125,
+      "support_source": "point_p5_fallback",
+      "top_mm": 1228.254032830664
+    },
+    "candidate": {
+      "anchor_count": 24,
+      "available": true,
+      "candidate_height_max_mm": 145.0,
+      "candidate_height_median_mm": 145.0,
+      "candidate_height_min_mm": 127.0,
+      "candidate_height_p25_mm": 145.0,
+      "candidate_height_p75_mm": 145.0,
+      "contact_depth": {
+        "object_lower_interior": {
+          "band_pixel_count": 408,
+          "count": 408,
+          "kept_count": 408,
+          "limit_mm": 64.64068683385848,
+          "mad_mm": 12.457013130187988,
+          "median_mm": 1891.6797041893005,
+          "y_range": [
+            62.699999999999996,
+            79.74
+          ]
+        },
+        "reason": null,
+        "selected_depth_mm": 1778.7445187568665,
+        "selected_source": "support_context_below_contour",
+        "support_context": {
+          "band_pixel_count": 286,
+          "count": 286,
+          "kept_count": 286,
+          "limit_mm": 85.91890865564346,
+          "mad_mm": 16.55757427215576,
+          "median_mm": 1778.7445187568665
+        }
+      },
+      "height_method": "gravity_only_upright_silhouette",
+      "height_statistic": "median",
+      "object_height_mm": 145.0,
+      "reason": null,
+      "source": "instance_mask",
+      "sphere_fit_fallback_audit": null,
+      "support_anchor_mad_mm": 0.02628015605557721,
+      "support_mm": 1090.6640822221484,
+      "support_source": "candidate_contact_band",
+      "top_mm": 1235.6640822221484,
+      "valid_anchor_count": 24
+    },
+    "inventory": {
+      "axial_depth_mm": {
+        "median": 1836.8134498596191,
+        "p05": 1821.8950033187866,
+        "p95": 1909.4151854515076
+      },
+      "bbox_xyxy": [
+        263.51531982421875,
+        1.3349685668945312,
+        297.68212890625,
+        83.65011596679688
+      ],
+      "class_name": "bottle",
+      "confidence": 0.934713651841818,
+      "confidence_ingredients": {
+        "axial_depth_dispersion": 0.9501887857913971,
+        "depth_coverage": 1.0,
+        "detect_segment_agreement": 0.45,
+        "has_support_plane": 0.55,
+        "not_touches_border": 1.0,
+        "percentile_stability": 0.8748611434409379,
+        "point_count": 0.9631818029010527,
+        "world_z_dispersion": 0.8286922589470909
+      },
+      "coverage": 0.9450327786182552,
+      "detect_segment_agreement": false,
+      "frame_id": "frame_000010",
+      "logical_object_id": "frame_000010:logical:001",
+      "lower_tail_pixel_count": 94,
+      "mask_vs_bbox": "mask",
+      "object_pixel_count": 1983,
+      "region_method": "mask_eroded_1px_robust",
+      "region_source": "mask",
+      "target": "upper_bottle",
+      "top_percentile_spatial_median_xy": [
+        279.5,
+        16.0
+      ],
+      "top_points_on_region_boundary_fraction": 0.2872340425531915,
+      "touches_border": false,
+      "upper_tail_pixel_count": 94,
+      "valid_dense_depth_count": 1874,
+      "world_z_iqr_mm": 59.95770936851818,
+      "world_z_mad_mm": 29.940972872076827,
+      "world_z_min_mm": 1100.5115337663008,
+      "world_z_mm": {
+        "max": 1242.2780646456065,
+        "p01": 1102.0720745088986,
+        "p02": 1104.7992286911483,
+        "p05": 1111.255532446125,
+        "p10": 1119.5349332079675,
+        "p50": 1165.6276592809159,
+        "p90": 1217.7626051086472,
+        "p95": 1228.254032830664,
+        "p97": 1233.0150649240852,
+        "p98": 1235.3215495590505,
+        "p99": 1238.1555333952106
+      }
+    },
+    "logical_object_id": "frame_000010:logical:001",
+    "sample_frame": "frame_000010",
+    "target": "upper_bottle"
+  },
+  {
+    "baseline": {
+      "object_height_mm": 166.23390621146473,
+      "support_mm": 725.1160979495038,
+      "support_source": "point_p5_fallback",
+      "top_mm": 891.3500041609685
+    },
+    "candidate": {
+      "available": true,
+      "height_method": "robust_free_radius_sphere_fit",
+      "height_statistic": "fitted_diameter",
+      "object_height_mm": 203.96538527000388,
+      "reason": null,
+      "source": "detector_ellipse",
+      "sphere_fit": {
+        "gate_pass": true,
+        "jacobian_condition": 3.676535033880861,
+        "point_count": 3742,
+        "radius_mm": 101.98269263500194,
+        "relative_residual": 0.1433292743617682,
+        "residual_rms_mm": 14.61710533283407,
+        "solver_success": true
+      },
+      "support_mm": 717.7377213451912,
+      "support_source": "candidate_sphere_fit",
+      "top_mm": 921.7031066151951
+    },
+    "inventory": {
+      "axial_depth_mm": {
+        "median": 1632.309377193451,
+        "p05": 1563.557642698288,
+        "p95": 1692.6227033138275
+      },
+      "bbox_xyxy": [
+        245.8555908203125,
+        169.4571533203125,
+        360.91607666015625,
+        278.3967590332031
+      ],
+      "class_name": "sports ball",
+      "confidence": 0.3680343301940188,
+      "confidence_ingredients": {
+        "axial_depth_dispersion": 0.9406667351722717,
+        "depth_coverage": 0.38505747126436785,
+        "detect_segment_agreement": 0.45,
+        "has_support_plane": 0.55,
+        "not_touches_border": 1.0,
+        "percentile_stability": 0.8919415659174782,
+        "point_count": 1.0,
+        "world_z_dispersion": 0.772442880803726
+      },
+      "coverage": 0.34655172413793106,
+      "detect_segment_agreement": false,
+      "frame_id": "frame_000010",
+      "logical_object_id": "frame_000010:logical:002",
+      "lower_tail_pixel_count": 222,
+      "mask_vs_bbox": "bbox",
+      "object_pixel_count": 12760,
+      "region_method": "bbox_main_depth_cluster",
+      "region_source": "bbox",
+      "target": "lower_volleyball",
+      "top_percentile_spatial_median_xy": [
+        299.0,
+        181.0
+      ],
+      "top_points_on_region_boundary_fraction": 0.0,
+      "touches_border": false,
+      "upper_tail_pixel_count": 222,
+      "valid_dense_depth_count": 4422,
+      "world_z_iqr_mm": 79.6449917186959,
+      "world_z_mad_mm": 38.674939789075836,
+      "world_z_min_mm": 704.2228115312787,
+      "world_z_mm": {
+        "max": 899.6846416794331,
+        "p01": 716.6054750578703,
+        "p02": 719.1873872793474,
+        "p05": 725.1160979495038,
+        "p10": 733.8778246392259,
+        "p50": 824.8913327733344,
+        "p90": 883.9029657383123,
+        "p95": 891.3500041609685,
+        "p97": 893.999718612267,
+        "p98": 895.3466844768647,
+        "p99": 897.0725749645627
+      }
+    },
+    "logical_object_id": "frame_000010:logical:002",
+    "sample_frame": "frame_000010",
+    "target": "lower_volleyball"
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "deltar_scan_frame.v1.schema.json",
+  "title": "DELTAR Scan Frame v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "frame_id", "sequence", "camera_timestamp_us", "tof_timestamp_us", "pair_delta_us", "image", "tof"],
+  "properties": {
+    "schema_version": {"const": "deltar_scan_frame.v1"},
+    "frame_id": {"type": "string", "pattern": "^frame_[0-9]{6}$"},
+    "sequence": {"type": "integer", "minimum": 0, "maximum": 63},
+    "camera_timestamp_us": {"type": "integer", "minimum": 0},
+    "tof_timestamp_us": {"type": "integer", "minimum": 0},
+    "pair_delta_us": {"type": "integer", "minimum": 0},
+    "image": {
+      "type": "object", "additionalProperties": false,
+      "required": ["filename", "width", "height", "pixel_format", "stride_bytes", "payload_bytes"],
+      "properties": {
+        "filename": {"const": "image.rgb565"}, "width": {"const": 640}, "height": {"const": 360},
+        "pixel_format": {"const": "RGB565_LE"}, "stride_bytes": {"const": 1280}, "payload_bytes": {"const": 460800}
+      }
+    },
+    "tof": {
+      "type": "object", "additionalProperties": false, "required": ["filename", "resolution"],
+      "properties": {"filename": {"const": "tof.json"}, "resolution": {"const": [8, 8]}}
+    }
+  }
+}

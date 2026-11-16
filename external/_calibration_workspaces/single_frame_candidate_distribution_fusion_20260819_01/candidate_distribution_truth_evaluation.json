@@ -1,0 +1,57 @@
+{
+  "decision": {
+    "candidate_distribution_fusion_go": false,
+    "candidate_generation_is_primary_blocker": true,
+    "decision_reasons": {
+      "all_lower_correct_hypothesis_presence_rate_ge_0_70": false,
+      "gt75_and_gt100_counts_both_reduced": true,
+      "lower_mean_mad_reduction_ge_25pct": false,
+      "lower_mean_span_reduction_ge_25pct": true
+    },
+    "offline_fusion_reduces_catastrophic_outliers": true,
+    "offline_fusion_reduces_variance": false,
+    "offline_fusion_requires_truth_fit": false,
+    "production_modified": false,
+    "scenario": "B",
+    "winner_take_all_is_primary_variance_amplifier": false
+  },
+  "freeze_checks": {
+    "audit_hash_match": true,
+    "code_hash_match": true,
+    "comparison_hash_match": true,
+    "per_frame_output_hash_match": true,
+    "runtime_cross_frame_false": true,
+    "truth_loaded_false": true
+  },
+  "presence_rates": {
+    "G001": {
+      "lower": 1.0,
+      "upper": 1.0
+    },
+    "G002": {
+      "lower": 1.0,
+      "upper": 1.0
+    },
+    "SCAN_070604": {
+      "lower": 0.45454545454545453,
+      "upper": 1.0
+    },
+    "SCAN_085223": {
+      "lower": 0.45454545454545453,
+      "upper": 0.6363636363636364
+    },
+    "SCAN_161718": {
+      "lower": 0.9090909090909091,
+      "upper": 0.6666666666666666
+    },
+    "SCAN_165011": {
+      "lower": 0.2727272727272727,
+      "upper": 1.0
+    }
+  },
+  "truth_loaded_after_freeze": true,
+  "truth_mm": {
+    "lower": 725.0,
+    "upper": 1065.0
+  }
+}

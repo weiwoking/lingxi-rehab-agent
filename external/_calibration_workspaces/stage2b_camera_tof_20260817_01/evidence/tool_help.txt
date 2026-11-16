@@ -1,0 +1,33 @@
+COMMAND: C:\ec\_deltar_formal\envs\deltar_py311_torch271_cu128\python.exe C:\ec\_calibration_workspaces\stage2b_camera_tof_20260817_01\stage2b_camera_tof.py --help
+EXIT_CODE: 0
+
+STDOUT
+usage: stage2b_camera_tof.py [-h]
+                             {register,status,inspect,coverage,solve,validate,stability-diagnostics,suggest-next,export-candidate}
+                             ...
+
+Dynamic Stage2B Camera<->ToF calibration candidate tool (no promotion)
+
+positional arguments:
+  {register,status,inspect,coverage,solve,validate,stability-diagnostics,suggest-next,export-candidate}
+    register            register one formal complete 11-frame scan by safe
+                        unique pose ID
+    status              show dynamic registry and available QA
+    inspect             inspect registered data, or one formal scan read-only
+    coverage            derive distance/angle/zone/timing coverage from
+                        observations
+    solve               rank all D4 x range semantics x nominal/low-
+                        dimensional models
+    validate            scan-level heldout, dynamic LOPO and residual
+                        diagnostics
+    stability-diagnostics
+                        dynamic fraction-based subset stability
+    suggest-next        diagnostic-driven, snake-route-compatible capture
+                        advice only
+    export-candidate    export candidate and DELTAR fr artifacts; never
+                        promote
+
+options:
+  -h, --help            show this help message and exit
+
+STDERR

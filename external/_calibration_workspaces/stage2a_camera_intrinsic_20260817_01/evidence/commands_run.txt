@@ -1,0 +1,18 @@
+Read-only source searches with rg across esp-claw and _deltar_p4_pipeline.
+Read actual validated scan_20260814_024706_000 scan.json/frame.json/tof.json and file layout.
+Read runtime launcher active calibration argument and old Stage7A JSON/hash.
+Checked Python/OpenCV environments; selected formal Python with OpenCV 4.10.0.
+python stage2a_camera_intrinsic.py --help
+python stage2a_camera_intrinsic.py inspect --latest
+python stage2a_camera_intrinsic.py inspect --latest --detect-charuco
+python stage2a_camera_intrinsic.py synthetic-test
+python stage2a_camera_intrinsic.py status
+python stage2a_camera_intrinsic.py rank
+python stage2a_camera_intrinsic.py calibrate  (expected 0/20 gate, exit 2)
+python stage2a_camera_intrinsic.py register --pose Z99 --latest  (expected argument rejection, exit 2)
+python stage2a_camera_intrinsic.py register --pose A01 --scan-id scan_20260814_024706_000 --dry-run
+Python jsonschema Draft202012Validator.check_schema(candidate_schema.json): PASS
+Read-only git status for formal Git repositories before/after; all clean.
+Read-only C:\calibration recursive metadata fingerprint before/after; identical.
+
+No idf.py, bmgr, P4/SD operation, real scan start, Git mutation, or formal calibration write was run.

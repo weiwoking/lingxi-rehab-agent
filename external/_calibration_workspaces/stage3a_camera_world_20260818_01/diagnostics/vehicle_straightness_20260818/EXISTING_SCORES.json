@@ -1,0 +1,1841 @@
+{
+  "schema_version": "stage3a_existing_straightness.v1",
+  "stage2_sha256": "63c974cd2ff64dd0f135d47d8c92eb170d06658cb315563fb93588862ba8b057",
+  "registry_sha256": "77219b55b4a1716b6bc51c643a84d5a1b20171e3565f323cb443b2245b9f7050",
+  "scan_ids": {
+    "W01": "scan_20260817_194252_000",
+    "W02": "scan_20260817_194937_000",
+    "W03": "scan_20260817_195209_000"
+  },
+  "scores": {
+    "W01": {
+      "schema_version": "stage3a_image_straightness_score.v1",
+      "decision": "STRAIGHT_ENOUGH",
+      "straightness_score_0_100": 55.04007190851256,
+      "confidence": "HIGH",
+      "confidence_value_0_1": 0.9375597871841087,
+      "action": "Proceed; no yaw correction is needed.",
+      "valid_frame_count": 11,
+      "input_frame_count": 11,
+      "valid_frame_fraction": 1.0,
+      "straight_enough_region_internal": {
+        "absolute_signed_proxy_limit_deg": 3.25,
+        "basis": "synthetic paired height/gravity impact plus current-image robustness"
+      },
+      "aggregate": {
+        "signed_straightness_proxy_deg": {
+          "median": 3.016458292228191,
+          "mad": 0.13046286963698828,
+          "std": 0.16867580743289687,
+          "min": 2.62297863815819,
+          "max": 3.1630590612867477
+        },
+        "board_center_x_px": {
+          "median": 275.4436408906432,
+          "mad": 0.40195149544427977,
+          "std": 3.3446551228248573,
+          "min": 265.8858028593979,
+          "max": 276.5119973071274
+        },
+        "short_edge_px": {
+          "median": 177.70785497942467,
+          "mad": 0.1739241535976248,
+          "std": 0.4786888940902178,
+          "min": 177.5008201650738,
+          "max": 179.08153782947358
+        },
+        "minimum_image_edge_margin_px": {
+          "median": 42.104991522224935,
+          "mad": 0.2397616910934346,
+          "std": 1.9151594935596203,
+          "min": 36.433934369195924,
+          "max": 42.434409311315086
+        },
+        "homography_rms_px": {
+          "median": 0.10343417062606315,
+          "mad": 0.005187769231008679,
+          "std": 0.010043081191932092,
+          "min": 0.0872428525904415,
+          "max": 0.122150261344089
+        },
+        "corner_count": {
+          "median": 22.0,
+          "mad": 2.0,
+          "std": 1.6663911618021234,
+          "min": 20.0,
+          "max": 24.0
+        }
+      },
+      "method": {
+        "primary": "undistorted outer-quadrilateral homography depth gradient plus edge asymmetry",
+        "pnp_role": "board-normal auxiliary only",
+        "center_x_role": "lateral-placement decision only; never used as yaw evidence"
+      },
+      "frames": [
+        {
+          "frame": "frame_000000",
+          "corner_count": 24,
+          "marker_count": 17,
+          "homography_rms_px": 0.09824640139505447,
+          "outer_quadrilateral_px": [
+            [
+              143.06244737448657,
+              40.23184298763638
+            ],
+            [
+              396.7030847719624,
+              39.66422868453668
+            ],
+            [
+              397.5290888020037,
+              217.82862293556607
+            ],
+            [
+              145.70066192974977,
+              221.24442802794195
+            ]
+          ],
+          "left_edge_length_px": 181.0318096882795,
+          "right_edge_length_px": 178.16630899666154,
+          "top_edge_length_px": 253.64127251966482,
+          "bottom_edge_length_px": 251.8515918261849,
+          "left_right_edge_ratio": 1.016083291547964,
+          "top_bottom_width_ratio": 1.007106092443184,
+          "horizontal_vanishing_point_px": [
+            16128.05172455877,
+            4.459544661455942
+          ],
+          "horizontal_vanishing_convergence": 0.05488349072951625,
+          "quadrilateral_horizontal_trapezoid_asymmetry": 0.015954987192632532,
+          "normalized_homography_perspective_x": 0.054797691576548804,
+          "board_normal_horizontal_component": -0.05514009538246799,
+          "board_center_x_px": 270.7488207195506,
+          "board_center_y_px": 129.74228065892027,
+          "board_center_x_offset_from_image_center_px": -49.25117928044938,
+          "minimum_image_edge_margin_px": 39.66422868453668,
+          "short_edge_px": 178.16630899666154,
+          "depth_gradient_proxy_deg": 3.141440700055559,
+          "edge_asymmetry_proxy_deg": 3.1524016236747996,
+          "signed_straightness_proxy_deg": 3.1469211618651793,
+          "pnp_board_normal_yaw_aux_deg": 2.855902028913684,
+          "pnp_board_normal_x_aux": -0.049817204373717616
+        },
+        {
+          "frame": "frame_000001",
+          "corner_count": 22,
+          "marker_count": 16,
+          "homography_rms_px": 0.1060893172875411,
+          "outer_quadrilateral_px": [
+            [
+              137.16949504114822,
+              37.86463296631598
+            ],
+            [
+              391.7843872355528,
+              36.433934369195924
+            ],
+            [
+              393.7551474074222,
+              215.50462793940062
+            ],
+            [
+              140.83418175346847,
+              219.5602311246183
+            ]
+          ],
+          "left_edge_length_px": 181.73255162133924,
+          "right_edge_length_px": 179.08153782947358,
+          "top_edge_length_px": 254.61891175960216,
+          "bottom_edge_length_px": 252.95347948688985,
+          "left_right_edge_ratio": 1.0148033896960948,
+          "top_bottom_width_ratio": 1.006583946882607,
+          "horizontal_vanishing_point_px": [
+            17586.71756967983,
+            -60.185578219693994
+          ],
+          "horizontal_vanishing_convergence": 0.05025194061764447,
+          "quadrilateral_horizontal_trapezoid_asymmetry": 0.014694624569127636,
+          "normalized_homography_perspective_x": 0.05018381216999039,
+          "board_normal_horizontal_component": -0.050587789396135056,
+          "board_center_x_px": 265.8858028593979,
+          "board_center_y_px": 127.3408565998827,
+          "board_center_x_offset_from_image_center_px": -54.11419714060207,
+          "minimum_image_edge_margin_px": 36.433934369195924,
+          "short_edge_px": 179.08153782947358,
+          "depth_gradient_proxy_deg": 2.8768041811152156,
+          "edge_asymmetry_proxy_deg": 2.891189489572338,
+          "signed_straightness_proxy_deg": 2.883996835343777,
+          "pnp_board_normal_yaw_aux_deg": 2.919543079338858,
+          "pnp_board_normal_x_aux": -0.05092618339654426
+        },
+        {
+          "frame": "frame_000002",
+          "corner_count": 24,
+          "marker_count": 17,
+          "homography_rms_px": 0.10573172087678746,
+          "outer_quadrilateral_px": [
+            [
+              141.1143137305169,
+              39.386591263668585
+            ],
+            [
+              395.06910580094313,
+              38.56276462378709
+            ],
+            [
+              396.29197604690586,
+              217.18904647131095
+            ],
+            [
+              144.5812493133329,
+              220.6378690627225
+            ]
+          ],
+          "left_edge_length_px": 181.2844321670375,
+          "right_edge_length_px": 178.63046766525997,
+          "top_edge_length_px": 253.9561283093322,
+          "bottom_edge_length_px": 251.734352701435,
+          "left_right_edge_ratio": 1.0148572891089938,
+          "top_bottom_width_ratio": 1.0088258737198745,
+          "horizontal_vanishing_point_px": [
+            17477.766445343943,
+            -16.853323549282436
+          ],
+          "horizontal_vanishing_convergence": 0.05057069743877102,
+          "quadrilateral_horizontal_trapezoid_asymmetry": 0.014747733439288781,
+          "normalized_homography_perspective_x": 0.05050287819851568,
+          "board_normal_horizontal_component": -0.050935525955853496,
+          "board_center_x_px": 269.26416122292466,
+          "board_center_y_px": 128.94406785537228,
+          "board_center_x_offset_from_image_center_px": -50.735838777075344,
+          "minimum_image_edge_margin_px": 38.56276462378709,
+          "short_edge_px": 178.63046766525997,
+          "depth_gradient_proxy_deg": 2.8950213063040606,
+          "edge_asymmetry_proxy_deg": 2.9106787277535098,
+          "signed_straightness_proxy_deg": 2.9028500170287854,
+          "pnp_board_normal_yaw_aux_deg": 2.9351678789580298,
+          "pnp_board_normal_x_aux": -0.05118324461418734
+        },
+        {
+          "frame": "frame_000003",
+          "corner_count": 20,
+          "marker_count": 15,
+          "homography_rms_px": 0.10343417062606315,
+          "outer_quadrilateral_px": [
+            [
+              148.0576660946439,
+              42.104991522224935
+            ],
+            [
+              400.83641351796655,
+              42.255707426406914
+            ],
+            [
+              401.05715392043885,
+              220.16255223746995
+            ],
+            [
+              150.4275971136407,
+              222.3716679139746
+            ]
+          ],
+          "left_edge_length_px": 180.2822542303113,
+          "right_edge_length_px": 177.90698175437902,
+          "top_edge_length_px": 252.77879235447685,
+          "bottom_edge_length_px": 250.6392924847264,
+          "left_right_edge_ratio": 1.0133512043906834,
+          "top_bottom_width_ratio": 1.0085361710390275,
+          "horizontal_vanishing_point_px": [
+            19306.180112261205,
+            53.52776252784093
+          ],
+          "horizontal_vanishing_convergence": 0.04570532396209995,
+          "quadrilateral_horizontal_trapezoid_asymmetry": 0.013262668094436067,
+          "normalized_homography_perspective_x": 0.04565666660343057,
+          "board_normal_horizontal_component": -0.045888387044668695,
+          "board_center_x_px": 275.0947076616725,
+          "board_center_y_px": 131.72372977501908,
+          "board_center_x_offset_from_image_center_px": -44.90529233832751,
+          "minimum_image_edge_margin_px": 42.104991522224935,
+          "short_edge_px": 177.90698175437902,
+          "depth_gradient_proxy_deg": 2.616900963288619,
+          "edge_asymmetry_proxy_deg": 2.6290563130277613,
+          "signed_straightness_proxy_deg": 2.62297863815819,
+          "pnp_board_normal_yaw_aux_deg": 2.7908513831917054,
+          "pnp_board_normal_x_aux": -0.04866682472974273
+        },
+        {
+          "frame": "frame_000004",
+          "corner_count": 20,
+          "marker_count": 16,
+          "homography_rms_px": 0.122150261344089,
+          "outer_quadrilateral_px": [
+            [
+              148.49504265585378,
+              41.98697159197513
+            ],
+            [
+              400.9414935831931,
+              42.53632033764994
+            ],
+            [
+              401.27490757373135,
+              220.22137000256765
+            ],
+            [
+              150.60411544512286,
+              222.52254510261284
+            ]
+          ],
+          "left_edge_length_px": 180.54789251288784,
+          "right_edge_length_px": 177.68536247905553,
+          "top_edge_length_px": 252.44704864556036,
+          "bottom_edge_length_px": 250.68135437887102,
+          "left_right_edge_ratio": 1.0161101060542888,
+          "top_bottom_width_ratio": 1.0070435803694466,
+          "horizontal_vanishing_point_px": [
+            16047.777428809035,
+            76.58540149217143
+          ],
+          "horizontal_vanishing_convergence": 0.05516328857660547,
+          "quadrilateral_horizontal_trapezoid_asymmetry": 0.015981375229369436,
+          "normalized_homography_perspective_x": 0.05507838769197355,
+          "board_normal_horizontal_component": -0.055265798774843514,
+          "board_center_x_px": 275.3288898144753,
+          "board_center_y_px": 131.8168017587014,
+          "board_center_x_offset_from_image_center_px": -44.6711101855247,
+          "minimum_image_edge_margin_px": 41.98697159197513,
+          "short_edge_px": 177.68536247905553,
+          "depth_gradient_proxy_deg": 3.1574235464668132,
+          "edge_asymmetry_proxy_deg": 3.168694576106682,
+          "signed_straightness_proxy_deg": 3.1630590612867477,
+          "pnp_board_normal_yaw_aux_deg": 3.1147129011466848,
+          "pnp_board_normal_x_aux": -0.05432205816227209
+        },
+        {
+          "frame": "frame_000005",
+          "corner_count": 24,
+          "marker_count": 17,
+          "homography_rms_px": 0.10691549588199625,
+          "outer_quadrilateral_px": [
+            [
+              148.5435406756376,
+              42.16151477493006
+            ],
+            [
+              400.9873679128973,
+              42.57630759470867
+            ],
+            [
+              401.6820162172701,
+              220.2784462580416
+            ],
+            [
+              150.68438812601386,
+              222.6569528627853
+            ]
+          ],
+          "left_edge_length_px": 180.50813388413434,
+          "right_edge_length_px": 177.70349636906184,
+          "top_edge_length_px": 252.4441680120156,
+          "bottom_edge_length_px": 251.00889745406513,
+          "left_right_edge_ratio": 1.0157826805458443,
+          "top_bottom_width_ratio": 1.0057180067021851,
+          "horizontal_vanishing_point_px": [
+            16382.963567693409,
+            68.83644255657939
+          ],
+          "horizontal_vanishing_convergence": 0.05401350902224181,
+          "quadrilateral_horizontal_trapezoid_asymmetry": 0.01565910918687976,
+          "normalized_homography_perspective_x": 0.05393362801268318,
+          "board_normal_horizontal_component": -0.054099727740514046,
+          "board_center_x_px": 275.4743282329547,
+          "board_center_y_px": 131.9183053726164,
+          "board_center_x_offset_from_image_center_px": -44.52567176704531,
+          "minimum_image_edge_margin_px": 42.16151477493006,
+          "short_edge_px": 177.70349636906184,
+          "depth_gradient_proxy_deg": 3.09174176248818,
+          "edge_asymmetry_proxy_deg": 3.103578206753735,
+          "signed_straightness_proxy_deg": 3.0976599846209574,
+          "pnp_board_normal_yaw_aux_deg": 3.0523227631093808,
+          "pnp_board_normal_x_aux": -0.053245673996673466
+        },
+        {
+          "frame": "frame_000006",
+          "corner_count": 24,
+          "marker_count": 17,
+          "homography_rms_px": 0.11970098452399895,
+          "outer_quadrilateral_px": [
+            [
+              148.51926257787287,
+              42.19715991289225
+            ],
+            [
+              401.0267379308805,
+              42.47828059777436
+            ],
+            [
+              401.5902002135258,
+              220.2362670623054
+            ],
+            [
+              150.63836284029384,
+              222.48790257274672
+            ]
+          ],
+          "left_edge_length_px": 180.30319596380997,
+          "right_edge_length_px": 177.7588795016113,
+          "top_edge_length_px": 252.50763184107765,
+          "bottom_edge_length_px": 250.9619384358372,
+          "left_right_edge_ratio": 1.0143133016439587,
+          "top_bottom_width_ratio": 1.0061590750170095,
+          "horizontal_vanishing_point_px": [
+            18026.287153855174,
+            62.10077008020727
+          ],
+          "horizontal_vanishing_convergence": 0.04900569676272253,
+          "quadrilateral_horizontal_trapezoid_asymmetry": 0.014211594226456353,
+          "normalized_homography_perspective_x": 0.048945895342592506,
+          "board_normal_horizontal_component": -0.0491185276812224,
+          "board_center_x_px": 275.4436408906432,
+          "board_center_y_px": 131.84990253642968,
+          "board_center_x_offset_from_image_center_px": -44.55635910935678,
+          "minimum_image_edge_margin_px": 42.19715991289225,
+          "short_edge_px": 177.7588795016113,
+          "depth_gradient_proxy_deg": 2.805575115699817,
+          "edge_asymmetry_proxy_deg": 2.8172149343320454,
+          "signed_straightness_proxy_deg": 2.811395025015931,
+          "pnp_board_normal_yaw_aux_deg": 2.760339880026259,
+          "pnp_board_normal_x_aux": -0.04815534476341719
+        },
+        {
+          "frame": "frame_000007",
+          "corner_count": 24,
+          "marker_count": 17,
+          "homography_rms_px": 0.09184333133284805,
+          "outer_quadrilateral_px": [
+            [
+              148.63438845226952,
+              42.086914485672246
+            ],
+            [
+              401.3167385914901,
+              42.396530895015204
+            ],
+            [
+              401.40396122951705,
+              219.9848019459982
+            ],
+            [
+              150.887796605046,
+              222.38784654534376
+            ]
+          ],
+          "left_edge_length_px": 180.3150131017639,
+          "right_edge_length_px": 177.58829247072,
+          "top_edge_length_px": 252.6825398285378,
+          "bottom_edge_length_px": 250.52768980993204,
+          "left_right_edge_ratio": 1.015354168865008,
+          "top_bottom_width_ratio": 1.0086012449172408,
+          "horizontal_vanishing_point_px": [
+            16817.85972047041,
+            62.512028036280505
+          ],
+          "horizontal_vanishing_convergence": 0.052591254005800545,
+          "quadrilateral_horizontal_trapezoid_asymmetry": 0.015237191658134402,
+          "normalized_homography_perspective_x": 0.052517372178009294,
+          "board_normal_horizontal_component": -0.052763514432345136,
+          "board_center_x_px": 275.5607212195806,
+          "board_center_y_px": 131.71402346800735,
+          "board_center_x_offset_from_image_center_px": -44.439278780419386,
+          "minimum_image_edge_margin_px": 42.086914485672246,
+          "short_edge_px": 177.58829247072,
+          "depth_gradient_proxy_deg": 3.010483432802751,
+          "edge_asymmetry_proxy_deg": 3.0224331516536314,
+          "signed_straightness_proxy_deg": 3.016458292228191,
+          "pnp_board_normal_yaw_aux_deg": 2.803087876652587,
+          "pnp_board_normal_x_aux": -0.04888076175065497
+        },
+        {
+          "frame": "frame_000008",
+          "corner_count": 20,
+          "marker_count": 15,
+          "homography_rms_px": 0.10187810299513472,
+          "outer_quadrilateral_px": [
+            [
+              148.94293766548088,
+              42.34475321331837
+            ],
+            [
+              401.54218612456975,
+              42.55613547866158
+            ],
+            [
+              401.93058689244765,
+              220.26356601051003
+            ],
+            [
+              150.96665886185158,
+              222.49658145152483
+            ]
+          ],
+          "left_edge_length_px": 180.16319453497954,
+          "right_edge_length_px": 177.70785497942467,
+          "top_edge_length_px": 252.59933690443174,
+          "bottom_edge_length_px": 250.97386224566498,
+          "left_right_edge_ratio": 1.0138167193331953,
+          "top_bottom_width_ratio": 1.0064766691010065,
+          "horizontal_vanishing_point_px": [
+            18657.165852865943,
+            57.83296274346605
+          ],
+          "horizontal_vanishing_convergence": 0.04732137231368511,
+          "quadrilateral_horizontal_trapezoid_asymmetry": 0.013721923351366511,
+          "normalized_homography_perspective_x": 0.047267449651807326,
+          "board_normal_horizontal_component": -0.04744946561775716,
+          "board_center_x_px": 275.8455923860875,
+          "board_center_y_px": 131.9152590385037,
+          "board_center_x_offset_from_image_center_px": -44.1544076139125,
+          "minimum_image_edge_margin_px": 42.34475321331837,
+          "short_edge_px": 177.70785497942467,
+          "depth_gradient_proxy_deg": 2.709293802262445,
+          "edge_asymmetry_proxy_deg": 2.720581189994209,
+          "signed_straightness_proxy_deg": 2.714937496128327,
+          "pnp_board_normal_yaw_aux_deg": 2.636715079707138,
+          "pnp_board_normal_x_aux": -0.046002318139721304
+        },
+        {
+          "frame": "frame_000009",
+          "corner_count": 22,
+          "marker_count": 16,
+          "homography_rms_px": 0.0872428525904415,
+          "outer_quadrilateral_px": [
+            [
+              149.50111199720027,
+              42.3844887044798
+            ],
+            [
+              401.94824782501667,
+              42.91595433066942
+            ],
+            [
+              402.27176875425084,
+              220.41647966364476
+            ],
+            [
+              151.58756505823283,
+              222.61692366398688
+            ]
+          ],
+          "left_edge_length_px": 180.244511422148,
+          "right_edge_length_px": 177.5008201650738,
+          "top_edge_length_px": 252.44769526256286,
+          "bottom_edge_length_px": 250.69386098687238,
+          "left_right_edge_ratio": 1.0154573441098615,
+          "top_bottom_width_ratio": 1.006995920318058,
+          "horizontal_vanishing_point_px": [
+            16712.086441934338,
+            77.25295633367035
+          ],
+          "horizontal_vanishing_convergence": 0.052930230251321236,
+          "quadrilateral_horizontal_trapezoid_asymmetry": 0.015338795589036303,
+          "normalized_homography_perspective_x": 0.0528552278255705,
+          "board_normal_horizontal_component": -0.053032921843069264,
+          "board_center_x_px": 276.32717340867515,
+          "board_center_y_px": 132.0834615906952,
+          "board_center_x_offset_from_image_center_px": -43.67282659132485,
+          "minimum_image_edge_margin_px": 42.3844887044798,
+          "short_edge_px": 177.5008201650738,
+          "depth_gradient_proxy_deg": 3.0298514262387686,
+          "edge_asymmetry_proxy_deg": 3.0431450715862747,
+          "signed_straightness_proxy_deg": 3.0364982489125216,
+          "pnp_board_normal_yaw_aux_deg": 2.8882650874845446,
+          "pnp_board_normal_x_aux": -0.05037945368882209
+        },
+        {
+          "frame": "frame_000010",
+          "corner_count": 22,
+          "marker_count": 16,
+          "homography_rms_px": 0.0967447172818727,
+          "outer_quadrilateral_px": [
+            [
+              149.83599623946614,
+              42.434409311315086
+            ],
+            [
+              402.11706816461384,
+              42.97185137568016
+            ],
+            [
+              402.5419144965293,
+              220.50527386300732
+            ],
+            [
+              151.55301032790015,
+              222.70215442756484
+            ]
+          ],
+          "left_edge_length_px": 180.27592203807214,
+          "right_edge_length_px": 177.53393082582704,
+          "top_edge_length_px": 252.28164438911148,
+          "bottom_edge_length_px": 250.9985185214929,
+          "left_right_edge_ratio": 1.0154448853776306,
+          "top_bottom_width_ratio": 1.0051120854225628,
+          "horizontal_vanishing_point_px": [
+            16715.026634359918,
+            77.72374031508511
+          ],
+          "horizontal_vanishing_convergence": 0.0529207486540102,
+          "quadrilateral_horizontal_trapezoid_asymmetry": 0.015326527150095404,
+          "normalized_homography_perspective_x": 0.05284579582931143,
+          "board_normal_horizontal_component": -0.0529807025687326,
+          "board_center_x_px": 276.5119973071274,
+          "board_center_y_px": 132.15342224439183,
+          "board_center_x_offset_from_image_center_px": -43.48800269287261,
+          "minimum_image_edge_margin_px": 42.434409311315086,
+          "short_edge_px": 177.53393082582704,
+          "depth_gradient_proxy_deg": 3.0293096881962653,
+          "edge_asymmetry_proxy_deg": 3.0396443951217096,
+          "signed_straightness_proxy_deg": 3.0344770416589872,
+          "pnp_board_normal_yaw_aux_deg": 2.762602961819251,
+          "pnp_board_normal_x_aux": -0.04819716655985554
+        }
+      ]
+    },
+    "W02": {
+      "schema_version": "stage3a_image_straightness_score.v1",
+      "decision": "STRAIGHT_ENOUGH",
+      "straightness_score_0_100": 83.71726715158323,
+      "confidence": "HIGH",
+      "confidence_value_0_1": 0.8665782397190636,
+      "action": "Proceed; no yaw correction is needed.",
+      "valid_frame_count": 11,
+      "input_frame_count": 11,
+      "valid_frame_fraction": 1.0,
+      "straight_enough_region_internal": {
+        "absolute_signed_proxy_limit_deg": 3.25,
+        "basis": "synthetic paired height/gravity impact plus current-image robustness"
+      },
+      "aggregate": {
+        "signed_straightness_proxy_deg": {
+          "median": 1.64567779171118,
+          "mad": 0.2897670577490643,
+          "std": 0.36021599436455926,
+          "min": 1.0373816583696742,
+          "max": 2.1508029064176224
+        },
+        "board_center_x_px": {
+          "median": 337.07009391589713,
+          "mad": 0.14071095820804658,
+          "std": 0.34408647189837227,
+          "min": 335.9259420817977,
+          "max": 337.2108048741052
+        },
+        "short_edge_px": {
+          "median": 135.56448703825237,
+          "mad": 0.09377384945017297,
+          "std": 0.13761233673836248,
+          "min": 135.40518511575004,
+          "max": 135.81253799564337
+        },
+        "minimum_image_edge_margin_px": {
+          "median": 63.76016176876482,
+          "mad": 0.10075814037172393,
+          "std": 0.26162374840286645,
+          "min": 62.94581131911298,
+          "max": 63.94828314722853
+        },
+        "homography_rms_px": {
+          "median": 0.10606732016769146,
+          "mad": 0.006715487497533326,
+          "std": 0.010137304938899035,
+          "min": 0.09483948851669192,
+          "max": 0.12636140989211964
+        },
+        "corner_count": {
+          "median": 24.0,
+          "mad": 0.0,
+          "std": 3.3844564489065974,
+          "min": 12.0,
+          "max": 24.0
+        }
+      },
+      "method": {
+        "primary": "undistorted outer-quadrilateral homography depth gradient plus edge asymmetry",
+        "pnp_role": "board-normal auxiliary only",
+        "center_x_role": "lateral-placement decision only; never used as yaw evidence"
+      },
+      "frames": [
+        {
+          "frame": "frame_000000",
+          "corner_count": 21,
+          "marker_count": 15,
+          "homography_rms_px": 0.09935183267015814,
+          "outer_quadrilateral_px": [
+            [
+              240.8472746245795,
+              64.65389150756798
+            ],
+            [
+              432.60826663498153,
+              63.646440746565425
+            ],
+            [
+              433.0240955123019,
+              199.41108769791765
+            ],
+            [
+              242.36358272455786,
+              200.95296460121938
+            ]
+          ],
+          "left_edge_length_px": 136.30750719033264,
+          "right_edge_length_px": 135.76528376385667,
+          "top_edge_length_px": 191.7636384037634,
+          "bottom_edge_length_px": 190.66674728664788,
+          "left_right_edge_ratio": 1.0039938297291013,
+          "top_bottom_width_ratio": 1.0057529230068967,
+          "horizontal_vanishing_point_px": [
+            48350.470258848625,
+            -188.0986405839079
+          ],
+          "horizontal_vanishing_convergence": 0.018077619820364942,
+          "quadrilateral_horizontal_trapezoid_asymmetry": 0.003985870285480099,
+          "normalized_homography_perspective_x": 0.01807413841353658,
+          "board_normal_horizontal_component": -0.018341360062236516,
+          "board_center_x_px": 337.2108048741052,
+          "board_center_y_px": 132.1660961383176,
+          "board_center_x_offset_from_image_center_px": 17.21080487410518,
+          "minimum_image_edge_margin_px": 63.646440746565425,
+          "short_edge_px": 135.76528376385667,
+          "depth_gradient_proxy_deg": 1.0356585113283379,
+          "edge_asymmetry_proxy_deg": 1.0391048054110106,
+          "signed_straightness_proxy_deg": 1.0373816583696742,
+          "pnp_board_normal_yaw_aux_deg": 0.20587346476844248,
+          "pnp_board_normal_x_aux": -0.003592986687857547
+        },
+        {
+          "frame": "frame_000001",
+          "corner_count": 12,
+          "marker_count": 13,
+          "homography_rms_px": 0.12636140989211964,
+          "outer_quadrilateral_px": [
+            [
+              240.8007263003284,
+              64.59779835431748
+            ],
+            [
+              432.4543749958618,
+              63.76016176876482
+            ],
+            [
+              432.97591823684905,
+              199.28393843486006
+            ],
+            [
+              242.04935613054928,
+              200.97667698974146
+            ]
+          ],
+          "left_edge_length_px": 136.38459449039183,
+          "right_edge_length_px": 135.52478020345166,
+          "top_edge_length_px": 191.65547916342075,
+          "bottom_edge_length_px": 190.934065796405,
+          "left_right_edge_ratio": 1.006344332642705,
+          "top_bottom_width_ratio": 1.0037783376371663,
+          "horizontal_vanishing_point_px": [
+            30581.099302163988,
+            -68.00674258039895
+          ],
+          "horizontal_vanishing_convergence": 0.028686395793299766,
+          "quadrilateral_horizontal_trapezoid_asymmetry": 0.006324271003221473,
+          "normalized_homography_perspective_x": 0.028673645337609518,
+          "board_normal_horizontal_component": -0.028861101467449177,
+          "board_center_x_px": 337.07009391589713,
+          "board_center_y_px": 132.15464388692095,
+          "board_center_x_offset_from_image_center_px": 17.070093915897132,
+          "minimum_image_edge_margin_px": 63.76016176876482,
+          "short_edge_px": 135.52478020345166,
+          "depth_gradient_proxy_deg": 1.6431587837130568,
+          "edge_asymmetry_proxy_deg": 1.6481967997093032,
+          "signed_straightness_proxy_deg": 1.64567779171118,
+          "pnp_board_normal_yaw_aux_deg": 0.08020978698821693,
+          "pnp_board_normal_x_aux": -0.001399641684029174
+        },
+        {
+          "frame": "frame_000002",
+          "corner_count": 24,
+          "marker_count": 17,
+          "homography_rms_px": 0.12628640154243065,
+          "outer_quadrilateral_px": [
+            [
+              240.5738261176174,
+              64.46937368248936
+            ],
+            [
+              432.2590406823413,
+              63.72028177542411
+            ],
+            [
+              432.71492935622143,
+              199.49090331447943
+            ],
+            [
+              241.8273153769451,
+              201.00626044000936
+            ]
+          ],
+          "left_edge_length_px": 136.5426405221427,
+          "right_edge_length_px": 135.7713869251705,
+          "top_edge_length_px": 191.68667825753954,
+          "bottom_edge_length_px": 190.89362869912424,
+          "left_right_edge_ratio": 1.0056805311814137,
+          "top_bottom_width_ratio": 1.0041544055913216,
+          "horizontal_vanishing_point_px": [
+            34118.53535226885,
+            -67.9232412864592
+          ],
+          "horizontal_vanishing_convergence": 0.025685638073712675,
+          "quadrilateral_horizontal_trapezoid_asymmetry": 0.005664442659836331,
+          "normalized_homography_perspective_x": 0.02567648421434731,
+          "board_normal_horizontal_component": -0.02585991285636086,
+          "board_center_x_px": 336.8437778832813,
+          "board_center_y_px": 132.17170480310057,
+          "board_center_x_offset_from_image_center_px": 16.84377788328129,
+          "minimum_image_edge_margin_px": 63.72028177542411,
+          "short_edge_px": 135.7713869251705,
+          "depth_gradient_proxy_deg": 1.4713551361331536,
+          "edge_asymmetry_proxy_deg": 1.475325735169935,
+          "signed_straightness_proxy_deg": 1.4733404356515443,
+          "pnp_board_normal_yaw_aux_deg": 0.6467175563843279,
+          "pnp_board_normal_x_aux": -0.011287109869938836
+        },
+        {
+          "frame": "frame_000003",
+          "corner_count": 24,
+          "marker_count": 17,
+          "homography_rms_px": 0.11377109540921482,
+          "outer_quadrilateral_px": [
+            [
+              240.54825874067868,
+              64.44804639016878
+            ],
+            [
+              432.19273984117575,
+              63.67561326278298
+            ],
+            [
+              432.6294332348158,
+              199.3331712754345
+            ],
+            [
+              241.8715652735045,
+              201.08737018204636
+            ]
+          ],
+          "left_edge_length_px": 136.6457315340709,
+          "right_edge_length_px": 135.65826088770254,
+          "top_edge_length_px": 191.64603776028102,
+          "bottom_edge_length_px": 190.7659335493343,
+          "left_right_edge_ratio": 1.0072791044194926,
+          "top_bottom_width_ratio": 1.004613529232247,
+          "horizontal_vanishing_point_px": [
+            26695.746890327413,
+            -42.181018518270925
+          ],
+          "horizontal_vanishing_convergence": 0.03290918630103637,
+          "quadrilateral_horizontal_trapezoid_asymmetry": 0.007252707810753397,
+          "normalized_homography_perspective_x": 0.03289022517414318,
+          "board_normal_horizontal_component": -0.03312119608203008,
+          "board_center_x_px": 336.81049927254367,
+          "board_center_y_px": 132.13605027760815,
+          "board_center_x_offset_from_image_center_px": 16.810499272543666,
+          "minimum_image_edge_margin_px": 63.67561326278298,
+          "short_edge_px": 135.65826088770254,
+          "depth_gradient_proxy_deg": 1.8848772288474027,
+          "edge_asymmetry_proxy_deg": 1.8891785358354583,
+          "signed_straightness_proxy_deg": 1.8870278823414304,
+          "pnp_board_normal_yaw_aux_deg": 0.8877172726015199,
+          "pnp_board_normal_x_aux": -0.015492361315791663
+        },
+        {
+          "frame": "frame_000004",
+          "corner_count": 24,
+          "marker_count": 17,
+          "homography_rms_px": 0.11035958115200054,
+          "outer_quadrilateral_px": [
+            [
+              239.31626748908798,
+              64.06307719765115
+            ],
+            [
+              431.3818846927909,
+              62.94581131911298
+            ],
+            [
+              431.75691935101145,
+              198.75783150077143
+            ],
+            [
+              241.24869679430043,
+              200.4545177562837
+            ]
+          ],
+          "left_edge_length_px": 136.40512945149328,
+          "right_edge_length_px": 135.81253799564337,
+          "top_edge_length_px": 192.06886680272441,
+          "bottom_edge_length_px": 190.5157778399652,
+          "left_right_edge_ratio": 1.0043633044827491,
+          "top_bottom_width_ratio": 1.0081520227897545,
+          "horizontal_vanishing_point_px": [
+            44398.80141761544,
+            -192.8172884313632
+          ],
+          "horizontal_vanishing_convergence": 0.01969760566552229,
+          "quadrilateral_horizontal_trapezoid_asymmetry": 0.004353805992147746,
+          "normalized_homography_perspective_x": 0.019693084505149318,
+          "board_normal_horizontal_component": -0.020102730635886176,
+          "board_center_x_px": 335.9259420817977,
+          "board_center_y_px": 131.55530944345483,
+          "board_center_x_offset_from_image_center_px": 15.9259420817977,
+          "minimum_image_edge_margin_px": 62.94581131911298,
+          "short_edge_px": 135.81253799564337,
+          "depth_gradient_proxy_deg": 1.1284437424829035,
+          "edge_asymmetry_proxy_deg": 1.1345748292535562,
+          "signed_straightness_proxy_deg": 1.1315092858682299,
+          "pnp_board_normal_yaw_aux_deg": 0.4883786372141312,
+          "pnp_board_normal_x_aux": -0.008523067187738166
+        },
+        {
+          "frame": "frame_000005",
+          "corner_count": 24,
+          "marker_count": 17,
+          "homography_rms_px": 0.10880733256960515,
+          "outer_quadrilateral_px": [
+            [
+              240.55402396839884,
+              64.5451331686003
+            ],
+            [
+              432.20156958249044,
+              63.65940362839309
+            ],
+            [
+              432.7548725326929,
+              199.46231533144865
+            ],
+            [
+              241.80594752221913,
+              200.98308216818546
+            ]
+          ],
+          "left_edge_length_px": 136.44369256142994,
+          "right_edge_length_px": 135.80403886181958,
+          "top_edge_length_px": 191.64959237296517,
+          "bottom_edge_length_px": 190.95498080549575,
+          "left_right_edge_ratio": 1.0047101227987867,
+          "top_bottom_width_ratio": 1.0036375671613245,
+          "horizontal_vanishing_point_px": [
+            41061.43467296915,
+            -124.11504367967677
+          ],
+          "horizontal_vanishing_convergence": 0.02131042400573917,
+          "quadrilateral_horizontal_trapezoid_asymmetry": 0.004699056232839103,
+          "normalized_homography_perspective_x": 0.02130499697831775,
+          "board_normal_horizontal_component": -0.021470976466808667,
+          "board_center_x_px": 336.8291034014503,
+          "board_center_y_px": 132.16248357415688,
+          "board_center_x_offset_from_image_center_px": 16.82910340145031,
+          "minimum_image_edge_margin_px": 63.65940362839309,
+          "short_edge_px": 135.80403886181958,
+          "depth_gradient_proxy_deg": 1.2208125733026192,
+          "edge_asymmetry_proxy_deg": 1.2240681822790251,
+          "signed_straightness_proxy_deg": 1.2224403777908222,
+          "pnp_board_normal_yaw_aux_deg": 0.45154988780144767,
+          "pnp_board_normal_x_aux": -0.00788089431449549
+        },
+        {
+          "frame": "frame_000006",
+          "corner_count": 24,
+          "marker_count": 17,
+          "homography_rms_px": 0.10606732016769146,
+          "outer_quadrilateral_px": [
+            [
+              240.5274114603168,
+              64.56930266557434
+            ],
+            [
+              432.23633779968554,
+              63.81080063650256
+            ],
+            [
+              432.63977083500555,
+              199.3571562159516
+            ],
+            [
+              242.01735836970022,
+              201.23334363541028
+            ]
+          ],
+          "left_edge_length_px": 136.67216262281713,
+          "right_edge_length_px": 135.54695595654084,
+          "top_edge_length_px": 191.71042685133642,
+          "bottom_edge_length_px": 190.63164536174452,
+          "left_right_edge_ratio": 1.0083012315425,
+          "top_bottom_width_ratio": 1.0056589843073787,
+          "horizontal_vanishing_point_px": [
+            23461.90991140704,
+            -27.30678302530057
+          ],
+          "horizontal_vanishing_convergence": 0.03750425247876895,
+          "quadrilateral_horizontal_trapezoid_asymmetry": 0.00826691873920135,
+          "normalized_homography_perspective_x": 0.0374764176220634,
+          "board_normal_horizontal_component": -0.03777154142819801,
+          "board_center_x_px": 336.855219616177,
+          "board_center_y_px": 132.2426507883597,
+          "board_center_x_offset_from_image_center_px": 16.85521961617701,
+          "minimum_image_edge_margin_px": 63.81080063650256,
+          "short_edge_px": 135.54695595654084,
+          "depth_gradient_proxy_deg": 2.1478287351953087,
+          "edge_asymmetry_proxy_deg": 2.153777077639936,
+          "signed_straightness_proxy_deg": 2.1508029064176224,
+          "pnp_board_normal_yaw_aux_deg": 1.0459317647439124,
+          "pnp_board_normal_x_aux": -0.01825269804552786
+        },
+        {
+          "frame": "frame_000007",
+          "corner_count": 21,
+          "marker_count": 15,
+          "homography_rms_px": 0.09933171573011956,
+          "outer_quadrilateral_px": [
+            [
+              240.99113149933584,
+              64.8521883234715
+            ],
+            [
+              432.35714367667595,
+              63.94828314722853
+            ],
+            [
+              432.81069410887307,
+              199.3527086592331
+            ],
+            [
+              242.2291959712863,
+              201.26110428851638
+            ]
+          ],
+          "left_edge_length_px": 136.4145342637484,
+          "right_edge_length_px": 135.40518511575004,
+          "top_edge_length_px": 191.368146934712,
+          "bottom_edge_length_px": 190.59105279693708,
+          "left_right_edge_ratio": 1.007454287272201,
+          "top_bottom_width_ratio": 1.0040772855093196,
+          "horizontal_vanishing_point_px": [
+            26029.009392002492,
+            -56.95587427604302
+          ],
+          "horizontal_vanishing_convergence": 0.033762044347103205,
+          "quadrilateral_horizontal_trapezoid_asymmetry": 0.007426607240287605,
+          "normalized_homography_perspective_x": 0.0337413991875002,
+          "board_normal_horizontal_component": -0.03396791692272475,
+          "board_center_x_px": 337.0970413140428,
+          "board_center_y_px": 132.35357110461237,
+          "board_center_x_offset_from_image_center_px": 17.097041314042826,
+          "minimum_image_edge_margin_px": 63.94828314722853,
+          "short_edge_px": 135.40518511575004,
+          "depth_gradient_proxy_deg": 1.9336881506817367,
+          "edge_asymmetry_proxy_deg": 1.9372015482387517,
+          "signed_straightness_proxy_deg": 1.9354448494602443,
+          "pnp_board_normal_yaw_aux_deg": 0.40452476666029397,
+          "pnp_board_normal_x_aux": -0.007059711762288849
+        },
+        {
+          "frame": "frame_000008",
+          "corner_count": 22,
+          "marker_count": 16,
+          "homography_rms_px": 0.10106248277022227,
+          "outer_quadrilateral_px": [
+            [
+              240.94946031219015,
+              64.74449703854658
+            ],
+            [
+              432.43013649800497,
+              63.93421362903639
+            ],
+            [
+              432.9082224936285,
+              199.42594746422776
+            ],
+            [
+              242.25226114428241,
+              201.31114865127884
+            ]
+          ],
+          "left_edge_length_px": 136.57286561656926,
+          "right_edge_length_px": 135.49257730180483,
+          "top_edge_length_px": 191.4823906049342,
+          "bottom_edge_length_px": 190.66528153169105,
+          "left_right_edge_ratio": 1.0079730442528827,
+          "top_bottom_width_ratio": 1.0042855682307708,
+          "horizontal_vanishing_point_px": [
+            24387.385254922232,
+            -37.43529840038863
+          ],
+          "horizontal_vanishing_convergence": 0.036063181431259646,
+          "quadrilateral_horizontal_trapezoid_asymmetry": 0.007941385742904088,
+          "normalized_homography_perspective_x": 0.036038298330072695,
+          "board_normal_horizontal_component": -0.036269285437488544,
+          "board_center_x_px": 337.1350201120265,
+          "board_center_y_px": 132.3539516957724,
+          "board_center_x_offset_from_image_center_px": 17.135020112026496,
+          "minimum_image_edge_margin_px": 63.93421362903639,
+          "short_edge_px": 135.49257730180483,
+          "depth_gradient_proxy_deg": 2.0653730264103096,
+          "edge_asymmetry_proxy_deg": 2.0699413821400294,
+          "signed_straightness_proxy_deg": 2.0676572042751697,
+          "pnp_board_normal_yaw_aux_deg": 0.7086300708098277,
+          "pnp_board_normal_x_aux": -0.01236757338128204
+        },
+        {
+          "frame": "frame_000009",
+          "corner_count": 22,
+          "marker_count": 16,
+          "homography_rms_px": 0.09483948851669192,
+          "outer_quadrilateral_px": [
+            [
+              240.79942153551576,
+              64.60613354394165
+            ],
+            [
+              432.52212715968614,
+              63.779680826330114
+            ],
+            [
+              432.8214387416141,
+              199.289231640099
+            ],
+            [
+              242.26181977639055,
+              201.02223772775918
+            ]
+          ],
+          "left_edge_length_px": 136.4239425075565,
+          "right_edge_length_px": 135.5098813709631,
+          "top_edge_length_px": 191.72448689707514,
+          "bottom_edge_length_px": 190.56749903976558,
+          "left_right_edge_ratio": 1.0067453467403689,
+          "top_bottom_width_ratio": 1.0060712758636148,
+          "horizontal_vanishing_point_px": [
+            28760.846523001957,
+            -58.33428896199074
+          ],
+          "horizontal_vanishing_convergence": 0.03052118002511471,
+          "quadrilateral_horizontal_trapezoid_asymmetry": 0.006722673358954715,
+          "normalized_homography_perspective_x": 0.030505912847857093,
+          "board_normal_horizontal_component": -0.0308047305995357,
+          "board_center_x_px": 337.1012018033016,
+          "board_center_y_px": 132.1743209345325,
+          "board_center_x_offset_from_image_center_px": 17.101201803301592,
+          "minimum_image_edge_margin_px": 63.779680826330114,
+          "short_edge_px": 135.5098813709631,
+          "depth_gradient_proxy_deg": 1.7481920976078553,
+          "edge_asymmetry_proxy_deg": 1.7528416945419265,
+          "signed_straightness_proxy_deg": 1.750516896074891,
+          "pnp_board_normal_yaw_aux_deg": 0.4341352465063586,
+          "pnp_board_normal_x_aux": -0.007576962013961923
+        },
+        {
+          "frame": "frame_000010",
+          "corner_count": 24,
+          "marker_count": 17,
+          "homography_rms_px": 0.10133827941460187,
+          "outer_quadrilateral_px": [
+            [
+              240.82847014672507,
+              64.65375887828678
+            ],
+            [
+              432.57204864082127,
+              63.90113795480914
+            ],
+            [
+              432.96199913703566,
+              199.46506414667996
+            ],
+            [
+              242.35125232089268,
+              201.06627144359993
+            ]
+          ],
+          "left_edge_length_px": 136.4210117611348,
+          "right_edge_length_px": 135.56448703825237,
+          "top_edge_length_px": 191.7450555607004,
+          "bottom_edge_length_px": 190.61747209166182,
+          "left_right_edge_ratio": 1.0063182087108162,
+          "top_bottom_width_ratio": 1.0059154255728266,
+          "horizontal_vanishing_point_px": [
+            30725.150000356236,
+            -55.00155579689075
+          ],
+          "horizontal_vanishing_convergence": 0.02855057003849549,
+          "quadrilateral_horizontal_trapezoid_asymmetry": 0.006298311686934363,
+          "normalized_homography_perspective_x": 0.02853809629875606,
+          "board_normal_horizontal_component": -0.02880652043285506,
+          "board_center_x_px": 337.1784425613687,
+          "board_center_y_px": 132.27155810584395,
+          "board_center_x_offset_from_image_center_px": 17.178442561368684,
+          "minimum_image_edge_margin_px": 63.90113795480914,
+          "short_edge_px": 135.56448703825237,
+          "depth_gradient_proxy_deg": 1.635382909802819,
+          "edge_asymmetry_proxy_deg": 1.6419478402253989,
+          "signed_straightness_proxy_deg": 1.638665375014109,
+          "pnp_board_normal_yaw_aux_deg": 0.7097730448759307,
+          "pnp_board_normal_x_aux": -0.012387559527787148
+        }
+      ]
+    },
+    "W03": {
+      "schema_version": "stage3a_image_straightness_score.v1",
+      "decision": "STRAIGHT_ENOUGH",
+      "straightness_score_0_100": 81.4017546724904,
+      "confidence": "MEDIUM",
+      "confidence_value_0_1": 0.6228127546514332,
+      "action": "Proceed; no yaw correction is needed.",
+      "valid_frame_count": 11,
+      "input_frame_count": 11,
+      "valid_frame_fraction": 1.0,
+      "straight_enough_region_internal": {
+        "absolute_signed_proxy_limit_deg": 3.25,
+        "basis": "synthetic paired height/gravity impact plus current-image robustness"
+      },
+      "aggregate": {
+        "signed_straightness_proxy_deg": {
+          "median": 1.7707824205566816,
+          "mad": 0.9581330629335432,
+          "std": 1.1409536660102666,
+          "min": 0.06170303149047644,
+          "max": 4.0570874775862364
+        },
+        "board_center_x_px": {
+          "median": 343.6813884358984,
+          "mad": 0.6712893682244498,
+          "std": 0.6302819763876194,
+          "min": 342.89971574245465,
+          "max": 344.6975006910121
+        },
+        "short_edge_px": {
+          "median": 109.73397235206711,
+          "mad": 0.11027995422156778,
+          "std": 0.19522944906619685,
+          "min": 109.28716630446549,
+          "max": 110.00858636854127
+        },
+        "minimum_image_edge_margin_px": {
+          "median": 76.88730169313924,
+          "mad": 0.06638416035933403,
+          "std": 0.14156205620508605,
+          "min": 76.64749930630515,
+          "max": 77.15007845990355
+        },
+        "homography_rms_px": {
+          "median": 0.0986646060245369,
+          "mad": 0.010310720794308378,
+          "std": 0.01640203677787212,
+          "min": 0.07388182808591134,
+          "max": 0.1334204554769858
+        },
+        "corner_count": {
+          "median": 18.0,
+          "mad": 2.0,
+          "std": 2.7663861917641706,
+          "min": 12.0,
+          "max": 20.0
+        }
+      },
+      "method": {
+        "primary": "undistorted outer-quadrilateral homography depth gradient plus edge asymmetry",
+        "pnp_role": "board-normal auxiliary only",
+        "center_x_role": "lateral-placement decision only; never used as yaw evidence"
+      },
+      "frames": [
+        {
+          "frame": "frame_000000",
+          "corner_count": 18,
+          "marker_count": 15,
+          "homography_rms_px": 0.12311094203752361,
+          "outer_quadrilateral_px": [
+            [
+              265.19869050298183,
+              77.20605319669771
+            ],
+            [
+              420.30071496855066,
+              76.7305728882893
+            ],
+            [
+              420.56533471310274,
+              186.73884099208047
+            ],
+            [
+              265.8920760344497,
+              187.49098815783296
+            ]
+          ],
+          "left_edge_length_px": 110.28711467291672,
+          "right_edge_length_px": 110.00858636854127,
+          "top_edge_length_px": 155.10275327937154,
+          "bottom_edge_length_px": 154.6750874434292,
+          "left_right_edge_ratio": 1.0025318778612637,
+          "top_bottom_width_ratio": 1.002764930300096,
+          "horizontal_vanishing_point_px": [
+            61631.38771021026,
+            -110.91795473600571
+          ],
+          "horizontal_vanishing_convergence": 0.014162922458922377,
+          "quadrilateral_horizontal_trapezoid_asymmetry": 0.002528676710972448,
+          "normalized_homography_perspective_x": 0.01416134377349865,
+          "board_normal_horizontal_component": -0.014260732650403398,
+          "board_center_x_px": 342.9892040547713,
+          "board_center_y_px": 132.04161380872512,
+          "board_center_x_offset_from_image_center_px": 22.989204054771278,
+          "minimum_image_edge_margin_px": 76.7305728882893,
+          "short_edge_px": 110.00858636854127,
+          "depth_gradient_proxy_deg": 0.8114214314675764,
+          "edge_asymmetry_proxy_deg": 0.8138772837787004,
+          "signed_straightness_proxy_deg": 0.8126493576231384,
+          "pnp_board_normal_yaw_aux_deg": -0.11919984145373287,
+          "pnp_board_normal_x_aux": 0.002079966345123615
+        },
+        {
+          "frame": "frame_000001",
+          "corner_count": 20,
+          "marker_count": 16,
+          "homography_rms_px": 0.08536628254611797,
+          "outer_quadrilateral_px": [
+            [
+              265.23323755800016,
+              77.48642848867263
+            ],
+            [
+              420.1716699062429,
+              76.64749930630515
+            ],
+            [
+              420.43062415662706,
+              186.50449491742285
+            ],
+            [
+              265.7633313489485,
+              187.50870701925038
+            ]
+          ],
+          "left_edge_length_px": 110.02355553465463,
+          "right_edge_length_px": 109.85730081339575,
+          "top_edge_length_px": 154.94070356334396,
+          "bottom_edge_length_px": 154.67055280951715,
+          "left_right_edge_ratio": 1.001513369799075,
+          "top_bottom_width_ratio": 1.0017466204711865,
+          "horizontal_vanishing_point_px": [
+            102317.85750906638,
+            -475.0874122361532
+          ],
+          "horizontal_vanishing_convergence": 0.008514415123388666,
+          "quadrilateral_horizontal_trapezoid_asymmetry": 0.0015122255208585799,
+          "normalized_homography_perspective_x": 0.008513931169358271,
+          "board_normal_horizontal_component": -0.008601625945493204,
+          "board_center_x_px": 342.89971574245465,
+          "board_center_y_px": 132.03678243291273,
+          "board_center_x_offset_from_image_center_px": 22.899715742454646,
+          "minimum_image_edge_margin_px": 76.64749930630515,
+          "short_edge_px": 109.85730081339575,
+          "depth_gradient_proxy_deg": 0.48782826340735697,
+          "edge_asymmetry_proxy_deg": 0.4873143922159874,
+          "signed_straightness_proxy_deg": 0.4875713278116722,
+          "pnp_board_normal_yaw_aux_deg": -1.1285504137954154,
+          "pnp_board_normal_x_aux": 0.019691508363697582
+        },
+        {
+          "frame": "frame_000002",
+          "corner_count": 13,
+          "marker_count": 13,
+          "homography_rms_px": 0.07388182808591134,
+          "outer_quadrilateral_px": [
+            [
+              265.20142273397,
+              77.28898578958412
+            ],
+            [
+              420.5537130441126,
+              76.88009975135977
+            ],
+            [
+              420.6411408946003,
+              186.55831998338797
+            ],
+            [
+              266.4029171202894,
+              187.5755405827267
+            ]
+          ],
+          "left_edge_length_px": 110.29309931678046,
+          "right_edge_length_px": 109.67825507772415,
+          "top_edge_length_px": 155.3528284016712,
+          "bottom_edge_length_px": 154.24157808711027,
+          "left_right_edge_ratio": 1.0056058900519578,
+          "top_bottom_width_ratio": 1.0072046093429705,
+          "horizontal_vanishing_point_px": [
+            28095.316159028378,
+            4.040336959656576
+          ],
+          "horizontal_vanishing_convergence": 0.03125202169570872,
+          "quadrilateral_horizontal_trapezoid_asymmetry": 0.005590220969896167,
+          "normalized_homography_perspective_x": 0.03123615224854631,
+          "board_normal_horizontal_component": -0.031541778363557656,
+          "board_center_x_px": 343.1997984482431,
+          "board_center_y_px": 132.07573652676464,
+          "board_center_x_offset_from_image_center_px": 23.199798448243087,
+          "minimum_image_edge_margin_px": 76.88009975135977,
+          "short_edge_px": 109.67825507772415,
+          "depth_gradient_proxy_deg": 1.790026329860938,
+          "edge_asymmetry_proxy_deg": 1.8007223133072507,
+          "signed_straightness_proxy_deg": 1.7953743215840943,
+          "pnp_board_normal_yaw_aux_deg": -0.17736383054966268,
+          "pnp_board_normal_x_aux": 0.0030955203561203763
+        },
+        {
+          "frame": "frame_000003",
+          "corner_count": 20,
+          "marker_count": 16,
+          "homography_rms_px": 0.11643761908607571,
+          "outer_quadrilateral_px": [
+            [
+              265.88965998984435,
+              77.61502257057816
+            ],
+            [
+              421.0056867418092,
+              76.88730169313924
+            ],
+            [
+              421.2098172858279,
+              186.79709961015598
+            ],
+            [
+              266.6203897261122,
+              187.54352028096739
+            ]
+          ],
+          "left_edge_length_px": 109.93092638020711,
+          "right_edge_length_px": 109.90998747811075,
+          "top_edge_length_px": 155.1177337798349,
+          "bottom_edge_length_px": 154.5912295606009,
+          "left_right_edge_ratio": 1.000190509548557,
+          "top_bottom_width_ratio": 1.0034057832435288,
+          "horizontal_vanishing_point_px": [
+            803009.2770960949,
+            -3688.4247251945494
+          ],
+          "horizontal_vanishing_convergence": 0.0010820980611210413,
+          "quadrilateral_horizontal_trapezoid_asymmetry": 0.0001904914033413808,
+          "normalized_homography_perspective_x": 0.0010820848384968528,
+          "board_normal_horizontal_component": -0.0012112603199381773,
+          "board_center_x_px": 343.6813884358984,
+          "board_center_y_px": 132.2107360387102,
+          "board_center_x_offset_from_image_center_px": 23.681388435898384,
+          "minimum_image_edge_margin_px": 76.88730169313924,
+          "short_edge_px": 109.90998747811075,
+          "depth_gradient_proxy_deg": 0.06199962772232949,
+          "edge_asymmetry_proxy_deg": 0.06140643525862339,
+          "signed_straightness_proxy_deg": 0.06170303149047644,
+          "pnp_board_normal_yaw_aux_deg": -0.9412869693297526,
+          "pnp_board_normal_x_aux": 0.0164219092124155
+        },
+        {
+          "frame": "frame_000004",
+          "corner_count": 15,
+          "marker_count": 14,
+          "homography_rms_px": 0.09807566876334703,
+          "outer_quadrilateral_px": [
+            [
+              265.3967765001344,
+              77.22285481122789
+            ],
+            [
+              420.6651007474931,
+              76.78623136185463
+            ],
+            [
+              420.681373517938,
+              186.52020250735347
+            ],
+            [
+              266.2642234354137,
+              187.3486810040933
+            ]
+          ],
+          "left_edge_length_px": 110.12924252371268,
+          "right_edge_length_px": 109.73397235206711,
+          "top_edge_length_px": 155.2689381512589,
+          "bottom_edge_length_px": 154.41937254188153,
+          "left_right_edge_ratio": 1.0036020765782303,
+          "top_bottom_width_ratio": 1.0055016776418189,
+          "horizontal_vanishing_point_px": [
+            43400.705253117645,
+            -44.0761111442229
+          ],
+          "horizontal_vanishing_convergence": 0.02015376654652474,
+          "quadrilateral_horizontal_trapezoid_asymmetry": 0.0035956007635828185,
+          "normalized_homography_perspective_x": 0.020149404688523685,
+          "board_normal_horizontal_component": -0.020354636260258418,
+          "board_center_x_px": 343.2518685502448,
+          "board_center_y_px": 131.96949242113232,
+          "board_center_x_offset_from_image_center_px": 23.251868550244808,
+          "minimum_image_edge_margin_px": 76.78623136185463,
+          "short_edge_px": 109.73397235206711,
+          "depth_gradient_proxy_deg": 1.1545694625188707,
+          "edge_asymmetry_proxy_deg": 1.1586637033445668,
+          "signed_straightness_proxy_deg": 1.1566165829317188,
+          "pnp_board_normal_yaw_aux_deg": -0.2272561555341732,
+          "pnp_board_normal_x_aux": 0.00396572585438533
+        },
+        {
+          "frame": "frame_000005",
+          "corner_count": 18,
+          "marker_count": 15,
+          "homography_rms_px": 0.09898088125527926,
+          "outer_quadrilateral_px": [
+            [
+              265.7030335680449,
+              77.15396100487567
+            ],
+            [
+              420.81014425595197,
+              76.8209175327799
+            ],
+            [
+              421.01206059438726,
+              186.55113025645448
+            ],
+            [
+              266.5449803760346,
+              187.70055776680098
+            ]
+          ],
+          "left_edge_length_px": 110.54980293999262,
+          "right_edge_length_px": 109.73039849827668,
+          "top_edge_length_px": 155.1074682402655,
+          "bottom_edge_length_px": 154.47135674546445,
+          "left_right_edge_ratio": 1.0074674333906553,
+          "top_bottom_width_ratio": 1.0041179899510382,
+          "horizontal_vanishing_point_px": [
+            21148.129735578186,
+            32.31555312158682
+          ],
+          "horizontal_vanishing_convergence": 0.04166690161373786,
+          "quadrilateral_horizontal_trapezoid_asymmetry": 0.007439655823499503,
+          "normalized_homography_perspective_x": 0.041629749597938685,
+          "board_normal_horizontal_component": -0.04183499594760956,
+          "board_center_x_px": 343.51755469860467,
+          "board_center_y_px": 132.05664164022775,
+          "board_center_x_offset_from_image_center_px": 23.51755469860467,
+          "minimum_image_edge_margin_px": 76.8209175327799,
+          "short_edge_px": 109.73039849827668,
+          "depth_gradient_proxy_deg": 2.3859574685341562,
+          "edge_asymmetry_proxy_deg": 2.3937990303701455,
+          "signed_straightness_proxy_deg": 2.389878249452151,
+          "pnp_board_normal_yaw_aux_deg": 0.7739083855680786,
+          "pnp_board_normal_x_aux": -0.013506790100740679
+        },
+        {
+          "frame": "frame_000006",
+          "corner_count": 14,
+          "marker_count": 14,
+          "homography_rms_px": 0.09654463448299522,
+          "outer_quadrilateral_px": [
+            [
+              266.83146165274866,
+              77.2949349930135
+            ],
+            [
+              421.5221650442088,
+              77.15007845990355
+            ],
+            [
+              421.7468943085986,
+              186.6312966549417
+            ],
+            [
+              267.31019021093545,
+              187.80769065335522
+            ]
+          ],
+          "left_edge_length_px": 110.51379255402837,
+          "right_edge_length_px": 109.48144884276891,
+          "top_edge_length_px": 154.6907712152211,
+          "bottom_edge_length_px": 154.44118451821288,
+          "left_right_edge_ratio": 1.0094293939491252,
+          "top_bottom_width_ratio": 1.0016160630843827,
+          "horizontal_vanishing_point_px": [
+            16808.988107537978,
+            61.804414817275195
+          ],
+          "horizontal_vanishing_convergence": 0.05261951835368658,
+          "quadrilateral_horizontal_trapezoid_asymmetry": 0.009385145830472372,
+          "normalized_homography_perspective_x": 0.052545501589994395,
+          "board_normal_horizontal_component": -0.052631750792543744,
+          "board_center_x_px": 344.35267780412283,
+          "board_center_y_px": 132.2210001903035,
+          "board_center_x_offset_from_image_center_px": 24.352677804122834,
+          "minimum_image_edge_margin_px": 77.15007845990355,
+          "short_edge_px": 109.48144884276891,
+          "depth_gradient_proxy_deg": 3.012098391528875,
+          "edge_asymmetry_proxy_deg": 3.021872392847651,
+          "signed_straightness_proxy_deg": 3.0169853921882632,
+          "pnp_board_normal_yaw_aux_deg": 0.7750692598672176,
+          "pnp_board_normal_x_aux": -0.013526720694119582
+        },
+        {
+          "frame": "frame_000007",
+          "corner_count": 12,
+          "marker_count": 13,
+          "homography_rms_px": 0.1334204554769858,
+          "outer_quadrilateral_px": [
+            [
+              266.16819392081476,
+              76.93655130461676
+            ],
+            [
+              421.3940216227732,
+              76.90898032976547
+            ],
+            [
+              420.89951406776254,
+              186.1950278433339
+            ],
+            [
+              267.37887208079457,
+              187.6041642585371
+            ]
+          ],
+          "left_edge_length_px": 110.67423502570854,
+          "right_edge_length_px": 109.28716630446549,
+          "top_edge_length_px": 155.2258301505157,
+          "bottom_edge_length_px": 153.52710894668553,
+          "left_right_edge_ratio": 1.0126919634587175,
+          "top_bottom_width_ratio": 1.0110646335717821,
+          "horizontal_vanishing_point_px": [
+            12562.179934451511,
+            74.7525524463841
+          ],
+          "horizontal_vanishing_convergence": 0.070845886698214,
+          "quadrilateral_horizontal_trapezoid_asymmetry": 0.012611928391572559,
+          "normalized_homography_perspective_x": 0.07066621902986157,
+          "board_normal_horizontal_component": -0.07113503869652815,
+          "board_center_x_px": 343.9601504230363,
+          "board_center_y_px": 131.9111809340633,
+          "board_center_x_offset_from_image_center_px": 23.960150423036282,
+          "minimum_image_edge_margin_px": 76.90898032976547,
+          "short_edge_px": 109.28716630446549,
+          "depth_gradient_proxy_deg": 4.052399501276439,
+          "edge_asymmetry_proxy_deg": 4.061775453896034,
+          "signed_straightness_proxy_deg": 4.0570874775862364,
+          "pnp_board_normal_yaw_aux_deg": 1.6105488935527104,
+          "pnp_board_normal_x_aux": -0.02809262847778202
+        },
+        {
+          "frame": "frame_000008",
+          "corner_count": 16,
+          "marker_count": 13,
+          "homography_rms_px": 0.0986646060245369,
+          "outer_quadrilateral_px": [
+            [
+              266.93601733974543,
+              77.30894224970015
+            ],
+            [
+              421.9423262605758,
+              76.94845004635404
+            ],
+            [
+              421.96578962341613,
+              186.78796724673762
+            ],
+            [
+              267.31406136091766,
+              187.75441702710808
+            ]
+          ],
+          "left_edge_length_px": 110.44612177930466,
+          "right_edge_length_px": 109.83951970644608,
+          "top_edge_length_px": 155.0067281116809,
+          "bottom_edge_length_px": 154.65474800262567,
+          "left_right_edge_ratio": 1.0055226213158959,
+          "top_bottom_width_ratio": 1.002275908846001,
+          "horizontal_vanishing_point_px": [
+            28416.98489309208,
+            11.841457641033363
+          ],
+          "horizontal_vanishing_convergence": 0.0308944660414451,
+          "quadrilateral_horizontal_trapezoid_asymmetry": 0.0055074136359252145,
+          "normalized_homography_perspective_x": 0.030879186975210762,
+          "board_normal_horizontal_component": -0.03098117712795408,
+          "board_center_x_px": 344.5395486461638,
+          "board_center_y_px": 132.19994414247498,
+          "board_center_x_offset_from_image_center_px": 24.53954864616378,
+          "minimum_image_edge_margin_px": 76.94845004635404,
+          "short_edge_px": 109.83951970644608,
+          "depth_gradient_proxy_deg": 1.7695596616673253,
+          "edge_asymmetry_proxy_deg": 1.7720051794460379,
+          "signed_straightness_proxy_deg": 1.7707824205566816,
+          "pnp_board_normal_yaw_aux_deg": -0.2616934958186667,
+          "pnp_board_normal_x_aux": 0.004567372332606329
+        },
+        {
+          "frame": "frame_000009",
+          "corner_count": 20,
+          "marker_count": 15,
+          "homography_rms_px": 0.09915111447085345,
+          "outer_quadrilateral_px": [
+            [
+              266.86033424859943,
+              77.47431122410568
+            ],
+            [
+              422.1143068585185,
+              76.95094442886645
+            ],
+            [
+              422.1438707243801,
+              186.77805370764528
+            ],
+            [
+              267.6714909325505,
+              187.50548685242828
+            ]
+          ],
+          "left_edge_length_px": 110.03416553651276,
+          "right_edge_length_px": 109.82711325786084,
+          "top_edge_length_px": 155.2548547516755,
+          "bottom_edge_length_px": 154.4740925771418,
+          "left_right_edge_ratio": 1.0018852564955048,
+          "top_bottom_width_ratio": 1.0050543243951655,
+          "horizontal_vanishing_point_px": [
+            82498.47574462973,
+            -199.73145878738683
+          ],
+          "horizontal_vanishing_convergence": 0.010567419419809383,
+          "quadrilateral_horizontal_trapezoid_asymmetry": 0.001883481073041166,
+          "normalized_homography_perspective_x": 0.01056671708446248,
+          "board_normal_horizontal_component": -0.010741892510930877,
+          "board_center_x_px": 344.6975006910121,
+          "board_center_y_px": 132.1771990532614,
+          "board_center_x_offset_from_image_center_px": 24.697500691012124,
+          "minimum_image_edge_margin_px": 76.95094442886645,
+          "short_edge_px": 109.82711325786084,
+          "depth_gradient_proxy_deg": 0.6054459969813002,
+          "edge_asymmetry_proxy_deg": 0.6070394528295764,
+          "signed_straightness_proxy_deg": 0.6062427249054383,
+          "pnp_board_normal_yaw_aux_deg": -0.5197264610505214,
+          "pnp_board_normal_x_aux": 0.00906595284311144
+        },
+        {
+          "frame": "frame_000010",
+          "corner_count": 18,
+          "marker_count": 15,
+          "homography_rms_px": 0.08835388523022852,
+          "outer_quadrilateral_px": [
+            [
+              266.86226904110833,
+              77.27870611849023
+            ],
+            [
+              421.7888099292231,
+              77.10328627611216
+            ],
+            [
+              422.0050984953001,
+              186.72676530407242
+            ],
+            [
+              267.2816507380988,
+              187.60576857783178
+            ]
+          ],
+          "left_edge_length_px": 110.32785954560717,
+          "right_edge_length_px": 109.62369239784555,
+          "top_edge_length_px": 154.9266402000566,
+          "bottom_edge_length_px": 154.72594460086736,
+          "left_right_edge_ratio": 1.006423494158599,
+          "top_bottom_width_ratio": 1.001297103725603,
+          "horizontal_vanishing_point_px": [
+            24521.234784756947,
+            49.81602490650416
+          ],
+          "horizontal_vanishing_convergence": 0.03586387829699987,
+          "quadrilateral_horizontal_trapezoid_asymmetry": 0.006402929568259263,
+          "normalized_homography_perspective_x": 0.03584032675801169,
+          "board_normal_horizontal_component": -0.035892926690421045,
+          "board_center_x_px": 344.4844570509326,
+          "board_center_y_px": 132.17863156912665,
+          "board_center_x_offset_from_image_center_px": 24.484457050932576,
+          "minimum_image_edge_margin_px": 77.10328627611216,
+          "short_edge_px": 109.62369239784555,
+          "depth_gradient_proxy_deg": 2.053968548283426,
+          "edge_asymmetry_proxy_deg": 2.061091806159278,
+          "signed_straightness_proxy_deg": 2.057530177221352,
+          "pnp_board_normal_yaw_aux_deg": 0.14283459497529832,
+          "pnp_board_normal_x_aux": -0.002490438712846814
+        }
+      ]
+    }
+  },
+  "w03_is_image_frontal": true,
+  "intrinsics_ensemble_sensitivity": {
+    "evaluated": true,
+    "model_count": 28,
+    "per_pose": {
+      "W01": {
+        "decision_set": [
+          "STRAIGHT_ENOUGH"
+        ],
+        "all_decisions_match_nominal": true,
+        "signed_proxy_deg": {
+          "median": 3.0162626364643215,
+          "mad": 0.029112479947273062,
+          "std": 0.07001836528463153,
+          "min": 2.8425065211572025,
+          "max": 3.205125084447853
+        }
+      },
+      "W02": {
+        "decision_set": [
+          "STRAIGHT_ENOUGH"
+        ],
+        "all_decisions_match_nominal": true,
+        "signed_proxy_deg": {
+          "median": 1.6487484747790404,
+          "mad": 0.022248027023585748,
+          "std": 0.06243131914926048,
+          "min": 1.526757097813078,
+          "max": 1.8442071254951296
+        }
+      },
+      "W03": {
+        "decision_set": [
+          "STRAIGHT_ENOUGH"
+        ],
+        "all_decisions_match_nominal": true,
+        "signed_proxy_deg": {
+          "median": 1.7747689466351488,
+          "mad": 0.021690838067899065,
+          "std": 0.0686297972095249,
+          "min": 1.6266303860382527,
+          "max": 1.9913155258530413
+        }
+      }
+    }
+  },
+  "writes_or_capture_performed": false
+}

@@ -1,0 +1,5885 @@
+{
+  "schema_version": "cloud_session_result_v3",
+  "score_version": "v3.0",
+  "model_version": "weighted_dtw_imu_plus_emg_v1.0",
+  "patient_id": "S001",
+  "session_id": "20260807_TASK057",
+  "task_name": "球类横向取放训练（一级）",
+  "task_number": 12,
+  "task_input": {
+    "task_name": "球类横向取放训练（一级）",
+    "csv_file": "DATA_SEQ0000009213.csv",
+    "start_time": "2026-08-07T16:54:32+08:00",
+    "end_time": "2026-08-07T16:54:49+08:00",
+    "start_log_seq": 9213,
+    "end_log_seq": 10000,
+    "end_reason": "user_stop"
+  },
+  "task_directory_identity": {
+    "task_directory": "20260807_TASK057",
+    "task_date": "20260807",
+    "task_id": "TASK057",
+    "task_index": 57
+  },
+  "task_input_validation": {
+    "valid": true,
+    "reason": null,
+    "declared_start_log_seq": 9213,
+    "declared_end_log_seq": 10000,
+    "observed_start_log_seq": 9213,
+    "observed_end_log_seq": 10000,
+    "row_count": 788
+  },
+  "valid": true,
+  "invalid_reason": null,
+  "final_score": 40.94,
+  "target_repetition_count": 10,
+  "repetition_count": 3,
+  "valid_repetition_count": 3,
+  "pipeline": [
+    "data_quality_check",
+    "euler_to_rotation_matrix",
+    "wearing_calibration",
+    "human_kinematic_chain",
+    "action_count_and_phase_segmentation",
+    "three_dimensional_trajectory_reconstruction",
+    "weighted_dtw_imu_scoring",
+    "emg_template_scoring",
+    "real_time_compensation_detection",
+    "single_action_trajectory_data",
+    "whole_session_summary"
+  ],
+  "imu_mapping": {
+    "trunk": "imu1",
+    "upperarm": "imu2",
+    "forearm": "imu3",
+    "hand_wrist": "imu4"
+  },
+  "body_params": {
+    "upper_arm_length_m": 0.315,
+    "forearm_length_m": 0.263,
+    "hand_length_m": 0.105
+  },
+  "data_quality": {
+    "row_count": 788,
+    "missing_columns": [],
+    "valid": true,
+    "mean_dt_ms": 20.203303684879288,
+    "max_dt_ms": 101.0,
+    "estimated_rate_hz": 49.49685534591195,
+    "large_gap_count_over_40ms": 4,
+    "large_gap_count_over_100ms": 1,
+    "duration_s": 15.9,
+    "max_log_seq_gap": 1,
+    "missing_log_seq_count_est": 0,
+    "imu_valid_ratio": {
+      "trunk": 1.0,
+      "upperarm": 1.0,
+      "forearm": 1.0,
+      "hand_wrist": 1.0
+    },
+    "imu_age_ms": {
+      "trunk": {
+        "mean": 95.05837563451777,
+        "max": 209.0
+      },
+      "upperarm": {
+        "mean": 95.498730964467,
+        "max": 200.0
+      },
+      "forearm": {
+        "mean": 92.88959390862944,
+        "max": 211.0
+      },
+      "hand_wrist": {
+        "mean": 94.91878172588832,
+        "max": 194.0
+      }
+    },
+    "emg_valid_ratio": 1.0,
+    "warnings": [
+      "large sampling gaps over 100 ms detected"
+    ],
+    "level": "use_with_caution"
+  },
+  "calibration": {
+    "method": "first_seconds_static_reference",
+    "calibration_seconds": 3.0,
+    "calibration_samples": 148,
+    "segments": {
+      "trunk": {
+        "imu": "imu1",
+        "reference_matrix": [
+          [
+            0.627299,
+            0.123799,
+            -0.768875
+          ],
+          [
+            -0.740015,
+            0.402357,
+            -0.538968
+          ],
+          [
+            0.242639,
+            0.907074,
+            0.344012
+          ]
+        ]
+      },
+      "upperarm": {
+        "imu": "imu2",
+        "reference_matrix": [
+          [
+            -0.986891,
+            0.074357,
+            -0.143236
+          ],
+          [
+            -0.125954,
+            0.200035,
+            0.971659
+          ],
+          [
+            0.100901,
+            0.976963,
+            -0.188047
+          ]
+        ]
+      },
+      "forearm": {
+        "imu": "imu3",
+        "reference_matrix": [
+          [
+            -0.023379,
+            -0.115005,
+            -0.99309
+          ],
+          [
+            -0.722417,
+            0.688606,
+            -0.062737
+          ],
+          [
+            0.691062,
+            0.715958,
+            -0.099181
+          ]
+        ]
+      },
+      "hand_wrist": {
+        "imu": "imu4",
+        "reference_matrix": [
+          [
+            0.332128,
+            -0.178324,
+            -0.926224
+          ],
+          [
+            -0.723971,
+            0.581246,
+            -0.371509
+          ],
+          [
+            0.604613,
+            0.793948,
+            0.063946
+          ]
+        ]
+      }
+    }
+  },
+  "dtw_template": {
+    "task_number": 12,
+    "template_dir": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\data\\segmented_trials\\temporary_standard_20260724",
+    "template_count": 1,
+    "status": "temporary_unverified_development_template",
+    "imu_channels": 12,
+    "score_weight": 70,
+    "distance_scale": 1.0
+  },
+  "emg_scoring": {
+    "score_weight": 30,
+    "features": [
+      "RMS",
+      "MAV",
+      "WL"
+    ]
+  },
+  "segmentation": {
+    "method": "threshold_motion_curve",
+    "motion_source": "imu4",
+    "threshold": 14.68190136710063,
+    "min_duration_s": 0.45,
+    "merge_gap_s": 0.3,
+    "fallback_used": false,
+    "repetition_count": 3
+  },
+  "summary": {
+    "average_score": 40.94,
+    "max_score": 41.1,
+    "min_score": 40.63,
+    "score_std": 0.22,
+    "consistency_score": 99.78,
+    "compensation_action_count": 3,
+    "compensation_rate": 1.0
+  },
+  "compensation": {
+    "detected": true,
+    "events": [
+      {
+        "event_type": "compensation_detected",
+        "patient_id": "S001",
+        "session_id": "20260807_TASK057",
+        "task_number": 12,
+        "compensation_detected": true,
+        "action_index": 1,
+        "timestamp_s": 2.171,
+        "stage": "execution",
+        "type": "LF",
+        "severity": "medium",
+        "severity_score": 40.0,
+        "feedback": "检测到可能存在代偿，请暂停当前动作，调整姿势后再继续训练。"
+      },
+      {
+        "event_type": "compensation_detected",
+        "patient_id": "S001",
+        "session_id": "20260807_TASK057",
+        "task_number": 12,
+        "compensation_detected": true,
+        "action_index": 1,
+        "timestamp_s": 2.171,
+        "stage": "execution",
+        "type": "TR",
+        "severity": "medium",
+        "severity_score": 40.0,
+        "feedback": "检测到可能存在代偿，请暂停当前动作，调整姿势后再继续训练。"
+      },
+      {
+        "event_type": "compensation_detected",
+        "patient_id": "S001",
+        "session_id": "20260807_TASK057",
+        "task_number": 12,
+        "compensation_detected": true,
+        "action_index": 2,
+        "timestamp_s": 6.64,
+        "stage": "execution",
+        "type": "LF",
+        "severity": "medium",
+        "severity_score": 40.0,
+        "feedback": "检测到可能存在代偿，请暂停当前动作，调整姿势后再继续训练。"
+      },
+      {
+        "event_type": "compensation_detected",
+        "patient_id": "S001",
+        "session_id": "20260807_TASK057",
+        "task_number": 12,
+        "compensation_detected": true,
+        "action_index": 2,
+        "timestamp_s": 6.64,
+        "stage": "execution",
+        "type": "TR",
+        "severity": "medium",
+        "severity_score": 40.0,
+        "feedback": "检测到可能存在代偿，请暂停当前动作，调整姿势后再继续训练。"
+      },
+      {
+        "event_type": "compensation_detected",
+        "patient_id": "S001",
+        "session_id": "20260807_TASK057",
+        "task_number": 12,
+        "compensation_detected": true,
+        "action_index": 3,
+        "timestamp_s": 11.14,
+        "stage": "execution",
+        "type": "LF",
+        "severity": "medium",
+        "severity_score": 40.0,
+        "feedback": "检测到可能存在代偿，请暂停当前动作，调整姿势后再继续训练。"
+      },
+      {
+        "event_type": "compensation_detected",
+        "patient_id": "S001",
+        "session_id": "20260807_TASK057",
+        "task_number": 12,
+        "compensation_detected": true,
+        "action_index": 3,
+        "timestamp_s": 11.14,
+        "stage": "execution",
+        "type": "TR",
+        "severity": "medium",
+        "severity_score": 40.0,
+        "feedback": "检测到可能存在代偿，请暂停当前动作，调整姿势后再继续训练。"
+      }
+    ],
+    "action_count": 3
+  },
+  "fatigue": {
+    "status": "not_detected",
+    "level": "none"
+  },
+  "feedback": [
+    "IMU 动作时序与模板差异较大，建议按标准动作节奏重新完成。",
+    "肌肉激活模式存在一定偏差。",
+    "检测到代偿表现，请调整姿势后继续训练。"
+  ],
+  "curve_data": {
+    "source": "score_result.actions",
+    "points": [
+      {
+        "action_index": 1,
+        "time_s": 2.92,
+        "final_score": 41.09,
+        "imu_dtw_score": 25.51,
+        "emg_score": 15.58,
+        "dtw_similarity_score": 36.44,
+        "compensation_detected": true
+      },
+      {
+        "action_index": 2,
+        "time_s": 9.52,
+        "final_score": 40.63,
+        "imu_dtw_score": 23.11,
+        "emg_score": 17.52,
+        "dtw_similarity_score": 33.01,
+        "compensation_detected": true
+      },
+      {
+        "action_index": 3,
+        "time_s": 11.84,
+        "final_score": 41.1,
+        "imu_dtw_score": 23.25,
+        "emg_score": 17.85,
+        "dtw_similarity_score": 33.21,
+        "compensation_detected": true
+      }
+    ]
+  },
+  "artifacts": {
+    "score_result_json": "score_result.json",
+    "score_curve_png": "session_score_curve.png"
+  },
+  "compensation_events": [
+    {
+      "event_type": "compensation_detected",
+      "patient_id": "S001",
+      "session_id": "20260807_TASK057",
+      "task_number": 12,
+      "compensation_detected": true,
+      "action_index": 1,
+      "timestamp_s": 2.171,
+      "stage": "execution",
+      "type": "LF",
+      "severity": "medium",
+      "severity_score": 40.0,
+      "feedback": "检测到可能存在代偿，请暂停当前动作，调整姿势后再继续训练。"
+    },
+    {
+      "event_type": "compensation_detected",
+      "patient_id": "S001",
+      "session_id": "20260807_TASK057",
+      "task_number": 12,
+      "compensation_detected": true,
+      "action_index": 1,
+      "timestamp_s": 2.171,
+      "stage": "execution",
+      "type": "TR",
+      "severity": "medium",
+      "severity_score": 40.0,
+      "feedback": "检测到可能存在代偿，请暂停当前动作，调整姿势后再继续训练。"
+    },
+    {
+      "event_type": "compensation_detected",
+      "patient_id": "S001",
+      "session_id": "20260807_TASK057",
+      "task_number": 12,
+      "compensation_detected": true,
+      "action_index": 2,
+      "timestamp_s": 6.64,
+      "stage": "execution",
+      "type": "LF",
+      "severity": "medium",
+      "severity_score": 40.0,
+      "feedback": "检测到可能存在代偿，请暂停当前动作，调整姿势后再继续训练。"
+    },
+    {
+      "event_type": "compensation_detected",
+      "patient_id": "S001",
+      "session_id": "20260807_TASK057",
+      "task_number": 12,
+      "compensation_detected": true,
+      "action_index": 2,
+      "timestamp_s": 6.64,
+      "stage": "execution",
+      "type": "TR",
+      "severity": "medium",
+      "severity_score": 40.0,
+      "feedback": "检测到可能存在代偿，请暂停当前动作，调整姿势后再继续训练。"
+    },
+    {
+      "event_type": "compensation_detected",
+      "patient_id": "S001",
+      "session_id": "20260807_TASK057",
+      "task_number": 12,
+      "compensation_detected": true,
+      "action_index": 3,
+      "timestamp_s": 11.14,
+      "stage": "execution",
+      "type": "LF",
+      "severity": "medium",
+      "severity_score": 40.0,
+      "feedback": "检测到可能存在代偿，请暂停当前动作，调整姿势后再继续训练。"
+    },
+    {
+      "event_type": "compensation_detected",
+      "patient_id": "S001",
+      "session_id": "20260807_TASK057",
+      "task_number": 12,
+      "compensation_detected": true,
+      "action_index": 3,
+      "timestamp_s": 11.14,
+      "stage": "execution",
+      "type": "TR",
+      "severity": "medium",
+      "severity_score": 40.0,
+      "feedback": "检测到可能存在代偿，请暂停当前动作，调整姿势后再继续训练。"
+    }
+  ],
+  "long_term_memory": {
+    "schema_version": "rehab_long_term_memory_v1",
+    "session_id": "20260807_TASK057",
+    "task_number": 12,
+    "compensation_detected": true,
+    "total_event_count": 6,
+    "affected_action_count": 3,
+    "affected_action_indices": [
+      1,
+      2,
+      3
+    ],
+    "counts_by_type": {
+      "LF": 3,
+      "TR": 3
+    },
+    "counts_by_severity": {
+      "medium": 6
+    },
+    "counts_by_stage": {
+      "execution": 6
+    },
+    "dominant_compensation_type": "LF"
+  },
+  "actions": [
+    {
+      "action_index": 1,
+      "valid": true,
+      "invalid_reason": null,
+      "score_version": "v3.0",
+      "model_version": "weighted_dtw_imu_plus_emg_v1.0",
+      "action_source": "segmentation",
+      "data_quality": {
+        "row_count": 76,
+        "missing_columns": [],
+        "valid": true,
+        "mean_dt_ms": 19.986666666666668,
+        "max_dt_ms": 24.0,
+        "estimated_rate_hz": 50.03335557038025,
+        "large_gap_count_over_40ms": 0,
+        "large_gap_count_over_100ms": 0,
+        "duration_s": 1.499,
+        "max_log_seq_gap": 1,
+        "missing_log_seq_count_est": 0,
+        "imu_valid_ratio": {
+          "trunk": 1.0,
+          "upperarm": 1.0,
+          "forearm": 1.0,
+          "hand_wrist": 1.0
+        },
+        "imu_age_ms": {
+          "trunk": {
+            "mean": 100.47368421052632,
+            "max": 174.0
+          },
+          "upperarm": {
+            "mean": 88.59210526315789,
+            "max": 161.0
+          },
+          "forearm": {
+            "mean": 88.86842105263158,
+            "max": 188.0
+          },
+          "hand_wrist": {
+            "mean": 98.4342105263158,
+            "max": 166.0
+          }
+        },
+        "emg_valid_ratio": 1.0,
+        "warnings": [],
+        "level": "good"
+      },
+      "start_time_s": 1.421,
+      "end_time_s": 2.92,
+      "duration_s": 1.499,
+      "phases": [
+        {
+          "name": "preparation",
+          "start_time_s": 1.421,
+          "end_time_s": 1.921
+        },
+        {
+          "name": "execution",
+          "start_time_s": 1.921,
+          "end_time_s": 2.42
+        },
+        {
+          "name": "return",
+          "start_time_s": 2.42,
+          "end_time_s": 2.92
+        }
+      ],
+      "final_score": 41.09,
+      "subscores": {
+        "imu_dtw_score": 25.51,
+        "imu_dtw_max_score": 70.0,
+        "emg_score": 15.58,
+        "emg_max_score": 30.0
+      },
+      "dtw": {
+        "similarity_score": 36.44,
+        "normalized_distance": 1.009537,
+        "best_template_id": "trial_001",
+        "distance_scale": 1.0,
+        "window_ratio": 0.2,
+        "comparisons": [
+          {
+            "template_id": "trial_001",
+            "normalized_distance": 1.009537,
+            "warping_path_length": 384
+          }
+        ]
+      },
+      "compensation": {
+        "detected": true,
+        "events": [
+          {
+            "event_type": "compensation_detected",
+            "patient_id": "S001",
+            "session_id": "20260807_TASK057",
+            "task_number": 12,
+            "compensation_detected": true,
+            "action_index": 1,
+            "timestamp_s": 2.171,
+            "stage": "execution",
+            "type": "LF",
+            "severity": "medium",
+            "severity_score": 40.0,
+            "feedback": "检测到可能存在代偿，请暂停当前动作，调整姿势后再继续训练。"
+          },
+          {
+            "event_type": "compensation_detected",
+            "patient_id": "S001",
+            "session_id": "20260807_TASK057",
+            "task_number": 12,
+            "compensation_detected": true,
+            "action_index": 1,
+            "timestamp_s": 2.171,
+            "stage": "execution",
+            "type": "TR",
+            "severity": "medium",
+            "severity_score": 40.0,
+            "feedback": "检测到可能存在代偿，请暂停当前动作，调整姿势后再继续训练。"
+          }
+        ],
+        "quality_findings": [
+          "abnormal_muscle_recruitment",
+          "forearm_coordination_abnormal",
+          "insufficient_upperarm_ROM"
+        ],
+        "details": {
+          "trunk_compensation_ratio_rule": {
+            "trunk_compensation_ratio": 0.954805628314,
+            "trunk_compensation_ratio_threshold": 0.09885350515694372,
+            "trunk_compensation_ratio_rule_passed": true,
+            "trunk_compensation_ratio_rule_version": "drink_water_ratio_lf_v1"
+          },
+          "LF": {
+            "pitch_offset_deg": 26.41,
+            "trunk_compensation_ratio": 0.954805628314,
+            "trunk_compensation_ratio_threshold": 0.09885350515694372,
+            "trunk_compensation_ratio_rule_passed": true,
+            "trunk_compensation_ratio_rule_version": "drink_water_ratio_lf_v1",
+            "reason": "躯干前倾角超过阈值"
+          },
+          "TR": {
+            "yaw_offset_deg": 53.66,
+            "reason": "躯干旋转角超过阈值"
+          },
+          "insufficient_upperarm_ROM": {
+            "value": 3.7899999999999894,
+            "template_mean": 210.280689655,
+            "reason": "上臂活动范围低于模板，可能存在关节活动度不足"
+          },
+          "forearm_coordination_abnormal": {
+            "value": 161.32,
+            "template_mean": 372.252068966,
+            "reason": "前臂旋转范围偏离健康模板，可能存在肩肘腕协调异常"
+          },
+          "abnormal_muscle_recruitment": [
+            {
+              "muscle": "Biceps_brachii",
+              "feature": "RMS",
+              "z_score": 24.801,
+              "reason": "Biceps_brachii 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Triceps_brachii",
+              "feature": "RMS",
+              "z_score": 3.625,
+              "reason": "Triceps_brachii 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Extensor_carpi_ulnaris",
+              "feature": "RMS",
+              "z_score": 34.181,
+              "reason": "Extensor_carpi_ulnaris 激活明显高于模板，可能存在异常募集或代偿"
+            }
+          ]
+        }
+      },
+      "trajectory": {
+        "action_index": 1,
+        "coordinate_frame": "trunk_relative",
+        "time_unit": "s",
+        "unit": "m",
+        "sample_count": 76,
+        "time_s": [
+          0.0,
+          0.019,
+          0.039,
+          0.059,
+          0.079,
+          0.099,
+          0.119,
+          0.139,
+          0.16,
+          0.179,
+          0.199,
+          0.219,
+          0.239,
+          0.26,
+          0.279,
+          0.299,
+          0.319,
+          0.343,
+          0.36,
+          0.379,
+          0.399,
+          0.419,
+          0.439,
+          0.46,
+          0.479,
+          0.5,
+          0.519,
+          0.539,
+          0.559,
+          0.579,
+          0.6,
+          0.619,
+          0.639,
+          0.66,
+          0.679,
+          0.699,
+          0.719,
+          0.739,
+          0.76,
+          0.779,
+          0.799,
+          0.819,
+          0.839,
+          0.859,
+          0.88,
+          0.899,
+          0.919,
+          0.94,
+          0.959,
+          0.979,
+          0.999,
+          1.019,
+          1.039,
+          1.059,
+          1.079,
+          1.099,
+          1.119,
+          1.139,
+          1.159,
+          1.18,
+          1.2,
+          1.219,
+          1.24,
+          1.259,
+          1.28,
+          1.3,
+          1.319,
+          1.339,
+          1.359,
+          1.379,
+          1.399,
+          1.419,
+          1.439,
+          1.459,
+          1.479,
+          1.499
+        ],
+        "elbow_xyz": [
+          [
+            0.314999,
+            -0.000547,
+            0.00068
+          ],
+          [
+            0.314999,
+            -0.000547,
+            0.00068
+          ],
+          [
+            0.315,
+            -0.00038,
+            9.1e-05
+          ],
+          [
+            0.315,
+            -0.00038,
+            9.1e-05
+          ],
+          [
+            0.315,
+            -0.00038,
+            9.1e-05
+          ],
+          [
+            0.315,
+            -0.00038,
+            9.1e-05
+          ],
+          [
+            0.315,
+            -0.00038,
+            9.1e-05
+          ],
+          [
+            0.315,
+            -0.000237,
+            -0.000327
+          ],
+          [
+            0.315,
+            -0.000237,
+            -0.000327
+          ],
+          [
+            0.315,
+            -0.000237,
+            -0.000327
+          ],
+          [
+            0.315,
+            -0.000237,
+            -0.000327
+          ],
+          [
+            0.315,
+            -0.000237,
+            -0.000327
+          ],
+          [
+            0.315,
+            -0.000237,
+            -0.000327
+          ],
+          [
+            0.315,
+            -9.8e-05,
+            -0.000186
+          ],
+          [
+            0.315,
+            -9.8e-05,
+            -0.000186
+          ],
+          [
+            0.315,
+            -9.8e-05,
+            -0.000186
+          ],
+          [
+            0.315,
+            -9.8e-05,
+            -0.000186
+          ],
+          [
+            0.315,
+            5e-06,
+            0.000351
+          ],
+          [
+            0.315,
+            5e-06,
+            0.000351
+          ],
+          [
+            0.315,
+            5e-06,
+            0.000351
+          ],
+          [
+            0.315,
+            5e-06,
+            0.000351
+          ],
+          [
+            0.315,
+            5e-06,
+            0.000351
+          ],
+          [
+            0.315,
+            5e-06,
+            0.000351
+          ],
+          [
+            0.314999,
+            0.000165,
+            0.000599
+          ],
+          [
+            0.314999,
+            0.000165,
+            0.000599
+          ],
+          [
+            0.314999,
+            0.000165,
+            0.000599
+          ],
+          [
+            0.314999,
+            0.000165,
+            0.000599
+          ],
+          [
+            0.314999,
+            0.000165,
+            0.000599
+          ],
+          [
+            0.314999,
+            0.000219,
+            0.000588
+          ],
+          [
+            0.314999,
+            0.000219,
+            0.000588
+          ],
+          [
+            0.314999,
+            0.000219,
+            0.000588
+          ],
+          [
+            0.314999,
+            0.000219,
+            0.000588
+          ],
+          [
+            0.314999,
+            0.000219,
+            0.000588
+          ],
+          [
+            0.315,
+            0.000149,
+            -6.7e-05
+          ],
+          [
+            0.315,
+            0.000149,
+            -6.7e-05
+          ],
+          [
+            0.315,
+            0.000149,
+            -6.7e-05
+          ],
+          [
+            0.315,
+            0.000149,
+            -6.7e-05
+          ],
+          [
+            0.315,
+            0.000149,
+            -6.7e-05
+          ],
+          [
+            0.314999,
+            0.000264,
+            -0.000924
+          ],
+          [
+            0.314999,
+            0.000264,
+            -0.000924
+          ],
+          [
+            0.314999,
+            0.000264,
+            -0.000924
+          ],
+          [
+            0.314999,
+            0.000264,
+            -0.000924
+          ],
+          [
+            0.314999,
+            0.000264,
+            -0.000924
+          ],
+          [
+            0.314998,
+            0.000534,
+            -0.000976
+          ],
+          [
+            0.314998,
+            0.000534,
+            -0.000976
+          ],
+          [
+            0.314998,
+            0.000534,
+            -0.000976
+          ],
+          [
+            0.314998,
+            0.000534,
+            -0.000976
+          ],
+          [
+            0.314998,
+            0.000534,
+            -0.000976
+          ],
+          [
+            0.314998,
+            0.000534,
+            -0.000976
+          ],
+          [
+            0.314994,
+            0.000842,
+            -0.001703
+          ],
+          [
+            0.314994,
+            0.000842,
+            -0.001703
+          ],
+          [
+            0.314994,
+            0.000842,
+            -0.001703
+          ],
+          [
+            0.314994,
+            0.000842,
+            -0.001703
+          ],
+          [
+            0.314994,
+            0.000842,
+            -0.001703
+          ],
+          [
+            0.314992,
+            0.001007,
+            -0.002013
+          ],
+          [
+            0.314992,
+            0.001007,
+            -0.002013
+          ],
+          [
+            0.314992,
+            0.001007,
+            -0.002013
+          ],
+          [
+            0.314992,
+            0.001007,
+            -0.002013
+          ],
+          [
+            0.314992,
+            0.001007,
+            -0.002013
+          ],
+          [
+            0.31499,
+            0.001246,
+            -0.002226
+          ],
+          [
+            0.31499,
+            0.001246,
+            -0.002226
+          ],
+          [
+            0.31499,
+            0.001246,
+            -0.002226
+          ],
+          [
+            0.31499,
+            0.001246,
+            -0.002226
+          ],
+          [
+            0.31499,
+            0.001246,
+            -0.002226
+          ],
+          [
+            0.314983,
+            0.00121,
+            -0.002999
+          ],
+          [
+            0.314983,
+            0.00121,
+            -0.002999
+          ],
+          [
+            0.314983,
+            0.00121,
+            -0.002999
+          ],
+          [
+            0.314983,
+            0.00121,
+            -0.002999
+          ],
+          [
+            0.314983,
+            0.00121,
+            -0.002999
+          ],
+          [
+            0.314969,
+            0.001017,
+            -0.004297
+          ],
+          [
+            0.314969,
+            0.001017,
+            -0.004297
+          ],
+          [
+            0.314969,
+            0.001017,
+            -0.004297
+          ],
+          [
+            0.314969,
+            0.001017,
+            -0.004297
+          ],
+          [
+            0.314969,
+            0.001017,
+            -0.004297
+          ],
+          [
+            0.314965,
+            0.000955,
+            -0.00462
+          ],
+          [
+            0.314965,
+            0.000955,
+            -0.00462
+          ]
+        ],
+        "hand_wrist_xyz": [
+          [
+            0.654712,
+            -0.138027,
+            0.03389
+          ],
+          [
+            0.654712,
+            -0.138027,
+            0.03389
+          ],
+          [
+            0.661169,
+            -0.117247,
+            0.043517
+          ],
+          [
+            0.661169,
+            -0.117247,
+            0.043517
+          ],
+          [
+            0.661169,
+            -0.117247,
+            0.043517
+          ],
+          [
+            0.661169,
+            -0.117247,
+            0.043517
+          ],
+          [
+            0.661169,
+            -0.117247,
+            0.043517
+          ],
+          [
+            0.668637,
+            -0.081119,
+            0.060885
+          ],
+          [
+            0.668637,
+            -0.081119,
+            0.060885
+          ],
+          [
+            0.668637,
+            -0.081119,
+            0.060885
+          ],
+          [
+            0.668637,
+            -0.081119,
+            0.060885
+          ],
+          [
+            0.668637,
+            -0.081119,
+            0.060885
+          ],
+          [
+            0.668637,
+            -0.081119,
+            0.060885
+          ],
+          [
+            0.668638,
+            -0.08098,
+            0.061026
+          ],
+          [
+            0.668638,
+            -0.08098,
+            0.061026
+          ],
+          [
+            0.668638,
+            -0.08098,
+            0.061026
+          ],
+          [
+            0.668638,
+            -0.08098,
+            0.061026
+          ],
+          [
+            0.67909,
+            0.021411,
+            0.048022
+          ],
+          [
+            0.67909,
+            0.021411,
+            0.048022
+          ],
+          [
+            0.67909,
+            0.021411,
+            0.048022
+          ],
+          [
+            0.67909,
+            0.021411,
+            0.048022
+          ],
+          [
+            0.67909,
+            0.021411,
+            0.048022
+          ],
+          [
+            0.67909,
+            0.021411,
+            0.048022
+          ],
+          [
+            0.673154,
+            0.079999,
+            0.025438
+          ],
+          [
+            0.673154,
+            0.079999,
+            0.025438
+          ],
+          [
+            0.673154,
+            0.079999,
+            0.025438
+          ],
+          [
+            0.673154,
+            0.079999,
+            0.025438
+          ],
+          [
+            0.673154,
+            0.079999,
+            0.025438
+          ],
+          [
+            0.656004,
+            0.138077,
+            -0.000752
+          ],
+          [
+            0.656004,
+            0.138077,
+            -0.000752
+          ],
+          [
+            0.656004,
+            0.138077,
+            -0.000752
+          ],
+          [
+            0.656004,
+            0.138077,
+            -0.000752
+          ],
+          [
+            0.656004,
+            0.138077,
+            -0.000752
+          ],
+          [
+            0.626592,
+            0.195138,
+            -0.01635
+          ],
+          [
+            0.626592,
+            0.195138,
+            -0.01635
+          ],
+          [
+            0.626592,
+            0.195138,
+            -0.01635
+          ],
+          [
+            0.626592,
+            0.195138,
+            -0.01635
+          ],
+          [
+            0.626592,
+            0.195138,
+            -0.01635
+          ],
+          [
+            0.60118,
+            0.230095,
+            -0.026804
+          ],
+          [
+            0.60118,
+            0.230095,
+            -0.026804
+          ],
+          [
+            0.60118,
+            0.230095,
+            -0.026804
+          ],
+          [
+            0.60118,
+            0.230095,
+            -0.026804
+          ],
+          [
+            0.60118,
+            0.230095,
+            -0.026804
+          ],
+          [
+            0.587339,
+            0.245098,
+            -0.038006
+          ],
+          [
+            0.587339,
+            0.245098,
+            -0.038006
+          ],
+          [
+            0.587339,
+            0.245098,
+            -0.038006
+          ],
+          [
+            0.587339,
+            0.245098,
+            -0.038006
+          ],
+          [
+            0.587339,
+            0.245098,
+            -0.038006
+          ],
+          [
+            0.587339,
+            0.245098,
+            -0.038006
+          ],
+          [
+            0.582376,
+            0.248488,
+            -0.051892
+          ],
+          [
+            0.582376,
+            0.248488,
+            -0.051892
+          ],
+          [
+            0.582376,
+            0.248488,
+            -0.051892
+          ],
+          [
+            0.582376,
+            0.248488,
+            -0.051892
+          ],
+          [
+            0.582376,
+            0.248488,
+            -0.051892
+          ],
+          [
+            0.582451,
+            0.247582,
+            -0.05576
+          ],
+          [
+            0.582451,
+            0.247582,
+            -0.05576
+          ],
+          [
+            0.582451,
+            0.247582,
+            -0.05576
+          ],
+          [
+            0.582451,
+            0.247582,
+            -0.05576
+          ],
+          [
+            0.582451,
+            0.247582,
+            -0.05576
+          ],
+          [
+            0.59109,
+            0.232874,
+            -0.075841
+          ],
+          [
+            0.59109,
+            0.232874,
+            -0.075841
+          ],
+          [
+            0.59109,
+            0.232874,
+            -0.075841
+          ],
+          [
+            0.59109,
+            0.232874,
+            -0.075841
+          ],
+          [
+            0.59109,
+            0.232874,
+            -0.075841
+          ],
+          [
+            0.596539,
+            0.225316,
+            -0.078662
+          ],
+          [
+            0.596539,
+            0.225316,
+            -0.078662
+          ],
+          [
+            0.596539,
+            0.225316,
+            -0.078662
+          ],
+          [
+            0.596539,
+            0.225316,
+            -0.078662
+          ],
+          [
+            0.596539,
+            0.225316,
+            -0.078662
+          ],
+          [
+            0.601372,
+            0.216439,
+            -0.086759
+          ],
+          [
+            0.601372,
+            0.216439,
+            -0.086759
+          ],
+          [
+            0.601372,
+            0.216439,
+            -0.086759
+          ],
+          [
+            0.601372,
+            0.216439,
+            -0.086759
+          ],
+          [
+            0.601372,
+            0.216439,
+            -0.086759
+          ],
+          [
+            0.602178,
+            0.215094,
+            -0.087378
+          ],
+          [
+            0.602178,
+            0.215094,
+            -0.087378
+          ]
+        ],
+        "summary": {
+          "duration_s": 1.499,
+          "hand_wrist_path_length_m": 0.501192,
+          "max_height_m": 0.061026,
+          "max_displacement_m": 0.402473
+        },
+        "files": {
+          "trajectory_json": "trajectories/action_01_trajectory.json",
+          "trajectory_png": "trajectories/action_01_trajectory.png"
+        }
+      },
+      "feedback": [
+        "IMU 动作时序与模板差异较大，建议按标准动作节奏重新完成。",
+        "肌肉激活模式存在一定偏差。",
+        "检测到代偿表现，请调整姿势后继续训练。"
+      ]
+    },
+    {
+      "action_index": 2,
+      "valid": true,
+      "invalid_reason": null,
+      "score_version": "v3.0",
+      "model_version": "weighted_dtw_imu_plus_emg_v1.0",
+      "action_source": "segmentation",
+      "data_quality": {
+        "row_count": 289,
+        "missing_columns": [],
+        "valid": true,
+        "mean_dt_ms": 20.0,
+        "max_dt_ms": 37.0,
+        "estimated_rate_hz": 50.0,
+        "large_gap_count_over_40ms": 0,
+        "large_gap_count_over_100ms": 0,
+        "duration_s": 5.76,
+        "max_log_seq_gap": 1,
+        "missing_log_seq_count_est": 0,
+        "imu_valid_ratio": {
+          "trunk": 1.0,
+          "upperarm": 1.0,
+          "forearm": 1.0,
+          "hand_wrist": 1.0
+        },
+        "imu_age_ms": {
+          "trunk": {
+            "mean": 92.55709342560553,
+            "max": 193.0
+          },
+          "upperarm": {
+            "mean": 103.4636678200692,
+            "max": 200.0
+          },
+          "forearm": {
+            "mean": 93.13494809688581,
+            "max": 194.0
+          },
+          "hand_wrist": {
+            "mean": 97.5363321799308,
+            "max": 186.0
+          }
+        },
+        "emg_valid_ratio": 1.0,
+        "warnings": [],
+        "level": "good"
+      },
+      "start_time_s": 3.76,
+      "end_time_s": 9.52,
+      "duration_s": 5.76,
+      "phases": [
+        {
+          "name": "preparation",
+          "start_time_s": 3.76,
+          "end_time_s": 5.68
+        },
+        {
+          "name": "execution",
+          "start_time_s": 5.68,
+          "end_time_s": 7.6
+        },
+        {
+          "name": "return",
+          "start_time_s": 7.6,
+          "end_time_s": 9.52
+        }
+      ],
+      "final_score": 40.63,
+      "subscores": {
+        "imu_dtw_score": 23.11,
+        "imu_dtw_max_score": 70.0,
+        "emg_score": 17.52,
+        "emg_max_score": 30.0
+      },
+      "dtw": {
+        "similarity_score": 33.01,
+        "normalized_distance": 1.108242,
+        "best_template_id": "trial_001",
+        "distance_scale": 1.0,
+        "window_ratio": 0.2,
+        "comparisons": [
+          {
+            "template_id": "trial_001",
+            "normalized_distance": 1.108242,
+            "warping_path_length": 388
+          }
+        ]
+      },
+      "compensation": {
+        "detected": true,
+        "events": [
+          {
+            "event_type": "compensation_detected",
+            "patient_id": "S001",
+            "session_id": "20260807_TASK057",
+            "task_number": 12,
+            "compensation_detected": true,
+            "action_index": 2,
+            "timestamp_s": 6.64,
+            "stage": "execution",
+            "type": "LF",
+            "severity": "medium",
+            "severity_score": 40.0,
+            "feedback": "检测到可能存在代偿，请暂停当前动作，调整姿势后再继续训练。"
+          },
+          {
+            "event_type": "compensation_detected",
+            "patient_id": "S001",
+            "session_id": "20260807_TASK057",
+            "task_number": 12,
+            "compensation_detected": true,
+            "action_index": 2,
+            "timestamp_s": 6.64,
+            "stage": "execution",
+            "type": "TR",
+            "severity": "medium",
+            "severity_score": 40.0,
+            "feedback": "检测到可能存在代偿，请暂停当前动作，调整姿势后再继续训练。"
+          }
+        ],
+        "quality_findings": [
+          "abnormal_muscle_recruitment",
+          "forearm_coordination_abnormal",
+          "insufficient_upperarm_ROM"
+        ],
+        "details": {
+          "trunk_compensation_ratio_rule": {
+            "trunk_compensation_ratio": 0.94829866527,
+            "trunk_compensation_ratio_threshold": 0.09885350515694372,
+            "trunk_compensation_ratio_rule_passed": true,
+            "trunk_compensation_ratio_rule_version": "drink_water_ratio_lf_v1"
+          },
+          "LF": {
+            "pitch_offset_deg": 14.32,
+            "trunk_compensation_ratio": 0.94829866527,
+            "trunk_compensation_ratio_threshold": 0.09885350515694372,
+            "trunk_compensation_ratio_rule_passed": true,
+            "trunk_compensation_ratio_rule_version": "drink_water_ratio_lf_v1",
+            "reason": "躯干前倾角超过阈值"
+          },
+          "TR": {
+            "yaw_offset_deg": 64.55,
+            "reason": "躯干旋转角超过阈值"
+          },
+          "insufficient_upperarm_ROM": {
+            "value": 4.299999999999992,
+            "template_mean": 210.280689655,
+            "reason": "上臂活动范围低于模板，可能存在关节活动度不足"
+          },
+          "forearm_coordination_abnormal": {
+            "value": 248.48000000000002,
+            "template_mean": 372.252068966,
+            "reason": "前臂旋转范围偏离健康模板，可能存在肩肘腕协调异常"
+          },
+          "abnormal_muscle_recruitment": [
+            {
+              "muscle": "Biceps_brachii",
+              "feature": "RMS",
+              "z_score": 9.133,
+              "reason": "Biceps_brachii 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Triceps_brachii",
+              "feature": "RMS",
+              "z_score": 2.02,
+              "reason": "Triceps_brachii 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Extensor_carpi_ulnaris",
+              "feature": "RMS",
+              "z_score": 15.678,
+              "reason": "Extensor_carpi_ulnaris 激活明显高于模板，可能存在异常募集或代偿"
+            }
+          ]
+        }
+      },
+      "trajectory": {
+        "action_index": 2,
+        "coordinate_frame": "trunk_relative",
+        "time_unit": "s",
+        "unit": "m",
+        "sample_count": 289,
+        "time_s": [
+          0.0,
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1,
+          0.121,
+          0.14,
+          0.16,
+          0.181,
+          0.2,
+          0.22,
+          0.24,
+          0.261,
+          0.28,
+          0.3,
+          0.321,
+          0.34,
+          0.36,
+          0.38,
+          0.4,
+          0.42,
+          0.441,
+          0.461,
+          0.48,
+          0.5,
+          0.52,
+          0.54,
+          0.56,
+          0.58,
+          0.601,
+          0.638,
+          0.641,
+          0.66,
+          0.681,
+          0.7,
+          0.72,
+          0.74,
+          0.76,
+          0.78,
+          0.8,
+          0.82,
+          0.84,
+          0.86,
+          0.88,
+          0.9,
+          0.921,
+          0.94,
+          0.961,
+          0.98,
+          1.0,
+          1.02,
+          1.04,
+          1.06,
+          1.08,
+          1.1,
+          1.12,
+          1.14,
+          1.16,
+          1.18,
+          1.2,
+          1.22,
+          1.24,
+          1.26,
+          1.28,
+          1.3,
+          1.32,
+          1.34,
+          1.36,
+          1.38,
+          1.4,
+          1.42,
+          1.44,
+          1.46,
+          1.48,
+          1.5,
+          1.52,
+          1.541,
+          1.561,
+          1.58,
+          1.6,
+          1.62,
+          1.64,
+          1.66,
+          1.68,
+          1.7,
+          1.72,
+          1.74,
+          1.76,
+          1.78,
+          1.805,
+          1.82,
+          1.84,
+          1.86,
+          1.88,
+          1.9,
+          1.921,
+          1.94,
+          1.961,
+          1.98,
+          2.0,
+          2.021,
+          2.04,
+          2.06,
+          2.08,
+          2.101,
+          2.12,
+          2.14,
+          2.16,
+          2.181,
+          2.2,
+          2.22,
+          2.24,
+          2.26,
+          2.28,
+          2.3,
+          2.321,
+          2.34,
+          2.36,
+          2.381,
+          2.4,
+          2.42,
+          2.441,
+          2.461,
+          2.48,
+          2.5,
+          2.521,
+          2.54,
+          2.56,
+          2.58,
+          2.6,
+          2.62,
+          2.64,
+          2.66,
+          2.68,
+          2.7,
+          2.721,
+          2.74,
+          2.76,
+          2.781,
+          2.801,
+          2.82,
+          2.84,
+          2.86,
+          2.881,
+          2.9,
+          2.92,
+          2.94,
+          2.96,
+          2.981,
+          3.0,
+          3.021,
+          3.04,
+          3.06,
+          3.08,
+          3.1,
+          3.12,
+          3.14,
+          3.16,
+          3.18,
+          3.2,
+          3.22,
+          3.241,
+          3.26,
+          3.28,
+          3.3,
+          3.32,
+          3.34,
+          3.361,
+          3.38,
+          3.4,
+          3.42,
+          3.44,
+          3.461,
+          3.481,
+          3.5,
+          3.52,
+          3.54,
+          3.56,
+          3.581,
+          3.601,
+          3.62,
+          3.64,
+          3.661,
+          3.68,
+          3.7,
+          3.72,
+          3.74,
+          3.76,
+          3.78,
+          3.8,
+          3.82,
+          3.84,
+          3.86,
+          3.88,
+          3.9,
+          3.92,
+          3.94,
+          3.961,
+          3.98,
+          4.0,
+          4.02,
+          4.04,
+          4.06,
+          4.08,
+          4.1,
+          4.12,
+          4.14,
+          4.16,
+          4.18,
+          4.2,
+          4.22,
+          4.241,
+          4.261,
+          4.28,
+          4.301,
+          4.32,
+          4.34,
+          4.36,
+          4.38,
+          4.401,
+          4.42,
+          4.44,
+          4.46,
+          4.481,
+          4.5,
+          4.52,
+          4.54,
+          4.56,
+          4.58,
+          4.601,
+          4.62,
+          4.64,
+          4.66,
+          4.681,
+          4.7,
+          4.72,
+          4.74,
+          4.76,
+          4.781,
+          4.8,
+          4.82,
+          4.84,
+          4.861,
+          4.88,
+          4.9,
+          4.921,
+          4.94,
+          4.96,
+          4.981,
+          5.0,
+          5.02,
+          5.04,
+          5.06,
+          5.08,
+          5.101,
+          5.12,
+          5.14,
+          5.16,
+          5.181,
+          5.2,
+          5.22,
+          5.24,
+          5.26,
+          5.28,
+          5.3,
+          5.32,
+          5.34,
+          5.361,
+          5.381,
+          5.4,
+          5.42,
+          5.44,
+          5.46,
+          5.48,
+          5.5,
+          5.52,
+          5.54,
+          5.56,
+          5.58,
+          5.6,
+          5.62,
+          5.64,
+          5.66,
+          5.681,
+          5.7,
+          5.721,
+          5.74,
+          5.76
+        ],
+        "elbow_xyz": [
+          [
+            0.314991,
+            0.001426,
+            -0.001871
+          ],
+          [
+            0.314991,
+            0.001426,
+            -0.001871
+          ],
+          [
+            0.314991,
+            0.001426,
+            -0.001871
+          ],
+          [
+            0.314985,
+            0.001305,
+            -0.002794
+          ],
+          [
+            0.314985,
+            0.001305,
+            -0.002794
+          ],
+          [
+            0.314985,
+            0.001305,
+            -0.002794
+          ],
+          [
+            0.314985,
+            0.001305,
+            -0.002794
+          ],
+          [
+            0.314985,
+            0.001305,
+            -0.002794
+          ],
+          [
+            0.314985,
+            0.001305,
+            -0.002794
+          ],
+          [
+            0.314975,
+            0.000937,
+            -0.003837
+          ],
+          [
+            0.314975,
+            0.000937,
+            -0.003837
+          ],
+          [
+            0.314975,
+            0.000937,
+            -0.003837
+          ],
+          [
+            0.314975,
+            0.000937,
+            -0.003837
+          ],
+          [
+            0.31493,
+            0.000124,
+            -0.006631
+          ],
+          [
+            0.31493,
+            0.000124,
+            -0.006631
+          ],
+          [
+            0.31493,
+            0.000124,
+            -0.006631
+          ],
+          [
+            0.31493,
+            0.000124,
+            -0.006631
+          ],
+          [
+            0.31493,
+            0.000124,
+            -0.006631
+          ],
+          [
+            0.314884,
+            -1.7e-05,
+            -0.008552
+          ],
+          [
+            0.314884,
+            -1.7e-05,
+            -0.008552
+          ],
+          [
+            0.314884,
+            -1.7e-05,
+            -0.008552
+          ],
+          [
+            0.314884,
+            -1.7e-05,
+            -0.008552
+          ],
+          [
+            0.314884,
+            -1.7e-05,
+            -0.008552
+          ],
+          [
+            0.314867,
+            -0.000129,
+            -0.009142
+          ],
+          [
+            0.314867,
+            -0.000129,
+            -0.009142
+          ],
+          [
+            0.314867,
+            -0.000129,
+            -0.009142
+          ],
+          [
+            0.314867,
+            -0.000129,
+            -0.009142
+          ],
+          [
+            0.314867,
+            -0.000129,
+            -0.009142
+          ],
+          [
+            0.314867,
+            -0.000129,
+            -0.009142
+          ],
+          [
+            0.314879,
+            -0.000274,
+            -0.008725
+          ],
+          [
+            0.314879,
+            -0.000274,
+            -0.008725
+          ],
+          [
+            0.314879,
+            -0.000274,
+            -0.008725
+          ],
+          [
+            0.314879,
+            -0.000274,
+            -0.008725
+          ],
+          [
+            0.314903,
+            -0.000381,
+            -0.007815
+          ],
+          [
+            0.314922,
+            -0.000562,
+            -0.007002
+          ],
+          [
+            0.314922,
+            -0.000562,
+            -0.007002
+          ],
+          [
+            0.314922,
+            -0.000562,
+            -0.007002
+          ],
+          [
+            0.314922,
+            -0.000562,
+            -0.007002
+          ],
+          [
+            0.314922,
+            -0.000562,
+            -0.007002
+          ],
+          [
+            0.314922,
+            -0.000562,
+            -0.007002
+          ],
+          [
+            0.314922,
+            -0.000562,
+            -0.007002
+          ],
+          [
+            0.314922,
+            -0.000562,
+            -0.007002
+          ],
+          [
+            0.314922,
+            -0.000562,
+            -0.007002
+          ],
+          [
+            0.314922,
+            -0.000562,
+            -0.007002
+          ],
+          [
+            0.314928,
+            -0.000619,
+            -0.006712
+          ],
+          [
+            0.314928,
+            -0.000619,
+            -0.006712
+          ],
+          [
+            0.314928,
+            -0.000619,
+            -0.006712
+          ],
+          [
+            0.314928,
+            -0.000619,
+            -0.006712
+          ],
+          [
+            0.314928,
+            -0.000619,
+            -0.006712
+          ],
+          [
+            0.314923,
+            -0.000714,
+            -0.006917
+          ],
+          [
+            0.314923,
+            -0.000714,
+            -0.006917
+          ],
+          [
+            0.314923,
+            -0.000714,
+            -0.006917
+          ],
+          [
+            0.314923,
+            -0.000714,
+            -0.006917
+          ],
+          [
+            0.314923,
+            -0.000714,
+            -0.006917
+          ],
+          [
+            0.314914,
+            -0.000731,
+            -0.007303
+          ],
+          [
+            0.314921,
+            -0.000788,
+            -0.007014
+          ],
+          [
+            0.314921,
+            -0.000788,
+            -0.007014
+          ],
+          [
+            0.314921,
+            -0.000788,
+            -0.007014
+          ],
+          [
+            0.314921,
+            -0.000788,
+            -0.007014
+          ],
+          [
+            0.314921,
+            -0.000788,
+            -0.007014
+          ],
+          [
+            0.314921,
+            -0.000788,
+            -0.007014
+          ],
+          [
+            0.314921,
+            -0.000788,
+            -0.007014
+          ],
+          [
+            0.314921,
+            -0.000788,
+            -0.007014
+          ],
+          [
+            0.314921,
+            -0.000788,
+            -0.007014
+          ],
+          [
+            0.314921,
+            -0.000788,
+            -0.007014
+          ],
+          [
+            0.314941,
+            -0.000334,
+            -0.006099
+          ],
+          [
+            0.314941,
+            -0.000334,
+            -0.006099
+          ],
+          [
+            0.314941,
+            -0.000334,
+            -0.006099
+          ],
+          [
+            0.314941,
+            -0.000334,
+            -0.006099
+          ],
+          [
+            0.314941,
+            -0.000334,
+            -0.006099
+          ],
+          [
+            0.314957,
+            -0.000224,
+            -0.005229
+          ],
+          [
+            0.314957,
+            -0.000224,
+            -0.005229
+          ],
+          [
+            0.314957,
+            -0.000224,
+            -0.005229
+          ],
+          [
+            0.314957,
+            -0.000224,
+            -0.005229
+          ],
+          [
+            0.314957,
+            -0.000224,
+            -0.005229
+          ],
+          [
+            0.314969,
+            -0.000233,
+            -0.004393
+          ],
+          [
+            0.314969,
+            -0.000233,
+            -0.004393
+          ],
+          [
+            0.314969,
+            -0.000233,
+            -0.004393
+          ],
+          [
+            0.314969,
+            -0.000233,
+            -0.004393
+          ],
+          [
+            0.314969,
+            -0.000233,
+            -0.004393
+          ],
+          [
+            0.31498,
+            -0.000187,
+            -0.003566
+          ],
+          [
+            0.31498,
+            -0.000187,
+            -0.003566
+          ],
+          [
+            0.31498,
+            -0.000187,
+            -0.003566
+          ],
+          [
+            0.31498,
+            -0.000187,
+            -0.003566
+          ],
+          [
+            0.31498,
+            -0.000187,
+            -0.003566
+          ],
+          [
+            0.31498,
+            -0.000187,
+            -0.003566
+          ],
+          [
+            0.314987,
+            -0.000107,
+            -0.002858
+          ],
+          [
+            0.314987,
+            -0.000107,
+            -0.002858
+          ],
+          [
+            0.314987,
+            -0.000107,
+            -0.002858
+          ],
+          [
+            0.314987,
+            -0.000107,
+            -0.002858
+          ],
+          [
+            0.314987,
+            -0.000107,
+            -0.002858
+          ],
+          [
+            0.314982,
+            -0.000199,
+            -0.003341
+          ],
+          [
+            0.314982,
+            -0.000199,
+            -0.003341
+          ],
+          [
+            0.314982,
+            -0.000199,
+            -0.003341
+          ],
+          [
+            0.314982,
+            -0.000199,
+            -0.003341
+          ],
+          [
+            0.314982,
+            -0.000199,
+            -0.003341
+          ],
+          [
+            0.314982,
+            -0.000415,
+            -0.0033
+          ],
+          [
+            0.314982,
+            -0.000415,
+            -0.0033
+          ],
+          [
+            0.314982,
+            -0.000415,
+            -0.0033
+          ],
+          [
+            0.314982,
+            -0.000415,
+            -0.0033
+          ],
+          [
+            0.314982,
+            -0.000415,
+            -0.0033
+          ],
+          [
+            0.314982,
+            -0.000415,
+            -0.0033
+          ],
+          [
+            0.314982,
+            -0.000415,
+            -0.0033
+          ],
+          [
+            0.314982,
+            -0.000415,
+            -0.0033
+          ],
+          [
+            0.314982,
+            -0.000415,
+            -0.0033
+          ],
+          [
+            0.314992,
+            1.7e-05,
+            -0.002213
+          ],
+          [
+            0.314992,
+            1.7e-05,
+            -0.002213
+          ],
+          [
+            0.314992,
+            1.7e-05,
+            -0.002213
+          ],
+          [
+            0.314992,
+            1.7e-05,
+            -0.002213
+          ],
+          [
+            0.314992,
+            1.7e-05,
+            -0.002213
+          ],
+          [
+            0.314992,
+            1.7e-05,
+            -0.002213
+          ],
+          [
+            0.314992,
+            1.7e-05,
+            -0.002213
+          ],
+          [
+            0.314992,
+            1.7e-05,
+            -0.002213
+          ],
+          [
+            0.314992,
+            1.7e-05,
+            -0.002213
+          ],
+          [
+            0.314992,
+            1.7e-05,
+            -0.002213
+          ],
+          [
+            0.314992,
+            1.7e-05,
+            -0.002213
+          ],
+          [
+            0.314993,
+            3.7e-05,
+            -0.002106
+          ],
+          [
+            0.314993,
+            3.7e-05,
+            -0.002106
+          ],
+          [
+            0.314993,
+            3.7e-05,
+            -0.002106
+          ],
+          [
+            0.314993,
+            3.7e-05,
+            -0.002106
+          ],
+          [
+            0.314993,
+            3.7e-05,
+            -0.002106
+          ],
+          [
+            0.314993,
+            -8.1e-05,
+            -0.002139
+          ],
+          [
+            0.314993,
+            -8.1e-05,
+            -0.002139
+          ],
+          [
+            0.314993,
+            -8.1e-05,
+            -0.002139
+          ],
+          [
+            0.314993,
+            -8.1e-05,
+            -0.002139
+          ],
+          [
+            0.314993,
+            -8.1e-05,
+            -0.002139
+          ],
+          [
+            0.314995,
+            -0.000171,
+            -0.001732
+          ],
+          [
+            0.314995,
+            -0.000171,
+            -0.001732
+          ],
+          [
+            0.314995,
+            -0.000171,
+            -0.001732
+          ],
+          [
+            0.314995,
+            -0.000171,
+            -0.001732
+          ],
+          [
+            0.314995,
+            -0.000171,
+            -0.001732
+          ],
+          [
+            0.314995,
+            -0.000171,
+            -0.001732
+          ],
+          [
+            0.314995,
+            -0.000171,
+            -0.001732
+          ],
+          [
+            0.314995,
+            -0.000171,
+            -0.001732
+          ],
+          [
+            0.314995,
+            -0.000171,
+            -0.001732
+          ],
+          [
+            0.314995,
+            -0.000171,
+            -0.001732
+          ],
+          [
+            0.314996,
+            6.6e-05,
+            -0.001666
+          ],
+          [
+            0.314996,
+            6.6e-05,
+            -0.001666
+          ],
+          [
+            0.314996,
+            6.6e-05,
+            -0.001666
+          ],
+          [
+            0.314996,
+            6.6e-05,
+            -0.001666
+          ],
+          [
+            0.314996,
+            6.6e-05,
+            -0.001666
+          ],
+          [
+            0.314996,
+            6.6e-05,
+            -0.001666
+          ],
+          [
+            0.314996,
+            6.6e-05,
+            -0.001666
+          ],
+          [
+            0.314996,
+            6.6e-05,
+            -0.001666
+          ],
+          [
+            0.314996,
+            6.6e-05,
+            -0.001666
+          ],
+          [
+            0.314996,
+            6.6e-05,
+            -0.001666
+          ],
+          [
+            0.314996,
+            6.6e-05,
+            -0.001666
+          ],
+          [
+            0.314997,
+            -3.4e-05,
+            -0.001312
+          ],
+          [
+            0.314997,
+            -3.4e-05,
+            -0.001312
+          ],
+          [
+            0.314997,
+            -3.4e-05,
+            -0.001312
+          ],
+          [
+            0.314997,
+            -3.4e-05,
+            -0.001312
+          ],
+          [
+            0.314997,
+            -3.4e-05,
+            -0.001312
+          ],
+          [
+            0.314997,
+            -8.8e-05,
+            -0.001302
+          ],
+          [
+            0.314997,
+            -8.8e-05,
+            -0.001302
+          ],
+          [
+            0.314997,
+            -8.8e-05,
+            -0.001302
+          ],
+          [
+            0.314997,
+            -8.8e-05,
+            -0.001302
+          ],
+          [
+            0.314999,
+            4e-06,
+            -0.000819
+          ],
+          [
+            0.314999,
+            4e-06,
+            -0.000819
+          ],
+          [
+            0.314999,
+            4e-06,
+            -0.000819
+          ],
+          [
+            0.314999,
+            4e-06,
+            -0.000819
+          ],
+          [
+            0.314999,
+            4e-06,
+            -0.000819
+          ],
+          [
+            0.314999,
+            4e-06,
+            -0.000819
+          ],
+          [
+            0.314999,
+            0.000123,
+            -0.000786
+          ],
+          [
+            0.314999,
+            0.000123,
+            -0.000786
+          ],
+          [
+            0.314999,
+            0.000123,
+            -0.000786
+          ],
+          [
+            0.314999,
+            0.000123,
+            -0.000786
+          ],
+          [
+            0.314999,
+            0.000123,
+            -0.000786
+          ],
+          [
+            0.314999,
+            2.4e-05,
+            0.000737
+          ],
+          [
+            0.314999,
+            2.4e-05,
+            0.000737
+          ],
+          [
+            0.314999,
+            2.4e-05,
+            0.000737
+          ],
+          [
+            0.314999,
+            2.4e-05,
+            0.000737
+          ],
+          [
+            0.314999,
+            2.4e-05,
+            0.000737
+          ],
+          [
+            0.314999,
+            2.4e-05,
+            0.000737
+          ],
+          [
+            0.314996,
+            -0.000263,
+            0.001572
+          ],
+          [
+            0.314996,
+            -0.000263,
+            0.001572
+          ],
+          [
+            0.314996,
+            -0.000263,
+            0.001572
+          ],
+          [
+            0.314996,
+            -0.000263,
+            0.001572
+          ],
+          [
+            0.314996,
+            -0.00052,
+            0.001399
+          ],
+          [
+            0.314996,
+            -0.00052,
+            0.001399
+          ],
+          [
+            0.314996,
+            -0.00052,
+            0.001399
+          ],
+          [
+            0.314996,
+            -0.00052,
+            0.001399
+          ],
+          [
+            0.314996,
+            -0.00052,
+            0.001399
+          ],
+          [
+            0.314996,
+            -0.00096,
+            0.00115
+          ],
+          [
+            0.314996,
+            -0.00096,
+            0.00115
+          ],
+          [
+            0.314996,
+            -0.00096,
+            0.00115
+          ],
+          [
+            0.314996,
+            -0.00096,
+            0.00115
+          ],
+          [
+            0.314996,
+            -0.00096,
+            0.00115
+          ],
+          [
+            0.314996,
+            -0.001282,
+            0.000933
+          ],
+          [
+            0.314996,
+            -0.001282,
+            0.000933
+          ],
+          [
+            0.314996,
+            -0.001282,
+            0.000933
+          ],
+          [
+            0.314996,
+            -0.001282,
+            0.000933
+          ],
+          [
+            0.314996,
+            -0.001282,
+            0.000933
+          ],
+          [
+            0.314996,
+            -0.001164,
+            0.000966
+          ],
+          [
+            0.314996,
+            -0.001164,
+            0.000966
+          ],
+          [
+            0.314996,
+            -0.001164,
+            0.000966
+          ],
+          [
+            0.314996,
+            -0.001164,
+            0.000966
+          ],
+          [
+            0.314996,
+            -0.001164,
+            0.000966
+          ],
+          [
+            0.314996,
+            -0.001164,
+            0.000966
+          ],
+          [
+            0.314997,
+            -0.000968,
+            0.000817
+          ],
+          [
+            0.314997,
+            -0.000968,
+            0.000817
+          ],
+          [
+            0.314997,
+            -0.000968,
+            0.000817
+          ],
+          [
+            0.314997,
+            -0.000968,
+            0.000817
+          ],
+          [
+            0.314997,
+            -0.000968,
+            0.000817
+          ],
+          [
+            0.314997,
+            -0.000948,
+            0.000924
+          ],
+          [
+            0.314997,
+            -0.000948,
+            0.000924
+          ],
+          [
+            0.314997,
+            -0.000948,
+            0.000924
+          ],
+          [
+            0.314997,
+            -0.000948,
+            0.000924
+          ],
+          [
+            0.314997,
+            -0.000948,
+            0.000924
+          ],
+          [
+            0.314998,
+            -0.000956,
+            0.000592
+          ],
+          [
+            0.314998,
+            -0.000956,
+            0.000592
+          ],
+          [
+            0.314998,
+            -0.000956,
+            0.000592
+          ],
+          [
+            0.314998,
+            -0.000956,
+            0.000592
+          ],
+          [
+            0.314998,
+            -0.000956,
+            0.000592
+          ],
+          [
+            0.314997,
+            -0.00116,
+            -0.000762
+          ],
+          [
+            0.314997,
+            -0.00116,
+            -0.000762
+          ],
+          [
+            0.314997,
+            -0.00116,
+            -0.000762
+          ],
+          [
+            0.314997,
+            -0.00116,
+            -0.000762
+          ],
+          [
+            0.314997,
+            -0.00116,
+            -0.000762
+          ],
+          [
+            0.314995,
+            -0.000873,
+            -0.001597
+          ],
+          [
+            0.314995,
+            -0.000873,
+            -0.001597
+          ],
+          [
+            0.314995,
+            -0.000873,
+            -0.001597
+          ],
+          [
+            0.314995,
+            -0.000873,
+            -0.001597
+          ],
+          [
+            0.314995,
+            -0.000873,
+            -0.001597
+          ],
+          [
+            0.314995,
+            -0.000873,
+            -0.001597
+          ],
+          [
+            0.314988,
+            -0.000691,
+            -0.00269
+          ],
+          [
+            0.314988,
+            -0.000691,
+            -0.00269
+          ],
+          [
+            0.314988,
+            -0.000691,
+            -0.00269
+          ],
+          [
+            0.314988,
+            -0.000691,
+            -0.00269
+          ],
+          [
+            0.314988,
+            -0.000691,
+            -0.00269
+          ],
+          [
+            0.314947,
+            -0.000435,
+            -0.005746
+          ],
+          [
+            0.314947,
+            -0.000435,
+            -0.005746
+          ],
+          [
+            0.314947,
+            -0.000435,
+            -0.005746
+          ],
+          [
+            0.314947,
+            -0.000435,
+            -0.005746
+          ],
+          [
+            0.314926,
+            -0.000639,
+            -0.00682
+          ],
+          [
+            0.314926,
+            -0.000639,
+            -0.00682
+          ],
+          [
+            0.314926,
+            -0.000639,
+            -0.00682
+          ],
+          [
+            0.314926,
+            -0.000639,
+            -0.00682
+          ],
+          [
+            0.314926,
+            -0.000639,
+            -0.00682
+          ],
+          [
+            0.314926,
+            -0.000639,
+            -0.00682
+          ],
+          [
+            0.314918,
+            -0.000809,
+            -0.007122
+          ],
+          [
+            0.314918,
+            -0.000809,
+            -0.007122
+          ],
+          [
+            0.314918,
+            -0.000809,
+            -0.007122
+          ],
+          [
+            0.314918,
+            -0.000809,
+            -0.007122
+          ],
+          [
+            0.31491,
+            -0.001204,
+            -0.007436
+          ],
+          [
+            0.31491,
+            -0.001204,
+            -0.007436
+          ],
+          [
+            0.31491,
+            -0.001204,
+            -0.007436
+          ],
+          [
+            0.31491,
+            -0.001204,
+            -0.007436
+          ],
+          [
+            0.31491,
+            -0.001204,
+            -0.007436
+          ],
+          [
+            0.31491,
+            -0.001204,
+            -0.007436
+          ],
+          [
+            0.314939,
+            -0.001921,
+            -0.005908
+          ],
+          [
+            0.314939,
+            -0.001921,
+            -0.005908
+          ],
+          [
+            0.314939,
+            -0.001921,
+            -0.005908
+          ],
+          [
+            0.314939,
+            -0.001921,
+            -0.005908
+          ],
+          [
+            0.314939,
+            -0.001921,
+            -0.005908
+          ],
+          [
+            0.314939,
+            -0.001921,
+            -0.005908
+          ],
+          [
+            0.314947,
+            -0.002207,
+            -0.005352
+          ],
+          [
+            0.314947,
+            -0.002207,
+            -0.005352
+          ],
+          [
+            0.314947,
+            -0.002207,
+            -0.005352
+          ],
+          [
+            0.314947,
+            -0.002207,
+            -0.005352
+          ],
+          [
+            0.314945,
+            -0.002379,
+            -0.005375
+          ],
+          [
+            0.314945,
+            -0.002379,
+            -0.005375
+          ],
+          [
+            0.314945,
+            -0.002379,
+            -0.005375
+          ],
+          [
+            0.314945,
+            -0.002379,
+            -0.005375
+          ],
+          [
+            0.314945,
+            -0.002379,
+            -0.005375
+          ],
+          [
+            0.314937,
+            -0.002721,
+            -0.0057
+          ],
+          [
+            0.314937,
+            -0.002721,
+            -0.0057
+          ],
+          [
+            0.314937,
+            -0.002721,
+            -0.0057
+          ],
+          [
+            0.314937,
+            -0.002721,
+            -0.0057
+          ],
+          [
+            0.314937,
+            -0.002721,
+            -0.0057
+          ],
+          [
+            0.314935,
+            -0.002893,
+            -0.005723
+          ],
+          [
+            0.314935,
+            -0.002893,
+            -0.005723
+          ],
+          [
+            0.314935,
+            -0.002893,
+            -0.005723
+          ],
+          [
+            0.314935,
+            -0.002893,
+            -0.005723
+          ],
+          [
+            0.314935,
+            -0.002893,
+            -0.005723
+          ],
+          [
+            0.314933,
+            -0.002654,
+            -0.005935
+          ],
+          [
+            0.314933,
+            -0.002654,
+            -0.005935
+          ],
+          [
+            0.314933,
+            -0.002654,
+            -0.005935
+          ],
+          [
+            0.314933,
+            -0.002654,
+            -0.005935
+          ],
+          [
+            0.314933,
+            -0.002654,
+            -0.005935
+          ],
+          [
+            0.314927,
+            -0.002347,
+            -0.006384
+          ],
+          [
+            0.314927,
+            -0.002347,
+            -0.006384
+          ],
+          [
+            0.314927,
+            -0.002347,
+            -0.006384
+          ],
+          [
+            0.314927,
+            -0.002347,
+            -0.006384
+          ],
+          [
+            0.314927,
+            -0.002347,
+            -0.006384
+          ],
+          [
+            0.314911,
+            -0.00195,
+            -0.007239
+          ],
+          [
+            0.314911,
+            -0.00195,
+            -0.007239
+          ],
+          [
+            0.314911,
+            -0.00195,
+            -0.007239
+          ],
+          [
+            0.314911,
+            -0.00195,
+            -0.007239
+          ],
+          [
+            0.314911,
+            -0.00195,
+            -0.007239
+          ]
+        ],
+        "hand_wrist_xyz": [
+          [
+            0.606068,
+            0.206426,
+            -0.093927
+          ],
+          [
+            0.606068,
+            0.206426,
+            -0.093927
+          ],
+          [
+            0.606068,
+            0.206426,
+            -0.093927
+          ],
+          [
+            0.608341,
+            0.204943,
+            -0.089914
+          ],
+          [
+            0.608341,
+            0.204943,
+            -0.089914
+          ],
+          [
+            0.608341,
+            0.204943,
+            -0.089914
+          ],
+          [
+            0.608341,
+            0.204943,
+            -0.089914
+          ],
+          [
+            0.608341,
+            0.204943,
+            -0.089914
+          ],
+          [
+            0.608341,
+            0.204943,
+            -0.089914
+          ],
+          [
+            0.613647,
+            0.202612,
+            -0.075382
+          ],
+          [
+            0.613647,
+            0.202612,
+            -0.075382
+          ],
+          [
+            0.613647,
+            0.202612,
+            -0.075382
+          ],
+          [
+            0.613647,
+            0.202612,
+            -0.075382
+          ],
+          [
+            0.62712,
+            0.191916,
+            -0.039761
+          ],
+          [
+            0.62712,
+            0.191916,
+            -0.039761
+          ],
+          [
+            0.62712,
+            0.191916,
+            -0.039761
+          ],
+          [
+            0.62712,
+            0.191916,
+            -0.039761
+          ],
+          [
+            0.62712,
+            0.191916,
+            -0.039761
+          ],
+          [
+            0.633129,
+            0.184129,
+            0.001436
+          ],
+          [
+            0.633129,
+            0.184129,
+            0.001436
+          ],
+          [
+            0.633129,
+            0.184129,
+            0.001436
+          ],
+          [
+            0.633129,
+            0.184129,
+            0.001436
+          ],
+          [
+            0.633129,
+            0.184129,
+            0.001436
+          ],
+          [
+            0.63258,
+            0.175551,
+            0.040744
+          ],
+          [
+            0.630383,
+            0.16644,
+            0.074081
+          ],
+          [
+            0.630383,
+            0.16644,
+            0.074081
+          ],
+          [
+            0.630383,
+            0.16644,
+            0.074081
+          ],
+          [
+            0.630383,
+            0.16644,
+            0.074081
+          ],
+          [
+            0.630383,
+            0.16644,
+            0.074081
+          ],
+          [
+            0.6306,
+            0.164819,
+            0.079391
+          ],
+          [
+            0.6306,
+            0.164819,
+            0.079391
+          ],
+          [
+            0.6306,
+            0.164819,
+            0.079391
+          ],
+          [
+            0.6306,
+            0.164819,
+            0.079391
+          ],
+          [
+            0.628903,
+            0.157984,
+            0.09425
+          ],
+          [
+            0.625942,
+            0.157878,
+            0.103693
+          ],
+          [
+            0.625942,
+            0.157878,
+            0.103693
+          ],
+          [
+            0.625942,
+            0.157878,
+            0.103693
+          ],
+          [
+            0.625942,
+            0.157878,
+            0.103693
+          ],
+          [
+            0.625942,
+            0.157878,
+            0.103693
+          ],
+          [
+            0.625942,
+            0.157878,
+            0.103693
+          ],
+          [
+            0.625942,
+            0.157878,
+            0.103693
+          ],
+          [
+            0.625942,
+            0.157878,
+            0.103693
+          ],
+          [
+            0.625942,
+            0.157878,
+            0.103693
+          ],
+          [
+            0.625942,
+            0.157878,
+            0.103693
+          ],
+          [
+            0.610078,
+            0.171235,
+            0.124715
+          ],
+          [
+            0.610078,
+            0.171235,
+            0.124715
+          ],
+          [
+            0.610078,
+            0.171235,
+            0.124715
+          ],
+          [
+            0.610078,
+            0.171235,
+            0.124715
+          ],
+          [
+            0.610078,
+            0.171235,
+            0.124715
+          ],
+          [
+            0.610073,
+            0.171141,
+            0.12451
+          ],
+          [
+            0.610073,
+            0.171141,
+            0.12451
+          ],
+          [
+            0.610073,
+            0.171141,
+            0.12451
+          ],
+          [
+            0.610073,
+            0.171141,
+            0.12451
+          ],
+          [
+            0.610073,
+            0.171141,
+            0.12451
+          ],
+          [
+            0.602529,
+            0.172462,
+            0.138282
+          ],
+          [
+            0.599208,
+            0.172853,
+            0.143867
+          ],
+          [
+            0.599208,
+            0.172853,
+            0.143867
+          ],
+          [
+            0.599208,
+            0.172853,
+            0.143867
+          ],
+          [
+            0.599208,
+            0.172853,
+            0.143867
+          ],
+          [
+            0.599208,
+            0.172853,
+            0.143867
+          ],
+          [
+            0.599208,
+            0.172853,
+            0.143867
+          ],
+          [
+            0.599208,
+            0.172853,
+            0.143867
+          ],
+          [
+            0.599208,
+            0.172853,
+            0.143867
+          ],
+          [
+            0.599208,
+            0.172853,
+            0.143867
+          ],
+          [
+            0.599208,
+            0.172853,
+            0.143867
+          ],
+          [
+            0.591716,
+            0.174983,
+            0.156838
+          ],
+          [
+            0.591716,
+            0.174983,
+            0.156838
+          ],
+          [
+            0.591716,
+            0.174983,
+            0.156838
+          ],
+          [
+            0.591716,
+            0.174983,
+            0.156838
+          ],
+          [
+            0.586118,
+            0.174441,
+            0.165561
+          ],
+          [
+            0.58068,
+            0.181864,
+            0.167085
+          ],
+          [
+            0.58068,
+            0.181864,
+            0.167085
+          ],
+          [
+            0.58068,
+            0.181864,
+            0.167085
+          ],
+          [
+            0.58068,
+            0.181864,
+            0.167085
+          ],
+          [
+            0.575513,
+            0.184631,
+            0.171031
+          ],
+          [
+            0.575526,
+            0.184623,
+            0.171868
+          ],
+          [
+            0.575526,
+            0.184623,
+            0.171868
+          ],
+          [
+            0.575526,
+            0.184623,
+            0.171868
+          ],
+          [
+            0.575526,
+            0.184623,
+            0.171868
+          ],
+          [
+            0.575526,
+            0.184623,
+            0.171868
+          ],
+          [
+            0.573911,
+            0.17999,
+            0.1785
+          ],
+          [
+            0.573911,
+            0.17999,
+            0.1785
+          ],
+          [
+            0.573911,
+            0.17999,
+            0.1785
+          ],
+          [
+            0.573911,
+            0.17999,
+            0.1785
+          ],
+          [
+            0.573911,
+            0.17999,
+            0.1785
+          ],
+          [
+            0.573911,
+            0.17999,
+            0.1785
+          ],
+          [
+            0.574922,
+            0.179906,
+            0.178201
+          ],
+          [
+            0.574922,
+            0.179906,
+            0.178201
+          ],
+          [
+            0.574922,
+            0.179906,
+            0.178201
+          ],
+          [
+            0.574922,
+            0.179906,
+            0.178201
+          ],
+          [
+            0.574922,
+            0.179906,
+            0.178201
+          ],
+          [
+            0.575218,
+            0.195175,
+            0.160992
+          ],
+          [
+            0.575218,
+            0.195175,
+            0.160992
+          ],
+          [
+            0.575218,
+            0.195175,
+            0.160992
+          ],
+          [
+            0.575218,
+            0.195175,
+            0.160992
+          ],
+          [
+            0.575218,
+            0.195175,
+            0.160992
+          ],
+          [
+            0.579974,
+            0.176712,
+            0.170878
+          ],
+          [
+            0.579974,
+            0.176712,
+            0.170878
+          ],
+          [
+            0.579974,
+            0.176712,
+            0.170878
+          ],
+          [
+            0.579974,
+            0.176712,
+            0.170878
+          ],
+          [
+            0.579974,
+            0.176712,
+            0.170878
+          ],
+          [
+            0.583051,
+            0.166425,
+            0.17643
+          ],
+          [
+            0.583051,
+            0.166425,
+            0.17643
+          ],
+          [
+            0.583051,
+            0.166425,
+            0.17643
+          ],
+          [
+            0.583051,
+            0.166425,
+            0.17643
+          ],
+          [
+            0.579343,
+            0.174734,
+            0.173891
+          ],
+          [
+            0.579343,
+            0.174734,
+            0.173891
+          ],
+          [
+            0.579343,
+            0.174734,
+            0.173891
+          ],
+          [
+            0.579343,
+            0.174734,
+            0.173891
+          ],
+          [
+            0.579343,
+            0.174734,
+            0.173891
+          ],
+          [
+            0.579343,
+            0.174734,
+            0.173891
+          ],
+          [
+            0.579766,
+            0.174723,
+            0.173516
+          ],
+          [
+            0.579766,
+            0.174723,
+            0.173516
+          ],
+          [
+            0.579766,
+            0.174723,
+            0.173516
+          ],
+          [
+            0.579766,
+            0.174723,
+            0.173516
+          ],
+          [
+            0.579766,
+            0.174723,
+            0.173516
+          ],
+          [
+            0.581637,
+            0.173008,
+            0.172891
+          ],
+          [
+            0.581637,
+            0.173008,
+            0.172891
+          ],
+          [
+            0.581637,
+            0.173008,
+            0.172891
+          ],
+          [
+            0.581637,
+            0.173008,
+            0.172891
+          ],
+          [
+            0.581637,
+            0.173008,
+            0.172891
+          ],
+          [
+            0.581946,
+            0.173929,
+            0.171789
+          ],
+          [
+            0.581946,
+            0.173929,
+            0.171789
+          ],
+          [
+            0.581946,
+            0.173929,
+            0.171789
+          ],
+          [
+            0.581946,
+            0.173929,
+            0.171789
+          ],
+          [
+            0.581946,
+            0.173929,
+            0.171789
+          ],
+          [
+            0.583419,
+            0.170168,
+            0.173303
+          ],
+          [
+            0.583419,
+            0.170168,
+            0.173303
+          ],
+          [
+            0.583419,
+            0.170168,
+            0.173303
+          ],
+          [
+            0.583419,
+            0.170168,
+            0.173303
+          ],
+          [
+            0.583419,
+            0.170168,
+            0.173303
+          ],
+          [
+            0.583419,
+            0.170168,
+            0.173303
+          ],
+          [
+            0.586654,
+            0.16689,
+            0.171906
+          ],
+          [
+            0.586654,
+            0.16689,
+            0.171906
+          ],
+          [
+            0.586654,
+            0.16689,
+            0.171906
+          ],
+          [
+            0.586654,
+            0.16689,
+            0.171906
+          ],
+          [
+            0.585737,
+            0.169081,
+            0.172069
+          ],
+          [
+            0.585737,
+            0.169081,
+            0.172069
+          ],
+          [
+            0.585737,
+            0.169081,
+            0.172069
+          ],
+          [
+            0.585737,
+            0.169081,
+            0.172069
+          ],
+          [
+            0.585737,
+            0.169081,
+            0.172069
+          ],
+          [
+            0.585737,
+            0.169081,
+            0.172069
+          ],
+          [
+            0.586425,
+            0.168601,
+            0.17143
+          ],
+          [
+            0.586425,
+            0.168601,
+            0.17143
+          ],
+          [
+            0.586425,
+            0.168601,
+            0.17143
+          ],
+          [
+            0.586425,
+            0.168601,
+            0.17143
+          ],
+          [
+            0.586425,
+            0.168601,
+            0.17143
+          ],
+          [
+            0.587661,
+            0.16136,
+            0.175931
+          ],
+          [
+            0.587661,
+            0.16136,
+            0.175931
+          ],
+          [
+            0.587661,
+            0.16136,
+            0.175931
+          ],
+          [
+            0.587661,
+            0.16136,
+            0.175931
+          ],
+          [
+            0.587661,
+            0.16136,
+            0.175931
+          ],
+          [
+            0.588841,
+            0.163144,
+            0.172973
+          ],
+          [
+            0.588841,
+            0.163144,
+            0.172973
+          ],
+          [
+            0.588841,
+            0.163144,
+            0.172973
+          ],
+          [
+            0.588841,
+            0.163144,
+            0.172973
+          ],
+          [
+            0.585812,
+            0.172455,
+            0.169152
+          ],
+          [
+            0.585812,
+            0.172455,
+            0.169152
+          ],
+          [
+            0.585812,
+            0.172455,
+            0.169152
+          ],
+          [
+            0.585812,
+            0.172455,
+            0.169152
+          ],
+          [
+            0.585812,
+            0.172455,
+            0.169152
+          ],
+          [
+            0.585812,
+            0.172455,
+            0.169152
+          ],
+          [
+            0.584713,
+            0.177153,
+            0.165891
+          ],
+          [
+            0.584713,
+            0.177153,
+            0.165891
+          ],
+          [
+            0.584713,
+            0.177153,
+            0.165891
+          ],
+          [
+            0.584713,
+            0.177153,
+            0.165891
+          ],
+          [
+            0.584713,
+            0.177153,
+            0.165891
+          ],
+          [
+            0.590015,
+            0.169044,
+            0.166518
+          ],
+          [
+            0.590015,
+            0.169044,
+            0.166518
+          ],
+          [
+            0.590015,
+            0.169044,
+            0.166518
+          ],
+          [
+            0.590015,
+            0.169044,
+            0.166518
+          ],
+          [
+            0.590015,
+            0.169044,
+            0.166518
+          ],
+          [
+            0.591697,
+            0.168587,
+            0.165281
+          ],
+          [
+            0.591693,
+            0.1683,
+            0.166116
+          ],
+          [
+            0.591693,
+            0.1683,
+            0.166116
+          ],
+          [
+            0.591693,
+            0.1683,
+            0.166116
+          ],
+          [
+            0.591693,
+            0.1683,
+            0.166116
+          ],
+          [
+            0.586954,
+            0.176888,
+            0.164772
+          ],
+          [
+            0.586954,
+            0.176888,
+            0.164772
+          ],
+          [
+            0.586954,
+            0.176888,
+            0.164772
+          ],
+          [
+            0.586954,
+            0.176888,
+            0.164772
+          ],
+          [
+            0.586954,
+            0.176888,
+            0.164772
+          ],
+          [
+            0.585592,
+            0.177688,
+            0.165333
+          ],
+          [
+            0.585592,
+            0.177688,
+            0.165333
+          ],
+          [
+            0.585592,
+            0.177688,
+            0.165333
+          ],
+          [
+            0.585592,
+            0.177688,
+            0.165333
+          ],
+          [
+            0.585592,
+            0.177688,
+            0.165333
+          ],
+          [
+            0.586732,
+            0.171974,
+            0.168741
+          ],
+          [
+            0.586732,
+            0.171974,
+            0.168741
+          ],
+          [
+            0.586732,
+            0.171974,
+            0.168741
+          ],
+          [
+            0.586732,
+            0.171974,
+            0.168741
+          ],
+          [
+            0.586732,
+            0.171974,
+            0.168741
+          ],
+          [
+            0.587643,
+            0.170108,
+            0.169928
+          ],
+          [
+            0.587391,
+            0.170411,
+            0.169887
+          ],
+          [
+            0.587391,
+            0.170411,
+            0.169887
+          ],
+          [
+            0.587391,
+            0.170411,
+            0.169887
+          ],
+          [
+            0.587391,
+            0.170411,
+            0.169887
+          ],
+          [
+            0.587391,
+            0.170411,
+            0.169887
+          ],
+          [
+            0.587172,
+            0.173687,
+            0.167681
+          ],
+          [
+            0.587172,
+            0.173687,
+            0.167681
+          ],
+          [
+            0.587172,
+            0.173687,
+            0.167681
+          ],
+          [
+            0.587172,
+            0.173687,
+            0.167681
+          ],
+          [
+            0.587172,
+            0.173687,
+            0.167681
+          ],
+          [
+            0.586402,
+            0.177927,
+            0.164362
+          ],
+          [
+            0.586402,
+            0.177927,
+            0.164362
+          ],
+          [
+            0.586402,
+            0.177927,
+            0.164362
+          ],
+          [
+            0.586402,
+            0.177927,
+            0.164362
+          ],
+          [
+            0.586402,
+            0.177927,
+            0.164362
+          ],
+          [
+            0.590988,
+            0.177898,
+            0.157075
+          ],
+          [
+            0.590988,
+            0.177898,
+            0.157075
+          ],
+          [
+            0.590988,
+            0.177898,
+            0.157075
+          ],
+          [
+            0.590988,
+            0.177898,
+            0.157075
+          ],
+          [
+            0.590988,
+            0.177898,
+            0.157075
+          ],
+          [
+            0.594015,
+            0.176161,
+            0.152886
+          ],
+          [
+            0.594015,
+            0.176161,
+            0.152886
+          ],
+          [
+            0.594015,
+            0.176161,
+            0.152886
+          ],
+          [
+            0.594015,
+            0.176161,
+            0.152886
+          ],
+          [
+            0.594015,
+            0.176161,
+            0.152886
+          ],
+          [
+            0.594377,
+            0.180593,
+            0.147341
+          ],
+          [
+            0.594377,
+            0.180593,
+            0.147341
+          ],
+          [
+            0.594377,
+            0.180593,
+            0.147341
+          ],
+          [
+            0.594377,
+            0.180593,
+            0.147341
+          ],
+          [
+            0.594377,
+            0.180593,
+            0.147341
+          ],
+          [
+            0.594377,
+            0.180593,
+            0.147341
+          ],
+          [
+            0.593984,
+            0.182029,
+            0.144129
+          ],
+          [
+            0.593984,
+            0.182029,
+            0.144129
+          ],
+          [
+            0.593984,
+            0.182029,
+            0.144129
+          ],
+          [
+            0.593984,
+            0.182029,
+            0.144129
+          ],
+          [
+            0.593984,
+            0.182029,
+            0.144129
+          ],
+          [
+            0.593891,
+            0.189888,
+            0.133504
+          ],
+          [
+            0.593891,
+            0.189888,
+            0.133504
+          ],
+          [
+            0.593891,
+            0.189888,
+            0.133504
+          ],
+          [
+            0.593891,
+            0.189888,
+            0.133504
+          ],
+          [
+            0.597069,
+            0.193222,
+            0.120942
+          ],
+          [
+            0.602216,
+            0.19361,
+            0.10943
+          ],
+          [
+            0.602216,
+            0.19361,
+            0.10943
+          ],
+          [
+            0.602216,
+            0.19361,
+            0.10943
+          ],
+          [
+            0.602216,
+            0.19361,
+            0.10943
+          ],
+          [
+            0.602216,
+            0.19361,
+            0.10943
+          ],
+          [
+            0.608157,
+            0.192272,
+            0.096043
+          ],
+          [
+            0.608157,
+            0.192272,
+            0.096043
+          ],
+          [
+            0.608157,
+            0.192272,
+            0.096043
+          ],
+          [
+            0.608157,
+            0.192272,
+            0.096043
+          ],
+          [
+            0.60848,
+            0.19204,
+            0.092707
+          ],
+          [
+            0.610294,
+            0.195016,
+            0.08355
+          ],
+          [
+            0.610294,
+            0.195016,
+            0.08355
+          ],
+          [
+            0.610294,
+            0.195016,
+            0.08355
+          ],
+          [
+            0.610294,
+            0.195016,
+            0.08355
+          ],
+          [
+            0.610294,
+            0.195016,
+            0.08355
+          ],
+          [
+            0.607753,
+            0.207426,
+            0.062488
+          ],
+          [
+            0.607753,
+            0.207426,
+            0.062488
+          ],
+          [
+            0.607753,
+            0.207426,
+            0.062488
+          ],
+          [
+            0.607753,
+            0.207426,
+            0.062488
+          ],
+          [
+            0.607753,
+            0.207426,
+            0.062488
+          ],
+          [
+            0.607753,
+            0.207426,
+            0.062488
+          ],
+          [
+            0.603128,
+            0.216624,
+            0.051746
+          ],
+          [
+            0.603128,
+            0.216624,
+            0.051746
+          ],
+          [
+            0.603128,
+            0.216624,
+            0.051746
+          ],
+          [
+            0.603128,
+            0.216624,
+            0.051746
+          ],
+          [
+            0.599061,
+            0.225811,
+            0.034142
+          ],
+          [
+            0.599061,
+            0.225811,
+            0.034142
+          ],
+          [
+            0.599061,
+            0.225811,
+            0.034142
+          ],
+          [
+            0.599061,
+            0.225811,
+            0.034142
+          ],
+          [
+            0.599061,
+            0.225811,
+            0.034142
+          ],
+          [
+            0.597642,
+            0.229727,
+            0.016926
+          ],
+          [
+            0.597642,
+            0.229727,
+            0.016926
+          ],
+          [
+            0.597642,
+            0.229727,
+            0.016926
+          ],
+          [
+            0.597642,
+            0.229727,
+            0.016926
+          ],
+          [
+            0.597642,
+            0.229727,
+            0.016926
+          ],
+          [
+            0.604229,
+            0.221851,
+            0.010968
+          ],
+          [
+            0.604229,
+            0.221851,
+            0.010968
+          ],
+          [
+            0.604229,
+            0.221851,
+            0.010968
+          ],
+          [
+            0.604229,
+            0.221851,
+            0.010968
+          ],
+          [
+            0.604229,
+            0.221851,
+            0.010968
+          ],
+          [
+            0.603817,
+            0.223401,
+            -0.00435
+          ],
+          [
+            0.603817,
+            0.223401,
+            -0.00435
+          ],
+          [
+            0.603817,
+            0.223401,
+            -0.00435
+          ],
+          [
+            0.603817,
+            0.223401,
+            -0.00435
+          ],
+          [
+            0.603817,
+            0.223401,
+            -0.00435
+          ],
+          [
+            0.602623,
+            0.22484,
+            -0.022125
+          ],
+          [
+            0.602623,
+            0.22484,
+            -0.022125
+          ],
+          [
+            0.602623,
+            0.22484,
+            -0.022125
+          ],
+          [
+            0.602623,
+            0.22484,
+            -0.022125
+          ],
+          [
+            0.602623,
+            0.22484,
+            -0.022125
+          ],
+          [
+            0.602607,
+            0.225237,
+            -0.02298
+          ],
+          [
+            0.601409,
+            0.225251,
+            -0.03839
+          ],
+          [
+            0.601409,
+            0.225251,
+            -0.03839
+          ],
+          [
+            0.601409,
+            0.225251,
+            -0.03839
+          ],
+          [
+            0.601409,
+            0.225251,
+            -0.03839
+          ]
+        ],
+        "summary": {
+          "duration_s": 5.76,
+          "hand_wrist_path_length_m": 0.699072,
+          "max_height_m": 0.1785,
+          "max_displacement_m": 0.275589
+        },
+        "files": {
+          "trajectory_json": "trajectories/action_02_trajectory.json",
+          "trajectory_png": "trajectories/action_02_trajectory.png"
+        }
+      },
+      "feedback": [
+        "IMU 动作时序与模板差异较大，建议按标准动作节奏重新完成。",
+        "肌肉激活模式存在一定偏差。",
+        "检测到代偿表现，请调整姿势后继续训练。"
+      ]
+    },
+    {
+      "action_index": 3,
+      "valid": true,
+      "invalid_reason": null,
+      "score_version": "v3.0",
+      "model_version": "weighted_dtw_imu_plus_emg_v1.0",
+      "action_source": "segmentation",
+      "data_quality": {
+        "row_count": 71,
+        "missing_columns": [],
+        "valid": true,
+        "mean_dt_ms": 20.0,
+        "max_dt_ms": 22.0,
+        "estimated_rate_hz": 50.0,
+        "large_gap_count_over_40ms": 0,
+        "large_gap_count_over_100ms": 0,
+        "duration_s": 1.4,
+        "max_log_seq_gap": 1,
+        "missing_log_seq_count_est": 0,
+        "imu_valid_ratio": {
+          "trunk": 1.0,
+          "upperarm": 1.0,
+          "forearm": 1.0,
+          "hand_wrist": 1.0
+        },
+        "imu_age_ms": {
+          "trunk": {
+            "mean": 114.66197183098592,
+            "max": 170.0
+          },
+          "upperarm": {
+            "mean": 78.98591549295774,
+            "max": 133.0
+          },
+          "forearm": {
+            "mean": 93.30985915492958,
+            "max": 184.0
+          },
+          "hand_wrist": {
+            "mean": 85.40845070422536,
+            "max": 194.0
+          }
+        },
+        "emg_valid_ratio": 1.0,
+        "warnings": [],
+        "level": "good"
+      },
+      "start_time_s": 10.44,
+      "end_time_s": 11.84,
+      "duration_s": 1.4,
+      "phases": [
+        {
+          "name": "preparation",
+          "start_time_s": 10.44,
+          "end_time_s": 10.907
+        },
+        {
+          "name": "execution",
+          "start_time_s": 10.907,
+          "end_time_s": 11.373
+        },
+        {
+          "name": "return",
+          "start_time_s": 11.373,
+          "end_time_s": 11.84
+        }
+      ],
+      "final_score": 41.1,
+      "subscores": {
+        "imu_dtw_score": 23.25,
+        "imu_dtw_max_score": 70.0,
+        "emg_score": 17.85,
+        "emg_max_score": 30.0
+      },
+      "dtw": {
+        "similarity_score": 33.21,
+        "normalized_distance": 1.102252,
+        "best_template_id": "trial_001",
+        "distance_scale": 1.0,
+        "window_ratio": 0.2,
+        "comparisons": [
+          {
+            "template_id": "trial_001",
+            "normalized_distance": 1.102252,
+            "warping_path_length": 384
+          }
+        ]
+      },
+      "compensation": {
+        "detected": true,
+        "events": [
+          {
+            "event_type": "compensation_detected",
+            "patient_id": "S001",
+            "session_id": "20260807_TASK057",
+            "task_number": 12,
+            "compensation_detected": true,
+            "action_index": 3,
+            "timestamp_s": 11.14,
+            "stage": "execution",
+            "type": "LF",
+            "severity": "medium",
+            "severity_score": 40.0,
+            "feedback": "检测到可能存在代偿，请暂停当前动作，调整姿势后再继续训练。"
+          },
+          {
+            "event_type": "compensation_detected",
+            "patient_id": "S001",
+            "session_id": "20260807_TASK057",
+            "task_number": 12,
+            "compensation_detected": true,
+            "action_index": 3,
+            "timestamp_s": 11.14,
+            "stage": "execution",
+            "type": "TR",
+            "severity": "medium",
+            "severity_score": 40.0,
+            "feedback": "检测到可能存在代偿，请暂停当前动作，调整姿势后再继续训练。"
+          }
+        ],
+        "quality_findings": [
+          "abnormal_muscle_recruitment",
+          "forearm_coordination_abnormal",
+          "insufficient_upperarm_ROM"
+        ],
+        "details": {
+          "trunk_compensation_ratio_rule": {
+            "trunk_compensation_ratio": 0.953061448725,
+            "trunk_compensation_ratio_threshold": 0.09885350515694372,
+            "trunk_compensation_ratio_rule_passed": true,
+            "trunk_compensation_ratio_rule_version": "drink_water_ratio_lf_v1"
+          },
+          "LF": {
+            "pitch_offset_deg": 31.28,
+            "trunk_compensation_ratio": 0.953061448725,
+            "trunk_compensation_ratio_threshold": 0.09885350515694372,
+            "trunk_compensation_ratio_rule_passed": true,
+            "trunk_compensation_ratio_rule_version": "drink_water_ratio_lf_v1",
+            "reason": "躯干前倾角超过阈值"
+          },
+          "TR": {
+            "yaw_offset_deg": 55.42,
+            "reason": "躯干旋转角超过阈值"
+          },
+          "insufficient_upperarm_ROM": {
+            "value": 4.270000000000026,
+            "template_mean": 210.280689655,
+            "reason": "上臂活动范围低于模板，可能存在关节活动度不足"
+          },
+          "forearm_coordination_abnormal": {
+            "value": 181.83999999999997,
+            "template_mean": 372.252068966,
+            "reason": "前臂旋转范围偏离健康模板，可能存在肩肘腕协调异常"
+          },
+          "abnormal_muscle_recruitment": [
+            {
+              "muscle": "Biceps_brachii",
+              "feature": "RMS",
+              "z_score": 6.326,
+              "reason": "Biceps_brachii 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Triceps_brachii",
+              "feature": "RMS",
+              "z_score": 2.151,
+              "reason": "Triceps_brachii 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Extensor_carpi_ulnaris",
+              "feature": "RMS",
+              "z_score": 26.298,
+              "reason": "Extensor_carpi_ulnaris 激活明显高于模板，可能存在异常募集或代偿"
+            }
+          ]
+        }
+      },
+      "trajectory": {
+        "action_index": 3,
+        "coordinate_frame": "trunk_relative",
+        "time_unit": "s",
+        "unit": "m",
+        "sample_count": 71,
+        "time_s": [
+          0.0,
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1,
+          0.121,
+          0.141,
+          0.16,
+          0.181,
+          0.2,
+          0.221,
+          0.24,
+          0.26,
+          0.28,
+          0.3,
+          0.32,
+          0.341,
+          0.36,
+          0.38,
+          0.4,
+          0.42,
+          0.44,
+          0.46,
+          0.48,
+          0.5,
+          0.52,
+          0.54,
+          0.56,
+          0.58,
+          0.6,
+          0.62,
+          0.64,
+          0.66,
+          0.68,
+          0.7,
+          0.72,
+          0.742,
+          0.76,
+          0.78,
+          0.801,
+          0.82,
+          0.84,
+          0.86,
+          0.88,
+          0.9,
+          0.92,
+          0.94,
+          0.96,
+          0.981,
+          1.0,
+          1.02,
+          1.04,
+          1.06,
+          1.08,
+          1.1,
+          1.121,
+          1.14,
+          1.16,
+          1.18,
+          1.2,
+          1.221,
+          1.24,
+          1.26,
+          1.28,
+          1.3,
+          1.32,
+          1.34,
+          1.36,
+          1.38,
+          1.4
+        ],
+        "elbow_xyz": [
+          [
+            0.314943,
+            -0.001664,
+            -0.005734
+          ],
+          [
+            0.314943,
+            -0.001664,
+            -0.005734
+          ],
+          [
+            0.314944,
+            -0.00161,
+            -0.005744
+          ],
+          [
+            0.314944,
+            -0.00161,
+            -0.005744
+          ],
+          [
+            0.314944,
+            -0.00161,
+            -0.005744
+          ],
+          [
+            0.314944,
+            -0.00161,
+            -0.005744
+          ],
+          [
+            0.314944,
+            -0.00161,
+            -0.005744
+          ],
+          [
+            0.314952,
+            -0.00142,
+            -0.005335
+          ],
+          [
+            0.314952,
+            -0.00142,
+            -0.005335
+          ],
+          [
+            0.314952,
+            -0.00142,
+            -0.005335
+          ],
+          [
+            0.314952,
+            -0.00142,
+            -0.005335
+          ],
+          [
+            0.314952,
+            -0.00142,
+            -0.005335
+          ],
+          [
+            0.314952,
+            -0.00142,
+            -0.005335
+          ],
+          [
+            0.314966,
+            -0.001094,
+            -0.004507
+          ],
+          [
+            0.314966,
+            -0.001094,
+            -0.004507
+          ],
+          [
+            0.314966,
+            -0.001094,
+            -0.004507
+          ],
+          [
+            0.314966,
+            -0.001094,
+            -0.004507
+          ],
+          [
+            0.314978,
+            -0.000703,
+            -0.003635
+          ],
+          [
+            0.314978,
+            -0.000703,
+            -0.003635
+          ],
+          [
+            0.314978,
+            -0.000703,
+            -0.003635
+          ],
+          [
+            0.314978,
+            -0.000703,
+            -0.003635
+          ],
+          [
+            0.314978,
+            -0.000703,
+            -0.003635
+          ],
+          [
+            0.314978,
+            -0.000703,
+            -0.003635
+          ],
+          [
+            0.314978,
+            -0.000703,
+            -0.003635
+          ],
+          [
+            0.314978,
+            -0.000703,
+            -0.003635
+          ],
+          [
+            0.314978,
+            -0.000703,
+            -0.003635
+          ],
+          [
+            0.314978,
+            -0.000703,
+            -0.003635
+          ],
+          [
+            0.314982,
+            -0.000372,
+            -0.003364
+          ],
+          [
+            0.314982,
+            -0.000372,
+            -0.003364
+          ],
+          [
+            0.314982,
+            -0.000372,
+            -0.003364
+          ],
+          [
+            0.314982,
+            -0.000372,
+            -0.003364
+          ],
+          [
+            0.314982,
+            -0.000372,
+            -0.003364
+          ],
+          [
+            0.314978,
+            -0.000217,
+            -0.003727
+          ],
+          [
+            0.314978,
+            -0.000217,
+            -0.003727
+          ],
+          [
+            0.314978,
+            -0.000217,
+            -0.003727
+          ],
+          [
+            0.314978,
+            -0.000217,
+            -0.003727
+          ],
+          [
+            0.314978,
+            -0.000217,
+            -0.003727
+          ],
+          [
+            0.314979,
+            -2.5e-05,
+            -0.003597
+          ],
+          [
+            0.314979,
+            -2.5e-05,
+            -0.003597
+          ],
+          [
+            0.314979,
+            -2.5e-05,
+            -0.003597
+          ],
+          [
+            0.314979,
+            -2.5e-05,
+            -0.003597
+          ],
+          [
+            0.314979,
+            -2.5e-05,
+            -0.003597
+          ],
+          [
+            0.314979,
+            -2.5e-05,
+            -0.003597
+          ],
+          [
+            0.314969,
+            0.000102,
+            -0.004401
+          ],
+          [
+            0.314969,
+            0.000102,
+            -0.004401
+          ],
+          [
+            0.314969,
+            0.000102,
+            -0.004401
+          ],
+          [
+            0.314969,
+            0.000102,
+            -0.004401
+          ],
+          [
+            0.314969,
+            0.000102,
+            -0.004401
+          ],
+          [
+            0.31497,
+            0.000284,
+            -0.004324
+          ],
+          [
+            0.31497,
+            0.000284,
+            -0.004324
+          ],
+          [
+            0.31497,
+            0.000284,
+            -0.004324
+          ],
+          [
+            0.31497,
+            0.000284,
+            -0.004324
+          ],
+          [
+            0.31497,
+            0.000284,
+            -0.004324
+          ],
+          [
+            0.31498,
+            0.00061,
+            -0.003496
+          ],
+          [
+            0.31498,
+            0.00061,
+            -0.003496
+          ],
+          [
+            0.31498,
+            0.00061,
+            -0.003496
+          ],
+          [
+            0.31498,
+            0.00061,
+            -0.003496
+          ],
+          [
+            0.31498,
+            0.00061,
+            -0.003496
+          ],
+          [
+            0.314984,
+            0.000564,
+            -0.003153
+          ],
+          [
+            0.314984,
+            0.000564,
+            -0.003153
+          ],
+          [
+            0.314984,
+            0.000564,
+            -0.003153
+          ],
+          [
+            0.314984,
+            0.000564,
+            -0.003153
+          ],
+          [
+            0.314984,
+            0.000564,
+            -0.003153
+          ],
+          [
+            0.314982,
+            0.000523,
+            -0.003368
+          ],
+          [
+            0.314982,
+            0.000523,
+            -0.003368
+          ],
+          [
+            0.314982,
+            0.000523,
+            -0.003368
+          ],
+          [
+            0.314982,
+            0.000523,
+            -0.003368
+          ],
+          [
+            0.314982,
+            0.000523,
+            -0.003368
+          ],
+          [
+            0.314981,
+            0.000621,
+            -0.003442
+          ],
+          [
+            0.314981,
+            0.000621,
+            -0.003442
+          ],
+          [
+            0.314981,
+            0.000621,
+            -0.003442
+          ]
+        ],
+        "hand_wrist_xyz": [
+          [
+            0.597016,
+            0.229724,
+            -0.046071
+          ],
+          [
+            0.597016,
+            0.229724,
+            -0.046071
+          ],
+          [
+            0.594822,
+            0.233419,
+            -0.039087
+          ],
+          [
+            0.594822,
+            0.233419,
+            -0.039087
+          ],
+          [
+            0.594822,
+            0.233419,
+            -0.039087
+          ],
+          [
+            0.594822,
+            0.233419,
+            -0.039087
+          ],
+          [
+            0.594822,
+            0.233419,
+            -0.039087
+          ],
+          [
+            0.591708,
+            0.238849,
+            -0.021349
+          ],
+          [
+            0.591708,
+            0.238849,
+            -0.021349
+          ],
+          [
+            0.591708,
+            0.238849,
+            -0.021349
+          ],
+          [
+            0.591708,
+            0.238849,
+            -0.021349
+          ],
+          [
+            0.591708,
+            0.238849,
+            -0.021349
+          ],
+          [
+            0.588825,
+            0.242542,
+            -0.005747
+          ],
+          [
+            0.588839,
+            0.242868,
+            -0.004918
+          ],
+          [
+            0.588839,
+            0.242868,
+            -0.004918
+          ],
+          [
+            0.588839,
+            0.242868,
+            -0.004918
+          ],
+          [
+            0.588839,
+            0.242868,
+            -0.004918
+          ],
+          [
+            0.590451,
+            0.241353,
+            0.00105
+          ],
+          [
+            0.590451,
+            0.241353,
+            0.00105
+          ],
+          [
+            0.590451,
+            0.241353,
+            0.00105
+          ],
+          [
+            0.590451,
+            0.241353,
+            0.00105
+          ],
+          [
+            0.590451,
+            0.241353,
+            0.00105
+          ],
+          [
+            0.590451,
+            0.241353,
+            0.00105
+          ],
+          [
+            0.596278,
+            0.234855,
+            -0.005363
+          ],
+          [
+            0.596278,
+            0.234855,
+            -0.005363
+          ],
+          [
+            0.596278,
+            0.234855,
+            -0.005363
+          ],
+          [
+            0.596278,
+            0.234855,
+            -0.005363
+          ],
+          [
+            0.610202,
+            0.217856,
+            -0.006171
+          ],
+          [
+            0.6163,
+            0.209824,
+            -0.006582
+          ],
+          [
+            0.6163,
+            0.209824,
+            -0.006582
+          ],
+          [
+            0.6163,
+            0.209824,
+            -0.006582
+          ],
+          [
+            0.6163,
+            0.209824,
+            -0.006582
+          ],
+          [
+            0.63522,
+            0.179836,
+            -0.013209
+          ],
+          [
+            0.63522,
+            0.179836,
+            -0.013209
+          ],
+          [
+            0.63522,
+            0.179836,
+            -0.013209
+          ],
+          [
+            0.63522,
+            0.179836,
+            -0.013209
+          ],
+          [
+            0.63522,
+            0.179836,
+            -0.013209
+          ],
+          [
+            0.649684,
+            0.151404,
+            -0.01718
+          ],
+          [
+            0.656045,
+            0.137009,
+            -0.012004
+          ],
+          [
+            0.656045,
+            0.137009,
+            -0.012004
+          ],
+          [
+            0.656045,
+            0.137009,
+            -0.012004
+          ],
+          [
+            0.656045,
+            0.137009,
+            -0.012004
+          ],
+          [
+            0.656045,
+            0.137009,
+            -0.012004
+          ],
+          [
+            0.677877,
+            0.049392,
+            0.029025
+          ],
+          [
+            0.677877,
+            0.049392,
+            0.029025
+          ],
+          [
+            0.677877,
+            0.049392,
+            0.029025
+          ],
+          [
+            0.677877,
+            0.049392,
+            0.029025
+          ],
+          [
+            0.677877,
+            0.049392,
+            0.029025
+          ],
+          [
+            0.681301,
+            -0.01031,
+            0.027656
+          ],
+          [
+            0.681301,
+            -0.01031,
+            0.027656
+          ],
+          [
+            0.681301,
+            -0.01031,
+            0.027656
+          ],
+          [
+            0.681301,
+            -0.01031,
+            0.027656
+          ],
+          [
+            0.681301,
+            -0.01031,
+            0.027656
+          ],
+          [
+            0.675373,
+            -0.069533,
+            0.019989
+          ],
+          [
+            0.675373,
+            -0.069533,
+            0.019989
+          ],
+          [
+            0.675373,
+            -0.069533,
+            0.019989
+          ],
+          [
+            0.675373,
+            -0.069533,
+            0.019989
+          ],
+          [
+            0.675373,
+            -0.069533,
+            0.019989
+          ],
+          [
+            0.663683,
+            -0.112523,
+            0.027775
+          ],
+          [
+            0.663683,
+            -0.112523,
+            0.027775
+          ],
+          [
+            0.663683,
+            -0.112523,
+            0.027775
+          ],
+          [
+            0.663683,
+            -0.112523,
+            0.027775
+          ],
+          [
+            0.663683,
+            -0.112523,
+            0.027775
+          ],
+          [
+            0.658758,
+            -0.126345,
+            0.029002
+          ],
+          [
+            0.658758,
+            -0.126345,
+            0.029002
+          ],
+          [
+            0.658758,
+            -0.126345,
+            0.029002
+          ],
+          [
+            0.658758,
+            -0.126345,
+            0.029002
+          ],
+          [
+            0.658758,
+            -0.126345,
+            0.029002
+          ],
+          [
+            0.659912,
+            -0.12481,
+            0.021164
+          ],
+          [
+            0.659912,
+            -0.12481,
+            0.021164
+          ],
+          [
+            0.659912,
+            -0.12481,
+            0.021164
+          ]
+        ],
+        "summary": {
+          "duration_s": 1.4,
+          "hand_wrist_path_length_m": 0.46528,
+          "max_height_m": 0.029025,
+          "max_displacement_m": 0.369098
+        },
+        "files": {
+          "trajectory_json": "trajectories/action_03_trajectory.json",
+          "trajectory_png": "trajectories/action_03_trajectory.png"
+        }
+      },
+      "feedback": [
+        "IMU 动作时序与模板差异较大，建议按标准动作节奏重新完成。",
+        "肌肉激活模式存在一定偏差。",
+        "检测到代偿表现，请调整姿势后继续训练。"
+      ]
+    }
+  ]
+}

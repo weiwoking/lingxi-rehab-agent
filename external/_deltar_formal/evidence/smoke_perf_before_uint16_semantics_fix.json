@@ -1,0 +1,181 @@
+{
+  "status": "success",
+  "worktree": "C:\\ec\\_deltar_formal\\work\\deltar_f3c5175_win_cu128",
+  "config": "C:\\ec\\_deltar_formal\\work\\deltar_f3c5175_win_cu128\\configs\\test_demo_compat.txt",
+  "precision": "float32 (no autocast)",
+  "warmup_iterations": 3,
+  "measured_iterations": 10,
+  "model_build_seconds": 0.3269723999837879,
+  "parameters": {
+    "total": 19701246,
+    "trainable": 19701246
+  },
+  "checkpoint": {
+    "path": "C:\\ec\\_deltar_formal\\work\\deltar_f3c5175_win_cu128\\weights\\nyu.pt",
+    "bytes": 79564407,
+    "top_level_type": "dict",
+    "tensor_key_count": 968,
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "load_seconds": 0.309309200005373,
+    "safe_load": "torch.load(map_location='cpu', weights_only=True)"
+  },
+  "gpu_after_model": {
+    "allocated_bytes": 80431616,
+    "reserved_bytes": 96468992,
+    "max_allocated_bytes": 80431616,
+    "max_reserved_bytes": 96468992
+  },
+  "dataset_sample_count": 287,
+  "first_sample": {
+    "image_path": "1647156045.486036.jpg",
+    "image_folder": "room",
+    "input_rgb": {
+      "shape": [
+        1,
+        3,
+        480,
+        640
+      ],
+      "dtype": "torch.float32",
+      "device": "cuda:0"
+    },
+    "input_hist_data": {
+      "shape": [
+        1,
+        64,
+        16
+      ],
+      "dtype": "torch.float32",
+      "device": "cuda:0"
+    },
+    "input_rect_data": {
+      "shape": [
+        1,
+        64,
+        4
+      ],
+      "dtype": "torch.float32",
+      "device": "cuda:0"
+    },
+    "input_mask": {
+      "shape": [
+        1,
+        64
+      ],
+      "dtype": "torch.bool",
+      "device": "cuda:0"
+    },
+    "ground_truth": {
+      "shape": [
+        1,
+        1,
+        480,
+        640
+      ],
+      "dtype": "torch.float32",
+      "device": "cpu"
+    }
+  },
+  "raw_outputs": {
+    "bin_edges": {
+      "shape": [
+        1,
+        257
+      ],
+      "dtype": "torch.float32",
+      "device": "cuda:0"
+    },
+    "prediction": {
+      "shape": [
+        1,
+        1,
+        240,
+        320
+      ],
+      "dtype": "torch.float32",
+      "device": "cuda:0"
+    }
+  },
+  "dense_depth_m": {
+    "path": "C:\\ec\\_deltar_formal\\outputs\\smoke\\room\\1647156045.486036_depth_m.npy",
+    "shape": [
+      480,
+      640
+    ],
+    "dtype": "float32",
+    "finite_ratio": 1.0,
+    "positive_ratio": 1.0,
+    "min": 0.8882216215133667,
+    "median": 2.243161201477051,
+    "max": 2.7335562705993652,
+    "sha256_raw": "84e45ebe7774d372be452e9f635f134ce429a20e7911c8b87fd3aea22a2fb98a"
+  },
+  "depth_mm_png": {
+    "path": "C:\\ec\\_deltar_formal\\outputs\\smoke\\room\\1647156045.486036_depth_mm.png",
+    "shape": [
+      480,
+      640
+    ],
+    "dtype": "uint16",
+    "sha256_file": "42e8a8484003d1af5a4022da09b7696be16a64509ff5da894fd587a809aa463d"
+  },
+  "repeatability_first_two_measured": {
+    "float_exact_equal": true,
+    "float_max_abs_diff_m": 0.0,
+    "float_mean_abs_diff_m": 0.0,
+    "float_sha256_first": "84e45ebe7774d372be452e9f635f134ce429a20e7911c8b87fd3aea22a2fb98a",
+    "float_sha256_second": "84e45ebe7774d372be452e9f635f134ce429a20e7911c8b87fd3aea22a2fb98a",
+    "uint16_exact_equal": true,
+    "png_sha256_first": "42e8a8484003d1af5a4022da09b7696be16a64509ff5da894fd587a809aa463d",
+    "png_sha256_second": "42e8a8484003d1af5a4022da09b7696be16a64509ff5da894fd587a809aa463d"
+  },
+  "timing": {
+    "pure_model_forward": {
+      "count": 10,
+      "mean_ms": 76.25615999859292,
+      "median_ms": 75.82309999270365,
+      "p95_ms": 85.93032499484251,
+      "min_ms": 68.26920001185499,
+      "max_ms": 91.96099999826401
+    },
+    "model_plus_official_cpu_postprocess": {
+      "count": 10,
+      "mean_ms": 77.6934799971059,
+      "median_ms": 76.98825000261422,
+      "p95_ms": 87.98440999235025,
+      "min_ms": 69.34919999912381,
+      "max_ms": 93.5167999996338
+    },
+    "raw_forward_ms": [
+      78.0998999834992,
+      68.26920001185499,
+      72.22750000073574,
+      71.76190000609495,
+      73.37589998496696,
+      75.11549998889677,
+      76.53069999651052,
+      76.66050002444535,
+      91.96099999826401,
+      78.5594999906607
+    ],
+    "raw_end_to_end_ms": [
+      81.22259998344816,
+      69.34919999912381,
+      73.75879999017343,
+      73.15149999340065,
+      74.36489997780882,
+      76.14449999528006,
+      77.83200000994839,
+      77.87930002086796,
+      93.5167999996338,
+      79.71520000137389
+    ]
+  },
+  "gpu_peak": {
+    "allocated_bytes": 92952064,
+    "reserved_bytes": 536870912,
+    "max_allocated_bytes": 343918592,
+    "max_reserved_bytes": 536870912
+  }
+}

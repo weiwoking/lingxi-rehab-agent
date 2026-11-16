@@ -1,0 +1,63 @@
+# Local hardware references / vendor tools
+/hardware/
+
+# Machine-local runtime state
+/external/ESP-Claw_localappdata/
+
+# Project-specific environments (preserve on disk; rebuild from environment/)
+/external/_deltar_formal/envs/deltar_py311_torch271_cu128/
+/external/_deltar_yolo_cuda/venv/
+/external/_conda_envs/vision_interpreter/
+/external/_conda_envs/rehab_score/
+/external/P4RehabTTS/venv/
+
+# Node dependencies
+**/node_modules/
+
+# Generated TTS runtime state
+/external/P4RehabTTS/cache/
+/external/P4RehabTTS/logs/
+
+# Local Wi-Fi credentials
+/s3/car_node/arduino/QGP_Car_TextCommand_A0/wifi_secrets.h
+/s3/node_left/components/BSP/COMM/wifi_secrets.h
+/s3/node_right/components/BSP/COMM/wifi_secrets.h
+
+# Standard caches
+**/__pycache__/
+**/.pytest_cache/
+*.pyc
+
+# Third-party assets with no redistribution grant; preserve local files.
+/external/_deltar_formal/work/deltar_f3c5175_win_cu128/data/demo/
+/s3/libraries/QGP_EVMotor/examples/
+/external/_deltar_formal/assets/demo.zip
+/external/_deltar_formal/assets/nyu.pt
+/external/_deltar_formal/work/deltar_f3c5175_win_cu128/weights/nyu.pt
+/external/_deltar_p4_pipeline/docs_external/vl53l5cx_ds13754.pdf
+/external/_deltar_p4_pipeline/docs_external/vl53l5cx_um2884.pdf
+/s3/car_node/arduino/QGP_Car_TextCommand_A0/奇果派Esp32-S3电机驱动板示例代码：蓝牙手柄控制麦克纳姆轮智能小车.txt
+/s3/libraries/QGP_EVMotor/library.properties
+/s3/libraries/QGP_EVMotor/src/BLEControlStick.h
+/s3/libraries/QGP_EVMotor/src/EMotionPI.h
+/s3/libraries/QGP_EVMotor/src/IMU.cpp
+/s3/libraries/QGP_EVMotor/src/IMU.h
+/s3/libraries/QGP_EVMotor/src/esp32s3/libqgpmotor.a
+/s3/node_left/components/BSP/IMU/REG.h
+/s3/node_left/components/BSP/IMU/wit_c_sdk.c
+/s3/node_left/components/BSP/IMU/wit_c_sdk.h
+/s3/node_right/components/BSP/IMU/REG.h
+/s3/node_right/components/BSP/IMU/wit_c_sdk.c
+/s3/node_right/components/BSP/IMU/wit_c_sdk.h
+/external/_deltar_formal/work/deltar_f3c5175_win_cu128/tmp/
+
+# ESP-Claw assets awaiting the additional permissions noted in docs/LICENSE.
+/esp-claw/docs/src/assets/logos/claw-animation.svg
+/esp-claw/docs/src/assets/logos/espressif-logo-horizontal.svg
+/esp-claw/docs/src/assets/logos/espressif-logo.svg
+/esp-claw/docs/src/assets/logos/logo-f.svg
+/esp-claw/docs/src/assets/logos/logo-horizontal.svg
+/esp-claw/docs/src/assets/logos/logo.svg
+/esp-claw/docs/src/assets/images/cloud-to-claw.png
+/esp-claw/docs/public/favicon.ico
+/esp-claw/docs/static/ESP-CLAW-LOGO.jpg

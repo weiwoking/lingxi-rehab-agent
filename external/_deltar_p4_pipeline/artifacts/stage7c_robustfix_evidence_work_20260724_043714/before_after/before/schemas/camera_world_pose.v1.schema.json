@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "camera_world_pose.v1",
+  "title": "Stage 7C-1 measured Camera and ToF world pose",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "profile_id", "created_at", "validation_status",
+    "camera_profile_id", "camera_tof_profile_id", "world_frame",
+    "matrix_convention", "T_world_from_camera",
+    "rotation_world_from_camera", "translation_world_from_camera_mm",
+    "T_world_from_tof", "rotation_world_from_tof",
+    "translation_world_from_tof_mm", "camera_height_mm",
+    "camera_height_uncertainty_mm", "orientation_diagnostics",
+    "capture_summary", "residual_summary", "source_data_hashes",
+    "warnings", "unresolved_fields", "world_pose",
+    "world_pose_resolved", "absolute_geometry_valid"
+  ],
+  "properties": {
+    "schema_version": {"const": "camera_world_pose.v1"},
+    "profile_id": {"type": "string", "pattern": "^camera_world_pose_[0-9a-f]{16}$"},
+    "created_at": {"type": "string", "format": "date-time"},
+    "validation_status": {"const": "PASS"},
+    "camera_profile_id": {"type": "string", "minLength": 1},
+    "camera_tof_profile_id": {"const": "camera_tof_extrinsics_6698a99489d42fb2"},
+    "world_frame": {"$ref": "#/$defs/world_frame"},
+    "matrix_convention": {"const": "row-major JSON, column-vector convention"},
+    "T_world_from_camera": {"$ref": "#/$defs/matrix4"},
+    "rotation_world_from_camera": {"$ref": "#/$defs/matrix3"},
+    "translation_world_from_camera_mm": {
+      "type": "array", "prefixItems": [{"const": 0}, {"const": 0}, {"const": 969}],
+      "items": false, "minItems": 3, "maxItems": 3
+    },
+    "T_world_from_tof": {"$ref": "#/$defs/matrix4"},
+    "rotation_world_from_tof": {"$ref": "#/$defs/matrix3"},
+    "translation_world_from_tof_mm": {"$ref": "#/$defs/vector3"},
+    "camera_height_mm": {"const": 969},
+    "camera_height_uncertainty_mm": {"const": 5},
+    "orientation_diagnostics": {
+      "type": "object", "additionalProperties": false,
+      "required": ["roll_deg", "pitch_deg", "yaw_deg", "convention"],
+      "properties": {
+        "roll_deg": {"type": "number", "minimum": -5, "maximum": 5},
+        "pitch_deg": {"type": "number", "minimum": -5, "maximum": 5},
+        "yaw_deg": {"type": "number", "minimum": -5, "maximum": 5},
+        "convention": {"type": "string", "minLength": 1}
+      }
+    },
+    "capture_summary": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "pose_count", "frame_count", "valid_frame_count", "rejected_frame_count"
+      ],
+      "properties": {
+        "pose_count": {"type": "integer", "minimum": 3},
+        "frame_count": {"type": "integer", "minimum": 15},
+        "valid_frame_count": {"type": "integer", "minimum": 15},
+        "rejected_frame_count": {"type": "integer", "minimum": 0}
+      }
+    },
+    "residual_summary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["camera_orientation", "tof_vertical_plane"],
+      "properties": {
+        "camera_orientation": {"type": "object"},
+        "tof_vertical_plane": {"type": "object"}
+      }
+    },
+    "source_data_hashes": {
+      "type": "object", "minProperties": 4,
+      "additionalProperties": {
+        "type": "string", "pattern": "^[0-9a-f]{64}$"
+      }
+    },
+    "warnings": {"type": "array", "items": {"type": "string"}},
+    "unresolved_fields": {"type": "array", "items": {"type": "string"}},
+    "world_pose": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status"], "properties": {"status": {"const": "measured"}}
+    },
+    "world_pose_resolved": {"const": true},
+    "absolute_geometry_valid": {"const": false}
+  },
+  "$defs": {
+    "world_frame": {
+      "type": "object", "additionalProperties": false,
+      "required": ["x_axis", "y_axis", "z_axis", "origin", "translation_unit"],
+      "properties": {
+        "x_axis": {"const": "vehicle_right"},
+        "y_axis": {"const": "vehicle_forward"},
+        "z_axis": {"const": "up"},
+        "origin": {"const": "ground_point_below_camera_optical_centre"},
+        "translation_unit": {"const": "mm"}
+      }
+    },
+    "vector3": {
+      "type": "array", "items": {"type": "number"}, "minItems": 3, "maxItems": 3
+    },
+    "matrix3": {
+      "type": "array", "items": {"$ref": "#/$defs/vector3"},
+      "minItems": 3, "maxItems": 3
+    },
+    "vector4": {
+      "type": "array", "items": {"type": "number"}, "minItems": 4, "maxItems": 4
+    },
+    "matrix4": {
+      "type": "array", "items": {"$ref": "#/$defs/vector4"},
+      "minItems": 4, "maxItems": 4
+    }
+  }
+}

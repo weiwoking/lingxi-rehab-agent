@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "deltar_pc_job_report.v1",
+  "type": "object",
+  "required": ["schema_version", "job_id", "scan_id", "status", "started_at", "finished_at", "warnings", "errors"],
+  "properties": {
+    "schema_version": {"const": "deltar_pc_job_report.v1"},
+    "status": {"enum": ["validated", "running", "success", "partial_success", "rejected", "failed"]}
+  }
+}

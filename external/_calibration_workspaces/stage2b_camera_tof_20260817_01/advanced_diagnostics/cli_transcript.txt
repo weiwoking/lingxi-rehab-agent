@@ -1,0 +1,109 @@
+$ C:\ProgramData\anaconda3\python.exe stage2b_camera_tof.py --help
+exit_code=0
+usage: stage2b_camera_tof.py [-h]
+                             {register,status,inspect,coverage,solve,validate,stability-diagnostics,advanced-diagnostics,suggest-next,export-candidate} ...
+
+Dynamic Stage2B Camera<->ToF calibration candidate tool (no promotion)
+
+positional arguments:
+  {register,status,inspect,coverage,solve,validate,stability-diagnostics,advanced-diagnostics,suggest-next,export-candidate}
+    register            register one formal complete 11-frame scan by safe
+                        unique pose ID
+    status              show dynamic registry and available QA
+    inspect             inspect registered data, or one formal scan read-only
+    coverage            derive distance/angle/zone/timing coverage from
+                        observations
+    solve               rank all D4 x range semantics x nominal/low-
+                        dimensional models
+    validate            scan-level heldout, dynamic LOPO and residual
+                        diagnostics
+    stability-diagnostics
+                        dynamic fraction-based subset stability
+    advanced-diagnostics
+                        read-only D4 gauge, range semantics, provenance and
+                        Camera mapping diagnostics
+    suggest-next        diagnostic-driven, snake-route-compatible capture
+                        advice only
+    export-candidate    export candidate and DELTAR fr artifacts; never
+                        promote
+
+options:
+  -h, --help            show this help message and exit
+
+
+$ python stage2b_camera_tof.py advanced-diagnostics --subset-trials 100 --seed 20260817 --max-iterations 12
+{
+  "exit_code": 0,
+  "output": "C:\\ec\\_calibration_workspaces\\stage2b_camera_tof_20260817_01\\advanced_diagnostics",
+  "pose_count": 15,
+  "subset_trials": 100,
+  "protected_inputs_unchanged": true,
+  "physical_D4_orientation": "UNRESOLVED_GAUGE",
+  "mapping_authority": "OBSERVABLE_AUTHORITY",
+  "all_broad_lopo": {
+    "axial_z": 9,
+    "radial_range": 6,
+    "tie": 0,
+    "total": 15,
+    "axial_win_rate": 0.6,
+    "radial_win_rate": 0.4
+  },
+  "core_lopo": {
+    "axial_z": 15,
+    "radial_range": 0,
+    "tie": 0,
+    "total": 15,
+    "axial_win_rate": 1.0,
+    "radial_win_rate": 0.0
+  },
+  "all_broad_subsets": {
+    "axial_z": 39,
+    "radial_range": 61,
+    "tie": 0,
+    "total": 100,
+    "axial_win_rate": 0.39,
+    "radial_win_rate": 0.61
+  },
+  "core_subsets": {
+    "axial_z": 100,
+    "radial_range": 0,
+    "tie": 0,
+    "total": 100,
+    "axial_win_rate": 1.0,
+    "radial_win_rate": 0.0
+  }
+}
+
+$ python stage2b_camera_tof.py coverage
+exit_code=0
+plane_angle_deg uses rms_deg/median_deg/p95_deg/max_deg; pair_delta_us uses rms_us/median_us/p95_us/max_us.
+
+$ python stage2b_camera_tof.py stability-diagnostics --fraction 0.8 --trials 12 --seed 20260817
+exit_code=0
+registered_N=15 subset_size=12 parameter_std_labeled=true
+
+$ C:\ProgramData\anaconda3\python.exe -m unittest -v test_stage2b_toolchain.py test_advanced_diagnostics.py
+exit_code=0
+test_broad_strict_tradeoff_and_missing_bad_zones (test_stage2b_toolchain.GeometryTests.test_broad_strict_tradeoff_and_missing_bad_zones) ... ok
+test_d4_orientation_and_range_semantics_rank_first (test_stage2b_toolchain.GeometryTests.test_d4_orientation_and_range_semantics_rank_first) ... ok
+test_dynamic_lopo_and_subset_cardinality (test_stage2b_toolchain.GeometryTests.test_dynamic_lopo_and_subset_cardinality) ... ok
+test_extrinsic_and_low_dimensional_rays_recover (test_stage2b_toolchain.GeometryTests.test_extrinsic_and_low_dimensional_rays_recover) ... ok
+test_solver_accepts_dynamic_n_10_12_20_30 (test_stage2b_toolchain.GeometryTests.test_solver_accepts_dynamic_n_10_12_20_30) ... ok
+test_all_d4_maps_are_unique_permutations_and_history_matches (test_stage2b_toolchain.RegistryTests.test_all_d4_maps_are_unique_permutations_and_history_matches) ... ok
+test_duplicate_is_rejected_before_any_write (test_stage2b_toolchain.RegistryTests.test_duplicate_is_rejected_before_any_write) ... ok
+test_latest_dry_run_is_read_only (test_stage2b_toolchain.RegistryTests.test_latest_dry_run_is_read_only) ... ok
+test_pose_id_contract_and_dynamic_counts (test_stage2b_toolchain.RegistryTests.test_pose_id_contract_and_dynamic_counts) ... ok
+test_coverage_uses_truthful_angle_and_timing_units (test_advanced_diagnostics.DynamicAndReadOnlyTests.test_coverage_uses_truthful_angle_and_timing_units) ... ok
+test_protected_input_hash_scope_is_stable (test_advanced_diagnostics.DynamicAndReadOnlyTests.test_protected_input_hash_scope_is_stable) ... ok
+test_subset_generation_has_no_n15_n16_n20_hardcode (test_advanced_diagnostics.DynamicAndReadOnlyTests.test_subset_generation_has_no_n15_n16_n20_hardcode) ... ok
+test_intentionally_non_equivalent_ray_model_is_detected (test_advanced_diagnostics.GaugeEquivalenceTests.test_intentionally_non_equivalent_ray_model_is_detected) ... ok
+test_synthetic_pure_d4_reparameterization_is_camera_equivalent (test_advanced_diagnostics.GaugeEquivalenceTests.test_synthetic_pure_d4_reparameterization_is_camera_equivalent) ... ok
+test_known_axial_synthetic_wins_most_lopo_and_subsets (test_advanced_diagnostics.SemanticsAndProvenanceTests.test_known_axial_synthetic_wins_most_lopo_and_subsets) ... ok
+test_known_radial_synthetic_wins_most_lopo_and_subsets (test_advanced_diagnostics.SemanticsAndProvenanceTests.test_known_radial_synthetic_wins_most_lopo_and_subsets) ... ok
+test_provenance_core_and_broad_layers_do_not_mix (test_advanced_diagnostics.SemanticsAndProvenanceTests.test_provenance_core_and_broad_layers_do_not_mix) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 12.158s
+
+OK
+DRY-RUN valid pose=UNIT_DRY_RUN scan_id=scan_20260817_152925_000 frames=11 files=34 source_unchanged=true

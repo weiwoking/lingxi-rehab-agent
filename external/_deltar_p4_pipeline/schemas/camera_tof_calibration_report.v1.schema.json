@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "camera_tof_calibration_report.v1",
+  "title": "Stage 7B Camera-ToF calibration run report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "created_at", "capture_id", "status",
+    "validation_status", "selected_candidate", "training_pose_count",
+    "heldout_pose_count", "gates", "warnings", "formal_profile_generated",
+    "camera_tof_extrinsics_status", "absolute_geometry_valid",
+    "world_pose_resolved", "tool_version"
+  ],
+  "properties": {
+    "schema_version": {"const": "camera_tof_calibration_report.v1"},
+    "created_at": {"type": "string", "format": "date-time"},
+    "capture_id": {"type": ["string", "null"]},
+    "status": {"enum": ["PASS", "FAIL", "UNRESOLVED"]},
+    "validation_status": {"enum": ["PASS", "FAIL", "UNRESOLVED"]},
+    "selected_candidate": {"type": ["string", "null"]},
+    "training_pose_count": {"type": "integer", "minimum": 0},
+    "heldout_pose_count": {"type": "integer", "minimum": 0},
+    "gates": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["name", "status", "details"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "status": {"enum": ["PASS", "FAIL", "UNRESOLVED"]},
+          "details": {}
+        }
+      }
+    },
+    "warnings": {"type": "array", "items": {"type": "string"}},
+    "formal_profile_generated": {"type": "boolean"},
+    "camera_tof_extrinsics_status": {"enum": ["measured", "unresolved"]},
+    "absolute_geometry_valid": {"const": false},
+    "world_pose_resolved": {"const": false},
+    "tool_version": {"type": "string", "minLength": 1}
+  }
+}

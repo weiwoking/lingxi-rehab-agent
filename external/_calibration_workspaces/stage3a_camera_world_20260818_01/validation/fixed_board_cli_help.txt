@@ -1,0 +1,31 @@
+usage: stage3a_camera_world.py [-h]
+                               {status,set-height,set-board-height,register,inspect,coverage,solve,validate,summary,suggest-next,export-candidate}
+                               ...
+
+Stage3A final-body Camera->World matrix-first tool. FIXED_VERTICAL_BOARD at
+frozen active-bottom height; vehicle captures near/mid/far. The ChArUco is
+never moved. No promotion/runtime writes.
+
+positional arguments:
+  {status,set-height,set-board-height,register,inspect,coverage,solve,validate,summary,suggest-next,export-candidate}
+    status              show frozen bindings and dynamic registry status
+    set-height          set manual optical-centre height and uncertainty
+    set-board-height    configure fixed active-bottom height once; later
+                        mismatches fail closed
+    register            bind a unique physical pose to a complete formal
+                        11-frame scan
+    inspect             inspect registry, one pose, or one validated scan
+                        read-only
+    coverage            show PnP near/mid/far distance, image coverage, and
+                        pose quality
+    solve               solve matrix-first orientation from >=3 equally
+                        weighted physical poses
+    validate            run fixed-height-vs-distance, orientation,
+                        LOPO/holdout, sensitivity, and sign diagnostics
+    summary             summarize current unresolved/solved state
+    suggest-next        recommend the minimum useful next physical pose
+    export-candidate    export only at EVIDENCE_READY_FOR_OWNER_JUDGMENT;
+                        never promotes
+
+options:
+  -h, --help            show this help message and exit

@@ -1,0 +1,48 @@
+# ESP-Claw PC 视觉服务启动器
+
+双击 `Start-VisionPC.cmd`。启动器会验证固定的 Conda 环境与模型；若 `8000` 上是签名完整匹配的旧 Vision PC，则先安全关闭并等待端口释放，再从当前仓库启动新的 `vision_interpreter`，识别 Windows 移动热点并在热点 `/24` 中自动发现 P4。
+
+## 正常使用
+
+1. 打开 Windows“移动热点”。若尚未打开，也可先双击启动器；窗口会提示并自动等待。
+2. 双击 `Start-VisionPC.cmd`。
+3. 等到窗口显示 PC 服务 health、模型状态和 P4 IP。
+4. 需要发起一次真实闭环测试时，手工复制窗口打印的 PowerShell 命令。启动器本身绝不会调用 `POST /api/perception/upload-once`。
+5. health 与 person-follow OpenAPI 校验成功后，窗口会明确打印 `http://127.0.0.1:8000/docs` 和 `http://127.0.0.1:8000/person-follow-view`；后者用于查看最新原图、标注图和 PC timing。启动器不会自动打开浏览器。
+6. 按 `Ctrl+C` 退出。启动器只清理它本次创建的 Uvicorn。
+
+## 自动发现与安全边界
+
+- 热点地址优先选择 `192.168.137.1`，否则仅考虑 Windows 移动热点/Wi-Fi Direct 类型的活动 IPv4。
+- P4 地址依次来自上次缓存、`Get-NetNeighbor`/ARP、热点 `/24` 有界扫描。
+- 身份验证只调用 `GET /api/camera/status` 和 `GET /api/tof/status`，并同时核对当前 ESP-Claw 的 Camera 输出格式与 ToF `8x8` 签名。
+- 扫描不会调用快照、采集、YOLO、Agent、车辆控制或任何写接口。
+- 未发现 P4 时，PC 视觉服务继续运行；启动器低频执行有界重试。
+- 端口 `8000` 若由正式 Python 环境中的 `-m uvicorn app.main:app --port 8000` 占用，启动器会结合 `launcher_status.json` 和当前 listener/process 签名确认身份，关闭旧进程，最多等待 5 秒释放端口，然后启动当前源码的新进程。
+- 状态文件缺失、损坏或 PID 过期时可退回当前 listener 签名；状态 PID 仍必须对应当前 listener，且 executable 与完整命令行必须匹配。
+- 其他 Python 环境、其他 Uvicorn app、Node/Java/其他服务，或无法读取 executable/command line 的进程都不会被结束；启动器会报告 PID、路径和命令行并退出。
+- health 通过后，启动器还会验证 `/openapi.json` 包含 `/api/v1/person-follow/detect`，避免把旧版服务误判为成功。
+
+## 路径与运行文件
+
+- Conda：`C:\ProgramData\anaconda3\Scripts\conda.exe`
+- 环境：`C:\ec\_conda_envs\vision_interpreter`
+- PC 工程：`C:\ec\esp-claw\pc\vision_interpreter`
+- 运行缓存和日志：`%LOCALAPPDATA%\ESP-Claw\vision_launcher`
+  - `last_p4_ip.txt`
+  - `launcher_status.json`
+  - `vision_service.log`
+  - `vision_service.stdout.log`
+
+启动器直接调用环境内的 `python.exe`，不改变全局 Conda 激活状态，也不安装或更新任何依赖。
+
+## 诊断参数
+
+从 PowerShell 或 CMD 调用时可传入：
+
+```powershell
+.\Start-VisionPC.cmd -SelfTest
+.\Start-VisionPC.cmd -ValidationMode -HotspotWaitSeconds 10 -P4ScanBudgetSeconds 8
+```
+
+`-SelfTest` 只检查路径与纯逻辑；`-ValidationMode` 完成一次有界实际 health/发现验证后退出，并清理本次创建的服务。正常双击不需要任何参数。

@@ -1,0 +1,136 @@
+{
+  "session_id": "20260807_TASK005",
+  "rep_index": 3,
+  "source_session_path": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK005\\DATA_SEQ0000000241.csv",
+  "source_mode": "offline_validation",
+  "source_origin": "v2_1_2_session_orchestrator",
+  "segmentation_version": "drink_hybrid_segmentation_v2_1",
+  "start_index": 829,
+  "end_index": 1170,
+  "start_time_ms": 110608,
+  "end_time_ms": 117428,
+  "duration_ms": 6820.0,
+  "start_boundary": {
+    "boundary_index": 828,
+    "boundary_time_ms": 110588,
+    "boundary_sources": [
+      "motion_valley_between_peaks",
+      "pose_return",
+      "strong_quiet",
+      "weak_quiet"
+    ],
+    "quiet_duration_ms": 981.0,
+    "motion_valley_score": 0.962199,
+    "pose_return_score": 1.0,
+    "confidence": 0.92,
+    "candidate_cluster": {
+      "candidate_indexes": [
+        826,
+        828,
+        839
+      ],
+      "candidate_payloads": [
+        {
+          "boundary_index": 826,
+          "boundary_time_ms": 110548,
+          "boundary_sources": [
+            "weak_quiet",
+            "pose_return"
+          ],
+          "quiet_duration_ms": 981.0,
+          "motion_valley_score": 0.939457,
+          "pose_return_score": 0.999258,
+          "confidence": 0.76
+        },
+        {
+          "boundary_index": 828,
+          "boundary_time_ms": 110588,
+          "boundary_sources": [
+            "strong_quiet"
+          ],
+          "quiet_duration_ms": 760.0,
+          "motion_valley_score": 0.942799,
+          "pose_return_score": 0.999679,
+          "confidence": 0.92
+        },
+        {
+          "boundary_index": 839,
+          "boundary_time_ms": 110808,
+          "boundary_sources": [
+            "motion_valley_between_peaks",
+            "pose_return"
+          ],
+          "quiet_duration_ms": null,
+          "motion_valley_score": 0.962199,
+          "pose_return_score": 1.0,
+          "confidence": 0.82
+        }
+      ],
+      "selected_index": 828,
+      "selected_time_ms": 110588,
+      "combined_sources": [
+        "motion_valley_between_peaks",
+        "pose_return",
+        "strong_quiet",
+        "weak_quiet"
+      ],
+      "quiet_duration_ms": 981.0,
+      "motion_valley_score": 0.962199,
+      "pose_return_score": 1.0,
+      "confidence": 0.92,
+      "selection_reason": "strong_quiet_priority"
+    },
+    "boundary_origin": "detected_candidate",
+    "detected_from_signal_candidate": true
+  },
+  "end_boundary": {
+    "boundary_index": 1170,
+    "boundary_time_ms": 117428,
+    "boundary_sources": [
+      "pose_return",
+      "weak_quiet"
+    ],
+    "quiet_duration_ms": 360.0,
+    "motion_valley_score": 0.885651,
+    "pose_return_score": 0.983324,
+    "confidence": 0.76,
+    "candidate_cluster": {
+      "candidate_indexes": [
+        1170
+      ],
+      "candidate_payloads": [
+        {
+          "boundary_index": 1170,
+          "boundary_time_ms": 117428,
+          "boundary_sources": [
+            "weak_quiet",
+            "pose_return"
+          ],
+          "quiet_duration_ms": 360.0,
+          "motion_valley_score": 0.885651,
+          "pose_return_score": 0.983324,
+          "confidence": 0.76
+        }
+      ],
+      "selected_index": 1170,
+      "selected_time_ms": 117428,
+      "combined_sources": [
+        "pose_return",
+        "weak_quiet"
+      ],
+      "quiet_duration_ms": 360.0,
+      "motion_valley_score": 0.885651,
+      "pose_return_score": 0.983324,
+      "confidence": 0.76,
+      "selection_reason": "highest_priority_then_confidence"
+    },
+    "boundary_origin": "detected_candidate",
+    "detected_from_signal_candidate": true
+  },
+  "baseline_version": "drink_water_v2.1.2",
+  "baseline_template_path": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\template\\MHH_healthy_template.json",
+  "baseline_template_sha256": "d7a6237aa9af6e91e203d320045198991ea265322986b1afd7bb3ef61884fbcf",
+  "sensor_mapping_version": "rehab_sensor_mapping_20260806",
+  "rep_csv_file": "rep_03.csv",
+  "score_file": "rep_03_score.json"
+}

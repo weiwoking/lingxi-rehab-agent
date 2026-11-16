@@ -1,0 +1,769 @@
+{
+  "schema_version": "stage3a_pose_diagnostics.v1",
+  "generated_at": "2026-08-17T19:52:56.227560Z",
+  "pose_id": "W01",
+  "scan_id": "scan_20260817_194252_000",
+  "scan_path": "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260817_194252_000",
+  "distance_role": "near",
+  "board_mode": "FIXED_VERTICAL_BOARD",
+  "board_moved_between_poses": false,
+  "physical_pose_equal_weight_unit": true,
+  "frame_count_expected": 11,
+  "camera_valid_frame_count": 11,
+  "invalid_frames": [],
+  "R_world_from_camera_pose_mean": [
+    [
+      0.998728825162714,
+      -0.008215221253237235,
+      0.04973171954463034
+    ],
+    [
+      -0.049858094297532345,
+      -0.01597002422775673,
+      0.9986286240435845
+    ],
+    [
+      -0.007409738330318161,
+      -0.9998387212275415,
+      -0.016359318810726685
+    ]
+  ],
+  "pose_orientation_frame_residual_deg": {
+    "rms": 0.4729656444040646,
+    "p95": 0.6949261654147463,
+    "max": 0.7283840893528073,
+    "inlier_count": 11
+  },
+  "translation_camera_from_board_spread_mm": {
+    "axis_std": [
+      2.417245982344938,
+      0.7455988877833787,
+      1.7001501017097413
+    ],
+    "radial_p95_from_median": 7.201744736805966,
+    "motion_diagnostic_only": true
+  },
+  "reprojection": {
+    "frame_rms_median_px": 0.17038479447364807,
+    "frame_rms_p95_px": 0.1891431212425232,
+    "frame_p95_max_px": 0.3677362844347951
+  },
+  "distance_and_image_coverage": {
+    "estimated_board_plane_distance_mm": {
+      "median": 605.1350535967265,
+      "p05": 601.9264948277678,
+      "p95": 605.6848926220468
+    },
+    "board_center_px_median": [
+      275.3868408203125,
+      132.57635498046875
+    ],
+    "board_coverage_fraction_median": 0.19651915291600114
+  },
+  "frames": [
+    {
+      "frame_id": "frame_000000",
+      "valid": true,
+      "marker_count": 17,
+      "charuco_corner_count": 24,
+      "reprojection_rms_px": 0.19044481217861176,
+      "reprojection_p95_px": 0.2696309313178062,
+      "board_center_px": [
+        270.7397766113281,
+        130.52670288085938
+      ],
+      "board_coverage_fraction": 0.1980842375453886,
+      "estimated_board_plane_distance_mm": 603.3215576984583,
+      "rvec_camera_from_board": [
+        0.018020583516108774,
+        -0.04816651583988516,
+        -0.009968990700812754
+      ],
+      "tvec_camera_from_board_mm": [
+        -108.41142020176666,
+        -95.16422068500209,
+        597.1906521315743
+      ],
+      "R_camera_from_board": [
+        [
+          0.9987905795938622,
+          0.009530536824724645,
+          -0.04823429259758442
+        ],
+        [
+          -0.010398327074367223,
+          0.9997879873863367,
+          -0.017772311949567392
+        ],
+        [
+          0.048054686645646764,
+          0.018252373703461746,
+          0.9986779250316781
+        ]
+      ],
+      "R_world_from_camera": [
+        [
+          0.9987905795938623,
+          -0.010398327074367237,
+          0.04805468664564677
+        ],
+        [
+          -0.048234292597584424,
+          -0.017772311949567368,
+          0.9986779250316781
+        ],
+        [
+          -0.009530536824724645,
+          -0.9997879873863368,
+          -0.018252373703461614
+        ]
+      ],
+      "pair_delta_us_provenance_only": 6073.0,
+      "source_hashes": {
+        "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260817_194252_000\\frames\\frame_000000\\frame.json": "b51612336661eacf01948d4ffe924a5bb67855d377e5cd29ee113ddeadbc7f37",
+        "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260817_194252_000\\frames\\frame_000000\\image.rgb565": "47ef12663248fb3eef4ed9c0428d09f40962bdf1aab0caed12d3283f6f00a410",
+        "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260817_194252_000\\frames\\frame_000000\\tof.json": "6610eee8290d2b7a7267422a1c4932f754eb478f699aab61b0551f1e87bb38dd"
+      }
+    },
+    {
+      "frame_id": "frame_000001",
+      "valid": true,
+      "marker_count": 16,
+      "charuco_corner_count": 22,
+      "reprojection_rms_px": 0.18784143030643463,
+      "reprojection_p95_px": 0.329969173669815,
+      "board_center_px": [
+        265.7502136230469,
+        128.1474609375
+      ],
+      "board_coverage_fraction": 0.19983858020096162,
+      "estimated_board_plane_distance_mm": 600.8979819197709,
+      "rvec_camera_from_board": [
+        0.014410979486482584,
+        -0.050444242843325035,
+        -0.0137106213530258
+      ],
+      "tvec_camera_from_board_mm": [
+        -111.9409265701829,
+        -96.37131050537532,
+        594.7063148540609
+      ],
+      "R_camera_from_board": [
+        [
+          0.9986340333558476,
+          0.013340517075280415,
+          -0.050518293989368475
+        ],
+        [
+          -0.014067289921672855,
+          0.9998022197340676,
+          -0.014058192241213048
+        ],
+        [
+          0.05032075891410733,
+          0.014749644707431198,
+          0.9986241881725642
+        ]
+      ],
+      "R_world_from_camera": [
+        [
+          0.9986340333558474,
+          -0.01406728992167287,
+          0.050320758914107325
+        ],
+        [
+          -0.05051829398936847,
+          -0.014058192241213019,
+          0.9986241881725644
+        ],
+        [
+          -0.013340517075280412,
+          -0.9998022197340675,
+          -0.014749644707431231
+        ]
+      ],
+      "pair_delta_us_provenance_only": 42443.0,
+      "source_hashes": {
+        "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260817_194252_000\\frames\\frame_000001\\frame.json": "01e5c2b09a605b09d34be6fad6e22fa528ec9ee215a810f114d2c517077636cc",
+        "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260817_194252_000\\frames\\frame_000001\\image.rgb565": "ff96cebf97c64bf4951d3a85a78267d9960cec9b51cb547eff425d6165fe88dd",
+        "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260817_194252_000\\frames\\frame_000001\\tof.json": "15cc41c378d2f98e8fdf8498d4ae1856f0e75e360d1fb9af0a6a3a2b5c8ec273"
+      }
+    },
+    {
+      "frame_id": "frame_000002",
+      "valid": true,
+      "marker_count": 17,
+      "charuco_corner_count": 24,
+      "reprojection_rms_px": 0.17044393718242645,
+      "reprojection_p95_px": 0.3075712054967879,
+      "board_center_px": [
+        269.1746826171875,
+        129.743896484375
+      ],
+      "board_coverage_fraction": 0.19853165525539984,
+      "estimated_board_plane_distance_mm": 602.9550077357648,
+      "rvec_camera_from_board": [
+        0.024629558851791702,
+        -0.0497872966274224,
+        -0.011227361088517717
+      ],
+      "tvec_camera_from_board_mm": [
+        -109.50815823369588,
+        -95.49776448832029,
+        596.0858805797068
+      ],
+      "R_camera_from_board": [
+        [
+          0.998697934243961,
+          0.010608397203190522,
+          -0.04989887820005921
+        ],
+        [
+          -0.011834308224173501,
+          0.9996337636249092,
+          -0.02433696303885401
+        ],
+        [
+          0.049622427245150605,
+          0.024895793417335114,
+          0.9984577177749798
+        ]
+      ],
+      "R_world_from_camera": [
+        [
+          0.998697934243961,
+          -0.011834308224173539,
+          0.049622427245150584
+        ],
+        [
+          -0.049898878200059206,
+          -0.02433696303885413,
+          0.9984577177749796
+        ],
+        [
+          -0.01060839720319052,
+          -0.9996337636249093,
+          -0.024895793417335277
+        ]
+      ],
+      "pair_delta_us_provenance_only": 3390.0,
+      "source_hashes": {
+        "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260817_194252_000\\frames\\frame_000002\\frame.json": "26b1dc9e90807781cba85a72b4ad7f3f59c22e6ee4a6b7c4cc1dfdc3e1e5dd96",
+        "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260817_194252_000\\frames\\frame_000002\\image.rgb565": "e7950facb9e3bd887fecffd560e5be246b868e56583ee269fe101d1b078b9e6b",
+        "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260817_194252_000\\frames\\frame_000002\\tof.json": "9456d076b1ee94b61ead06d8980b6933c000e1c6e8065aaa70c50d0832a57891"
+      }
+    },
+    {
+      "frame_id": "frame_000003",
+      "valid": true,
+      "marker_count": 16,
+      "charuco_corner_count": 22,
+      "reprojection_rms_px": 0.16702689230442047,
+      "reprojection_p95_px": 0.3005972541868686,
+      "board_center_px": [
+        275.008056640625,
+        132.52687072753906
+      ],
+      "board_coverage_fraction": 0.19651915291600114,
+      "estimated_board_plane_distance_mm": 605.5155044605475,
+      "rvec_camera_from_board": [
+        0.021416879362888865,
+        -0.04668318417868127,
+        -0.006900332842040595
+      ],
+      "tvec_camera_from_board_mm": [
+        -105.37117864612922,
+        -94.1364858621119,
+        599.3812183287748
+      ],
+      "R_camera_from_board": [
+        [
+          0.9988867820340203,
+          0.006397452455530913,
+          -0.04673616672127434
+        ],
+        [
+          -0.007397036840916766,
+          0.9997469079924689,
+          -0.021246265682986504
+        ],
+        [
+          0.04658841619645006,
+          0.021568323105358733,
+          0.9986812939645606
+        ]
+      ],
+      "R_world_from_camera": [
+        [
+          0.9988867820340204,
+          -0.0073970368409167235,
+          0.04658841619645006
+        ],
+        [
+          -0.04673616672127434,
+          -0.02124626568298643,
+          0.9986812939645606
+        ],
+        [
+          -0.006397452455530914,
+          -0.9997469079924689,
+          -0.021568323105358646
+        ]
+      ],
+      "pair_delta_us_provenance_only": 23560.0,
+      "source_hashes": {
+        "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260817_194252_000\\frames\\frame_000003\\frame.json": "acf43a6afcdedaa59d094ab80326df076eb82fa3f16203dad6abc5163fbd8ad3",
+        "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260817_194252_000\\frames\\frame_000003\\image.rgb565": "3f1405e45e40a8d87681246749d29d4449eb889cdbe4f1c20064fae7ba4bea55",
+        "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260817_194252_000\\frames\\frame_000003\\tof.json": "aae55a61ae214d303c3f5d16b079b1cf2b8dc9fa2a7edef66b6c225fbeafe127"
+      }
+    },
+    {
+      "frame_id": "frame_000004",
+      "valid": true,
+      "marker_count": 16,
+      "charuco_corner_count": 20,
+      "reprojection_rms_px": 0.15525111556053162,
+      "reprojection_p95_px": 0.20829791352152832,
+      "board_center_px": [
+        275.2794494628906,
+        132.57635498046875
+      ],
+      "board_coverage_fraction": 0.19649353720093737,
+      "estimated_board_plane_distance_mm": 605.4888292178953,
+      "rvec_camera_from_board": [
+        0.02488566207096624,
+        -0.05400023423604036,
+        -0.006177680134654636
+      ],
+      "tvec_camera_from_board_mm": [
+        -105.00373613164977,
+        -94.12398371418502,
+        598.5463744092283
+      ],
+      "R_camera_from_board": [
+        [
+          0.9985233452975277,
+          0.005502285759688602,
+          -0.05404492341795649
+        ],
+        [
+          -0.006845717208115364,
+          0.9996713679266975,
+          -0.024704094872545962
+        ],
+        [
+          0.053891233533298964,
+          0.02503759171693569,
+          0.9982328655926308
+        ]
+      ],
+      "R_world_from_camera": [
+        [
+          0.9985233452975277,
+          -0.006845717208115321,
+          0.053891233533298964
+        ],
+        [
+          -0.05404492341795649,
+          -0.024704094872545768,
+          0.9982328655926307
+        ],
+        [
+          -0.005502285759688603,
+          -0.9996713679266978,
+          -0.02503759171693548
+        ]
+      ],
+      "pair_delta_us_provenance_only": 1694.0,
+      "source_hashes": {
+        "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260817_194252_000\\frames\\frame_000004\\frame.json": "873896aa553fb3f369f5635daedc92a47165fbd4da39cca086b01983c1f7382c",
+        "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260817_194252_000\\frames\\frame_000004\\image.rgb565": "cec080373479d1a0702dfdb8b3d914cd9772223c3ab7f922860aa0ad9c300463",
+        "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260817_194252_000\\frames\\frame_000004\\tof.json": "0d6dcdff19e1ffc84608ee3b89fa8d0884a40db8b8e20435e566d269a60e8669"
+      }
+    },
+    {
+      "frame_id": "frame_000005",
+      "valid": true,
+      "marker_count": 17,
+      "charuco_corner_count": 24,
+      "reprojection_rms_px": 0.1643540859222412,
+      "reprojection_p95_px": 0.2833774313330649,
+      "board_center_px": [
+        275.43359375,
+        132.7578887939453
+      ],
+      "board_coverage_fraction": 0.1965773068483577,
+      "estimated_board_plane_distance_mm": 604.6922498722816,
+      "rvec_camera_from_board": [
+        0.004877459379445582,
+        -0.05202907707594692,
+        -0.0068924755487038275
+      ],
+      "tvec_camera_from_board_mm": [
+        -104.99812301839165,
+        -94.11176482075835,
+        599.6066339117601
+      ],
+      "R_camera_from_board": [
+        [
+          0.9986230533039671,
+          0.006762428926986086,
+          -0.05202179317237674
+        ],
+        [
+          -0.007016139887945425,
+          0.9999643603380868,
+          -0.004695938107956556
+        ],
+        [
+          0.05198818318555538,
+          0.0050544642296131885,
+          0.9986349088633026
+        ]
+      ],
+      "R_world_from_camera": [
+        [
+          0.9986230533039671,
+          -0.007016139887945429,
+          0.05198818318555537
+        ],
+        [
+          -0.05202179317237674,
+          -0.0046959381079566525,
+          0.9986349088633025
+        ],
+        [
+          -0.006762428926986086,
+          -0.9999643603380867,
+          -0.005054464229613398
+        ]
+      ],
+      "pair_delta_us_provenance_only": 31317.0,
+      "source_hashes": {
+        "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260817_194252_000\\frames\\frame_000005\\frame.json": "c0a4ff26b9928d051f46f9ce68d1678091971cdd5a45c866465de5ce2d5d5c49",
+        "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260817_194252_000\\frames\\frame_000005\\image.rgb565": "443aa36618135e1c0d660956d9b9b1aeefc26ec148fa4882280238b15877acfd",
+        "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260817_194252_000\\frames\\frame_000005\\tof.json": "57e85510274365870f8f1e81fd7b69909459383abd417f40943063464867eca7"
+      }
+    },
+    {
+      "frame_id": "frame_000006",
+      "valid": true,
+      "marker_count": 17,
+      "charuco_corner_count": 24,
+      "reprojection_rms_px": 0.1817777007818222,
+      "reprojection_p95_px": 0.3677362844347951,
+      "board_center_px": [
+        275.3868408203125,
+        132.6887664794922
+      ],
+      "board_coverage_fraction": 0.19655534056835297,
+      "estimated_board_plane_distance_mm": 604.9329894995292,
+      "rvec_camera_from_board": [
+        0.007962386501920464,
+        -0.048292636186026576,
+        -0.006600439624294333
+      ],
+      "tvec_camera_from_board_mm": [
+        -105.07510083932905,
+        -94.16374155095899,
+        599.8418169853963
+      ],
+      "R_camera_from_board": [
+        [
+          0.9988123691731565,
+          0.006405533473467546,
+          -0.048299278748510616
+        ],
+        [
+          -0.006789979955081958,
+          0.9999465281690975,
+          -0.007799806073096704
+        ],
+        [
+          0.048246734178756884,
+          0.00811849391750821,
+          0.9988024542909352
+        ]
+      ],
+      "R_world_from_camera": [
+        [
+          0.9988123691731565,
+          -0.006789979955081953,
+          0.04824673417875689
+        ],
+        [
+          -0.048299278748510616,
+          -0.0077998060730969255,
+          0.9988024542909355
+        ],
+        [
+          -0.006405533473467546,
+          -0.9999465281690977,
+          -0.008118493917507973
+        ]
+      ],
+      "pair_delta_us_provenance_only": 2328.0,
+      "source_hashes": {
+        "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260817_194252_000\\frames\\frame_000006\\frame.json": "d28981f9513844dbf1983a2a7a55af802e125e7c33bd4825a71c68af07aaae51",
+        "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260817_194252_000\\frames\\frame_000006\\image.rgb565": "57e5da8967af31285b447df5824dd38db7765da611057f56eefe662d02f73a0b",
+        "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260817_194252_000\\frames\\frame_000006\\tof.json": "33283fc1db8c5c6a20a2f2f70fc54a8e35b0fc2484e203274c2e1298c608e503"
+      }
+    },
+    {
+      "frame_id": "frame_000007",
+      "valid": true,
+      "marker_count": 17,
+      "charuco_corner_count": 24,
+      "reprojection_rms_px": 0.16889941692352295,
+      "reprojection_p95_px": 0.24479936063289637,
+      "board_center_px": [
+        275.5552978515625,
+        132.4788818359375
+      ],
+      "board_coverage_fraction": 0.19637891826701662,
+      "estimated_board_plane_distance_mm": 605.8542807835462,
+      "rvec_camera_from_board": [
+        0.028689005984848005,
+        -0.048236726031092705,
+        -0.006241718300071286
+      ],
+      "tvec_camera_from_board_mm": [
+        -104.92109499664907,
+        -94.16587013893331,
+        599.0438064034187
+      ],
+      "R_camera_from_board": [
+        [
+          0.9988174439019003,
+          0.005546653552783438,
+          -0.048300604464536295
+        ],
+        [
+          -0.006930149574962606,
+          0.9995691054654262,
+          -0.028523261137470605
+        ],
+        [
+          0.0481215833503308,
+          0.028824261194575138,
+          0.9984254980630474
+        ]
+      ],
+      "R_world_from_camera": [
+        [
+          0.9988174439019004,
+          -0.006930149574962632,
+          0.04812158335033079
+        ],
+        [
+          -0.048300604464536295,
+          -0.028523261137470612,
+          0.9984254980630473
+        ],
+        [
+          -0.005546653552783438,
+          -0.9995691054654261,
+          -0.02882426119457504
+        ]
+      ],
+      "pair_delta_us_provenance_only": 19383.0,
+      "source_hashes": {
+        "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260817_194252_000\\frames\\frame_000007\\frame.json": "8ec0e9a745db7d34c2a688fada60d351bd0f76052ae2ff673706f667a3f5b03b",
+        "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260817_194252_000\\frames\\frame_000007\\image.rgb565": "4e69272977538a75caa04f61f4342a1cde843ac2c1d8a49032493633a286ee70",
+        "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260817_194252_000\\frames\\frame_000007\\tof.json": "193d4b0f3b7100139c3a1c8d7a0d3292d8e6a0c692a0af2d2ee7862876421ea7"
+      }
+    },
+    {
+      "frame_id": "frame_000008",
+      "valid": true,
+      "marker_count": 17,
+      "charuco_corner_count": 24,
+      "reprojection_rms_px": 0.1670374721288681,
+      "reprojection_p95_px": 0.2795264713466166,
+      "board_center_px": [
+        275.6965026855469,
+        132.72674560546875
+      ],
+      "board_coverage_fraction": 0.19635099015011986,
+      "estimated_board_plane_distance_mm": 605.3800441632543,
+      "rvec_camera_from_board": [
+        0.01312068292004713,
+        -0.05063044448998519,
+        -0.006498578644506344
+      ],
+      "tvec_camera_from_board_mm": [
+        -104.81712560838383,
+        -94.11630392314618,
+        599.6723169246932
+      ],
+      "R_camera_from_board": [
+        [
+          0.998697464843032,
+          0.00616349428651864,
+          -0.05064963034693205
+        ],
+        [
+          -0.006827646531816099,
+          0.9998928328887324,
+          -0.012950134384705592
+        ],
+        [
+          0.05056438429307122,
+          0.013279084152358046,
+          0.9986325194810838
+        ]
+      ],
+      "R_world_from_camera": [
+        [
+          0.9986974648430322,
+          -0.006827646531816114,
+          0.050564384293071224
+        ],
+        [
+          -0.050649630346932054,
+          -0.012950134384705589,
+          0.9986325194810838
+        ],
+        [
+          -0.006163494286518641,
+          -0.9998928328887324,
+          -0.01327908415235805
+        ]
+      ],
+      "pair_delta_us_provenance_only": 17384.0,
+      "source_hashes": {
+        "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260817_194252_000\\frames\\frame_000008\\frame.json": "9dd898076ea463f4ae5f18967c66a7792e827fee582fa7214b99fccf7cd27dfe",
+        "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260817_194252_000\\frames\\frame_000008\\image.rgb565": "3be295461f18daae0b3f8c4a331e7e86a3e153329ec225733363003f9004497b",
+        "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260817_194252_000\\frames\\frame_000008\\tof.json": "f824dd796ff2c105c6feeaa38bb209b62a895e6d798f0fdf3df1480bb4a52172"
+      }
+    },
+    {
+      "frame_id": "frame_000009",
+      "valid": true,
+      "marker_count": 17,
+      "charuco_corner_count": 24,
+      "reprojection_rms_px": 0.17038479447364807,
+      "reprojection_p95_px": 0.2794408023357391,
+      "board_center_px": [
+        276.2865905761719,
+        132.90676879882812
+      ],
+      "board_coverage_fraction": 0.19623270912347518,
+      "estimated_board_plane_distance_mm": 605.5097617044664,
+      "rvec_camera_from_board": [
+        0.012980348468255949,
+        -0.05075774993167109,
+        -0.006136801990421842
+      ],
+      "tvec_camera_from_board_mm": [
+        -104.38872676491528,
+        -94.0323137082959,
+        599.8271839315261
+      ],
+      "R_camera_from_board": [
+        [
+          0.99869329827511,
+          0.005804606183375129,
+          -0.050774033988232214
+        ],
+        [
+          -0.006463306707573928,
+          0.9998969490057517,
+          -0.012818620650957275
+        ],
+        [
+          0.05069439462885485,
+          0.013130038691688677,
+          0.9986278988878534
+        ]
+      ],
+      "R_world_from_camera": [
+        [
+          0.99869329827511,
+          -0.006463306707573953,
+          0.05069439462885484
+        ],
+        [
+          -0.05077403398823221,
+          -0.012818620650957346,
+          0.9986278988878536
+        ],
+        [
+          -0.005804606183375129,
+          -0.9998969490057518,
+          -0.013130038691688939
+        ]
+      ],
+      "pair_delta_us_provenance_only": 7282.0,
+      "source_hashes": {
+        "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260817_194252_000\\frames\\frame_000009\\frame.json": "dc25b2b803971ae9d4441347c2fa5f2f71a39fec9746bb0bdc374726e3a117d0",
+        "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260817_194252_000\\frames\\frame_000009\\image.rgb565": "c2a84bafb61360d35f85bcbb3ae3505f98494b1364eb74b791d1e00fe9d3c654",
+        "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260817_194252_000\\frames\\frame_000009\\tof.json": "95ba0499dff25c37ee54be58bd75deace1cb5b010bcd379b26f128f263cafb53"
+      }
+    },
+    {
+      "frame_id": "frame_000010",
+      "valid": true,
+      "marker_count": 16,
+      "charuco_corner_count": 22,
+      "reprojection_rms_px": 0.1710059940814972,
+      "reprojection_p95_px": 0.2889931313693523,
+      "board_center_px": [
+        276.5046081542969,
+        132.97445678710938
+      ],
+      "board_coverage_fraction": 0.19633503580153616,
+      "estimated_board_plane_distance_mm": 605.1350535967265,
+      "rvec_camera_from_board": [
+        0.006900908440996497,
+        -0.048969045884491934,
+        -0.0056219902489710975
+      ],
+      "tvec_camera_from_board_mm": [
+        -104.23906544210352,
+        -94.0748357100171,
+        600.1283471012247
+      ],
+      "R_camera_from_board": [
+        [
+          0.9987854636369214,
+          0.005450738833234065,
+          -0.048968225143981754
+        ],
+        [
+          -0.0057885999809744355,
+          0.9999603935212643,
+          -0.006760436306818855
+        ],
+        [
+          0.04892943631230668,
+          0.007035682978230751,
+          0.9987774574084007
+        ]
+      ],
+      "R_world_from_camera": [
+        [
+          0.9987854636369216,
+          -0.00578859998097443,
+          0.04892943631230669
+        ],
+        [
+          -0.048968225143981754,
+          -0.0067604363068187595,
+          0.9987774574084008
+        ],
+        [
+          -0.005450738833234066,
+          -0.9999603935212644,
+          -0.007035682978230873
+        ]
+      ],
+      "pair_delta_us_provenance_only": 22524.0,
+      "source_hashes": {
+        "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260817_194252_000\\frames\\frame_000010\\frame.json": "4e08e8685c079ea10c46fa2fc7660165430ec401718d113ce31675a9b6aaa58a",
+        "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260817_194252_000\\frames\\frame_000010\\image.rgb565": "27e88660e9eded49c188eb4f92aff92110a2e7b9054b86828d87457c72d1926f",
+        "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260817_194252_000\\frames\\frame_000010\\tof.json": "52602914e6b04d745b090b687f5f12cc54eb9fdc6bd1320eaec95e47983f05a3"
+      }
+    }
+  ]
+}

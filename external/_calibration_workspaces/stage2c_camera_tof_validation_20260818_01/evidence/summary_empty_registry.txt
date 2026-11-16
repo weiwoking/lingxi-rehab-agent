@@ -1,0 +1,36 @@
+exit_code=0
+$ C:\ec\_deltar_formal\envs\deltar_py311_torch271_cu128\python.exe C:\ec\_calibration_workspaces\stage2c_camera_tof_validation_20260818_01\stage2c_camera_tof_validate.py summary
+{
+  "schema_version": "stage2c_summary.v1",
+  "generated_at": "2026-08-17T17:01:15Z",
+  "status": "INSUFFICIENT_VALIDATION_COVERAGE",
+  "specific_next_suggestion": "capture one independent validation pose",
+  "registered_validation_scans": 0,
+  "core_overall": null,
+  "pose_level_distribution": null,
+  "novelty_coverage": {
+    "feature_order": [
+      "distance_mm",
+      "yaw_like_deg",
+      "pitch_like_deg",
+      "center_x_px",
+      "center_y_px",
+      "coverage"
+    ],
+    "normalization": "Stage2B per-feature standard deviation with documented fallback scales",
+    "repeat_diagnostic_threshold": 0.35,
+    "hard_gate": false,
+    "training_pose_count": 16,
+    "poses": []
+  },
+  "frozen_authorities_unchanged": true,
+  "frozen_authority_hashes": {
+    "stage2a_candidate": "99e5fe45e56b9f9a5a05f26179a9ee124610c3d4524b4e257b88c7b149979f6b",
+    "stage2b_candidate": "b518d878be175d42906dd17f9c7e9ead74f33eef77ad11165dc5b2aacd76543e",
+    "deltar_fr_candidate": "90c6d7d57f70178231843fbc000d6aedd23ec262837c14df1f62a5f6c762ec9c"
+  },
+  "candidate_bytes_unchanged": true,
+  "promotion": false,
+  "stage3_started": false,
+  "decision_owner": "GPT + user"
+}

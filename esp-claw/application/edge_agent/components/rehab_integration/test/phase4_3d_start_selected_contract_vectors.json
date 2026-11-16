@@ -1,0 +1,110 @@
+{
+  "schema_version": "rehab.phase4.3d.start_selected.contract.v1",
+  "capability": "rehab_training_start_selected",
+  "input": {},
+  "selected_task_is_consumed": false,
+  "vectors": [
+    {
+      "name": "idle_valid_selected",
+      "training_state": "idle",
+      "selected_available": true,
+      "selected_task_id": "OT_CUP_DRINK_L2",
+      "selected_task_name": "水杯拿取与饮水训练（二级）",
+      "recorder_start_called": true,
+      "recorder_task_name": "水杯拿取与饮水训练（二级）",
+      "expected_training_started": true,
+      "expected_selected_preserved": true
+    },
+    {
+      "name": "idle_no_selected",
+      "training_state": "idle",
+      "selected_available": false,
+      "recorder_start_called": false,
+      "expected_code": "no_selected_task",
+      "expected_selected_preserved": true
+    },
+    {
+      "name": "idle_invalid_selected",
+      "training_state": "idle",
+      "selected_validation_error": "ESP_ERR_INVALID_RESPONSE",
+      "recorder_start_called": false,
+      "expected_code": "no_selected_task",
+      "expected_selected_preserved": true
+    },
+    {
+      "name": "already_recording",
+      "training_state": "recording",
+      "selected_get_called": false,
+      "recorder_start_called": false,
+      "expected_code": "already_recording",
+      "expected_second_session_created": false
+    },
+    {
+      "name": "sensors_not_ready",
+      "training_state": "idle",
+      "selected_available": true,
+      "recorder_result_code": "sensors_not_ready",
+      "expected_training_started": false,
+      "expected_selected_preserved": true
+    },
+    {
+      "name": "sd_not_ready",
+      "training_state": "idle",
+      "selected_available": true,
+      "recorder_result_code": "sd_not_ready",
+      "expected_training_started": false,
+      "expected_selected_preserved": true
+    },
+    {
+      "name": "session_csv_or_task_json_failure",
+      "training_state": "idle",
+      "selected_available": true,
+      "recorder_result_code": "file_create_failed",
+      "expected_training_started": false,
+      "expected_selected_preserved": true
+    },
+    {
+      "name": "network_disconnect_after_local_callback",
+      "training_state": "idle",
+      "selected_available": true,
+      "outbound_reply_available": false,
+      "recorder_start_called": true,
+      "local_callback_continues": true,
+      "expected_selected_preserved": true
+    },
+    {
+      "name": "repeat_after_completed_session",
+      "training_state": "idle",
+      "selected_available": true,
+      "prior_session_completed": true,
+      "recorder_start_called": true,
+      "expected_new_session": true,
+      "expected_selected_preserved": true
+    },
+    {
+      "name": "selected_query_after_training",
+      "training_state": "idle",
+      "prior_session_completed": true,
+      "selected_get_after_training": true,
+      "expected_selected_available": true,
+      "expected_selected_task_name": "水杯拿取与饮水训练（二级）"
+    },
+    {
+      "name": "new_decision_replaces_selected",
+      "training_state": "idle",
+      "new_decision_started": true,
+      "start_selected_mutates_previous_selection": false,
+      "expected_owner_of_replacement": "existing_task_decision_flow"
+    }
+  ],
+  "static_invariants": {
+    "explicit_rehab_training_start_still_registered": true,
+    "skill_daily_path_uses_start_selected_only": true,
+    "task_json_field_count": 7,
+    "task_id_written_to_task_json": false,
+    "csv_column_count": 86,
+    "recorder_source_modified": false,
+    "selected_clear_api_added": false,
+    "new_decision_replaces_selected_via_existing_logic": true
+  }
+}

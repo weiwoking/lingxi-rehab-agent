@@ -1,0 +1,82 @@
+{
+  "manifest_version": "lateral_transfer_approved_calibration_manifest_v1",
+  "segmentation_version": "lateral_transfer_segmentation_drink_reuse_v1",
+  "segmentation_core_version": "drink_hybrid_segmentation_v2_1_1",
+  "approval_status": "APPROVED_FOR_LATERAL_FINALIZATION",
+  "approved_session_count": 31,
+  "approved_rep_count": 59,
+  "healthy_normal_rep_count": 48,
+  "label_counts": {
+    "normal": 48,
+    "lf": 6,
+    "tremor": 5
+  },
+  "excluded_from_calibration": [
+    {
+      "session_id": "20260807_TASK036",
+      "exclusion_reason": "segmentation_count_mismatch_raw_pool",
+      "manual_review_status": "excluded_from_calibration_by_user"
+    },
+    {
+      "session_id": "20260807_TASK039",
+      "exclusion_reason": "segmentation_count_mismatch_raw_pool",
+      "manual_review_status": "excluded_from_calibration_by_user"
+    }
+  ],
+  "raw_pool_summary": {
+    "session_count": 33,
+    "matched_session_count": 31,
+    "mismatch_session_count": 2,
+    "expected_valid_rep_total": 61,
+    "actual_valid_rep_total": 59,
+    "mismatches": [
+      {
+        "session_id": "20260807_TASK036",
+        "reason": "segmentation_count_mismatch_raw_pool"
+      },
+      {
+        "session_id": "20260807_TASK039",
+        "reason": "segmentation_count_mismatch_raw_pool"
+      }
+    ]
+  },
+  "notes": [
+    "TASK036 and TASK039 remain in raw pool evaluation but are excluded from calibration/template/final validation by user approval.",
+    "Manual labels are used for calibration and healthy template selection. Detector output must not be used to filter healthy normal template rows."
+  ],
+  "sessions": [
+    {"session_id": "20260807_TASK024", "expected_labels": ["normal"], "expected_valid_rep_count": 1, "observed_valid_rep_count": 1, "raw_pool_matches_expected": true, "approved_for_calibration": true, "review_status": "approved", "review_notes": "approved matched raw-pool session"},
+    {"session_id": "20260807_TASK025", "expected_labels": ["normal"], "expected_valid_rep_count": 1, "observed_valid_rep_count": 1, "raw_pool_matches_expected": true, "approved_for_calibration": true, "review_status": "approved", "review_notes": "approved matched raw-pool session"},
+    {"session_id": "20260807_TASK026", "expected_labels": ["normal"], "expected_valid_rep_count": 1, "observed_valid_rep_count": 1, "raw_pool_matches_expected": true, "approved_for_calibration": true, "review_status": "approved", "review_notes": "approved matched raw-pool session"},
+    {"session_id": "20260807_TASK027", "expected_labels": ["normal"], "expected_valid_rep_count": 1, "observed_valid_rep_count": 1, "raw_pool_matches_expected": true, "approved_for_calibration": true, "review_status": "approved", "review_notes": "approved matched raw-pool session"},
+    {"session_id": "20260807_TASK028", "expected_labels": ["normal"], "expected_valid_rep_count": 1, "observed_valid_rep_count": 1, "raw_pool_matches_expected": true, "approved_for_calibration": true, "review_status": "approved", "review_notes": "approved matched raw-pool session"},
+    {"session_id": "20260807_TASK029", "expected_labels": ["normal"], "expected_valid_rep_count": 1, "observed_valid_rep_count": 1, "raw_pool_matches_expected": true, "approved_for_calibration": true, "review_status": "approved", "review_notes": "approved matched raw-pool session"},
+    {"session_id": "20260807_TASK030", "expected_labels": ["normal"], "expected_valid_rep_count": 1, "observed_valid_rep_count": 1, "raw_pool_matches_expected": true, "approved_for_calibration": true, "review_status": "approved", "review_notes": "approved matched raw-pool session"},
+    {"session_id": "20260807_TASK031", "expected_labels": ["normal"], "expected_valid_rep_count": 1, "observed_valid_rep_count": 1, "raw_pool_matches_expected": true, "approved_for_calibration": true, "review_status": "approved", "review_notes": "approved matched raw-pool session"},
+    {"session_id": "20260807_TASK032", "expected_labels": ["normal"], "expected_valid_rep_count": 1, "observed_valid_rep_count": 1, "raw_pool_matches_expected": true, "approved_for_calibration": true, "review_status": "approved", "review_notes": "approved matched raw-pool session"},
+    {"session_id": "20260807_TASK033", "expected_labels": ["normal"], "expected_valid_rep_count": 1, "observed_valid_rep_count": 1, "raw_pool_matches_expected": true, "approved_for_calibration": true, "review_status": "approved", "review_notes": "approved matched raw-pool session"},
+    {"session_id": "20260807_TASK034", "expected_labels": ["normal"], "expected_valid_rep_count": 1, "observed_valid_rep_count": 1, "raw_pool_matches_expected": true, "approved_for_calibration": true, "review_status": "approved", "review_notes": "approved matched raw-pool session"},
+    {"session_id": "20260807_TASK035", "expected_labels": ["normal"], "expected_valid_rep_count": 1, "observed_valid_rep_count": 1, "raw_pool_matches_expected": true, "approved_for_calibration": true, "review_status": "approved", "review_notes": "approved matched raw-pool session"},
+    {"session_id": "20260807_TASK036", "expected_labels": ["normal"], "expected_valid_rep_count": 1, "observed_valid_rep_count": 0, "raw_pool_matches_expected": false, "approved_for_calibration": false, "review_status": "excluded_from_calibration_by_user", "exclusion_reason": "segmentation_count_mismatch_raw_pool", "manual_review_status": "excluded_from_calibration_by_user", "review_notes": "excluded from calibration/template/final validation by user; raw CSV remains in raw pool"},
+    {"session_id": "20260807_TASK037", "expected_labels": ["normal"], "expected_valid_rep_count": 1, "observed_valid_rep_count": 1, "raw_pool_matches_expected": true, "approved_for_calibration": true, "review_status": "approved", "review_notes": "approved matched raw-pool session"},
+    {"session_id": "20260807_TASK038", "expected_labels": ["normal"], "expected_valid_rep_count": 1, "observed_valid_rep_count": 1, "raw_pool_matches_expected": true, "approved_for_calibration": true, "review_status": "approved", "review_notes": "approved matched raw-pool session"},
+    {"session_id": "20260807_TASK039", "expected_labels": ["normal"], "expected_valid_rep_count": 1, "observed_valid_rep_count": 0, "raw_pool_matches_expected": false, "approved_for_calibration": false, "review_status": "excluded_from_calibration_by_user", "exclusion_reason": "segmentation_count_mismatch_raw_pool", "manual_review_status": "excluded_from_calibration_by_user", "review_notes": "excluded from calibration/template/final validation by user; raw CSV remains in raw pool"},
+    {"session_id": "20260807_TASK040", "expected_labels": ["normal", "normal", "normal"], "expected_valid_rep_count": 3, "observed_valid_rep_count": 3, "raw_pool_matches_expected": true, "approved_for_calibration": true, "review_status": "approved", "review_notes": "approved matched raw-pool session"},
+    {"session_id": "20260807_TASK041", "expected_labels": ["normal", "normal", "normal"], "expected_valid_rep_count": 3, "observed_valid_rep_count": 3, "raw_pool_matches_expected": true, "approved_for_calibration": true, "review_status": "approved", "review_notes": "approved matched raw-pool session"},
+    {"session_id": "20260807_TASK042", "expected_labels": ["normal", "normal", "normal"], "expected_valid_rep_count": 3, "observed_valid_rep_count": 3, "raw_pool_matches_expected": true, "approved_for_calibration": true, "review_status": "approved", "review_notes": "approved matched raw-pool session"},
+    {"session_id": "20260807_TASK043", "expected_labels": ["normal", "normal", "normal"], "expected_valid_rep_count": 3, "observed_valid_rep_count": 3, "raw_pool_matches_expected": true, "approved_for_calibration": true, "review_status": "approved", "review_notes": "approved matched raw-pool session"},
+    {"session_id": "20260807_TASK045", "expected_labels": ["normal", "normal", "normal", "normal", "normal"], "expected_valid_rep_count": 5, "observed_valid_rep_count": 5, "raw_pool_matches_expected": true, "approved_for_calibration": true, "review_status": "approved", "review_notes": "approved matched raw-pool session"},
+    {"session_id": "20260807_TASK046", "expected_labels": ["normal", "normal", "normal", "normal", "normal"], "expected_valid_rep_count": 5, "observed_valid_rep_count": 5, "raw_pool_matches_expected": true, "approved_for_calibration": true, "review_status": "approved", "review_notes": "approved matched raw-pool session"},
+    {"session_id": "20260807_TASK047", "expected_labels": ["normal", "lf", "normal"], "expected_valid_rep_count": 3, "observed_valid_rep_count": 3, "raw_pool_matches_expected": true, "approved_for_calibration": true, "review_status": "approved", "review_notes": "approved matched raw-pool session; manual labels remain authoritative even if detector flags a normal rep"},
+    {"session_id": "20260807_TASK048", "expected_labels": ["normal", "lf", "normal"], "expected_valid_rep_count": 3, "observed_valid_rep_count": 3, "raw_pool_matches_expected": true, "approved_for_calibration": true, "review_status": "approved", "review_notes": "approved matched raw-pool session"},
+    {"session_id": "20260807_TASK049", "expected_labels": ["normal", "lf", "normal"], "expected_valid_rep_count": 3, "observed_valid_rep_count": 3, "raw_pool_matches_expected": true, "approved_for_calibration": true, "review_status": "approved", "review_notes": "approved matched raw-pool session"},
+    {"session_id": "20260807_TASK050", "expected_labels": ["normal", "lf", "normal"], "expected_valid_rep_count": 3, "observed_valid_rep_count": 3, "raw_pool_matches_expected": true, "approved_for_calibration": true, "review_status": "approved", "review_notes": "approved matched raw-pool session"},
+    {"session_id": "20260807_TASK052", "expected_labels": ["normal", "lf", "normal"], "expected_valid_rep_count": 3, "observed_valid_rep_count": 3, "raw_pool_matches_expected": true, "approved_for_calibration": true, "review_status": "approved", "review_notes": "approved matched raw-pool session"},
+    {"session_id": "20260807_TASK053", "expected_labels": ["normal", "lf", "normal"], "expected_valid_rep_count": 3, "observed_valid_rep_count": 3, "raw_pool_matches_expected": true, "approved_for_calibration": true, "review_status": "approved", "review_notes": "approved matched raw-pool session"},
+    {"session_id": "20260807_TASK054", "expected_labels": ["tremor"], "expected_valid_rep_count": 1, "observed_valid_rep_count": 1, "raw_pool_matches_expected": true, "approved_for_calibration": true, "review_status": "approved", "review_notes": "approved matched raw-pool session"},
+    {"session_id": "20260807_TASK055", "expected_labels": ["tremor"], "expected_valid_rep_count": 1, "observed_valid_rep_count": 1, "raw_pool_matches_expected": true, "approved_for_calibration": true, "review_status": "approved", "review_notes": "approved matched raw-pool session"},
+    {"session_id": "20260807_TASK056", "expected_labels": ["tremor"], "expected_valid_rep_count": 1, "observed_valid_rep_count": 1, "raw_pool_matches_expected": true, "approved_for_calibration": true, "review_status": "approved", "review_notes": "approved matched raw-pool session"},
+    {"session_id": "20260807_TASK057", "expected_labels": ["tremor"], "expected_valid_rep_count": 1, "observed_valid_rep_count": 1, "raw_pool_matches_expected": true, "approved_for_calibration": true, "review_status": "approved", "review_notes": "approved matched raw-pool session"},
+    {"session_id": "20260807_TASK058", "expected_labels": ["tremor"], "expected_valid_rep_count": 1, "observed_valid_rep_count": 1, "raw_pool_matches_expected": true, "approved_for_calibration": true, "review_status": "approved", "review_notes": "approved matched raw-pool session"}
+  ]
+}

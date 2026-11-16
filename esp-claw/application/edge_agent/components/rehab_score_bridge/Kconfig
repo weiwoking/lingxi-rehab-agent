@@ -1,0 +1,10 @@
+menu "Rehabilitation score bridge"
+
+config REHAB_SCORE_BRIDGE_ENABLED
+    bool "Enable the P4-to-PC rehabilitation score bridge"
+    default y
+    help
+        Upload finalized rehabilitation sessions to the configured trusted-LAN
+        PC score service and persist compact status/results on the SD card.
+
+endmenu

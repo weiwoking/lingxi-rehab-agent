@@ -1,0 +1,19 @@
+{
+  "schema_version": "rehab.task_decision.stage3_contract_vectors.v1",
+  "task_order": [
+    "OT_CUP_TRANSFER_L1",
+    "OT_CUP_DRINK_L2",
+    "OT_CUP_DRINK_L3",
+    "OT_BALL_TRANSFER_L1",
+    "OT_BALL_TRANSFER_L2"
+  ],
+  "ability_cases": [
+    {"ability_level": 2, "forced_zero": ["OT_CUP_DRINK_L3"]},
+    {"ability_level": 1, "forced_zero": ["OT_CUP_DRINK_L2", "OT_CUP_DRINK_L3", "OT_BALL_TRANSFER_L2"]}
+  ],
+  "scene_cases": [
+    {"classes": ["cup"], "eligible_groups": ["cup"], "blocked_groups": ["ball"]},
+    {"classes": ["bottle"], "eligible_groups": ["cup"], "blocked_groups": ["ball"]},
+    {"classes": ["volleyball"], "eligible_groups": ["ball"], "blocked_groups": ["cup"]}
+  ]
+}

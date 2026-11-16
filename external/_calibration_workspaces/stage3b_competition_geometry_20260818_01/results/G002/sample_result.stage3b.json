@@ -1,0 +1,692 @@
+{
+  "acceptance": {
+    "all_targets_detected": true,
+    "all_targets_resolved": true,
+    "catastrophic_geometry": false,
+    "catastrophic_reasons": [],
+    "competition_acceptable_band_all_targets": false,
+    "decision": "ROBUSTNESS_DIAGNOSTIC",
+    "owner_judgment_state": "NOT_PRIMARY",
+    "preferred_band_all_targets": false,
+    "role": "ROBUSTNESS_EXTRA",
+    "same_lower_support_difference_mm": 39.164617789080125,
+    "thresholds_are_engineering_bands_not_single_hard_gate": true
+  },
+  "authority_hashes": {
+    "scene_truth": "2797b6f431ea28393e8a80b9ba4137c31bebe3c641e5058d263ae8bea5e281ec",
+    "stage2": "63c974cd2ff64dd0f135d47d8c92eb170d06658cb315563fb93588862ba8b057",
+    "stage3a": "d2df3939a0af4eea4b584bddf6053b45094cb457b8ecbc1080e5c82431f1a464"
+  },
+  "candidate_chain": {
+    "formal_frame_count": 11,
+    "frame_failure_count": 0,
+    "full_world_rotation_constructed": false,
+    "horizontal_world_authority": "NOT_VALIDATED",
+    "raw_geometry_authority": "RAW_GEOMETRY_BEFORE_STABILIZER",
+    "raw_geometry_path": "C:\\ec\\_calibration_workspaces\\stage3b_competition_geometry_20260818_01\\results\\G002\\candidate_chain_attempt_01\\stage8b_all_object_geometry.v1.json",
+    "sample_id": "G002",
+    "scan_id": "scan_20260818_092729_000",
+    "schema_version": "stage3b_candidate_chain_execution.v1",
+    "stabilized_secondary_available": true,
+    "stabilized_secondary_error": null,
+    "stage2_dynamic_fr_runtime_entries": 22,
+    "world_z_authority": "Stage3A gravity candidate"
+  },
+  "full_world_rotation_constructed": false,
+  "generated_at": "2026-08-18T09:28:36.325029Z",
+  "horizontal_world_authority": "NOT_VALIDATED",
+  "raw": {
+    "all_targets_resolved": true,
+    "detector_class_authority": {
+      "bottle": "bottle",
+      "volleyball": "sports ball"
+    },
+    "schema_version": "stage3b_target_matching.v1",
+    "target_order": [
+      "upper_bottle",
+      "lower_bottle",
+      "lower_volleyball"
+    ],
+    "targets": {
+      "lower_bottle": {
+        "candidate_count": 11,
+        "confidence": {
+          "count": 11,
+          "median": 0.9571149388914922,
+          "p05": 0.9561955290527044,
+          "p95": 0.958951375288924,
+          "rms": 0.957361230044722
+        },
+        "detected": true,
+        "logical_objects": [
+          "frame_000000:logical:000",
+          "frame_000001:logical:000",
+          "frame_000002:logical:000",
+          "frame_000003:logical:000",
+          "frame_000004:logical:000",
+          "frame_000005:logical:000",
+          "frame_000006:logical:000",
+          "frame_000007:logical:000",
+          "frame_000008:logical:000",
+          "frame_000009:logical:000",
+          "frame_000010:logical:000"
+        ],
+        "match_status": "RESOLVED",
+        "object_height_error": {
+          "absolute_mm": 18.694437868859268,
+          "percent": 10.385798816032926,
+          "signed_mm": -18.694437868859268,
+          "truth_uncertainty_mm": 5.0
+        },
+        "object_height_mm": {
+          "count": 11,
+          "median": 161.30556213114073,
+          "p05": 147.09399271604656,
+          "p95": 169.2137841760425,
+          "rms": 160.91658905195854
+        },
+        "scene_depth_mm": {
+          "count": 11,
+          "median": 1972.1705913543701,
+          "p05": 1822.8328824043274,
+          "p95": 2014.3729448318481,
+          "rms": 1947.8694990656456
+        },
+        "source_consistent": true,
+        "source_frames": [
+          "frame_000000",
+          "frame_000001",
+          "frame_000002",
+          "frame_000003",
+          "frame_000004",
+          "frame_000005",
+          "frame_000006",
+          "frame_000007",
+          "frame_000008",
+          "frame_000009",
+          "frame_000010"
+        ],
+        "support_error": {
+          "absolute_mm": 24.122863849107375,
+          "percent": 3.3272915653941206,
+          "signed_mm": -24.122863849107375,
+          "truth_uncertainty_mm": 5.0
+        },
+        "support_height_mm": {
+          "count": 11,
+          "median": 700.8771361508926,
+          "p05": 691.8785578689167,
+          "p95": 721.8086941785875,
+          "rms": 702.9047516194597
+        },
+        "support_source": "point_p5_fallback",
+        "support_source_counts": {
+          "point_p5_fallback": 11
+        },
+        "target": "lower_bottle",
+        "top_z_mm": {
+          "count": 11,
+          "median": 862.6122652321338,
+          "p05": 860.2824936571384,
+          "p95": 868.902686894634,
+          "rms": 863.5558828340148
+        },
+        "truth": {
+          "detector_class_name": "bottle",
+          "diagnostic_expected_top_z_mm": 905.0,
+          "expected_object_height_mm": 180.0,
+          "expected_support_mm": 725.0,
+          "truth_uncertainty_mm": 5.0
+        },
+        "unresolved_reason": null,
+        "valid_frame_count": 11
+      },
+      "lower_volleyball": {
+        "candidate_count": 11,
+        "confidence": {
+          "count": 11,
+          "median": 0.3862700437885024,
+          "p05": 0.3688895046280706,
+          "p95": 0.40420810444018396,
+          "rms": 0.38684115276836484
+        },
+        "detected": true,
+        "logical_objects": [
+          "frame_000000:logical:002",
+          "frame_000001:logical:002",
+          "frame_000002:logical:002",
+          "frame_000003:logical:002",
+          "frame_000004:logical:001",
+          "frame_000005:logical:002",
+          "frame_000006:logical:002",
+          "frame_000007:logical:002",
+          "frame_000008:logical:002",
+          "frame_000009:logical:002",
+          "frame_000010:logical:002"
+        ],
+        "match_status": "RESOLVED",
+        "object_height_error": {
+          "absolute_mm": 50.95547524465064,
+          "percent": 26.131012945974692,
+          "signed_mm": -50.95547524465064,
+          "truth_uncertainty_mm": 5.0
+        },
+        "object_height_mm": {
+          "count": 11,
+          "median": 144.04452475534936,
+          "p05": 124.77383512583037,
+          "p95": 189.3786851524785,
+          "rms": 152.39221469873922
+        },
+        "scene_depth_mm": {
+          "count": 11,
+          "median": 1531.227946281433,
+          "p05": 1501.3270378112793,
+          "p95": 1725.318044424057,
+          "rms": 1573.616188300591
+        },
+        "source_consistent": true,
+        "source_frames": [
+          "frame_000000",
+          "frame_000001",
+          "frame_000002",
+          "frame_000003",
+          "frame_000004",
+          "frame_000005",
+          "frame_000006",
+          "frame_000007",
+          "frame_000008",
+          "frame_000009",
+          "frame_000010"
+        ],
+        "support_error": {
+          "absolute_mm": 15.04175393997275,
+          "percent": 2.0747246813755518,
+          "signed_mm": 15.04175393997275,
+          "truth_uncertainty_mm": 5.0
+        },
+        "support_height_mm": {
+          "count": 11,
+          "median": 740.0417539399728,
+          "p05": 709.8941528335656,
+          "p95": 755.397677097327,
+          "rms": 737.3675005960438
+        },
+        "support_source": "point_p5_fallback",
+        "support_source_counts": {
+          "point_p5_fallback": 11
+        },
+        "target": "lower_volleyball",
+        "top_z_mm": {
+          "count": 11,
+          "median": 887.0986564026229,
+          "p05": 880.1715122231574,
+          "p95": 899.2728379860441,
+          "rms": 887.8657391652008
+        },
+        "truth": {
+          "detector_class_name": "sports ball",
+          "diagnostic_expected_top_z_mm": 920.0,
+          "expected_object_height_mm": 195.0,
+          "expected_support_mm": 725.0,
+          "truth_uncertainty_mm": 5.0
+        },
+        "unresolved_reason": null,
+        "valid_frame_count": 11
+      },
+      "upper_bottle": {
+        "candidate_count": 10,
+        "confidence": {
+          "count": 10,
+          "median": 0.9354242205790563,
+          "p05": 0.9249840154465834,
+          "p95": 0.9357526661051685,
+          "rms": 0.9334837086458068
+        },
+        "detected": true,
+        "logical_objects": [
+          "frame_000000:logical:001",
+          "frame_000001:logical:001",
+          "frame_000002:logical:001",
+          "frame_000003:logical:001",
+          "frame_000005:logical:001",
+          "frame_000006:logical:001",
+          "frame_000007:logical:001",
+          "frame_000008:logical:001",
+          "frame_000009:logical:001",
+          "frame_000010:logical:001"
+        ],
+        "match_status": "RESOLVED",
+        "object_height_error": {
+          "absolute_mm": 62.20015241526562,
+          "percent": 34.55564023070312,
+          "signed_mm": -62.20015241526562,
+          "truth_uncertainty_mm": 5.0
+        },
+        "object_height_mm": {
+          "count": 10,
+          "median": 117.79984758473438,
+          "p05": 111.09705796905135,
+          "p95": 120.84397647875994,
+          "rms": 117.09542121328059
+        },
+        "scene_depth_mm": {
+          "count": 10,
+          "median": 1825.937956571579,
+          "p05": 1816.0057574510574,
+          "p95": 1849.731919169426,
+          "rms": 1829.514405418023
+        },
+        "source_consistent": true,
+        "source_frames": [
+          "frame_000000",
+          "frame_000001",
+          "frame_000002",
+          "frame_000003",
+          "frame_000005",
+          "frame_000006",
+          "frame_000007",
+          "frame_000008",
+          "frame_000009",
+          "frame_000010"
+        ],
+        "support_error": {
+          "absolute_mm": 43.09965219003652,
+          "percent": 4.046915698594979,
+          "signed_mm": 43.09965219003652,
+          "truth_uncertainty_mm": 5.0
+        },
+        "support_height_mm": {
+          "count": 10,
+          "median": 1108.0996521900365,
+          "p05": 1106.2118338916887,
+          "p95": 1117.2217257760194,
+          "rms": 1109.7015734790289
+        },
+        "support_source": "point_p5_fallback",
+        "support_source_counts": {
+          "point_p5_fallback": 10
+        },
+        "target": "upper_bottle",
+        "top_z_mm": {
+          "count": 10,
+          "median": 1226.5291620114358,
+          "p05": 1223.6555850800685,
+          "p95": 1229.4031866467965,
+          "rms": 1226.7411130435655
+        },
+        "truth": {
+          "detector_class_name": "bottle",
+          "diagnostic_expected_top_z_mm": 1245.0,
+          "expected_object_height_mm": 180.0,
+          "expected_support_mm": 1065.0,
+          "truth_uncertainty_mm": 5.0
+        },
+        "unresolved_reason": null,
+        "valid_frame_count": 10
+      }
+    },
+    "unassigned_bottle_candidates": []
+  },
+  "raw_geometry_authority": "RAW_GEOMETRY_BEFORE_STABILIZER",
+  "result_path": "C:\\ec\\_calibration_workspaces\\stage3b_competition_geometry_20260818_01\\results\\G002\\sample_result.stage3b.json",
+  "role": "ROBUSTNESS_EXTRA",
+  "sample_id": "G002",
+  "scan_id": "scan_20260818_092729_000",
+  "scan_path": "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260818_092729_000",
+  "scene_depth_diagnostic": {
+    "distance_is_diagnostic_only": true,
+    "tof_axial_z_mm": {
+      "median": 1748.0,
+      "p05": 982.8,
+      "p95": 2062.0
+    },
+    "tof_valid_zone_observations": 609,
+    "tof_valid_zones_per_frame": [
+      55,
+      56,
+      53,
+      52,
+      57,
+      57,
+      56,
+      56,
+      54,
+      55,
+      58
+    ]
+  },
+  "schema_version": "stage3b_sample_result.v1",
+  "source_hashes": {
+    ".validation_receipt.json": "b86e405c7dd65b0298eab901af7f51f86460f3ccd6e0bd20f34a946296bffa12",
+    "frames\\frame_000000\\frame.json": "bb50be96042722c32447115efee660c396338526ddc6fd3a4a8968b8a8fc2538",
+    "frames\\frame_000000\\image.rgb565": "7d4729b84a4d4e99c29206ba3d4d91ed576f89df3bb95102789b82441bd79b48",
+    "frames\\frame_000000\\tof.json": "ff47507a1e472dfdef02d0d659da14c0043747187c950638bf4579c50a9438e5",
+    "frames\\frame_000001\\frame.json": "d1a0c0fb431a0972b1a18d2bb9f6a806845782c00d44c916d0cc01e97dfe652d",
+    "frames\\frame_000001\\image.rgb565": "974f66ca68adebbad4fd85e0dab43008dd69166fce8d129d11a4b5a2ede764ac",
+    "frames\\frame_000001\\tof.json": "8ae9c56eafb3125a2d068bed3ef3f8196cad4debebfcf3309805253854c48598",
+    "frames\\frame_000002\\frame.json": "c6d4282a08a2325ae4e4809c0f0e70e28099db20df23173716ea618733bd25db",
+    "frames\\frame_000002\\image.rgb565": "17ce03717be89cd3e8f3103fd8a12cc408cd150ef76c965005e9217226393b7b",
+    "frames\\frame_000002\\tof.json": "4c3daa61458df1f1b637c97f33e3999fb6aeb08fe5ac0818dbb2b3c0c68125ff",
+    "frames\\frame_000003\\frame.json": "87c3af7ff2d62f5f6c66425f86626628932a7d9e5591a59511cb7ea973c0a091",
+    "frames\\frame_000003\\image.rgb565": "ac232cf58635f6001b33de92a722f2e582d69ca69474e6a7254db46727055cfb",
+    "frames\\frame_000003\\tof.json": "0240b689055913025b64cdcdbb8c9ab70702efb1303b8bde0e9ed58ac2b211f3",
+    "frames\\frame_000004\\frame.json": "31753140cedc8fc6e47a01ba6efccc5d556359202b9d2c27a4f6927c8f1df848",
+    "frames\\frame_000004\\image.rgb565": "c456f159aef569fb2ff137323234bd473c7a3b4105dce91e10b6eae0b78757db",
+    "frames\\frame_000004\\tof.json": "79797c43faa25d334d37efbafe200eeea4e303d94081dc153900cd15e313f55b",
+    "frames\\frame_000005\\frame.json": "80bff879e4a3a629744097157981579d32fa67f00003297f6c562f6e5251c151",
+    "frames\\frame_000005\\image.rgb565": "3cb42a88d344aa72de24e258213f06812a02bdb33e3416b430bdb2278515725c",
+    "frames\\frame_000005\\tof.json": "360ad7baaaa92d198517d32608484aaa4c46c1d78d839e53a51cd7fa1d9f9411",
+    "frames\\frame_000006\\frame.json": "cb460dfee8d543d7be22b925b755bee8c87b2f3501798d5bd31291fb32b417b6",
+    "frames\\frame_000006\\image.rgb565": "2b19588e2c8d4c9a45c73a5645acd1fb2cecf18337aba4c3de48d35ba6e9161b",
+    "frames\\frame_000006\\tof.json": "a3889ef2d93164437e1802e35dc8963f9113eb1cf198f18ce6ce66993f5994ad",
+    "frames\\frame_000007\\frame.json": "081a70ef91aa36b745b50038bae59b13972df48eb42983d560a6a84058230f55",
+    "frames\\frame_000007\\image.rgb565": "99f0af7f6f09bfdcb7bdfd9a696873b01632c2191f8e3b3e19906b94a3661cc2",
+    "frames\\frame_000007\\tof.json": "9c67c81131a044f533c76ec4419a8092272535a206084811224ed459a7d1574b",
+    "frames\\frame_000008\\frame.json": "9de3fa2f4af733158a8c8b9427e5774716c21b72a42a37972a8e378e7d350524",
+    "frames\\frame_000008\\image.rgb565": "bc803381034540a6ab1b46ef4917c7b95514e06e29db44fbf32bdce7dbbe7ca6",
+    "frames\\frame_000008\\tof.json": "8ba13a4e25c1e21d4b07f936b8b4c43576b82cf3cdfabbaf86eadcc6a559052d",
+    "frames\\frame_000009\\frame.json": "959db0e7fca481d63d11187994219dcaa319f692c684087bc03db6ec398e2df6",
+    "frames\\frame_000009\\image.rgb565": "97564937ad1a45dcebd56b8be21643fbe1ef45fd996ee4dfbb5456e51693f122",
+    "frames\\frame_000009\\tof.json": "fc88e9ee940fa63a177d88e4d04b4cdce1f7f868c97802d92ada6c4182cc6793",
+    "frames\\frame_000010\\frame.json": "d37a65ff7e4e18423af40568710905ccf0afbfee617673d85655dcf79fe6082f",
+    "frames\\frame_000010\\image.rgb565": "e6be0264b13c8407f8521d9aee57e1546d6edc6ca2498fe125a6a9f26f54a76e",
+    "frames\\frame_000010\\tof.json": "186133c651dc0c0fe0df7899dad08ddbfddf3a22d827dbcfd1804931740f06fb",
+    "scan.json": "d901036746ef949794b1fb3d0613230db85d2a4081e2e9387822aba4ae2b8a25",
+    "service_job.json": "69a7c59f8230cf88a4247a5c9e0237ce572fd7230cb724e370e7e023b9bde2c9"
+  },
+  "stabilized_secondary": {
+    "all_targets_resolved": true,
+    "detector_class_authority": {
+      "bottle": "bottle",
+      "volleyball": "sports ball"
+    },
+    "schema_version": "stage3b_target_matching.v1",
+    "target_order": [
+      "upper_bottle",
+      "lower_bottle",
+      "lower_volleyball"
+    ],
+    "targets": {
+      "lower_bottle": {
+        "candidate_count": 11,
+        "confidence": {
+          "count": 11,
+          "median": 0.6885945796966553,
+          "p05": 0.625533401966095,
+          "p95": 0.7156563699245453,
+          "rms": 0.6828632007774548
+        },
+        "detected": true,
+        "logical_objects": [
+          "scene_object_bottle_157231c3b6c72035",
+          "scene_object_bottle_2b36c0869bcfbc4d",
+          "scene_object_bottle_4648417fb2661bfe",
+          "scene_object_bottle_48ca1082fd661a05",
+          "scene_object_bottle_490486da9affda73",
+          "scene_object_bottle_50ae5f2cb014c4f6",
+          "scene_object_bottle_7fd043b854b4d6f8",
+          "scene_object_bottle_b6c7eaf340716619",
+          "scene_object_bottle_ec6850b475f173b5",
+          "scene_object_bottle_fbf7396114e46a41",
+          "scene_object_bottle_fdd4642bcdfd6702"
+        ],
+        "match_status": "RESOLVED",
+        "object_height_error": {
+          "absolute_mm": 18.694437868859268,
+          "percent": 10.385798816032926,
+          "signed_mm": -18.694437868859268,
+          "truth_uncertainty_mm": 5.0
+        },
+        "object_height_mm": {
+          "count": 11,
+          "median": 161.30556213114073,
+          "p05": 147.09399271604656,
+          "p95": 175.05952200787004,
+          "rms": 162.14938115438082
+        },
+        "scene_depth_mm": {
+          "count": 11,
+          "median": 1972.1705913543701,
+          "p05": 1822.8328824043274,
+          "p95": 2014.3729448318481,
+          "rms": 1947.8694990656456
+        },
+        "source_consistent": true,
+        "source_frames": [
+          "frame_000000",
+          "frame_000001",
+          "frame_000002",
+          "frame_000003",
+          "frame_000004",
+          "frame_000005",
+          "frame_000006",
+          "frame_000007",
+          "frame_000008",
+          "frame_000009",
+          "frame_000010"
+        ],
+        "support_error": {
+          "absolute_mm": 16.400647509620626,
+          "percent": 2.2621582771890516,
+          "signed_mm": -16.400647509620626,
+          "truth_uncertainty_mm": 5.0
+        },
+        "support_height_mm": {
+          "count": 11,
+          "median": 708.5993524903794,
+          "p05": 702.3032718954605,
+          "p95": 718.0857800445834,
+          "rms": 708.9831163861993
+        },
+        "support_source": "package_stabilized",
+        "support_source_counts": {
+          "package_stabilized": 11
+        },
+        "target": "lower_bottle",
+        "top_z_mm": {
+          "count": 11,
+          "median": 869.9049146215201,
+          "p05": 865.1797727606299,
+          "p95": 877.3627939033305,
+          "rms": 870.8451081489336
+        },
+        "truth": {
+          "detector_class_name": "bottle",
+          "diagnostic_expected_top_z_mm": 905.0,
+          "expected_object_height_mm": 180.0,
+          "expected_support_mm": 725.0,
+          "truth_uncertainty_mm": 5.0
+        },
+        "unresolved_reason": null,
+        "valid_frame_count": 11
+      },
+      "lower_volleyball": {
+        "candidate_count": 11,
+        "confidence": {
+          "count": 11,
+          "median": 0.96720290184021,
+          "p05": 0.966345876455307,
+          "p95": 0.9695472419261932,
+          "rms": 0.9674703246429952
+        },
+        "detected": true,
+        "logical_objects": [
+          "scene_object_sports ball_13a7cafd0cc39474",
+          "scene_object_sports ball_163776559f3c299f",
+          "scene_object_sports ball_3077721a253b2803",
+          "scene_object_sports ball_6f3bb47b6e24de21",
+          "scene_object_sports ball_7b1c04bb2a49676b",
+          "scene_object_sports ball_ada042ba19f48e82",
+          "scene_object_sports ball_d67b71945e3914dd",
+          "scene_object_sports ball_db8bd07ee5962721",
+          "scene_object_sports ball_e0822e996c8440f4",
+          "scene_object_sports ball_e189f07bf7e314a1",
+          "scene_object_sports ball_e3b4b77ed7c5aa9b"
+        ],
+        "match_status": "RESOLVED",
+        "object_height_error": {
+          "absolute_mm": 48.576828280764175,
+          "percent": 24.911193990135473,
+          "signed_mm": -48.576828280764175,
+          "truth_uncertainty_mm": 5.0
+        },
+        "object_height_mm": {
+          "count": 11,
+          "median": 146.42317171923582,
+          "p05": 130.90889290617127,
+          "p95": 205.1183914288457,
+          "rms": 159.4564756844682
+        },
+        "scene_depth_mm": {
+          "count": 11,
+          "median": 1531.227946281433,
+          "p05": 1501.3270378112793,
+          "p95": 1725.318044424057,
+          "rms": 1573.616188300591
+        },
+        "source_consistent": true,
+        "source_frames": [
+          "frame_000000",
+          "frame_000001",
+          "frame_000002",
+          "frame_000003",
+          "frame_000004",
+          "frame_000005",
+          "frame_000006",
+          "frame_000007",
+          "frame_000008",
+          "frame_000009",
+          "frame_000010"
+        ],
+        "support_error": {
+          "absolute_mm": 1.2493121909915317,
+          "percent": 0.17231892289538367,
+          "signed_mm": 1.2493121909915317,
+          "truth_uncertainty_mm": 5.0
+        },
+        "support_height_mm": {
+          "count": 11,
+          "median": 726.2493121909915,
+          "p05": 702.9385274933356,
+          "p95": 732.4985512086517,
+          "rms": 722.0592439778635
+        },
+        "support_source": "package_stabilized",
+        "support_source_counts": {
+          "package_stabilized": 11
+        },
+        "target": "lower_volleyball",
+        "top_z_mm": {
+          "count": 11,
+          "median": 873.05960246394,
+          "p05": 863.1511277288337,
+          "p95": 908.0569189221814,
+          "rms": 879.5494062596174
+        },
+        "truth": {
+          "detector_class_name": "sports ball",
+          "diagnostic_expected_top_z_mm": 920.0,
+          "expected_object_height_mm": 195.0,
+          "expected_support_mm": 725.0,
+          "truth_uncertainty_mm": 5.0
+        },
+        "unresolved_reason": null,
+        "valid_frame_count": 11
+      },
+      "upper_bottle": {
+        "candidate_count": 10,
+        "confidence": {
+          "count": 10,
+          "median": 0.31578727066516876,
+          "p05": 0.24045149013400077,
+          "p95": 0.5225687831640242,
+          "rms": 0.3670791938285366
+        },
+        "detected": true,
+        "logical_objects": [
+          "scene_object_bottle_2077a08c56e56575",
+          "scene_object_bottle_25160ccb41e40cd4",
+          "scene_object_bottle_48ec62c82d2cc221",
+          "scene_object_bottle_53316b48d065c31b",
+          "scene_object_bottle_894e0c330ef8c7d9",
+          "scene_object_bottle_8b740139744f889c",
+          "scene_object_bottle_93dc19e37243917c",
+          "scene_object_bottle_9a56a701fe48b3c4",
+          "scene_object_bottle_a6110a8ef3205b73",
+          "scene_object_bottle_d33666f71e11a6e2"
+        ],
+        "match_status": "RESOLVED",
+        "object_height_error": {
+          "absolute_mm": 61.02820885814401,
+          "percent": 33.904560476746674,
+          "signed_mm": -61.02820885814401,
+          "truth_uncertainty_mm": 5.0
+        },
+        "object_height_mm": {
+          "count": 10,
+          "median": 118.97179114185599,
+          "p05": 111.09705796905135,
+          "p95": 153.54929709475348,
+          "rms": 124.97178368955888
+        },
+        "scene_depth_mm": {
+          "count": 10,
+          "median": 1825.937956571579,
+          "p05": 1816.0057574510574,
+          "p95": 1849.731919169426,
+          "rms": 1829.514405418023
+        },
+        "source_consistent": true,
+        "source_frames": [
+          "frame_000000",
+          "frame_000001",
+          "frame_000002",
+          "frame_000003",
+          "frame_000005",
+          "frame_000006",
+          "frame_000007",
+          "frame_000008",
+          "frame_000009",
+          "frame_000010"
+        ],
+        "support_error": {
+          "absolute_mm": 30.006721524533532,
+          "percent": 2.817532537514886,
+          "signed_mm": 30.006721524533532,
+          "truth_uncertainty_mm": 5.0
+        },
+        "support_height_mm": {
+          "count": 10,
+          "median": 1095.0067215245335,
+          "p05": 1067.922245491238,
+          "p95": 1101.696299733062,
+          "rms": 1091.5485669711588
+        },
+        "support_source": "package_stabilized",
+        "support_source_counts": {
+          "package_stabilized": 10
+        },
+        "target": "upper_bottle",
+        "top_z_mm": {
+          "count": 10,
+          "median": 1213.480198508096,
+          "p05": 1211.9553387203866,
+          "p95": 1222.0779487230982,
+          "rms": 1214.9492518213788
+        },
+        "truth": {
+          "detector_class_name": "bottle",
+          "diagnostic_expected_top_z_mm": 1245.0,
+          "expected_object_height_mm": 180.0,
+          "expected_support_mm": 1065.0,
+          "truth_uncertainty_mm": 5.0
+        },
+        "unresolved_reason": null,
+        "valid_frame_count": 10
+      }
+    },
+    "unassigned_bottle_candidates": []
+  },
+  "world_z_authority": "Stage3A gravity candidate"
+}

@@ -1,0 +1,37 @@
+﻿git.exe : warning: in the working copy of 'C:\ec\_deltar_p4_pipeline\artifacts\stage7c_robustfix_evidence_work_20260724
+_043714\before_after\before\src\deltar_p4_pipeline\camera_world_contracts.py', LF will be replaced by CRLF the next tim
+e Git touches it
+At line:2 char:15
++ ... iffOutput = & git diff --no-index -- 'C:\ec\_deltar_p4_pipeline\artif ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (warning: in the... Git touches it:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+warning: in the working copy of 'C:\ec\_deltar_p4_pipeline\artifacts\stage7c_robustfix_evidence_work_20260724_043714\be
+fore_after\after\src\deltar_p4_pipeline\camera_world_contracts.py', LF will be replaced by CRLF the next time Git touch
+es it
+diff --git "a/C:\\ec\\_deltar_p4_pipeline\\artifacts\\stage7c_robustfix_evidence_work_20260724_043714\\before_after\\before\\src\\deltar_p4_pipeline\\camera_world_contracts.py" "b/C:\\ec\\_deltar_p4_pipeline\\artifacts\\stage7c_robustfix_evidence_work_20260724_043714\\before_after\\after\\src\\deltar_p4_pipeline\\camera_world_contracts.py"
+index 30dae8d..6f25812 100644
+--- "a/C:\\ec\\_deltar_p4_pipeline\\artifacts\\stage7c_robustfix_evidence_work_20260724_043714\\before_after\\before\\src\\deltar_p4_pipeline\\camera_world_contracts.py"
++++ "b/C:\\ec\\_deltar_p4_pipeline\\artifacts\\stage7c_robustfix_evidence_work_20260724_043714\\before_after\\after\\src\\deltar_p4_pipeline\\camera_world_contracts.py"
+@@ -29,6 +29,9 @@ FROZEN_CAMERA_TOF_SHA256 = (
+ FROZEN_CAMERA_TOF_PROFILE_ID = "camera_tof_extrinsics_6698a99489d42fb2"
+ CAMERA_HEIGHT_MM = 969.0
+ CAMERA_HEIGHT_UNCERTAINTY_MM = 5.0
++MIN_CAPTURED_FRAME_COUNT = 15
++MIN_ORIENTATION_INLIER_COUNT = 14
++MIN_ORIENTATION_INLIERS_PER_POSE = 4
+ 
+ WORLD_FRAME = {
+     "x_axis": "vehicle_right",
+@@ -716,8 +719,8 @@ def validate_profile(value: dict[str, Any], *, require_pass: bool = True) -> dic
+             )
+     if require_pass and (
+         summary["pose_count"] < 3
+-        or summary["frame_count"] < 15
+-        or summary["valid_frame_count"] < 15
++        or summary["frame_count"] < MIN_CAPTURED_FRAME_COUNT
++        or summary["valid_frame_count"] < MIN_ORIENTATION_INLIER_COUNT
+     ):
+         fail(
+             "E_CAMERA_WORLD_CAPTURE_GATE",

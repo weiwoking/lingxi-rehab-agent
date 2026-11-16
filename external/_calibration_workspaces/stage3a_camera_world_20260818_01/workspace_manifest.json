@@ -1,0 +1,47 @@
+{
+  "schema_version": "stage3a_workspace_manifest.v1",
+  "workspace": "C:\\ec\\_calibration_workspaces\\stage3a_camera_world_20260818_01",
+  "purpose": "final-body Camera-to-World toolchain and candidate preparation only",
+  "status": "FIXED_BOARD_MODE_READY_EMPTY_REGISTRY",
+  "board_mode": "FIXED_VERTICAL_BOARD",
+  "board_moved_between_poses": false,
+  "capture_mode": "VEHICLE_MULTI_DISTANCE",
+  "distance_coverage": "near_mid_far",
+  "stage3a_toolchain_ready": true,
+  "real_capture_started": false,
+  "real_data_solved": false,
+  "candidate_generated": false,
+  "promotion": false,
+  "stage3b_started": false,
+  "formal_runtime_modified": false,
+  "allowed_write_root": "C:\\ec\\_calibration_workspaces\\stage3a_camera_world_20260818_01",
+  "report_write_root": "C:\\ec\\_codex_reports",
+  "forbidden_write_roots": [
+    "C:\\calibration",
+    "C:\\ec\\_deltar_p4_pipeline",
+    "C:\\ec\\_deltar_formal",
+    "C:\\ec\\esp-claw",
+    "all Stage2 workspaces and final bundle"
+  ],
+  "forbidden_operations": [
+    "build",
+    "flash",
+    "monitor",
+    "reconfigure",
+    "clean/fullclean",
+    "bmgr",
+    "runtime config switch",
+    "promotion",
+    "Stage3B tuning",
+    "git commit"
+  ],
+  "directories": [
+    "observations",
+    "diagnostics",
+    "candidate",
+    "validation",
+    "plots",
+    "tests",
+    "source_audit"
+  ]
+}

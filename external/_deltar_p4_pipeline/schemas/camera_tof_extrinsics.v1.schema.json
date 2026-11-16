@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "camera_tof_extrinsics.v1",
+  "title": "Stage 7B measured Camera-from-ToF extrinsics",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "profile_id", "created_at", "camera_profile_id",
+    "camera_resolution", "tof_model", "tof_resolution", "tof_frequency_hz",
+    "transform_direction", "matrix_convention", "T_camera_from_tof",
+    "rotation_matrix", "translation", "translation_unit", "orientation",
+    "orientation_resolution_status", "zone_index_contract", "ray_model",
+    "distance_semantics", "zone_rays", "zone_valid_mask",
+    "camera_tof_overlap_mask", "solver_method", "training_pose_count",
+    "heldout_pose_count", "training_point_count", "heldout_point_count",
+    "residual_summary", "candidate_margin", "gauge_equivalence",
+    "mechanical_prior", "mechanical_prior_is_measured", "validation_status",
+    "camera_tof_extrinsics", "absolute_geometry_valid", "world_pose_resolved",
+    "source_data_hashes", "warnings", "unresolved_fields"
+  ],
+  "properties": {
+    "schema_version": {"const": "camera_tof_extrinsics.v1"},
+    "profile_id": {"type": "string", "pattern": "^[A-Za-z0-9_.-]{1,128}$"},
+    "created_at": {"type": "string", "format": "date-time"},
+    "camera_profile_id": {"type": "string", "minLength": 1},
+    "camera_resolution": {"const": [640, 360]},
+    "tof_model": {"const": "VL53L5CX"},
+    "tof_resolution": {"const": [8, 8]},
+    "tof_frequency_hz": {"const": 15},
+    "transform_direction": {"const": "T_camera_from_tof"},
+    "matrix_convention": {"const": "row-major, column-vector"},
+    "T_camera_from_tof": {"$ref": "#/$defs/matrix4"},
+    "rotation_matrix": {"$ref": "#/$defs/matrix3"},
+    "translation": {"$ref": "#/$defs/vector3"},
+    "translation_unit": {"const": "mm"},
+    "orientation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "raw_index_for_canonical_index"],
+      "properties": {
+        "name": {"enum": ["identity", "rotate_90_cw", "rotate_180", "rotate_270_cw", "flip_horizontal", "flip_vertical", "transpose_main_diagonal", "transpose_anti_diagonal"]},
+        "raw_index_for_canonical_index": {"type": "array", "minItems": 64, "maxItems": 64, "items": {"type": "integer", "minimum": 0, "maximum": 63}}
+      }
+    },
+    "orientation_resolution_status": {"type": "string", "minLength": 1},
+    "zone_index_contract": {"type": "string", "minLength": 1},
+    "ray_model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "hfov_deg", "vfov_deg", "provenance", "distance_semantics"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "hfov_deg": {"type": "number", "exclusiveMinimum": 0},
+        "vfov_deg": {"type": "number", "exclusiveMinimum": 0},
+        "provenance": {"type": "string", "minLength": 1},
+        "distance_semantics": {"enum": ["axial_z", "radial_range"]}
+      }
+    },
+    "distance_semantics": {"enum": ["axial_z", "radial_range"]},
+    "zone_rays": {"type": "array", "minItems": 64, "maxItems": 64, "items": {"$ref": "#/$defs/vector3"}},
+    "zone_valid_mask": {"$ref": "#/$defs/mask64"},
+    "camera_tof_overlap_mask": {"$ref": "#/$defs/mask64"},
+    "solver_method": {"type": "string", "minLength": 1},
+    "training_pose_count": {"type": "integer", "minimum": 1},
+    "heldout_pose_count": {"type": "integer", "minimum": 1},
+    "training_point_count": {"type": "integer", "minimum": 1},
+    "heldout_point_count": {"type": "integer", "minimum": 1},
+    "residual_summary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["train", "heldout"],
+      "properties": {"train": {"$ref": "#/$defs/summary"}, "heldout": {"$ref": "#/$defs/summary"}}
+    },
+    "candidate_margin": {
+      "type": "object", "additionalProperties": false,
+      "required": ["absolute_mm", "relative", "next_group", "gauge_candidate_ids"],
+      "properties": {
+        "absolute_mm": {"type": "number"}, "relative": {"type": "number"},
+        "next_group": {"type": ["string", "null"]},
+        "gauge_candidate_ids": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "gauge_equivalence": {
+      "type": "object", "additionalProperties": false,
+      "required": ["present", "candidate_ids", "canonicalization"],
+      "properties": {
+        "present": {"type": "boolean"},
+        "candidate_ids": {"type": "array", "items": {"type": "string"}},
+        "canonicalization": {"type": "string"}
+      }
+    },
+    "mechanical_prior": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tof_is_camera_right", "expected_tx_mm", "expected_abs_ty_mm", "expected_abs_tz_mm", "usage"],
+      "properties": {
+        "tof_is_camera_right": {"const": true},
+        "expected_tx_mm": {"const": -20.0}, "expected_abs_ty_mm": {"type": "number"},
+        "expected_abs_tz_mm": {"type": "number"}, "usage": {"type": "string"}
+      }
+    },
+    "mechanical_prior_is_measured": {"const": false},
+    "validation_status": {"const": "PASS"},
+    "camera_tof_extrinsics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {"status": {"const": "measured"}}
+    },
+    "absolute_geometry_valid": {"const": false},
+    "world_pose_resolved": {"const": false},
+    "source_data_hashes": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "warnings": {"type": "array", "items": {"type": "string"}},
+    "unresolved_fields": {"type": "array", "items": {"type": "string"}}
+  },
+  "$defs": {
+    "vector3": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number"}},
+    "matrix3": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/vector3"}},
+    "vector4": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "number"}},
+    "matrix4": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/vector4"}},
+    "mask64": {"type": "array", "minItems": 64, "maxItems": 64, "items": {"type": "boolean"}},
+    "summary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["count", "mean_mm", "median_mm", "rms_mm", "p95_mm", "max_mm"],
+      "properties": {
+        "count": {"type": "integer", "minimum": 1},
+        "mean_mm": {"type": "number"}, "median_mm": {"type": "number"},
+        "rms_mm": {"type": "number"}, "p95_mm": {"type": "number"}, "max_mm": {"type": "number"}
+      }
+    }
+  }
+}

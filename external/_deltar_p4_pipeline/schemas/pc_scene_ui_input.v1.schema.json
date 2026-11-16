@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pc_scene_ui_input.v1.schema.json",
+  "title": "Editable PC-local scene UI input",
+  "type": "object",
+  "required": ["schema_version", "scan_id", "frame_count", "generated_at", "selected_object_identities", "frames"],
+  "properties": {
+    "schema_version": {"const": "pc_scene_ui_input.v1"},
+    "scan_id": {"type": "string", "minLength": 1},
+    "frame_count": {"const": 11},
+    "generated_at": {"type": "string", "minLength": 1},
+    "selected_object_identities": {"type": "array"},
+    "scan_summary": {"type": "object"},
+    "frames": {"type": "array", "minItems": 11, "maxItems": 11}
+  }
+}

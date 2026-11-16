@@ -1,0 +1,3189 @@
+{
+  "schema_version": "cloud_session_result_v3",
+  "score_version": "v3.0",
+  "model_version": "weighted_dtw_imu_plus_emg_v1.0",
+  "patient_id": "S001",
+  "session_id": "20260807_TASK037",
+  "task_name": "水杯横向取放训练（一级）",
+  "task_number": 12,
+  "task_input": {
+    "task_name": "水杯横向取放训练（一级）",
+    "csv_file": "DATA_SEQ0000001263.csv",
+    "start_time": "2026-08-07T16:00:43+08:00",
+    "end_time": "2026-08-07T16:00:55+08:00",
+    "start_log_seq": 1263,
+    "end_log_seq": 1815,
+    "end_reason": "user_stop"
+  },
+  "task_directory_identity": {
+    "task_directory": "20260807_TASK037",
+    "task_date": "20260807",
+    "task_id": "TASK037",
+    "task_index": 37
+  },
+  "task_input_validation": {
+    "valid": true,
+    "reason": null,
+    "declared_start_log_seq": 1263,
+    "declared_end_log_seq": 1815,
+    "observed_start_log_seq": 1263,
+    "observed_end_log_seq": 1815,
+    "row_count": 553
+  },
+  "valid": true,
+  "invalid_reason": null,
+  "final_score": 49.47,
+  "target_repetition_count": 10,
+  "repetition_count": 3,
+  "valid_repetition_count": 3,
+  "pipeline": [
+    "data_quality_check",
+    "euler_to_rotation_matrix",
+    "wearing_calibration",
+    "human_kinematic_chain",
+    "action_count_and_phase_segmentation",
+    "three_dimensional_trajectory_reconstruction",
+    "weighted_dtw_imu_scoring",
+    "emg_template_scoring",
+    "real_time_compensation_detection",
+    "single_action_trajectory_data",
+    "whole_session_summary"
+  ],
+  "imu_mapping": {
+    "trunk": "imu1",
+    "upperarm": "imu2",
+    "forearm": "imu3",
+    "hand_wrist": "imu4"
+  },
+  "body_params": {
+    "upper_arm_length_m": 0.315,
+    "forearm_length_m": 0.263,
+    "hand_length_m": 0.105
+  },
+  "data_quality": {
+    "row_count": 553,
+    "missing_columns": [],
+    "valid": true,
+    "mean_dt_ms": 20.182971014492754,
+    "max_dt_ms": 95.0,
+    "estimated_rate_hz": 49.54671932501571,
+    "large_gap_count_over_40ms": 3,
+    "large_gap_count_over_100ms": 0,
+    "duration_s": 11.141,
+    "max_log_seq_gap": 1,
+    "missing_log_seq_count_est": 0,
+    "imu_valid_ratio": {
+      "trunk": 1.0,
+      "upperarm": 1.0,
+      "forearm": 1.0,
+      "hand_wrist": 1.0
+    },
+    "imu_age_ms": {
+      "trunk": {
+        "mean": 96.76491862567812,
+        "max": 192.0
+      },
+      "upperarm": {
+        "mean": 97.20976491862568,
+        "max": 191.0
+      },
+      "forearm": {
+        "mean": 98.03978300180832,
+        "max": 199.0
+      },
+      "hand_wrist": {
+        "mean": 96.12839059674502,
+        "max": 196.0
+      }
+    },
+    "emg_valid_ratio": 1.0,
+    "warnings": [],
+    "level": "good"
+  },
+  "calibration": {
+    "method": "first_seconds_static_reference",
+    "calibration_seconds": 3.0,
+    "calibration_samples": 149,
+    "segments": {
+      "trunk": {
+        "imu": "imu1",
+        "reference_matrix": [
+          [
+            0.787479,
+            0.153069,
+            -0.597031
+          ],
+          [
+            -0.615427,
+            0.24803,
+            -0.748152
+          ],
+          [
+            0.033563,
+            0.956583,
+            0.289521
+          ]
+        ]
+      },
+      "upperarm": {
+        "imu": "imu2",
+        "reference_matrix": [
+          [
+            -0.999665,
+            -0.020908,
+            0.015269
+          ],
+          [
+            0.015294,
+            -0.001049,
+            0.999882
+          ],
+          [
+            -0.02089,
+            0.999781,
+            0.001369
+          ]
+        ]
+      },
+      "forearm": {
+        "imu": "imu3",
+        "reference_matrix": [
+          [
+            0.349769,
+            -0.194612,
+            -0.916399
+          ],
+          [
+            -0.694737,
+            0.602349,
+            -0.393084
+          ],
+          [
+            0.628491,
+            0.774146,
+            0.075479
+          ]
+        ]
+      },
+      "hand_wrist": {
+        "imu": "imu4",
+        "reference_matrix": [
+          [
+            0.616064,
+            -0.096068,
+            -0.781816
+          ],
+          [
+            -0.614142,
+            0.562936,
+            -0.553112
+          ],
+          [
+            0.493249,
+            0.820898,
+            0.287806
+          ]
+        ]
+      }
+    }
+  },
+  "dtw_template": {
+    "task_number": 12,
+    "template_dir": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\data\\segmented_trials\\temporary_standard_20260724",
+    "template_count": 1,
+    "status": "temporary_unverified_development_template",
+    "imu_channels": 12,
+    "score_weight": 70,
+    "distance_scale": 1.0
+  },
+  "emg_scoring": {
+    "score_weight": 30,
+    "features": [
+      "RMS",
+      "MAV",
+      "WL"
+    ]
+  },
+  "segmentation": {
+    "method": "threshold_motion_curve",
+    "motion_source": "imu4",
+    "threshold": 27.692471177819655,
+    "min_duration_s": 0.45,
+    "merge_gap_s": 0.3,
+    "fallback_used": false,
+    "repetition_count": 3
+  },
+  "summary": {
+    "average_score": 49.47,
+    "max_score": 49.92,
+    "min_score": 48.97,
+    "score_std": 0.39,
+    "consistency_score": 99.61,
+    "compensation_action_count": 3,
+    "compensation_rate": 1.0
+  },
+  "compensation": {
+    "detected": true,
+    "events": [
+      {
+        "event_type": "compensation_detected",
+        "patient_id": "S001",
+        "session_id": "20260807_TASK037",
+        "task_number": 12,
+        "compensation_detected": true,
+        "action_index": 1,
+        "timestamp_s": 1.94,
+        "stage": "execution",
+        "type": "TR",
+        "severity": "low",
+        "severity_score": 20.0,
+        "feedback": "检测到可能存在代偿，请暂停当前动作，调整姿势后再继续训练。"
+      },
+      {
+        "event_type": "compensation_detected",
+        "patient_id": "S001",
+        "session_id": "20260807_TASK037",
+        "task_number": 12,
+        "compensation_detected": true,
+        "action_index": 2,
+        "timestamp_s": 4.42,
+        "stage": "execution",
+        "type": "TR",
+        "severity": "low",
+        "severity_score": 20.0,
+        "feedback": "检测到可能存在代偿，请暂停当前动作，调整姿势后再继续训练。"
+      },
+      {
+        "event_type": "compensation_detected",
+        "patient_id": "S001",
+        "session_id": "20260807_TASK037",
+        "task_number": 12,
+        "compensation_detected": true,
+        "action_index": 3,
+        "timestamp_s": 6.52,
+        "stage": "execution",
+        "type": "TR",
+        "severity": "low",
+        "severity_score": 20.0,
+        "feedback": "检测到可能存在代偿，请暂停当前动作，调整姿势后再继续训练。"
+      }
+    ],
+    "action_count": 3
+  },
+  "fatigue": {
+    "status": "not_detected",
+    "level": "none"
+  },
+  "feedback": [
+    "IMU 动作时序与模板差异较大，建议按标准动作节奏重新完成。",
+    "肌肉激活模式与健康模板较接近。",
+    "检测到代偿表现，请调整姿势后继续训练。"
+  ],
+  "curve_data": {
+    "source": "score_result.actions",
+    "points": [
+      {
+        "action_index": 1,
+        "time_s": 2.38,
+        "final_score": 49.51,
+        "imu_dtw_score": 24.18,
+        "emg_score": 25.33,
+        "dtw_similarity_score": 34.55,
+        "compensation_detected": true
+      },
+      {
+        "action_index": 2,
+        "time_s": 5.46,
+        "final_score": 49.92,
+        "imu_dtw_score": 25.47,
+        "emg_score": 24.45,
+        "dtw_similarity_score": 36.39,
+        "compensation_detected": true
+      },
+      {
+        "action_index": 3,
+        "time_s": 7.02,
+        "final_score": 48.97,
+        "imu_dtw_score": 22.27,
+        "emg_score": 26.7,
+        "dtw_similarity_score": 31.81,
+        "compensation_detected": true
+      }
+    ]
+  },
+  "artifacts": {
+    "score_result_json": "score_result.json",
+    "score_curve_png": "session_score_curve.png"
+  },
+  "compensation_events": [
+    {
+      "event_type": "compensation_detected",
+      "patient_id": "S001",
+      "session_id": "20260807_TASK037",
+      "task_number": 12,
+      "compensation_detected": true,
+      "action_index": 1,
+      "timestamp_s": 1.94,
+      "stage": "execution",
+      "type": "TR",
+      "severity": "low",
+      "severity_score": 20.0,
+      "feedback": "检测到可能存在代偿，请暂停当前动作，调整姿势后再继续训练。"
+    },
+    {
+      "event_type": "compensation_detected",
+      "patient_id": "S001",
+      "session_id": "20260807_TASK037",
+      "task_number": 12,
+      "compensation_detected": true,
+      "action_index": 2,
+      "timestamp_s": 4.42,
+      "stage": "execution",
+      "type": "TR",
+      "severity": "low",
+      "severity_score": 20.0,
+      "feedback": "检测到可能存在代偿，请暂停当前动作，调整姿势后再继续训练。"
+    },
+    {
+      "event_type": "compensation_detected",
+      "patient_id": "S001",
+      "session_id": "20260807_TASK037",
+      "task_number": 12,
+      "compensation_detected": true,
+      "action_index": 3,
+      "timestamp_s": 6.52,
+      "stage": "execution",
+      "type": "TR",
+      "severity": "low",
+      "severity_score": 20.0,
+      "feedback": "检测到可能存在代偿，请暂停当前动作，调整姿势后再继续训练。"
+    }
+  ],
+  "long_term_memory": {
+    "schema_version": "rehab_long_term_memory_v1",
+    "session_id": "20260807_TASK037",
+    "task_number": 12,
+    "compensation_detected": true,
+    "total_event_count": 3,
+    "affected_action_count": 3,
+    "affected_action_indices": [
+      1,
+      2,
+      3
+    ],
+    "counts_by_type": {
+      "TR": 3
+    },
+    "counts_by_severity": {
+      "low": 3
+    },
+    "counts_by_stage": {
+      "execution": 3
+    },
+    "dominant_compensation_type": "TR"
+  },
+  "actions": [
+    {
+      "action_index": 1,
+      "valid": true,
+      "invalid_reason": null,
+      "score_version": "v3.0",
+      "model_version": "weighted_dtw_imu_plus_emg_v1.0",
+      "action_source": "segmentation",
+      "data_quality": {
+        "row_count": 45,
+        "missing_columns": [],
+        "valid": true,
+        "mean_dt_ms": 20.0,
+        "max_dt_ms": 31.0,
+        "estimated_rate_hz": 50.0,
+        "large_gap_count_over_40ms": 0,
+        "large_gap_count_over_100ms": 0,
+        "duration_s": 0.88,
+        "max_log_seq_gap": 1,
+        "missing_log_seq_count_est": 0,
+        "imu_valid_ratio": {
+          "trunk": 1.0,
+          "upperarm": 1.0,
+          "forearm": 1.0,
+          "hand_wrist": 1.0
+        },
+        "imu_age_ms": {
+          "trunk": {
+            "mean": 117.6,
+            "max": 184.0
+          },
+          "upperarm": {
+            "mean": 79.53333333333333,
+            "max": 163.0
+          },
+          "forearm": {
+            "mean": 81.44444444444444,
+            "max": 144.0
+          },
+          "hand_wrist": {
+            "mean": 83.28888888888889,
+            "max": 146.0
+          }
+        },
+        "emg_valid_ratio": 1.0,
+        "warnings": [],
+        "level": "good"
+      },
+      "start_time_s": 1.5,
+      "end_time_s": 2.38,
+      "duration_s": 0.88,
+      "phases": [
+        {
+          "name": "preparation",
+          "start_time_s": 1.5,
+          "end_time_s": 1.793
+        },
+        {
+          "name": "execution",
+          "start_time_s": 1.793,
+          "end_time_s": 2.087
+        },
+        {
+          "name": "return",
+          "start_time_s": 2.087,
+          "end_time_s": 2.38
+        }
+      ],
+      "final_score": 49.51,
+      "subscores": {
+        "imu_dtw_score": 24.18,
+        "imu_dtw_max_score": 70.0,
+        "emg_score": 25.33,
+        "emg_max_score": 30.0
+      },
+      "dtw": {
+        "similarity_score": 34.55,
+        "normalized_distance": 1.062639,
+        "best_template_id": "trial_001",
+        "distance_scale": 1.0,
+        "window_ratio": 0.2,
+        "comparisons": [
+          {
+            "template_id": "trial_001",
+            "normalized_distance": 1.062639,
+            "warping_path_length": 384
+          }
+        ]
+      },
+      "compensation": {
+        "detected": true,
+        "events": [
+          {
+            "event_type": "compensation_detected",
+            "patient_id": "S001",
+            "session_id": "20260807_TASK037",
+            "task_number": 12,
+            "compensation_detected": true,
+            "action_index": 1,
+            "timestamp_s": 1.94,
+            "stage": "execution",
+            "type": "TR",
+            "severity": "low",
+            "severity_score": 20.0,
+            "feedback": "检测到可能存在代偿，请暂停当前动作，调整姿势后再继续训练。"
+          }
+        ],
+        "quality_findings": [
+          "forearm_coordination_abnormal",
+          "insufficient_upperarm_ROM"
+        ],
+        "details": {
+          "trunk_compensation_ratio_rule": {
+            "trunk_compensation_ratio": 0.94231233383,
+            "trunk_compensation_ratio_threshold": 0.09885350515694372,
+            "trunk_compensation_ratio_rule_passed": true,
+            "trunk_compensation_ratio_rule_version": "drink_water_ratio_lf_v1",
+            "diagnostic_only": true
+          },
+          "LF": {
+            "detected": false,
+            "neutral_roll_deg": null,
+            "peak_abs_roll_deg": null,
+            "max_duration_over_threshold_s": null,
+            "positive_duration_over_threshold_s": null,
+            "negative_duration_over_threshold_s": null,
+            "roll_threshold_deg": null,
+            "min_duration_s": null,
+            "valid_sample_count": null,
+            "estimated_rate_hz": null,
+            "status": null,
+            "rule_version": "drink_water_lf_v2",
+            "reason": "IMU2 roll 相对中立位偏离持续达到喝水前倾门禁"
+          },
+          "TR": {
+            "yaw_offset_deg": 25.12,
+            "reason": "躯干旋转角超过阈值"
+          },
+          "TREMOR": {
+            "detected": false,
+            "tremor_fraction": null,
+            "valid_window_count": null,
+            "positive_window_count": null,
+            "status": null,
+            "rule_version": "drink_water_tremor_v1_1",
+            "reason": "手腕 IMU4 在 3.5-6.0Hz 窄带存在持续振荡"
+          },
+          "insufficient_upperarm_ROM": {
+            "value": 2.3900000000000126,
+            "template_mean": 210.280689655,
+            "reason": "上臂活动范围低于模板，可能存在关节活动度不足"
+          },
+          "forearm_coordination_abnormal": {
+            "value": 189.25,
+            "template_mean": 372.252068966,
+            "reason": "前臂旋转范围偏离健康模板，可能存在肩肘腕协调异常"
+          },
+          "additional_penalty": {
+            "LF_extra_penalty": 10.0,
+            "TREMOR_penalty": 15.0,
+            "applied_penalty": 0.0,
+            "breakdown": {},
+            "note": "Penalty is applied once at final-score calculation and does not modify subscores."
+          }
+        }
+      },
+      "trajectory": {
+        "action_index": 1,
+        "coordinate_frame": "trunk_relative",
+        "time_unit": "s",
+        "unit": "m",
+        "sample_count": 45,
+        "time_s": [
+          0.0,
+          0.021,
+          0.04,
+          0.06,
+          0.08,
+          0.1,
+          0.12,
+          0.14,
+          0.16,
+          0.18,
+          0.2,
+          0.22,
+          0.24,
+          0.26,
+          0.28,
+          0.301,
+          0.32,
+          0.34,
+          0.36,
+          0.38,
+          0.4,
+          0.42,
+          0.44,
+          0.46,
+          0.48,
+          0.511,
+          0.52,
+          0.54,
+          0.56,
+          0.58,
+          0.6,
+          0.62,
+          0.64,
+          0.66,
+          0.68,
+          0.7,
+          0.72,
+          0.74,
+          0.76,
+          0.78,
+          0.8,
+          0.82,
+          0.84,
+          0.86,
+          0.88
+        ],
+        "elbow_xyz": [
+          [
+            0.314992,
+            -0.001942,
+            0.001006
+          ],
+          [
+            0.31499,
+            -0.001833,
+            0.001775
+          ],
+          [
+            0.31499,
+            -0.001833,
+            0.001775
+          ],
+          [
+            0.31499,
+            -0.001833,
+            0.001775
+          ],
+          [
+            0.31499,
+            -0.001833,
+            0.001775
+          ],
+          [
+            0.31499,
+            -0.001833,
+            0.001775
+          ],
+          [
+            0.31499,
+            -0.001833,
+            0.001775
+          ],
+          [
+            0.31499,
+            -0.001504,
+            0.002051
+          ],
+          [
+            0.31499,
+            -0.001504,
+            0.002051
+          ],
+          [
+            0.31499,
+            -0.001504,
+            0.002051
+          ],
+          [
+            0.31499,
+            -0.001504,
+            0.002051
+          ],
+          [
+            0.314992,
+            -0.001119,
+            0.001886
+          ],
+          [
+            0.314992,
+            -0.001119,
+            0.001886
+          ],
+          [
+            0.314992,
+            -0.001119,
+            0.001886
+          ],
+          [
+            0.314992,
+            -0.001119,
+            0.001886
+          ],
+          [
+            0.314992,
+            -0.001119,
+            0.001886
+          ],
+          [
+            0.314992,
+            -0.001119,
+            0.001886
+          ],
+          [
+            0.314995,
+            -0.000624,
+            0.001612
+          ],
+          [
+            0.314995,
+            -0.000624,
+            0.001612
+          ],
+          [
+            0.314995,
+            -0.000624,
+            0.001612
+          ],
+          [
+            0.314995,
+            -0.000624,
+            0.001612
+          ],
+          [
+            0.314995,
+            -0.000624,
+            0.001612
+          ],
+          [
+            0.315,
+            -1.7e-05,
+            7.4e-05
+          ],
+          [
+            0.315,
+            -1.7e-05,
+            7.4e-05
+          ],
+          [
+            0.315,
+            -1.7e-05,
+            7.4e-05
+          ],
+          [
+            0.315,
+            -1.7e-05,
+            7.4e-05
+          ],
+          [
+            0.315,
+            -1.7e-05,
+            7.4e-05
+          ],
+          [
+            0.314996,
+            0.000645,
+            -0.001409
+          ],
+          [
+            0.314996,
+            0.000645,
+            -0.001409
+          ],
+          [
+            0.314996,
+            0.000645,
+            -0.001409
+          ],
+          [
+            0.314996,
+            0.000645,
+            -0.001409
+          ],
+          [
+            0.314996,
+            0.000645,
+            -0.001409
+          ],
+          [
+            0.314996,
+            0.000645,
+            -0.001409
+          ],
+          [
+            0.314996,
+            0.000645,
+            -0.001409
+          ],
+          [
+            0.314996,
+            0.000645,
+            -0.001409
+          ],
+          [
+            0.314996,
+            0.000645,
+            -0.001409
+          ],
+          [
+            0.314996,
+            0.000645,
+            -0.001409
+          ],
+          [
+            0.314989,
+            0.0018,
+            -0.001902
+          ],
+          [
+            0.314989,
+            0.0018,
+            -0.001902
+          ],
+          [
+            0.314989,
+            0.0018,
+            -0.001902
+          ],
+          [
+            0.314989,
+            0.0018,
+            -0.001902
+          ],
+          [
+            0.314989,
+            0.0018,
+            -0.001902
+          ],
+          [
+            0.314988,
+            0.002514,
+            -0.001077
+          ],
+          [
+            0.314988,
+            0.002514,
+            -0.001077
+          ],
+          [
+            0.314988,
+            0.002514,
+            -0.001077
+          ]
+        ],
+        "hand_wrist_xyz": [
+          [
+            0.653978,
+            -0.136982,
+            0.047241
+          ],
+          [
+            0.659597,
+            -0.118907,
+            0.055199
+          ],
+          [
+            0.659597,
+            -0.118907,
+            0.055199
+          ],
+          [
+            0.659597,
+            -0.118907,
+            0.055199
+          ],
+          [
+            0.659597,
+            -0.118907,
+            0.055199
+          ],
+          [
+            0.659597,
+            -0.118907,
+            0.055199
+          ],
+          [
+            0.659597,
+            -0.118907,
+            0.055199
+          ],
+          [
+            0.669843,
+            -0.081879,
+            0.056601
+          ],
+          [
+            0.669843,
+            -0.081879,
+            0.056601
+          ],
+          [
+            0.669843,
+            -0.081879,
+            0.056601
+          ],
+          [
+            0.669843,
+            -0.081879,
+            0.056601
+          ],
+          [
+            0.67964,
+            -0.025633,
+            0.044405
+          ],
+          [
+            0.67964,
+            -0.025633,
+            0.044405
+          ],
+          [
+            0.67964,
+            -0.025633,
+            0.044405
+          ],
+          [
+            0.67964,
+            -0.025633,
+            0.044405
+          ],
+          [
+            0.67964,
+            -0.025633,
+            0.044405
+          ],
+          [
+            0.67964,
+            -0.025633,
+            0.044405
+          ],
+          [
+            0.679797,
+            0.045807,
+            0.012539
+          ],
+          [
+            0.679797,
+            0.045807,
+            0.012539
+          ],
+          [
+            0.679797,
+            0.045807,
+            0.012539
+          ],
+          [
+            0.679797,
+            0.045807,
+            0.012539
+          ],
+          [
+            0.679797,
+            0.045807,
+            0.012539
+          ],
+          [
+            0.666293,
+            0.107292,
+            -0.020359
+          ],
+          [
+            0.666293,
+            0.107292,
+            -0.020359
+          ],
+          [
+            0.666293,
+            0.107292,
+            -0.020359
+          ],
+          [
+            0.666293,
+            0.107292,
+            -0.020359
+          ],
+          [
+            0.666293,
+            0.107292,
+            -0.020359
+          ],
+          [
+            0.645692,
+            0.152576,
+            -0.055393
+          ],
+          [
+            0.645692,
+            0.152576,
+            -0.055393
+          ],
+          [
+            0.645692,
+            0.152576,
+            -0.055393
+          ],
+          [
+            0.645692,
+            0.152576,
+            -0.055393
+          ],
+          [
+            0.645692,
+            0.152576,
+            -0.055393
+          ],
+          [
+            0.645692,
+            0.152576,
+            -0.055393
+          ],
+          [
+            0.621528,
+            0.19006,
+            -0.075863
+          ],
+          [
+            0.621528,
+            0.19006,
+            -0.075863
+          ],
+          [
+            0.621528,
+            0.19006,
+            -0.075863
+          ],
+          [
+            0.621528,
+            0.19006,
+            -0.075863
+          ],
+          [
+            0.598631,
+            0.217297,
+            -0.094151
+          ],
+          [
+            0.598631,
+            0.217297,
+            -0.094151
+          ],
+          [
+            0.598631,
+            0.217297,
+            -0.094151
+          ],
+          [
+            0.598631,
+            0.217297,
+            -0.094151
+          ],
+          [
+            0.598631,
+            0.217297,
+            -0.094151
+          ],
+          [
+            0.582626,
+            0.229112,
+            -0.112548
+          ],
+          [
+            0.582626,
+            0.229112,
+            -0.112548
+          ],
+          [
+            0.582626,
+            0.229112,
+            -0.112548
+          ]
+        ],
+        "summary": {
+          "duration_s": 0.88,
+          "hand_wrist_path_length_m": 0.443635,
+          "max_height_m": 0.056601,
+          "max_displacement_m": 0.40577
+        },
+        "files": {
+          "trajectory_json": "trajectories/action_01_trajectory.json",
+          "trajectory_png": "trajectories/action_01_trajectory.png"
+        }
+      },
+      "feedback": [
+        "IMU 动作时序与模板差异较大，建议按标准动作节奏重新完成。",
+        "肌肉激活模式与健康模板较接近。",
+        "检测到代偿表现，请调整姿势后继续训练。"
+      ]
+    },
+    {
+      "action_index": 2,
+      "valid": true,
+      "invalid_reason": null,
+      "score_version": "v3.0",
+      "model_version": "weighted_dtw_imu_plus_emg_v1.0",
+      "action_source": "segmentation",
+      "data_quality": {
+        "row_count": 105,
+        "missing_columns": [],
+        "valid": true,
+        "mean_dt_ms": 20.0,
+        "max_dt_ms": 29.0,
+        "estimated_rate_hz": 50.0,
+        "large_gap_count_over_40ms": 0,
+        "large_gap_count_over_100ms": 0,
+        "duration_s": 2.08,
+        "max_log_seq_gap": 1,
+        "missing_log_seq_count_est": 0,
+        "imu_valid_ratio": {
+          "trunk": 1.0,
+          "upperarm": 1.0,
+          "forearm": 1.0,
+          "hand_wrist": 1.0
+        },
+        "imu_age_ms": {
+          "trunk": {
+            "mean": 82.05714285714286,
+            "max": 170.0
+          },
+          "upperarm": {
+            "mean": 107.39047619047619,
+            "max": 177.0
+          },
+          "forearm": {
+            "mean": 90.98095238095237,
+            "max": 199.0
+          },
+          "hand_wrist": {
+            "mean": 85.83809523809524,
+            "max": 196.0
+          }
+        },
+        "emg_valid_ratio": 1.0,
+        "warnings": [],
+        "level": "good"
+      },
+      "start_time_s": 3.38,
+      "end_time_s": 5.46,
+      "duration_s": 2.08,
+      "phases": [
+        {
+          "name": "preparation",
+          "start_time_s": 3.38,
+          "end_time_s": 4.073
+        },
+        {
+          "name": "execution",
+          "start_time_s": 4.073,
+          "end_time_s": 4.767
+        },
+        {
+          "name": "return",
+          "start_time_s": 4.767,
+          "end_time_s": 5.46
+        }
+      ],
+      "final_score": 49.92,
+      "subscores": {
+        "imu_dtw_score": 25.47,
+        "imu_dtw_max_score": 70.0,
+        "emg_score": 24.45,
+        "emg_max_score": 30.0
+      },
+      "dtw": {
+        "similarity_score": 36.39,
+        "normalized_distance": 1.010771,
+        "best_template_id": "trial_001",
+        "distance_scale": 1.0,
+        "window_ratio": 0.2,
+        "comparisons": [
+          {
+            "template_id": "trial_001",
+            "normalized_distance": 1.010771,
+            "warping_path_length": 384
+          }
+        ]
+      },
+      "compensation": {
+        "detected": true,
+        "events": [
+          {
+            "event_type": "compensation_detected",
+            "patient_id": "S001",
+            "session_id": "20260807_TASK037",
+            "task_number": 12,
+            "compensation_detected": true,
+            "action_index": 2,
+            "timestamp_s": 4.42,
+            "stage": "execution",
+            "type": "TR",
+            "severity": "low",
+            "severity_score": 20.0,
+            "feedback": "检测到可能存在代偿，请暂停当前动作，调整姿势后再继续训练。"
+          }
+        ],
+        "quality_findings": [
+          "abnormal_muscle_recruitment",
+          "forearm_coordination_abnormal",
+          "insufficient_upperarm_ROM"
+        ],
+        "details": {
+          "trunk_compensation_ratio_rule": {
+            "trunk_compensation_ratio": 0.969470483789,
+            "trunk_compensation_ratio_threshold": 0.09885350515694372,
+            "trunk_compensation_ratio_rule_passed": true,
+            "trunk_compensation_ratio_rule_version": "drink_water_ratio_lf_v1",
+            "diagnostic_only": true
+          },
+          "LF": {
+            "detected": false,
+            "neutral_roll_deg": null,
+            "peak_abs_roll_deg": null,
+            "max_duration_over_threshold_s": null,
+            "positive_duration_over_threshold_s": null,
+            "negative_duration_over_threshold_s": null,
+            "roll_threshold_deg": null,
+            "min_duration_s": null,
+            "valid_sample_count": null,
+            "estimated_rate_hz": null,
+            "status": null,
+            "rule_version": "drink_water_lf_v2",
+            "reason": "IMU2 roll 相对中立位偏离持续达到喝水前倾门禁"
+          },
+          "TR": {
+            "yaw_offset_deg": 50.07,
+            "reason": "躯干旋转角超过阈值"
+          },
+          "TREMOR": {
+            "detected": false,
+            "tremor_fraction": null,
+            "valid_window_count": null,
+            "positive_window_count": null,
+            "status": null,
+            "rule_version": "drink_water_tremor_v1_1",
+            "reason": "手腕 IMU4 在 3.5-6.0Hz 窄带存在持续振荡"
+          },
+          "insufficient_upperarm_ROM": {
+            "value": 2.4099999999999846,
+            "template_mean": 210.280689655,
+            "reason": "上臂活动范围低于模板，可能存在关节活动度不足"
+          },
+          "forearm_coordination_abnormal": {
+            "value": 255.54,
+            "template_mean": 372.252068966,
+            "reason": "前臂旋转范围偏离健康模板，可能存在肩肘腕协调异常"
+          },
+          "abnormal_muscle_recruitment": [
+            {
+              "muscle": "Extensor_carpi_ulnaris",
+              "feature": "RMS",
+              "z_score": 3.773,
+              "reason": "Extensor_carpi_ulnaris 激活明显高于模板，可能存在异常募集或代偿"
+            }
+          ],
+          "additional_penalty": {
+            "LF_extra_penalty": 10.0,
+            "TREMOR_penalty": 15.0,
+            "applied_penalty": 0.0,
+            "breakdown": {},
+            "note": "Penalty is applied once at final-score calculation and does not modify subscores."
+          }
+        }
+      },
+      "trajectory": {
+        "action_index": 2,
+        "coordinate_frame": "trunk_relative",
+        "time_unit": "s",
+        "unit": "m",
+        "sample_count": 105,
+        "time_s": [
+          0.0,
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1,
+          0.12,
+          0.14,
+          0.16,
+          0.18,
+          0.2,
+          0.22,
+          0.24,
+          0.26,
+          0.28,
+          0.3,
+          0.32,
+          0.34,
+          0.36,
+          0.38,
+          0.4,
+          0.42,
+          0.44,
+          0.46,
+          0.48,
+          0.5,
+          0.52,
+          0.54,
+          0.56,
+          0.58,
+          0.601,
+          0.62,
+          0.64,
+          0.66,
+          0.68,
+          0.7,
+          0.72,
+          0.74,
+          0.76,
+          0.78,
+          0.8,
+          0.82,
+          0.84,
+          0.861,
+          0.88,
+          0.9,
+          0.92,
+          0.94,
+          0.96,
+          0.98,
+          1.0,
+          1.02,
+          1.04,
+          1.06,
+          1.08,
+          1.1,
+          1.12,
+          1.14,
+          1.16,
+          1.18,
+          1.2,
+          1.22,
+          1.24,
+          1.26,
+          1.28,
+          1.3,
+          1.329,
+          1.344,
+          1.36,
+          1.38,
+          1.4,
+          1.421,
+          1.44,
+          1.46,
+          1.48,
+          1.5,
+          1.521,
+          1.54,
+          1.56,
+          1.58,
+          1.6,
+          1.62,
+          1.64,
+          1.66,
+          1.68,
+          1.7,
+          1.72,
+          1.74,
+          1.76,
+          1.78,
+          1.8,
+          1.82,
+          1.84,
+          1.86,
+          1.88,
+          1.9,
+          1.92,
+          1.94,
+          1.96,
+          1.98,
+          2.0,
+          2.02,
+          2.04,
+          2.06,
+          2.08
+        ],
+        "elbow_xyz": [
+          [
+            0.314926,
+            0.006578,
+            0.001897
+          ],
+          [
+            0.314926,
+            0.006578,
+            0.001897
+          ],
+          [
+            0.314926,
+            0.006578,
+            0.001897
+          ],
+          [
+            0.314926,
+            0.006578,
+            0.001897
+          ],
+          [
+            0.314924,
+            0.006688,
+            0.001843
+          ],
+          [
+            0.314924,
+            0.006688,
+            0.001843
+          ],
+          [
+            0.314924,
+            0.006688,
+            0.001843
+          ],
+          [
+            0.314924,
+            0.006688,
+            0.001843
+          ],
+          [
+            0.314924,
+            0.006688,
+            0.001843
+          ],
+          [
+            0.314924,
+            0.006688,
+            0.001843
+          ],
+          [
+            0.31493,
+            0.006192,
+            0.002392
+          ],
+          [
+            0.31493,
+            0.006192,
+            0.002392
+          ],
+          [
+            0.31493,
+            0.006192,
+            0.002392
+          ],
+          [
+            0.31493,
+            0.006192,
+            0.002392
+          ],
+          [
+            0.31493,
+            0.006192,
+            0.002392
+          ],
+          [
+            0.314936,
+            0.005586,
+            0.003051
+          ],
+          [
+            0.314936,
+            0.005586,
+            0.003051
+          ],
+          [
+            0.314936,
+            0.005586,
+            0.003051
+          ],
+          [
+            0.314936,
+            0.005586,
+            0.003051
+          ],
+          [
+            0.314936,
+            0.005586,
+            0.003051
+          ],
+          [
+            0.314941,
+            0.005201,
+            0.00316
+          ],
+          [
+            0.314941,
+            0.005201,
+            0.00316
+          ],
+          [
+            0.314941,
+            0.005201,
+            0.00316
+          ],
+          [
+            0.314941,
+            0.005201,
+            0.00316
+          ],
+          [
+            0.314941,
+            0.005201,
+            0.00316
+          ],
+          [
+            0.314936,
+            0.005311,
+            0.003435
+          ],
+          [
+            0.314936,
+            0.005311,
+            0.003435
+          ],
+          [
+            0.314936,
+            0.005311,
+            0.003435
+          ],
+          [
+            0.314936,
+            0.005311,
+            0.003435
+          ],
+          [
+            0.314936,
+            0.005311,
+            0.003435
+          ],
+          [
+            0.314936,
+            0.005311,
+            0.003435
+          ],
+          [
+            0.314926,
+            0.005475,
+            0.004095
+          ],
+          [
+            0.314926,
+            0.005475,
+            0.004095
+          ],
+          [
+            0.314926,
+            0.005475,
+            0.004095
+          ],
+          [
+            0.314926,
+            0.005475,
+            0.004095
+          ],
+          [
+            0.314916,
+            0.005584,
+            0.004645
+          ],
+          [
+            0.314916,
+            0.005584,
+            0.004645
+          ],
+          [
+            0.314916,
+            0.005584,
+            0.004645
+          ],
+          [
+            0.314916,
+            0.005584,
+            0.004645
+          ],
+          [
+            0.314916,
+            0.005584,
+            0.004645
+          ],
+          [
+            0.314916,
+            0.005584,
+            0.004645
+          ],
+          [
+            0.314929,
+            0.005585,
+            0.00371
+          ],
+          [
+            0.314929,
+            0.005585,
+            0.00371
+          ],
+          [
+            0.314929,
+            0.005585,
+            0.00371
+          ],
+          [
+            0.314929,
+            0.005585,
+            0.00371
+          ],
+          [
+            0.314939,
+            0.005256,
+            0.003325
+          ],
+          [
+            0.314939,
+            0.005256,
+            0.003325
+          ],
+          [
+            0.314939,
+            0.005256,
+            0.003325
+          ],
+          [
+            0.314939,
+            0.005256,
+            0.003325
+          ],
+          [
+            0.314939,
+            0.005256,
+            0.003325
+          ],
+          [
+            0.314937,
+            0.00476,
+            0.004149
+          ],
+          [
+            0.314937,
+            0.00476,
+            0.004149
+          ],
+          [
+            0.314937,
+            0.00476,
+            0.004149
+          ],
+          [
+            0.314937,
+            0.00476,
+            0.004149
+          ],
+          [
+            0.314937,
+            0.00476,
+            0.004149
+          ],
+          [
+            0.314937,
+            0.00476,
+            0.004149
+          ],
+          [
+            0.314933,
+            0.004484,
+            0.004698
+          ],
+          [
+            0.314933,
+            0.004484,
+            0.004698
+          ],
+          [
+            0.314933,
+            0.004484,
+            0.004698
+          ],
+          [
+            0.314933,
+            0.004484,
+            0.004698
+          ],
+          [
+            0.314933,
+            0.004484,
+            0.004698
+          ],
+          [
+            0.314939,
+            0.00432,
+            0.004423
+          ],
+          [
+            0.314939,
+            0.00432,
+            0.004423
+          ],
+          [
+            0.314939,
+            0.00432,
+            0.004423
+          ],
+          [
+            0.314939,
+            0.00432,
+            0.004423
+          ],
+          [
+            0.314939,
+            0.00432,
+            0.004423
+          ],
+          [
+            0.314949,
+            0.004266,
+            0.003763
+          ],
+          [
+            0.314949,
+            0.004266,
+            0.003763
+          ],
+          [
+            0.314949,
+            0.004266,
+            0.003763
+          ],
+          [
+            0.314949,
+            0.004266,
+            0.003763
+          ],
+          [
+            0.314949,
+            0.004266,
+            0.003763
+          ],
+          [
+            0.314955,
+            0.004653,
+            0.002554
+          ],
+          [
+            0.314955,
+            0.004653,
+            0.002554
+          ],
+          [
+            0.314955,
+            0.004653,
+            0.002554
+          ],
+          [
+            0.314955,
+            0.004653,
+            0.002554
+          ],
+          [
+            0.314955,
+            0.004653,
+            0.002554
+          ],
+          [
+            0.314964,
+            0.0046,
+            0.00118
+          ],
+          [
+            0.314964,
+            0.0046,
+            0.00118
+          ],
+          [
+            0.314964,
+            0.0046,
+            0.00118
+          ],
+          [
+            0.314964,
+            0.0046,
+            0.00118
+          ],
+          [
+            0.314964,
+            0.0046,
+            0.00118
+          ],
+          [
+            0.314964,
+            0.004434,
+            0.001675
+          ],
+          [
+            0.314964,
+            0.004434,
+            0.001675
+          ],
+          [
+            0.314964,
+            0.004434,
+            0.001675
+          ],
+          [
+            0.314964,
+            0.004434,
+            0.001675
+          ],
+          [
+            0.314964,
+            0.004434,
+            0.001675
+          ],
+          [
+            0.31496,
+            0.004378,
+            0.002499
+          ],
+          [
+            0.31496,
+            0.004378,
+            0.002499
+          ],
+          [
+            0.31496,
+            0.004378,
+            0.002499
+          ],
+          [
+            0.31496,
+            0.004378,
+            0.002499
+          ],
+          [
+            0.31496,
+            0.004378,
+            0.002499
+          ],
+          [
+            0.314956,
+            0.004377,
+            0.002884
+          ],
+          [
+            0.31496,
+            0.004488,
+            0.002279
+          ],
+          [
+            0.31496,
+            0.004488,
+            0.002279
+          ],
+          [
+            0.31496,
+            0.004488,
+            0.002279
+          ],
+          [
+            0.31496,
+            0.004488,
+            0.002279
+          ],
+          [
+            0.31496,
+            0.004488,
+            0.002279
+          ],
+          [
+            0.31496,
+            0.004488,
+            0.002279
+          ],
+          [
+            0.31496,
+            0.004488,
+            0.002279
+          ],
+          [
+            0.31496,
+            0.004488,
+            0.002279
+          ],
+          [
+            0.31496,
+            0.004488,
+            0.002279
+          ],
+          [
+            0.314963,
+            0.004544,
+            0.001565
+          ],
+          [
+            0.314963,
+            0.004544,
+            0.001565
+          ],
+          [
+            0.314962,
+            0.00471,
+            0.001235
+          ],
+          [
+            0.314962,
+            0.00471,
+            0.001235
+          ]
+        ],
+        "hand_wrist_xyz": [
+          [
+            0.593311,
+            0.222121,
+            -0.105152
+          ],
+          [
+            0.593311,
+            0.222121,
+            -0.105152
+          ],
+          [
+            0.593311,
+            0.222121,
+            -0.105152
+          ],
+          [
+            0.593311,
+            0.222121,
+            -0.105152
+          ],
+          [
+            0.606368,
+            0.221402,
+            -0.064315
+          ],
+          [
+            0.606368,
+            0.221402,
+            -0.064315
+          ],
+          [
+            0.606368,
+            0.221402,
+            -0.064315
+          ],
+          [
+            0.606368,
+            0.221402,
+            -0.064315
+          ],
+          [
+            0.606368,
+            0.221402,
+            -0.064315
+          ],
+          [
+            0.606368,
+            0.221402,
+            -0.064315
+          ],
+          [
+            0.612372,
+            0.222439,
+            -0.010938
+          ],
+          [
+            0.612372,
+            0.222439,
+            -0.010938
+          ],
+          [
+            0.612372,
+            0.222439,
+            -0.010938
+          ],
+          [
+            0.612372,
+            0.222439,
+            -0.010938
+          ],
+          [
+            0.612372,
+            0.222439,
+            -0.010938
+          ],
+          [
+            0.610791,
+            0.223499,
+            0.022614
+          ],
+          [
+            0.610791,
+            0.223499,
+            0.022614
+          ],
+          [
+            0.610791,
+            0.223499,
+            0.022614
+          ],
+          [
+            0.610791,
+            0.223499,
+            0.022614
+          ],
+          [
+            0.610791,
+            0.223499,
+            0.022614
+          ],
+          [
+            0.601679,
+            0.232282,
+            0.043026
+          ],
+          [
+            0.601679,
+            0.232282,
+            0.043026
+          ],
+          [
+            0.601679,
+            0.232282,
+            0.043026
+          ],
+          [
+            0.601679,
+            0.232282,
+            0.043026
+          ],
+          [
+            0.601679,
+            0.232282,
+            0.043026
+          ],
+          [
+            0.59392,
+            0.239228,
+            0.056168
+          ],
+          [
+            0.59392,
+            0.239228,
+            0.056168
+          ],
+          [
+            0.59392,
+            0.239228,
+            0.056168
+          ],
+          [
+            0.59392,
+            0.239228,
+            0.056168
+          ],
+          [
+            0.59392,
+            0.239228,
+            0.056168
+          ],
+          [
+            0.594313,
+            0.234169,
+            0.073084
+          ],
+          [
+            0.604472,
+            0.210527,
+            0.100722
+          ],
+          [
+            0.604472,
+            0.210527,
+            0.100722
+          ],
+          [
+            0.604472,
+            0.210527,
+            0.100722
+          ],
+          [
+            0.604472,
+            0.210527,
+            0.100722
+          ],
+          [
+            0.61958,
+            0.177892,
+            0.117261
+          ],
+          [
+            0.61958,
+            0.177892,
+            0.117261
+          ],
+          [
+            0.61958,
+            0.177892,
+            0.117261
+          ],
+          [
+            0.61958,
+            0.177892,
+            0.117261
+          ],
+          [
+            0.61958,
+            0.177892,
+            0.117261
+          ],
+          [
+            0.61958,
+            0.177892,
+            0.117261
+          ],
+          [
+            0.630527,
+            0.144706,
+            0.131076
+          ],
+          [
+            0.630527,
+            0.144706,
+            0.131076
+          ],
+          [
+            0.630527,
+            0.144706,
+            0.131076
+          ],
+          [
+            0.630527,
+            0.144706,
+            0.131076
+          ],
+          [
+            0.630537,
+            0.144377,
+            0.130691
+          ],
+          [
+            0.633215,
+            0.133929,
+            0.134856
+          ],
+          [
+            0.633215,
+            0.133929,
+            0.134856
+          ],
+          [
+            0.633215,
+            0.133929,
+            0.134856
+          ],
+          [
+            0.633215,
+            0.133929,
+            0.134856
+          ],
+          [
+            0.631224,
+            0.140162,
+            0.131435
+          ],
+          [
+            0.631224,
+            0.140162,
+            0.131435
+          ],
+          [
+            0.631224,
+            0.140162,
+            0.131435
+          ],
+          [
+            0.631224,
+            0.140162,
+            0.131435
+          ],
+          [
+            0.631224,
+            0.140162,
+            0.131435
+          ],
+          [
+            0.631224,
+            0.140162,
+            0.131435
+          ],
+          [
+            0.615332,
+            0.195716,
+            0.09587
+          ],
+          [
+            0.615332,
+            0.195716,
+            0.09587
+          ],
+          [
+            0.615332,
+            0.195716,
+            0.09587
+          ],
+          [
+            0.615332,
+            0.195716,
+            0.09587
+          ],
+          [
+            0.615332,
+            0.195716,
+            0.09587
+          ],
+          [
+            0.596394,
+            0.233429,
+            0.062957
+          ],
+          [
+            0.596394,
+            0.233429,
+            0.062957
+          ],
+          [
+            0.596394,
+            0.233429,
+            0.062957
+          ],
+          [
+            0.596394,
+            0.233429,
+            0.062957
+          ],
+          [
+            0.596394,
+            0.233429,
+            0.062957
+          ],
+          [
+            0.580506,
+            0.257443,
+            0.027239
+          ],
+          [
+            0.580506,
+            0.257443,
+            0.027239
+          ],
+          [
+            0.580506,
+            0.257443,
+            0.027239
+          ],
+          [
+            0.580506,
+            0.257443,
+            0.027239
+          ],
+          [
+            0.580506,
+            0.257443,
+            0.027239
+          ],
+          [
+            0.573246,
+            0.266185,
+            -0.00825
+          ],
+          [
+            0.573246,
+            0.266185,
+            -0.00825
+          ],
+          [
+            0.573246,
+            0.266185,
+            -0.00825
+          ],
+          [
+            0.573246,
+            0.266185,
+            -0.00825
+          ],
+          [
+            0.573246,
+            0.266185,
+            -0.00825
+          ],
+          [
+            0.573255,
+            0.266132,
+            -0.009624
+          ],
+          [
+            0.566331,
+            0.268372,
+            -0.049218
+          ],
+          [
+            0.566331,
+            0.268372,
+            -0.049218
+          ],
+          [
+            0.566331,
+            0.268372,
+            -0.049218
+          ],
+          [
+            0.566331,
+            0.268372,
+            -0.049218
+          ],
+          [
+            0.557233,
+            0.266677,
+            -0.086975
+          ],
+          [
+            0.557233,
+            0.266677,
+            -0.086975
+          ],
+          [
+            0.557233,
+            0.266677,
+            -0.086975
+          ],
+          [
+            0.557233,
+            0.266677,
+            -0.086975
+          ],
+          [
+            0.557233,
+            0.266677,
+            -0.086975
+          ],
+          [
+            0.557228,
+            0.266621,
+            -0.086151
+          ],
+          [
+            0.553314,
+            0.252056,
+            -0.128624
+          ],
+          [
+            0.553314,
+            0.252056,
+            -0.128624
+          ],
+          [
+            0.553314,
+            0.252056,
+            -0.128624
+          ],
+          [
+            0.553314,
+            0.252056,
+            -0.128624
+          ],
+          [
+            0.553311,
+            0.252055,
+            -0.128239
+          ],
+          [
+            0.546536,
+            0.232433,
+            -0.170317
+          ],
+          [
+            0.546536,
+            0.232433,
+            -0.170317
+          ],
+          [
+            0.546536,
+            0.232433,
+            -0.170317
+          ],
+          [
+            0.546536,
+            0.232433,
+            -0.170317
+          ],
+          [
+            0.546536,
+            0.232433,
+            -0.170317
+          ],
+          [
+            0.546536,
+            0.232433,
+            -0.170317
+          ],
+          [
+            0.546536,
+            0.232433,
+            -0.170317
+          ],
+          [
+            0.546536,
+            0.232433,
+            -0.170317
+          ],
+          [
+            0.546536,
+            0.232433,
+            -0.170317
+          ],
+          [
+            0.54654,
+            0.232489,
+            -0.171032
+          ],
+          [
+            0.547578,
+            0.204586,
+            -0.201547
+          ],
+          [
+            0.547577,
+            0.204752,
+            -0.201877
+          ],
+          [
+            0.547577,
+            0.204752,
+            -0.201877
+          ]
+        ],
+        "summary": {
+          "duration_s": 2.08,
+          "hand_wrist_path_length_m": 0.743698,
+          "max_height_m": 0.134856,
+          "max_displacement_m": 0.258793
+        },
+        "files": {
+          "trajectory_json": "trajectories/action_02_trajectory.json",
+          "trajectory_png": "trajectories/action_02_trajectory.png"
+        }
+      },
+      "feedback": [
+        "IMU 动作时序与模板差异较大，建议按标准动作节奏重新完成。",
+        "肌肉激活模式与健康模板较接近。",
+        "检测到代偿表现，请调整姿势后继续训练。"
+      ]
+    },
+    {
+      "action_index": 3,
+      "valid": true,
+      "invalid_reason": null,
+      "score_version": "v3.0",
+      "model_version": "weighted_dtw_imu_plus_emg_v1.0",
+      "action_source": "segmentation",
+      "data_quality": {
+        "row_count": 51,
+        "missing_columns": [],
+        "valid": true,
+        "mean_dt_ms": 20.0,
+        "max_dt_ms": 32.0,
+        "estimated_rate_hz": 50.0,
+        "large_gap_count_over_40ms": 0,
+        "large_gap_count_over_100ms": 0,
+        "duration_s": 1.0,
+        "max_log_seq_gap": 1,
+        "missing_log_seq_count_est": 0,
+        "imu_valid_ratio": {
+          "trunk": 1.0,
+          "upperarm": 1.0,
+          "forearm": 1.0,
+          "hand_wrist": 1.0
+        },
+        "imu_age_ms": {
+          "trunk": {
+            "mean": 114.33333333333333,
+            "max": 190.0
+          },
+          "upperarm": {
+            "mean": 71.23529411764706,
+            "max": 155.0
+          },
+          "forearm": {
+            "mean": 100.54901960784314,
+            "max": 172.0
+          },
+          "hand_wrist": {
+            "mean": 100.23529411764706,
+            "max": 171.0
+          }
+        },
+        "emg_valid_ratio": 1.0,
+        "warnings": [],
+        "level": "good"
+      },
+      "start_time_s": 6.02,
+      "end_time_s": 7.02,
+      "duration_s": 1.0,
+      "phases": [
+        {
+          "name": "preparation",
+          "start_time_s": 6.02,
+          "end_time_s": 6.353
+        },
+        {
+          "name": "execution",
+          "start_time_s": 6.353,
+          "end_time_s": 6.687
+        },
+        {
+          "name": "return",
+          "start_time_s": 6.687,
+          "end_time_s": 7.02
+        }
+      ],
+      "final_score": 48.97,
+      "subscores": {
+        "imu_dtw_score": 22.27,
+        "imu_dtw_max_score": 70.0,
+        "emg_score": 26.7,
+        "emg_max_score": 30.0
+      },
+      "dtw": {
+        "similarity_score": 31.81,
+        "normalized_distance": 1.145493,
+        "best_template_id": "trial_001",
+        "distance_scale": 1.0,
+        "window_ratio": 0.2,
+        "comparisons": [
+          {
+            "template_id": "trial_001",
+            "normalized_distance": 1.145493,
+            "warping_path_length": 384
+          }
+        ]
+      },
+      "compensation": {
+        "detected": true,
+        "events": [
+          {
+            "event_type": "compensation_detected",
+            "patient_id": "S001",
+            "session_id": "20260807_TASK037",
+            "task_number": 12,
+            "compensation_detected": true,
+            "action_index": 3,
+            "timestamp_s": 6.52,
+            "stage": "execution",
+            "type": "TR",
+            "severity": "low",
+            "severity_score": 20.0,
+            "feedback": "检测到可能存在代偿，请暂停当前动作，调整姿势后再继续训练。"
+          }
+        ],
+        "quality_findings": [
+          "forearm_coordination_abnormal",
+          "insufficient_upperarm_ROM"
+        ],
+        "details": {
+          "trunk_compensation_ratio_rule": {
+            "trunk_compensation_ratio": 0.970013037683,
+            "trunk_compensation_ratio_threshold": 0.09885350515694372,
+            "trunk_compensation_ratio_rule_passed": true,
+            "trunk_compensation_ratio_rule_version": "drink_water_ratio_lf_v1",
+            "diagnostic_only": true
+          },
+          "LF": {
+            "detected": false,
+            "neutral_roll_deg": null,
+            "peak_abs_roll_deg": null,
+            "max_duration_over_threshold_s": null,
+            "positive_duration_over_threshold_s": null,
+            "negative_duration_over_threshold_s": null,
+            "roll_threshold_deg": null,
+            "min_duration_s": null,
+            "valid_sample_count": null,
+            "estimated_rate_hz": null,
+            "status": null,
+            "rule_version": "drink_water_lf_v2",
+            "reason": "IMU2 roll 相对中立位偏离持续达到喝水前倾门禁"
+          },
+          "TR": {
+            "yaw_offset_deg": 58.58,
+            "reason": "躯干旋转角超过阈值"
+          },
+          "TREMOR": {
+            "detected": false,
+            "tremor_fraction": null,
+            "valid_window_count": null,
+            "positive_window_count": null,
+            "status": null,
+            "rule_version": "drink_water_tremor_v1_1",
+            "reason": "手腕 IMU4 在 3.5-6.0Hz 窄带存在持续振荡"
+          },
+          "insufficient_upperarm_ROM": {
+            "value": 2.299999999999967,
+            "template_mean": 210.280689655,
+            "reason": "上臂活动范围低于模板，可能存在关节活动度不足"
+          },
+          "forearm_coordination_abnormal": {
+            "value": 209.57,
+            "template_mean": 372.252068966,
+            "reason": "前臂旋转范围偏离健康模板，可能存在肩肘腕协调异常"
+          },
+          "additional_penalty": {
+            "LF_extra_penalty": 10.0,
+            "TREMOR_penalty": 15.0,
+            "applied_penalty": 0.0,
+            "breakdown": {},
+            "note": "Penalty is applied once at final-score calculation and does not modify subscores."
+          }
+        }
+      },
+      "trajectory": {
+        "action_index": 3,
+        "coordinate_frame": "trunk_relative",
+        "time_unit": "s",
+        "unit": "m",
+        "sample_count": 51,
+        "time_s": [
+          0.0,
+          0.02,
+          0.04,
+          0.06,
+          0.08,
+          0.1,
+          0.127,
+          0.14,
+          0.16,
+          0.18,
+          0.2,
+          0.22,
+          0.24,
+          0.26,
+          0.28,
+          0.3,
+          0.32,
+          0.34,
+          0.36,
+          0.38,
+          0.4,
+          0.432,
+          0.44,
+          0.461,
+          0.48,
+          0.5,
+          0.52,
+          0.54,
+          0.56,
+          0.58,
+          0.6,
+          0.62,
+          0.64,
+          0.66,
+          0.68,
+          0.7,
+          0.72,
+          0.74,
+          0.76,
+          0.78,
+          0.8,
+          0.82,
+          0.84,
+          0.86,
+          0.88,
+          0.9,
+          0.92,
+          0.94,
+          0.96,
+          0.98,
+          1.0
+        ],
+        "elbow_xyz": [
+          [
+            0.314948,
+            0.005092,
+            0.002665
+          ],
+          [
+            0.314948,
+            0.005092,
+            0.002665
+          ],
+          [
+            0.314948,
+            0.005092,
+            0.002665
+          ],
+          [
+            0.314948,
+            0.005092,
+            0.002665
+          ],
+          [
+            0.314948,
+            0.005092,
+            0.002665
+          ],
+          [
+            0.314948,
+            0.005092,
+            0.002665
+          ],
+          [
+            0.314948,
+            0.005092,
+            0.002665
+          ],
+          [
+            0.314948,
+            0.005092,
+            0.002665
+          ],
+          [
+            0.314948,
+            0.005092,
+            0.002665
+          ],
+          [
+            0.314948,
+            0.005092,
+            0.002665
+          ],
+          [
+            0.314948,
+            0.005092,
+            0.002665
+          ],
+          [
+            0.314948,
+            0.005147,
+            0.0025
+          ],
+          [
+            0.314948,
+            0.005147,
+            0.0025
+          ],
+          [
+            0.314948,
+            0.005147,
+            0.0025
+          ],
+          [
+            0.314948,
+            0.005147,
+            0.0025
+          ],
+          [
+            0.314948,
+            0.005147,
+            0.0025
+          ],
+          [
+            0.314948,
+            0.005147,
+            0.0025
+          ],
+          [
+            0.314941,
+            0.005367,
+            0.002885
+          ],
+          [
+            0.314941,
+            0.005367,
+            0.002885
+          ],
+          [
+            0.314941,
+            0.005367,
+            0.002885
+          ],
+          [
+            0.314941,
+            0.005367,
+            0.002885
+          ],
+          [
+            0.314939,
+            0.005532,
+            0.002776
+          ],
+          [
+            0.314939,
+            0.005532,
+            0.002776
+          ],
+          [
+            0.314939,
+            0.005532,
+            0.002776
+          ],
+          [
+            0.314939,
+            0.005532,
+            0.002776
+          ],
+          [
+            0.314939,
+            0.005532,
+            0.002776
+          ],
+          [
+            0.314939,
+            0.005532,
+            0.002776
+          ],
+          [
+            0.314951,
+            0.00548,
+            0.000851
+          ],
+          [
+            0.314951,
+            0.00548,
+            0.000851
+          ],
+          [
+            0.314951,
+            0.00548,
+            0.000851
+          ],
+          [
+            0.314951,
+            0.00548,
+            0.000851
+          ],
+          [
+            0.314951,
+            0.00548,
+            0.000851
+          ],
+          [
+            0.314963,
+            0.004765,
+            0.00063
+          ],
+          [
+            0.314963,
+            0.004765,
+            0.00063
+          ],
+          [
+            0.314963,
+            0.004765,
+            0.00063
+          ],
+          [
+            0.314963,
+            0.004765,
+            0.00063
+          ],
+          [
+            0.314971,
+            0.003994,
+            0.001619
+          ],
+          [
+            0.314971,
+            0.003994,
+            0.001619
+          ],
+          [
+            0.314971,
+            0.003994,
+            0.001619
+          ],
+          [
+            0.314971,
+            0.003994,
+            0.001619
+          ],
+          [
+            0.314971,
+            0.003994,
+            0.001619
+          ],
+          [
+            0.314971,
+            0.003994,
+            0.001619
+          ],
+          [
+            0.314971,
+            0.003994,
+            0.001619
+          ],
+          [
+            0.314971,
+            0.003994,
+            0.001619
+          ],
+          [
+            0.314971,
+            0.003994,
+            0.001619
+          ],
+          [
+            0.314971,
+            0.003994,
+            0.001619
+          ],
+          [
+            0.314971,
+            0.003994,
+            0.001619
+          ],
+          [
+            0.314975,
+            0.003224,
+            0.002278
+          ],
+          [
+            0.314975,
+            0.003224,
+            0.002278
+          ],
+          [
+            0.314975,
+            0.003224,
+            0.002278
+          ],
+          [
+            0.314975,
+            0.003224,
+            0.002278
+          ]
+        ],
+        "hand_wrist_xyz": [
+          [
+            0.552021,
+            0.223566,
+            -0.174625
+          ],
+          [
+            0.552021,
+            0.223566,
+            -0.174625
+          ],
+          [
+            0.552021,
+            0.223566,
+            -0.174625
+          ],
+          [
+            0.552021,
+            0.223566,
+            -0.174625
+          ],
+          [
+            0.552021,
+            0.223566,
+            -0.174625
+          ],
+          [
+            0.552021,
+            0.223566,
+            -0.174625
+          ],
+          [
+            0.555114,
+            0.244454,
+            -0.139993
+          ],
+          [
+            0.555114,
+            0.244454,
+            -0.139993
+          ],
+          [
+            0.555114,
+            0.244454,
+            -0.139993
+          ],
+          [
+            0.555114,
+            0.244454,
+            -0.139993
+          ],
+          [
+            0.555114,
+            0.244454,
+            -0.139993
+          ],
+          [
+            0.578492,
+            0.248041,
+            -0.080128
+          ],
+          [
+            0.578492,
+            0.248041,
+            -0.080128
+          ],
+          [
+            0.578492,
+            0.248041,
+            -0.080128
+          ],
+          [
+            0.578492,
+            0.248041,
+            -0.080128
+          ],
+          [
+            0.578492,
+            0.248041,
+            -0.080128
+          ],
+          [
+            0.578492,
+            0.248041,
+            -0.080128
+          ],
+          [
+            0.613036,
+            0.217569,
+            -0.034568
+          ],
+          [
+            0.613036,
+            0.217569,
+            -0.034568
+          ],
+          [
+            0.613036,
+            0.217569,
+            -0.034568
+          ],
+          [
+            0.613036,
+            0.217569,
+            -0.034568
+          ],
+          [
+            0.65017,
+            0.156982,
+            0.001907
+          ],
+          [
+            0.65017,
+            0.156982,
+            0.001907
+          ],
+          [
+            0.65017,
+            0.156982,
+            0.001907
+          ],
+          [
+            0.65017,
+            0.156982,
+            0.001907
+          ],
+          [
+            0.65017,
+            0.156982,
+            0.001907
+          ],
+          [
+            0.65017,
+            0.156982,
+            0.001907
+          ],
+          [
+            0.674537,
+            0.074319,
+            0.036877
+          ],
+          [
+            0.674537,
+            0.074319,
+            0.036877
+          ],
+          [
+            0.674537,
+            0.074319,
+            0.036877
+          ],
+          [
+            0.674537,
+            0.074319,
+            0.036877
+          ],
+          [
+            0.674537,
+            0.074319,
+            0.036877
+          ],
+          [
+            0.677628,
+            -0.010835,
+            0.060416
+          ],
+          [
+            0.677628,
+            -0.010835,
+            0.060416
+          ],
+          [
+            0.677628,
+            -0.010835,
+            0.060416
+          ],
+          [
+            0.677628,
+            -0.010835,
+            0.060416
+          ],
+          [
+            0.663459,
+            -0.094853,
+            0.065257
+          ],
+          [
+            0.663459,
+            -0.094853,
+            0.065257
+          ],
+          [
+            0.663459,
+            -0.094853,
+            0.065257
+          ],
+          [
+            0.663459,
+            -0.094853,
+            0.065257
+          ],
+          [
+            0.663459,
+            -0.094853,
+            0.065257
+          ],
+          [
+            0.663459,
+            -0.094853,
+            0.065257
+          ],
+          [
+            0.644457,
+            -0.155555,
+            0.034612
+          ],
+          [
+            0.644457,
+            -0.155555,
+            0.034612
+          ],
+          [
+            0.644457,
+            -0.155555,
+            0.034612
+          ],
+          [
+            0.644457,
+            -0.155555,
+            0.034612
+          ],
+          [
+            0.644457,
+            -0.155555,
+            0.034612
+          ],
+          [
+            0.638223,
+            -0.170996,
+            0.016847
+          ],
+          [
+            0.638223,
+            -0.170996,
+            0.016847
+          ],
+          [
+            0.638223,
+            -0.170996,
+            0.016847
+          ],
+          [
+            0.638223,
+            -0.170996,
+            0.016847
+          ]
+        ],
+        "summary": {
+          "duration_s": 1.0,
+          "hand_wrist_path_length_m": 0.611296,
+          "max_height_m": 0.065257,
+          "max_displacement_m": 0.446958
+        },
+        "files": {
+          "trajectory_json": "trajectories/action_03_trajectory.json",
+          "trajectory_png": "trajectories/action_03_trajectory.png"
+        }
+      },
+      "feedback": [
+        "IMU 动作时序与模板差异较大，建议按标准动作节奏重新完成。",
+        "肌肉激活模式与健康模板较接近。",
+        "检测到代偿表现，请调整姿势后继续训练。"
+      ]
+    }
+  ]
+}

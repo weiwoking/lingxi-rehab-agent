@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "registry.stage3b.schema.json",
+  "title": "Unbounded Stage3B registry",
+  "type": "object",
+  "required": ["schema_version", "dynamic", "capture_count_limit", "samples"],
+  "properties": {
+    "schema_version": {"const": "stage3b_dynamic_registry.v1"},
+    "dynamic": {"const": true},
+    "capture_count_limit": {"type": "null"},
+    "distance_required": {"const": false},
+    "samples": {"type": "array"}
+  }
+}

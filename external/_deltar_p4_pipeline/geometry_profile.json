@@ -1,0 +1,22 @@
+{
+  "schema_version": "deltar_geometry_profile.v1",
+  "minimum_depth_m": 0.001,
+  "maximum_depth_m": 10.0,
+  "minimum_point_count": 40,
+  "point_filter": "intersection",
+  "mad_multiplier": 3.0,
+  "iqr_multiplier": 1.5,
+  "minimum_gate_m": 0.02,
+  "stage3_surface_minimum_window_m": 0.05,
+  "peak_bin_width_m": 0.05,
+  "secondary_peak_min_support": 0.12,
+  "bbox_peak_min_support": 0.25,
+  "bottom_quantile": 0.005,
+  "top_quantile": 0.995,
+  "vertical_support_fraction": 0.03,
+  "below_floor_tolerance_m": 0.05,
+  "object_height_range_m": [0.01, 4.0],
+  "canvas_distance_tolerance_m": 0.10,
+  "canvas_height_tolerance_m": 0.10,
+  "canvas_bottom_tolerance_m": 0.08
+}

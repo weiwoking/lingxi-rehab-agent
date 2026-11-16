@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "deltar_pc_job_report.v1.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "job_id", "scan_id", "status", "exit_code", "started_at", "finished_at", "result_status", "input", "output", "processed_frames", "rejected_frames", "warnings", "errors", "provenance", "processing", "resume_supported", "persistent_queue"],
+  "properties": {
+    "schema_version": {"const": "deltar_pc_job_report.v1.1"},
+    "job_id": {"type": "string", "minLength": 1},
+    "scan_id": {"type": "string", "minLength": 1},
+    "status": {"enum": ["validated", "running", "success", "partial_success", "rejected", "failed"]},
+    "exit_code": {"enum": [0, 2, 3, 4, 5, 6, 7]},
+    "started_at": {"type": "string", "format": "date-time"},
+    "finished_at": {"type": "string", "format": "date-time"},
+    "result_status": {"enum": ["success", "partial_success", "rejected", "failed", null]},
+    "input": {"type": "object", "additionalProperties": false, "required": ["frame_count"], "properties": {"frame_count": {"type": "integer", "minimum": 1}}},
+    "output": {"type": "object", "additionalProperties": false, "required": ["result_schema", "frame_result_schema", "result_written"], "properties": {"result_schema": {"const": "deltar_scan_result.v1.1"}, "frame_result_schema": {"const": "deltar_scan_frame_result.v1.1"}, "result_written": {"type": "boolean"}}},
+    "processed_frames": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "rejected_frames": {"type": "array", "items": {"type": "object", "required": ["frame_id", "sequence", "error"], "properties": {"frame_id": {"type": "string"}, "sequence": {"type": "integer", "minimum": 0}, "error": {"type": "object"}}, "additionalProperties": false}},
+    "warnings": {"type": "array", "items": {"type": "string", "pattern": "^W_[A-Z0-9_]+$"}, "uniqueItems": true},
+    "errors": {"type": "array", "items": {"type": "object"}},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pipeline_version", "model_hashes", "profile_hashes"],
+      "properties": {
+        "pipeline_version": {"type": "string"},
+        "model_hashes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["depth", "detect", "segment"],
+          "properties": {
+            "depth": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "detect": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "segment": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+          }
+        },
+        "profile_hashes": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+      }
+    },
+    "processing": {"type": "object", "additionalProperties": false, "required": ["total_ms"], "properties": {"total_ms": {"type": "number", "minimum": 0}}},
+    "resume_supported": {"const": false},
+    "persistent_queue": {"const": false}
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "all_pass": true,
+  "compile": [
+    {
+      "exit_code": 0,
+      "interpreter": "C:\\ec\\_deltar_formal\\envs\\deltar_py311_torch271_cu128\\python.exe",
+      "script": "intake_and_freeze.py",
+      "stderr": ""
+    },
+    {
+      "exit_code": 0,
+      "interpreter": "C:\\ec\\_deltar_formal\\envs\\deltar_py311_torch271_cu128\\python.exe",
+      "script": "capture_full_raw_candidates.py",
+      "stderr": ""
+    },
+    {
+      "exit_code": 0,
+      "interpreter": "C:\\ec\\_deltar_formal\\envs\\deltar_py311_torch271_cu128\\python.exe",
+      "script": "extract_and_counterfactual.py",
+      "stderr": ""
+    },
+    {
+      "exit_code": 0,
+      "interpreter": "C:\\ec\\_deltar_formal\\envs\\deltar_py311_torch271_cu128\\python.exe",
+      "script": "evaluate_round2.py",
+      "stderr": ""
+    },
+    {
+      "exit_code": 0,
+      "interpreter": "C:\\ec\\_conda_envs\\vision_interpreter\\python.exe",
+      "script": "build_web.py",
+      "stderr": ""
+    },
+    {
+      "exit_code": 0,
+      "interpreter": "C:\\ec\\_conda_envs\\vision_interpreter\\python.exe",
+      "script": "finalize_audit.py",
+      "stderr": ""
+    }
+  ],
+  "eleven_frame_repeatability_is_evaluation_only": true,
+  "production_git_pre_post_identical": true,
+  "protected_hashes_match": true,
+  "required_documents_present": {
+    "BIMODAL_SOFT_ESTIMATE_AUDIT.json": true,
+    "BIMODAL_SOFT_ESTIMATE_AUDIT.md": true,
+    "CANDIDATE_INFORMATION_FLOW_GRAPH.md": true,
+    "CANDIDATE_SURVIVAL_AUDIT.md": true,
+    "PER_OBJECT_VS_SHARED_CONTEXT_AUDIT.json": true,
+    "PER_OBJECT_VS_SHARED_CONTEXT_AUDIT.md": true,
+    "PROVENANCE_CONSOLIDATION_AUDIT.json": true,
+    "PROVENANCE_CONSOLIDATION_AUDIT.md": true,
+    "RAW_DISTRIBUTION_CENTEREDNESS_AUDIT.json": true,
+    "RAW_DISTRIBUTION_CENTEREDNESS_AUDIT.md": true,
+    "SECOND_ROUND_FUSION_ARCHITECTURE_OPTIONS.md": true,
+    "SECOND_ROUND_SINGLE_FRAME_REPEATABILITY_COMPARISON.json": true,
+    "SECOND_ROUND_SINGLE_FRAME_REPEATABILITY_COMPARISON.md": true,
+    "SUPPORT_CONTEXT_FORMATION_AUDIT.json": true,
+    "SUPPORT_CONTEXT_FORMATION_AUDIT.md": true,
+    "SURFACE_HYPOTHESIS_CONSTRUCTION_AUDIT.json": true,
+    "SURFACE_HYPOTHESIS_CONSTRUCTION_AUDIT.md": true,
+    "SYSTEMATIC_BIAS_DIAGNOSTIC_V2.md": true,
+    "TRUTH_NEIGHBORHOOD_SURVIVAL_MATRIX.json": true,
+    "TRUTH_NEIGHBORHOOD_SURVIVAL_MATRIX.md": true,
+    "candidate_survival_audit.json": true
+  },
+  "runtime_uses_cross_frame_information": false,
+  "six_scans_have_11_frames": true,
+  "truth_blind_freeze_hashes_match": true,
+  "web_image_count": 66,
+  "web_scan_page_count": 6
+}

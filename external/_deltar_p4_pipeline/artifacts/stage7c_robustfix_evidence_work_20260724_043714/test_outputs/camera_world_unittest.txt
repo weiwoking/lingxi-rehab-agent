@@ -1,0 +1,73 @@
+﻿COMMAND: python -m unittest discover -s tests -p "test_camera_world*.py" -v
+python.exe : test_actual_board_helper_object_points_match_world_mapping (test_camera_world_calibration.CameraWorldAxesT
+ests.test_actual_board_helper_object_points_match_world_mapping) ... ok
+At line:2 char:53
++ ... ne\src'; $o=& 'C:\ec\_deltar_formal\envs\deltar_py311_torch271_cu128\ ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (test_actual_boa...mapping) ... ok:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+test_actual_helper_back_facing_pose_cannot_silently_match_front (test_camera_world_calibration.CameraWorldAxesTests.tes
+t_actual_helper_back_facing_pose_cannot_silently_match_front) ... ok
+test_actual_helper_front_pose_passes_with_correct_world_direction (test_camera_world_calibration.CameraWorldAxesTests.t
+est_actual_helper_front_pose_passes_with_correct_world_direction) ... ok
+test_board_to_world_mapping_and_normal_are_deterministic (test_camera_world_calibration.CameraWorldAxesTests.test_board
+_to_world_mapping_and_normal_are_deterministic) ... ok
+test_ideal_level_camera_contract (test_camera_world_calibration.CameraWorldAxesTests.test_ideal_level_camera_contract) 
+... ok
+test_transform_composition_and_inverse_roundtrip (test_camera_world_calibration.CameraWorldAxesTests.test_transform_com
+position_and_inverse_roundtrip) ... ok
+test_euler_diagnostics_positive_and_negative_signs (test_camera_world_calibration.CameraWorldRotationTests.test_euler_d
+iagnostics_positive_and_negative_signs) ... ok
+test_rotation_average_light_noise (test_camera_world_calibration.CameraWorldRotationTests.test_rotation_average_light_n
+oise) ... ok
+test_rotation_average_no_noise (test_camera_world_calibration.CameraWorldRotationTests.test_rotation_average_no_noise) 
+... ok
+test_rotation_outlier_is_rejected (test_camera_world_calibration.CameraWorldRotationTests.test_rotation_outlier_is_reje
+cted) ... ok
+test_vertical_plane_from_stage7b_nominal_rays (test_camera_world_calibration.CameraWorldTofSyntheticTests.test_vertical
+_plane_from_stage7b_nominal_rays) ... ok
+test_absolute_geometry_must_remain_false (test_camera_world_contracts.CameraWorldProfileContractTests.test_absolute_geo
+metry_must_remain_false) ... ok
+test_axis_text_contradiction_is_rejected (test_camera_world_contracts.CameraWorldProfileContractTests.test_axis_text_co
+ntradiction_is_rejected) ... ok
+test_composition_mismatch_is_rejected (test_camera_world_contracts.CameraWorldProfileContractTests.test_composition_mis
+match_is_rejected) ... ok
+test_fewer_than_fourteen_orientation_inliers_is_rejected (test_camera_world_contracts.CameraWorldProfileContractTests.t
+est_fewer_than_fourteen_orientation_inliers_is_rejected) ... ok
+test_frozen_stage7b_binding (test_camera_world_contracts.CameraWorldProfileContractTests.test_frozen_stage7b_binding) .
+.. ok
+test_height_cannot_be_overridden_by_board_translation (test_camera_world_contracts.CameraWorldProfileContractTests.test
+_height_cannot_be_overridden_by_board_translation) ... ok
+test_single_orientation_outlier_is_valid (test_camera_world_contracts.CameraWorldProfileContractTests.test_single_orien
+tation_outlier_is_valid) ... ok
+test_uncertainty_is_exactly_five (test_camera_world_contracts.CameraWorldProfileContractTests.test_uncertainty_is_exact
+ly_five) ... ok
+test_unknown_transform_direction_is_rejected (test_camera_world_contracts.CameraWorldProfileContractTests.test_unknown_
+transform_direction_is_rejected) ... ok
+test_valid_closed_world_profile (test_camera_world_contracts.CameraWorldProfileContractTests.test_valid_closed_world_pr
+ofile) ... ok
+test_fourteen_base_valid_frames_still_fails (test_camera_world_integration.CameraWorldIntegrationTests.test_fourteen_ba
+se_valid_frames_still_fails) ... ok
+test_manifest_template_smoke_and_three_schema_parse (test_camera_world_integration.CameraWorldIntegrationTests.test_man
+ifest_template_smoke_and_three_schema_parse) ... ok
+test_output_dir_refuses_nonempty_overwrite (test_camera_world_integration.CameraWorldIntegrationTests.test_output_dir_r
+efuses_nonempty_overwrite) ... ok
+test_overlay_contains_finite_world_and_tof_diagnostics (test_camera_world_integration.CameraWorldIntegrationTests.test_
+overlay_contains_finite_world_and_tof_diagnostics) ... ok
+test_single_orientation_outlier_passes_and_remains_diagnostic (test_camera_world_integration.CameraWorldIntegrationTest
+s.test_single_orientation_outlier_passes_and_remains_diagnostic) ... ok
+test_synthetic_fail_never_writes_formal_profile (test_camera_world_integration.CameraWorldIntegrationTests.test_synthet
+ic_fail_never_writes_formal_profile) ... ok
+test_synthetic_pass_profile_and_independent_validate (test_camera_world_integration.CameraWorldIntegrationTests.test_sy
+nthetic_pass_profile_and_independent_validate) ... ok
+test_thirteen_total_orientation_inliers_fails (test_camera_world_integration.CameraWorldIntegrationTests.test_thirteen_
+total_orientation_inliers_fails) ... ok
+test_three_orientation_inliers_in_one_pose_fails (test_camera_world_integration.CameraWorldIntegrationTests.test_three_
+orientation_inliers_in_one_pose_fails) ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 0.882s
+
+OK
+EXIT_CODE=0

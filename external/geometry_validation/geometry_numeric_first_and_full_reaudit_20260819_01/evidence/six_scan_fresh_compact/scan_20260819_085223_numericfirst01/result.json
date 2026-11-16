@@ -1,0 +1,1155 @@
+{
+  "aggregation": {
+    "association_group_count": 10,
+    "filtered_non_core_count": 5,
+    "gt_used_for_association": false,
+    "input_observation_count": 38,
+    "output_object_count": 5
+  },
+  "errors": [],
+  "frame_processing_status": [
+    {
+      "capture_status": "CAPTURE_OK",
+      "degradation_mode": "NORMAL",
+      "deltar_status": "DELTAR_OK",
+      "detection_status": "DETECTION_OK",
+      "frame_id": "frame_000000",
+      "geometry_status": "GEOMETRY_DEGRADED",
+      "reason_codes": [],
+      "sequence": 0,
+      "tof_diagnostics": {
+        "borrowed_age_ms": null,
+        "borrowed_from_frame_id": null,
+        "confidence": 0.414578098794425,
+        "degradation_mode": "NORMAL",
+        "formal_valid_count": 11,
+        "pose_gate": null,
+        "reason_codes": [],
+        "source": "current",
+        "tof_status": "TOF_NORMAL"
+      },
+      "tof_status": "TOF_NORMAL"
+    },
+    {
+      "capture_status": "CAPTURE_OK",
+      "degradation_mode": "NORMAL",
+      "deltar_status": "DELTAR_OK",
+      "detection_status": "DETECTION_OK",
+      "frame_id": "frame_000001",
+      "geometry_status": "GEOMETRY_DEGRADED",
+      "reason_codes": [],
+      "sequence": 1,
+      "tof_diagnostics": {
+        "borrowed_age_ms": null,
+        "borrowed_from_frame_id": null,
+        "confidence": 0.5153882032022076,
+        "degradation_mode": "NORMAL",
+        "formal_valid_count": 17,
+        "pose_gate": null,
+        "reason_codes": [],
+        "source": "current",
+        "tof_status": "TOF_NORMAL"
+      },
+      "tof_status": "TOF_NORMAL"
+    },
+    {
+      "capture_status": "CAPTURE_OK",
+      "degradation_mode": "PARTIAL_ZONE_TOF",
+      "deltar_status": "DELTAR_OK",
+      "detection_status": "DETECTION_OK",
+      "frame_id": "frame_000002",
+      "geometry_status": "GEOMETRY_DEGRADED",
+      "reason_codes": [
+        "sparse_formal_valid_zones"
+      ],
+      "sequence": 2,
+      "tof_diagnostics": {
+        "borrowed_age_ms": null,
+        "borrowed_from_frame_id": null,
+        "confidence": 0.25,
+        "degradation_mode": "PARTIAL_ZONE_TOF",
+        "formal_valid_count": 4,
+        "pose_gate": null,
+        "reason_codes": [
+          "sparse_formal_valid_zones"
+        ],
+        "source": "current",
+        "tof_status": "TOF_DEGRADED"
+      },
+      "tof_status": "TOF_DEGRADED"
+    },
+    {
+      "capture_status": "CAPTURE_OK",
+      "degradation_mode": "PARTIAL_ZONE_TOF",
+      "deltar_status": "DELTAR_OK",
+      "detection_status": "DETECTION_OK",
+      "frame_id": "frame_000003",
+      "geometry_status": "GEOMETRY_DEGRADED",
+      "reason_codes": [
+        "sparse_formal_valid_zones"
+      ],
+      "sequence": 3,
+      "tof_diagnostics": {
+        "borrowed_age_ms": null,
+        "borrowed_from_frame_id": null,
+        "confidence": 0.1767766952966369,
+        "degradation_mode": "PARTIAL_ZONE_TOF",
+        "formal_valid_count": 2,
+        "pose_gate": null,
+        "reason_codes": [
+          "sparse_formal_valid_zones"
+        ],
+        "source": "current",
+        "tof_status": "TOF_DEGRADED"
+      },
+      "tof_status": "TOF_DEGRADED"
+    },
+    {
+      "capture_status": "CAPTURE_OK",
+      "degradation_mode": "PARTIAL_ZONE_TOF",
+      "deltar_status": "DELTAR_OK",
+      "detection_status": "DETECTION_OK",
+      "frame_id": "frame_000004",
+      "geometry_status": "GEOMETRY_DEGRADED",
+      "reason_codes": [
+        "sparse_formal_valid_zones"
+      ],
+      "sequence": 4,
+      "tof_diagnostics": {
+        "borrowed_age_ms": null,
+        "borrowed_from_frame_id": null,
+        "confidence": 0.1767766952966369,
+        "degradation_mode": "PARTIAL_ZONE_TOF",
+        "formal_valid_count": 2,
+        "pose_gate": null,
+        "reason_codes": [
+          "sparse_formal_valid_zones"
+        ],
+        "source": "current",
+        "tof_status": "TOF_DEGRADED"
+      },
+      "tof_status": "TOF_DEGRADED"
+    },
+    {
+      "capture_status": "CAPTURE_OK",
+      "degradation_mode": "PARTIAL_ZONE_TOF",
+      "deltar_status": "DELTAR_OK",
+      "detection_status": "DETECTION_OK",
+      "frame_id": "frame_000005",
+      "geometry_status": "GEOMETRY_DEGRADED",
+      "reason_codes": [
+        "sparse_formal_valid_zones"
+      ],
+      "sequence": 5,
+      "tof_diagnostics": {
+        "borrowed_age_ms": null,
+        "borrowed_from_frame_id": null,
+        "confidence": 0.125,
+        "degradation_mode": "PARTIAL_ZONE_TOF",
+        "formal_valid_count": 1,
+        "pose_gate": null,
+        "reason_codes": [
+          "sparse_formal_valid_zones"
+        ],
+        "source": "current",
+        "tof_status": "TOF_DEGRADED"
+      },
+      "tof_status": "TOF_DEGRADED"
+    },
+    {
+      "capture_status": "CAPTURE_OK",
+      "degradation_mode": "RAW_METRIC_TOF",
+      "deltar_status": "DELTAR_OK",
+      "detection_status": "DETECTION_OK",
+      "frame_id": "frame_000006",
+      "geometry_status": "GEOMETRY_DEGRADED",
+      "reason_codes": [
+        "zero_formal_valid_tof",
+        "finite_raw_metric_tof_used",
+        "sensor_target_quality_invalid"
+      ],
+      "sequence": 6,
+      "tof_diagnostics": {
+        "borrowed_age_ms": null,
+        "borrowed_from_frame_id": null,
+        "confidence": 0.05,
+        "degradation_mode": "RAW_METRIC_TOF",
+        "formal_valid_count": 0,
+        "pose_gate": null,
+        "raw_metric_count": 64,
+        "reason_codes": [
+          "zero_formal_valid_tof",
+          "finite_raw_metric_tof_used",
+          "sensor_target_quality_invalid"
+        ],
+        "source": "degraded_raw",
+        "tof_status": "TOF_DEGRADED_RAW"
+      },
+      "tof_status": "TOF_DEGRADED_RAW"
+    },
+    {
+      "capture_status": "CAPTURE_OK",
+      "degradation_mode": "RAW_METRIC_TOF",
+      "deltar_status": "DELTAR_OK",
+      "detection_status": "DETECTION_OK",
+      "frame_id": "frame_000007",
+      "geometry_status": "GEOMETRY_DEGRADED",
+      "reason_codes": [
+        "zero_formal_valid_tof",
+        "finite_raw_metric_tof_used",
+        "sensor_target_quality_invalid"
+      ],
+      "sequence": 7,
+      "tof_diagnostics": {
+        "borrowed_age_ms": null,
+        "borrowed_from_frame_id": null,
+        "confidence": 0.05,
+        "degradation_mode": "RAW_METRIC_TOF",
+        "formal_valid_count": 0,
+        "pose_gate": null,
+        "raw_metric_count": 64,
+        "reason_codes": [
+          "zero_formal_valid_tof",
+          "finite_raw_metric_tof_used",
+          "sensor_target_quality_invalid"
+        ],
+        "source": "degraded_raw",
+        "tof_status": "TOF_DEGRADED_RAW"
+      },
+      "tof_status": "TOF_DEGRADED_RAW"
+    },
+    {
+      "capture_status": "CAPTURE_OK",
+      "degradation_mode": "PARTIAL_ZONE_TOF",
+      "deltar_status": "DELTAR_OK",
+      "detection_status": "DETECTION_OK",
+      "frame_id": "frame_000008",
+      "geometry_status": "GEOMETRY_DEGRADED",
+      "reason_codes": [
+        "sparse_formal_valid_zones"
+      ],
+      "sequence": 8,
+      "tof_diagnostics": {
+        "borrowed_age_ms": null,
+        "borrowed_from_frame_id": null,
+        "confidence": 0.125,
+        "degradation_mode": "PARTIAL_ZONE_TOF",
+        "formal_valid_count": 1,
+        "pose_gate": null,
+        "reason_codes": [
+          "sparse_formal_valid_zones"
+        ],
+        "source": "current",
+        "tof_status": "TOF_DEGRADED"
+      },
+      "tof_status": "TOF_DEGRADED"
+    },
+    {
+      "capture_status": "CAPTURE_OK",
+      "degradation_mode": "RAW_METRIC_TOF",
+      "deltar_status": "DELTAR_OK",
+      "detection_status": "DETECTION_OK",
+      "frame_id": "frame_000009",
+      "geometry_status": "GEOMETRY_DEGRADED",
+      "reason_codes": [
+        "zero_formal_valid_tof",
+        "finite_raw_metric_tof_used",
+        "sensor_target_quality_invalid"
+      ],
+      "sequence": 9,
+      "tof_diagnostics": {
+        "borrowed_age_ms": null,
+        "borrowed_from_frame_id": null,
+        "confidence": 0.05,
+        "degradation_mode": "RAW_METRIC_TOF",
+        "formal_valid_count": 0,
+        "pose_gate": null,
+        "raw_metric_count": 64,
+        "reason_codes": [
+          "zero_formal_valid_tof",
+          "finite_raw_metric_tof_used",
+          "sensor_target_quality_invalid"
+        ],
+        "source": "degraded_raw",
+        "tof_status": "TOF_DEGRADED_RAW"
+      },
+      "tof_status": "TOF_DEGRADED_RAW"
+    },
+    {
+      "capture_status": "CAPTURE_OK",
+      "degradation_mode": "RAW_METRIC_TOF",
+      "deltar_status": "DELTAR_OK",
+      "detection_status": "DETECTION_OK",
+      "frame_id": "frame_000010",
+      "geometry_status": "GEOMETRY_DEGRADED",
+      "reason_codes": [
+        "zero_formal_valid_tof",
+        "finite_raw_metric_tof_used",
+        "sensor_target_quality_invalid"
+      ],
+      "sequence": 10,
+      "tof_diagnostics": {
+        "borrowed_age_ms": null,
+        "borrowed_from_frame_id": null,
+        "confidence": 0.05,
+        "degradation_mode": "RAW_METRIC_TOF",
+        "formal_valid_count": 0,
+        "pose_gate": null,
+        "raw_metric_count": 64,
+        "reason_codes": [
+          "zero_formal_valid_tof",
+          "finite_raw_metric_tof_used",
+          "sensor_target_quality_invalid"
+        ],
+        "source": "degraded_raw",
+        "tof_status": "TOF_DEGRADED_RAW"
+      },
+      "tof_status": "TOF_DEGRADED_RAW"
+    }
+  ],
+  "input": {
+    "frame_count": 11,
+    "rejected_frame_count": 0,
+    "rejected_frames": [],
+    "valid_frame_count": 11
+  },
+  "job_id": "job_8423a67aacd92de4eb8d",
+  "models": {
+    "depth": {
+      "sha256": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+      "task": "depth"
+    },
+    "detect": {
+      "sha256": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+      "task": "detect"
+    },
+    "segment": {
+      "sha256": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152",
+      "task": "segment"
+    }
+  },
+  "objects": [
+    {
+      "aggregation_status": "conservative_match",
+      "best_observation": {
+        "canvas_selection_status": "agreed",
+        "formal_stage4_selected": true,
+        "frame_id": "frame_000002",
+        "frame_object_id": "frame_000002:logical:001",
+        "selected_source": "segmentation"
+      },
+      "best_observation_frame_id": "frame_000002",
+      "best_observation_reason": [
+        "segmentation_primary:+100",
+        "canvas_agreed:+20",
+        "geometry_points:+13.840",
+        "complete:+10",
+        "not_border:+5",
+        "not_fallback:+3",
+        "depth_compactness:+1.892",
+        "confidence:+0.562"
+      ],
+      "best_observation_score": 154.29474103929337,
+      "bottom_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.782285852526654
+      },
+      "class_id": 39,
+      "class_name": "bottle",
+      "class_scope": "core_now",
+      "distance": {
+        "semantics": "camera_axial_z_median",
+        "source_frame_id": "frame_000002",
+        "valid": true,
+        "value_m": 1.858194351196289
+      },
+      "distance_observations_m": [
+        0.6996669471263885,
+        1.1199424266815186,
+        1.858194351196289,
+        1.9571905136108398,
+        1.6626163125038147,
+        1.9638185501098633,
+        1.7726213932037354,
+        2.1889705657958984,
+        1.6476998329162598,
+        2.567852020263672,
+        2.3273996114730835
+      ],
+      "frame_ids": [
+        "frame_000000",
+        "frame_000001",
+        "frame_000002",
+        "frame_000003",
+        "frame_000004",
+        "frame_000005",
+        "frame_000006",
+        "frame_000007",
+        "frame_000008",
+        "frame_000009",
+        "frame_000010"
+      ],
+      "object_role": "operable_object",
+      "observation_count": 11,
+      "physical_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.148
+      },
+      "placement_level": "elevated",
+      "provenance": {
+        "best_observation_only_for_geometry": true,
+        "model_hashes": {
+          "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+          "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+          "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+        },
+        "source_frame_object_ids": [
+          "frame_000000:logical:000",
+          "frame_000001:logical:001",
+          "frame_000002:logical:001",
+          "frame_000003:logical:000",
+          "frame_000004:logical:000",
+          "frame_000005:logical:000",
+          "frame_000006:logical:000",
+          "frame_000007:logical:000",
+          "frame_000008:logical:000",
+          "frame_000009:logical:000",
+          "frame_000010:logical:000"
+        ],
+        "stage4_function": "all_object_geometry.measure_logical_object_v2"
+      },
+      "rejection_reason": null,
+      "scan_object_id": "object_0001",
+      "visibility": {
+        "bottom_visible": true,
+        "full_extent_visible": true,
+        "status": "complete",
+        "top_visible": true
+      },
+      "visibility_observations": [
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete"
+      ],
+      "visible_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.148
+      },
+      "warnings": []
+    },
+    {
+      "aggregation_status": "conservative_match",
+      "best_observation": {
+        "canvas_selection_status": "agreed",
+        "formal_stage4_selected": true,
+        "frame_id": "frame_000002",
+        "frame_object_id": "frame_000002:logical:002",
+        "selected_source": "segmentation"
+      },
+      "best_observation_frame_id": "frame_000002",
+      "best_observation_reason": [
+        "segmentation_primary:+100",
+        "canvas_agreed:+20",
+        "geometry_points:+10.730",
+        "complete:+10",
+        "not_border:+5",
+        "not_fallback:+3",
+        "depth_compactness:+1.864",
+        "confidence:+0.249"
+      ],
+      "best_observation_score": 150.84243400245256,
+      "bottom_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 1.0819592512339937
+      },
+      "class_id": 39,
+      "class_name": "bottle",
+      "class_scope": "core_now",
+      "distance": {
+        "semantics": "camera_axial_z_median",
+        "source_frame_id": "frame_000002",
+        "valid": true,
+        "value_m": 2.0066065788269043
+      },
+      "distance_observations_m": [
+        0.9219680428504944,
+        1.7091745138168335,
+        2.0066065788269043
+      ],
+      "frame_ids": [
+        "frame_000000",
+        "frame_000001",
+        "frame_000002"
+      ],
+      "object_role": "operable_object",
+      "observation_count": 3,
+      "physical_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.126
+      },
+      "placement_level": "elevated",
+      "provenance": {
+        "best_observation_only_for_geometry": true,
+        "model_hashes": {
+          "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+          "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+          "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+        },
+        "source_frame_object_ids": [
+          "frame_000000:logical:002",
+          "frame_000001:logical:003",
+          "frame_000002:logical:002"
+        ],
+        "stage4_function": "all_object_geometry.measure_logical_object_v2"
+      },
+      "rejection_reason": null,
+      "scan_object_id": "object_0002",
+      "visibility": {
+        "bottom_visible": true,
+        "full_extent_visible": true,
+        "status": "complete",
+        "top_visible": true
+      },
+      "visibility_observations": [
+        "complete",
+        "complete",
+        "complete"
+      ],
+      "visible_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.126
+      },
+      "warnings": []
+    },
+    {
+      "aggregation_status": "single_observation",
+      "best_observation": {
+        "canvas_selection_status": "agreed",
+        "formal_stage4_selected": true,
+        "frame_id": "frame_000001",
+        "frame_object_id": "frame_000001:logical:000",
+        "selected_source": "segmentation"
+      },
+      "best_observation_frame_id": "frame_000001",
+      "best_observation_reason": [
+        "segmentation_primary:+100",
+        "canvas_agreed:+20",
+        "geometry_points:+20.000",
+        "not_fallback:+3",
+        "depth_compactness:+1.881",
+        "confidence:+0.929"
+      ],
+      "best_observation_score": 145.80990283905942,
+      "bottom_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.7737671179103442
+      },
+      "class_id": 0,
+      "class_name": "person",
+      "class_scope": "core_now",
+      "distance": {
+        "semantics": "camera_axial_z_median",
+        "source_frame_id": "frame_000001",
+        "valid": true,
+        "value_m": 0.7928074598312378
+      },
+      "distance_observations_m": [
+        0.7928074598312378
+      ],
+      "frame_ids": [
+        "frame_000001"
+      ],
+      "object_role": "context_person",
+      "observation_count": 1,
+      "physical_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.3145884280424777
+      },
+      "placement_level": "elevated",
+      "provenance": {
+        "best_observation_only_for_geometry": true,
+        "model_hashes": {
+          "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+          "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+          "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+        },
+        "source_frame_object_ids": [
+          "frame_000001:logical:000"
+        ],
+        "stage4_function": "all_object_geometry.measure_logical_object_v2"
+      },
+      "rejection_reason": null,
+      "scan_object_id": "object_0003",
+      "visibility": {
+        "bottom_visible": true,
+        "full_extent_visible": false,
+        "status": "partial",
+        "top_visible": true
+      },
+      "visibility_observations": [
+        "partial"
+      ],
+      "visible_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.3145884280424777
+      },
+      "warnings": [
+        "W_PARTIAL_OBJECT"
+      ]
+    },
+    {
+      "aggregation_status": "single_observation",
+      "best_observation": {
+        "canvas_selection_status": "agreed",
+        "formal_stage4_selected": true,
+        "frame_id": "frame_000002",
+        "frame_object_id": "frame_000002:logical:000",
+        "selected_source": "segmentation"
+      },
+      "best_observation_frame_id": "frame_000002",
+      "best_observation_reason": [
+        "segmentation_primary:+100",
+        "canvas_agreed:+20",
+        "geometry_points:+20.000",
+        "not_fallback:+3",
+        "depth_compactness:+1.833",
+        "confidence:+0.564"
+      ],
+      "best_observation_score": 145.39771083914957,
+      "bottom_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.8878882389057345
+      },
+      "class_id": 0,
+      "class_name": "person",
+      "class_scope": "core_now",
+      "distance": {
+        "semantics": "camera_axial_z_median",
+        "source_frame_id": "frame_000002",
+        "valid": true,
+        "value_m": 1.5826472043991089
+      },
+      "distance_observations_m": [
+        1.5826472043991089
+      ],
+      "frame_ids": [
+        "frame_000002"
+      ],
+      "object_role": "context_person",
+      "observation_count": 1,
+      "physical_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.31258040278200283
+      },
+      "placement_level": "elevated",
+      "provenance": {
+        "best_observation_only_for_geometry": true,
+        "model_hashes": {
+          "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+          "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+          "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+        },
+        "source_frame_object_ids": [
+          "frame_000002:logical:000"
+        ],
+        "stage4_function": "all_object_geometry.measure_logical_object_v2"
+      },
+      "rejection_reason": null,
+      "scan_object_id": "object_0004",
+      "visibility": {
+        "bottom_visible": true,
+        "full_extent_visible": false,
+        "status": "partial",
+        "top_visible": false
+      },
+      "visibility_observations": [
+        "partial"
+      ],
+      "visible_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.31258040278200283
+      },
+      "warnings": [
+        "W_PARTIAL_OBJECT"
+      ]
+    },
+    {
+      "aggregation_status": "conservative_match",
+      "best_observation": {
+        "canvas_selection_status": "agreed",
+        "formal_stage4_selected": true,
+        "frame_id": "frame_000005",
+        "frame_object_id": "frame_000005:logical:001",
+        "selected_source": "segmentation"
+      },
+      "best_observation_frame_id": "frame_000005",
+      "best_observation_reason": [
+        "segmentation_primary:+100",
+        "canvas_agreed:+20",
+        "geometry_points:+11.100",
+        "complete:+10",
+        "not_border:+5",
+        "not_fallback:+3",
+        "depth_compactness:+1.784",
+        "confidence:+0.302"
+      ],
+      "best_observation_score": 151.18628876163476,
+      "bottom_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 1.079565166633811
+      },
+      "class_id": 39,
+      "class_name": "bottle",
+      "class_scope": "core_now",
+      "distance": {
+        "semantics": "camera_axial_z_median",
+        "source_frame_id": "frame_000005",
+        "valid": true,
+        "value_m": 2.2513060569763184
+      },
+      "distance_observations_m": [
+        1.735394835472107,
+        2.2513060569763184,
+        0.7315349578857422,
+        0.7365632057189941,
+        1.7641519904136658,
+        0.7702205181121826,
+        0.7794373035430908
+      ],
+      "frame_ids": [
+        "frame_000004",
+        "frame_000005",
+        "frame_000006",
+        "frame_000007",
+        "frame_000008",
+        "frame_000009",
+        "frame_000010"
+      ],
+      "object_role": "operable_object",
+      "observation_count": 7,
+      "physical_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.121
+      },
+      "placement_level": "elevated",
+      "provenance": {
+        "best_observation_only_for_geometry": true,
+        "model_hashes": {
+          "depth": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+          "detect": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+          "segment": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+        },
+        "source_frame_object_ids": [
+          "frame_000004:logical:001",
+          "frame_000005:logical:001",
+          "frame_000006:logical:001",
+          "frame_000007:logical:001",
+          "frame_000008:logical:002",
+          "frame_000009:logical:001",
+          "frame_000010:logical:002"
+        ],
+        "stage4_function": "all_object_geometry.measure_logical_object_v2"
+      },
+      "rejection_reason": null,
+      "scan_object_id": "object_0005",
+      "visibility": {
+        "bottom_visible": true,
+        "full_extent_visible": true,
+        "status": "complete",
+        "top_visible": true
+      },
+      "visibility_observations": [
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete",
+        "complete"
+      ],
+      "visible_height": {
+        "absolute_valid": true,
+        "available": true,
+        "value_m": 0.121
+      },
+      "warnings": []
+    }
+  ],
+  "processing": {
+    "aggregation_ms": 0.5547000328078866,
+    "dense_depth_retained": false,
+    "finished_at": "2026-08-19T11:43:48.252800Z",
+    "frame_processing_ms": {
+      "frame_000000": {
+        "all_object_geometry_ms": 920.17900000792,
+        "decode_rgb565_ms": 1.4798000338487327,
+        "deltar_direct_ms": 193.67350003449246,
+        "deltar_letterbox_ms": 168.62479998962954,
+        "deltar_total_ms": 362.35569999553263,
+        "frame_total_ms": 969.2645000177436,
+        "stage7d_axial_ms": 86.87499997904524,
+        "stage7d_debug_write_ms": 101.03689995594323,
+        "stage7d_diagnostics_enabled": 0.0,
+        "stage7d_radial_ms": 0.0,
+        "stage7d_total_critical_ms": 187.92679999023676,
+        "yolo_cache_lookup_ms": 0.000500003807246685,
+        "yolo_ms": 0.0
+      },
+      "frame_000001": {
+        "all_object_geometry_ms": 1212.5964000006206,
+        "decode_rgb565_ms": 1.4989000046625733,
+        "deltar_direct_ms": 306.6938000265509,
+        "deltar_letterbox_ms": 398.87089998228475,
+        "deltar_total_ms": 705.6324000004679,
+        "frame_total_ms": 1258.577000000514,
+        "stage7d_axial_ms": 140.89860004605725,
+        "stage7d_debug_write_ms": 100.17210006481037,
+        "stage7d_diagnostics_enabled": 0.0,
+        "stage7d_radial_ms": 0.0,
+        "stage7d_total_critical_ms": 241.08710000291467,
+        "yolo_cache_lookup_ms": 0.000400003045797348,
+        "yolo_ms": 0.0
+      },
+      "frame_000002": {
+        "all_object_geometry_ms": 1116.328899981454,
+        "decode_rgb565_ms": 1.4239999582059681,
+        "deltar_direct_ms": 280.1720999996178,
+        "deltar_letterbox_ms": 352.3463000310585,
+        "deltar_total_ms": 632.571900030598,
+        "frame_total_ms": 1158.1623000092804,
+        "stage7d_axial_ms": 141.1077000084333,
+        "stage7d_debug_write_ms": 113.7203000835143,
+        "stage7d_diagnostics_enabled": 0.0,
+        "stage7d_radial_ms": 0.0,
+        "stage7d_total_critical_ms": 254.84389998018742,
+        "yolo_cache_lookup_ms": 0.000800006091594696,
+        "yolo_ms": 0.0
+      },
+      "frame_000003": {
+        "all_object_geometry_ms": 1572.7758999564685,
+        "decode_rgb565_ms": 1.3976999907754362,
+        "deltar_direct_ms": 264.95290000457317,
+        "deltar_letterbox_ms": 269.12670000456274,
+        "deltar_total_ms": 534.1338000143878,
+        "frame_total_ms": 1617.0986999641173,
+        "stage7d_axial_ms": 145.88119997642934,
+        "stage7d_debug_write_ms": 107.68580000149086,
+        "stage7d_diagnostics_enabled": 0.0,
+        "stage7d_radial_ms": 0.0,
+        "stage7d_total_critical_ms": 253.57820000499487,
+        "yolo_cache_lookup_ms": 0.000600004568696022,
+        "yolo_ms": 0.0
+      },
+      "frame_000004": {
+        "all_object_geometry_ms": 646.7248999979347,
+        "decode_rgb565_ms": 1.3861999614164233,
+        "deltar_direct_ms": 252.0908000296913,
+        "deltar_letterbox_ms": 402.09230000618845,
+        "deltar_total_ms": 654.2464999947697,
+        "frame_total_ms": 667.6278000231832,
+        "stage7d_axial_ms": 165.78839998692274,
+        "stage7d_debug_write_ms": 113.72520000441,
+        "stage7d_diagnostics_enabled": 0.0,
+        "stage7d_radial_ms": 0.0,
+        "stage7d_total_critical_ms": 279.5299999997951,
+        "yolo_cache_lookup_ms": 0.000600004568696022,
+        "yolo_ms": 0.0
+      },
+      "frame_000005": {
+        "all_object_geometry_ms": 1676.2930999975652,
+        "decode_rgb565_ms": 1.3703000149689615,
+        "deltar_direct_ms": 266.4656999986619,
+        "deltar_letterbox_ms": 286.0744000063278,
+        "deltar_total_ms": 552.6441999827512,
+        "frame_total_ms": 1742.0347000006586,
+        "stage7d_axial_ms": 116.5739000425674,
+        "stage7d_debug_write_ms": 93.63839996512979,
+        "stage7d_diagnostics_enabled": 0.0,
+        "stage7d_radial_ms": 0.0,
+        "stage7d_total_critical_ms": 210.22379997884855,
+        "yolo_cache_lookup_ms": 0.000600004568696022,
+        "yolo_ms": 0.0
+      },
+      "frame_000006": {
+        "all_object_geometry_ms": 791.3789000012912,
+        "decode_rgb565_ms": 1.3906999956816435,
+        "deltar_direct_ms": 259.4342000083998,
+        "deltar_letterbox_ms": 291.17679997580126,
+        "deltar_total_ms": 550.6614000187255,
+        "frame_total_ms": 811.2037000246346,
+        "stage7d_axial_ms": 120.6444000126794,
+        "stage7d_debug_write_ms": 107.85949998535216,
+        "stage7d_diagnostics_enabled": 0.0,
+        "stage7d_radial_ms": 0.0,
+        "stage7d_total_critical_ms": 228.51809998974204,
+        "yolo_cache_lookup_ms": 0.000600004568696022,
+        "yolo_ms": 0.0
+      },
+      "frame_000007": {
+        "all_object_geometry_ms": 2358.423799974844,
+        "decode_rgb565_ms": 1.3692000065930188,
+        "deltar_direct_ms": 252.23659997573122,
+        "deltar_letterbox_ms": 311.45269999979064,
+        "deltar_total_ms": 563.8223999994807,
+        "frame_total_ms": 2410.1067000301555,
+        "stage7d_axial_ms": 135.79519995255396,
+        "stage7d_debug_write_ms": 98.09040004620329,
+        "stage7d_diagnostics_enabled": 0.0,
+        "stage7d_radial_ms": 0.0,
+        "stage7d_total_critical_ms": 233.89750003116205,
+        "yolo_cache_lookup_ms": 0.000500003807246685,
+        "yolo_ms": 0.0
+      },
+      "frame_000008": {
+        "all_object_geometry_ms": 599.7834999579936,
+        "decode_rgb565_ms": 1.4185999752953649,
+        "deltar_direct_ms": 255.10439998470247,
+        "deltar_letterbox_ms": 292.21819998929277,
+        "deltar_total_ms": 547.3822000203654,
+        "frame_total_ms": 615.303699974902,
+        "stage7d_axial_ms": 108.70260000228882,
+        "stage7d_debug_write_ms": 112.35149996355176,
+        "stage7d_diagnostics_enabled": 0.0,
+        "stage7d_radial_ms": 0.0,
+        "stage7d_total_critical_ms": 221.0691999644041,
+        "yolo_cache_lookup_ms": 0.000400003045797348,
+        "yolo_ms": 0.0
+      },
+      "frame_000009": {
+        "all_object_geometry_ms": 831.9476000033319,
+        "decode_rgb565_ms": 1.3701000134460628,
+        "deltar_direct_ms": 274.1594999679364,
+        "deltar_letterbox_ms": 304.8302000388503,
+        "deltar_total_ms": 579.245799977798,
+        "frame_total_ms": 854.1601999895647,
+        "stage7d_axial_ms": 119.27460000151768,
+        "stage7d_debug_write_ms": 102.50610002549365,
+        "stage7d_diagnostics_enabled": 0.0,
+        "stage7d_radial_ms": 0.0,
+        "stage7d_total_critical_ms": 221.79260000120848,
+        "yolo_cache_lookup_ms": 0.0020999577827751637,
+        "yolo_ms": 0.0
+      },
+      "frame_000010": {
+        "all_object_geometry_ms": 654.0929999900982,
+        "decode_rgb565_ms": 1.387899974361062,
+        "deltar_direct_ms": 258.28299997374415,
+        "deltar_letterbox_ms": 269.8350999853574,
+        "deltar_total_ms": 528.1672000419348,
+        "frame_total_ms": 663.5429000016302,
+        "stage7d_axial_ms": 164.49880000436679,
+        "stage7d_debug_write_ms": 113.16490004537627,
+        "stage7d_diagnostics_enabled": 0.0,
+        "stage7d_radial_ms": 0.0,
+        "stage7d_total_critical_ms": 277.6774000376463,
+        "yolo_cache_lookup_ms": 0.000600004568696022,
+        "yolo_ms": 0.0
+      }
+    },
+    "frames_processed_in_sequence": true,
+    "started_at": "2026-08-19T11:43:33.054415Z",
+    "total_ms": 15198.61799996579
+  },
+  "profiles": {
+    "calibration_status": "measured",
+    "ids": {
+      "algorithm_profile_id": "algorithm_stage6_official_v1",
+      "calibration_profile_id": "calibration_unverified_stage6_v1",
+      "camera_profile_id": "camera_sc2336_640x360_rgb565_v1",
+      "scan_strategy_profile_id": "scan_strategy_stage6_guidance_v1",
+      "tof_profile_id": "tof_vl53l5cx_orientation_identity_v1"
+    },
+    "sha256": {
+      "algorithm_profile.json": "a4f61609c1a8f22d0577889b392e7ada9cea0059f3a348e036677d3c3a3fdb06",
+      "formal_stage2_frame_profile.json": "60b5a7f32c3f6cdfcef2f101a3a7debf4c4b4c123633c2e84f2d151e103930cf",
+      "model_manifest.json": "0be8eff315194cf498ae77b188186b2a16d3ffefe8bc639b29dfc3eb00ce2b46",
+      "scan_strategy_profile.json": "3365ebbb8b539609b1ff0568703204be4be24e08059f1d2a615ff396115a10e5"
+    }
+  },
+  "provenance": {
+    "gt_used_for_inference": false,
+    "local_debug_paths_recorded": false,
+    "models": {
+      "depth": {
+        "sha256": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+        "upstream_commit": "f3c517562bcb2dfb9e4bbf74965f2ee76a2dd096"
+      },
+      "detect": {
+        "sha256": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+        "upstream_commit": null
+      },
+      "segment": {
+        "sha256": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152",
+        "upstream_commit": null
+      }
+    },
+    "package": {
+      "files": {
+        "__init__.py": "fffd86c272e3d96d31757480267556aad55e66469980db7affa416e13ceb6f80",
+        "all_object_geometry.py": "bf61f3ea8c4cd350bbb34726defca96d4f4f1d44fb6a78e762d88e652d824fad",
+        "analytic_renderer.py": "24df7735d1fee36cc44c8c008ac295dd4157655a0bb03f2ba058d4246fc93465",
+        "appearance_compositor.py": "2248ac17617af8780bc955ffa3e18838f7147db29aac54742fef82f349c60815",
+        "baseline_old_fusion.py": "d57b5d4cec4796d50fb4a16f5118d93e897b842581ec28970ef1087abd3af3ba",
+        "calibration.py": "a4db5e658eb9a059148fe00708bf1773bca5d1ddc87afcd16e0f4fdca5a0d6ea",
+        "camera_calibration.py": "7e3b9e3a6d0b9d254ad175ddde205d4763734aa2e43eb78162ce1c27d6791451",
+        "camera_calibration_contracts.py": "fa7180899a59ad5841f61bc4da1c26bff461e0e5a1b1a72edfd1e0215ede077a",
+        "camera_cli.py": "d06c7d24aad8d06a36cdb95f9c65d7a19cfbae50dc963fe4cd854e98bef15d7e",
+        "camera_geometry.py": "ee472a0795664cd998af62c1632aff0df27549f7ae77cdeb767cea0cf9f50aae",
+        "camera_orientation.py": "8321908a7f72d8eb328fe30e6341b7aabac8b8916dce458921711b15097a1db8",
+        "camera_tof_calibration.py": "0a103f5f7619b5db4f55a22665a4c5a85c75199922368616f83ad5d52383fd25",
+        "camera_tof_cli.py": "5cace5821ff004c2eff2047713b1850a3be9d2879ef684b2a0abc8b83b4fad8b",
+        "camera_tof_contracts.py": "7eb1669fd01f44fc0a471300009309d84134218e20dd84c08a23d908014025cc",
+        "camera_tof_outputs.py": "da0f637a086dd97aa3417503c3fb9473f9aecf7eacdc9004002a85022ed32643",
+        "camera_world_calibration.py": "6b6726082a97b7a071f3cd994d1ead80c2ccfee9b9f235bea847b1ccdacaadd0",
+        "camera_world_cli.py": "6d3b0e3092f61488337956c956b387e816816711f0cbb47ceae080cde787bf7f",
+        "camera_world_contracts.py": "e6a7f30b253a39e9d0064064c25dcb8ca4cd92d9455e440e9f2491e2c690299c",
+        "camera_world_outputs.py": "965a2be2a5b085b51ca9582273f7d1b144ab43da505634f0c4e8a569e0b7b82e",
+        "canvas.py": "d4ae1af888ac1f26b122b3093c0e2477b36c4e28aaa423b7287fa1ae12dda8b3",
+        "charuco_board.py": "8fc4e35acd690105ef98c098ae8f6762ea273ed3d524a4d8c50e5b0fb723f7db",
+        "chatgpt_review_bundle.py": "4c2ebc6e2ab582f8228f42e0d7f4f522ca9c729da7752b243a02aafea1cf4f2a",
+        "cli.py": "77a010396fe597a05317ecaacdbdf396be72952024edae7636708b6c2c64f581",
+        "contracts.py": "b1189e71644061b89358f828feb7800fa95e65620adadd1620f08b8e40f54350",
+        "core_class_contract.py": "cab199183a13b311e93dc5846310e5549c5c63c5338f9eb4d09cab96a986c5ab",
+        "deltar_bridge.py": "0cf0300f06a8ebbb1203ef96a6308205130551bbf0012ad0332b281235e1ffbf",
+        "depth_statistics.py": "cb139fbd804877872c47a977e0a773260331fa7e06c16f2bc24061b3f5409e16",
+        "dual_gate_selection.py": "1279e8893203497856ffb4c9a8aa1252756f2f766059a083dcd656807fb3b2bd",
+        "errors.py": "d58c6ce2ac9aa0a577a972f2d3a3d461a552a0fb230c7ea74ffae70799c1e1ef",
+        "formal_deltar_d.py": "7fa43ac52b007b6b3f3e76e78ee5beb7a622aa4a559fb1f612f32408ce29bd03",
+        "formal_geometry_authority.py": "a09f72ebb5b10c3e47d87db31a63a37688b5cd7fe42ad29965f90ed7d1f77b6b",
+        "frame_pipeline.py": "070bcb105fa2d0c7fee75fb0520cb1aef28c46c19af6e53d09f2944a8afca7c9",
+        "frozen_runtime_contracts.py": "bfcc86c9d6ef765794f3d3e08cf5c8a609e5916d9df0b5d63eb68de3c36f4e53",
+        "frozen_runtime_resources.py": "a43ce035b93aa8dec281397f4d392ff437bdf3e67dc1de743919110aad66f890",
+        "frozen_runtime_supervisor.py": "9fc1a62ecb31736003246ca45e5f3c5d48ecee4ebae225c14ea6f0cd78fb7525",
+        "geometry_contracts.py": "84670a475efd3c8024b58ced6a01f891eb1208bbb50160d0d7b412e365e09798",
+        "geometry_quality.py": "0d11b3785b2d580ff1931bffca103c5d359d426c59a9985955ebabc30a290192",
+        "horizontal_planes.py": "b7abf04ab83f32a42ee8dbf8969c9d9d7edfc4874e775249dca8c0db3ccd88ac",
+        "object_depth.py": "0c86f16d0425c5315031c3796424cf215880480dfe9dc5459b122d549507d6b2",
+        "object_geometry.py": "696b9401193f67b34413059dac65bf63ca956e91be1a40b86fc52854005853f7",
+        "object_matching.py": "10151d495746b592006c323ff6e25943cf5bace2c97facbd42bfe48c1e97514c",
+        "object_regions.py": "ba4804c086d7a491dbf14304e009c17abf844c3c97b9e7ec0df3237cabd4a456",
+        "official_depth_metrics.py": "b51a929860cc74906f9ea46669403bec7a892203027aa4f78af7bc431aaff1d2",
+        "official_object_benchmark.py": "fcdb4d5f97833bacd87a881b27df0ea5a6cf69d0d536f6dda1371f6f58e366c8",
+        "official_old_chain_benchmark.py": "a4ec0faad65979ae46fddf30f726d69ffd593ed24bed492c5c11decd478064fa",
+        "official_zone_mapping.py": "3c2f4cc8a64e3a1ce7fa84b6ebdbd2a358ee383d2b9f696b6a30e603429d69cf",
+        "offline_preflight.py": "e8bf5205287fcc9c039de2c66cc8579683c47a891dd722fe8bedb81c30196da8",
+        "outputs.py": "c0ea02dadedfec952dc3f3b2bf9979212c5ca84adcc5ce5c18680ffc73d2c588",
+        "partial_object.py": "4c449e597250cd63f147fcfcf581785ad36f7344aa765975ba7bbef0e00c4f0a",
+        "pc_scene_ui_adapter.py": "0ac4bd6f349aefe906c9a0660ba5194c956820c42cefa46f2e2d964f7b9465bb",
+        "pc_scene_ui_renderer.py": "101ec3cb489235fe35005b43da10a3c201696303d591c38d1e0729ecabe9e16b",
+        "performance_guard.py": "67b30e260177931a468268877d5487fcf139ec9fe6f1e491bb2a2debfacb5a7d",
+        "pipeline_progress.py": "d7ea2bcb7d751bd4fe99b7fe677fcdad6ebd853c4378bd6d03c7a8d55aa92788",
+        "point_cloud.py": "ef987c945704b039542649e96e24fc4cf26a841d486fd8effbdc8bbb608273f9",
+        "profiles.py": "85543bb7ea66ad168dbdbbace961555e4b44497027b1dcc57f0256c7c7e13c61",
+        "rgb565.py": "87c30f5ef08de0dcbe24241334bd86ca44c01b8faf0250296383c3408878a513",
+        "scan_aggregation.py": "3d442a1a54433eeb0e39572e6a5f025b98e7b72ef3ab58f7b8f8cd010887caa1",
+        "scan_cli.py": "9341154dad014f9614f7c87964c510a2adb6a95293d5e959126561962234a071",
+        "scan_contracts.py": "bc6cb8964cbb2bc7c894cee19eca396dfd7542aad32c2c077b993ea141a2286e",
+        "scan_job.py": "c0f89a6244955b154516b1dc5cd9789c2e47c282a56c2f881f1483520b086e08",
+        "scan_profiles.py": "24fda59cf645581a51c244a41dfe1c9a18d44540ecaa99db4d6a56c169daf298",
+        "scan_progress.py": "25f422d290b3d504dba8a6c983621f7d05ec168e8b9fc249388023c6004b049f",
+        "scan_provenance.py": "65b5035f13df486e8a292a208ef80f6d31937c1bca6c2402038b297a0b84039d",
+        "scan_result.py": "526d907f0d22c1c7e36ed50d1aefc95db4e7b123bfeef8f492bb091cbbd3192d",
+        "scan_service.py": "974ac61e6ab0d8d8db21a53eeb51990f5434f233015307262d1808aaec003848",
+        "scan_service_contracts.py": "8f7aa3f84f09d5c1a57ed11fccf981fc37b948d2379b9acfe334da01de79d5a9",
+        "scan_service_storage.py": "e40e447ab50b8e03c6548e47aa5e90aae618d3422b94b7e3e29244a0beeda133",
+        "scan_service_worker.py": "cd5421551904e3a2fbc9957de1544d0812fc5bcb2127b2142149093952e7e653",
+        "scan_strategy.py": "02d03bf6ff7869b8990b7d8a20060064a02e23e727b97e18fddf6a8153c36918",
+        "scan_validator.py": "3eca83ea795c68a14cbd0b316931ceaea3ffaa8aa50e6684a41502311d39c9b6",
+        "scene_geometry.py": "0af0c59f4eafc2a0c1925d6442ecd2802c865de3e2cbc111b779ef2c283f4035",
+        "scene_object_fusion.py": "f6f96230fe09e9a1558331dbbf6bba775104cf424b21118032d4818abe09cb7d",
+        "selected_object_projection.py": "e95ccfc3eaea3883a1ba68b0191f25e89d814f84703f8d5c52b22f9406fbf162",
+        "stage2_projection.py": "018d5dadee035e60d9f699692ed6bb2abce2d303dd2c5c0b742315266b6ac85f",
+        "stage3_1.py": "e1f2d1a2f9c870e4ff1864dcaf87403d7131242921724a7f34f261e4ce8626a0",
+        "stage3_validation.py": "92b34cbef4c619d876dea01eec5c1df442d1af983b714fd7f62e27fbb6fee4ba",
+        "stage4_contracts.py": "95b8fbf5f19578d7fdb8fb0e968a72bb53d858bcdecedd09b05e1d8b141ebd6e",
+        "stage4_validation.py": "00e222215b58e084cf47e106252060fbacb6c933b27abfb15ed23ef2f9083b9f",
+        "stage5_2a_validation.py": "4be644760cdc098a5f763b08488012697071e3b099a573031017ca74382313c5",
+        "stage5_2b_validation.py": "a093901e3c8b5682410860b2fea38f691588c6716374b9b1653084515e181152",
+        "stage5_contracts.py": "df733e64845f7309e144462834e6cdde97c073abc6800531a5d1d324158175a5",
+        "stage5_distribution.py": "b186787140f036496f3e668e32f7e47866c047d017556fa520904e870b4c6572",
+        "stage5_evaluator.py": "bcddf8d0cabf97208159ed6c257f776cf0f7d3c9d1783c715f7f2ddf447e36be",
+        "stage5_fr.py": "828832d108d8f5244153438d84f7bdc052df783fad1d1a4cd9f8f7b2ece37220",
+        "stage5_full_chain.py": "7a5909289cfcf68509e79a331aef61b4e8157e6f9c79b5a41d2f6489f2380a2e",
+        "stage5_matching.py": "c097f943a91c9e8e16415b69a21c14b46b4076125986ff58adea5290558eb948",
+        "stage5_metrics.py": "d2abd91ccea9412694567d374b88e9eb4942196a25fd66ae9a98778a5b5eaa67",
+        "stage5_validation.py": "019f98fdf6b090d568c9186271c9c6a196edc4aa86236dbfb2875e3597b40ac9",
+        "stage6_formal.py": "b08e18796409c4030a25742384e22faa98f919595e25f8df4f4a58bc4b788d5e",
+        "stage6_schema.py": "20ccd5e6a59c318128ea93c02da6d849f1ad19b919f4083483900412e9c6cbf5",
+        "stage7d_contracts.py": "c98a49050758ede25e1e57ee3944be269b06ae8a95564b5a8fbbb0a5f0707e1b",
+        "stage7d_outputs.py": "a5dd689f6c2022a45030542bd6d63619f04e8b1bdfa4dbd4cb956bb9181ff3e6",
+        "stage8b4a_contracts.py": "c20f23292a7bc1be91817391a8860c628429b9a3b825e3c9d73084fd94a22fd3",
+        "stage8b4a_package.py": "fb3617d90643f042a0dde557575c216643146d0578df8325b210f3428fdb9901",
+        "synthetic_geometry.py": "095a3ee014df4f0e944bd1c200f61f0f9251a8629f555993d1deb0a281787989",
+        "tof_adapter.py": "c6ea82e8d3d3b254ce825f7aabf75daac6e70bc5614c3858e248991811c19f2f",
+        "tof_degraded.py": "f9f1e3786f9a525caa0277d4dfec98c6c89a1aa9140f63c715e9eee77af32fd1",
+        "tof_simulator.py": "dd6766567286ee02334e34f1b118040c14e325bb02d7717fd3ca530437476b37",
+        "validation.py": "ebce160da3380456dfb9e65cca5f53d0279c2fe5d40b648517ce477fc108a440",
+        "validation_receipt.py": "3af642c3c1fbfc7b94c8452735d4221806c450ae151aa05a8595b452ba7bb69a",
+        "vision_console.py": "d53baa288ebe406a1cca2824922aa2c377b99dd16004cf805d387079b990482f",
+        "yolo_contracts.py": "2272974d60c318f80a6253530a58d2fd64bad7db1a1f69d66a179361f652b1b3",
+        "yolo_runtime_supervisor.py": "c7f0ca361547a3e16b2ad300375b581d2dca37f5c59d11fee2e96545d658ca22",
+        "yolo_worker_client.py": "9603f59d8a9b9ec4afc70ab3960e539d0d912df6672b095222de0ad14c031fec",
+        "zone_orientation.py": "84f3619d24b4404022aa823da0fe9145af4ebc49ba3af0d622aa018f9e92d1f8"
+      },
+      "sha256": "e417daef858c899f3d4d1eab56b5fac7c0eb8c1bb5f9fdc74ca67167ca9c48b0"
+    },
+    "pipeline_version": "6.1.0",
+    "profiles": {
+      "calibration_status": "measured",
+      "ids": {
+        "algorithm_profile_id": "algorithm_stage6_official_v1",
+        "calibration_profile_id": "calibration_unverified_stage6_v1",
+        "camera_profile_id": "camera_sc2336_640x360_rgb565_v1",
+        "scan_strategy_profile_id": "scan_strategy_stage6_guidance_v1",
+        "tof_profile_id": "tof_vl53l5cx_orientation_identity_v1"
+      },
+      "sha256": {
+        "algorithm_profile.json": "a4f61609c1a8f22d0577889b392e7ada9cea0059f3a348e036677d3c3a3fdb06",
+        "formal_stage2_frame_profile.json": "60b5a7f32c3f6cdfcef2f101a3a7debf4c4b4c123633c2e84f2d151e103930cf",
+        "model_manifest.json": "0be8eff315194cf498ae77b188186b2a16d3ffefe8bc639b29dfc3eb00ce2b46",
+        "scan_strategy_profile.json": "3365ebbb8b539609b1ff0568703204be4be24e08059f1d2a615ff396115a10e5"
+      }
+    },
+    "runtime": {
+      "compute": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+      "platform": "Windows-10-10.0.26200-SP0",
+      "python": "3.11.15",
+      "pytorch": "2.7.1+cu128",
+      "ultralytics": "worker_process"
+    },
+    "upstream_commits": {
+      "calib_deltar": "0dd16ef96fa76598cf542bba9b57f96548d27e35",
+      "deltar": "f3c517562bcb2dfb9e4bbf74965f2ee76a2dd096",
+      "esp_claw": "8aa863e07fe1ef4b3e4a21004f87a89a9beb9644"
+    }
+  },
+  "scan_id": "scan_20260819_085223_numericfirst01",
+  "schema_version": "deltar_scan_result.v1.1",
+  "status": "success",
+  "warnings": [
+    "W_NON_CORE_CLASS_FILTERED",
+    "W_PARTIAL_OBJECT"
+  ]
+}

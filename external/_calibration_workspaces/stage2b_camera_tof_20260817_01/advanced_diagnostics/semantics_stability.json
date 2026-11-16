@@ -1,0 +1,398 @@
+{
+  "schema_version": "stage2b_semantics_stability.v1",
+  "registered_N": 16,
+  "full_and_heldout": {
+    "axial_z": {
+      "train": {
+        "count": 7809,
+        "rms_mm": 37.71929674643444,
+        "median_mm": 3.4026651703013044,
+        "p95_mm": 21.28643399167342,
+        "max_mm": 1057.412867875505
+      },
+      "scan_level_heldout": {
+        "count": 2665,
+        "rms_mm": 27.063616016253434,
+        "median_mm": 3.0058975565641504,
+        "p95_mm": 11.253985619454644,
+        "max_mm": 741.0298481753257
+      },
+      "reference_plane_only_heldout": {
+        "count": 2613,
+        "rms_mm": 4.791321304462848,
+        "median_mm": 2.9415771554821504,
+        "p95_mm": 10.169764091177104,
+        "max_mm": 16.6093578742898
+      },
+      "all_broad_heldout": {
+        "count": 2665,
+        "rms_mm": 27.063616016253434,
+        "median_mm": 3.0058975565641504,
+        "p95_mm": 11.253985619454644,
+        "max_mm": 741.0298481753257
+      }
+    },
+    "radial_range": {
+      "train": {
+        "count": 7809,
+        "rms_mm": 33.876487048461726,
+        "median_mm": 9.850033789852091,
+        "p95_mm": 34.09201005385993,
+        "max_mm": 958.7815813255019
+      },
+      "scan_level_heldout": {
+        "count": 2665,
+        "rms_mm": 28.351826903518283,
+        "median_mm": 12.786863510743729,
+        "p95_mm": 36.494065095964736,
+        "max_mm": 729.323849102145
+      },
+      "reference_plane_only_heldout": {
+        "count": 2613,
+        "rms_mm": 17.603415145307114,
+        "median_mm": 12.614751764774951,
+        "p95_mm": 33.782354838125556,
+        "max_mm": 57.608252451067976
+      },
+      "all_broad_heldout": {
+        "count": 2665,
+        "rms_mm": 28.351826903518283,
+        "median_mm": 12.786863510743729,
+        "p95_mm": 36.494065095964736,
+        "max_mm": 729.323849102145
+      }
+    }
+  },
+  "full_winner": "axial_z",
+  "lopo_summary": {
+    "axial_z": 10,
+    "radial_range": 6,
+    "tie": 0,
+    "total": 16,
+    "axial_win_rate": 0.625,
+    "radial_win_rate": 0.375
+  },
+  "lopo_core_reference_plane_summary": {
+    "axial_z": 16,
+    "radial_range": 0,
+    "tie": 0,
+    "total": 16,
+    "axial_win_rate": 1.0,
+    "radial_win_rate": 0.0
+  },
+  "lopo_gap_distribution_mm": {
+    "min": -9.690251165917921,
+    "p5": -8.976108177437709,
+    "p50": 3.111079545474544,
+    "p95": 19.604142800050166,
+    "max": 40.32559343959996
+  },
+  "lopo_core_gap_distribution_mm": {
+    "min": 3.5250547247814215,
+    "p5": 5.9506017880644695,
+    "p50": 9.36503056873012,
+    "p95": 18.441136136460926,
+    "max": 29.784954286037422
+  },
+  "winner_flips": [
+    "S2B_001",
+    "S2B_002",
+    "S2B_007",
+    "S2B_008",
+    "S2B_012",
+    "S2B_013"
+  ],
+  "subset_summary": {
+    "axial_z": 45,
+    "radial_range": 55,
+    "tie": 0,
+    "total": 100,
+    "axial_win_rate": 0.45,
+    "radial_win_rate": 0.55
+  },
+  "subset_core_reference_plane_summary": {
+    "axial_z": 100,
+    "radial_range": 0,
+    "tie": 0,
+    "total": 100,
+    "axial_win_rate": 1.0,
+    "radial_win_rate": 0.0
+  },
+  "subset_gap_distribution_mm": {
+    "min": -6.076133914248565,
+    "p5": -5.197127728915537,
+    "p50": -1.2132421819989556,
+    "p95": 26.321503452098053,
+    "max": 30.98912466038448
+  },
+  "subset_core_gap_distribution_mm": {
+    "min": 5.30581653359468,
+    "p5": 7.724366195086575,
+    "p50": 9.984385937396766,
+    "p95": 25.50487603224741,
+    "max": 33.404068839737555
+  },
+  "subset_fraction": 0.8,
+  "subset_trial_count": 100,
+  "seed": 20260817,
+  "most_unstable_subset": {
+    "trial": 99,
+    "pose_ids": [
+      "S2B_001",
+      "S2B_002",
+      "S2B_003",
+      "S2B_004",
+      "S2B_005",
+      "S2B_006",
+      "S2B_007",
+      "S2B_009",
+      "S2B_011",
+      "S2B_012",
+      "S2B_013",
+      "S2B_015",
+      "S2B_016"
+    ],
+    "missing_pose_ids": [
+      "S2B_008",
+      "S2B_010",
+      "S2B_014"
+    ],
+    "axial_score_rms_mm": 25.137737788225817,
+    "radial_score_rms_mm": 25.235532389804536,
+    "radial_minus_axial_gap_mm": 0.09779460157871966,
+    "winner": "axial_z",
+    "core_axial_score_rms_mm": 5.016869827363655,
+    "core_radial_score_rms_mm": 13.716596770140887,
+    "core_radial_minus_axial_gap_mm": 8.699726942777232,
+    "core_winner": "axial_z"
+  },
+  "distance_bins_lopo": {
+    "far": {
+      "axial_z": {
+        "count": 1253,
+        "rms_mm": 34.108231028624594,
+        "median_mm": 7.922994827350522,
+        "p95_mm": 56.83246239556089,
+        "max_mm": 276.81806398077083
+      },
+      "radial_range": {
+        "count": 1253,
+        "rms_mm": 25.11533819980866,
+        "median_mm": 11.758268238891674,
+        "p95_mm": 32.89483077415629,
+        "max_mm": 228.00544685933664
+      },
+      "radial_minus_axial_gap_mm": -8.992892828815933,
+      "winner": "radial_range"
+    },
+    "mid": {
+      "axial_z": {
+        "count": 7393,
+        "rms_mm": 27.095185597364804,
+        "median_mm": 3.0984033116384353,
+        "p95_mm": 11.08090341123741,
+        "max_mm": 734.8777074826016
+      },
+      "radial_range": {
+        "count": 7393,
+        "rms_mm": 27.007047956959642,
+        "median_mm": 10.865992937676651,
+        "p95_mm": 33.49446534608912,
+        "max_mm": 733.1152654101343
+      },
+      "radial_minus_axial_gap_mm": -0.08813764040516148,
+      "winner": "radial_range"
+    },
+    "near": {
+      "axial_z": {
+        "count": 1828,
+        "rms_mm": 58.23059454936061,
+        "median_mm": 4.325683122775104,
+        "p95_mm": 31.188737361755376,
+        "max_mm": 1054.5931173936042
+      },
+      "radial_range": {
+        "count": 1828,
+        "rms_mm": 64.2047287104691,
+        "median_mm": 11.58240373686229,
+        "p95_mm": 62.26770322181693,
+        "max_mm": 986.646224198221
+      },
+      "radial_minus_axial_gap_mm": 5.974134161108488,
+      "winner": "axial_z"
+    }
+  },
+  "angle_bins_lopo": {
+    "high": {
+      "axial_z": {
+        "count": 1124,
+        "rms_mm": 74.1606042129885,
+        "median_mm": 4.877857336538426,
+        "p95_mm": 41.21634288186643,
+        "max_mm": 1054.5931173936042
+      },
+      "radial_range": {
+        "count": 1124,
+        "rms_mm": 81.32014518662983,
+        "median_mm": 14.683078911082958,
+        "p95_mm": 130.76782331684922,
+        "max_mm": 986.646224198221
+      },
+      "radial_minus_axial_gap_mm": 7.159540973641327,
+      "winner": "axial_z"
+    },
+    "low": {
+      "axial_z": {
+        "count": 3365,
+        "rms_mm": 21.123109405349773,
+        "median_mm": 3.9554277816830563,
+        "p95_mm": 24.297906111848093,
+        "max_mm": 276.81806398077083
+      },
+      "radial_range": {
+        "count": 3365,
+        "rms_mm": 18.145852859073635,
+        "median_mm": 9.993207408730086,
+        "p95_mm": 25.781693376193765,
+        "max_mm": 228.00544685933664
+      },
+      "radial_minus_axial_gap_mm": -2.977256546276138,
+      "winner": "radial_range"
+    },
+    "medium": {
+      "axial_z": {
+        "count": 5985,
+        "rms_mm": 30.038877621863524,
+        "median_mm": 3.2461174001343807,
+        "p95_mm": 11.590674778130328,
+        "max_mm": 734.8777074826016
+      },
+      "radial_range": {
+        "count": 5985,
+        "rms_mm": 29.411301417245262,
+        "median_mm": 11.276935055240756,
+        "p95_mm": 35.65238736966263,
+        "max_mm": 733.1152654101343
+      },
+      "radial_minus_axial_gap_mm": -0.6275762046182614,
+      "winner": "radial_range"
+    }
+  },
+  "core_reference_plane_distance_bins_lopo": {
+    "far": {
+      "axial_z": {
+        "count": 1005,
+        "rms_mm": 8.11650407078907,
+        "median_mm": 6.011027833570324,
+        "p95_mm": 15.012516524432874,
+        "max_mm": 18.930016396249925
+      },
+      "radial_range": {
+        "count": 1005,
+        "rms_mm": 15.495337925042579,
+        "median_mm": 11.758268238891674,
+        "p95_mm": 28.79166854145447,
+        "max_mm": 43.287959496420626
+      },
+      "radial_minus_axial_gap_mm": 7.378833854253509,
+      "winner": "axial_z"
+    },
+    "mid": {
+      "axial_z": {
+        "count": 7242,
+        "rms_mm": 4.825597038400956,
+        "median_mm": 3.026065657171671,
+        "p95_mm": 9.728539646776762,
+        "max_mm": 19.318186170781928
+      },
+      "radial_range": {
+        "count": 7242,
+        "rms_mm": 15.571682487096961,
+        "median_mm": 10.686363941491834,
+        "p95_mm": 30.464377343859763,
+        "max_mm": 59.050192926851544
+      },
+      "radial_minus_axial_gap_mm": 10.746085448696004,
+      "winner": "axial_z"
+    },
+    "near": {
+      "axial_z": {
+        "count": 1659,
+        "rms_mm": 5.612336932618035,
+        "median_mm": 3.8471338853411226,
+        "p95_mm": 10.652521188745439,
+        "max_mm": 23.99195996552089
+      },
+      "radial_range": {
+        "count": 1659,
+        "rms_mm": 22.22771718500643,
+        "median_mm": 10.996908232697422,
+        "p95_mm": 49.69400770104045,
+        "max_mm": 116.70635114072911
+      },
+      "radial_minus_axial_gap_mm": 16.615380252388395,
+      "winner": "axial_z"
+    }
+  },
+  "core_reference_plane_angle_bins_lopo": {
+    "high": {
+      "axial_z": {
+        "count": 955,
+        "rms_mm": 6.108892493203085,
+        "median_mm": 3.9056443820535947,
+        "p95_mm": 12.923179092540146,
+        "max_mm": 23.99195996552089
+      },
+      "radial_range": {
+        "count": 955,
+        "rms_mm": 27.40371834333671,
+        "median_mm": 13.599625497182048,
+        "p95_mm": 52.15953634872011,
+        "max_mm": 116.70635114072911
+      },
+      "radial_minus_axial_gap_mm": 21.294825850133627,
+      "winner": "axial_z"
+    },
+    "low": {
+      "axial_z": {
+        "count": 3112,
+        "rms_mm": 5.875970689887283,
+        "median_mm": 3.5903592181140596,
+        "p95_mm": 12.539056552578154,
+        "max_mm": 18.930016396249925
+      },
+      "radial_range": {
+        "count": 3112,
+        "rms_mm": 13.38047288743591,
+        "median_mm": 9.88312099775601,
+        "p95_mm": 24.78068199063083,
+        "max_mm": 43.287959496420626
+      },
+      "radial_minus_axial_gap_mm": 7.504502197548628,
+      "winner": "axial_z"
+    },
+    "medium": {
+      "axial_z": {
+        "count": 5839,
+        "rms_mm": 4.966326203436711,
+        "median_mm": 3.160051942148243,
+        "p95_mm": 10.104138137970153,
+        "max_mm": 19.318186170781928
+      },
+      "radial_range": {
+        "count": 5839,
+        "rms_mm": 16.254196221867446,
+        "median_mm": 11.033534526882818,
+        "p95_mm": 32.28146362654247,
+        "max_mm": 59.050192926851544
+      },
+      "radial_minus_axial_gap_mm": 11.287870018430734,
+      "winner": "axial_z"
+    }
+  },
+  "axial_cross_distance_winner": {
+    "all_broad": false,
+    "core_reference_plane": true
+  },
+  "score_definition": "out-of-pose all-broad RMS in mm; positive gap favors axial_z"
+}

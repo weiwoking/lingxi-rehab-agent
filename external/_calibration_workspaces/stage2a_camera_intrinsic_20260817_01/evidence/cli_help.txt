@@ -1,0 +1,16 @@
+usage: stage2a_camera_intrinsic.py [-h] [--version]
+       {inspect,register,status,rank,calibrate,validate,compare,run-all,synthetic-test} ...
+
+Stage 2A Camera intrinsic + distortion candidate toolchain (formal sources read-only)
+
+inspect        Inspect formal root/contract; optional --latest/--scan-id and --detect-charuco.
+register       Bind --pose to --scan-id/--latest; supports --dry-run and explicit --replace.
+status         Show 0/20 through 20/20 and every pose state.
+rank           Detect/rank all 11 frames and write contact sheets/coverage.
+calibrate      Best-1 fit, top-2 sensitivity, outlier diagnostics, held-out validation.
+validate       Validate candidate board/raster/content hash contract.
+compare        Compare old Stage7A and candidate on parameters, held-out residuals, rays.
+run-all        Rank, calibrate, validate and compare after the 20-pose gate.
+synthetic-test Verify generated-board detection, solver recovery and candidate schema.
+
+Run `python stage2a_camera_intrinsic.py <command> --help` for command arguments.

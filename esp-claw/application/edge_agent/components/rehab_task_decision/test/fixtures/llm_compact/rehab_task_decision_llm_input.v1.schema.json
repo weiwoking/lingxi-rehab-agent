@@ -1,0 +1,1171 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://esp-claw.local/schemas/rehab_task_decision_llm_input.v1.schema.json",
+  "title": "ESP-Claw Rehab Task Decision LLM Compact Input v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "source_schema_version",
+    "decision_binding",
+    "authority",
+    "patient",
+    "history",
+    "candidates",
+    "targets",
+    "latest_compensation"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "rehab_task_decision_llm_input.v1"
+    },
+    "source_schema_version": {
+      "const": "rehab_task_decision_input.v4"
+    },
+    "decision_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "decision_id",
+        "generation",
+        "scan_id",
+        "scene_sha256"
+      ],
+      "properties": {
+        "decision_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "generation": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "scan_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scene_sha256": {
+          "type": "string",
+          "pattern": "^[0-9A-Fa-f]{64}$"
+        }
+      }
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "machine_facts",
+        "business_scoring",
+        "output_contract",
+        "validation_input"
+      ],
+      "properties": {
+        "machine_facts": {
+          "const": "rehab_task_decision_input.v4"
+        },
+        "business_scoring": {
+          "const": "DeepSeek"
+        },
+        "deterministic_preparation": {
+          "enum": [
+            "rehab_task_decision_preparation.v1",
+            "rehab_task_decision_preparation.v1.1"
+          ]
+        },
+        "output_contract": {
+          "const": "rehab_task_decision_output.v4"
+        },
+        "validation_input": {
+          "const": "rehab_task_decision_input.v4"
+        }
+      }
+    },
+    "patient": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ability",
+        "condition",
+        "medical_advice"
+      ],
+      "properties": {
+        "ability": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "level",
+            "parse_status"
+          ],
+          "properties": {
+            "level": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "parse_status": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "condition": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "raw_text",
+            "status",
+            "truncated"
+          ],
+          "properties": {
+            "raw_text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "status": {
+              "type": "string",
+              "minLength": 1
+            },
+            "truncated": {
+              "type": "boolean"
+            }
+          }
+        },
+        "medical_advice": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "source",
+            "interpretation"
+          ],
+          "properties": {
+            "source": {
+              "const": "patient.condition.raw_text"
+            },
+            "interpretation": {
+              "const": "candidate_scoped_free_text_semantics"
+            }
+          }
+        }
+      }
+    },
+    "history": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "recent_tendency",
+        "score_history_summary",
+        "frequency_counts"
+      ],
+      "properties": {
+        "recent_tendency": {
+          "type": "string",
+          "minLength": 1
+        },
+        "score_history_summary": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "window_limit",
+            "record_count",
+            "scores",
+            "average_score"
+          ],
+          "properties": {
+            "status": {
+              "type": "string",
+              "minLength": 1
+            },
+            "window_limit": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "record_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "scores": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            },
+            "average_score": {
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          }
+        },
+        "frequency_counts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "window_limit",
+            "mapped_record_count",
+            "cup",
+            "ball"
+          ],
+          "properties": {
+            "status": {
+              "type": "string",
+              "minLength": 1
+            },
+            "window_limit": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "mapped_record_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "cup": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "ball": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        }
+      }
+    },
+    "candidates": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "$ref": "#/$defs/candidate"
+      }
+    },
+    "targets": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/target"
+      }
+    },
+    "latest_compensation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "latest_task",
+        "compensation_action_count",
+        "exact_task_id",
+        "action_family",
+        "mapped_group",
+        "severity"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "latest_task": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "compensation_action_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "exact_task_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "action_family": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mapped_group": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "severity": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "scoring_policy": {
+      "$ref": "#/$defs/scoringPolicy"
+    },
+    "decision_preparation": {
+      "$ref": "#/$defs/decisionPreparation"
+    }
+  },
+  "$defs": {
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_ref",
+        "task_id",
+        "task_name",
+        "level",
+        "semantic_group",
+        "action_family",
+        "required_plane",
+        "availability",
+        "hard_gate",
+        "target_reference"
+      ],
+      "properties": {
+        "candidate_ref": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4
+        },
+        "task_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "task_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "level": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "semantic_group": {
+          "type": "string",
+          "minLength": 1
+        },
+        "action_family": {
+          "type": "string",
+          "minLength": 1
+        },
+        "required_plane": {
+          "type": "string",
+          "minLength": 1
+        },
+        "availability": {
+          "enum": [
+            "available",
+            "blocked"
+          ]
+        },
+        "hard_gate": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "ability_allowed",
+            "group_object_count",
+            "target_exists",
+            "geometry_height_valid",
+            "blocked",
+            "blocked_reason",
+            "score_must_be_zero"
+          ],
+          "properties": {
+            "ability_allowed": {
+              "type": "boolean"
+            },
+            "group_object_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "target_exists": {
+              "type": "boolean"
+            },
+            "geometry_height_valid": {
+              "type": "boolean"
+            },
+            "blocked": {
+              "type": "boolean"
+            },
+            "blocked_reason": {
+              "type": "string",
+              "minLength": 1
+            },
+            "score_must_be_zero": {
+              "type": "boolean"
+            }
+          }
+        },
+        "target_reference": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "target_ref",
+        "exists",
+        "target_object_id",
+        "display_group_name",
+        "raw_class",
+        "plane",
+        "height",
+        "geometry",
+        "perception",
+        "visibility"
+      ],
+      "properties": {
+        "target_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "exists": {
+          "const": true
+        },
+        "target_object_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "display_group_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "raw_class": {
+          "type": "string",
+          "minLength": 1
+        },
+        "plane": {
+          "type": "string",
+          "minLength": 1
+        },
+        "height": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "support_height_mm",
+            "confidence"
+          ],
+          "properties": {
+            "status": {
+              "type": "string",
+              "minLength": 1
+            },
+            "support_height_mm": {
+              "type": "number"
+            },
+            "confidence": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          }
+        },
+        "geometry": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "valid",
+            "valid_known",
+            "confidence",
+            "confidence_status"
+          ],
+          "properties": {
+            "valid": {
+              "type": "boolean"
+            },
+            "valid_known": {
+              "type": "boolean"
+            },
+            "confidence": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 1
+            },
+            "confidence_status": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "perception": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "mode",
+            "detection_confidence",
+            "detection_confidence_status",
+            "quality"
+          ],
+          "properties": {
+            "mode": {
+              "enum": [
+                "geometry",
+                "fallback"
+              ]
+            },
+            "detection_confidence": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "detection_confidence_status": {
+              "type": "string",
+              "minLength": 1
+            },
+            "quality": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          }
+        },
+        "visibility": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "full_extent_visible",
+            "touches_border"
+          ],
+          "properties": {
+            "full_extent_visible": {
+              "type": "boolean"
+            },
+            "touches_border": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "scoringPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "policy_version",
+        "authority",
+        "difficulty",
+        "advice",
+        "compensation",
+        "frequency",
+        "perception",
+        "blocked",
+        "final",
+        "tie_break_candidate_refs"
+      ],
+      "properties": {
+        "policy_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "authority": {
+          "const": "DeepSeek"
+        },
+        "difficulty": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "maximum",
+            "easier_step",
+            "harder_step",
+            "clamp"
+          ],
+          "properties": {
+            "reference": {
+              "const": "history.recent_tendency"
+            },
+            "reference_format": {
+              "const": "level_<integer>"
+            },
+            "maximum": {
+              "type": "number"
+            },
+            "easier_step": {
+              "type": "number"
+            },
+            "harder_step": {
+              "type": "number"
+            },
+            "clamp": {
+              "$ref": "#/$defs/numberPair"
+            },
+            "formula": {
+              "const": "maximum at reference; subtract easier_step per level below reference or harder_step per level above reference; clamp"
+            }
+          }
+        },
+        "advice": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "range",
+            "neutral",
+            "positive_range",
+            "negative_range",
+            "assignment"
+          ],
+          "properties": {
+            "range": {
+              "$ref": "#/$defs/numberPair"
+            },
+            "neutral": {
+              "type": "integer"
+            },
+            "positive_range": {
+              "$ref": "#/$defs/numberPair"
+            },
+            "negative_range": {
+              "$ref": "#/$defs/numberPair"
+            },
+            "assignment": {
+              "const": "independent_per_candidate_from_patient_free_text"
+            }
+          }
+        },
+        "compensation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "maximum",
+            "severity_by_count",
+            "relatedness_precedence",
+            "formula"
+          ],
+          "properties": {
+            "maximum": {
+              "type": "number"
+            },
+            "severity_by_count": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "0",
+                "1",
+                "2",
+                "3_plus"
+              ],
+              "properties": {
+                "0": {
+                  "const": 0
+                },
+                "1": {
+                  "type": "number"
+                },
+                "2": {
+                  "type": "number"
+                },
+                "3_plus": {
+                  "type": "number"
+                }
+              }
+            },
+            "relatedness_precedence": {
+              "type": "array",
+              "minItems": 4,
+              "maxItems": 4,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "relation",
+                  "value"
+                ],
+                "properties": {
+                  "relation": {
+                    "enum": [
+                      "exact_task",
+                      "same_action_family",
+                      "same_object_group",
+                      "unrelated"
+                    ]
+                  },
+                  "value": {
+                    "type": "number"
+                  }
+                }
+              }
+            },
+            "formula": {
+              "const": "maximum*(1-severity*relatedness)"
+            }
+          }
+        },
+        "frequency": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "score_by_count"
+          ],
+          "properties": {
+            "score_by_count": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "0",
+                "1",
+                "2",
+                "3_plus"
+              ],
+              "properties": {
+                "0": {
+                  "type": "number"
+                },
+                "1": {
+                  "type": "number"
+                },
+                "2": {
+                  "type": "number"
+                },
+                "3_plus": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        },
+        "perception": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "minimum",
+            "span",
+            "geometry_mode_weights",
+            "fallback_mode_weights",
+            "confidence_clamp",
+            "formula"
+          ],
+          "properties": {
+            "minimum": {
+              "type": "number"
+            },
+            "span": {
+              "type": "number"
+            },
+            "geometry_mode_weights": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "geometry",
+                "detection",
+                "height"
+              ],
+              "properties": {
+                "geometry": {
+                  "type": "number"
+                },
+                "detection": {
+                  "type": "number"
+                },
+                "height": {
+                  "type": "number"
+                }
+              }
+            },
+            "fallback_mode_weights": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "detection",
+                "height"
+              ],
+              "properties": {
+                "detection": {
+                  "type": "number"
+                },
+                "height": {
+                  "type": "number"
+                }
+              }
+            },
+            "confidence_clamp": {
+              "$ref": "#/$defs/numberPair"
+            },
+            "formula": {
+              "const": "minimum+span*quality"
+            }
+          }
+        },
+        "blocked": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "score",
+            "score_breakdown"
+          ],
+          "properties": {
+            "score": {
+              "const": 0
+            },
+            "score_breakdown": {
+              "type": "null"
+            }
+          }
+        },
+        "final": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "components",
+            "formula",
+            "clamp",
+            "rounding"
+          ],
+          "properties": {
+            "components": {
+              "type": "array",
+              "minItems": 5,
+              "maxItems": 5,
+              "uniqueItems": true,
+              "items": {
+                "enum": [
+                  "difficulty",
+                  "advice",
+                  "compensation",
+                  "frequency",
+                  "perception"
+                ]
+              }
+            },
+            "formula": {
+              "const": "sum(components)"
+            },
+            "clamp": {
+              "$ref": "#/$defs/numberPair"
+            },
+            "rounding": {
+              "const": "round_half_away_to_3_decimals"
+            }
+          }
+        },
+        "tie_break_candidate_refs": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "uniqueItems": true,
+          "items": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4
+          }
+        }
+      }
+    },
+    "decisionPreparation": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/decisionPreparationV1_1"
+        },
+        {
+          "$ref": "#/$defs/decisionPreparationV1"
+        }
+      ]
+    },
+    "decisionPreparationV1_1": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "source_policy_version",
+        "fixed_component_authority",
+        "business_authority",
+        "advice_policy",
+        "tie_break_candidate_refs",
+        "candidates"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "rehab_task_decision_preparation.v1.1"
+        },
+        "source_policy_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "fixed_component_authority": {
+          "const": "P4"
+        },
+        "business_authority": {
+          "const": "DeepSeek"
+        },
+        "advice_policy": {
+          "$ref": "#/$defs/advicePolicy"
+        },
+        "tie_break_candidate_refs": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "uniqueItems": true,
+          "items": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4
+          }
+        },
+        "candidates": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {
+            "$ref": "#/$defs/preparedCandidateV1_1"
+          }
+        }
+      }
+    },
+    "decisionPreparationV1": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "source_policy_version",
+        "fixed_component_authority",
+        "business_authority",
+        "candidates"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "rehab_task_decision_preparation.v1"
+        },
+        "source_policy_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "fixed_component_authority": {
+          "const": "P4"
+        },
+        "business_authority": {
+          "const": "DeepSeek"
+        },
+        "candidates": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {
+            "$ref": "#/$defs/preparedCandidateV1"
+          }
+        }
+      }
+    },
+    "preparedCandidateV1_1": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_ref",
+        "availability",
+        "fixed_components"
+      ],
+      "properties": {
+        "candidate_ref": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4
+        },
+        "availability": {
+          "enum": [
+            "available",
+            "blocked"
+          ]
+        },
+        "fixed_components": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/fixedComponents"
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "availability": {
+                "const": "blocked"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "fixed_components": {
+                "type": "null"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "fixed_components": {
+                "$ref": "#/$defs/fixedComponents"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "preparedCandidateV1": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_ref",
+        "availability",
+        "advice_score_lookup",
+        "fixed_components"
+      ],
+      "properties": {
+        "candidate_ref": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4
+        },
+        "availability": {
+          "enum": [
+            "available",
+            "blocked"
+          ]
+        },
+        "advice_score_lookup": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/adviceScoreRow"
+          }
+        },
+        "fixed_components": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/fixedComponents"
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "availability": {
+                "const": "blocked"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "fixed_components": {
+                "type": "null"
+              },
+              "advice_score_lookup": {
+                "maxItems": 0
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "fixed_components": {
+                "$ref": "#/$defs/fixedComponents"
+              },
+              "advice_score_lookup": {
+                "minItems": 10,
+                "maxItems": 10
+              }
+            }
+          }
+        }
+      ]
+    },
+    "fixedComponents": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "difficulty",
+        "compensation",
+        "frequency",
+        "perception",
+        "fixed_total"
+      ],
+      "properties": {
+        "difficulty": {
+          "type": "number"
+        },
+        "compensation": {
+          "type": "number"
+        },
+        "frequency": {
+          "type": "number"
+        },
+        "perception": {
+          "type": "number"
+        },
+        "fixed_total": {
+          "type": "number"
+        }
+      }
+    },
+    "adviceScoreRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "advice",
+        "final_raw",
+        "score"
+      ],
+      "properties": {
+        "advice": {
+          "type": "integer",
+          "minimum": 16,
+          "maximum": 25
+        },
+        "final_raw": {
+          "type": "number"
+        },
+        "score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        }
+      }
+    },
+    "advicePolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "range",
+        "positive_range",
+        "negative_range",
+        "neutral"
+      ],
+      "properties": {
+        "range": {
+          "const": [16, 25]
+        },
+        "positive_range": {
+          "const": [21, 25]
+        },
+        "negative_range": {
+          "const": [16, 19]
+        },
+        "neutral": {
+          "const": 20
+        }
+      }
+    },
+    "numberPair": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "number"
+      }
+    }
+  }
+}

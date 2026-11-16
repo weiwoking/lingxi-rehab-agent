@@ -1,0 +1,25 @@
+{
+  "motion_family": "lateral_transfer",
+  "sensor_mapping_version": "rehab_sensor_mapping_20260806",
+  "runtime_profile_source": "feature_extractors/lateral_transfer_profile.py",
+  "runtime_auto_select_latest": false,
+  "segmentation": {
+    "version": "lateral_transfer_segmentation_v1",
+    "parameters_are_provisional": true
+  },
+  "healthy_template": {
+    "version": "lateral_transfer_healthy_template_v1",
+    "path": "template/lateral_transfer_healthy_template_v1.json",
+    "generated_by_codex": false
+  },
+  "lf": {
+    "version": "lateral_transfer_lf_v1",
+    "parameters_are_provisional": true,
+    "calibration_tool": "tools/lateral_transfer_lf_calibration_v1.py"
+  },
+  "tremor": {
+    "version": "lateral_transfer_tremor_v1",
+    "parameters_are_provisional": true,
+    "calibration_tool": "tools/lateral_transfer_tremor_calibration_v1.py"
+  }
+}

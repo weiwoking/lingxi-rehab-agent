@@ -1,0 +1,24 @@
+﻿git.exe : warning: in the working copy of 'C:\ec\_deltar_p4_pipeline\artifacts\stage7c_robustfix_evidence_work_20260724
+_043714\before_after\before\schemas\camera_world_pose.v1.schema.json', LF will be replaced by CRLF the next time Git to
+uches it
+At line:2 char:15
++ ... iffOutput = & git diff --no-index -- 'C:\ec\_deltar_p4_pipeline\artif ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (warning: in the... Git touches it:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+warning: in the working copy of 'C:\ec\_deltar_p4_pipeline\artifacts\stage7c_robustfix_evidence_work_20260724_043714\be
+fore_after\after\schemas\camera_world_pose.v1.schema.json', LF will be replaced by CRLF the next time Git touches it
+diff --git "a/C:\\ec\\_deltar_p4_pipeline\\artifacts\\stage7c_robustfix_evidence_work_20260724_043714\\before_after\\before\\schemas\\camera_world_pose.v1.schema.json" "b/C:\\ec\\_deltar_p4_pipeline\\artifacts\\stage7c_robustfix_evidence_work_20260724_043714\\before_after\\after\\schemas\\camera_world_pose.v1.schema.json"
+index 05ccacb..08ac493 100644
+--- "a/C:\\ec\\_deltar_p4_pipeline\\artifacts\\stage7c_robustfix_evidence_work_20260724_043714\\before_after\\before\\schemas\\camera_world_pose.v1.schema.json"
++++ "b/C:\\ec\\_deltar_p4_pipeline\\artifacts\\stage7c_robustfix_evidence_work_20260724_043714\\before_after\\after\\schemas\\camera_world_pose.v1.schema.json"
+@@ -54,7 +54,7 @@
+       "properties": {
+         "pose_count": {"type": "integer", "minimum": 3},
+         "frame_count": {"type": "integer", "minimum": 15},
+-        "valid_frame_count": {"type": "integer", "minimum": 15},
++        "valid_frame_count": {"type": "integer", "minimum": 14},
+         "rejected_frame_count": {"type": "integer", "minimum": 0}
+       }
+     },

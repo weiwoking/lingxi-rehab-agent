@@ -1,0 +1,13 @@
+# Project assets only; exact paths keep small non-model files in ordinary Git.
+# Runtime environments are ignored and never stored in LFS.
+/external/_deltar_p4_pipeline/models/rehab_scan_yolo11n_coco80_volleyball_detect_v3_epoch10_exp.pt filter=lfs diff=lfs merge=lfs -text
+/external/_deltar_p4_pipeline/models/rehab_scan_yolo11n_coco80_volleyball_detect_v3_epoch4_exp.pt filter=lfs diff=lfs merge=lfs -text
+/external/_deltar_p4_pipeline/models/rehab_scan_yolo11n_coco80_volleyball_detect_v5b_exp.pt filter=lfs diff=lfs merge=lfs -text
+/external/_deltar_p4_pipeline/models/yolo11n-seg.pt filter=lfs diff=lfs merge=lfs -text
+
+# ESP-Claw vision model assets; exact paths, not source/text.
+/esp-claw/pc/vision_interpreter/models/identity/best_zxl_identity.pt filter=lfs diff=lfs merge=lfs -text
+/esp-claw/pc/vision_interpreter/models/identity/best_zxl_identity.onnx filter=lfs diff=lfs merge=lfs -text
+/esp-claw/pc/vision_interpreter/models/identity/yolo11n-cls.pt filter=lfs diff=lfs merge=lfs -text
+/esp-claw/pc/vision_interpreter/models/yolo11n.pt filter=lfs diff=lfs merge=lfs -text
+/esp-claw/pc/vision_interpreter/yolo11n-cls.pt filter=lfs diff=lfs merge=lfs -text

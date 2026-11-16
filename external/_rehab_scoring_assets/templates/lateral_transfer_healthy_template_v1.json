@@ -1,0 +1,1171 @@
+{
+  "template_version": "lateral_transfer_healthy_template_v1",
+  "motion_family": "lateral_transfer",
+  "sensor_mapping_version": "rehab_sensor_mapping_20260806",
+  "task_family": "lateral_transfer",
+  "segmentation_wrapper_version": "lateral_transfer_segmentation_drink_reuse_v1",
+  "segmentation_core_version": "drink_hybrid_segmentation_v2_1_1",
+  "approved_session_count": 31,
+  "approved_rep_count": 59,
+  "healthy_normal_rep_count": 48,
+  "lf_detector_version": "drink_water_lf_v2",
+  "tremor_detector_version": "drink_water_tremor_v1_1",
+  "lateral_lf_parameters": {
+    "angle_threshold_deg": 10.0,
+    "persistence_seconds": 1.0
+  },
+  "lateral_tremor_parameters": {
+    "band_ratio_threshold": 0.18,
+    "band_rms_threshold": 5.0,
+    "positive_window_fraction": 0.35
+  },
+  "provisional": false,
+  "source": {
+    "segmentation_gate": {
+      "segmentation_version": "lateral_transfer_segmentation_drink_reuse_v1",
+      "segmentation_core_version": "drink_hybrid_segmentation_v2_1_1",
+      "approved_manifest_path": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\approved_calibration_manifest\\lateral_transfer_approved_calibration_manifest.json",
+      "approved_session_count": 31,
+      "approved_expected_rep_total": 59,
+      "approved_actual_rep_total": 59,
+      "approved_label_counts": {
+        "normal": 48,
+        "lf": 6,
+        "tremor": 5
+      },
+      "healthy_normal_rep_count": 48,
+      "approved_count_validation_passed": true,
+      "approved_rep_total": 59,
+      "approved_sessions": [
+        {
+          "session_id": "20260807_TASK024",
+          "expected_labels": [
+            "normal"
+          ],
+          "expected_valid_rep_count": 1,
+          "observed_valid_rep_count": 1,
+          "raw_pool_matches_expected": true,
+          "approved_for_calibration": true,
+          "review_status": "approved",
+          "review_notes": "approved matched raw-pool session",
+          "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK024\\DATA_SEQ0000004512.csv",
+          "actual_valid_rep_count": 1,
+          "count_validation_passed": true
+        },
+        {
+          "session_id": "20260807_TASK025",
+          "expected_labels": [
+            "normal"
+          ],
+          "expected_valid_rep_count": 1,
+          "observed_valid_rep_count": 1,
+          "raw_pool_matches_expected": true,
+          "approved_for_calibration": true,
+          "review_status": "approved",
+          "review_notes": "approved matched raw-pool session",
+          "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK025\\DATA_SEQ0000005225.csv",
+          "actual_valid_rep_count": 1,
+          "count_validation_passed": true
+        },
+        {
+          "session_id": "20260807_TASK026",
+          "expected_labels": [
+            "normal"
+          ],
+          "expected_valid_rep_count": 1,
+          "observed_valid_rep_count": 1,
+          "raw_pool_matches_expected": true,
+          "approved_for_calibration": true,
+          "review_status": "approved",
+          "review_notes": "approved matched raw-pool session",
+          "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK026\\DATA_SEQ0000005920.csv",
+          "actual_valid_rep_count": 1,
+          "count_validation_passed": true
+        },
+        {
+          "session_id": "20260807_TASK027",
+          "expected_labels": [
+            "normal"
+          ],
+          "expected_valid_rep_count": 1,
+          "observed_valid_rep_count": 1,
+          "raw_pool_matches_expected": true,
+          "approved_for_calibration": true,
+          "review_status": "approved",
+          "review_notes": "approved matched raw-pool session",
+          "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK027\\DATA_SEQ0000006595.csv",
+          "actual_valid_rep_count": 1,
+          "count_validation_passed": true
+        },
+        {
+          "session_id": "20260807_TASK028",
+          "expected_labels": [
+            "normal"
+          ],
+          "expected_valid_rep_count": 1,
+          "observed_valid_rep_count": 1,
+          "raw_pool_matches_expected": true,
+          "approved_for_calibration": true,
+          "review_status": "approved",
+          "review_notes": "approved matched raw-pool session",
+          "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK028\\DATA_SEQ0000007202.csv",
+          "actual_valid_rep_count": 1,
+          "count_validation_passed": true
+        },
+        {
+          "session_id": "20260807_TASK029",
+          "expected_labels": [
+            "normal"
+          ],
+          "expected_valid_rep_count": 1,
+          "observed_valid_rep_count": 1,
+          "raw_pool_matches_expected": true,
+          "approved_for_calibration": true,
+          "review_status": "approved",
+          "review_notes": "approved matched raw-pool session",
+          "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK029\\DATA_SEQ0000007824.csv",
+          "actual_valid_rep_count": 1,
+          "count_validation_passed": true
+        },
+        {
+          "session_id": "20260807_TASK030",
+          "expected_labels": [
+            "normal"
+          ],
+          "expected_valid_rep_count": 1,
+          "observed_valid_rep_count": 1,
+          "raw_pool_matches_expected": true,
+          "approved_for_calibration": true,
+          "review_status": "approved",
+          "review_notes": "approved matched raw-pool session",
+          "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK030\\DATA_SEQ0000008449.csv",
+          "actual_valid_rep_count": 1,
+          "count_validation_passed": true
+        },
+        {
+          "session_id": "20260807_TASK031",
+          "expected_labels": [
+            "normal"
+          ],
+          "expected_valid_rep_count": 1,
+          "observed_valid_rep_count": 1,
+          "raw_pool_matches_expected": true,
+          "approved_for_calibration": true,
+          "review_status": "approved",
+          "review_notes": "approved matched raw-pool session",
+          "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK031\\DATA_SEQ0000009145.csv",
+          "actual_valid_rep_count": 1,
+          "count_validation_passed": true
+        },
+        {
+          "session_id": "20260807_TASK032",
+          "expected_labels": [
+            "normal"
+          ],
+          "expected_valid_rep_count": 1,
+          "observed_valid_rep_count": 1,
+          "raw_pool_matches_expected": true,
+          "approved_for_calibration": true,
+          "review_status": "approved",
+          "review_notes": "approved matched raw-pool session",
+          "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK032\\DATA_SEQ0000009830.csv",
+          "actual_valid_rep_count": 1,
+          "count_validation_passed": true
+        },
+        {
+          "session_id": "20260807_TASK033",
+          "expected_labels": [
+            "normal"
+          ],
+          "expected_valid_rep_count": 1,
+          "observed_valid_rep_count": 1,
+          "raw_pool_matches_expected": true,
+          "approved_for_calibration": true,
+          "review_status": "approved",
+          "review_notes": "approved matched raw-pool session",
+          "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK033\\DATA_SEQ0000010536.csv",
+          "actual_valid_rep_count": 1,
+          "count_validation_passed": true
+        },
+        {
+          "session_id": "20260807_TASK034",
+          "expected_labels": [
+            "normal"
+          ],
+          "expected_valid_rep_count": 1,
+          "observed_valid_rep_count": 1,
+          "raw_pool_matches_expected": true,
+          "approved_for_calibration": true,
+          "review_status": "approved",
+          "review_notes": "approved matched raw-pool session",
+          "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK034\\DATA_SEQ0000011237.csv",
+          "actual_valid_rep_count": 1,
+          "count_validation_passed": true
+        },
+        {
+          "session_id": "20260807_TASK035",
+          "expected_labels": [
+            "normal"
+          ],
+          "expected_valid_rep_count": 1,
+          "observed_valid_rep_count": 1,
+          "raw_pool_matches_expected": true,
+          "approved_for_calibration": true,
+          "review_status": "approved",
+          "review_notes": "approved matched raw-pool session",
+          "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK035\\DATA_SEQ0000000001.csv",
+          "actual_valid_rep_count": 1,
+          "count_validation_passed": true
+        },
+        {
+          "session_id": "20260807_TASK037",
+          "expected_labels": [
+            "normal"
+          ],
+          "expected_valid_rep_count": 1,
+          "observed_valid_rep_count": 1,
+          "raw_pool_matches_expected": true,
+          "approved_for_calibration": true,
+          "review_status": "approved",
+          "review_notes": "approved matched raw-pool session",
+          "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK037\\DATA_SEQ0000001263.csv",
+          "actual_valid_rep_count": 1,
+          "count_validation_passed": true
+        },
+        {
+          "session_id": "20260807_TASK038",
+          "expected_labels": [
+            "normal"
+          ],
+          "expected_valid_rep_count": 1,
+          "observed_valid_rep_count": 1,
+          "raw_pool_matches_expected": true,
+          "approved_for_calibration": true,
+          "review_status": "approved",
+          "review_notes": "approved matched raw-pool session",
+          "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK038\\DATA_SEQ0000001816.csv",
+          "actual_valid_rep_count": 1,
+          "count_validation_passed": true
+        },
+        {
+          "session_id": "20260807_TASK040",
+          "expected_labels": [
+            "normal",
+            "normal",
+            "normal"
+          ],
+          "expected_valid_rep_count": 3,
+          "observed_valid_rep_count": 3,
+          "raw_pool_matches_expected": true,
+          "approved_for_calibration": true,
+          "review_status": "approved",
+          "review_notes": "approved matched raw-pool session",
+          "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK040\\DATA_SEQ0000003034.csv",
+          "actual_valid_rep_count": 3,
+          "count_validation_passed": true
+        },
+        {
+          "session_id": "20260807_TASK041",
+          "expected_labels": [
+            "normal",
+            "normal",
+            "normal"
+          ],
+          "expected_valid_rep_count": 3,
+          "observed_valid_rep_count": 3,
+          "raw_pool_matches_expected": true,
+          "approved_for_calibration": true,
+          "review_status": "approved",
+          "review_notes": "approved matched raw-pool session",
+          "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK041\\DATA_SEQ0000004467.csv",
+          "actual_valid_rep_count": 3,
+          "count_validation_passed": true
+        },
+        {
+          "session_id": "20260807_TASK042",
+          "expected_labels": [
+            "normal",
+            "normal",
+            "normal"
+          ],
+          "expected_valid_rep_count": 3,
+          "observed_valid_rep_count": 3,
+          "raw_pool_matches_expected": true,
+          "approved_for_calibration": true,
+          "review_status": "approved",
+          "review_notes": "approved matched raw-pool session",
+          "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK042\\DATA_SEQ0000005896.csv",
+          "actual_valid_rep_count": 3,
+          "count_validation_passed": true
+        },
+        {
+          "session_id": "20260807_TASK043",
+          "expected_labels": [
+            "normal",
+            "normal",
+            "normal"
+          ],
+          "expected_valid_rep_count": 3,
+          "observed_valid_rep_count": 3,
+          "raw_pool_matches_expected": true,
+          "approved_for_calibration": true,
+          "review_status": "approved",
+          "review_notes": "approved matched raw-pool session",
+          "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK043\\DATA_SEQ0000007259.csv",
+          "actual_valid_rep_count": 3,
+          "count_validation_passed": true
+        },
+        {
+          "session_id": "20260807_TASK045",
+          "expected_labels": [
+            "normal",
+            "normal",
+            "normal",
+            "normal",
+            "normal"
+          ],
+          "expected_valid_rep_count": 5,
+          "observed_valid_rep_count": 5,
+          "raw_pool_matches_expected": true,
+          "approved_for_calibration": true,
+          "review_status": "approved",
+          "review_notes": "approved matched raw-pool session",
+          "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK045\\DATA_SEQ0000000001.csv",
+          "actual_valid_rep_count": 5,
+          "count_validation_passed": true
+        },
+        {
+          "session_id": "20260807_TASK046",
+          "expected_labels": [
+            "normal",
+            "normal",
+            "normal",
+            "normal",
+            "normal"
+          ],
+          "expected_valid_rep_count": 5,
+          "observed_valid_rep_count": 5,
+          "raw_pool_matches_expected": true,
+          "approved_for_calibration": true,
+          "review_status": "approved",
+          "review_notes": "approved matched raw-pool session",
+          "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK046\\DATA_SEQ0000002213.csv",
+          "actual_valid_rep_count": 5,
+          "count_validation_passed": true
+        },
+        {
+          "session_id": "20260807_TASK047",
+          "expected_labels": [
+            "normal",
+            "lf",
+            "normal"
+          ],
+          "expected_valid_rep_count": 3,
+          "observed_valid_rep_count": 3,
+          "raw_pool_matches_expected": true,
+          "approved_for_calibration": true,
+          "review_status": "approved",
+          "review_notes": "approved matched raw-pool session; manual labels remain authoritative even if detector flags a normal rep",
+          "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK047\\DATA_SEQ0000004395.csv",
+          "actual_valid_rep_count": 3,
+          "count_validation_passed": true
+        },
+        {
+          "session_id": "20260807_TASK048",
+          "expected_labels": [
+            "normal",
+            "lf",
+            "normal"
+          ],
+          "expected_valid_rep_count": 3,
+          "observed_valid_rep_count": 3,
+          "raw_pool_matches_expected": true,
+          "approved_for_calibration": true,
+          "review_status": "approved",
+          "review_notes": "approved matched raw-pool session",
+          "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK048\\DATA_SEQ0000005930.csv",
+          "actual_valid_rep_count": 3,
+          "count_validation_passed": true
+        },
+        {
+          "session_id": "20260807_TASK049",
+          "expected_labels": [
+            "normal",
+            "lf",
+            "normal"
+          ],
+          "expected_valid_rep_count": 3,
+          "observed_valid_rep_count": 3,
+          "raw_pool_matches_expected": true,
+          "approved_for_calibration": true,
+          "review_status": "approved",
+          "review_notes": "approved matched raw-pool session",
+          "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK049\\DATA_SEQ0000000001.csv",
+          "actual_valid_rep_count": 3,
+          "count_validation_passed": true
+        },
+        {
+          "session_id": "20260807_TASK050",
+          "expected_labels": [
+            "normal",
+            "lf",
+            "normal"
+          ],
+          "expected_valid_rep_count": 3,
+          "observed_valid_rep_count": 3,
+          "raw_pool_matches_expected": true,
+          "approved_for_calibration": true,
+          "review_status": "approved",
+          "review_notes": "approved matched raw-pool session",
+          "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK050\\DATA_SEQ0000001492.csv",
+          "actual_valid_rep_count": 3,
+          "count_validation_passed": true
+        },
+        {
+          "session_id": "20260807_TASK052",
+          "expected_labels": [
+            "normal",
+            "lf",
+            "normal"
+          ],
+          "expected_valid_rep_count": 3,
+          "observed_valid_rep_count": 3,
+          "raw_pool_matches_expected": true,
+          "approved_for_calibration": true,
+          "review_status": "approved",
+          "review_notes": "approved matched raw-pool session",
+          "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK052\\DATA_SEQ0000003821.csv",
+          "actual_valid_rep_count": 3,
+          "count_validation_passed": true
+        },
+        {
+          "session_id": "20260807_TASK053",
+          "expected_labels": [
+            "normal",
+            "lf",
+            "normal"
+          ],
+          "expected_valid_rep_count": 3,
+          "observed_valid_rep_count": 3,
+          "raw_pool_matches_expected": true,
+          "approved_for_calibration": true,
+          "review_status": "approved",
+          "review_notes": "approved matched raw-pool session",
+          "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK053\\DATA_SEQ0000005271.csv",
+          "actual_valid_rep_count": 3,
+          "count_validation_passed": true
+        },
+        {
+          "session_id": "20260807_TASK054",
+          "expected_labels": [
+            "tremor"
+          ],
+          "expected_valid_rep_count": 1,
+          "observed_valid_rep_count": 1,
+          "raw_pool_matches_expected": true,
+          "approved_for_calibration": true,
+          "review_status": "approved",
+          "review_notes": "approved matched raw-pool session",
+          "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK054\\DATA_SEQ0000006832.csv",
+          "actual_valid_rep_count": 1,
+          "count_validation_passed": true
+        },
+        {
+          "session_id": "20260807_TASK055",
+          "expected_labels": [
+            "tremor"
+          ],
+          "expected_valid_rep_count": 1,
+          "observed_valid_rep_count": 1,
+          "raw_pool_matches_expected": true,
+          "approved_for_calibration": true,
+          "review_status": "approved",
+          "review_notes": "approved matched raw-pool session",
+          "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK055\\DATA_SEQ0000007619.csv",
+          "actual_valid_rep_count": 1,
+          "count_validation_passed": true
+        },
+        {
+          "session_id": "20260807_TASK056",
+          "expected_labels": [
+            "tremor"
+          ],
+          "expected_valid_rep_count": 1,
+          "observed_valid_rep_count": 1,
+          "raw_pool_matches_expected": true,
+          "approved_for_calibration": true,
+          "review_status": "approved",
+          "review_notes": "approved matched raw-pool session",
+          "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK056\\DATA_SEQ0000008416.csv",
+          "actual_valid_rep_count": 1,
+          "count_validation_passed": true
+        },
+        {
+          "session_id": "20260807_TASK057",
+          "expected_labels": [
+            "tremor"
+          ],
+          "expected_valid_rep_count": 1,
+          "observed_valid_rep_count": 1,
+          "raw_pool_matches_expected": true,
+          "approved_for_calibration": true,
+          "review_status": "approved",
+          "review_notes": "approved matched raw-pool session",
+          "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK057\\DATA_SEQ0000009213.csv",
+          "actual_valid_rep_count": 1,
+          "count_validation_passed": true
+        },
+        {
+          "session_id": "20260807_TASK058",
+          "expected_labels": [
+            "tremor"
+          ],
+          "expected_valid_rep_count": 1,
+          "observed_valid_rep_count": 1,
+          "raw_pool_matches_expected": true,
+          "approved_for_calibration": true,
+          "review_status": "approved",
+          "review_notes": "approved matched raw-pool session",
+          "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK058\\DATA_SEQ0000010001.csv",
+          "actual_valid_rep_count": 1,
+          "count_validation_passed": true
+        }
+      ],
+      "raw_pool_summary": {
+        "session_count": 33,
+        "matched_session_count": 31,
+        "mismatch_session_count": 2,
+        "expected_valid_rep_total": 61,
+        "actual_valid_rep_total": 59,
+        "mismatches": [
+          {
+            "session_id": "20260807_TASK036",
+            "reason": "segmentation_count_mismatch_raw_pool"
+          },
+          {
+            "session_id": "20260807_TASK039",
+            "reason": "segmentation_count_mismatch_raw_pool"
+          }
+        ]
+      }
+    },
+    "normal_reference_rep_count": 48,
+    "excluded_rep_count": 11,
+    "records": [
+      {
+        "session_id": "20260807_TASK024",
+        "rep_index": 1,
+        "duration_ms": 8160.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK024\\DATA_SEQ0000004512.csv",
+        "source_sha256": "0bad32d3b0e2d298871f1d3ab494e53d155a8fb0b82752c0a38ae404e2a8c49c",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK024\\rep_01.csv",
+        "rep_sha256": "27f3f24bc583943c3302d1b66073a367f1c03bd93027b668509592358294f57c"
+      },
+      {
+        "session_id": "20260807_TASK025",
+        "rep_index": 1,
+        "duration_ms": 6880.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK025\\DATA_SEQ0000005225.csv",
+        "source_sha256": "cc28852208e4dfc4ad68cc55f9a827c34ca9d9798385837f7ba99b99a1e41d07",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK025\\rep_01.csv",
+        "rep_sha256": "b887c460229e7766e136f56340b36181caab3f7b58499b58e4f6f4bd40ead20a"
+      },
+      {
+        "session_id": "20260807_TASK026",
+        "rep_index": 1,
+        "duration_ms": 6580.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK026\\DATA_SEQ0000005920.csv",
+        "source_sha256": "f6a54638f8d4e652ba8fa8abe55874c085e3c5d62e2bc1c7f1670feba8eefefa",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK026\\rep_01.csv",
+        "rep_sha256": "53299adeae4327cc8d6bcc40c1473e261035a3c8c9c2bfc4fda1bac611e1342b"
+      },
+      {
+        "session_id": "20260807_TASK027",
+        "rep_index": 1,
+        "duration_ms": 7178.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK027\\DATA_SEQ0000006595.csv",
+        "source_sha256": "910bdbbe487f490c8616364c20f40ff08ebe130c668280ec147554edbf7f83cb",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK027\\rep_01.csv",
+        "rep_sha256": "ee234664de7fd763542285df16f74e03b8d127e67b68b8aa80c1523addd657cc"
+      },
+      {
+        "session_id": "20260807_TASK028",
+        "rep_index": 1,
+        "duration_ms": 6700.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK028\\DATA_SEQ0000007202.csv",
+        "source_sha256": "34d13a4232e36c3a6f6f159d609d9cfd0a412f2217533dabc9eb8e3c78471ff3",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK028\\rep_01.csv",
+        "rep_sha256": "58d0dae01b25fd4c2d7d82868a0e0d3da54fc04bd45cb43f8fb0e15739ae3705"
+      },
+      {
+        "session_id": "20260807_TASK029",
+        "rep_index": 1,
+        "duration_ms": 6500.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK029\\DATA_SEQ0000007824.csv",
+        "source_sha256": "cd8363418dd56450fd748df6083a1aa95e25c8b91527c0c0f0cf5aa2b16cce81",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK029\\rep_01.csv",
+        "rep_sha256": "3c31cc18c18d6803c6c5a539241187e323249712936a73809ebeb37832fc5944"
+      },
+      {
+        "session_id": "20260807_TASK030",
+        "rep_index": 1,
+        "duration_ms": 6160.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK030\\DATA_SEQ0000008449.csv",
+        "source_sha256": "39ed01ee770115290616ba92b92a3b0ee92c9d34dda5d4e08f7370328afb9a68",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK030\\rep_01.csv",
+        "rep_sha256": "888b33dfc4da73eddb6adcb661b812f4c69ed40ae74c8aa57dca554c2f640cc2"
+      },
+      {
+        "session_id": "20260807_TASK031",
+        "rep_index": 1,
+        "duration_ms": 6580.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK031\\DATA_SEQ0000009145.csv",
+        "source_sha256": "2f6da543b88e52ebf86e663c045e029dd0ea10ea3d6a00d58bc9b0ebb0976d1e",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK031\\rep_01.csv",
+        "rep_sha256": "0624eae002d3cc7bed5da4fddb4020e5374393562e3b4dce90501ec8e3b28c75"
+      },
+      {
+        "session_id": "20260807_TASK032",
+        "rep_index": 1,
+        "duration_ms": 6880.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK032\\DATA_SEQ0000009830.csv",
+        "source_sha256": "42dcaf0ffc8fad1303a0116e16dfad2aff611f9d06c3cba88988a2fd80cd6e60",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK032\\rep_01.csv",
+        "rep_sha256": "fcec283fb50d216b075bd1e8fd86451bd7b8e05b47b3206f6106de3657d8911d"
+      },
+      {
+        "session_id": "20260807_TASK033",
+        "rep_index": 1,
+        "duration_ms": 6760.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK033\\DATA_SEQ0000010536.csv",
+        "source_sha256": "b9ee64fd12b75c846c0bc04139b1b16ccc88d182d575223eb2c1f8714a0e6eb1",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK033\\rep_01.csv",
+        "rep_sha256": "bb0c20aeeb75cbae7a3b29d1db607679bedd68541b6228b52bd048dfdf6a9751"
+      },
+      {
+        "session_id": "20260807_TASK034",
+        "rep_index": 1,
+        "duration_ms": 6540.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK034\\DATA_SEQ0000011237.csv",
+        "source_sha256": "41056f14f893c047e5e2441573aec8c9dbeb174ad70dd524b1343bcd931ca38b",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK034\\rep_01.csv",
+        "rep_sha256": "963f7c24473deb172d9fed7440beefff4b71abe2436de9e15caf28ac6fe7eea2"
+      },
+      {
+        "session_id": "20260807_TASK035",
+        "rep_index": 1,
+        "duration_ms": 10060.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK035\\DATA_SEQ0000000001.csv",
+        "source_sha256": "651ce2f3a7c809d15c14a09f171e881e0ffdf2c8651b4348ff28e53e074d511d",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK035\\rep_01.csv",
+        "rep_sha256": "005bacf10ad6c4aa417b52f6bc762d7614994b00a7d05c2539560afb9669b4c8"
+      },
+      {
+        "session_id": "20260807_TASK037",
+        "rep_index": 1,
+        "duration_ms": 6180.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK037\\DATA_SEQ0000001263.csv",
+        "source_sha256": "5449c5937e542650f941be9161815b9dc1757aea8906576e5864205c478d87cc",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK037\\rep_01.csv",
+        "rep_sha256": "d4ea6421f74b656472e4443f101e8165887f3f35ac849445eb803575abc2cbf4"
+      },
+      {
+        "session_id": "20260807_TASK038",
+        "rep_index": 1,
+        "duration_ms": 6020.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK038\\DATA_SEQ0000001816.csv",
+        "source_sha256": "501c78c90971864b1b5fd4c82a37beeb22b1069b85944355c1b7f0855357c503",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK038\\rep_01.csv",
+        "rep_sha256": "188ff0395b825dc21e29665f718aa7e5e5d287d7eeec38eab8e1688e4f6b6bb9"
+      },
+      {
+        "session_id": "20260807_TASK040",
+        "rep_index": 1,
+        "duration_ms": 6280.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK040\\DATA_SEQ0000003034.csv",
+        "source_sha256": "70cceb8c1a41db8981003b5b733784687289f54ca416a189e224218e6b22e0fa",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK040\\rep_01.csv",
+        "rep_sha256": "b7e45d79dfdf56af0ed9a9fbfb3ea0559c62ff7a57a107351dc348d18c6d4d6c"
+      },
+      {
+        "session_id": "20260807_TASK040",
+        "rep_index": 2,
+        "duration_ms": 7220.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK040\\DATA_SEQ0000003034.csv",
+        "source_sha256": "70cceb8c1a41db8981003b5b733784687289f54ca416a189e224218e6b22e0fa",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK040\\rep_02.csv",
+        "rep_sha256": "36b58e53bdcf8f82e4248b5e47c62874ba4b8da81abc5a8b9501d5f11419b5ca"
+      },
+      {
+        "session_id": "20260807_TASK040",
+        "rep_index": 3,
+        "duration_ms": 7199.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK040\\DATA_SEQ0000003034.csv",
+        "source_sha256": "70cceb8c1a41db8981003b5b733784687289f54ca416a189e224218e6b22e0fa",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK040\\rep_03.csv",
+        "rep_sha256": "5bea873f6d36aa638e7d66ff0cac4782547a5f00314b9eb78870f6d720bba0d2"
+      },
+      {
+        "session_id": "20260807_TASK041",
+        "rep_index": 1,
+        "duration_ms": 6860.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK041\\DATA_SEQ0000004467.csv",
+        "source_sha256": "31d32403d7fbbcb5f478e9b1516004fec7d04c301b62b77d20a9c6f2efb39b54",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK041\\rep_01.csv",
+        "rep_sha256": "2a0cf9c6af400ff97de18424244b1d1aed43316765d1e333a48216a3eb87300d"
+      },
+      {
+        "session_id": "20260807_TASK041",
+        "rep_index": 2,
+        "duration_ms": 7580.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK041\\DATA_SEQ0000004467.csv",
+        "source_sha256": "31d32403d7fbbcb5f478e9b1516004fec7d04c301b62b77d20a9c6f2efb39b54",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK041\\rep_02.csv",
+        "rep_sha256": "b082c1f309de74fa99965fb31b84e77e337738899fb06f1f4fa81bf5e4ebbc1a"
+      },
+      {
+        "session_id": "20260807_TASK041",
+        "rep_index": 3,
+        "duration_ms": 7020.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK041\\DATA_SEQ0000004467.csv",
+        "source_sha256": "31d32403d7fbbcb5f478e9b1516004fec7d04c301b62b77d20a9c6f2efb39b54",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK041\\rep_03.csv",
+        "rep_sha256": "9073bcb425401bef919209aafc62aaec8198d521a081e031f5dbb7c16985a21b"
+      },
+      {
+        "session_id": "20260807_TASK042",
+        "rep_index": 1,
+        "duration_ms": 6140.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK042\\DATA_SEQ0000005896.csv",
+        "source_sha256": "a6991d4e2787fdd3a1c41eaa2c9474a88fe40f129c026fbd4464e5244dabb8c7",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK042\\rep_01.csv",
+        "rep_sha256": "9c0f6aae51acbe0753796a9c9dbd9908a45fccddc8bb7585746d9a2e4c99f73d"
+      },
+      {
+        "session_id": "20260807_TASK042",
+        "rep_index": 2,
+        "duration_ms": 7080.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK042\\DATA_SEQ0000005896.csv",
+        "source_sha256": "a6991d4e2787fdd3a1c41eaa2c9474a88fe40f129c026fbd4464e5244dabb8c7",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK042\\rep_02.csv",
+        "rep_sha256": "658ba5bb485610747f1a3488d581ec7d9b3657839fba3eb353dd49b9e831694e"
+      },
+      {
+        "session_id": "20260807_TASK042",
+        "rep_index": 3,
+        "duration_ms": 6500.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK042\\DATA_SEQ0000005896.csv",
+        "source_sha256": "a6991d4e2787fdd3a1c41eaa2c9474a88fe40f129c026fbd4464e5244dabb8c7",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK042\\rep_03.csv",
+        "rep_sha256": "b16cfa33be849d9ab0a17568e226400e99665d4d5bc8bdd61b9a85c038537d7f"
+      },
+      {
+        "session_id": "20260807_TASK043",
+        "rep_index": 1,
+        "duration_ms": 6286.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK043\\DATA_SEQ0000007259.csv",
+        "source_sha256": "f71c7890225f75ad5cc0e50b515a2e31717ce2aff1d868c672fab5b565e8b599",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK043\\rep_01.csv",
+        "rep_sha256": "af454611cb8befd25ba53d479ce6639570402854e6e600a67c324515fbf983e0"
+      },
+      {
+        "session_id": "20260807_TASK043",
+        "rep_index": 2,
+        "duration_ms": 7340.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK043\\DATA_SEQ0000007259.csv",
+        "source_sha256": "f71c7890225f75ad5cc0e50b515a2e31717ce2aff1d868c672fab5b565e8b599",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK043\\rep_02.csv",
+        "rep_sha256": "a1309ffdadf2f5cd9eea8d6d2d536b054c169df9f44cd1d6be809ac6c5f30843"
+      },
+      {
+        "session_id": "20260807_TASK043",
+        "rep_index": 3,
+        "duration_ms": 6780.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK043\\DATA_SEQ0000007259.csv",
+        "source_sha256": "f71c7890225f75ad5cc0e50b515a2e31717ce2aff1d868c672fab5b565e8b599",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK043\\rep_03.csv",
+        "rep_sha256": "7f6ad268d48782ef9eaca083345feffbc75a895e0a50b40f7a8488d4fce2d41e"
+      },
+      {
+        "session_id": "20260807_TASK045",
+        "rep_index": 1,
+        "duration_ms": 6979.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK045\\DATA_SEQ0000000001.csv",
+        "source_sha256": "f5bdce06edf18ba0b0c9cb5721ae84c61b298aabea559b4c3a71ecdded28d274",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK045\\rep_01.csv",
+        "rep_sha256": "551662ad9c63e9b17571dabd3412a22f7f85cc675998628840965cc178aa7aad"
+      },
+      {
+        "session_id": "20260807_TASK045",
+        "rep_index": 2,
+        "duration_ms": 7800.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK045\\DATA_SEQ0000000001.csv",
+        "source_sha256": "f5bdce06edf18ba0b0c9cb5721ae84c61b298aabea559b4c3a71ecdded28d274",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK045\\rep_02.csv",
+        "rep_sha256": "a8ad6a06423e6d1edb252eef9df7512726310e06f6ccf8dd09ab72aafa526b08"
+      },
+      {
+        "session_id": "20260807_TASK045",
+        "rep_index": 3,
+        "duration_ms": 7460.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK045\\DATA_SEQ0000000001.csv",
+        "source_sha256": "f5bdce06edf18ba0b0c9cb5721ae84c61b298aabea559b4c3a71ecdded28d274",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK045\\rep_03.csv",
+        "rep_sha256": "216812c3a68939e314008abad4d31b7e2c22707637c4cc2816f94b9b942bc8a8"
+      },
+      {
+        "session_id": "20260807_TASK045",
+        "rep_index": 4,
+        "duration_ms": 7700.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK045\\DATA_SEQ0000000001.csv",
+        "source_sha256": "f5bdce06edf18ba0b0c9cb5721ae84c61b298aabea559b4c3a71ecdded28d274",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK045\\rep_04.csv",
+        "rep_sha256": "e57d2243c2c441119562b24fd668e97e7b631e5888d11e4221c5f62e4e7c6e98"
+      },
+      {
+        "session_id": "20260807_TASK045",
+        "rep_index": 5,
+        "duration_ms": 7140.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK045\\DATA_SEQ0000000001.csv",
+        "source_sha256": "f5bdce06edf18ba0b0c9cb5721ae84c61b298aabea559b4c3a71ecdded28d274",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK045\\rep_05.csv",
+        "rep_sha256": "0a3a526e961c9757e425e1b371a9b7174b1655dad30485fa95eba5b6e271c1e6"
+      },
+      {
+        "session_id": "20260807_TASK046",
+        "rep_index": 1,
+        "duration_ms": 6500.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK046\\DATA_SEQ0000002213.csv",
+        "source_sha256": "84e10cbab1fa22cf4e79f6e032a10ea39dba0c7ba62806e1da8bce51c8b16edd",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK046\\rep_01.csv",
+        "rep_sha256": "15e283c1d866e1ed019f74dd6a8f9ce9fbe0375ed9482b6b6e5cbc4acaa4daa0"
+      },
+      {
+        "session_id": "20260807_TASK046",
+        "rep_index": 2,
+        "duration_ms": 7300.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK046\\DATA_SEQ0000002213.csv",
+        "source_sha256": "84e10cbab1fa22cf4e79f6e032a10ea39dba0c7ba62806e1da8bce51c8b16edd",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK046\\rep_02.csv",
+        "rep_sha256": "6324604c15231616b9fb0fe44e38073aa49685d96b05093ce8f81bc0115cc119"
+      },
+      {
+        "session_id": "20260807_TASK046",
+        "rep_index": 3,
+        "duration_ms": 7460.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK046\\DATA_SEQ0000002213.csv",
+        "source_sha256": "84e10cbab1fa22cf4e79f6e032a10ea39dba0c7ba62806e1da8bce51c8b16edd",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK046\\rep_03.csv",
+        "rep_sha256": "e129008bbd4edaaeeac6f98c5b434cb7a1ec97a37b28874b6257f0eec336799d"
+      },
+      {
+        "session_id": "20260807_TASK046",
+        "rep_index": 4,
+        "duration_ms": 7841.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK046\\DATA_SEQ0000002213.csv",
+        "source_sha256": "84e10cbab1fa22cf4e79f6e032a10ea39dba0c7ba62806e1da8bce51c8b16edd",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK046\\rep_04.csv",
+        "rep_sha256": "3ae8f2ed1b4f2480d5af0898fd1d49e10026890acddf513de6323965ac4dbb90"
+      },
+      {
+        "session_id": "20260807_TASK046",
+        "rep_index": 5,
+        "duration_ms": 6660.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK046\\DATA_SEQ0000002213.csv",
+        "source_sha256": "84e10cbab1fa22cf4e79f6e032a10ea39dba0c7ba62806e1da8bce51c8b16edd",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK046\\rep_05.csv",
+        "rep_sha256": "e43317d3cc6292a33f9973402e820fc831ebc96440d09d7162baad07e7fb3853"
+      },
+      {
+        "session_id": "20260807_TASK047",
+        "rep_index": 1,
+        "duration_ms": 7060.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK047\\DATA_SEQ0000004395.csv",
+        "source_sha256": "4621c4a542f9973aa8a481444e0f11cae4edd6e169c62affe7a3a7411f6d80fb",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK047\\rep_01.csv",
+        "rep_sha256": "faed70add3bf57869d72dc2538d820ace123ebb5debfc192f0cdc90e98351fcc"
+      },
+      {
+        "session_id": "20260807_TASK047",
+        "rep_index": 3,
+        "duration_ms": 10020.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK047\\DATA_SEQ0000004395.csv",
+        "source_sha256": "4621c4a542f9973aa8a481444e0f11cae4edd6e169c62affe7a3a7411f6d80fb",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK047\\rep_03.csv",
+        "rep_sha256": "fd5dc8577cb05e7079211b55f7b45a0a0bfa3d21edc181d1a8747be70128a21b"
+      },
+      {
+        "session_id": "20260807_TASK048",
+        "rep_index": 1,
+        "duration_ms": 7200.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK048\\DATA_SEQ0000005930.csv",
+        "source_sha256": "e4e95935d9b113e67a72fbec4c957b9759dc103238494b1f18981a8771fa84ff",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK048\\rep_01.csv",
+        "rep_sha256": "e4aed20bee0fd62d81c91500246dc64caeef8941e1ca26c2564f757d3bbd7de2"
+      },
+      {
+        "session_id": "20260807_TASK048",
+        "rep_index": 3,
+        "duration_ms": 7960.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK048\\DATA_SEQ0000005930.csv",
+        "source_sha256": "e4e95935d9b113e67a72fbec4c957b9759dc103238494b1f18981a8771fa84ff",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK048\\rep_03.csv",
+        "rep_sha256": "28a65ffe79ee90d76732d5080a9d47c4d2f6500b59e92353ed8ac344934b20ba"
+      },
+      {
+        "session_id": "20260807_TASK049",
+        "rep_index": 1,
+        "duration_ms": 6860.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK049\\DATA_SEQ0000000001.csv",
+        "source_sha256": "38eba697cd7786a3c8b0694d22e689daef836a1b68aa75712feced04a55f601d",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK049\\rep_01.csv",
+        "rep_sha256": "058d0247db0a6efa47cc73b08315f05adcac236b9f1d07a4759737bdb572930e"
+      },
+      {
+        "session_id": "20260807_TASK049",
+        "rep_index": 3,
+        "duration_ms": 7540.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK049\\DATA_SEQ0000000001.csv",
+        "source_sha256": "38eba697cd7786a3c8b0694d22e689daef836a1b68aa75712feced04a55f601d",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK049\\rep_03.csv",
+        "rep_sha256": "71a5d7f7aeaadfa81b56b9531748addf5fcf77f9011af9aa8462ee80ef0db5a4"
+      },
+      {
+        "session_id": "20260807_TASK050",
+        "rep_index": 1,
+        "duration_ms": 6741.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK050\\DATA_SEQ0000001492.csv",
+        "source_sha256": "c5dbc722371e61f81db454635c5bea43db27b3d136949999661a8b07ca1797c4",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK050\\rep_01.csv",
+        "rep_sha256": "b89a15e3666c593c7396fa4cf800d3930752a487ab950a3533521d66a896ce7f"
+      },
+      {
+        "session_id": "20260807_TASK050",
+        "rep_index": 3,
+        "duration_ms": 6240.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK050\\DATA_SEQ0000001492.csv",
+        "source_sha256": "c5dbc722371e61f81db454635c5bea43db27b3d136949999661a8b07ca1797c4",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK050\\rep_03.csv",
+        "rep_sha256": "14c7a4618eda3140df83d8d5636d4075254a297d6e7c6908023c0223be25050c"
+      },
+      {
+        "session_id": "20260807_TASK052",
+        "rep_index": 1,
+        "duration_ms": 6660.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK052\\DATA_SEQ0000003821.csv",
+        "source_sha256": "a1d56a329f1e253994c9881976d8a9418468d00cc0bc77efae5b3e848e5c7e38",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK052\\rep_01.csv",
+        "rep_sha256": "db43197b1c9143e3baae0475f02b22e292f19a2d2d33ef6b3d7cf3312db5febd"
+      },
+      {
+        "session_id": "20260807_TASK052",
+        "rep_index": 3,
+        "duration_ms": 7061.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK052\\DATA_SEQ0000003821.csv",
+        "source_sha256": "a1d56a329f1e253994c9881976d8a9418468d00cc0bc77efae5b3e848e5c7e38",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK052\\rep_03.csv",
+        "rep_sha256": "54a684cc48b18055eef104118a37726e6028b9bf5db9add0f9f8c6b994c3b825"
+      },
+      {
+        "session_id": "20260807_TASK053",
+        "rep_index": 1,
+        "duration_ms": 7280.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK053\\DATA_SEQ0000005271.csv",
+        "source_sha256": "7d92b976b2fb35e06854b5f0c302f725a64be2a1edc545ccfd6cbce3217f70fa",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK053\\rep_01.csv",
+        "rep_sha256": "d9d2f39196c4ee0db71d2aa2258e3ba221143ee46c0834015cea1e20e76ee983"
+      },
+      {
+        "session_id": "20260807_TASK053",
+        "rep_index": 3,
+        "duration_ms": 7639.0,
+        "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK053\\DATA_SEQ0000005271.csv",
+        "source_sha256": "7d92b976b2fb35e06854b5f0c302f725a64be2a1edc545ccfd6cbce3217f70fa",
+        "rep_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\lateral_transfer_v1\\healthy_template_final_20260808_015415\\reference_reps\\20260807_TASK053\\rep_03.csv",
+        "rep_sha256": "42f61c3b98e7513fc63f3eaa118d1d80c4e330abcbe8b6f0b93dd8f1582706b4"
+      }
+    ],
+    "excluded": [
+      {
+        "session_id": "20260807_TASK047",
+        "rep_index": 2,
+        "reason": "label=lf"
+      },
+      {
+        "session_id": "20260807_TASK048",
+        "rep_index": 2,
+        "reason": "label=lf"
+      },
+      {
+        "session_id": "20260807_TASK049",
+        "rep_index": 2,
+        "reason": "label=lf"
+      },
+      {
+        "session_id": "20260807_TASK050",
+        "rep_index": 2,
+        "reason": "label=lf"
+      },
+      {
+        "session_id": "20260807_TASK052",
+        "rep_index": 2,
+        "reason": "label=lf"
+      },
+      {
+        "session_id": "20260807_TASK053",
+        "rep_index": 2,
+        "reason": "label=lf"
+      },
+      {
+        "session_id": "20260807_TASK054",
+        "rep_index": 1,
+        "reason": "label=tremor"
+      },
+      {
+        "session_id": "20260807_TASK055",
+        "rep_index": 1,
+        "reason": "label=tremor"
+      },
+      {
+        "session_id": "20260807_TASK056",
+        "rep_index": 1,
+        "reason": "label=tremor"
+      },
+      {
+        "session_id": "20260807_TASK057",
+        "rep_index": 1,
+        "reason": "label=tremor"
+      },
+      {
+        "session_id": "20260807_TASK058",
+        "rep_index": 1,
+        "reason": "label=tremor"
+      }
+    ]
+  },
+  "feature_statistics": {
+    "WristMeanSpeed_mm_s": {
+      "mean": 51.99196478954924,
+      "std": 7.357955280332999
+    },
+    "NumSpeedPeaks": {
+      "mean": 0.3125,
+      "std": 0.624201617728173
+    },
+    "PauseCount": {
+      "mean": 5.0,
+      "std": 1.443989744762311
+    },
+    "UpperArmROM_mm": {
+      "mean": 182.90479166666668,
+      "std": 9.572274455611169
+    },
+    "ForearmRotationRange_deg": {
+      "mean": 383.73625,
+      "std": 110.99543064440162
+    },
+    "ForearmMeanAngularSpeed_deg_s": {
+      "mean": 52.09262800971547,
+      "std": 7.121025309594371
+    },
+    "Extensor_digitorum_RMS": {
+      "mean": 0.002647189036736056,
+      "std": 0.0019299631002927889
+    },
+    "Extensor_digitorum_MAV": {
+      "mean": 0.0026082431610985964,
+      "std": 0.0019370606338041715
+    },
+    "Extensor_digitorum_WL_mean": {
+      "mean": 0.06374994234492382,
+      "std": 0.04086971841825578
+    },
+    "Biceps_brachii_RMS": {
+      "mean": 0.01211538769978674,
+      "std": 0.024026506333869848
+    },
+    "Biceps_brachii_MAV": {
+      "mean": 0.012074921052123665,
+      "std": 0.02403873669660762
+    },
+    "Biceps_brachii_WL_mean": {
+      "mean": 0.1129984486185842,
+      "std": 0.13139955808472858
+    },
+    "Triceps_brachii_RMS": {
+      "mean": 0.002719860616108383,
+      "std": 0.0021705811380167287
+    },
+    "Triceps_brachii_MAV": {
+      "mean": 0.0026775853412968303,
+      "std": 0.002172298319082339
+    },
+    "Triceps_brachii_WL_mean": {
+      "mean": 0.060134215069313844,
+      "std": 0.042971600074178246
+    },
+    "Extensor_carpi_ulnaris_RMS": {
+      "mean": 0.03030576151173495,
+      "std": 0.04318859849856787
+    },
+    "Extensor_carpi_ulnaris_MAV": {
+      "mean": 0.03006895881908887,
+      "std": 0.04327385338610218
+    },
+    "Extensor_carpi_ulnaris_WL_mean": {
+      "mean": 0.4358218649153908,
+      "std": 0.36548548773081857
+    }
+  },
+  "score_profile": {
+    "speed_mean": 51.99196478954924,
+    "speed_std": 7.357955280332999,
+    "speed_scoring_semantics": "reasonable_range",
+    "speed_scoring": {
+      "semantics": "reasonable_range",
+      "raw_feature": "WristMeanSpeed_mm_s",
+      "lower_good": 34.67492791035,
+      "upper_good": 72.01715796765001,
+      "lower_extreme": 18.67111502865,
+      "upper_extreme": 101.3574815841,
+      "max_score": 15.0,
+      "min_score": 5.0,
+      "formula": "piecewise_linear_plateau",
+      "source": "48 lateral_transfer healthy normal reference reps; median-ratio plateau candidate B"
+    },
+    "num_speed_peaks_mean": 0.3125,
+    "num_speed_peaks_std": 0.624201617728173,
+    "pause_count_mean": 5.0,
+    "pause_count_std": 1.443989744762311,
+    "ROM_mean": 182.90479166666668,
+    "ROM_std": 9.572274455611169,
+    "forearm_rotation_mean": 383.73625,
+    "forearm_rotation_std": 110.99543064440162,
+    "forearm_angular_speed_mean": 52.09262800971547,
+    "forearm_angular_speed_std": 7.121025309594371,
+    "Extensor_digitorum_RMS_mean": 0.002647189036736056,
+    "Extensor_digitorum_RMS_std": 0.0019299631002927889,
+    "Extensor_digitorum_MAV_mean": 0.0026082431610985964,
+    "Extensor_digitorum_MAV_std": 0.0019370606338041715,
+    "Extensor_digitorum_WL_mean_mean": 0.06374994234492382,
+    "Extensor_digitorum_WL_mean_std": 0.04086971841825578,
+    "Biceps_brachii_RMS_mean": 0.01211538769978674,
+    "Biceps_brachii_RMS_std": 0.024026506333869848,
+    "Biceps_brachii_MAV_mean": 0.012074921052123665,
+    "Biceps_brachii_MAV_std": 0.02403873669660762,
+    "Biceps_brachii_WL_mean_mean": 0.1129984486185842,
+    "Biceps_brachii_WL_mean_std": 0.13139955808472858,
+    "Triceps_brachii_RMS_mean": 0.002719860616108383,
+    "Triceps_brachii_RMS_std": 0.0021705811380167287,
+    "Triceps_brachii_MAV_mean": 0.0026775853412968303,
+    "Triceps_brachii_MAV_std": 0.002172298319082339,
+    "Triceps_brachii_WL_mean_mean": 0.060134215069313844,
+    "Triceps_brachii_WL_mean_std": 0.042971600074178246,
+    "Extensor_carpi_ulnaris_RMS_mean": 0.03030576151173495,
+    "Extensor_carpi_ulnaris_RMS_std": 0.04318859849856787,
+    "Extensor_carpi_ulnaris_MAV_mean": 0.03006895881908887,
+    "Extensor_carpi_ulnaris_MAV_std": 0.04327385338610218,
+    "Extensor_carpi_ulnaris_WL_mean_mean": 0.4358218649153908,
+    "Extensor_carpi_ulnaris_WL_mean_std": 0.36548548773081857
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "candidate_distribution_audit_sha256": "dbfd58867e1a419182f4324a843f6f4410ab0a77d63e48189100a749e4f5861a",
+  "code_path": "C:\\ec\\_calibration_workspaces\\single_frame_candidate_distribution_fusion_20260819_01\\audit_candidate_fusion.py",
+  "code_sha256": "e8c809d0766d78ced9863bf844ae5923326a8a267df8ec81be414076faba0905",
+  "eleven_frame_repeatability_is_evaluation_only": true,
+  "input_artifact_hashes": {
+    "G001": "32ba0a4f2689fe1d4dd24584661fbb333a2aa1c0482cd3404d23cc10ffc4c287",
+    "G002": "19404300e018e95d5245334c1adf29f794b3d4073a2217e446d484570b3a89a1",
+    "SCAN_070604": "cb264aa7c53b07348f43129abc23fa3a5dba38719ca337abccb284ae1e8e4c6e",
+    "SCAN_085223": "348f8e35d3d3fded36580e975eb09db3b00c2a04118542e2fb89d0d218d2fea7",
+    "SCAN_161718": "987579cc3241e5c7ceb630c2caa88cadf1e232a171c5499d2956faee18eb7a2c",
+    "SCAN_165011": "9a0a7fe392f3dd30fb7146c17c338605078d2729a599f4f476521a18db01ea8a"
+  },
+  "method": "surface_hypothesis_expectation",
+  "method_comparison_sha256": "edcfac6dc4ef659c5622188ddef1ab37e8b142421cc9871fa2d18fe9330e48de",
+  "parameters": {
+    "candidate_kernel_bandwidth_mm": 24.0,
+    "context_bottom_y_link_px": 30.0,
+    "dominant_posterior_probability": 0.68,
+    "dominant_posterior_ratio": 1.85,
+    "duplicate_axial_mm": 110.0,
+    "duplicate_bbox_gap_px": 8.0,
+    "duplicate_height_mm": 14.0,
+    "huber_delta_mm": 45.0,
+    "hypothesis_assignment_radius_mm": 42.0,
+    "maximum_hypotheses_in_expectation": 4,
+    "minimum_peak_relative_density": 0.1,
+    "minimum_peak_separation_mm": 42.0,
+    "scene_spanning_bbox_area_fraction": 0.4,
+    "trim_weight_fraction": 0.1
+  },
+  "per_frame_outputs_path": "C:\\ec\\_calibration_workspaces\\single_frame_candidate_distribution_fusion_20260819_01\\frozen_truth_blind_per_frame_outputs.json",
+  "per_frame_outputs_sha256": "79265bcf205e903f493efefe62b0f8244972a787fed61651cca6d3e1b8536622",
+  "runtime_uses_cross_frame_information": false,
+  "schema_version": "fusion_method_freeze.v1",
+  "selection_objective": "truth-blind repeatability: >100 mm outliers, mean scan MAD, mean scan span",
+  "truth_loaded": false
+}

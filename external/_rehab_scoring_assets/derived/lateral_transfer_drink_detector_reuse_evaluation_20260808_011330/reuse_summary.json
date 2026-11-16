@@ -1,0 +1,55 @@
+{
+  "evaluator_version": "lateral_transfer_drink_lf_tremor_exact_reuse_v1",
+  "lateral_wrapper_version": "lateral_transfer_segmentation_drink_reuse_v1",
+  "segmentation_core_version": "drink_hybrid_segmentation_v2_1_1",
+  "drink_lf_version": "drink_water_lf_v2",
+  "drink_tremor_version": "drink_water_tremor_v1_1",
+  "exact_reuse": true,
+  "parameter_sweep": false,
+  "calibration_run": false,
+  "evaluated_session_count": 31,
+  "evaluated_rep_total": 59,
+  "segmentation_skipped_session_count": 2,
+  "segmentation_skipped_sessions": [
+    {
+      "session_id": "20260807_TASK036",
+      "expected_rep_count": 1,
+      "actual_valid_rep_count": 0,
+      "reason": "SEGMENTATION_EXCLUDED_FROM_CLASSIFICATION",
+      "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK036\\DATA_SEQ0000000644.csv",
+      "segmentation_version": "lateral_transfer_segmentation_drink_reuse_v1",
+      "segmentation_core_version": "drink_hybrid_segmentation_v2_1_1"
+    },
+    {
+      "session_id": "20260807_TASK039",
+      "expected_rep_count": 1,
+      "actual_valid_rep_count": 0,
+      "reason": "SEGMENTATION_EXCLUDED_FROM_CLASSIFICATION",
+      "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK039\\DATA_SEQ0000002412.csv",
+      "segmentation_version": "lateral_transfer_segmentation_drink_reuse_v1",
+      "segmentation_core_version": "drink_hybrid_segmentation_v2_1_1"
+    }
+  ],
+  "lf_confusion": {
+    "positive_label": "lf",
+    "TP": 6,
+    "FN": 0,
+    "FP": 2,
+    "TN": 51,
+    "evaluated_positive": 6,
+    "evaluated_negative": 53,
+    "recall": 1.0,
+    "precision": 0.75
+  },
+  "tremor_confusion": {
+    "positive_label": "tremor",
+    "TP": 3,
+    "FN": 2,
+    "FP": 0,
+    "TN": 54,
+    "evaluated_positive": 5,
+    "evaluated_negative": 54,
+    "recall": 0.6,
+    "precision": 1.0
+  }
+}

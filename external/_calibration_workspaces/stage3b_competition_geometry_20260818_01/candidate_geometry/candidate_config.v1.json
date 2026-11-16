@@ -1,0 +1,46 @@
+{
+  "schema_version": "stage3b_geometry_candidate_config.v1",
+  "ground_truth_used_for_fit": false,
+  "authority": {
+    "camera": "Stage2 final candidate K/D and dynamic fr",
+    "vertical": "Stage3A u_up_camera and camera height",
+    "full_world_rotation_constructed": false
+  },
+  "silhouette": {
+    "mask_erosion_px": 0,
+    "base_anchor_edge_trim_fraction": 0.15,
+    "min_anchor_count": 6,
+    "max_anchor_count": 24,
+    "height_scan_min_mm": 40,
+    "height_scan_max_mm": 400,
+    "height_scan_step_mm": 1,
+    "mask_hole_tolerance_px": 1,
+    "sports_ball_proxy_erosion_px": 2,
+    "bottle_height_statistic": "median",
+    "sports_ball_height_statistic": "upper_quintile_median"
+  },
+  "contact_band": {
+    "lower_fraction_start": 0.70,
+    "lower_fraction_end": 0.94,
+    "central_width_fraction": 0.70,
+    "depth_mad_scale": 3.5,
+    "min_depth_pixels": 12
+  },
+  "sphere_fit": {
+    "min_points": 120,
+    "radius_range_mm": [40, 250],
+    "max_residual_rms_mm": 25,
+    "max_relative_residual": 0.15,
+    "max_jacobian_condition": 100000,
+    "loss": "soft_l1",
+    "f_scale_mm": 10
+  },
+  "availability": {
+    "bottle_requires_instance_mask": true,
+    "sports_ball_allows_detector_ellipse": true
+  },
+  "same_layer_consensus": {
+    "enabled_for_targets": ["lower_bottle", "lower_volleyball"],
+    "statistic": "median_of_target_medians"
+  }
+}

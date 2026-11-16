@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "stage8b_p4_object_whitelist.v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "profile_id", "selection_policy_id", "classes"],
+  "properties": {
+    "schema_version": {"const": "stage8b_p4_object_whitelist.v1"},
+    "profile_id": {"type": "string", "minLength": 1},
+    "selection_policy_id": {"const": "class_geometry_fallback_then_p4_whitelist_v1"},
+    "classes": {"const": ["book", "cup", "bottle", "sports ball"]}
+  }
+}

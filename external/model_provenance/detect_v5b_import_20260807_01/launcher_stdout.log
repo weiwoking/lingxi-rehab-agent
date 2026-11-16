@@ -1,0 +1,74 @@
+
+=== ESP-Claw PC 双服务统一启动器 ===
+[信息] ESP-Claw 仓库：C:\ec\esp-claw
+[信息] 8000 服务工程：C:\ec\esp-claw\pc\vision_interpreter
+[信息] 8030 scan service：C:\ec\_deltar_p4_pipeline\scripts\run_scan_service.py
+[信息] Python：C:\ec\_conda_envs\vision_interpreter\python.exe
+[信息] 运行日志与状态目录：C:\Users\Weiwo\AppData\Local\ESP-Claw\vision_scan_launcher
+[提示] 正在扫描、分析或训练时不要重启 PC 服务；正常启动会强制重启 8000/8030。
+
+=== 路径和环境检查 ===
+[完成] ESP-Claw 仓库：C:\ec\esp-claw
+[完成] 8000 服务工程：C:\ec\esp-claw\pc\vision_interpreter
+[完成] 8030 pipeline 根目录：C:\ec\_deltar_p4_pipeline
+[完成] 8030 scan service 脚本：C:\ec\_deltar_p4_pipeline\scripts\run_scan_service.py
+[完成] 服务 Python：C:\ec\_conda_envs\vision_interpreter\python.exe
+[完成] pipeline worker Python：C:\ec\_deltar_formal\envs\deltar_py311_torch271_cu128\python.exe
+[完成] Vision 模型：C:\ec\esp-claw\pc\vision_interpreter\models\yolo11n.pt
+[完成] Vision 模型：C:\ec\esp-claw\pc\vision_interpreter\models\identity\best_zxl_identity.pt
+[完成] Vision 模型：C:\ec\esp-claw\pc\vision_interpreter\models\identity\yolo11n-cls.pt
+[提示] 未检测到 192.168.137.1。Vision 可独立启动；Scan 按正式命令绑定该地址时预计会失败。
+
+=== 正在检查本地模型... ===
+[信息] {"status": "ready", "ready": true, "checked_at": "2026-08-07T07:24:26.000Z", "network_attempt_count": 0, "error": null}
+[完成] DELTAR：本地模型就绪；运行时外网依赖：无；最后预检：2026-08-07T07:24:26.000Z
+
+=== Vision / 端口 8000 ===
+[信息] Vision 端口 8000 启动前为空闲。
+[信息] 启动命令："C:\ec\_conda_envs\vision_interpreter\python.exe" -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 1
+[信息] cwd：C:\ec\esp-claw\pc\vision_interpreter
+[信息] PID：3312
+[信息] stdout：C:\Users\Weiwo\AppData\Local\ESP-Claw\vision_scan_launcher\vision_20260807_152433_732.stdout.log
+[信息] stderr：C:\Users\Weiwo\AppData\Local\ESP-Claw\vision_scan_launcher\vision_20260807_152433_732.stderr.log
+[完成] Vision 健康检查通过。
+
+=== Scan / 端口 8030 ===
+[信息] Scan 端口 8030 启动前为空闲。
+[信息] 启动命令："C:\ec\_conda_envs\vision_interpreter\python.exe" "C:\ec\_deltar_p4_pipeline\scripts\run_scan_service.py" --host 0.0.0.0 --port 8030 --require-local-preflight
+[信息] cwd：C:\ec\_deltar_p4_pipeline
+[信息] PID：22184
+[信息] stdout：C:\Users\Weiwo\AppData\Local\ESP-Claw\vision_scan_launcher\scan_20260807_152448_948.stdout.log
+[信息] stderr：C:\Users\Weiwo\AppData\Local\ESP-Claw\vision_scan_launcher\scan_20260807_152448_948.stderr.log
+[完成] Scan 健康检查通过。
+[信息] Vision health HTTP=200，health=True，OpenAPI person-follow=True，person-follow-view HTTP=200
+[信息] Scan local HTTP=200，valid JSON=True
+[信息] Scan hotspot HTTP=200，valid JSON=True
+[信息] 已按 -NoP4Discovery 跳过 P4 发现。
+
+============================================================
+ESP-Claw PC 双服务已就绪
+
+Vision health: PASS
+Vision docs:   http://127.0.0.1:8000/docs
+追人实时查看:  http://127.0.0.1:8000/person-follow-view
+
+Scan health:   PASS
+统一主页面:    http://127.0.0.1:8030/vision-console
+Scan local:    http://127.0.0.1:8030/api/v1/scan/health
+Scan hotspot:  http://192.168.137.1:8030/api/v1/scan/health
+
+PC 热点 IP:   192.168.137.1
+P4 IP:        等待连接
+============================================================
+
+[完成] UNIFIED READY
+[完成] Vision 8000 = PASS
+[完成] Scan 8030 = PASS
+
+=== 打开统一主页面 ===
+[完成] 已打开一次：http://127.0.0.1:8030/vision-console
+
+=== 运行中 ===
+[信息] 按 Ctrl+C 退出；只清理本轮强制重启后实际启动的子进程。
+[错误] Vision PID=3312 意外退出，退出码=
+[错误] Scan PID=22184 意外退出，退出码=

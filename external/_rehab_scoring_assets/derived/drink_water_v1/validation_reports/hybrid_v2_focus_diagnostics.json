@@ -1,0 +1,74 @@
+{
+  "schema_version": "drink_water_v1.offline_pipeline.v1",
+  "tool_version": "2026.08.05-static",
+  "generated_at": "2026-08-05T13:41:18.818735Z",
+  "purpose": "hybrid_v2_focus_diagnostics_for_current_failed_files",
+  "selection_rule": "records whose valid_repetition_count does not match expected_repetitions after hybrid v2",
+  "focus_file_count": 5,
+  "records": [
+    {
+      "relative_path": "02_正常三次连续_3组/喝水_正常三次连续_01_seq6195-7850.csv",
+      "expected_label": "normal_three_continuous",
+      "expected_repetitions": 3,
+      "candidate_segment_count": 7,
+      "valid_repetition_count": 7,
+      "invalid_segment_count": 0,
+      "detected_repetition_count": 7,
+      "matches_expected_count": false,
+      "split_method": "drink_hybrid_segmentation_v2",
+      "fallback_used": false
+    },
+    {
+      "relative_path": "02_正常三次连续_3组/喝水_正常三次连续_02_seq7851-9429.csv",
+      "expected_label": "normal_three_continuous",
+      "expected_repetitions": 3,
+      "candidate_segment_count": 8,
+      "valid_repetition_count": 8,
+      "invalid_segment_count": 0,
+      "detected_repetition_count": 8,
+      "matches_expected_count": false,
+      "split_method": "drink_hybrid_segmentation_v2",
+      "fallback_used": false
+    },
+    {
+      "relative_path": "03_正常五次连续_2组/喝水_正常五次连续_01_seq0001-2600.csv",
+      "expected_label": "normal_five_continuous",
+      "expected_repetitions": 5,
+      "candidate_segment_count": 4,
+      "valid_repetition_count": 4,
+      "invalid_segment_count": 0,
+      "detected_repetition_count": 4,
+      "matches_expected_count": false,
+      "split_method": "drink_hybrid_segmentation_v2",
+      "fallback_used": false
+    },
+    {
+      "relative_path": "03_正常五次连续_2组/喝水_正常五次连续_02_seq2601-4947.csv",
+      "expected_label": "normal_five_continuous",
+      "expected_repetitions": 5,
+      "candidate_segment_count": 11,
+      "valid_repetition_count": 11,
+      "invalid_segment_count": 0,
+      "detected_repetition_count": 11,
+      "matches_expected_count": false,
+      "split_method": "drink_hybrid_segmentation_v2",
+      "fallback_used": false
+    },
+    {
+      "relative_path": "05_正常-代偿-正常_2组/喝水_正常-前倾代偿-正常_02_seq10389-11963.csv",
+      "expected_label": "normal_compensation_normal",
+      "expected_repetitions": 3,
+      "candidate_segment_count": 2,
+      "valid_repetition_count": 2,
+      "invalid_segment_count": 0,
+      "detected_repetition_count": 2,
+      "matches_expected_count": false,
+      "split_method": "drink_hybrid_segmentation_v2",
+      "fallback_used": false
+    }
+  ],
+  "notes": [
+    "The five currently failing files must be reviewed here after the user runs the offline tool.",
+    "No folder name, expected_repetitions value, or total duration is used to force segmentation boundaries."
+  ]
+}

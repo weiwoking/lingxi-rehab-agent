@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sample_result.stage3b.schema.json",
+  "title": "Stage3B sample result",
+  "type": "object",
+  "required": [
+    "schema_version", "sample_id", "role", "raw_geometry_authority",
+    "world_z_authority", "horizontal_world_authority", "raw", "acceptance"
+  ],
+  "properties": {
+    "schema_version": {"const": "stage3b_sample_result.v1"},
+    "role": {"enum": ["PRIMARY_COMPETITION_VIEW", "ROBUSTNESS_EXTRA"]},
+    "raw_geometry_authority": {"const": "RAW_GEOMETRY_BEFORE_STABILIZER"},
+    "horizontal_world_authority": {"const": "NOT_VALIDATED"}
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "deltar_scan_service.v1",
+  "title": "DELTAR PC Scan Service public job",
+  "type": "object",
+  "required": ["schema_version", "service_job_id", "pipeline_job_id", "scan_id", "status"],
+  "properties": {
+    "schema_version": {"const": "deltar_scan_service_job.v1"},
+    "service_job_id": {"type": "string", "pattern": "^svc_[0-9a-f]{32}$"},
+    "pipeline_job_id": {"type": ["string", "null"]},
+    "scan_id": {"type": "string", "pattern": "^[A-Za-z0-9_-]+$"},
+    "status": {"enum": ["accepted", "running", "completed", "failed"]},
+    "pipeline_result_status": {"enum": ["success", "partial_success", "rejected", "failed", null]},
+    "created_at": {"type": "string"},
+    "started_at": {"type": ["string", "null"]},
+    "finished_at": {"type": ["string", "null"]},
+    "error": {"type": ["object", "null"]}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,20 @@
+P4/ESP-Claw final-audit note
+
+The task-start read-only snapshot and the first post-task snapshot had identical
+HEAD, status, and tracked diff. HEAD was:
+
+3dae9be909d6c08002b4c341e2b818d544a3e80e
+
+After the evidence ZIP was first packed, a final read-only audit found that the
+four log files which had been staged at task start were now untracked. The Git
+index metadata reports a new creation/write time of 2026-07-24 04:45:29/04:45:30
++08:00. HEAD did not move, reflog has no new HEAD operation, the log files still
+exist with their original timestamps, and there is no tracked or cached diff.
+
+This task executed no Git write command and did not attempt to restore the index,
+because Git writes are explicitly forbidden. The final state is preserved in
+p4_final_audit_state.txt. The earlier exact snapshots remain preserved as
+p4_before_state.txt and p4_after_state.txt.
+
+This is an external/concurrent repository-metadata change, not a P4 source or
+working-file modification made by the Stage 7C implementation.

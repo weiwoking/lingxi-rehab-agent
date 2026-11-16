@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "camera_world_calibration_report.v1",
+  "title": "Stage 7C-1 Camera world calibration report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "created_at", "capture_id", "status",
+    "validation_status", "gates", "capture_summary",
+    "orientation_summary", "tof_plane_summary", "height_sanity_check",
+    "source_profile_binding", "warnings", "formal_profile_generated",
+    "tool_version"
+  ],
+  "properties": {
+    "schema_version": {"const": "camera_world_calibration_report.v1"},
+    "created_at": {"type": "string", "format": "date-time"},
+    "capture_id": {"type": "string", "minLength": 1},
+    "status": {"enum": ["PASS", "FAIL"]},
+    "validation_status": {"enum": ["PASS", "FAIL"]},
+    "gates": {
+      "type": "object", "minProperties": 1,
+      "additionalProperties": {
+        "type": "object", "additionalProperties": false,
+        "required": ["passed", "actual", "requirement"],
+        "properties": {
+          "passed": {"type": "boolean"},
+          "actual": {},
+          "requirement": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "capture_summary": {"type": "object"},
+    "orientation_summary": {"type": "object"},
+    "tof_plane_summary": {"type": "object"},
+    "height_sanity_check": {"type": "object"},
+    "source_profile_binding": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "camera_profile_path", "camera_profile_id", "camera_profile_sha256",
+        "camera_tof_profile_path", "camera_tof_profile_id",
+        "camera_tof_profile_sha256", "stage7b_binding_verified",
+        "board_manifest_path", "board_manifest_sha256"
+      ],
+      "properties": {
+        "camera_profile_path": {"type": "string", "minLength": 1},
+        "camera_profile_id": {"type": "string", "minLength": 1},
+        "camera_profile_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "camera_tof_profile_path": {
+          "const": "C:\\calibration\\stage7b_result_unitfix_20260724_012041\\camera_tof_extrinsics.v1.json"
+        },
+        "camera_tof_profile_id": {"const": "camera_tof_extrinsics_6698a99489d42fb2"},
+        "camera_tof_profile_sha256": {
+          "const": "dbcb5792338f50cca953c365e436e17d9f044b2f47bcca716e697308dda7f8b5"
+        },
+        "stage7b_binding_verified": {"const": true},
+        "board_manifest_path": {"type": "string", "minLength": 1},
+        "board_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "warnings": {"type": "array", "items": {"type": "string"}},
+    "formal_profile_generated": {"type": "boolean"},
+    "tool_version": {"const": "stage7c1-1.0"}
+  }
+}

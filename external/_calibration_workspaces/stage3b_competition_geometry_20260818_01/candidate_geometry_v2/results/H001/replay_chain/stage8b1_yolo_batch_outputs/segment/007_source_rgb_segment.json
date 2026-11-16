@@ -1,0 +1,318 @@
+{
+  "schema_version": "deltar_stage3_yolo.v1",
+  "model": {
+    "path": "C:\\ec\\_deltar_p4_pipeline\\models\\yolo11n-seg.pt",
+    "sha256": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152",
+    "expected_sha256": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152",
+    "hash_verified": true,
+    "size_bytes": 6182636,
+    "task": "segment",
+    "expected_task": "segment",
+    "task_verified": true,
+    "device": "cuda:0",
+    "actual_model_device": "cuda:0",
+    "precision": "FP32",
+    "half": false,
+    "ultralytics_version": "8.4.93",
+    "torch_version": "2.7.1+cu128",
+    "class_names": {
+      "0": "person",
+      "1": "bicycle",
+      "2": "car",
+      "3": "motorcycle",
+      "4": "airplane",
+      "5": "bus",
+      "6": "train",
+      "7": "truck",
+      "8": "boat",
+      "9": "traffic light",
+      "10": "fire hydrant",
+      "11": "stop sign",
+      "12": "parking meter",
+      "13": "bench",
+      "14": "bird",
+      "15": "cat",
+      "16": "dog",
+      "17": "horse",
+      "18": "sheep",
+      "19": "cow",
+      "20": "elephant",
+      "21": "bear",
+      "22": "zebra",
+      "23": "giraffe",
+      "24": "backpack",
+      "25": "umbrella",
+      "26": "handbag",
+      "27": "tie",
+      "28": "suitcase",
+      "29": "frisbee",
+      "30": "skis",
+      "31": "snowboard",
+      "32": "sports ball",
+      "33": "kite",
+      "34": "baseball bat",
+      "35": "baseball glove",
+      "36": "skateboard",
+      "37": "surfboard",
+      "38": "tennis racket",
+      "39": "bottle",
+      "40": "wine glass",
+      "41": "cup",
+      "42": "fork",
+      "43": "knife",
+      "44": "spoon",
+      "45": "bowl",
+      "46": "banana",
+      "47": "apple",
+      "48": "sandwich",
+      "49": "orange",
+      "50": "broccoli",
+      "51": "carrot",
+      "52": "hot dog",
+      "53": "pizza",
+      "54": "donut",
+      "55": "cake",
+      "56": "chair",
+      "57": "couch",
+      "58": "potted plant",
+      "59": "bed",
+      "60": "dining table",
+      "61": "toilet",
+      "62": "tv",
+      "63": "laptop",
+      "64": "mouse",
+      "65": "remote",
+      "66": "keyboard",
+      "67": "cell phone",
+      "68": "microwave",
+      "69": "oven",
+      "70": "toaster",
+      "71": "sink",
+      "72": "refrigerator",
+      "73": "book",
+      "74": "clock",
+      "75": "vase",
+      "76": "scissors",
+      "77": "teddy bear",
+      "78": "hair drier",
+      "79": "toothbrush"
+    }
+  },
+  "image": {
+    "path": "C:\\ec\\_calibration_workspaces\\stage3b_competition_geometry_20260818_01\\candidate_geometry_v2\\results\\H001\\replay_chain\\logs\\frame_000007\\source_rgb.png",
+    "width": 640,
+    "height": 360
+  },
+  "instances": [
+    {
+      "instance_id": 0,
+      "class_id": 63,
+      "class_name": "laptop",
+      "confidence": 0.7143017649650574,
+      "bbox_xyxy": [
+        395.0799865722656,
+        63.23534393310547,
+        639.5802001953125,
+        249.9761962890625
+      ],
+      "bbox_normalized": [
+        0.6173124790191651,
+        0.1756537331475152,
+        0.9993440628051757,
+        0.6943783230251737
+      ],
+      "mask_key": "instance_000"
+    },
+    {
+      "instance_id": 1,
+      "class_id": 63,
+      "class_name": "laptop",
+      "confidence": 0.6915744543075562,
+      "bbox_xyxy": [
+        185.4827880859375,
+        118.06387329101562,
+        296.9178466796875,
+        196.36019897460938
+      ],
+      "bbox_normalized": [
+        0.28981685638427734,
+        0.3279552035861545,
+        0.46393413543701173,
+        0.5454449971516927
+      ],
+      "mask_key": "instance_001"
+    },
+    {
+      "instance_id": 2,
+      "class_id": 62,
+      "class_name": "tv",
+      "confidence": 0.5086268186569214,
+      "bbox_xyxy": [
+        184.32730102539062,
+        118.76629638671875,
+        276.029541015625,
+        183.62600708007812
+      ],
+      "bbox_normalized": [
+        0.28801140785217283,
+        0.32990637885199653,
+        0.43129615783691405,
+        0.5100722418891059
+      ],
+      "mask_key": "instance_002"
+    },
+    {
+      "instance_id": 3,
+      "class_id": 66,
+      "class_name": "keyboard",
+      "confidence": 0.46340513229370117,
+      "bbox_xyxy": [
+        438.0938415527344,
+        243.820068359375,
+        640.0,
+        279.16473388671875
+      ],
+      "bbox_normalized": [
+        0.6845216274261474,
+        0.6772779676649305,
+        1.0,
+        0.7754575941297743
+      ],
+      "mask_key": "instance_003"
+    },
+    {
+      "instance_id": 4,
+      "class_id": 63,
+      "class_name": "laptop",
+      "confidence": 0.36446404457092285,
+      "bbox_xyxy": [
+        111.0051498413086,
+        117.57196044921875,
+        191.94711303710938,
+        200.1861572265625
+      ],
+      "bbox_normalized": [
+        0.17344554662704467,
+        0.3265887790256076,
+        0.2999173641204834,
+        0.5560726589626737
+      ],
+      "mask_key": "instance_004"
+    },
+    {
+      "instance_id": 5,
+      "class_id": 62,
+      "class_name": "tv",
+      "confidence": 0.3611290752887726,
+      "bbox_xyxy": [
+        416.09521484375,
+        119.87200927734375,
+        483.96710205078125,
+        174.67453002929688
+      ],
+      "bbox_normalized": [
+        0.6501487731933594,
+        0.3329778035481771,
+        0.7561985969543457,
+        0.485207027859158
+      ],
+      "mask_key": "instance_005"
+    },
+    {
+      "instance_id": 6,
+      "class_id": 62,
+      "class_name": "tv",
+      "confidence": 0.29534798860549927,
+      "bbox_xyxy": [
+        382.11981201171875,
+        119.0484619140625,
+        484.4615478515625,
+        174.81549072265625
+      ],
+      "bbox_normalized": [
+        0.5970622062683105,
+        0.3306901719835069,
+        0.7569711685180665,
+        0.4855985853407118
+      ],
+      "mask_key": "instance_006"
+    },
+    {
+      "instance_id": 7,
+      "class_id": 63,
+      "class_name": "laptop",
+      "confidence": 0.29144877195358276,
+      "bbox_xyxy": [
+        130.7991943359375,
+        117.79240417480469,
+        191.79241943359375,
+        185.52015686035156
+      ],
+      "bbox_normalized": [
+        0.20437374114990234,
+        0.3272011227077908,
+        0.29967565536499025,
+        0.5153337690565322
+      ],
+      "mask_key": "instance_007"
+    },
+    {
+      "instance_id": 8,
+      "class_id": 39,
+      "class_name": "bottle",
+      "confidence": 0.21447956562042236,
+      "bbox_xyxy": [
+        573.455078125,
+        124.6815185546875,
+        588.478515625,
+        172.73736572265625
+      ],
+      "bbox_normalized": [
+        0.8960235595703125,
+        0.3463375515407986,
+        0.9194976806640625,
+        0.4798260158962674
+      ],
+      "mask_key": "instance_008"
+    },
+    {
+      "instance_id": 9,
+      "class_id": 66,
+      "class_name": "keyboard",
+      "confidence": 0.21054017543792725,
+      "bbox_xyxy": [
+        350.3491516113281,
+        180.14755249023438,
+        412.0209655761719,
+        190.10208129882812
+      ],
+      "bbox_normalized": [
+        0.5474205493927002,
+        0.5004098680284288,
+        0.6437827587127686,
+        0.5280613369411893
+      ],
+      "mask_key": "instance_009"
+    },
+    {
+      "instance_id": 10,
+      "class_id": 63,
+      "class_name": "laptop",
+      "confidence": 0.20934432744979858,
+      "bbox_xyxy": [
+        214.79214477539062,
+        98.07281494140625,
+        380.7646179199219,
+        191.81997680664062
+      ],
+      "bbox_normalized": [
+        0.33561272621154786,
+        0.27242448594835067,
+        0.5949447154998779,
+        0.5328332689073351
+      ],
+      "mask_key": "instance_010"
+    }
+  ],
+  "warnings": []
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": "rehab_task_library_v1",
+  "patient_id": "P-0217",
+  "tasks": [
+    {
+      "task_id": "drink_water_right",
+      "display_name": "饮水动作训练",
+      "ui_enabled": true,
+      "formal_score_supported": true,
+      "showcase_only": false,
+      "internal_score_task_name": "喝水动作模拟",
+      "score_mode": "drink_full_cycle",
+      "score_profile": "temporary_standard_20260724",
+      "description": "当前已确认可接入真实 IMU+sEMG 与本地评分服务的正式评分任务。",
+      "enabled": true,
+      "training_eligible": true,
+      "active": true,
+      "sort_order": 1,
+      "created_at": "2026-07-26T00:00:00+08:00",
+      "updated_at": "2026-07-26T00:00:00+08:00"
+    },
+    {
+      "task_id": "pick_book_right",
+      "display_name": "拿书动作训练",
+      "ui_enabled": true,
+      "formal_score_supported": false,
+      "showcase_only": true,
+      "description": "系统展示任务；当前不接入真实评分 Job、task.json、正式 CSV 或正式 session。",
+      "enabled": true,
+      "training_eligible": false,
+      "active": false,
+      "sort_order": 2,
+      "created_at": "2026-07-26T00:00:00+08:00",
+      "updated_at": "2026-07-26T00:00:00+08:00"
+    }
+  ],
+  "updated_at": "2026-07-26T00:00:00+08:00"
+}

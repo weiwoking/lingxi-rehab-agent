@@ -1,0 +1,21 @@
+﻿
+  src\deltar_p4_pipeline\camera_world_contracts.py:29:FROZEN_CAMERA_TOF_PROFILE_ID = "camera_tof_extrinsics_6698a99489d
+42fb2"
+  src\deltar_p4_pipeline\camera_world_contracts.py:30:CAMERA_HEIGHT_MM = 969.0
+  src\deltar_p4_pipeline\camera_world_contracts.py:31:CAMERA_HEIGHT_UNCERTAINTY_MM = 5.0
+> src\deltar_p4_pipeline\camera_world_contracts.py:32:MIN_CAPTURED_FRAME_COUNT = 15
+> src\deltar_p4_pipeline\camera_world_contracts.py:33:MIN_ORIENTATION_INLIER_COUNT = 14
+  src\deltar_p4_pipeline\camera_world_contracts.py:34:MIN_ORIENTATION_INLIERS_PER_POSE = 4
+  src\deltar_p4_pipeline\camera_world_contracts.py:35:
+  src\deltar_p4_pipeline\camera_world_contracts.py:36:WORLD_FRAME = {
+  src\deltar_p4_pipeline\camera_world_contracts.py:719:            )
+  src\deltar_p4_pipeline\camera_world_contracts.py:720:    if require_pass and (
+  src\deltar_p4_pipeline\camera_world_contracts.py:721:        summary["pose_count"] < 3
+> src\deltar_p4_pipeline\camera_world_contracts.py:722:        or summary["frame_count"] < MIN_CAPTURED_FRAME_COUNT
+> src\deltar_p4_pipeline\camera_world_contracts.py:723:        or summary["valid_frame_count"] < MIN_ORIENTATION_INLIER
+_COUNT
+  src\deltar_p4_pipeline\camera_world_contracts.py:724:    ):
+  src\deltar_p4_pipeline\camera_world_contracts.py:725:        fail(
+  src\deltar_p4_pipeline\camera_world_contracts.py:726:            "E_CAMERA_WORLD_CAPTURE_GATE",
+
+

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "rehab_tof_raw.v1.schema.json",
+  "title": "Rehab ToF Raw v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "sequence", "timestamp_us", "distance_mm", "range_sigma_mm", "target_status", "nb_target_detected"],
+  "properties": {
+    "schema_version": {"const": "rehab_tof_raw.v1"},
+    "sequence": {"type": "integer", "minimum": 0, "maximum": 63},
+    "timestamp_us": {"type": "integer", "minimum": 0},
+    "distance_mm": {"type": "array", "minItems": 64, "maxItems": 64, "items": {"type": "integer", "minimum": 0, "maximum": 65535}},
+    "range_sigma_mm": {"type": "array", "minItems": 64, "maxItems": 64, "items": {"type": "integer", "minimum": 0, "maximum": 65535}},
+    "target_status": {"type": "array", "minItems": 64, "maxItems": 64, "items": {"type": "integer", "minimum": 0, "maximum": 255}},
+    "nb_target_detected": {"type": "array", "minItems": 64, "maxItems": 64, "items": {"type": "integer", "minimum": 0, "maximum": 255}}
+  }
+}

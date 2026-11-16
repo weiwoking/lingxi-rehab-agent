@@ -1,0 +1,35 @@
+﻿git.exe : warning: in the working copy of 'C:\ec\_deltar_p4_pipeline\artifacts\stage7c_robustfix_evidence_work_20260724
+_043714\before_after\before\tests\test_camera_world_contracts.py', LF will be replaced by CRLF the next time Git touche
+s it
+At line:2 char:15
++ ... iffOutput = & git diff --no-index -- 'C:\ec\_deltar_p4_pipeline\artif ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (warning: in the... Git touches it:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+warning: in the working copy of 'C:\ec\_deltar_p4_pipeline\artifacts\stage7c_robustfix_evidence_work_20260724_043714\be
+fore_after\after\tests\test_camera_world_contracts.py', LF will be replaced by CRLF the next time Git touches it
+diff --git "a/C:\\ec\\_deltar_p4_pipeline\\artifacts\\stage7c_robustfix_evidence_work_20260724_043714\\before_after\\before\\tests\\test_camera_world_contracts.py" "b/C:\\ec\\_deltar_p4_pipeline\\artifacts\\stage7c_robustfix_evidence_work_20260724_043714\\before_after\\after\\tests\\test_camera_world_contracts.py"
+index f45765b..479d360 100644
+--- "a/C:\\ec\\_deltar_p4_pipeline\\artifacts\\stage7c_robustfix_evidence_work_20260724_043714\\before_after\\before\\tests\\test_camera_world_contracts.py"
++++ "b/C:\\ec\\_deltar_p4_pipeline\\artifacts\\stage7c_robustfix_evidence_work_20260724_043714\\before_after\\after\\tests\\test_camera_world_contracts.py"
+@@ -90,6 +90,19 @@ class CameraWorldProfileContractTests(unittest.TestCase):
+         value = valid_profile()
+         self.assertIs(validate_profile(value), value)
+ 
++    def test_single_orientation_outlier_is_valid(self) -> None:
++        value = valid_profile()
++        value["capture_summary"]["valid_frame_count"] = 14
++        value["capture_summary"]["rejected_frame_count"] = 1
++        self.assertIs(validate_profile(value), value)
++
++    def test_fewer_than_fourteen_orientation_inliers_is_rejected(self) -> None:
++        value = valid_profile()
++        value["capture_summary"]["valid_frame_count"] = 13
++        value["capture_summary"]["rejected_frame_count"] = 2
++        with self.assertRaises(CameraWorldError):
++            validate_profile(value)
++
+     def test_unknown_transform_direction_is_rejected(self) -> None:
+         value = valid_profile()
+         value["transform_direction"] = "T_camera_from_world"

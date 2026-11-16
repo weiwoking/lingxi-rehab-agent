@@ -1,0 +1,95 @@
+{
+  "decoded_image": {
+    "height": 360,
+    "payload_bytes": 460800,
+    "payload_sha256": "56c2911537c307c38f38fb67048ffd78cc3598139dd6cb06f403b3fdcfb36262",
+    "pixel_format": "RGB565_LE",
+    "width": 640
+  },
+  "deltar_repeatability": {
+    "direct_640x360": {
+      "float_exact_equal": true,
+      "max_absolute_difference_m": 0.0,
+      "mean_absolute_difference_m": 0.0,
+      "raw_sha256_first": "aed6a1517b60a907e371d0f4140d5a08e2cce500f8648c2a5bc5cbdb919abb77",
+      "raw_sha256_second": "aed6a1517b60a907e371d0f4140d5a08e2cce500f8648c2a5bc5cbdb919abb77"
+    },
+    "letterbox_640x480": {
+      "float_exact_equal": true,
+      "max_absolute_difference_m": 0.0,
+      "mean_absolute_difference_m": 0.0,
+      "raw_sha256_first": "c86bdaf810625bbc6bc6601b21c23e2a543335d3ce7b0031b4e9436b032334e5",
+      "raw_sha256_second": "c86bdaf810625bbc6bc6601b21c23e2a543335d3ce7b0031b4e9436b032334e5"
+    }
+  },
+  "detections": {
+    "detect_count": 0,
+    "detect_instances": [],
+    "matched_count": 0,
+    "segment_count": 0,
+    "segment_instances": []
+  },
+  "errors": [],
+  "frame_id": "frame_000002",
+  "gt_used_for_inference": false,
+  "logical_object_groups": [],
+  "models": {
+    "depth": {
+      "sha256": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+      "task": "depth"
+    },
+    "detect": {
+      "sha256": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+      "task": "detect"
+    },
+    "segment": {
+      "sha256": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152",
+      "task": "segment"
+    }
+  },
+  "objects": [],
+  "processing_ms": {
+    "all_object_geometry_ms": 0.20999996922910213,
+    "decode_rgb565_ms": 1.4756000018678606,
+    "deltar_direct_ms": 125.07559999357909,
+    "deltar_letterbox_ms": 137.54969998262823,
+    "deltar_total_ms": 262.70039996597916,
+    "frame_total_ms": 388.89559998642653,
+    "stage7d_diagnostics_enabled": false,
+    "stage7d_total_ms": 0.0,
+    "yolo_cache_lookup_ms": 0.001400010660290718,
+    "yolo_ms": 0.0
+  },
+  "profiles": {
+    "calibration_status": "unverified",
+    "ids": {
+      "algorithm_profile_id": "algorithm_stage6_official_v1",
+      "calibration_profile_id": "stage3b_stage2_camera_z_only_validation",
+      "camera_profile_id": "camera_sc2336_640x360_rgb565_v1",
+      "scan_strategy_profile_id": "scan_strategy_stage6_guidance_v1",
+      "tof_profile_id": "tof_vl53l5cx_orientation_identity_v1"
+    },
+    "sha256": {
+      "algorithm_profile.json": "10d07c2d781f3de4a62ef6e549581e39123794585cebd9fd370bc170fbd8e2c8",
+      "calibration_profile.example.json": "4933fa388879118f4f7b47eeec1a9dd04979aff4cfe86e4f049ba9a07debe89d",
+      "model_manifest.json": "0be8eff315194cf498ae77b188186b2a16d3ffefe8bc639b29dfc3eb00ce2b46",
+      "scan_strategy_profile.json": "3365ebbb8b539609b1ff0568703204be4be24e08059f1d2a615ff396115a10e5",
+      "zone_orientation_profile.json": "2460a76fc1de7497a631afc073f3783bbae6a139f5773d2eb4a5e2d536133873"
+    }
+  },
+  "region_validation": [],
+  "rejections": [],
+  "schema_version": "deltar_scan_frame_result.v1.1",
+  "sequence": 2,
+  "status": "success",
+  "timestamps": {
+    "camera_timestamp_us": 409698114,
+    "pair_delta_us": 39514,
+    "tof_timestamp_us": 409658600
+  },
+  "tof_summary": {
+    "median_distance_mm": 1515.0,
+    "valid_zone_count": 31
+  },
+  "warnings": []
+}

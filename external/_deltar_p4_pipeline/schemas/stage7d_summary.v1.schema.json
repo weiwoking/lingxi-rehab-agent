@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "stage7d_summary.v1.schema.json",
+  "title": "Stage 7D additive scan summary",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "scan_id",
+    "status",
+    "selection_status",
+    "absolute_geometry_valid",
+    "profiles",
+    "frames",
+    "warnings"
+  ],
+  "properties": {
+    "schema_version": {"const": "stage7d_summary.v1"},
+    "scan_id": {"type": "string"},
+    "status": {"const": "implementation_smoke_only_pending_real_acceptance"},
+    "selection_status": {"const": "unresolved_pending_real_stage7d_acceptance"},
+    "absolute_geometry_valid": {"const": false},
+    "profiles": {"type": "object"},
+    "frames": {"type": "array", "items": {"type": "object"}},
+    "warnings": {"type": "array", "items": {"type": "string"}}
+  }
+}

@@ -1,0 +1,269 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "rehab.score.repetition.v1",
+  "title": "Drink Water V1 Repetition",
+  "type": "object",
+  "required": [
+    "rep_index",
+    "start_index",
+    "end_index",
+    "start_time_ms",
+    "end_time_ms",
+    "duration_ms",
+    "valid",
+    "invalid_reason",
+    "confidence",
+    "action_source",
+    "split_method",
+    "merged_candidate",
+    "incomplete_candidate",
+    "candidate_assessment",
+    "start_boundary",
+    "end_boundary",
+    "local_supporting_candidates",
+    "full_cycle_quality",
+    "quality"
+  ],
+  "properties": {
+    "rep_index": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "start_index": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "end_index": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "inclusive"
+    },
+    "start_time_ms": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "end_time_ms": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "duration_ms": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "valid": {
+      "type": "boolean"
+    },
+    "invalid_reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "action_source": {
+      "enum": [
+        "complete_cycle",
+        "legacy_threshold",
+        "fallback",
+        "manual"
+      ]
+    },
+    "split_method": {
+      "type": "string"
+    },
+    "merged_candidate": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "incomplete_candidate": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "candidate_assessment": {
+      "type": "string"
+    },
+    "start_boundary": {
+      "type": "object",
+      "required": [
+        "boundary_index",
+        "boundary_time_ms",
+        "boundary_sources",
+        "boundary_origin",
+        "detected_from_signal_candidate",
+        "quiet_duration_ms",
+        "motion_valley_score",
+        "pose_return_score",
+        "confidence"
+      ],
+      "properties": {
+        "boundary_index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "boundary_time_ms": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "boundary_sources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "boundary_origin": {
+          "enum": [
+            "detected_candidate",
+            "coarse_segment_edge",
+            "file_edge"
+          ]
+        },
+        "detected_from_signal_candidate": {
+          "type": "boolean"
+        },
+        "quiet_duration_ms": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "motion_valley_score": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "pose_return_score": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "selection_reason": {
+          "type": "string"
+        }
+      }
+    },
+    "end_boundary": {
+      "type": "object",
+      "required": [
+        "boundary_index",
+        "boundary_time_ms",
+        "boundary_sources",
+        "boundary_origin",
+        "detected_from_signal_candidate",
+        "quiet_duration_ms",
+        "motion_valley_score",
+        "pose_return_score",
+        "confidence"
+      ],
+      "properties": {
+        "boundary_index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "boundary_time_ms": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "boundary_sources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "boundary_origin": {
+          "enum": [
+            "detected_candidate",
+            "coarse_segment_edge",
+            "file_edge"
+          ]
+        },
+        "detected_from_signal_candidate": {
+          "type": "boolean"
+        },
+        "quiet_duration_ms": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "motion_valley_score": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "pose_return_score": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "selection_reason": {
+          "type": "string"
+        }
+      }
+    },
+    "local_supporting_candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "boundary_index",
+          "boundary_time_ms",
+          "boundary_sources",
+          "quiet_duration_ms",
+          "motion_valley_score",
+          "pose_return_score",
+          "confidence"
+        ]
+      }
+    },
+    "full_cycle_quality": {
+      "type": "object",
+      "required": [
+        "full_cycle_score",
+        "duration_score",
+        "departure_score",
+        "peak_score",
+        "return_score",
+        "valid",
+        "invalid_reason",
+        "incomplete_candidate",
+        "merged_candidate",
+        "confidence"
+      ]
+    },
+    "quality": {
+      "type": "object"
+    }
+  }
+}

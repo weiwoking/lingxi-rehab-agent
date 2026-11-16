@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "stage8b3_visualization_manifest.v1.schema.json",
+  "title": "Stage 8B-3 visualization manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "scan_id",
+    "frame_count",
+    "ordered_frame_ids",
+    "candidate_file",
+    "selection_files",
+    "source_files",
+    "generated_images",
+    "html",
+    "class_counts",
+    "candidate_count",
+    "rendering_version",
+    "processing",
+    "warnings",
+    "visualization_complete"
+  ],
+  "properties": {
+    "schema_version": {"const": "stage8b3_visualization_manifest.v1"},
+    "scan_id": {"type": "string", "minLength": 1},
+    "frame_count": {"const": 11},
+    "ordered_frame_ids": {
+      "type": "array",
+      "minItems": 11,
+      "maxItems": 11,
+      "items": {"type": "string", "pattern": "^frame_[0-9]{6}$"}
+    },
+    "candidate_file": {"$ref": "#/$defs/file"},
+    "selection_files": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/selectionFile"}},
+    "source_files": {"type": "array", "minItems": 11, "maxItems": 11, "items": {"$ref": "#/$defs/sourceFile"}},
+    "generated_images": {"type": "array", "minItems": 48, "items": {"$ref": "#/$defs/file"}},
+    "html": {"$ref": "#/$defs/file"},
+    "assets": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/file"}},
+    "class_counts": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}},
+    "candidate_count": {"type": "integer", "minimum": 0},
+    "rendering_version": {"const": "stage8b3-static-viewer-v1"},
+    "generated_at": {"type": "string"},
+    "processing": {
+      "type": "object",
+      "required": ["manifest_read_ms", "overlay_render_ms", "contact_sheet_ms", "html_write_ms", "visualization_total_ms"],
+      "properties": {
+        "manifest_read_ms": {"type": "number", "minimum": 0},
+        "overlay_render_ms": {"type": "number", "minimum": 0},
+        "contact_sheet_ms": {"type": "number", "minimum": 0},
+        "html_write_ms": {"type": "number", "minimum": 0},
+        "visualization_total_ms": {"type": "number", "minimum": 0}
+      }
+    },
+    "warnings": {"type": "array", "items": {"type": "string"}},
+    "inference_invocations": {
+      "type": "object",
+      "required": ["yolo_detect", "yolo_segment", "deltar"],
+      "properties": {
+        "yolo_detect": {"const": 0},
+        "yolo_segment": {"const": 0},
+        "deltar": {"const": 0}
+      }
+    },
+    "visualization_complete": {"type": "boolean"}
+  },
+  "$defs": {
+    "file": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "pattern": "^(?![A-Za-z]:)(?![/\\\\]).+"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "selectionFile": {
+      "allOf": [
+        {"$ref": "#/$defs/file"},
+        {"type": "object", "required": ["strategy_id"], "properties": {"strategy_id": {"type": "string"}}}
+      ]
+    },
+    "sourceFile": {
+      "allOf": [
+        {"$ref": "#/$defs/file"},
+        {
+          "type": "object",
+          "required": ["frame_id", "referenced"],
+          "properties": {
+            "frame_id": {"type": "string", "pattern": "^frame_[0-9]{6}$"},
+            "referenced": {"type": "boolean"}
+          }
+        }
+      ]
+    }
+  }
+}

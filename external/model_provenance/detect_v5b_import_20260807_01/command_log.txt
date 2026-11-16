@@ -1,0 +1,13 @@
+2026-08-07: Read attachment and enforced task boundaries.
+2026-08-07: Read-only mapped model_manifest.json, stage8b1_yolo_runtime_profile.json, algorithm_profile.json, preflight, worker and existing launcher.
+2026-08-07: Checked 8000/8030 initially offline and captured path/bytes/mtime/SHA-256 baselines.
+2026-08-07: Verified migration ZIP SHA-256, four entries, metadata, internal sha256 and dataset manifest checksum syntax.
+2026-08-07: Loaded v5-B in formal YOLO environment; verified CUDA, detect task, COCO80 exact schema and sports ball class 32; deleted validation temp directory.
+2026-08-07: Created repository-external backup; imported v5-B exact bytes and rechecked SHA-256.
+2026-08-07: Atomically replaced only Detect manifest identity and runtime Detect SHA; retained conf=0.20 byte-for-byte.
+2026-08-07: Read-only verified current Gate2/P4 sports-ball support.
+2026-08-07: Ran only the three required formal decoded RGB frames through the existing CUDA FP32 worker at imgsz=640, conf=0.20, batch setting 11 and existing NMS; result 3/3.
+2026-08-07: Ran existing offline preflight; ready=true, local_only, runtime_network_required=false, network attempts=0.
+2026-08-07: Generated rollback script and passed default dry-run.
+2026-08-07: Started original Start-VisionAndScanPC launcher with P4 discovery disabled; local Vision 8000, Scan 8030 and vision-console returned HTTP 200.
+2026-08-07: Did not train, build, flash, monitor, operate P4, write Git state or change source/algorithm chains.

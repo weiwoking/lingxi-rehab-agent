@@ -1,0 +1,346 @@
+{
+  "schema_version": "stage7c_board_coordinate_probe.v1",
+  "created_at": "2026-07-23T18:59:42.559195Z",
+  "opencv_version": "4.10.0",
+  "board_manifest_path": "C:\\ec\\_deltar_p4_pipeline\\board_assets\\board_manifest.json",
+  "board_manifest_sha256": "db5dafdf1c1dd5208f883850919d0182efaf9a20f9b06d6a6debf39735cbd37a",
+  "board": {
+    "squares_x": 7,
+    "squares_y": 5,
+    "square_length_mm": 25.0,
+    "legacy_pattern_api_available": true,
+    "legacy_pattern_enabled": false,
+    "chessboard_corner_count": 24,
+    "first_object_points_m": [
+      [
+        0.02500000037252903,
+        0.02500000037252903,
+        0.0
+      ],
+      [
+        0.05000000074505806,
+        0.02500000037252903,
+        0.0
+      ],
+      [
+        0.07500000298023224,
+        0.02500000037252903,
+        0.0
+      ],
+      [
+        0.10000000149011612,
+        0.02500000037252903,
+        0.0
+      ],
+      [
+        0.125,
+        0.02500000037252903,
+        0.0
+      ],
+      [
+        0.15000000596046448,
+        0.02500000037252903,
+        0.0
+      ],
+      [
+        0.02500000037252903,
+        0.05000000074505806,
+        0.0
+      ],
+      [
+        0.05000000074505806,
+        0.05000000074505806,
+        0.0
+      ]
+    ]
+  },
+  "direct_object_point_evidence": {
+    "id0": {
+      "id": 0,
+      "object_point_m": [
+        0.02500000037252903,
+        0.02500000037252903,
+        0.0
+      ]
+    },
+    "id0_same_row_right": {
+      "id": 1,
+      "object_point_m": [
+        0.05000000074505806,
+        0.02500000037252903,
+        0.0
+      ],
+      "delta_from_id0_m": [
+        0.02500000037252903,
+        0.0,
+        0.0
+      ]
+    },
+    "id0_next_row": {
+      "id": 6,
+      "object_point_m": [
+        0.02500000037252903,
+        0.05000000074505806,
+        0.0
+      ],
+      "delta_from_id0_m": [
+        0.0,
+        0.02500000037252903,
+        0.0
+      ]
+    },
+    "generated_print_pixels": {
+      "0": [
+        99.98963928222656,
+        99.98963928222656
+      ],
+      "1": [
+        199.98963928222656,
+        99.98963928222656
+      ],
+      "6": [
+        99.98963928222656,
+        199.98963928222656
+      ]
+    },
+    "generated_print_pixel_delta_right": [
+      100.0,
+      0.0
+    ],
+    "generated_print_pixel_delta_next_row": [
+      0.0,
+      100.0
+    ],
+    "right_hand_cross_x_y": [
+      0.0,
+      0.0,
+      1.0
+    ]
+  },
+  "physical_inference": {
+    "x_board": "toward printed-board right: +X object increment matches increasing x pixel in board.generateImage()",
+    "y_board": "toward printed-board down: +Y object increment matches increasing y pixel in board.generateImage()",
+    "z_board": "right-hand +X cross +Y; through the printed board away from the Camera/vehicle when the printed front faces it"
+  },
+  "world_mapping": {
+    "R_world_from_board": [
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        0.0,
+        -1.0,
+        0.0
+      ]
+    ],
+    "x_board_to_world": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "y_board_to_world": [
+      0.0,
+      0.0,
+      -1.0
+    ],
+    "z_board_to_world": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "consistent_with_actual_object_points": true
+  },
+  "front_back_probe": {
+    "front": {
+      "name": "printed_front_facing_camera",
+      "expected_rotation_camera_from_board": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "solved_rotation_camera_from_board": [
+        [
+          0.9999999999999586,
+          2.422409990016312e-08,
+          -2.8676600930144796e-07
+        ],
+        [
+          -2.4224226746442645e-08,
+          0.9999999999999019,
+          -4.421896184408356e-07
+        ],
+        [
+          2.867659985862832e-07,
+          4.421896253897662e-07,
+          0.9999999999998611
+        ]
+      ],
+      "solved_translation_camera_from_board_m": [
+        -8.128378696218103e-10,
+        3.7189723810816783e-09,
+        0.7999999349410998
+      ],
+      "tvec_z_positive": true,
+      "reprojection": {
+        "corner_count": 24,
+        "mean_px": 3.178914312229608e-06,
+        "rms_px": 9.344062164018396e-06,
+        "p95_px": 2.8228759765624967e-05,
+        "max_px": 3.0517578125e-05,
+        "rvec": [
+          4.421896219153214e-07,
+          -2.8676600394387886e-07,
+          -2.4224163323304007e-08
+        ],
+        "tvec": [
+          -8.128378696218103e-10,
+          3.7189723810816783e-09,
+          0.7999999349410998
+        ]
+      },
+      "camera_plane_normal_sign_normalized": [
+        -2.8676600930144796e-07,
+        -4.421896184408356e-07,
+        0.9999999999998611
+      ],
+      "camera_plane_offset_mm": -799.9999349409874,
+      "rotation_world_from_camera": [
+        [
+          0.9999999999999587,
+          -2.4224226705113955e-08,
+          2.8676599858977444e-07
+        ],
+        [
+          -2.86766009301448e-07,
+          -4.421896183104401e-07,
+          0.9999999999998612
+        ],
+        [
+          -2.4224099900163126e-08,
+          -0.9999999999999022,
+          -4.421896254852564e-07
+        ]
+      ],
+      "orientation_diagnostics": {
+        "roll_deg": 1.3879386867827618e-06,
+        "pitch_deg": -2.5335599284776525e-05,
+        "yaw_deg": 1.6430481427050423e-05,
+        "convention": "matrix-first R_world_from_camera; roll positive rotates Camera +X image-right toward Camera +Y image-down (clockwise in the image looking along +Z_camera); pitch positive aims +Z_camera upward toward +Z_world; yaw positive aims +Z_camera rightward toward +X_world from vehicle +Y_world forward"
+      },
+      "passes_formal_mechanical_angle_gate": true
+    },
+    "back": {
+      "name": "obvious_back_facing_flip_about_board_x",
+      "expected_rotation_camera_from_board": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0
+        ]
+      ],
+      "solved_rotation_camera_from_board": [
+        [
+          0.9999999999999843,
+          1.7204897590986836e-08,
+          -1.7550194635195095e-07
+        ],
+        [
+          1.720497422493216e-08,
+          -0.9999999999999045,
+          4.3665582231102487e-07
+        ],
+        [
+          -1.7550193883931546e-07,
+          -4.3665582533052453e-07,
+          -0.9999999999998892
+        ]
+      ],
+      "solved_translation_camera_from_board_m": [
+        3.9926806164577493e-10,
+        -3.521390332278863e-09,
+        0.8000000585813785
+      ],
+      "tvec_z_positive": true,
+      "reprojection": {
+        "corner_count": 24,
+        "mean_px": 2.225239995823358e-06,
+        "rms_px": 7.136645308492007e-06,
+        "p95_px": 1.4114379882812484e-05,
+        "max_px": 3.0517578125e-05,
+        "rvec": [
+          3.141593090245605,
+          2.7025453883283523e-08,
+          -2.756778450915764e-07
+        ],
+        "tvec": [
+          3.9926806164577493e-10,
+          -3.521390332278863e-09,
+          0.8000000585813785
+        ]
+      },
+      "camera_plane_normal_sign_normalized": [
+        1.7550194635195097e-07,
+        -4.366558223110249e-07,
+        0.9999999999998893
+      ],
+      "camera_plane_offset_mm": -800.0000585812916,
+      "rotation_world_from_camera": [
+        [
+          0.9999999999999845,
+          1.7204974224932166e-08,
+          -1.755019388393155e-07
+        ],
+        [
+          -1.7550194635195097e-07,
+          4.36655822305676e-07,
+          -0.9999999999998892
+        ],
+        [
+          -1.7204897590986843e-08,
+          0.9999999999999045,
+          4.3665582510898915e-07
+        ]
+      ],
+      "orientation_diagnostics": {
+        "roll_deg": 179.99999901423197,
+        "pitch_deg": 2.5018535878548475e-05,
+        "yaw_deg": -179.9999899444796,
+        "convention": "matrix-first R_world_from_camera; roll positive rotates Camera +X image-right toward Camera +Y image-down (clockwise in the image looking along +Z_camera); pitch positive aims +Z_camera upward toward +Z_world; yaw positive aims +Z_camera rightward toward +X_world from vehicle +Y_world forward"
+      },
+      "passes_formal_mechanical_angle_gate": false
+    },
+    "world_rotation_separation_deg": 179.99999968293673,
+    "conclusion": "tvec.z>0 alone does not encode printed front/back. The full solved rotation is preserved by the world mapping: the obvious flip differs by 180 degrees and fails the existing absolute roll/pitch/yaw <=5 degree formal gates.",
+    "current_formal_path_is_safe": true
+  },
+  "verdict": "PASS"
+}

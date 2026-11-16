@@ -1,0 +1,1354 @@
+{
+  "session_version": "lateral_transfer_session_scoring_v1",
+  "motion_family": "lateral_transfer",
+  "session_id": "20260807_TASK057",
+  "source_session": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK057\\DATA_SEQ0000009213.csv",
+  "source_sha256": "6423ee4eefecbce7a2ab4d173b60d615f5ac64b4ad16a1c5e7c9aa11c2a3185f",
+  "template_path": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\template\\lateral_transfer_healthy_template_v1.json",
+  "template_sha256": "9650ccb8f882a9cf7b8fe6592c95897112b0d4f8e19e40c65825e8266d425469",
+  "segmentation": {
+    "segmentation_version": "lateral_transfer_segmentation_drink_reuse_v1",
+    "segmentation_wrapper_version": "lateral_transfer_segmentation_drink_reuse_v1",
+    "segmentation_core_version": "drink_hybrid_segmentation_v2_1_1",
+    "segmentation_strategy": "REUSE_DRINK_HYBRID_SEGMENTATION_V2_1_1",
+    "segmentation_source": "drink_hybrid_reuse",
+    "motion_family": "lateral_transfer",
+    "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK057\\DATA_SEQ0000009213.csv",
+    "source_sha256": "6423ee4eefecbce7a2ab4d173b60d615f5ac64b4ad16a1c5e7c9aa11c2a3185f",
+    "row_count": 788,
+    "candidate_rep_count": 1,
+    "valid_rep_count": 1,
+    "expected_count_used_by_segmenter": false,
+    "task_id_used_by_segmenter": false,
+    "lateral_independent_segmenter_present": false,
+    "compatibility_adapter": "metadata_only",
+    "core_diagnostic": {
+      "method": "drink_hybrid_segmentation_v2_1_1",
+      "fallback_used": false,
+      "repetition_count": 1,
+      "incomplete_cycle": false,
+      "diagnostic": null,
+      "initial_baseline": {
+        "start_time_s": 0.0,
+        "end_time_s": 0.5
+      },
+      "departure_threshold_deg": {
+        "forearm": 10.0,
+        "hand_wrist": 10.0
+      },
+      "start_motion_threshold_deg_s": 25.0,
+      "quiet_motion_threshold_deg_s": 90.0,
+      "return_peak_ratio": 0.65,
+      "quiet_confirm_s": 3.0,
+      "last_confirmation_time_s": 14.58,
+      "base_method": "drink_complete_cycle_dynamic_rest_v1",
+      "base_repetition_count": 1,
+      "base_segments": [
+        {
+          "action_index": 1,
+          "start_index": 67,
+          "end_index": 602,
+          "start_time_s": 1.38,
+          "end_time_s": 12.08
+        }
+      ],
+      "hybrid_v2_enabled": true,
+      "imu_mapping": {
+        "upperarm": "imu1",
+        "trunk": "imu2",
+        "forearm": "imu3",
+        "hand_wrist": "imu4"
+      },
+      "motion_envelope_sources": [
+        "imu1_upperarm",
+        "imu3_forearm",
+        "imu4_wrist"
+      ],
+      "trunk_imu_role": "imu2_trunk_quality_only_not_primary_cycle_signal",
+      "boundary_count": 3,
+      "boundaries": [
+        {
+          "boundary_index": 166,
+          "boundary_time_ms": 644890,
+          "boundary_sources": [
+            "motion_valley_between_peaks",
+            "strong_quiet"
+          ],
+          "quiet_duration_ms": 860.0,
+          "motion_valley_score": 0.891101,
+          "pose_return_score": 0.073215,
+          "confidence": 0.92,
+          "candidate_cluster": {
+            "candidate_indexes": [
+              162,
+              166
+            ],
+            "candidate_payloads": [
+              {
+                "boundary_index": 162,
+                "boundary_time_ms": 644811,
+                "boundary_sources": [
+                  "motion_valley_between_peaks"
+                ],
+                "quiet_duration_ms": null,
+                "motion_valley_score": 0.891101,
+                "pose_return_score": 0.073215,
+                "confidence": 0.72
+              },
+              {
+                "boundary_index": 166,
+                "boundary_time_ms": 644890,
+                "boundary_sources": [
+                  "strong_quiet"
+                ],
+                "quiet_duration_ms": 860.0,
+                "motion_valley_score": 0.866565,
+                "pose_return_score": 0.067893,
+                "confidence": 0.92
+              }
+            ],
+            "selected_index": 166,
+            "selected_time_ms": 644890,
+            "combined_sources": [
+              "motion_valley_between_peaks",
+              "strong_quiet"
+            ],
+            "quiet_duration_ms": 860.0,
+            "motion_valley_score": 0.891101,
+            "pose_return_score": 0.073215,
+            "confidence": 0.92,
+            "selection_reason": "strong_quiet_priority"
+          }
+        },
+        {
+          "boundary_index": 496,
+          "boundary_time_ms": 651490,
+          "boundary_sources": [
+            "motion_valley_between_peaks",
+            "strong_quiet"
+          ],
+          "quiet_duration_ms": 760.0,
+          "motion_valley_score": 0.93134,
+          "pose_return_score": 0.07601,
+          "confidence": 0.92,
+          "candidate_cluster": {
+            "candidate_indexes": [
+              493,
+              496
+            ],
+            "candidate_payloads": [
+              {
+                "boundary_index": 493,
+                "boundary_time_ms": 651430,
+                "boundary_sources": [
+                  "motion_valley_between_peaks"
+                ],
+                "quiet_duration_ms": null,
+                "motion_valley_score": 0.93134,
+                "pose_return_score": 0.075976,
+                "confidence": 0.72
+              },
+              {
+                "boundary_index": 496,
+                "boundary_time_ms": 651490,
+                "boundary_sources": [
+                  "strong_quiet"
+                ],
+                "quiet_duration_ms": 760.0,
+                "motion_valley_score": 0.895086,
+                "pose_return_score": 0.07601,
+                "confidence": 0.92
+              }
+            ],
+            "selected_index": 496,
+            "selected_time_ms": 651490,
+            "combined_sources": [
+              "motion_valley_between_peaks",
+              "strong_quiet"
+            ],
+            "quiet_duration_ms": 760.0,
+            "motion_valley_score": 0.93134,
+            "pose_return_score": 0.07601,
+            "confidence": 0.92,
+            "selection_reason": "strong_quiet_priority"
+          }
+        },
+        {
+          "boundary_index": 594,
+          "boundary_time_ms": 653450,
+          "boundary_sources": [
+            "pose_return",
+            "weak_quiet"
+          ],
+          "quiet_duration_ms": 280.0,
+          "motion_valley_score": 0.822789,
+          "pose_return_score": 0.999667,
+          "confidence": 0.76,
+          "candidate_cluster": {
+            "candidate_indexes": [
+              594
+            ],
+            "candidate_payloads": [
+              {
+                "boundary_index": 594,
+                "boundary_time_ms": 653450,
+                "boundary_sources": [
+                  "weak_quiet",
+                  "pose_return"
+                ],
+                "quiet_duration_ms": 280.0,
+                "motion_valley_score": 0.822789,
+                "pose_return_score": 0.999667,
+                "confidence": 0.76
+              }
+            ],
+            "selected_index": 594,
+            "selected_time_ms": 653450,
+            "combined_sources": [
+              "pose_return",
+              "weak_quiet"
+            ],
+            "quiet_duration_ms": 280.0,
+            "motion_valley_score": 0.822789,
+            "pose_return_score": 0.999667,
+            "confidence": 0.76,
+            "selection_reason": "highest_priority_then_confidence"
+          }
+        }
+      ],
+      "boundary_clusters": [
+        {
+          "candidate_indexes": [
+            162,
+            166
+          ],
+          "candidate_payloads": [
+            {
+              "boundary_index": 162,
+              "boundary_time_ms": 644811,
+              "boundary_sources": [
+                "motion_valley_between_peaks"
+              ],
+              "quiet_duration_ms": null,
+              "motion_valley_score": 0.891101,
+              "pose_return_score": 0.073215,
+              "confidence": 0.72
+            },
+            {
+              "boundary_index": 166,
+              "boundary_time_ms": 644890,
+              "boundary_sources": [
+                "strong_quiet"
+              ],
+              "quiet_duration_ms": 860.0,
+              "motion_valley_score": 0.866565,
+              "pose_return_score": 0.067893,
+              "confidence": 0.92
+            }
+          ],
+          "selected_index": 166,
+          "selected_time_ms": 644890,
+          "combined_sources": [
+            "motion_valley_between_peaks",
+            "strong_quiet"
+          ],
+          "quiet_duration_ms": 860.0,
+          "motion_valley_score": 0.891101,
+          "pose_return_score": 0.073215,
+          "confidence": 0.92,
+          "selection_reason": "strong_quiet_priority"
+        },
+        {
+          "candidate_indexes": [
+            493,
+            496
+          ],
+          "candidate_payloads": [
+            {
+              "boundary_index": 493,
+              "boundary_time_ms": 651430,
+              "boundary_sources": [
+                "motion_valley_between_peaks"
+              ],
+              "quiet_duration_ms": null,
+              "motion_valley_score": 0.93134,
+              "pose_return_score": 0.075976,
+              "confidence": 0.72
+            },
+            {
+              "boundary_index": 496,
+              "boundary_time_ms": 651490,
+              "boundary_sources": [
+                "strong_quiet"
+              ],
+              "quiet_duration_ms": 760.0,
+              "motion_valley_score": 0.895086,
+              "pose_return_score": 0.07601,
+              "confidence": 0.92
+            }
+          ],
+          "selected_index": 496,
+          "selected_time_ms": 651490,
+          "combined_sources": [
+            "motion_valley_between_peaks",
+            "strong_quiet"
+          ],
+          "quiet_duration_ms": 760.0,
+          "motion_valley_score": 0.93134,
+          "pose_return_score": 0.07601,
+          "confidence": 0.92,
+          "selection_reason": "strong_quiet_priority"
+        },
+        {
+          "candidate_indexes": [
+            594
+          ],
+          "candidate_payloads": [
+            {
+              "boundary_index": 594,
+              "boundary_time_ms": 653450,
+              "boundary_sources": [
+                "weak_quiet",
+                "pose_return"
+              ],
+              "quiet_duration_ms": 280.0,
+              "motion_valley_score": 0.822789,
+              "pose_return_score": 0.999667,
+              "confidence": 0.76
+            }
+          ],
+          "selected_index": 594,
+          "selected_time_ms": 653450,
+          "combined_sources": [
+            "pose_return",
+            "weak_quiet"
+          ],
+          "quiet_duration_ms": 280.0,
+          "motion_valley_score": 0.822789,
+          "pose_return_score": 0.999667,
+          "confidence": 0.76,
+          "selection_reason": "highest_priority_then_confidence"
+        }
+      ],
+      "cycle_candidates": [
+        {
+          "start_index": 167,
+          "end_index": 496,
+          "start_boundary": {
+            "boundary_index": 166,
+            "boundary_time_ms": 644890,
+            "boundary_sources": [
+              "motion_valley_between_peaks",
+              "strong_quiet"
+            ],
+            "quiet_duration_ms": 860.0,
+            "motion_valley_score": 0.891101,
+            "pose_return_score": 0.073215,
+            "confidence": 0.92,
+            "candidate_cluster": {
+              "candidate_indexes": [
+                162,
+                166
+              ],
+              "candidate_payloads": [
+                {
+                  "boundary_index": 162,
+                  "boundary_time_ms": 644811,
+                  "boundary_sources": [
+                    "motion_valley_between_peaks"
+                  ],
+                  "quiet_duration_ms": null,
+                  "motion_valley_score": 0.891101,
+                  "pose_return_score": 0.073215,
+                  "confidence": 0.72
+                },
+                {
+                  "boundary_index": 166,
+                  "boundary_time_ms": 644890,
+                  "boundary_sources": [
+                    "strong_quiet"
+                  ],
+                  "quiet_duration_ms": 860.0,
+                  "motion_valley_score": 0.866565,
+                  "pose_return_score": 0.067893,
+                  "confidence": 0.92
+                }
+              ],
+              "selected_index": 166,
+              "selected_time_ms": 644890,
+              "combined_sources": [
+                "motion_valley_between_peaks",
+                "strong_quiet"
+              ],
+              "quiet_duration_ms": 860.0,
+              "motion_valley_score": 0.891101,
+              "pose_return_score": 0.073215,
+              "confidence": 0.92,
+              "selection_reason": "strong_quiet_priority"
+            }
+          },
+          "end_boundary": {
+            "boundary_index": 496,
+            "boundary_time_ms": 651490,
+            "boundary_sources": [
+              "motion_valley_between_peaks",
+              "strong_quiet"
+            ],
+            "quiet_duration_ms": 760.0,
+            "motion_valley_score": 0.93134,
+            "pose_return_score": 0.07601,
+            "confidence": 0.92,
+            "candidate_cluster": {
+              "candidate_indexes": [
+                493,
+                496
+              ],
+              "candidate_payloads": [
+                {
+                  "boundary_index": 493,
+                  "boundary_time_ms": 651430,
+                  "boundary_sources": [
+                    "motion_valley_between_peaks"
+                  ],
+                  "quiet_duration_ms": null,
+                  "motion_valley_score": 0.93134,
+                  "pose_return_score": 0.075976,
+                  "confidence": 0.72
+                },
+                {
+                  "boundary_index": 496,
+                  "boundary_time_ms": 651490,
+                  "boundary_sources": [
+                    "strong_quiet"
+                  ],
+                  "quiet_duration_ms": 760.0,
+                  "motion_valley_score": 0.895086,
+                  "pose_return_score": 0.07601,
+                  "confidence": 0.92
+                }
+              ],
+              "selected_index": 496,
+              "selected_time_ms": 651490,
+              "combined_sources": [
+                "motion_valley_between_peaks",
+                "strong_quiet"
+              ],
+              "quiet_duration_ms": 760.0,
+              "motion_valley_score": 0.93134,
+              "pose_return_score": 0.07601,
+              "confidence": 0.92,
+              "selection_reason": "strong_quiet_priority"
+            }
+          },
+          "full_cycle_quality": {
+            "full_cycle_score": 0.977676,
+            "duration_score": 0.994902,
+            "departure_score": 1.0,
+            "peak_score": 1.0,
+            "return_score": 0.997821,
+            "start_boundary_quality": 0.92,
+            "end_boundary_quality": 0.92,
+            "activity_coverage": 0.921212,
+            "valid": true,
+            "invalid_reason": null,
+            "incomplete_candidate": false,
+            "merged_candidate": false,
+            "confidence": 0.977676,
+            "duration_ms": 6578.0
+          }
+        },
+        {
+          "start_index": 67,
+          "end_index": 166,
+          "start_boundary": {
+            "boundary_index": 67,
+            "boundary_time_ms": 642910,
+            "boundary_sources": [
+              "coarse_segment_start"
+            ],
+            "quiet_duration_ms": null,
+            "motion_valley_score": null,
+            "pose_return_score": null,
+            "confidence": 0.55
+          },
+          "end_boundary": {
+            "boundary_index": 166,
+            "boundary_time_ms": 644890,
+            "boundary_sources": [
+              "motion_valley_between_peaks",
+              "strong_quiet"
+            ],
+            "quiet_duration_ms": 860.0,
+            "motion_valley_score": 0.891101,
+            "pose_return_score": 0.073215,
+            "confidence": 0.92,
+            "candidate_cluster": {
+              "candidate_indexes": [
+                162,
+                166
+              ],
+              "candidate_payloads": [
+                {
+                  "boundary_index": 162,
+                  "boundary_time_ms": 644811,
+                  "boundary_sources": [
+                    "motion_valley_between_peaks"
+                  ],
+                  "quiet_duration_ms": null,
+                  "motion_valley_score": 0.891101,
+                  "pose_return_score": 0.073215,
+                  "confidence": 0.72
+                },
+                {
+                  "boundary_index": 166,
+                  "boundary_time_ms": 644890,
+                  "boundary_sources": [
+                    "strong_quiet"
+                  ],
+                  "quiet_duration_ms": 860.0,
+                  "motion_valley_score": 0.866565,
+                  "pose_return_score": 0.067893,
+                  "confidence": 0.92
+                }
+              ],
+              "selected_index": 166,
+              "selected_time_ms": 644890,
+              "combined_sources": [
+                "motion_valley_between_peaks",
+                "strong_quiet"
+              ],
+              "quiet_duration_ms": 860.0,
+              "motion_valley_score": 0.891101,
+              "pose_return_score": 0.073215,
+              "confidence": 0.92,
+              "selection_reason": "strong_quiet_priority"
+            }
+          },
+          "full_cycle_quality": {
+            "full_cycle_score": 0.581334,
+            "duration_score": 0.154812,
+            "departure_score": 1.0,
+            "peak_score": 1.0,
+            "return_score": 0.055497,
+            "start_boundary_quality": 0.55,
+            "end_boundary_quality": 0.92,
+            "activity_coverage": 0.84,
+            "valid": false,
+            "invalid_reason": "not_a_complete_drink_cycle",
+            "incomplete_candidate": true,
+            "merged_candidate": false,
+            "confidence": 0.581334,
+            "duration_ms": 1980.0
+          },
+          "reject_reason": "not_a_complete_drink_cycle"
+        },
+        {
+          "start_index": 497,
+          "end_index": 594,
+          "start_boundary": {
+            "boundary_index": 496,
+            "boundary_time_ms": 651490,
+            "boundary_sources": [
+              "motion_valley_between_peaks",
+              "strong_quiet"
+            ],
+            "quiet_duration_ms": 760.0,
+            "motion_valley_score": 0.93134,
+            "pose_return_score": 0.07601,
+            "confidence": 0.92,
+            "candidate_cluster": {
+              "candidate_indexes": [
+                493,
+                496
+              ],
+              "candidate_payloads": [
+                {
+                  "boundary_index": 493,
+                  "boundary_time_ms": 651430,
+                  "boundary_sources": [
+                    "motion_valley_between_peaks"
+                  ],
+                  "quiet_duration_ms": null,
+                  "motion_valley_score": 0.93134,
+                  "pose_return_score": 0.075976,
+                  "confidence": 0.72
+                },
+                {
+                  "boundary_index": 496,
+                  "boundary_time_ms": 651490,
+                  "boundary_sources": [
+                    "strong_quiet"
+                  ],
+                  "quiet_duration_ms": 760.0,
+                  "motion_valley_score": 0.895086,
+                  "pose_return_score": 0.07601,
+                  "confidence": 0.92
+                }
+              ],
+              "selected_index": 496,
+              "selected_time_ms": 651490,
+              "combined_sources": [
+                "motion_valley_between_peaks",
+                "strong_quiet"
+              ],
+              "quiet_duration_ms": 760.0,
+              "motion_valley_score": 0.93134,
+              "pose_return_score": 0.07601,
+              "confidence": 0.92,
+              "selection_reason": "strong_quiet_priority"
+            }
+          },
+          "end_boundary": {
+            "boundary_index": 594,
+            "boundary_time_ms": 653450,
+            "boundary_sources": [
+              "pose_return",
+              "weak_quiet"
+            ],
+            "quiet_duration_ms": 280.0,
+            "motion_valley_score": 0.822789,
+            "pose_return_score": 0.999667,
+            "confidence": 0.76,
+            "candidate_cluster": {
+              "candidate_indexes": [
+                594
+              ],
+              "candidate_payloads": [
+                {
+                  "boundary_index": 594,
+                  "boundary_time_ms": 653450,
+                  "boundary_sources": [
+                    "weak_quiet",
+                    "pose_return"
+                  ],
+                  "quiet_duration_ms": 280.0,
+                  "motion_valley_score": 0.822789,
+                  "pose_return_score": 0.999667,
+                  "confidence": 0.76
+                }
+              ],
+              "selected_index": 594,
+              "selected_time_ms": 653450,
+              "combined_sources": [
+                "pose_return",
+                "weak_quiet"
+              ],
+              "quiet_duration_ms": 280.0,
+              "motion_valley_score": 0.822789,
+              "pose_return_score": 0.999667,
+              "confidence": 0.76,
+              "selection_reason": "highest_priority_then_confidence"
+            }
+          },
+          "full_cycle_quality": {
+            "full_cycle_score": 0.595082,
+            "duration_score": 0.151684,
+            "departure_score": 1.0,
+            "peak_score": 1.0,
+            "return_score": 0.0,
+            "start_boundary_quality": 0.92,
+            "end_boundary_quality": 0.76,
+            "activity_coverage": 0.846939,
+            "valid": false,
+            "invalid_reason": "not_a_complete_drink_cycle",
+            "incomplete_candidate": true,
+            "merged_candidate": false,
+            "confidence": 0.595082,
+            "duration_ms": 1940.0
+          },
+          "reject_reason": "not_a_complete_drink_cycle"
+        },
+        {
+          "start_index": 497,
+          "end_index": 602,
+          "start_boundary": {
+            "boundary_index": 496,
+            "boundary_time_ms": 651490,
+            "boundary_sources": [
+              "motion_valley_between_peaks",
+              "strong_quiet"
+            ],
+            "quiet_duration_ms": 760.0,
+            "motion_valley_score": 0.93134,
+            "pose_return_score": 0.07601,
+            "confidence": 0.92,
+            "candidate_cluster": {
+              "candidate_indexes": [
+                493,
+                496
+              ],
+              "candidate_payloads": [
+                {
+                  "boundary_index": 493,
+                  "boundary_time_ms": 651430,
+                  "boundary_sources": [
+                    "motion_valley_between_peaks"
+                  ],
+                  "quiet_duration_ms": null,
+                  "motion_valley_score": 0.93134,
+                  "pose_return_score": 0.075976,
+                  "confidence": 0.72
+                },
+                {
+                  "boundary_index": 496,
+                  "boundary_time_ms": 651490,
+                  "boundary_sources": [
+                    "strong_quiet"
+                  ],
+                  "quiet_duration_ms": 760.0,
+                  "motion_valley_score": 0.895086,
+                  "pose_return_score": 0.07601,
+                  "confidence": 0.92
+                }
+              ],
+              "selected_index": 496,
+              "selected_time_ms": 651490,
+              "combined_sources": [
+                "motion_valley_between_peaks",
+                "strong_quiet"
+              ],
+              "quiet_duration_ms": 760.0,
+              "motion_valley_score": 0.93134,
+              "pose_return_score": 0.07601,
+              "confidence": 0.92,
+              "selection_reason": "strong_quiet_priority"
+            }
+          },
+          "end_boundary": {
+            "boundary_index": 602,
+            "boundary_time_ms": 653610,
+            "boundary_sources": [
+              "coarse_segment_end"
+            ],
+            "quiet_duration_ms": null,
+            "motion_valley_score": null,
+            "pose_return_score": null,
+            "confidence": 0.55
+          },
+          "full_cycle_quality": {
+            "full_cycle_score": 0.572427,
+            "duration_score": 0.164194,
+            "departure_score": 1.0,
+            "peak_score": 1.0,
+            "return_score": 0.0,
+            "start_boundary_quality": 0.92,
+            "end_boundary_quality": 0.55,
+            "activity_coverage": 0.783019,
+            "valid": false,
+            "invalid_reason": "not_a_complete_drink_cycle",
+            "incomplete_candidate": true,
+            "merged_candidate": false,
+            "confidence": 0.572427,
+            "duration_ms": 2100.0
+          },
+          "reject_reason": "not_a_complete_drink_cycle"
+        },
+        {
+          "start_index": 595,
+          "end_index": 602,
+          "start_boundary": {
+            "boundary_index": 594,
+            "boundary_time_ms": 653450,
+            "boundary_sources": [
+              "pose_return",
+              "weak_quiet"
+            ],
+            "quiet_duration_ms": 280.0,
+            "motion_valley_score": 0.822789,
+            "pose_return_score": 0.999667,
+            "confidence": 0.76,
+            "candidate_cluster": {
+              "candidate_indexes": [
+                594
+              ],
+              "candidate_payloads": [
+                {
+                  "boundary_index": 594,
+                  "boundary_time_ms": 653450,
+                  "boundary_sources": [
+                    "weak_quiet",
+                    "pose_return"
+                  ],
+                  "quiet_duration_ms": 280.0,
+                  "motion_valley_score": 0.822789,
+                  "pose_return_score": 0.999667,
+                  "confidence": 0.76
+                }
+              ],
+              "selected_index": 594,
+              "selected_time_ms": 653450,
+              "combined_sources": [
+                "pose_return",
+                "weak_quiet"
+              ],
+              "quiet_duration_ms": 280.0,
+              "motion_valley_score": 0.822789,
+              "pose_return_score": 0.999667,
+              "confidence": 0.76,
+              "selection_reason": "highest_priority_then_confidence"
+            }
+          },
+          "end_boundary": {
+            "boundary_index": 602,
+            "boundary_time_ms": 653610,
+            "boundary_sources": [
+              "coarse_segment_end"
+            ],
+            "quiet_duration_ms": null,
+            "motion_valley_score": null,
+            "pose_return_score": null,
+            "confidence": 0.55
+          },
+          "full_cycle_quality": {
+            "full_cycle_score": 0.375149,
+            "duration_score": 0.010946,
+            "departure_score": 0.181965,
+            "peak_score": 0.220515,
+            "return_score": 1.0,
+            "start_boundary_quality": 0.76,
+            "end_boundary_quality": 0.55,
+            "activity_coverage": 0.0,
+            "valid": false,
+            "invalid_reason": "not_a_complete_drink_cycle",
+            "incomplete_candidate": true,
+            "merged_candidate": false,
+            "confidence": 0.375149,
+            "duration_ms": 140.0
+          },
+          "reject_reason": "not_a_complete_drink_cycle"
+        }
+      ],
+      "global_selection": [
+        {
+          "start_index": 167,
+          "end_index": 496,
+          "start_boundary": {
+            "boundary_index": 166,
+            "boundary_time_ms": 644890,
+            "boundary_sources": [
+              "motion_valley_between_peaks",
+              "strong_quiet"
+            ],
+            "quiet_duration_ms": 860.0,
+            "motion_valley_score": 0.891101,
+            "pose_return_score": 0.073215,
+            "confidence": 0.92,
+            "candidate_cluster": {
+              "candidate_indexes": [
+                162,
+                166
+              ],
+              "candidate_payloads": [
+                {
+                  "boundary_index": 162,
+                  "boundary_time_ms": 644811,
+                  "boundary_sources": [
+                    "motion_valley_between_peaks"
+                  ],
+                  "quiet_duration_ms": null,
+                  "motion_valley_score": 0.891101,
+                  "pose_return_score": 0.073215,
+                  "confidence": 0.72
+                },
+                {
+                  "boundary_index": 166,
+                  "boundary_time_ms": 644890,
+                  "boundary_sources": [
+                    "strong_quiet"
+                  ],
+                  "quiet_duration_ms": 860.0,
+                  "motion_valley_score": 0.866565,
+                  "pose_return_score": 0.067893,
+                  "confidence": 0.92
+                }
+              ],
+              "selected_index": 166,
+              "selected_time_ms": 644890,
+              "combined_sources": [
+                "motion_valley_between_peaks",
+                "strong_quiet"
+              ],
+              "quiet_duration_ms": 860.0,
+              "motion_valley_score": 0.891101,
+              "pose_return_score": 0.073215,
+              "confidence": 0.92,
+              "selection_reason": "strong_quiet_priority"
+            }
+          },
+          "end_boundary": {
+            "boundary_index": 496,
+            "boundary_time_ms": 651490,
+            "boundary_sources": [
+              "motion_valley_between_peaks",
+              "strong_quiet"
+            ],
+            "quiet_duration_ms": 760.0,
+            "motion_valley_score": 0.93134,
+            "pose_return_score": 0.07601,
+            "confidence": 0.92,
+            "candidate_cluster": {
+              "candidate_indexes": [
+                493,
+                496
+              ],
+              "candidate_payloads": [
+                {
+                  "boundary_index": 493,
+                  "boundary_time_ms": 651430,
+                  "boundary_sources": [
+                    "motion_valley_between_peaks"
+                  ],
+                  "quiet_duration_ms": null,
+                  "motion_valley_score": 0.93134,
+                  "pose_return_score": 0.075976,
+                  "confidence": 0.72
+                },
+                {
+                  "boundary_index": 496,
+                  "boundary_time_ms": 651490,
+                  "boundary_sources": [
+                    "strong_quiet"
+                  ],
+                  "quiet_duration_ms": 760.0,
+                  "motion_valley_score": 0.895086,
+                  "pose_return_score": 0.07601,
+                  "confidence": 0.92
+                }
+              ],
+              "selected_index": 496,
+              "selected_time_ms": 651490,
+              "combined_sources": [
+                "motion_valley_between_peaks",
+                "strong_quiet"
+              ],
+              "quiet_duration_ms": 760.0,
+              "motion_valley_score": 0.93134,
+              "pose_return_score": 0.07601,
+              "confidence": 0.92,
+              "selection_reason": "strong_quiet_priority"
+            }
+          },
+          "full_cycle_quality": {
+            "full_cycle_score": 0.977676,
+            "duration_score": 0.994902,
+            "departure_score": 1.0,
+            "peak_score": 1.0,
+            "return_score": 0.997821,
+            "start_boundary_quality": 0.92,
+            "end_boundary_quality": 0.92,
+            "activity_coverage": 0.921212,
+            "valid": true,
+            "invalid_reason": null,
+            "incomplete_candidate": false,
+            "merged_candidate": false,
+            "confidence": 0.977676,
+            "duration_ms": 6578.0
+          }
+        }
+      ],
+      "cycle_duration_prior": {
+        "source": "bootstrap_template_manifest",
+        "sample_count": 10,
+        "median_duration_ms": 6630.0,
+        "q1": 6505.0,
+        "q3": 7004.75,
+        "iqr": 499.75,
+        "robust_min_cycle_duration_ms": 5755.375,
+        "robust_max_cycle_duration_ms": 7754.375,
+        "merged_duration_threshold_ms": 10276.5,
+        "boundary_cluster_window_ms": 1060.8
+      },
+      "rejected_cycle_candidates": [
+        {
+          "start_index": 67,
+          "end_index": 166,
+          "start_boundary": {
+            "boundary_index": 67,
+            "boundary_time_ms": 642910,
+            "boundary_sources": [
+              "coarse_segment_start"
+            ],
+            "quiet_duration_ms": null,
+            "motion_valley_score": null,
+            "pose_return_score": null,
+            "confidence": 0.55
+          },
+          "end_boundary": {
+            "boundary_index": 166,
+            "boundary_time_ms": 644890,
+            "boundary_sources": [
+              "motion_valley_between_peaks",
+              "strong_quiet"
+            ],
+            "quiet_duration_ms": 860.0,
+            "motion_valley_score": 0.891101,
+            "pose_return_score": 0.073215,
+            "confidence": 0.92,
+            "candidate_cluster": {
+              "candidate_indexes": [
+                162,
+                166
+              ],
+              "candidate_payloads": [
+                {
+                  "boundary_index": 162,
+                  "boundary_time_ms": 644811,
+                  "boundary_sources": [
+                    "motion_valley_between_peaks"
+                  ],
+                  "quiet_duration_ms": null,
+                  "motion_valley_score": 0.891101,
+                  "pose_return_score": 0.073215,
+                  "confidence": 0.72
+                },
+                {
+                  "boundary_index": 166,
+                  "boundary_time_ms": 644890,
+                  "boundary_sources": [
+                    "strong_quiet"
+                  ],
+                  "quiet_duration_ms": 860.0,
+                  "motion_valley_score": 0.866565,
+                  "pose_return_score": 0.067893,
+                  "confidence": 0.92
+                }
+              ],
+              "selected_index": 166,
+              "selected_time_ms": 644890,
+              "combined_sources": [
+                "motion_valley_between_peaks",
+                "strong_quiet"
+              ],
+              "quiet_duration_ms": 860.0,
+              "motion_valley_score": 0.891101,
+              "pose_return_score": 0.073215,
+              "confidence": 0.92,
+              "selection_reason": "strong_quiet_priority"
+            }
+          },
+          "full_cycle_quality": {
+            "full_cycle_score": 0.581334,
+            "duration_score": 0.154812,
+            "departure_score": 1.0,
+            "peak_score": 1.0,
+            "return_score": 0.055497,
+            "start_boundary_quality": 0.55,
+            "end_boundary_quality": 0.92,
+            "activity_coverage": 0.84,
+            "valid": false,
+            "invalid_reason": "not_a_complete_drink_cycle",
+            "incomplete_candidate": true,
+            "merged_candidate": false,
+            "confidence": 0.581334,
+            "duration_ms": 1980.0
+          },
+          "reject_reason": "not_a_complete_drink_cycle"
+        },
+        {
+          "start_index": 497,
+          "end_index": 594,
+          "start_boundary": {
+            "boundary_index": 496,
+            "boundary_time_ms": 651490,
+            "boundary_sources": [
+              "motion_valley_between_peaks",
+              "strong_quiet"
+            ],
+            "quiet_duration_ms": 760.0,
+            "motion_valley_score": 0.93134,
+            "pose_return_score": 0.07601,
+            "confidence": 0.92,
+            "candidate_cluster": {
+              "candidate_indexes": [
+                493,
+                496
+              ],
+              "candidate_payloads": [
+                {
+                  "boundary_index": 493,
+                  "boundary_time_ms": 651430,
+                  "boundary_sources": [
+                    "motion_valley_between_peaks"
+                  ],
+                  "quiet_duration_ms": null,
+                  "motion_valley_score": 0.93134,
+                  "pose_return_score": 0.075976,
+                  "confidence": 0.72
+                },
+                {
+                  "boundary_index": 496,
+                  "boundary_time_ms": 651490,
+                  "boundary_sources": [
+                    "strong_quiet"
+                  ],
+                  "quiet_duration_ms": 760.0,
+                  "motion_valley_score": 0.895086,
+                  "pose_return_score": 0.07601,
+                  "confidence": 0.92
+                }
+              ],
+              "selected_index": 496,
+              "selected_time_ms": 651490,
+              "combined_sources": [
+                "motion_valley_between_peaks",
+                "strong_quiet"
+              ],
+              "quiet_duration_ms": 760.0,
+              "motion_valley_score": 0.93134,
+              "pose_return_score": 0.07601,
+              "confidence": 0.92,
+              "selection_reason": "strong_quiet_priority"
+            }
+          },
+          "end_boundary": {
+            "boundary_index": 594,
+            "boundary_time_ms": 653450,
+            "boundary_sources": [
+              "pose_return",
+              "weak_quiet"
+            ],
+            "quiet_duration_ms": 280.0,
+            "motion_valley_score": 0.822789,
+            "pose_return_score": 0.999667,
+            "confidence": 0.76,
+            "candidate_cluster": {
+              "candidate_indexes": [
+                594
+              ],
+              "candidate_payloads": [
+                {
+                  "boundary_index": 594,
+                  "boundary_time_ms": 653450,
+                  "boundary_sources": [
+                    "weak_quiet",
+                    "pose_return"
+                  ],
+                  "quiet_duration_ms": 280.0,
+                  "motion_valley_score": 0.822789,
+                  "pose_return_score": 0.999667,
+                  "confidence": 0.76
+                }
+              ],
+              "selected_index": 594,
+              "selected_time_ms": 653450,
+              "combined_sources": [
+                "pose_return",
+                "weak_quiet"
+              ],
+              "quiet_duration_ms": 280.0,
+              "motion_valley_score": 0.822789,
+              "pose_return_score": 0.999667,
+              "confidence": 0.76,
+              "selection_reason": "highest_priority_then_confidence"
+            }
+          },
+          "full_cycle_quality": {
+            "full_cycle_score": 0.595082,
+            "duration_score": 0.151684,
+            "departure_score": 1.0,
+            "peak_score": 1.0,
+            "return_score": 0.0,
+            "start_boundary_quality": 0.92,
+            "end_boundary_quality": 0.76,
+            "activity_coverage": 0.846939,
+            "valid": false,
+            "invalid_reason": "not_a_complete_drink_cycle",
+            "incomplete_candidate": true,
+            "merged_candidate": false,
+            "confidence": 0.595082,
+            "duration_ms": 1940.0
+          },
+          "reject_reason": "not_a_complete_drink_cycle"
+        },
+        {
+          "start_index": 497,
+          "end_index": 602,
+          "start_boundary": {
+            "boundary_index": 496,
+            "boundary_time_ms": 651490,
+            "boundary_sources": [
+              "motion_valley_between_peaks",
+              "strong_quiet"
+            ],
+            "quiet_duration_ms": 760.0,
+            "motion_valley_score": 0.93134,
+            "pose_return_score": 0.07601,
+            "confidence": 0.92,
+            "candidate_cluster": {
+              "candidate_indexes": [
+                493,
+                496
+              ],
+              "candidate_payloads": [
+                {
+                  "boundary_index": 493,
+                  "boundary_time_ms": 651430,
+                  "boundary_sources": [
+                    "motion_valley_between_peaks"
+                  ],
+                  "quiet_duration_ms": null,
+                  "motion_valley_score": 0.93134,
+                  "pose_return_score": 0.075976,
+                  "confidence": 0.72
+                },
+                {
+                  "boundary_index": 496,
+                  "boundary_time_ms": 651490,
+                  "boundary_sources": [
+                    "strong_quiet"
+                  ],
+                  "quiet_duration_ms": 760.0,
+                  "motion_valley_score": 0.895086,
+                  "pose_return_score": 0.07601,
+                  "confidence": 0.92
+                }
+              ],
+              "selected_index": 496,
+              "selected_time_ms": 651490,
+              "combined_sources": [
+                "motion_valley_between_peaks",
+                "strong_quiet"
+              ],
+              "quiet_duration_ms": 760.0,
+              "motion_valley_score": 0.93134,
+              "pose_return_score": 0.07601,
+              "confidence": 0.92,
+              "selection_reason": "strong_quiet_priority"
+            }
+          },
+          "end_boundary": {
+            "boundary_index": 602,
+            "boundary_time_ms": 653610,
+            "boundary_sources": [
+              "coarse_segment_end"
+            ],
+            "quiet_duration_ms": null,
+            "motion_valley_score": null,
+            "pose_return_score": null,
+            "confidence": 0.55
+          },
+          "full_cycle_quality": {
+            "full_cycle_score": 0.572427,
+            "duration_score": 0.164194,
+            "departure_score": 1.0,
+            "peak_score": 1.0,
+            "return_score": 0.0,
+            "start_boundary_quality": 0.92,
+            "end_boundary_quality": 0.55,
+            "activity_coverage": 0.783019,
+            "valid": false,
+            "invalid_reason": "not_a_complete_drink_cycle",
+            "incomplete_candidate": true,
+            "merged_candidate": false,
+            "confidence": 0.572427,
+            "duration_ms": 2100.0
+          },
+          "reject_reason": "not_a_complete_drink_cycle"
+        },
+        {
+          "start_index": 595,
+          "end_index": 602,
+          "start_boundary": {
+            "boundary_index": 594,
+            "boundary_time_ms": 653450,
+            "boundary_sources": [
+              "pose_return",
+              "weak_quiet"
+            ],
+            "quiet_duration_ms": 280.0,
+            "motion_valley_score": 0.822789,
+            "pose_return_score": 0.999667,
+            "confidence": 0.76,
+            "candidate_cluster": {
+              "candidate_indexes": [
+                594
+              ],
+              "candidate_payloads": [
+                {
+                  "boundary_index": 594,
+                  "boundary_time_ms": 653450,
+                  "boundary_sources": [
+                    "weak_quiet",
+                    "pose_return"
+                  ],
+                  "quiet_duration_ms": 280.0,
+                  "motion_valley_score": 0.822789,
+                  "pose_return_score": 0.999667,
+                  "confidence": 0.76
+                }
+              ],
+              "selected_index": 594,
+              "selected_time_ms": 653450,
+              "combined_sources": [
+                "pose_return",
+                "weak_quiet"
+              ],
+              "quiet_duration_ms": 280.0,
+              "motion_valley_score": 0.822789,
+              "pose_return_score": 0.999667,
+              "confidence": 0.76,
+              "selection_reason": "highest_priority_then_confidence"
+            }
+          },
+          "end_boundary": {
+            "boundary_index": 602,
+            "boundary_time_ms": 653610,
+            "boundary_sources": [
+              "coarse_segment_end"
+            ],
+            "quiet_duration_ms": null,
+            "motion_valley_score": null,
+            "pose_return_score": null,
+            "confidence": 0.55
+          },
+          "full_cycle_quality": {
+            "full_cycle_score": 0.375149,
+            "duration_score": 0.010946,
+            "departure_score": 0.181965,
+            "peak_score": 0.220515,
+            "return_score": 1.0,
+            "start_boundary_quality": 0.76,
+            "end_boundary_quality": 0.55,
+            "activity_coverage": 0.0,
+            "valid": false,
+            "invalid_reason": "not_a_complete_drink_cycle",
+            "incomplete_candidate": true,
+            "merged_candidate": false,
+            "confidence": 0.375149,
+            "duration_ms": 140.0
+          },
+          "reject_reason": "not_a_complete_drink_cycle"
+        }
+      ],
+      "config": {
+        "strong_quiet_min_ms": 450,
+        "weak_quiet_min_ms": 180,
+        "motion_valley_prominence": 0.28,
+        "pose_return_threshold": 0.35,
+        "merged_duration_factor": 1.55,
+        "min_cycle_duration_ms": 1400,
+        "max_cycle_duration_ms": 9500,
+        "min_peak_distance_ms": 1200,
+        "boundary_cluster_window_factor": 0.16,
+        "full_cycle_valid_threshold": 0.62
+      }
+    },
+    "notes": [
+      "lateral_transfer intentionally reuses the frozen drink_hybrid_segmentation_v2_1_1 core",
+      "this wrapper only adapts metadata/schema for lateral_transfer downstream tools",
+      "expected labels and task ids are not inputs to the segmentation core"
+    ]
+  },
+  "rep_count": 1,
+  "average_score": 58.83,
+  "repetitions": [
+    {
+      "rep_index": 1,
+      "final_score": 58.83,
+      "types": [
+        "TREMOR"
+      ]
+    }
+  ],
+  "generated_at": "2026-08-07T17:58:40.206645+00:00"
+}

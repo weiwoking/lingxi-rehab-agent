@@ -1,0 +1,21 @@
+[Unit]
+Description=ESP-Claw cloud sensor sync API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=espclaw-cloud
+Group=espclaw-cloud
+WorkingDirectory=/opt/espclaw_cloud_sync
+EnvironmentFile=/etc/espclaw-cloud-sync.env
+ExecStart=/opt/espclaw_cloud_sync/.venv/bin/uvicorn app:app --host 127.0.0.1 --port ${ESPCLAW_CLOUD_PORT}
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ReadWritePaths=/var/lib/espclaw_cloud_sync
+
+[Install]
+WantedBy=multi-user.target

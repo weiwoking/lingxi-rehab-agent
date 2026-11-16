@@ -1,0 +1,78 @@
+{
+  "python": "3.11.15",
+  "version": "3.11.15 | packaged by Anaconda, Inc. | (main, Jun 11 2026, 15:12:53) [MSC v.1942 64 bit (AMD64)]",
+  "prefix": "external/_deltar_yolo_cuda/venv",
+  "packages": {
+    "pip": {
+      "version": "24.0",
+      "direct_url": null,
+      "installer": "pip\n"
+    },
+    "torch": {
+      "version": "2.7.1+cu128",
+      "direct_url": null,
+      "installer": "pip\n"
+    },
+    "torchvision": {
+      "version": "0.22.1+cu128",
+      "direct_url": null,
+      "installer": "pip\n"
+    },
+    "ultralytics": {
+      "version": "8.4.93",
+      "direct_url": null,
+      "installer": "pip\n"
+    },
+    "numpy": {
+      "version": "2.2.6",
+      "direct_url": null,
+      "installer": "pip\n"
+    },
+    "opencv-python": {
+      "version": "5.0.0.93",
+      "direct_url": null,
+      "installer": "pip\n"
+    }
+  },
+  "imports": {
+    "numpy": "PASS",
+    "cv2": "PASS",
+    "fastapi": "SKIP_NOT_INSTALLED (outside this environment purpose)",
+    "uvicorn": "SKIP_NOT_INSTALLED (outside this environment purpose)",
+    "torch": "PASS",
+    "ultralytics": "PASS"
+  },
+  "torch": {
+    "version": "2.7.1+cu128",
+    "cuda": "12.8",
+    "cudnn": 90701,
+    "cuda_available": true,
+    "compiled_arch_list": [
+      "sm_50",
+      "sm_60",
+      "sm_61",
+      "sm_70",
+      "sm_75",
+      "sm_80",
+      "sm_86",
+      "sm_90",
+      "sm_100",
+      "sm_120"
+    ],
+    "devices": [
+      {
+        "name": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+        "capability": [
+          12,
+          0
+        ]
+      }
+    ]
+  },
+  "wheel_source": {
+    "url": "https://download.pytorch.org/whl/cu128",
+    "evidence": "external/_deltar_yolo_cuda/requirements.lock.txt:1",
+    "direct_url_metadata": "not recorded for torch; source verified from retained installation evidence"
+  },
+  "gpu_requirement_note": "Windows x64; CUDA 12.8-compatible NVIDIA driver and a GPU supported by compiled_arch_list. Device/capability observed here is a verification snapshot, not the minimum GPU requirement."
+}

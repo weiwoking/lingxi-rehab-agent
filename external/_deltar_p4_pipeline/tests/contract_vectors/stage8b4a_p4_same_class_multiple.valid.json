@@ -1,0 +1,110 @@
+{
+  "schema_version": "stage8b4a_p4_decision_package.v1",
+  "scan_id": "scan_contract_vector",
+  "status": "decision_ready",
+  "generated_at": "2026-07-25T00:00:00Z",
+  "whitelist": {
+    "classes": [
+      "cup",
+      "bottle",
+      "book",
+      "sports ball"
+    ],
+    "profile_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "source": {
+    "frame_count": 11,
+    "candidate_set_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "scene_objects_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "scene_objects_semantic_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "selection_policy_id": "class_geometry_fallback_then_p4_whitelist_v1",
+  "class_summaries": [
+    {
+      "class_name": "cup",
+      "present": true,
+      "observation_count": 2,
+      "fused_object_count": 2,
+      "selected_object_id": "scene_object_cup_0000000000000001"
+    },
+    {
+      "class_name": "bottle",
+      "present": false,
+      "observation_count": 0,
+      "fused_object_count": 0,
+      "selected_object_id": null
+    },
+    {
+      "class_name": "book",
+      "present": false,
+      "observation_count": 0,
+      "fused_object_count": 0,
+      "selected_object_id": null
+    },
+    {
+      "class_name": "sports ball",
+      "present": false,
+      "observation_count": 0,
+      "fused_object_count": 0,
+      "selected_object_id": null
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "scene_object_cup_0000000000000001",
+      "class_name": "cup",
+      "display_name_zh": "水杯",
+      "confidence": 0.9,
+      "observation_count": 1,
+      "source_frame_id": "frame_000001",
+      "source_frame_sequence": 1,
+      "bbox_xyxy": [
+        10.0,
+        20.0,
+        60.0,
+        150.0
+      ],
+      "geometry": {
+        "valid": false,
+        "object_height_mm": null,
+        "support_height_mm": null,
+        "top_height_above_floor_mm": null,
+        "distance_mm": null,
+        "distance_status": "unavailable"
+      },
+      "visibility": {
+        "full_extent_visible": true,
+        "touches_border": false
+      },
+      "warnings": []
+    },
+    {
+      "object_id": "scene_object_cup_0000000000000002",
+      "class_name": "cup",
+      "display_name_zh": "水杯",
+      "confidence": 0.8,
+      "observation_count": 1,
+      "source_frame_id": "frame_000002",
+      "source_frame_sequence": 2,
+      "bbox_xyxy": [
+        300.0,
+        20.0,
+        350.0,
+        150.0
+      ],
+      "geometry": {
+        "valid": false,
+        "object_height_mm": null,
+        "support_height_mm": null,
+        "top_height_above_floor_mm": null,
+        "distance_mm": null,
+        "distance_status": "unavailable"
+      },
+      "visibility": {
+        "full_extent_visible": true,
+        "touches_border": false
+      },
+      "warnings": []
+    }
+  ]
+}

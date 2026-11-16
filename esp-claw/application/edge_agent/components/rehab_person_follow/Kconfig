@@ -1,0 +1,73 @@
+menu "Rehab person follow (real perception, no vehicle action)"
+
+config REHAB_PERSON_FOLLOW_ENABLED
+    bool "Enable the independent person-follow component"
+    default y
+
+config REHAB_PERSON_FOLLOW_ACTION_ENABLED
+    bool "Enable person-follow vehicle actions"
+    depends on REHAB_PERSON_FOLLOW_ENABLED
+    default n
+    help
+        This phase does not support vehicle actions. The component rejects a true
+        runtime action_enabled value even if this development option is set.
+
+config REHAB_PERSON_FOLLOW_MOCK_MODE
+    int "Default mock perception mode"
+    depends on REHAB_PERSON_FOLLOW_ENABLED
+    range 0 5
+    default 0
+    help
+        0=no target, 1=left, 2=center, 3=right,
+        4=alternating left/right, 5=technical error.
+
+config REHAB_PERSON_FOLLOW_PERCEPTION_REAL
+    bool "Use real Camera JPEG and PC person-follow perception"
+    depends on REHAB_PERSON_FOLLOW_ENABLED
+    default y
+
+config REHAB_PERSON_FOLLOW_PC_ENDPOINT
+    string "Fallback PC person-follow endpoint"
+    depends on REHAB_PERSON_FOLLOW_ENABLED
+    default "http://192.168.137.1:8000/api/v1/person-follow/detect"
+    help
+        Used only when the application cannot derive the endpoint from its
+        existing perception_fusion_url host and port.
+
+config REHAB_PERSON_FOLLOW_HTTP_TIMEOUT_MS
+    int "Person-follow HTTP total timeout (ms)"
+    depends on REHAB_PERSON_FOLLOW_ENABLED
+    range 500 10000
+    default 2000
+
+config REHAB_PERSON_FOLLOW_CAMERA_TIMEOUT_MS
+    int "Camera JPEG acquire timeout (ms)"
+    depends on REHAB_PERSON_FOLLOW_ENABLED
+    range 100 10000
+    default 1000
+
+config REHAB_PERSON_FOLLOW_LOOP_INTERVAL_MS
+    int "Real perception loop interval (ms)"
+    depends on REHAB_PERSON_FOLLOW_ENABLED
+    range 10 60000
+    default 200
+
+config REHAB_PERSON_FOLLOW_MAX_DETECTIONS
+    int "Maximum accepted person detections"
+    depends on REHAB_PERSON_FOLLOW_ENABLED
+    range 1 16
+    default 16
+
+config REHAB_PERSON_FOLLOW_MAX_RUNTIME_MS
+    int "Maximum worker runtime (ms)"
+    depends on REHAB_PERSON_FOLLOW_ENABLED
+    range 100 3600000
+    default 600000
+
+config REHAB_PERSON_FOLLOW_MAX_CONSECUTIVE_ERRORS
+    int "Maximum consecutive perception errors"
+    depends on REHAB_PERSON_FOLLOW_ENABLED
+    range 1 32
+    default 3
+
+endmenu

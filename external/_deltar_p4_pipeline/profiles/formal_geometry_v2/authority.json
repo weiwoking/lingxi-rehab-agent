@@ -1,0 +1,43 @@
+{
+  "schema_version": "deltar_formal_geometry_authority.v2",
+  "profile_id": "formal_geometry_stage2_d_stage3a_allobject_v2_20260818",
+  "fusion": "D_TRUE_READ_OFFICIAL_WRITE",
+  "range_semantics": "axial_z",
+  "units": {
+    "camera_intrinsics": "pixels",
+    "distortion": "opencv_brown_dimensionless",
+    "extrinsic_translation": "mm",
+    "depth": "mm",
+    "world_height": "mm"
+  },
+  "coordinate_conventions": {
+    "camera": "opencv x-right y-down z-forward",
+    "tof": "Stage2 calibrated ToF frame; zone rays scaled by axial z",
+    "world_z": "dot(u_up_camera, p_camera_mm) + camera_height_mm",
+    "zone_order": "raw index 0..63 identity canonical gauge",
+    "write_layout": "official DELTAR 8x8 dense layout"
+  },
+  "camera_height_mm": 972,
+  "gravity_u_up_camera": [-0.003631789488291098, -0.9990295601149617, -0.04389473911095569],
+  "payloads": {
+    "stage2": {
+      "path": "stage2_calibration.json",
+      "source_candidate_path": "C:\\ec\\_calibration_workspaces\\stage2_final_bundle_20260818_01\\calibration_bundle.stage2_final_candidate.v1.json",
+      "source_sha256": "63c974cd2ff64dd0f135d47d8c92eb170d06658cb315563fb93588862ba8b057",
+      "promoted_sha256": "63c974cd2ff64dd0f135d47d8c92eb170d06658cb315563fb93588862ba8b057"
+    },
+    "stage3a": {
+      "path": "stage3a_gravity.json",
+      "source_candidate_path": "C:\\ec\\_calibration_workspaces\\stage3a_camera_world_20260818_01\\candidate\\camera_gravity.stage3a_candidate.v1.json",
+      "source_sha256": "d2df3939a0af4eea4b584bddf6053b45094cb457b8ecbc1080e5c82431f1a464",
+      "promoted_sha256": "a00f9cc7099dfb5eed1a85210d1f78a6220a468c95fb85d0d40f827cf9972112"
+    },
+    "all_object_v2": {
+      "path": "all_object_geometry_v2.json",
+      "source_candidate_path": "C:\\ec\\_calibration_workspaces\\stage3b_competition_geometry_20260818_01\\candidate_geometry_v2\\config.v2.json",
+      "source_sha256": "fde6b6ab9f4bc3df23c19b339bdf5e1e6ba3564223e6437e2930dfd0264273d5",
+      "promoted_sha256": "fde6b6ab9f4bc3df23c19b339bdf5e1e6ba3564223e6437e2930dfd0264273d5"
+    }
+  },
+  "promoted_payload_set_sha256": "2d5f32ebab2b55cf60d7898ae8adae152aeb4d55289d8d1d26e3e28677131e6e"
+}

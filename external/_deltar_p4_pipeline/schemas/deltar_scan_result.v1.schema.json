@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "deltar_scan_result.v1",
+  "type": "object",
+  "required": ["schema_version", "status", "scan_id", "job_id", "input", "models", "profiles", "objects", "warnings", "errors", "processing"],
+  "properties": {
+    "schema_version": {"const": "deltar_scan_result.v1"},
+    "status": {"enum": ["success", "partial_success", "rejected", "failed"]},
+    "objects": {"type": "array"},
+    "warnings": {"type": "array"},
+    "errors": {"type": "array"}
+  }
+}

@@ -1,0 +1,21 @@
+choice REHAB_DECISION_THINKING_MODE
+    prompt "Formal rehab decision DeepSeek thinking mode"
+    default REHAB_DECISION_THINKING_ENABLED_HIGH
+    help
+        Applies only to the Local UI / Root formal rehab decision request.
+        It does not change memory extraction or other agent requests.
+
+    config REHAB_DECISION_THINKING_ENABLED_HIGH
+        bool "Thinking enabled, explicit high effort"
+        help
+            Explicitly enables thinking and pins DeepSeek reasoning effort to
+            high. This is the conservative default and avoids an automatic
+            promotion to max where the provider would otherwise apply one.
+
+    config REHAB_DECISION_THINKING_DISABLED
+        bool "Thinking disabled"
+        help
+            Explicitly selects DeepSeek non-thinking mode for formal rehab
+            decision A/B testing. Validate quality and tool-call reliability
+            before retaining this selection.
+endchoice

@@ -1,0 +1,72 @@
+{
+  "session_version": "drink_water_session_v1_2",
+  "session_id": "20260807_TASK021",
+  "action_type": "drink_water",
+  "baseline_version": "drink_water_v2.1.2",
+  "segmentation_version": "drink_hybrid_segmentation_v2_1",
+  "sensor_mapping_version": "rehab_sensor_mapping_20260806",
+  "source_mode": "offline_validation",
+  "source_origin": "v2_1_2_session_orchestrator",
+  "source_session_path": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK021\\DATA_SEQ0000002053.csv",
+  "source_sha256": "cace36922069b0adecbd7e5b2a4d1b2604e9bd415818010e8943abb4f0e1d60b",
+  "source_row_count": 822,
+  "source_column_count": 86,
+  "baseline_template_path": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\template\\MHH_healthy_template.json",
+  "baseline_template_sha256": "d7a6237aa9af6e91e203d320045198991ea265322986b1afd7bb3ef61884fbcf",
+  "session_started_at_ms": 165566,
+  "session_ended_at_ms": 182066,
+  "session_duration_ms": 16500.0,
+  "activity_started_at_ms": 169167,
+  "activity_ended_at_ms": 178566,
+  "activity_duration_ms": 9399.0,
+  "segmented_candidate_count": 1,
+  "segmentation_valid_repetition_count": 1,
+  "rejected_repetition_count": 0,
+  "scored_repetition_count": 1,
+  "score_valid_repetition_count": 1,
+  "score_invalid_repetition_count": 0,
+  "average_score": 47.54,
+  "median_score": 47.54,
+  "best_score": 47.54,
+  "worst_score": 47.54,
+  "score_trend": [
+    {
+      "rep_index": 1,
+      "final_score": 47.54,
+      "valid": true
+    }
+  ],
+  "subscore_averages": {
+    "speed_score": 8.98,
+    "ROM_score": 15.56,
+    "smoothness_score": 14.35,
+    "coordination_score": 11.9,
+    "muscle_score": 21.76
+  },
+  "compensation_summary": {
+    "detected_repetition_count": 1,
+    "types": [
+      "LF",
+      "TREMOR"
+    ],
+    "max_severity": null
+  },
+  "repetitions": [
+    {
+      "rep_index": 1,
+      "valid": true,
+      "final_score": 47.54,
+      "score_file": "per_rep_scores\\rep_01_score.json",
+      "score_metadata_file": "per_rep_scores\\rep_01_score_metadata.json",
+      "rep_csv": "repetitions\\rep_01.csv",
+      "start_index": 179,
+      "end_index": 649,
+      "start_time_ms": 169167,
+      "end_time_ms": 178566,
+      "duration_ms": 9399.0,
+      "compensation_detected": true
+    }
+  ],
+  "rejected_repetitions": [],
+  "scoring_rejections": []
+}

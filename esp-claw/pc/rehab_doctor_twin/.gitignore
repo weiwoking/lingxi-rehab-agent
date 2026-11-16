@@ -1,0 +1,13 @@
+backend/.venv/
+backend/runtime_reports/
+
+# Live Doctor data: keep on disk for history/UI, never version as source.
+backend/data/patients/*/sessions/**
+backend/runtime_data/**
+
+frontend/node_modules/
+frontend/dist/
+*.pyc
+__pycache__/
+.DS_Store
+Thumbs.db

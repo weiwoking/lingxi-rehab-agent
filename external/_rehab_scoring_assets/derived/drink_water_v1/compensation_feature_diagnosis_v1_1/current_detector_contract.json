@@ -1,0 +1,29 @@
+{
+  "detector_function": "feature_extractors.compensation_detector.detect_compensation_4imu_4emg",
+  "diagnosis_version": "drink_water_compensation_diagnosis_v1_1",
+  "has_compensation_rule": "len(compensation_types) > 0",
+  "compensation_type_branches": [
+    {
+      "type": "LF",
+      "input_feature": "TrunkForwardLean_deg",
+      "threshold": 15.0,
+      "operator": ">=",
+      "affects_has_compensation": true
+    },
+    {
+      "type": "TR",
+      "input_feature": "TrunkRotation_deg",
+      "threshold": 15.0,
+      "operator": ">=",
+      "affects_has_compensation": true
+    }
+  ],
+  "quality_only_branches": [
+    "upper_arm_rom_below_template_mean_minus_1_5_std",
+    "forearm_rotation_outside_template_mean_plus_minus_2_std",
+    "wrist_speed_peaks_at_least_8",
+    "wrist_pause_count_at_least_3",
+    "emg_rms_z_score_greater_than_2"
+  ],
+  "static_contract_note": "Only LF/TR branches append compensation types. Other branches create quality findings and do not make compensation.detected true."
+}

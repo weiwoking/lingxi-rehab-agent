@@ -1,0 +1,1265 @@
+{
+  "board_mode": "FIXED_VERTICAL_BOARD",
+  "capture_mode": "VEHICLE_MULTI_DISTANCE",
+  "physical_pose_count": 3,
+  "pose_ids": [
+    "W01",
+    "W02",
+    "W03"
+  ],
+  "per_pose": {
+    "W01": {
+      "distance_role": "near",
+      "estimated_board_plane_distance_mm": 605.1350535967265,
+      "board_center_px_median": [
+        275.3868408203125,
+        132.57635498046875
+      ],
+      "board_coverage_fraction_median": 0.19651915291600114,
+      "reprojection": {
+        "frame_rms_median_px": 0.17038479447364807,
+        "frame_rms_p95_px": 0.1891431212425232,
+        "frame_p95_max_px": 0.3677362844347951
+      },
+      "orientation_pose_mean": [
+        [
+          0.998728825162714,
+          -0.008215221253237235,
+          0.04973171954463034
+        ],
+        [
+          -0.049858094297532345,
+          -0.01597002422775673,
+          0.9986286240435845
+        ],
+        [
+          -0.007409738330318161,
+          -0.9998387212275415,
+          -0.016359318810726685
+        ]
+      ],
+      "vehicle_alignment_delta_mm": null
+    },
+    "W02": {
+      "distance_role": "mid",
+      "estimated_board_plane_distance_mm": 794.9397717967292,
+      "board_center_px_median": [
+        337.5222473144531,
+        132.99740600585938
+      ],
+      "board_coverage_fraction_median": 0.11288409369463528,
+      "reprojection": {
+        "frame_rms_median_px": 0.15479591488838196,
+        "frame_rms_p95_px": 0.17719117552042007,
+        "frame_p95_max_px": 0.2949701659381388
+      },
+      "orientation_pose_mean": [
+        [
+          0.9999035134830568,
+          -0.007106583046184241,
+          0.011935669300245567
+        ],
+        [
+          -0.011942105301168508,
+          -0.0008638932825826701,
+          0.999928317335484
+        ],
+        [
+          -0.007095762482844226,
+          -0.9999743747545747,
+          -0.0009486774915978009
+        ]
+      ],
+      "vehicle_alignment_delta_mm": null
+    },
+    "W03": {
+      "distance_role": "far",
+      "estimated_board_plane_distance_mm": 981.7600385694107,
+      "board_center_px_median": [
+        344.080078125,
+        132.82504272460938
+      ],
+      "board_coverage_fraction_median": 0.0738768848784649,
+      "reprojection": {
+        "frame_rms_median_px": 0.15448804199695587,
+        "frame_rms_p95_px": 0.17088989913463593,
+        "frame_p95_max_px": 0.3030044049024582
+      },
+      "orientation_pose_mean": [
+        [
+          0.9999918494408537,
+          -0.004029770609309636,
+          -0.0002489993916367575
+        ],
+        [
+          0.0003091581321581216,
+          0.014934846075573013,
+          0.9998884211720567
+        ],
+        [
+          -0.004025602204641265,
+          -0.9998803485025274,
+          0.014935970184581482
+        ]
+      ],
+      "vehicle_alignment_delta_mm": null
+    }
+  },
+  "distance_bins": {
+    "W01": "near ~600 mm",
+    "W02": "mid ~800 mm",
+    "W03": "far ~1000 mm"
+  },
+  "initial_capture_target": "fixed board; vehicle at near, mid, far; optional W04 vehicle reposition holdout",
+  "dynamic_registry_no_pose_limit": true,
+  "primary_pose_set_complete": true,
+  "enough_for_first_solve": true,
+  "orientation_vs_distance": {
+    "per_pose": {
+      "W01": {
+        "distance_role": "near",
+        "estimated_board_plane_distance_mm": 605.1350535967265,
+        "R_world_from_camera_pose_mean": [
+          [
+            0.998728825162714,
+            -0.008215221253237235,
+            0.04973171954463034
+          ],
+          [
+            -0.049858094297532345,
+            -0.01597002422775673,
+            0.9986286240435845
+          ],
+          [
+            -0.007409738330318161,
+            -0.9998387212275415,
+            -0.016359318810726685
+          ]
+        ],
+        "diagnostic_rpy": {
+          "roll_deg": 0.42460744173709974,
+          "pitch_deg": -0.937361737334804,
+          "yaw_deg": 2.850975337892304,
+          "order": "yaw_from_world_XY -> pitch_from_world_Z -> roll_about_camera_optical_axis",
+          "convention": "legacy Stage7C optical-axis diagnostic decomposition; not reconstruction authority",
+          "matrix_first_authority": true
+        },
+        "geodesic_angle_to_aggregate_deg": 1.901355878903839
+      },
+      "W02": {
+        "distance_role": "mid",
+        "estimated_board_plane_distance_mm": 794.9397717967292,
+        "R_world_from_camera_pose_mean": [
+          [
+            0.9999035134830568,
+            -0.007106583046184241,
+            0.011935669300245567
+          ],
+          [
+            -0.011942105301168508,
+            -0.0008638932825826701,
+            0.999928317335484
+          ],
+          [
+            -0.007095762482844226,
+            -0.9999743747545747,
+            -0.0009486774915978009
+          ]
+        ],
+        "diagnostic_rpy": {
+          "roll_deg": 0.4065608374071693,
+          "pitch_deg": -0.05435522454079755,
+          "yaw_deg": 0.6838800225873338,
+          "order": "yaw_from_world_XY -> pitch_from_world_Z -> roll_about_camera_optical_axis",
+          "convention": "legacy Stage7C optical-axis diagnostic decomposition; not reconstruction authority",
+          "matrix_first_authority": true
+        },
+        "geodesic_angle_to_aggregate_deg": 0.4922268075566472
+      },
+      "W03": {
+        "distance_role": "far",
+        "estimated_board_plane_distance_mm": 981.7600385694107,
+        "R_world_from_camera_pose_mean": [
+          [
+            0.9999918494408537,
+            -0.004029770609309636,
+            -0.0002489993916367575
+          ],
+          [
+            0.0003091581321581216,
+            0.014934846075573013,
+            0.9998884211720567
+          ],
+          [
+            -0.004025602204641265,
+            -0.9998803485025274,
+            0.014935970184581482
+          ]
+        ],
+        "diagnostic_rpy": {
+          "roll_deg": 0.2306763708807441,
+          "pitch_deg": 0.8557998756177353,
+          "yaw_deg": -0.014268205976898577,
+          "order": "yaw_from_world_XY -> pitch_from_world_Z -> roll_about_camera_optical_axis",
+          "convention": "legacy Stage7C optical-axis diagnostic decomposition; not reconstruction authority",
+          "matrix_first_authority": true
+        },
+        "geodesic_angle_to_aggregate_deg": 1.495813364941473
+      }
+    },
+    "geodesic_spread_deg": {
+      "count": 3,
+      "median": 1.495813364941473,
+      "median_abs": 1.495813364941473,
+      "p95_abs": 1.8608016275076023,
+      "max_abs": 1.901355878903839,
+      "rms": 1.4253536439608163
+    },
+    "rpy_peak_to_peak_deg": {
+      "roll_deg": 0.19393107085635564,
+      "pitch_deg": 1.7931616129525394,
+      "yaw_deg": 2.8652435438692025
+    },
+    "geodesic_residual_vs_distance_slope_deg_per_m": -1.0936790049818073,
+    "rpy_vs_distance_slope_deg_per_m": {
+      "roll_deg": -0.5138005053602691,
+      "pitch_deg": 4.760842864609491,
+      "yaw_deg": -7.617825907762483
+    }
+  },
+  "fixed_height_consistency_vs_distance": {
+    "board_mode": "FIXED_VERTICAL_BOARD",
+    "board_moved_between_poses": false,
+    "fixed_board_active_bottom_height_mm": 912.0,
+    "fixed_board_height_uncertainty_mm": 5.0,
+    "point_contract": "same fixed active bottom edge at 912 mm for every vehicle distance; top edge is bottom+125 mm",
+    "per_pose": {
+      "W01": {
+        "distance_role": "near",
+        "estimated_board_plane_distance_mm": 605.1350535967265,
+        "fixed_active_bottom_height_mm": 912.0,
+        "fixed_height_uncertainty_mm": 5.0,
+        "reconstructed_active_bottom_z_mm": 941.4008392033429,
+        "signed_residual_mm": 29.400839203342912,
+        "abs_residual_mm": 29.400839203342912,
+        "frame_residual_summary": {
+          "count": 11,
+          "median": 29.400839203342912,
+          "median_abs": 29.400839203342912,
+          "p95_abs": 31.77275430773892,
+          "max_abs": 32.304300510572716,
+          "rms": 29.94383777886734
+        },
+        "frames": [
+          {
+            "frame_id": "frame_000000",
+            "corner_labels": [
+              "active_top_left",
+              "active_top_right",
+              "active_bottom_right",
+              "active_bottom_left"
+            ],
+            "recovered_world_z_mm": [
+              1067.3814696307518,
+              1068.0921020481123,
+              943.1118380516782,
+              942.4012056343176
+            ],
+            "expected_world_z_mm": [
+              1037.0,
+              1037.0,
+              912.0,
+              912.0
+            ],
+            "residual_mm": [
+              30.38146963075178,
+              31.092102048112338,
+              31.111838051678205,
+              30.401205634317648
+            ],
+            "reconstructed_active_bottom_z_mm": 942.7565218429979,
+            "active_bottom_signed_residual_mm": 30.756521842997927
+          },
+          {
+            "frame_id": "frame_000001",
+            "corner_labels": [
+              "active_top_left",
+              "active_top_right",
+              "active_bottom_right",
+              "active_bottom_left"
+            ],
+            "recovered_world_z_mm": [
+              1068.612730729113,
+              1069.9652829319912,
+              944.9805766120118,
+              943.6280244091337
+            ],
+            "expected_world_z_mm": [
+              1037.0,
+              1037.0,
+              912.0,
+              912.0
+            ],
+            "residual_mm": [
+              31.612730729113082,
+              32.96528293199117,
+              32.98057661201176,
+              31.628024409133673
+            ],
+            "reconstructed_active_bottom_z_mm": 944.3043005105727,
+            "active_bottom_signed_residual_mm": 32.304300510572716
+          },
+          {
+            "frame_id": "frame_000002",
+            "corner_labels": [
+              "active_top_left",
+              "active_top_right",
+              "active_bottom_right",
+              "active_bottom_left"
+            ],
+            "recovered_world_z_mm": [
+              1067.7227840516339,
+              1068.6845968978141,
+              943.7221145279952,
+              942.760301681815
+            ],
+            "expected_world_z_mm": [
+              1037.0,
+              1037.0,
+              912.0,
+              912.0
+            ],
+            "residual_mm": [
+              30.72278405163388,
+              31.684596897814117,
+              31.722114527995245,
+              30.760301681815008
+            ],
+            "reconstructed_active_bottom_z_mm": 943.2412081049051,
+            "active_bottom_signed_residual_mm": 31.241208104905127
+          },
+          {
+            "frame_id": "frame_000003",
+            "corner_labels": [
+              "active_top_left",
+              "active_top_right",
+              "active_bottom_right",
+              "active_bottom_left"
+            ],
+            "recovered_world_z_mm": [
+              1066.3328745633446,
+              1066.5183852519676,
+              941.5454038590345,
+              941.3598931704116
+            ],
+            "expected_world_z_mm": [
+              1037.0,
+              1037.0,
+              912.0,
+              912.0
+            ],
+            "residual_mm": [
+              29.332874563344603,
+              29.51838525196763,
+              29.545403859034536,
+              29.359893170411624
+            ],
+            "reconstructed_active_bottom_z_mm": 941.452648514723,
+            "active_bottom_signed_residual_mm": 29.452648514723023
+          },
+          {
+            "frame_id": "frame_000004",
+            "corner_labels": [
+              "active_top_left",
+              "active_top_right",
+              "active_bottom_right",
+              "active_bottom_left"
+            ],
+            "recovered_world_z_mm": [
+              1066.318704538984,
+              1066.407143068517,
+              941.4439723786311,
+              941.3555338490985
+            ],
+            "expected_world_z_mm": [
+              1037.0,
+              1037.0,
+              912.0,
+              912.0
+            ],
+            "residual_mm": [
+              29.318704538984093,
+              29.407143068516916,
+              29.443972378631088,
+              29.355533849098492
+            ],
+            "reconstructed_active_bottom_z_mm": 941.3997531138648,
+            "active_bottom_signed_residual_mm": 29.39975311386479
+          },
+          {
+            "frame_id": "frame_000005",
+            "corner_labels": [
+              "active_top_left",
+              "active_top_right",
+              "active_bottom_right",
+              "active_bottom_left"
+            ],
+            "recovered_world_z_mm": [
+              1066.3056255506995,
+              1066.424036503608,
+              941.4251924295395,
+              941.3067814766309
+            ],
+            "expected_world_z_mm": [
+              1037.0,
+              1037.0,
+              912.0,
+              912.0
+            ],
+            "residual_mm": [
+              29.30562555069946,
+              29.424036503608022,
+              29.425192429539493,
+              29.30678147663093
+            ],
+            "reconstructed_active_bottom_z_mm": 941.3659869530852,
+            "active_bottom_signed_residual_mm": 29.365986953085212
+          },
+          {
+            "frame_id": "frame_000006",
+            "corner_labels": [
+              "active_top_left",
+              "active_top_right",
+              "active_bottom_right",
+              "active_bottom_left"
+            ],
+            "recovered_world_z_mm": [
+              1066.3579037919744,
+              1066.4370380153225,
+              941.4404063150168,
+              941.3612720916689
+            ],
+            "expected_world_z_mm": [
+              1037.0,
+              1037.0,
+              912.0,
+              912.0
+            ],
+            "residual_mm": [
+              29.357903791974422,
+              29.437038015322514,
+              29.440406315016844,
+              29.361272091668866
+            ],
+            "reconstructed_active_bottom_z_mm": 941.4008392033429,
+            "active_bottom_signed_residual_mm": 29.400839203342912
+          },
+          {
+            "frame_id": "frame_000007",
+            "corner_labels": [
+              "active_top_left",
+              "active_top_right",
+              "active_bottom_right",
+              "active_bottom_left"
+            ],
+            "recovered_world_z_mm": [
+              1066.3596818229425,
+              1066.4633566731459,
+              941.5125652730535,
+              941.4088904228503
+            ],
+            "expected_world_z_mm": [
+              1037.0,
+              1037.0,
+              912.0,
+              912.0
+            ],
+            "residual_mm": [
+              29.359681822942548,
+              29.46335667314588,
+              29.512565273053497,
+              29.408890422850277
+            ],
+            "reconstructed_active_bottom_z_mm": 941.4607278479518,
+            "active_bottom_signed_residual_mm": 29.46072784795183
+          },
+          {
+            "frame_id": "frame_000008",
+            "corner_labels": [
+              "active_top_left",
+              "active_top_right",
+              "active_bottom_right",
+              "active_bottom_left"
+            ],
+            "recovered_world_z_mm": [
+              1066.3089717974085,
+              1066.3945088045095,
+              941.4042778139559,
+              941.3187408068549
+            ],
+            "expected_world_z_mm": [
+              1037.0,
+              1037.0,
+              912.0,
+              912.0
+            ],
+            "residual_mm": [
+              29.308971797408503,
+              29.39450880450954,
+              29.4042778139559,
+              29.318740806854862
+            ],
+            "reconstructed_active_bottom_z_mm": 941.3615093104054,
+            "active_bottom_signed_residual_mm": 29.36150931040538
+          },
+          {
+            "frame_id": "frame_000009",
+            "corner_labels": [
+              "active_top_left",
+              "active_top_right",
+              "active_bottom_right",
+              "active_bottom_left"
+            ],
+            "recovered_world_z_mm": [
+              1066.2221606158073,
+              1066.2439263384458,
+              941.2534783046054,
+              941.2317125819669
+            ],
+            "expected_world_z_mm": [
+              1037.0,
+              1037.0,
+              912.0,
+              912.0
+            ],
+            "residual_mm": [
+              29.222160615807297,
+              29.243926338445817,
+              29.253478304605437,
+              29.231712581966917
+            ],
+            "reconstructed_active_bottom_z_mm": 941.2425954432862,
+            "active_bottom_signed_residual_mm": 29.242595443286177
+          },
+          {
+            "frame_id": "frame_000010",
+            "corner_labels": [
+              "active_top_left",
+              "active_top_right",
+              "active_bottom_right",
+              "active_bottom_left"
+            ],
+            "recovered_world_z_mm": [
+              1066.263503434598,
+              1066.1673364447238,
+              941.1698297285418,
+              941.2659967184161
+            ],
+            "expected_world_z_mm": [
+              1037.0,
+              1037.0,
+              912.0,
+              912.0
+            ],
+            "residual_mm": [
+              29.26350343459808,
+              29.167336444723787,
+              29.1698297285418,
+              29.26599671841609
+            ],
+            "reconstructed_active_bottom_z_mm": 941.217913223479,
+            "active_bottom_signed_residual_mm": 29.217913223478945
+          }
+        ]
+      },
+      "W02": {
+        "distance_role": "mid",
+        "estimated_board_plane_distance_mm": 794.9397717967292,
+        "fixed_active_bottom_height_mm": 912.0,
+        "fixed_height_uncertainty_mm": 5.0,
+        "reconstructed_active_bottom_z_mm": 950.8847962248043,
+        "signed_residual_mm": 38.88479622480429,
+        "abs_residual_mm": 38.88479622480429,
+        "frame_residual_summary": {
+          "count": 11,
+          "median": 38.88479622480429,
+          "median_abs": 38.88479622480429,
+          "p95_abs": 39.16672146429403,
+          "max_abs": 39.394419314940706,
+          "rms": 38.90911908203308
+        },
+        "frames": [
+          {
+            "frame_id": "frame_000000",
+            "corner_labels": [
+              "active_top_left",
+              "active_top_right",
+              "active_bottom_right",
+              "active_bottom_left"
+            ],
+            "recovered_world_z_mm": [
+              1075.8399100025015,
+              1075.929518139206,
+              950.9296002931566,
+              950.839992156452
+            ],
+            "expected_world_z_mm": [
+              1037.0,
+              1037.0,
+              912.0,
+              912.0
+            ],
+            "residual_mm": [
+              38.83991000250148,
+              38.92951813920604,
+              38.92960029315657,
+              38.83999215645201
+            ],
+            "reconstructed_active_bottom_z_mm": 950.8847962248043,
+            "active_bottom_signed_residual_mm": 38.88479622480429
+          },
+          {
+            "frame_id": "frame_000001",
+            "corner_labels": [
+              "active_top_left",
+              "active_top_right",
+              "active_bottom_right",
+              "active_bottom_left"
+            ],
+            "recovered_world_z_mm": [
+              1075.8681484314288,
+              1075.8775606378433,
+              950.8983508483257,
+              950.8889386419114
+            ],
+            "expected_world_z_mm": [
+              1037.0,
+              1037.0,
+              912.0,
+              912.0
+            ],
+            "residual_mm": [
+              38.868148431428835,
+              38.87756063784332,
+              38.89835084832566,
+              38.88893864191141
+            ],
+            "reconstructed_active_bottom_z_mm": 950.8936447451185,
+            "active_bottom_signed_residual_mm": 38.893644745118536
+          },
+          {
+            "frame_id": "frame_000002",
+            "corner_labels": [
+              "active_top_left",
+              "active_top_right",
+              "active_bottom_right",
+              "active_bottom_left"
+            ],
+            "recovered_world_z_mm": [
+              1075.8929204550723,
+              1075.9162625085066,
+              950.91626391453,
+              950.8929218610955
+            ],
+            "expected_world_z_mm": [
+              1037.0,
+              1037.0,
+              912.0,
+              912.0
+            ],
+            "residual_mm": [
+              38.89292045507227,
+              38.916262508506634,
+              38.916263914529964,
+              38.89292186109549
+            ],
+            "reconstructed_active_bottom_z_mm": 950.9045928878127,
+            "active_bottom_signed_residual_mm": 38.90459288781267
+          },
+          {
+            "frame_id": "frame_000003",
+            "corner_labels": [
+              "active_top_left",
+              "active_top_right",
+              "active_bottom_right",
+              "active_bottom_left"
+            ],
+            "recovered_world_z_mm": [
+              1075.8417391090359,
+              1076.0159869460244,
+              951.0198861895226,
+              950.8456383525341
+            ],
+            "expected_world_z_mm": [
+              1037.0,
+              1037.0,
+              912.0,
+              912.0
+            ],
+            "residual_mm": [
+              38.84173910903587,
+              39.01598694602444,
+              39.019886189522595,
+              38.84563835253414
+            ],
+            "reconstructed_active_bottom_z_mm": 950.9327622710284,
+            "active_bottom_signed_residual_mm": 38.93276227102842
+          },
+          {
+            "frame_id": "frame_000004",
+            "corner_labels": [
+              "active_top_left",
+              "active_top_right",
+              "active_bottom_right",
+              "active_bottom_left"
+            ],
+            "recovered_world_z_mm": [
+              1076.1926367228482,
+              1076.556119389693,
+              951.5761606483632,
+              951.2126779815184
+            ],
+            "expected_world_z_mm": [
+              1037.0,
+              1037.0,
+              912.0,
+              912.0
+            ],
+            "residual_mm": [
+              39.19263672284819,
+              39.556119389693094,
+              39.57616064836316,
+              39.21267798151837
+            ],
+            "reconstructed_active_bottom_z_mm": 951.3944193149407,
+            "active_bottom_signed_residual_mm": 39.394419314940706
+          },
+          {
+            "frame_id": "frame_000005",
+            "corner_labels": [
+              "active_top_left",
+              "active_top_right",
+              "active_bottom_right",
+              "active_bottom_left"
+            ],
+            "recovered_world_z_mm": [
+              1075.919722560061,
+              1075.9558339422772,
+              950.9570793047554,
+              950.9209679225394
+            ],
+            "expected_world_z_mm": [
+              1037.0,
+              1037.0,
+              912.0,
+              912.0
+            ],
+            "residual_mm": [
+              38.91972256006102,
+              38.955833942277195,
+              38.95707930475544,
+              38.920967922539376
+            ],
+            "reconstructed_active_bottom_z_mm": 950.9390236136474,
+            "active_bottom_signed_residual_mm": 38.93902361364735
+          },
+          {
+            "frame_id": "frame_000006",
+            "corner_labels": [
+              "active_top_left",
+              "active_top_right",
+              "active_bottom_right",
+              "active_bottom_left"
+            ],
+            "recovered_world_z_mm": [
+              1075.6700944682927,
+              1075.9332055140057,
+              950.943805531336,
+              950.6806944856231
+            ],
+            "expected_world_z_mm": [
+              1037.0,
+              1037.0,
+              912.0,
+              912.0
+            ],
+            "residual_mm": [
+              38.670094468292746,
+              38.93320551400575,
+              38.94380553133601,
+              38.68069448562312
+            ],
+            "reconstructed_active_bottom_z_mm": 950.8122500084796,
+            "active_bottom_signed_residual_mm": 38.81225000847962
+          },
+          {
+            "frame_id": "frame_000007",
+            "corner_labels": [
+              "active_top_left",
+              "active_top_right",
+              "active_bottom_right",
+              "active_bottom_left"
+            ],
+            "recovered_world_z_mm": [
+              1075.690328947559,
+              1075.88405174804,
+              950.8869794903546,
+              950.6932566898736
+            ],
+            "expected_world_z_mm": [
+              1037.0,
+              1037.0,
+              912.0,
+              912.0
+            ],
+            "residual_mm": [
+              38.69032894755901,
+              38.884051748040065,
+              38.88697949035463,
+              38.69325668987358
+            ],
+            "reconstructed_active_bottom_z_mm": 950.7901180901141,
+            "active_bottom_signed_residual_mm": 38.790118090114106
+          },
+          {
+            "frame_id": "frame_000008",
+            "corner_labels": [
+              "active_top_left",
+              "active_top_right",
+              "active_bottom_right",
+              "active_bottom_left"
+            ],
+            "recovered_world_z_mm": [
+              1075.6685591177504,
+              1075.8349048510968,
+              950.8353630302016,
+              950.6690172968554
+            ],
+            "expected_world_z_mm": [
+              1037.0,
+              1037.0,
+              912.0,
+              912.0
+            ],
+            "residual_mm": [
+              38.66855911775042,
+              38.83490485109678,
+              38.83536303020162,
+              38.66901729685537
+            ],
+            "reconstructed_active_bottom_z_mm": 950.7521901635284,
+            "active_bottom_signed_residual_mm": 38.75219016352844
+          },
+          {
+            "frame_id": "frame_000009",
+            "corner_labels": [
+              "active_top_left",
+              "active_top_right",
+              "active_bottom_right",
+              "active_bottom_left"
+            ],
+            "recovered_world_z_mm": [
+              1075.8228278426607,
+              1075.9376666418782,
+              950.9377083151093,
+              950.8228695158916
+            ],
+            "expected_world_z_mm": [
+              1037.0,
+              1037.0,
+              912.0,
+              912.0
+            ],
+            "residual_mm": [
+              38.82282784266067,
+              38.937666641878195,
+              38.93770831510926,
+              38.822869515891625
+            ],
+            "reconstructed_active_bottom_z_mm": 950.8802889155004,
+            "active_bottom_signed_residual_mm": 38.88028891550039
+          },
+          {
+            "frame_id": "frame_000010",
+            "corner_labels": [
+              "active_top_left",
+              "active_top_right",
+              "active_bottom_right",
+              "active_bottom_left"
+            ],
+            "recovered_world_z_mm": [
+              1075.7630786716552,
+              1075.8603083349171,
+              950.8610325143894,
+              950.7638028511275
+            ],
+            "expected_world_z_mm": [
+              1037.0,
+              1037.0,
+              912.0,
+              912.0
+            ],
+            "residual_mm": [
+              38.763078671655194,
+              38.860308334917136,
+              38.86103251438942,
+              38.76380285112748
+            ],
+            "reconstructed_active_bottom_z_mm": 950.8124176827585,
+            "active_bottom_signed_residual_mm": 38.81241768275845
+          }
+        ]
+      },
+      "W03": {
+        "distance_role": "far",
+        "estimated_board_plane_distance_mm": 981.7600385694107,
+        "fixed_active_bottom_height_mm": 912.0,
+        "fixed_height_uncertainty_mm": 5.0,
+        "reconstructed_active_bottom_z_mm": 960.7212396414911,
+        "signed_residual_mm": 48.72123964149114,
+        "abs_residual_mm": 48.72123964149114,
+        "frame_residual_summary": {
+          "count": 11,
+          "median": 48.72123964149114,
+          "median_abs": 48.72123964149114,
+          "p95_abs": 48.949963317724894,
+          "max_abs": 48.96812759004763,
+          "rms": 48.77057087539998
+        },
+        "frames": [
+          {
+            "frame_id": "frame_000000",
+            "corner_labels": [
+              "active_top_left",
+              "active_top_right",
+              "active_bottom_right",
+              "active_bottom_left"
+            ],
+            "recovered_world_z_mm": [
+              1086.137115964243,
+              1085.647394005153,
+              960.6869380658571,
+              961.1766600249473
+            ],
+            "expected_world_z_mm": [
+              1037.0,
+              1037.0,
+              912.0,
+              912.0
+            ],
+            "residual_mm": [
+              49.137115964243094,
+              48.647394005153046,
+              48.686938065857134,
+              49.176660024947296
+            ],
+            "reconstructed_active_bottom_z_mm": 960.9317990454022,
+            "active_bottom_signed_residual_mm": 48.93179904540216
+          },
+          {
+            "frame_id": "frame_000001",
+            "corner_labels": [
+              "active_top_left",
+              "active_top_right",
+              "active_bottom_right",
+              "active_bottom_left"
+            ],
+            "recovered_world_z_mm": [
+              1086.1244543013797,
+              1085.7995580922443,
+              960.8056794854799,
+              961.1305756946153
+            ],
+            "expected_world_z_mm": [
+              1037.0,
+              1037.0,
+              912.0,
+              912.0
+            ],
+            "residual_mm": [
+              49.12445430137973,
+              48.7995580922443,
+              48.805679485479914,
+              49.130575694615345
+            ],
+            "reconstructed_active_bottom_z_mm": 960.9681275900476,
+            "active_bottom_signed_residual_mm": 48.96812759004763
+          },
+          {
+            "frame_id": "frame_000002",
+            "corner_labels": [
+              "active_top_left",
+              "active_top_right",
+              "active_bottom_right",
+              "active_bottom_left"
+            ],
+            "recovered_world_z_mm": [
+              1085.7932198864323,
+              1085.6104867654806,
+              960.617449864064,
+              960.8001829850158
+            ],
+            "expected_world_z_mm": [
+              1037.0,
+              1037.0,
+              912.0,
+              912.0
+            ],
+            "residual_mm": [
+              48.793219886432325,
+              48.61048676548057,
+              48.61744986406404,
+              48.800182985015795
+            ],
+            "reconstructed_active_bottom_z_mm": 960.7088164245399,
+            "active_bottom_signed_residual_mm": 48.70881642453992
+          },
+          {
+            "frame_id": "frame_000003",
+            "corner_labels": [
+              "active_top_left",
+              "active_top_right",
+              "active_bottom_right",
+              "active_bottom_left"
+            ],
+            "recovered_world_z_mm": [
+              1085.8939514067724,
+              1085.475886103614,
+              960.5122069899119,
+              960.9302722930704
+            ],
+            "expected_world_z_mm": [
+              1037.0,
+              1037.0,
+              912.0,
+              912.0
+            ],
+            "residual_mm": [
+              48.89395140677243,
+              48.4758861036139,
+              48.512206989911874,
+              48.9302722930704
+            ],
+            "reconstructed_active_bottom_z_mm": 960.7212396414911,
+            "active_bottom_signed_residual_mm": 48.72123964149114
+          },
+          {
+            "frame_id": "frame_000004",
+            "corner_labels": [
+              "active_top_left",
+              "active_top_right",
+              "active_bottom_right",
+              "active_bottom_left"
+            ],
+            "recovered_world_z_mm": [
+              1086.0403879986436,
+              1085.5722939867967,
+              960.6043893764127,
+              961.0724833882597
+            ],
+            "expected_world_z_mm": [
+              1037.0,
+              1037.0,
+              912.0,
+              912.0
+            ],
+            "residual_mm": [
+              49.04038799864361,
+              48.572293986796694,
+              48.604389376412655,
+              49.072483388259684
+            ],
+            "reconstructed_active_bottom_z_mm": 960.8384363823361,
+            "active_bottom_signed_residual_mm": 48.83843638233611
+          },
+          {
+            "frame_id": "frame_000005",
+            "corner_labels": [
+              "active_top_left",
+              "active_top_right",
+              "active_bottom_right",
+              "active_bottom_left"
+            ],
+            "recovered_world_z_mm": [
+              1085.8771280879805,
+              1085.7000595952472,
+              960.7073273006391,
+              960.8843957933724
+            ],
+            "expected_world_z_mm": [
+              1037.0,
+              1037.0,
+              912.0,
+              912.0
+            ],
+            "residual_mm": [
+              48.87712808798051,
+              48.70005959524724,
+              48.70732730063912,
+              48.88439579337239
+            ],
+            "reconstructed_active_bottom_z_mm": 960.7958615470058,
+            "active_bottom_signed_residual_mm": 48.79586154700576
+          },
+          {
+            "frame_id": "frame_000006",
+            "corner_labels": [
+              "active_top_left",
+              "active_top_right",
+              "active_bottom_right",
+              "active_bottom_left"
+            ],
+            "recovered_world_z_mm": [
+              1085.8315569909867,
+              1085.5331938350394,
+              960.5339353328982,
+              960.8322984888455
+            ],
+            "expected_world_z_mm": [
+              1037.0,
+              1037.0,
+              912.0,
+              912.0
+            ],
+            "residual_mm": [
+              48.831556990986655,
+              48.533193835039356,
+              48.53393533289818,
+              48.83229848884548
+            ],
+            "reconstructed_active_bottom_z_mm": 960.6831169108718,
+            "active_bottom_signed_residual_mm": 48.68311691087183
+          },
+          {
+            "frame_id": "frame_000007",
+            "corner_labels": [
+              "active_top_left",
+              "active_top_right",
+              "active_bottom_right",
+              "active_bottom_left"
+            ],
+            "recovered_world_z_mm": [
+              1085.8132893684513,
+              1085.6397665815457,
+              960.6434552347002,
+              960.8169780216059
+            ],
+            "expected_world_z_mm": [
+              1037.0,
+              1037.0,
+              912.0,
+              912.0
+            ],
+            "residual_mm": [
+              48.81328936845125,
+              48.6397665815457,
+              48.64345523470024,
+              48.816978021605905
+            ],
+            "reconstructed_active_bottom_z_mm": 960.7302166281531,
+            "active_bottom_signed_residual_mm": 48.73021662815313
+          },
+          {
+            "frame_id": "frame_000008",
+            "corner_labels": [
+              "active_top_left",
+              "active_top_right",
+              "active_bottom_right",
+              "active_bottom_left"
+            ],
+            "recovered_world_z_mm": [
+              1085.9717442858207,
+              1085.3795948420857,
+              960.399582927484,
+              960.9917323712189
+            ],
+            "expected_world_z_mm": [
+              1037.0,
+              1037.0,
+              912.0,
+              912.0
+            ],
+            "residual_mm": [
+              48.971744285820705,
+              48.37959484208568,
+              48.39958292748395,
+              48.99173237121886
+            ],
+            "reconstructed_active_bottom_z_mm": 960.6956576493515,
+            "active_bottom_signed_residual_mm": 48.69565764935146
+          },
+          {
+            "frame_id": "frame_000009",
+            "corner_labels": [
+              "active_top_left",
+              "active_top_right",
+              "active_bottom_right",
+              "active_bottom_left"
+            ],
+            "recovered_world_z_mm": [
+              1085.8969591775551,
+              1085.387215574836,
+              960.465689678496,
+              960.975433281215
+            ],
+            "expected_world_z_mm": [
+              1037.0,
+              1037.0,
+              912.0,
+              912.0
+            ],
+            "residual_mm": [
+              48.89695917755512,
+              48.38721557483609,
+              48.465689678496005,
+              48.97543328121503
+            ],
+            "reconstructed_active_bottom_z_mm": 960.7205614798555,
+            "active_bottom_signed_residual_mm": 48.72056147985552
+          },
+          {
+            "frame_id": "frame_000010",
+            "corner_labels": [
+              "active_top_left",
+              "active_top_right",
+              "active_bottom_right",
+              "active_bottom_left"
+            ],
+            "recovered_world_z_mm": [
+              1085.8648639615585,
+              1085.1906703084537,
+              960.3443052637016,
+              961.0184989168064
+            ],
+            "expected_world_z_mm": [
+              1037.0,
+              1037.0,
+              912.0,
+              912.0
+            ],
+            "residual_mm": [
+              48.86486396155851,
+              48.19067030845372,
+              48.344305263701585,
+              49.01849891680638
+            ],
+            "reconstructed_active_bottom_z_mm": 960.681402090254,
+            "active_bottom_signed_residual_mm": 48.68140209025398
+          }
+        ]
+      }
+    },
+    "overall_active_bottom_residual_mm": {
+      "count": 33,
+      "median": 38.88479622480429,
+      "median_abs": 38.88479622480429,
+      "p95_abs": 48.87578144756253,
+      "max_abs": 48.96812759004763,
+      "rms": 39.95464742337811
+    },
+    "residual_vs_distance_slope_mm_per_mm": 0.051295229431334,
+    "residual_vs_distance_slope_mm_per_m": 51.295229431334,
+    "distance_trend_exists": true,
+    "poses_are_equal_weight_for_orientation": true
+  }
+}

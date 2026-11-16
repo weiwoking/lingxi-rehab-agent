@@ -1,0 +1,150 @@
+{
+  "schema_version": "rehab_selected_task_details.v1",
+  "decision_id": "decision-00000001-21168",
+  "generation": 1,
+  "entry_source": "unknown",
+  "created_at": null,
+  "time_status": "unavailable",
+  "details_generation_status": "committed",
+  "source_scan_id": "scan-redacted-0001",
+  "source_scene_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "patient_condition": {
+    "source": "user_condition.txt",
+    "status": "ok",
+    "raw_text": "当前任务能力等级：一级。\n优先进行低位、稳定的取放训练。",
+    "source_bytes": 87,
+    "sent_bytes": 87,
+    "truncated": false
+  },
+  "patient_ability": {
+    "level": 1,
+    "parse_status": "parsed",
+    "matched_line": "当前任务能力等级：一级。",
+    "source": "user_condition.txt"
+  },
+  "advice_basis": {"direction": "cup", "evidence": "优先进行低位、稳定的取放训练"},
+  "selected_task": {
+    "winner_ref": 0,
+    "task_id": "OT_CUP_TRANSFER_L1",
+    "task_name": "水杯横向取放训练（一级）",
+    "score": 95.728,
+    "reason": "水杯目标可用，当前能力等级与低位取放训练匹配。",
+    "availability": "available"
+  },
+  "decision_inputs": {
+    "ability_level": 1,
+    "user_condition_source": "user_condition.txt",
+    "recent_score_count": 1,
+    "recent_history_summary": {
+      "record_count": 1,
+      "tendency_level": "level_1",
+      "records": [{"task_name": "水杯横向取放训练（一级）", "average_score": 58}]
+    },
+    "compensation_facts": {
+      "status": "available",
+      "task_name": "水杯横向取放训练（一级）",
+      "exact_task_id": "OT_CUP_TRANSFER_L1",
+      "action_family": "lateral_transfer",
+      "mapped_group": "cup",
+      "mapping_status": "mapped",
+      "severity": 0,
+      "compensation_action_count": 0
+    },
+    "frequency_facts": {
+      "mapped_record_count": 1,
+      "cup_count": 1,
+      "ball_count": 0,
+      "records": [{"task_name": "水杯横向取放训练（一级）", "mapped_group": "cup"}]
+    },
+    "scene_source": {"scan_id": "scan-redacted-0001", "scene_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"},
+    "candidate_count": 5,
+    "target_available": true
+  },
+  "candidates": [
+    {
+      "candidate_ref": 0,
+      "task_name": "水杯横向取放训练（一级）",
+      "availability": "available",
+      "blocked_reason": "none",
+      "score": 95.728,
+      "reason": "水杯目标可用，当前能力等级与低位取放训练匹配。",
+      "score_breakdown": {
+        "difficulty": {"value": 35, "direction": "positive"},
+        "advice": {"value": 25, "direction": "positive"},
+        "compensation": {"value": 20, "direction": "positive"},
+        "frequency": {"value": 6, "direction": "positive"},
+        "perception": {"value": 9.728, "direction": "positive"},
+        "final_raw": {"value": 95.728, "direction": "positive"}
+      },
+      "target_summary": {"target_available": true, "class_name": "cup", "display_group_name": "水杯", "support_height_mm": 756, "height_confidence": 0.92, "geometry_confidence": null, "geometry_confidence_status": "unavailable_fallback", "perception_mode": "fallback", "perception_quality": 0.932, "geometry_valid": true, "detection_confidence": 0.94}
+    },
+    {
+      "candidate_ref": 1,
+      "task_name": "水杯拿取与饮水训练（二级）",
+      "availability": "blocked",
+      "blocked_reason": "ability_exceeded",
+      "score": 0,
+      "reason": "该候选超出当前能力等级。",
+      "score_breakdown": null,
+      "target_summary": {"target_available": true, "class_name": "cup", "display_group_name": "水杯", "support_height_mm": 756, "height_confidence": 0.92, "geometry_valid": true, "detection_confidence": 0.94}
+    },
+    {
+      "candidate_ref": 2,
+      "task_name": "水杯拿取与饮水训练（三级）",
+      "availability": "blocked",
+      "blocked_reason": "ability_exceeded",
+      "score": 0,
+      "reason": "该候选超出当前能力等级。",
+      "score_breakdown": null,
+      "target_summary": {"target_available": false, "class_name": null, "display_group_name": "水杯", "support_height_mm": null, "height_confidence": 0, "geometry_valid": false, "detection_confidence": 0}
+    },
+    {
+      "candidate_ref": 3,
+      "task_name": "球类横向取放训练（一级）",
+      "availability": "blocked",
+      "blocked_reason": "semantic_group_absent",
+      "score": 0,
+      "reason": "当前场景没有可用球类目标。",
+      "score_breakdown": null,
+      "target_summary": {"target_available": false, "class_name": null, "display_group_name": "球类", "support_height_mm": null, "height_confidence": 0, "geometry_valid": false, "detection_confidence": 0}
+    },
+    {
+      "candidate_ref": 4,
+      "task_name": "球类横向取放训练（二级）",
+      "availability": "blocked",
+      "blocked_reason": "ability_exceeded",
+      "score": 0,
+      "reason": "该候选超出当前能力等级且当前场景没有可用目标。",
+      "score_breakdown": null,
+      "target_summary": {"target_available": false, "class_name": null, "display_group_name": "球类", "support_height_mm": null, "height_confidence": 0, "geometry_valid": false, "detection_confidence": 0}
+    }
+  ],
+  "winner_ref": 0,
+  "target_details": {
+    "object_id": "object-redacted-cup-01",
+    "class_name": "cup",
+    "source_frame_id": "frame_000002",
+    "source_frame_sequence": 2,
+    "logical_object_id": null,
+    "bbox": [120, 80, 240, 260],
+    "image_reference_path": "rehab/scans/scan-redacted-0001/frames/frame_000002/image.rgb565",
+    "object_height_mm": 42,
+    "support_height_mm": 756,
+    "top_height_mm": 798,
+    "distance_mm": 620,
+    "geometry_confidence": null,
+    "height_confidence": 0.92,
+    "detection_confidence": 0.94,
+    "geometry_valid": true
+  },
+  "data_availability": {
+    "patient_condition": "available",
+    "recent_history": "available",
+    "compensation": "available",
+    "frequency": "available",
+    "target_image": "available",
+    "logical_object_id": "not_integrated",
+    "geometry_confidence": "fallback",
+    "height_confidence": "available"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": "stage8b1_yolo_runtime_profile.v1",
+  "profile_id": "stage8b1_rtx5070ti_fp32_dual_batch_v1",
+  "worker_python": "../../_deltar_yolo_cuda/venv/Scripts/python.exe",
+  "device": "cuda:0",
+  "expected_gpu_name_contains": "RTX 5070 Ti",
+  "precision": "FP32",
+  "half": false,
+  "imgsz": 640,
+  "detect_batch_size": 11,
+  "segment_batch_size": 11,
+  "oom_sub_batches": [
+    6,
+    5
+  ],
+  "segment_all_frames": true,
+  "detect_gates_segment": false,
+  "book_class_id": 73,
+  "models": {
+    "detect_sha256": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+    "segment_sha256": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "ground_truth_used_for_fit": false,
+  "sample_id": "G002",
+  "targets": {
+    "lower_bottle": {
+      "baseline": {
+        "object_height_error_mm": -18.694437868859268,
+        "object_height_error_percent": -10.385798816032926,
+        "object_height_mm": 161.30556213114073,
+        "support_error_mm": -24.122863849107375,
+        "support_mm": 700.8771361508926,
+        "support_source": "point_p5_fallback",
+        "top_error_mm": -42.81730171796664,
+        "top_mm": 862.1826982820334
+      },
+      "candidate": {
+        "available": true,
+        "height_method": "gravity_only_upright_silhouette",
+        "object_height_error_mm": -2.306502544958221,
+        "object_height_error_percent": -1.2813903027545672,
+        "object_height_mm": 177.69349745504178,
+        "pre_consensus_object_height_mm": 189.0,
+        "pre_consensus_support_mm": 705.0481956168251,
+        "same_layer_consensus_applied": true,
+        "source_counts": {
+          "instance_mask": 11
+        },
+        "support_error_mm": -8.675947250969557,
+        "support_mm": 716.3240527490304,
+        "support_source": "candidate_same_layer_consensus",
+        "top_error_mm": -10.982449795927778,
+        "top_mm": 894.0175502040722
+      },
+      "candidate_valid_frame_count": 11,
+      "frame_count": 11,
+      "target": "lower_bottle",
+      "truth": {
+        "detector_class_name": "bottle",
+        "diagnostic_expected_top_z_mm": 905.0,
+        "expected_object_height_mm": 180.0,
+        "expected_support_mm": 725.0,
+        "truth_uncertainty_mm": 5.0
+      }
+    },
+    "lower_volleyball": {
+      "baseline": {
+        "object_height_error_mm": -50.95547524465064,
+        "object_height_error_percent": -26.13101294597469,
+        "object_height_mm": 144.04452475534936,
+        "support_error_mm": 15.04175393997275,
+        "support_mm": 740.0417539399728,
+        "support_source": "point_p5_fallback",
+        "top_error_mm": -35.91372130467789,
+        "top_mm": 884.0862786953221
+      },
+      "candidate": {
+        "available": true,
+        "height_method": "gravity_only_sphere_envelope",
+        "object_height_error_mm": 14.017045097864525,
+        "object_height_error_percent": 7.188228255315141,
+        "object_height_mm": 209.01704509786452,
+        "pre_consensus_object_height_mm": 197.5,
+        "pre_consensus_support_mm": 727.5999098812358,
+        "same_layer_consensus_applied": true,
+        "source_counts": {
+          "detector_ellipse": 11
+        },
+        "support_error_mm": -8.675947250969557,
+        "support_mm": 716.3240527490304,
+        "support_source": "candidate_same_layer_consensus",
+        "top_error_mm": 5.341097846894968,
+        "top_mm": 925.341097846895
+      },
+      "candidate_valid_frame_count": 11,
+      "frame_count": 11,
+      "target": "lower_volleyball",
+      "truth": {
+        "detector_class_name": "sports ball",
+        "diagnostic_expected_top_z_mm": 920.0,
+        "expected_object_height_mm": 195.0,
+        "expected_support_mm": 725.0,
+        "truth_uncertainty_mm": 5.0
+      }
+    },
+    "upper_bottle": {
+      "baseline": {
+        "object_height_error_mm": -62.20015241526562,
+        "object_height_error_percent": -34.55564023070312,
+        "object_height_mm": 117.79984758473438,
+        "support_error_mm": 43.09965219003652,
+        "support_mm": 1108.0996521900365,
+        "support_source": "point_p5_fallback",
+        "top_error_mm": -19.100500225229098,
+        "top_mm": 1225.899499774771
+      },
+      "candidate": {
+        "available": true,
+        "height_method": "gravity_only_upright_silhouette",
+        "object_height_error_mm": -35.0,
+        "object_height_error_percent": -19.444444444444443,
+        "object_height_mm": 145.0,
+        "pre_consensus_object_height_mm": 145.0,
+        "pre_consensus_support_mm": 1090.4410114805669,
+        "same_layer_consensus_applied": false,
+        "source_counts": {
+          "instance_mask": 10
+        },
+        "support_error_mm": 25.441011480566885,
+        "support_mm": 1090.4410114805669,
+        "support_source": "candidate_contact_band",
+        "top_error_mm": -9.558988519433115,
+        "top_mm": 1235.4410114805669
+      },
+      "candidate_valid_frame_count": 10,
+      "frame_count": 10,
+      "target": "upper_bottle",
+      "truth": {
+        "detector_class_name": "bottle",
+        "diagnostic_expected_top_z_mm": 1245.0,
+        "expected_object_height_mm": 180.0,
+        "expected_support_mm": 1065.0,
+        "truth_uncertainty_mm": 5.0
+      }
+    }
+  }
+}

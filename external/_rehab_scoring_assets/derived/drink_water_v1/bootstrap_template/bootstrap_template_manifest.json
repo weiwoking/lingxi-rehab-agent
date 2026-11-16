@@ -1,0 +1,665 @@
+{
+  "schema_version": "drink_water_v1.offline_pipeline.v1",
+  "tool_version": "2026.08.05-static",
+  "generated_at": "2026-08-05T13:18:48.370662Z",
+  "template_status": "bootstrap_not_production",
+  "source_policy": "normal_single_10_files_only",
+  "standard_dataset_root": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\标准\\喝水标准动作数据集_裁剪版_校正版_20260805",
+  "config": {
+    "rest_window_seconds": 0.75,
+    "min_action_duration_ms": 450,
+    "max_action_duration_ms": 15000,
+    "min_action_gap_ms": 300,
+    "bootstrap_normalized_length": 160,
+    "bootstrap_quantile_low": 0.1,
+    "bootstrap_quantile_high": 0.9,
+    "motion_threshold_source": "existing trial_segmenter/session_processor",
+    "valley_threshold_source": "existing segmenter diagnostics",
+    "confidence_rule": "existing complete-cycle segments high; legacy threshold segments medium; fallback low"
+  },
+  "source_files": [
+    {
+      "relative_path": "01_正常单次_10组/喝水_正常单次_01_seq2284-3142.csv",
+      "sha256": "98a5e423dfe3628dc3e1c00582147b7d5d352f8fc5a52f5dfa0459e900bdc7fd",
+      "selected_rep_index": 1,
+      "start_index": 231,
+      "end_index": 613,
+      "start_time_ms": 3290214,
+      "end_time_ms": 3297854,
+      "segmentation_diagnostic": {
+        "method": "drink_complete_cycle_dynamic_rest_v1",
+        "fallback_used": false,
+        "repetition_count": 1,
+        "incomplete_cycle": false,
+        "diagnostic": null,
+        "initial_baseline": {
+          "start_time_s": 0.0,
+          "end_time_s": 0.501
+        },
+        "departure_threshold_deg": {
+          "forearm": 10.0,
+          "hand_wrist": 10.0
+        },
+        "start_motion_threshold_deg_s": 25.0,
+        "quiet_motion_threshold_deg_s": 90.0,
+        "return_peak_ratio": 0.65,
+        "quiet_confirm_s": 3.0,
+        "last_confirmation_time_s": 14.821
+      }
+    },
+    {
+      "relative_path": "01_正常单次_10组/喝水_正常单次_02_seq3143-4003.csv",
+      "sha256": "99a9fad58c98a9e6410dd406b3b53897116b624f28712d39762cad2e1283f152",
+      "selected_rep_index": 1,
+      "start_index": 217,
+      "end_index": 573,
+      "start_time_ms": 3948135,
+      "end_time_ms": 3955255,
+      "segmentation_diagnostic": {
+        "method": "drink_complete_cycle_dynamic_rest_v1",
+        "fallback_used": false,
+        "repetition_count": 1,
+        "incomplete_cycle": false,
+        "diagnostic": null,
+        "initial_baseline": {
+          "start_time_s": 0.0,
+          "end_time_s": 0.5
+        },
+        "departure_threshold_deg": {
+          "forearm": 10.0,
+          "hand_wrist": 10.0
+        },
+        "start_motion_threshold_deg_s": 25.0,
+        "quiet_motion_threshold_deg_s": 90.0,
+        "return_peak_ratio": 0.65,
+        "quiet_confirm_s": 3.0,
+        "last_confirmation_time_s": 13.98
+      }
+    },
+    {
+      "relative_path": "01_正常单次_10组/喝水_正常单次_03_seq0001-0701.csv",
+      "sha256": "6c3f30ee3605363100b8fef896274008c82825f8574d0e6dab03278cc7e2b892",
+      "selected_rep_index": 1,
+      "start_index": 186,
+      "end_index": 511,
+      "start_time_ms": 113852,
+      "end_time_ms": 120352,
+      "segmentation_diagnostic": {
+        "method": "drink_complete_cycle_dynamic_rest_v1",
+        "fallback_used": false,
+        "repetition_count": 1,
+        "incomplete_cycle": false,
+        "diagnostic": null,
+        "initial_baseline": {
+          "start_time_s": 0.0,
+          "end_time_s": 0.5
+        },
+        "departure_threshold_deg": {
+          "forearm": 10.0,
+          "hand_wrist": 10.0
+        },
+        "start_motion_threshold_deg_s": 25.0,
+        "quiet_motion_threshold_deg_s": 90.0,
+        "return_peak_ratio": 0.65,
+        "quiet_confirm_s": 3.0,
+        "last_confirmation_time_s": 12.8
+      }
+    },
+    {
+      "relative_path": "01_正常单次_10组/喝水_正常单次_04_seq0702-1445.csv",
+      "sha256": "497387646a6dbf9173c87c3145de5ee6f6c59e9dcfc23bd6fabe98c15d9321e1",
+      "selected_rep_index": 1,
+      "start_index": 189,
+      "end_index": 521,
+      "start_time_ms": 386422,
+      "end_time_ms": 393062,
+      "segmentation_diagnostic": {
+        "method": "drink_complete_cycle_dynamic_rest_v1",
+        "fallback_used": false,
+        "repetition_count": 1,
+        "incomplete_cycle": false,
+        "diagnostic": null,
+        "initial_baseline": {
+          "start_time_s": 0.0,
+          "end_time_s": 0.5
+        },
+        "departure_threshold_deg": {
+          "forearm": 10.0,
+          "hand_wrist": 10.0
+        },
+        "start_motion_threshold_deg_s": 25.0,
+        "quiet_motion_threshold_deg_s": 90.0,
+        "return_peak_ratio": 0.65,
+        "quiet_confirm_s": 3.0,
+        "last_confirmation_time_s": 12.96
+      }
+    },
+    {
+      "relative_path": "01_正常单次_10组/喝水_正常单次_05_seq1446-2196.csv",
+      "sha256": "73a66e17fddefe1893db80d9a424dd22003e0d7b774be2c4247f602c819faeaa",
+      "selected_rep_index": 1,
+      "start_index": 180,
+      "end_index": 512,
+      "start_time_ms": 678795,
+      "end_time_ms": 685454,
+      "segmentation_diagnostic": {
+        "method": "drink_complete_cycle_dynamic_rest_v1",
+        "fallback_used": false,
+        "repetition_count": 1,
+        "incomplete_cycle": false,
+        "diagnostic": null,
+        "initial_baseline": {
+          "start_time_s": 0.0,
+          "end_time_s": 0.501
+        },
+        "departure_threshold_deg": {
+          "forearm": 10.0,
+          "hand_wrist": 10.0
+        },
+        "start_motion_threshold_deg_s": 25.0,
+        "quiet_motion_threshold_deg_s": 90.0,
+        "return_peak_ratio": 0.65,
+        "quiet_confirm_s": 3.0,
+        "last_confirmation_time_s": 12.86
+      }
+    },
+    {
+      "relative_path": "01_正常单次_10组/喝水_正常单次_06_seq2197-2937.csv",
+      "sha256": "8c5e65514a025d3246c5142247469068b13dac644e7b8716dce2ef20b3ab65b2",
+      "selected_rep_index": 1,
+      "start_index": 216,
+      "end_index": 539,
+      "start_time_ms": 813663,
+      "end_time_ms": 820117,
+      "segmentation_diagnostic": {
+        "method": "drink_complete_cycle_dynamic_rest_v1",
+        "fallback_used": false,
+        "repetition_count": 1,
+        "incomplete_cycle": false,
+        "diagnostic": null,
+        "initial_baseline": {
+          "start_time_s": 0.0,
+          "end_time_s": 0.5
+        },
+        "departure_threshold_deg": {
+          "forearm": 10.0,
+          "hand_wrist": 10.0
+        },
+        "start_motion_threshold_deg_s": 25.0,
+        "quiet_motion_threshold_deg_s": 90.0,
+        "return_peak_ratio": 0.65,
+        "quiet_confirm_s": 3.0,
+        "last_confirmation_time_s": 13.36
+      }
+    },
+    {
+      "relative_path": "01_正常单次_10组/喝水_正常单次_07_seq3292-4077.csv",
+      "sha256": "b94b574dc0b886fa44c416c3a882f73a24118097aba1adf2d016ed83cb9f462d",
+      "selected_rep_index": 1,
+      "start_index": 170,
+      "end_index": 496,
+      "start_time_ms": 1759746,
+      "end_time_ms": 1766266,
+      "segmentation_diagnostic": {
+        "method": "drink_complete_cycle_dynamic_rest_v1",
+        "fallback_used": false,
+        "repetition_count": 1,
+        "incomplete_cycle": false,
+        "diagnostic": null,
+        "initial_baseline": {
+          "start_time_s": 0.0,
+          "end_time_s": 0.501
+        },
+        "departure_threshold_deg": {
+          "forearm": 10.0,
+          "hand_wrist": 10.0
+        },
+        "start_motion_threshold_deg_s": 25.0,
+        "quiet_motion_threshold_deg_s": 90.0,
+        "return_peak_ratio": 0.65,
+        "quiet_confirm_s": 3.0,
+        "last_confirmation_time_s": 12.501
+      }
+    },
+    {
+      "relative_path": "01_正常单次_10组/喝水_正常单次_08_seq4078-4831.csv",
+      "sha256": "9aeb36a25fe434c7bceb43292b70018e60927ecfab6175c241b6156cf03775af",
+      "selected_rep_index": 1,
+      "start_index": 144,
+      "end_index": 468,
+      "start_time_ms": 2105038,
+      "end_time_ms": 2111522,
+      "segmentation_diagnostic": {
+        "method": "drink_complete_cycle_dynamic_rest_v1",
+        "fallback_used": false,
+        "repetition_count": 1,
+        "incomplete_cycle": false,
+        "diagnostic": null,
+        "initial_baseline": {
+          "start_time_s": 0.0,
+          "end_time_s": 0.501
+        },
+        "departure_threshold_deg": {
+          "forearm": 10.0,
+          "hand_wrist": 10.0
+        },
+        "start_motion_threshold_deg_s": 25.0,
+        "quiet_motion_threshold_deg_s": 90.0,
+        "return_peak_ratio": 0.65,
+        "quiet_confirm_s": 3.0,
+        "last_confirmation_time_s": 11.86
+      }
+    },
+    {
+      "relative_path": "01_正常单次_10组/喝水_正常单次_09_seq4832-5465.csv",
+      "sha256": "57d6ad65843d500a44c8fb4085a37abe0957161e1de5cba5f49af79e1bf7760d",
+      "selected_rep_index": 1,
+      "start_index": 67,
+      "end_index": 398,
+      "start_time_ms": 2134722,
+      "end_time_ms": 2141342,
+      "segmentation_diagnostic": {
+        "method": "drink_complete_cycle_dynamic_rest_v1",
+        "fallback_used": false,
+        "repetition_count": 1,
+        "incomplete_cycle": false,
+        "diagnostic": null,
+        "initial_baseline": {
+          "start_time_s": 0.0,
+          "end_time_s": 0.5
+        },
+        "departure_threshold_deg": {
+          "forearm": 10.0,
+          "hand_wrist": 10.0
+        },
+        "start_motion_threshold_deg_s": 25.0,
+        "quiet_motion_threshold_deg_s": 90.0,
+        "return_peak_ratio": 0.65,
+        "quiet_confirm_s": 3.0,
+        "last_confirmation_time_s": 10.56
+      }
+    },
+    {
+      "relative_path": "01_正常单次_10组/喝水_正常单次_10_seq5466-6194.csv",
+      "sha256": "405b6109077f7327dbfc05014048c08a4311b317545d690d204c217be37b7532",
+      "selected_rep_index": 1,
+      "start_index": 132,
+      "end_index": 542,
+      "start_time_ms": 2358789,
+      "end_time_ms": 2366989,
+      "segmentation_diagnostic": {
+        "method": "drink_complete_cycle_dynamic_rest_v1",
+        "fallback_used": false,
+        "repetition_count": 1,
+        "incomplete_cycle": false,
+        "diagnostic": null,
+        "initial_baseline": {
+          "start_time_s": 0.0,
+          "end_time_s": 0.501
+        },
+        "departure_threshold_deg": {
+          "forearm": 10.0,
+          "hand_wrist": 10.0
+        },
+        "start_motion_threshold_deg_s": 25.0,
+        "quiet_motion_threshold_deg_s": 90.0,
+        "return_peak_ratio": 0.65,
+        "quiet_confirm_s": 3.0,
+        "last_confirmation_time_s": 13.361
+      }
+    }
+  ],
+  "fields": [
+    "imu1_roll",
+    "imu1_pitch",
+    "imu1_yaw",
+    "imu2_roll",
+    "imu2_pitch",
+    "imu2_yaw",
+    "imu3_roll",
+    "imu3_pitch",
+    "imu3_yaw",
+    "imu4_roll",
+    "imu4_pitch",
+    "imu4_yaw",
+    "emg_rms_1",
+    "emg_rms_2",
+    "emg_rms_3",
+    "emg_rms_4",
+    "emg_mav_1",
+    "emg_mav_2",
+    "emg_mav_3",
+    "emg_mav_4"
+  ],
+  "normalized_length": 160,
+  "angle_unit": "degree",
+  "angle_processing": "unwrap_degrees_before_interpolation; baseline_relative subtracts per-file pre-action median",
+  "emg_processing": "raw values retained and baseline-relative values subtract per-file resting median",
+  "duration_ms_range": {
+    "min": 6454.0,
+    "max": 8200.0
+  },
+  "baseline_profiles": [
+    {
+      "relative_path": "01_正常单次_10组/喝水_正常单次_01_seq2284-3142.csv",
+      "rows": 37,
+      "time_ms_start": 3289474,
+      "time_ms_end": 3290194,
+      "imu_angle_unit": "degree",
+      "angle_processing": "unwrap_degrees_then_median_baseline",
+      "imu_angle_median": {
+        "imu1_pitch": 4.67,
+        "imu1_roll": 78.61,
+        "imu1_yaw": -51.22,
+        "imu2_pitch": 2.65,
+        "imu2_roll": 111.69,
+        "imu2_yaw": -165.09,
+        "imu3_pitch": -14.61,
+        "imu3_roll": 97.86,
+        "imu3_yaw": -53.16,
+        "imu4_pitch": -12.83,
+        "imu4_roll": 84.86,
+        "imu4_yaw": -25.31
+      },
+      "emg_rest_median": {
+        "emg_rms_1": 10042.28,
+        "emg_rms_2": 7405.41,
+        "emg_rms_3": 87788.55,
+        "emg_rms_4": 97340.87,
+        "emg_mav_1": 9935.4,
+        "emg_mav_2": 7392.4,
+        "emg_mav_3": 87773.8,
+        "emg_mav_4": 97336.2
+      }
+    },
+    {
+      "relative_path": "01_正常单次_10组/喝水_正常单次_02_seq3143-4003.csv",
+      "rows": 37,
+      "time_ms_start": 3947396,
+      "time_ms_end": 3948115,
+      "imu_angle_unit": "degree",
+      "angle_processing": "unwrap_degrees_then_median_baseline",
+      "imu_angle_median": {
+        "imu1_pitch": 2.89,
+        "imu1_roll": 77.73,
+        "imu1_yaw": -36.3,
+        "imu2_pitch": 2.11,
+        "imu2_roll": 113.7,
+        "imu2_yaw": -169.77,
+        "imu3_pitch": -12.28,
+        "imu3_roll": 93.41,
+        "imu3_yaw": -37.61,
+        "imu4_pitch": -10.54,
+        "imu4_roll": 82.58,
+        "imu4_yaw": -13.67
+      },
+      "emg_rest_median": {
+        "emg_rms_1": 913.32,
+        "emg_rms_2": 12911.06,
+        "emg_rms_3": 62820.6,
+        "emg_rms_4": 134128.55,
+        "emg_mav_1": 888.0,
+        "emg_mav_2": 12841.8,
+        "emg_mav_3": 62506.8,
+        "emg_mav_4": 134128.33
+      }
+    },
+    {
+      "relative_path": "01_正常单次_10组/喝水_正常单次_03_seq0001-0701.csv",
+      "rows": 37,
+      "time_ms_start": 113112,
+      "time_ms_end": 113832,
+      "imu_angle_unit": "degree",
+      "angle_processing": "unwrap_degrees_then_median_baseline",
+      "imu_angle_median": {
+        "imu1_pitch": 11.66,
+        "imu1_roll": 87.15,
+        "imu1_yaw": -24.23,
+        "imu2_pitch": -3.27,
+        "imu2_roll": 99.04,
+        "imu2_yaw": -164.12,
+        "imu3_pitch": -12.76,
+        "imu3_roll": 88.16,
+        "imu3_yaw": -48.03,
+        "imu4_pitch": -8.96,
+        "imu4_roll": 77.27,
+        "imu4_yaw": -12.13
+      },
+      "emg_rest_median": {
+        "emg_rms_1": 151232.89,
+        "emg_rms_2": 42914.31,
+        "emg_rms_3": 49652.66,
+        "emg_rms_4": 18714.54,
+        "emg_mav_1": 148982.0,
+        "emg_mav_2": 37882.0,
+        "emg_mav_3": 45549.4,
+        "emg_mav_4": 18707.2
+      }
+    },
+    {
+      "relative_path": "01_正常单次_10组/喝水_正常单次_04_seq0702-1445.csv",
+      "rows": 37,
+      "time_ms_start": 385682,
+      "time_ms_end": 386402,
+      "imu_angle_unit": "degree",
+      "angle_processing": "unwrap_degrees_then_median_baseline",
+      "imu_angle_median": {
+        "imu1_pitch": 8.92,
+        "imu1_roll": 85.79,
+        "imu1_yaw": -20.56,
+        "imu2_pitch": -5.42,
+        "imu2_roll": 108.29,
+        "imu2_yaw": -169.43,
+        "imu3_pitch": -11.73,
+        "imu3_roll": 85.63,
+        "imu3_yaw": -42.31,
+        "imu4_pitch": -8.79,
+        "imu4_roll": 76.42,
+        "imu4_yaw": -6.37
+      },
+      "emg_rest_median": {
+        "emg_rms_1": 219012.34,
+        "emg_rms_2": 32623.53,
+        "emg_rms_3": 267357.22,
+        "emg_rms_4": 196020.36,
+        "emg_mav_1": 218306.2,
+        "emg_mav_2": 27955.5,
+        "emg_mav_3": 267352.0,
+        "emg_mav_4": 193840.33
+      }
+    },
+    {
+      "relative_path": "01_正常单次_10组/喝水_正常单次_05_seq1446-2196.csv",
+      "rows": 37,
+      "time_ms_start": 678054,
+      "time_ms_end": 678775,
+      "imu_angle_unit": "degree",
+      "angle_processing": "unwrap_degrees_then_median_baseline",
+      "imu_angle_median": {
+        "imu1_pitch": 10.41,
+        "imu1_roll": 85.51,
+        "imu1_yaw": -18.44,
+        "imu2_pitch": -4.48,
+        "imu2_roll": 101.51,
+        "imu2_yaw": -165.79,
+        "imu3_pitch": -7.76,
+        "imu3_roll": 87.22,
+        "imu3_yaw": -38.45,
+        "imu4_pitch": -5.47,
+        "imu4_roll": 79.57,
+        "imu4_yaw": -3.67
+      },
+      "emg_rest_median": {
+        "emg_rms_1": 16552.54,
+        "emg_rms_2": 27607.04,
+        "emg_rms_3": 18929.55,
+        "emg_rms_4": 194694.44,
+        "emg_mav_1": 16477.2,
+        "emg_mav_2": 21655.4,
+        "emg_mav_3": 15461.6,
+        "emg_mav_4": 194661.8
+      }
+    },
+    {
+      "relative_path": "01_正常单次_10组/喝水_正常单次_06_seq2197-2937.csv",
+      "rows": 37,
+      "time_ms_start": 812918,
+      "time_ms_end": 813651,
+      "imu_angle_unit": "degree",
+      "angle_processing": "unwrap_degrees_then_median_baseline",
+      "imu_angle_median": {
+        "imu1_pitch": 8.06,
+        "imu1_roll": 80.44,
+        "imu1_yaw": -29.6,
+        "imu2_pitch": -4.32,
+        "imu2_roll": 102.97,
+        "imu2_yaw": -160.69,
+        "imu3_pitch": -11.11,
+        "imu3_roll": 90.15,
+        "imu3_yaw": -46.88,
+        "imu4_pitch": -8.03,
+        "imu4_roll": 78.66,
+        "imu4_yaw": -10.31
+      },
+      "emg_rest_median": {
+        "emg_rms_1": 55312.7,
+        "emg_rms_2": 42956.85,
+        "emg_rms_3": 158004.22,
+        "emg_rms_4": 7353.74,
+        "emg_mav_1": 55054.4,
+        "emg_mav_2": 29213.6,
+        "emg_mav_3": 157884.8,
+        "emg_mav_4": 7265.2
+      }
+    },
+    {
+      "relative_path": "01_正常单次_10组/喝水_正常单次_07_seq3292-4077.csv",
+      "rows": 37,
+      "time_ms_start": 1759006,
+      "time_ms_end": 1759726,
+      "imu_angle_unit": "degree",
+      "angle_processing": "unwrap_degrees_then_median_baseline",
+      "imu_angle_median": {
+        "imu1_pitch": 4.89,
+        "imu1_roll": 76.92,
+        "imu1_yaw": -42.1,
+        "imu2_pitch": -5.32,
+        "imu2_roll": 107.0,
+        "imu2_yaw": -170.15,
+        "imu3_pitch": -14.12,
+        "imu3_roll": 84.42,
+        "imu3_yaw": -54.21,
+        "imu4_pitch": -9.95,
+        "imu4_roll": 75.73,
+        "imu4_yaw": -17.13
+      },
+      "emg_rest_median": {
+        "emg_rms_1": 87647.74,
+        "emg_rms_2": 72484.1,
+        "emg_rms_3": 94349.3,
+        "emg_rms_4": 22968.37,
+        "emg_mav_1": 85779.0,
+        "emg_mav_2": 59374.6,
+        "emg_mav_3": 83066.0,
+        "emg_mav_4": 22911.8
+      }
+    },
+    {
+      "relative_path": "01_正常单次_10组/喝水_正常单次_08_seq4078-4831.csv",
+      "rows": 37,
+      "time_ms_start": 2104298,
+      "time_ms_end": 2105018,
+      "imu_angle_unit": "degree",
+      "angle_processing": "unwrap_degrees_then_median_baseline",
+      "imu_angle_median": {
+        "imu1_pitch": 6.72,
+        "imu1_roll": 77.82,
+        "imu1_yaw": -22.83,
+        "imu2_pitch": -6.07,
+        "imu2_roll": 113.38,
+        "imu2_yaw": -175.69,
+        "imu3_pitch": -9.89,
+        "imu3_roll": 84.58,
+        "imu3_yaw": -40.61,
+        "imu4_pitch": -5.12,
+        "imu4_roll": 76.84,
+        "imu4_yaw": -3.98
+      },
+      "emg_rest_median": {
+        "emg_rms_1": 423716.5,
+        "emg_rms_2": 64644.86,
+        "emg_rms_3": 88447.45,
+        "emg_rms_4": 29581.89,
+        "emg_mav_1": 423006.81,
+        "emg_mav_2": 56638.8,
+        "emg_mav_3": 85902.0,
+        "emg_mav_4": 29561.2
+      }
+    },
+    {
+      "relative_path": "01_正常单次_10组/喝水_正常单次_09_seq4832-5465.csv",
+      "rows": 37,
+      "time_ms_start": 2133982,
+      "time_ms_end": 2134702,
+      "imu_angle_unit": "degree",
+      "angle_processing": "unwrap_degrees_then_median_baseline",
+      "imu_angle_median": {
+        "imu1_pitch": 5.42,
+        "imu1_roll": 75.63,
+        "imu1_yaw": -32.79,
+        "imu2_pitch": -5.04,
+        "imu2_roll": 107.44,
+        "imu2_yaw": -171.4,
+        "imu3_pitch": -11.2,
+        "imu3_roll": 87.79,
+        "imu3_yaw": -46.96,
+        "imu4_pitch": -5.75,
+        "imu4_roll": 77.14,
+        "imu4_yaw": -11.68
+      },
+      "emg_rest_median": {
+        "emg_rms_1": 352416.75,
+        "emg_rms_2": 29386.13,
+        "emg_rms_3": 60480.44,
+        "emg_rms_4": 27859.31,
+        "emg_mav_1": 349293.19,
+        "emg_mav_2": 25292.0,
+        "emg_mav_3": 51841.2,
+        "emg_mav_4": 27804.2
+      }
+    },
+    {
+      "relative_path": "01_正常单次_10组/喝水_正常单次_10_seq5466-6194.csv",
+      "rows": 37,
+      "time_ms_start": 2358049,
+      "time_ms_end": 2358769,
+      "imu_angle_unit": "degree",
+      "angle_processing": "unwrap_degrees_then_median_baseline",
+      "imu_angle_median": {
+        "imu1_pitch": 6.73,
+        "imu1_roll": 78.01,
+        "imu1_yaw": -37.64,
+        "imu2_pitch": -4.53,
+        "imu2_roll": 108.57,
+        "imu2_yaw": -168.93,
+        "imu3_pitch": -13.39,
+        "imu3_roll": 88.45,
+        "imu3_yaw": -49.38,
+        "imu4_pitch": -10.51,
+        "imu4_roll": 77.66,
+        "imu4_yaw": -15.57
+      },
+      "emg_rest_median": {
+        "emg_rms_1": 78611.04,
+        "emg_rms_2": 99502.9,
+        "emg_rms_3": 86659.11,
+        "emg_rms_4": 44789.24,
+        "emg_mav_1": 76912.6,
+        "emg_mav_2": 87987.2,
+        "emg_mav_3": 78489.6,
+        "emg_mav_4": 44575.8
+      }
+    }
+  ],
+  "formal_template_replacement": false
+}

@@ -1,0 +1,68 @@
+{
+  "combined_yolo_wall_ms": 4134.27599996794,
+  "detect": {
+    "gpu_peak_memory_mb": 242.58447265625,
+    "imports_ms": 3664.224500011187,
+    "model_hash_ms": 16.058000037446618,
+    "model_load_ms": 139.43640002980828,
+    "postprocess_nms_ms": null,
+    "predict_and_postprocess_ms": 1167.8640999598429,
+    "predict_ms": null,
+    "serialize_ms": 291.3451000349596,
+    "warmup_mode": "startup_full_batch_11_black_rgb",
+    "warmup_ms": 530.540099949576,
+    "worker_process_start_ms": 664017.3743999912
+  },
+  "detect_total_wall_ms": 1459.2091999948025,
+  "gpu_peak_memory_mb": 371.65966796875,
+  "lifecycle": {
+    "invocation_wall_ms": 2999.2243999731727,
+    "mode": "persistent",
+    "runtime": {
+      "attempt": 1,
+      "generation": 1,
+      "job_total_ms": 2978.993500000797,
+      "jobs_completed": 3,
+      "mode": "persistent",
+      "model_identity": {
+        "detect": {
+          "mtime_ns": 1786087167558648900,
+          "path": "C:\\ec\\_deltar_p4_pipeline\\models\\rehab_scan_yolo11n_coco80_volleyball_detect_v5b_exp.pt",
+          "sha256": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+          "size": 21024452
+        },
+        "segment": {
+          "mtime_ns": 1784318444759921300,
+          "path": "C:\\ec\\_deltar_p4_pipeline\\models\\yolo11n-seg.pt",
+          "sha256": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152",
+          "size": 6182636
+        }
+      },
+      "pid": 23560,
+      "runtime_health_check_ms": 0.9716000058688223,
+      "runtime_queue_wait_ms": 0.20810001296922565,
+      "supervisor_state": "READY",
+      "yolo_job_total_ms": 2995.0301999924704
+    }
+  },
+  "parent_reload_ms": {
+    "detect": 354.70769996754825,
+    "segment": 780.3439000272192
+  },
+  "scan_id": "scan_20260809_124024_000",
+  "schema_version": "stage8b1_yolo_batch_timing.v1",
+  "segment": {
+    "gpu_peak_memory_mb": 371.65966796875,
+    "imports_ms": 0.0,
+    "model_hash_ms": 4.893100005574524,
+    "model_load_ms": 100.88920005364344,
+    "postprocess_nms_ms": null,
+    "predict_and_postprocess_ms": 631.7485999898054,
+    "predict_ms": null,
+    "serialize_ms": 880.074099986814,
+    "warmup_mode": "startup_full_batch_11_black_rgb",
+    "warmup_ms": 0.0,
+    "worker_process_start_ms": 665532.6876000036
+  },
+  "segment_total_wall_ms": 1511.8226999766193
+}

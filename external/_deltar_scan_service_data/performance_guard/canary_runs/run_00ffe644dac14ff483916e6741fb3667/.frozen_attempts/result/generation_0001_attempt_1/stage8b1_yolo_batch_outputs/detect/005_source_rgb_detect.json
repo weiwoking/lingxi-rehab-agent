@@ -1,0 +1,299 @@
+{
+  "schema_version": "deltar_stage3_yolo.v1",
+  "model": {
+    "path": "C:\\ec\\_deltar_p4_pipeline\\models\\rehab_scan_yolo11n_coco80_volleyball_detect_v5b_exp.pt",
+    "sha256": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+    "expected_sha256": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+    "hash_verified": true,
+    "size_bytes": 21024452,
+    "task": "detect",
+    "expected_task": "detect",
+    "task_verified": true,
+    "device": "cuda:0",
+    "actual_model_device": "cuda:0",
+    "precision": "FP32",
+    "half": false,
+    "ultralytics_version": "8.4.93",
+    "torch_version": "2.7.1+cu128",
+    "class_names": {
+      "0": "person",
+      "1": "bicycle",
+      "2": "car",
+      "3": "motorcycle",
+      "4": "airplane",
+      "5": "bus",
+      "6": "train",
+      "7": "truck",
+      "8": "boat",
+      "9": "traffic light",
+      "10": "fire hydrant",
+      "11": "stop sign",
+      "12": "parking meter",
+      "13": "bench",
+      "14": "bird",
+      "15": "cat",
+      "16": "dog",
+      "17": "horse",
+      "18": "sheep",
+      "19": "cow",
+      "20": "elephant",
+      "21": "bear",
+      "22": "zebra",
+      "23": "giraffe",
+      "24": "backpack",
+      "25": "umbrella",
+      "26": "handbag",
+      "27": "tie",
+      "28": "suitcase",
+      "29": "frisbee",
+      "30": "skis",
+      "31": "snowboard",
+      "32": "sports ball",
+      "33": "kite",
+      "34": "baseball bat",
+      "35": "baseball glove",
+      "36": "skateboard",
+      "37": "surfboard",
+      "38": "tennis racket",
+      "39": "bottle",
+      "40": "wine glass",
+      "41": "cup",
+      "42": "fork",
+      "43": "knife",
+      "44": "spoon",
+      "45": "bowl",
+      "46": "banana",
+      "47": "apple",
+      "48": "sandwich",
+      "49": "orange",
+      "50": "broccoli",
+      "51": "carrot",
+      "52": "hot dog",
+      "53": "pizza",
+      "54": "donut",
+      "55": "cake",
+      "56": "chair",
+      "57": "couch",
+      "58": "potted plant",
+      "59": "bed",
+      "60": "dining table",
+      "61": "toilet",
+      "62": "tv",
+      "63": "laptop",
+      "64": "mouse",
+      "65": "remote",
+      "66": "keyboard",
+      "67": "cell phone",
+      "68": "microwave",
+      "69": "oven",
+      "70": "toaster",
+      "71": "sink",
+      "72": "refrigerator",
+      "73": "book",
+      "74": "clock",
+      "75": "vase",
+      "76": "scissors",
+      "77": "teddy bear",
+      "78": "hair drier",
+      "79": "toothbrush"
+    }
+  },
+  "image": {
+    "path": "C:\\ec\\_deltar_scan_service_data\\performance_guard\\canary_runs\\run_00ffe644dac14ff483916e6741fb3667\\.frozen_attempts\\result\\generation_0001_attempt_1\\logs\\frame_000005\\source_rgb.png",
+    "width": 640,
+    "height": 360
+  },
+  "instances": [
+    {
+      "instance_id": 0,
+      "class_id": 63,
+      "class_name": "laptop",
+      "confidence": 0.9254127144813538,
+      "bbox_xyxy": [
+        104.68386840820312,
+        100.0792465209961,
+        366.7933044433594,
+        347.0093688964844
+      ],
+      "bbox_normalized": [
+        0.16356854438781737,
+        0.27799790700276694,
+        0.573114538192749,
+        0.9639149136013455
+      ],
+      "mask_key": null
+    },
+    {
+      "instance_id": 1,
+      "class_id": 41,
+      "class_name": "cup",
+      "confidence": 0.6802856922149658,
+      "bbox_xyxy": [
+        486.09490966796875,
+        254.71551513671875,
+        542.8546752929688,
+        295.57550048828125
+      ],
+      "bbox_normalized": [
+        0.7595232963562012,
+        0.7075430976019965,
+        0.8482104301452636,
+        0.8210430569118924
+      ],
+      "mask_key": null
+    },
+    {
+      "instance_id": 2,
+      "class_id": 0,
+      "class_name": "person",
+      "confidence": 0.5306307673454285,
+      "bbox_xyxy": [
+        179.45114135742188,
+        66.74251556396484,
+        230.43405151367188,
+        102.7090835571289
+      ],
+      "bbox_normalized": [
+        0.2803924083709717,
+        0.185395876566569,
+        0.3600532054901123,
+        0.2853030098809136
+      ],
+      "mask_key": null
+    },
+    {
+      "instance_id": 3,
+      "class_id": 0,
+      "class_name": "person",
+      "confidence": 0.5125645995140076,
+      "bbox_xyxy": [
+        0.023101806640625,
+        129.27255249023438,
+        135.21788024902344,
+        357.9686584472656
+      ],
+      "bbox_normalized": [
+        3.6096572875976564e-05,
+        0.35909042358398435,
+        0.21127793788909913,
+        0.9943573845757379
+      ],
+      "mask_key": null
+    },
+    {
+      "instance_id": 4,
+      "class_id": 41,
+      "class_name": "cup",
+      "confidence": 0.4136788547039032,
+      "bbox_xyxy": [
+        551.340087890625,
+        256.6258850097656,
+        617.195556640625,
+        301.9161071777344
+      ],
+      "bbox_normalized": [
+        0.8614688873291015,
+        0.7128496805826823,
+        0.9643680572509765,
+        0.8386558532714844
+      ],
+      "mask_key": null
+    },
+    {
+      "instance_id": 5,
+      "class_id": 62,
+      "class_name": "tv",
+      "confidence": 0.3810795545578003,
+      "bbox_xyxy": [
+        254.618896484375,
+        34.3966064453125,
+        619.6993408203125,
+        308.02960205078125
+      ],
+      "bbox_normalized": [
+        0.3978420257568359,
+        0.09554612901475694,
+        0.9682802200317383,
+        0.8556377834743923
+      ],
+      "mask_key": null
+    },
+    {
+      "instance_id": 6,
+      "class_id": 39,
+      "class_name": "bottle",
+      "confidence": 0.3291569650173187,
+      "bbox_xyxy": [
+        611.5997314453125,
+        90.18368530273438,
+        637.310546875,
+        272.17840576171875
+      ],
+      "bbox_normalized": [
+        0.9556245803833008,
+        0.25051023695203994,
+        0.9957977294921875,
+        0.7560511271158854
+      ],
+      "mask_key": null
+    },
+    {
+      "instance_id": 7,
+      "class_id": 64,
+      "class_name": "mouse",
+      "confidence": 0.2965078353881836,
+      "bbox_xyxy": [
+        440.40142822265625,
+        266.62811279296875,
+        507.41497802734375,
+        314.21014404296875
+      ],
+      "bbox_normalized": [
+        0.6881272315979003,
+        0.7406336466471354,
+        0.7928359031677246,
+        0.8728059556749131
+      ],
+      "mask_key": null
+    },
+    {
+      "instance_id": 8,
+      "class_id": 63,
+      "class_name": "laptop",
+      "confidence": 0.2901230752468109,
+      "bbox_xyxy": [
+        256.0985107421875,
+        34.72125244140625,
+        620.8279418945312,
+        311.4127197265625
+      ],
+      "bbox_normalized": [
+        0.40015392303466796,
+        0.0964479234483507,
+        0.9700436592102051,
+        0.8650353325737847
+      ],
+      "mask_key": null
+    },
+    {
+      "instance_id": 9,
+      "class_id": 66,
+      "class_name": "keyboard",
+      "confidence": 0.2513263523578644,
+      "bbox_xyxy": [
+        122.91009521484375,
+        281.36785888671875,
+        336.16021728515625,
+        327.52142333984375
+      ],
+      "bbox_normalized": [
+        0.19204702377319335,
+        0.781577385796441,
+        0.5252503395080567,
+        0.909781731499566
+      ],
+      "mask_key": null
+    }
+  ],
+  "warnings": []
+}

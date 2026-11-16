@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "stage8b_dual_gate_selection.v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "scan_id", "frame_count", "selection_policy_id", "whitelist_profile", "source", "class_summaries", "objects"],
+  "properties": {
+    "schema_version": {"const": "stage8b_dual_gate_selection.v1"},
+    "scan_id": {"type": "string", "minLength": 1},
+    "frame_count": {"const": 11},
+    "selection_policy_id": {"const": "class_geometry_fallback_then_p4_whitelist_v1"},
+    "whitelist_profile": {"type": "object"},
+    "source": {"type": "object"},
+    "class_summaries": {"type": "array"},
+    "objects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source_frame_id", "logical_object_id", "class_name", "geometry_status", "class_has_geometry_success", "gate1_outcome", "gate1_passed", "gate2_passed"],
+        "properties": {
+          "source_frame_id": {"type": "string"},
+          "logical_object_id": {"type": "string"},
+          "class_name": {"type": "string"},
+          "geometry_status": {"enum": ["success", "failure"]},
+          "class_has_geometry_success": {"type": "boolean"},
+          "gate1_outcome": {"enum": ["pass_success", "pass_failure_fallback", "blocked_failure", "blocked_success"]},
+          "gate1_passed": {"type": "boolean"},
+          "gate2_passed": {"type": "boolean"}
+        }
+      }
+    }
+  }
+}

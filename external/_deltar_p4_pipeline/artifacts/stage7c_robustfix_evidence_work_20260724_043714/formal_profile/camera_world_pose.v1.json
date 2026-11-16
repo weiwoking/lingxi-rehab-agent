@@ -1,0 +1,1202 @@
+{
+  "schema_version": "camera_world_pose.v1",
+  "profile_id": "camera_world_pose_9b9147068f6cd2ae",
+  "created_at": "2026-07-23T20:40:38.545643Z",
+  "validation_status": "PASS",
+  "camera_profile_id": "sc2336_intrinsics_afe9ca2170a81dfa",
+  "camera_tof_profile_id": "camera_tof_extrinsics_6698a99489d42fb2",
+  "world_frame": {
+    "x_axis": "vehicle_right",
+    "y_axis": "vehicle_forward",
+    "z_axis": "up",
+    "origin": "ground_point_below_camera_optical_centre",
+    "translation_unit": "mm"
+  },
+  "matrix_convention": "row-major JSON, column-vector convention",
+  "T_world_from_camera": [
+    [
+      0.9982421722090428,
+      -0.05704343793524768,
+      0.016081411999563616,
+      0.0
+    ],
+    [
+      -0.01716422089142508,
+      -0.0185432663292929,
+      0.9996807174268348,
+      0.0
+    ],
+    [
+      -0.056727023053942165,
+      -0.9981994757874642,
+      -0.019489776629530997,
+      969.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "rotation_world_from_camera": [
+    [
+      0.9982421722090428,
+      -0.05704343793524768,
+      0.016081411999563616
+    ],
+    [
+      -0.01716422089142508,
+      -0.0185432663292929,
+      0.9996807174268348
+    ],
+    [
+      -0.056727023053942165,
+      -0.9981994757874642,
+      -0.019489776629530997
+    ]
+  ],
+  "translation_world_from_camera_mm": [
+    0.0,
+    0.0,
+    969.0
+  ],
+  "T_world_from_tof": [
+    [
+      0.9964199981774271,
+      -0.08395581122434698,
+      0.00993020612869427,
+      -17.402126508980036
+    ],
+    [
+      0.003999736781048306,
+      0.16414413058210867,
+      0.9864282571485501,
+      -1.3855823545423764
+    ],
+    [
+      -0.08444636959502058,
+      -0.9828571239794243,
+      0.16389229544159692,
+      951.160920081626
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "rotation_world_from_tof": [
+    [
+      0.9964199981774271,
+      -0.08395581122434698,
+      0.00993020612869427
+    ],
+    [
+      0.003999736781048306,
+      0.16414413058210867,
+      0.9864282571485501
+    ],
+    [
+      -0.08444636959502058,
+      -0.9828571239794243,
+      0.16389229544159692
+    ]
+  ],
+  "translation_world_from_tof_mm": [
+    -17.402126508980036,
+    -1.3855823545423764,
+    951.160920081626
+  ],
+  "camera_height_mm": 969.0,
+  "camera_height_uncertainty_mm": 5.0,
+  "orientation_diagnostics": {
+    "roll_deg": 3.25258318305635,
+    "pitch_deg": -1.1167526521438145,
+    "yaw_deg": 0.9216118243222312,
+    "convention": "matrix-first R_world_from_camera; roll positive rotates Camera +X image-right toward Camera +Y image-down (clockwise in the image looking along +Z_camera); pitch positive aims +Z_camera upward toward +Z_world; yaw positive aims +Z_camera rightward toward +X_world from vehicle +Y_world forward"
+  },
+  "capture_summary": {
+    "pose_count": 3,
+    "frame_count": 15,
+    "valid_frame_count": 14,
+    "rejected_frame_count": 1
+  },
+  "residual_summary": {
+    "camera_orientation": {
+      "robust_method": "geodesic medoid initialization; MAD outlier rejection; chordal SVD mean projected to SO(3)",
+      "robust_threshold_deg": 1.0767463089988154,
+      "all_valid_frame_residual": {
+        "count": 15,
+        "rms_deg": 0.6148579635631705,
+        "p95_deg": 0.9638419699094521,
+        "max_deg": 1.7185400001775901
+      },
+      "inlier_residual": {
+        "count": 14,
+        "rms_deg": 0.44056578867773977,
+        "p95_deg": 0.6038137371970655,
+        "max_deg": 0.6403999569373947
+      },
+      "rejected_frame_count": 1,
+      "pose_means": {
+        "world_front_near": {
+          "role": "world_front_near",
+          "inlier_frame_count": 5,
+          "angle_from_all_frame_mean_deg": 0.3022679518157037,
+          "rotation_world_from_camera": [
+            [
+              0.998248029053731,
+              -0.058038506348992484,
+              0.011506705485038467
+            ],
+            [
+              -0.012476683935693853,
+              -0.016378071706195645,
+              0.9997880230954737
+            ],
+            [
+              -0.05783774587853688,
+              -0.9981799890540608,
+              -0.017073505900226688
+            ]
+          ]
+        },
+        "world_front_mid": {
+          "role": "world_front_mid",
+          "inlier_frame_count": 5,
+          "angle_from_all_frame_mean_deg": 0.45505904524233415,
+          "rotation_world_from_camera": [
+            [
+              0.9979803736834173,
+              -0.059483904459058365,
+              0.022289882301416375
+            ],
+            [
+              -0.02366255709067093,
+              -0.022472584184526995,
+              0.9994673913400078
+            ],
+            [
+              -0.058951311559931434,
+              -0.9979762763063935,
+              -0.023834739247345145
+            ]
+          ]
+        },
+        "world_front_far": {
+          "role": "world_front_far",
+          "inlier_frame_count": 4,
+          "angle_from_all_frame_mean_deg": 0.3031709619202022,
+          "rotation_world_from_camera": [
+            [
+              0.998508047331841,
+              -0.05277202837768108,
+              0.014028272682640557
+            ],
+            [
+              -0.014908642189345775,
+              -0.01632598768887067,
+              0.9997555673833746
+            ],
+            [
+              -0.05253010376558723,
+              -0.9984731218950704,
+              -0.0170883893766669
+            ]
+          ]
+        }
+      },
+      "pose_mean_pairwise": [
+        {
+          "left": "world_front_near",
+          "right": "world_front_mid",
+          "angle_deg": 0.7335288047313013
+        },
+        {
+          "left": "world_front_near",
+          "right": "world_front_far",
+          "angle_deg": 0.33491648826512316
+        },
+        {
+          "left": "world_front_mid",
+          "right": "world_front_far",
+          "angle_deg": 0.7191393796689197
+        }
+      ],
+      "max_pose_mean_pairwise_deg": 0.7335288047313013
+    },
+    "tof_vertical_plane": {
+      "poses": {
+        "world_front_near": {
+          "role": "world_front_near",
+          "status": "PASS",
+          "expected_normal_contract": "+Y_world is OpenCV +Z_board (through board away from vehicle); printed board-front normal is -Y_world",
+          "plane_normal_world": [
+            -0.006268730623028235,
+            0.9999802123866042,
+            -0.0005271163230591293
+          ],
+          "plane_offset_world_mm": -642.4652943375258,
+          "usable_overlap_zone_count": 28,
+          "normal_angular_error_deg": 0.3604417210557249,
+          "plane_rms_mm": 2.0500750296836165,
+          "plane_p95_mm": 3.602810964337726,
+          "plane_max_mm": 4.347493982404103,
+          "rejected_zones": [
+            {
+              "canonical_zone": 0,
+              "raw_zone": 56,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 1,
+              "raw_zone": 48,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 2,
+              "raw_zone": 40,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 3,
+              "raw_zone": 32,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 4,
+              "raw_zone": 24,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 5,
+              "raw_zone": 16,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 6,
+              "raw_zone": 8,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 7,
+              "raw_zone": 0,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 8,
+              "raw_zone": 57,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 9,
+              "raw_zone": 49,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 10,
+              "raw_zone": 41,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 11,
+              "raw_zone": 33,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 12,
+              "raw_zone": 25,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 13,
+              "raw_zone": 17,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 14,
+              "raw_zone": 9,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 15,
+              "raw_zone": 1,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 16,
+              "raw_zone": 58,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 17,
+              "raw_zone": 50,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 18,
+              "raw_zone": 42,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 19,
+              "raw_zone": 34,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 20,
+              "raw_zone": 26,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 21,
+              "raw_zone": 18,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 22,
+              "raw_zone": 10,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 23,
+              "raw_zone": 2,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 24,
+              "raw_zone": 59,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 32,
+              "raw_zone": 60,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 40,
+              "raw_zone": 61,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 48,
+              "raw_zone": 62,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 56,
+              "raw_zone": 63,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 57,
+              "raw_zone": 55,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 58,
+              "raw_zone": 47,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 59,
+              "raw_zone": 39,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 60,
+              "raw_zone": 31,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 61,
+              "raw_zone": 23,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 62,
+              "raw_zone": 15,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 63,
+              "raw_zone": 7,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            }
+          ]
+        },
+        "world_front_mid": {
+          "role": "world_front_mid",
+          "status": "PASS",
+          "expected_normal_contract": "+Y_world is OpenCV +Z_board (through board away from vehicle); printed board-front normal is -Y_world",
+          "plane_normal_world": [
+            0.0006748173696344527,
+            0.9999789964519301,
+            -0.0064460279636927575
+          ],
+          "plane_offset_world_mm": -843.0311152876478,
+          "usable_overlap_zone_count": 26,
+          "normal_angular_error_deg": 0.3713511070288059,
+          "plane_rms_mm": 1.4211379764817034,
+          "plane_p95_mm": 2.3502583452822705,
+          "plane_max_mm": 2.561052493436705,
+          "rejected_zones": [
+            {
+              "canonical_zone": 0,
+              "raw_zone": 56,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 1,
+              "raw_zone": 48,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 2,
+              "raw_zone": 40,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 3,
+              "raw_zone": 32,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 4,
+              "raw_zone": 24,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 5,
+              "raw_zone": 16,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 6,
+              "raw_zone": 8,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 7,
+              "raw_zone": 0,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 8,
+              "raw_zone": 57,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 9,
+              "raw_zone": 49,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 10,
+              "raw_zone": 41,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 11,
+              "raw_zone": 33,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 12,
+              "raw_zone": 25,
+              "reasons": [
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 13,
+              "raw_zone": 17,
+              "reasons": [
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 14,
+              "raw_zone": 9,
+              "reasons": [
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 15,
+              "raw_zone": 1,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 16,
+              "raw_zone": 58,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 17,
+              "raw_zone": 50,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 18,
+              "raw_zone": 42,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 19,
+              "raw_zone": 34,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 20,
+              "raw_zone": 26,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 21,
+              "raw_zone": 18,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 22,
+              "raw_zone": 10,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 23,
+              "raw_zone": 2,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 24,
+              "raw_zone": 59,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 32,
+              "raw_zone": 60,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 40,
+              "raw_zone": 61,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 48,
+              "raw_zone": 62,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 56,
+              "raw_zone": 63,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 57,
+              "raw_zone": 55,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 58,
+              "raw_zone": 47,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 59,
+              "raw_zone": 39,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 60,
+              "raw_zone": 31,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 61,
+              "raw_zone": 23,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 62,
+              "raw_zone": 15,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 63,
+              "raw_zone": 7,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 44,
+              "raw_zone": 29,
+              "reasons": [
+                "robust_plane_outlier"
+              ]
+            },
+            {
+              "canonical_zone": 55,
+              "raw_zone": 6,
+              "reasons": [
+                "robust_plane_outlier"
+              ]
+            }
+          ]
+        },
+        "world_front_far": {
+          "role": "world_front_far",
+          "status": "PASS",
+          "expected_normal_contract": "+Y_world is OpenCV +Z_board (through board away from vehicle); printed board-front normal is -Y_world",
+          "plane_normal_world": [
+            0.012211020924997162,
+            0.9999242367500539,
+            0.0015529738540904776
+          ],
+          "plane_offset_world_mm": -1049.7855535777123,
+          "usable_overlap_zone_count": 28,
+          "normal_angular_error_deg": 0.7052931570257432,
+          "plane_rms_mm": 3.320842193578441,
+          "plane_p95_mm": 6.100387446335969,
+          "plane_max_mm": 7.106977170814844,
+          "rejected_zones": [
+            {
+              "canonical_zone": 0,
+              "raw_zone": 56,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 1,
+              "raw_zone": 48,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 2,
+              "raw_zone": 40,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 3,
+              "raw_zone": 32,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 4,
+              "raw_zone": 24,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 5,
+              "raw_zone": 16,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 6,
+              "raw_zone": 8,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 7,
+              "raw_zone": 0,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 8,
+              "raw_zone": 57,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 9,
+              "raw_zone": 49,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 10,
+              "raw_zone": 41,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 11,
+              "raw_zone": 33,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 12,
+              "raw_zone": 25,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 13,
+              "raw_zone": 17,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 14,
+              "raw_zone": 9,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 15,
+              "raw_zone": 1,
+              "reasons": [
+                "no_accepted_samples",
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 16,
+              "raw_zone": 58,
+              "reasons": [
+                "outside_camera_tof_overlap_mask",
+                "status_255"
+              ]
+            },
+            {
+              "canonical_zone": 17,
+              "raw_zone": 50,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 18,
+              "raw_zone": 42,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 19,
+              "raw_zone": 34,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 20,
+              "raw_zone": 26,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 21,
+              "raw_zone": 18,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 22,
+              "raw_zone": 10,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 23,
+              "raw_zone": 2,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 24,
+              "raw_zone": 59,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 32,
+              "raw_zone": 60,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 40,
+              "raw_zone": 61,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 48,
+              "raw_zone": 62,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 56,
+              "raw_zone": 63,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 57,
+              "raw_zone": 55,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 58,
+              "raw_zone": 47,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 59,
+              "raw_zone": 39,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 60,
+              "raw_zone": 31,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 61,
+              "raw_zone": 23,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 62,
+              "raw_zone": 15,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            },
+            {
+              "canonical_zone": 63,
+              "raw_zone": 7,
+              "reasons": [
+                "outside_camera_tof_overlap_mask"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "source_data_hashes": {
+    "C:\\calibration\\stage7c_world_result_20260724_042728\\camera_world_capture.v1.json": "3a1f727722657ac60cef6385cd20d1220683ef7e36ebecd03e62a84a8a759e52",
+    "C:\\calibration\\result_20260719_172703\\calibration_profile.v2.json": "5c7ebcd9a86c4e5c7e9a653667c309bf5a7b3f1e3d64208702e95d0dbf5a8cad",
+    "C:\\calibration\\stage7b_result_unitfix_20260724_012041\\camera_tof_extrinsics.v1.json": "dbcb5792338f50cca953c365e436e17d9f044b2f47bcca716e697308dda7f8b5",
+    "C:\\ec\\_deltar_p4_pipeline\\board_assets\\board_manifest.json": "db5dafdf1c1dd5208f883850919d0182efaf9a20f9b06d6a6debf39735cbd37a",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_194503_000\\scan.json": "2bf9e7166af8dacb5e2dffd2d470cdc1097996e230e768d085d0ce93c2fd62ab",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_194503_000\\frames\\frame_000000\\image.rgb565": "b412a46dcac874c6bf96aa8a924af5aa94386c22a7b2e7d184093adf0a374a50",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_194503_000\\frames\\frame_000000\\frame.json": "f50637abe8e691c4d7b76d28e0d32d66819be1a114a4b567e64d36d2b2dd972e",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_194503_000\\frames\\frame_000000\\tof.json": "8a4bf675f301cf9cf51d74b860bee15cceee8d6ecb9e62ee117b7c3ba106437d",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_194503_000\\frames\\frame_000001\\image.rgb565": "e067fbf526ec6024e591eb489d0084a1841ae9d5accdc19d1ac5a4db2d99af06",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_194503_000\\frames\\frame_000001\\frame.json": "74004ec9d9eb72d143d8883c78a16c6d8328578433a89f8d76feb4de1a9025db",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_194503_000\\frames\\frame_000001\\tof.json": "0e9725871125f90a017ebb27ef613c58c0a424f7ee4d1f94801bea2bd252d8a3",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_194503_000\\frames\\frame_000002\\image.rgb565": "a0591446af7ffb8ef563959588b594541f44cfddb532f566423afa4eab89f9f1",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_194503_000\\frames\\frame_000002\\frame.json": "29f5d5c3238df5aac49c0f5e6105858abb507a08f0842d35fa7f0e6af344494b",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_194503_000\\frames\\frame_000002\\tof.json": "7b9e7f223dee04285e4a1624ad4bc348ea199cddcba7b81e4c3a6dd1d3909144",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_194503_000\\frames\\frame_000003\\image.rgb565": "a904e3b8ec34bc5edf61b4a0d0d6f12d909dc8a1eac76fd12d1d24dcdf527a20",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_194503_000\\frames\\frame_000003\\frame.json": "357259e9f5e92e8440ad73c09dc9734093c4315c5a66c6361fcbb5d8b2731012",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_194503_000\\frames\\frame_000003\\tof.json": "62632b800337f1061783d4c757af276bed8112a0fac82f1156a5b38ffae0629c",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_194503_000\\frames\\frame_000004\\image.rgb565": "338d282e53ad288bec3d59c6959a1c32e30385e66dcd662d3decf65f7966124a",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_194503_000\\frames\\frame_000004\\frame.json": "d75c02bd37b5b4f0fc88efa70d2deebb1ca620789850f1f6ad4651dea3249e14",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_194503_000\\frames\\frame_000004\\tof.json": "e5012d47405b7d2142fbfa010f8130ba50de7c332f798ae0b129a06a094b8f85",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_200749_000\\scan.json": "ba813e9e014e19792bcd4c44531fee60c86da014b677a44dca04eadfeeb0f209",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_200749_000\\frames\\frame_000000\\image.rgb565": "c27faa94ef6344a39994dcf4c7a2bf090cdf505e0bde916972656f999426d768",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_200749_000\\frames\\frame_000000\\frame.json": "a33b2d2315498826dcc9237158ba4854b645d850939092ddf0dda8031468ff3a",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_200749_000\\frames\\frame_000000\\tof.json": "b1b21fef098ec9de477cc41036a36a6fde86a75a27ab9a39ef3d10b5cc83d772",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_200749_000\\frames\\frame_000001\\image.rgb565": "d2eb1af8bbd613e0fdad0e34992b4ab4db5e8d2df0d10fcd3e342ce37d0ed550",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_200749_000\\frames\\frame_000001\\frame.json": "55422cebcea442a30ffb5fb4f820582c4e99e733a13e0efdc9635d9c25eba8f7",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_200749_000\\frames\\frame_000001\\tof.json": "bb56904f471a99d9085c7f8c7a8746871f4cf9d3c347b4c7c95311da3264bebb",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_200749_000\\frames\\frame_000002\\image.rgb565": "1d959104c7ed72c66568a644353c9b921aacf07f330787c1ba1b3551c0aba03c",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_200749_000\\frames\\frame_000002\\frame.json": "f1182f51c463acf722fc199122e79c3681dec5ce5d866d52a56f6b1e75d5fcfd",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_200749_000\\frames\\frame_000002\\tof.json": "931f2b815e8ef55220fa0a6416d636f2b56c84f294b7bcd55ebdd09363ddb8ad",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_200749_000\\frames\\frame_000003\\image.rgb565": "737d225a23467fb686c9d2caa5fa3013c3eb608c45f717d8ec05b903e4326303",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_200749_000\\frames\\frame_000003\\frame.json": "cdd803ec1eff322e025b1390bbf520b6f4c996d8b6453ba328f7be7271c568e1",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_200749_000\\frames\\frame_000003\\tof.json": "bda18f5a88f83f05980df0aa9e6f1c4d1af6b889c63e97f2b48d3031e8b4153f",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_200749_000\\frames\\frame_000004\\image.rgb565": "0db49b020b3d749c0e5a1088fc3893ca36cf311f0a018a2a88ffd4114a3c6fb5",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_200749_000\\frames\\frame_000004\\frame.json": "4b8bad1823260f186cdea7ade44b67be87b6facc15cf72726a68ee062d9777d1",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_200749_000\\frames\\frame_000004\\tof.json": "3d0b7a542c7ba8c0edbfd185998a58fe8a68b81ee2426f1b2962e817c7f60de7",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_202055_000\\scan.json": "ac20dee5d19add648e92c00d519776ac8b8619443f488767b3d95127c5b5dc6c",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_202055_000\\frames\\frame_000000\\image.rgb565": "2436c838e8d1fe7ee92e75aca6b056e136e2ff5d667c3f73a41f0b092b77934b",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_202055_000\\frames\\frame_000000\\frame.json": "c176ca643a81e31a755383fa4ecf1a20b5e38b40e70095323dda81a2c9a9e97b",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_202055_000\\frames\\frame_000000\\tof.json": "70b55cb6bc6c1ee2d07c48905c952c2abb5f0332bccdff157fd1682fc65afdcf",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_202055_000\\frames\\frame_000001\\image.rgb565": "2b7b99023b74f6e3a329757b7f310999e15c7513d28e7957d50b7756927929d8",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_202055_000\\frames\\frame_000001\\frame.json": "4c7689cc6fbe0fb6a598400d61340adbedd3e0310b9333c2debd2749f5c1a7ec",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_202055_000\\frames\\frame_000001\\tof.json": "58653d1806b0685a99610332e5d69e1daf2538ca696a598bedec52f177b5d551",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_202055_000\\frames\\frame_000002\\image.rgb565": "61331f9a51f184d8e286a63454e411e796cc4e14f66821c65d5fd1830d46a367",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_202055_000\\frames\\frame_000002\\frame.json": "c75d5aa5ed72cc99ca93230dc77b8a03493a0a6246be7b35062a64a08a38328b",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_202055_000\\frames\\frame_000002\\tof.json": "c75acf08e4945c033c5b6840f3125defd0124193c06a012910e52b9bf367dc4c",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_202055_000\\frames\\frame_000003\\image.rgb565": "1c3c9825c8c7147a1933623c27ab611bdbc0028966e9b0e1814f646f42cb5deb",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_202055_000\\frames\\frame_000003\\frame.json": "df90157024c9cea23aa0c41d0056c56d1c8802e6bbde0ec86729f85495fe2264",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_202055_000\\frames\\frame_000003\\tof.json": "be42ce8c0e23d01feefcc8d5b2ba86f1abdfebaa7dcca70b86df87fb11cb3ccc",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_202055_000\\frames\\frame_000004\\image.rgb565": "b834ea6b780b444c8f330fcba055665e6c1ba21f36f949954cb0eb34b5f3c547",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_202055_000\\frames\\frame_000004\\frame.json": "f0ca3cb4a241293118e4a072c0320d1fc225d496650d1a11e26377d5ee43bfa8",
+    "C:\\ec\\_deltar_scan_service_data\\validated\\scan_20260723_202055_000\\frames\\frame_000004\\tof.json": "456b6b5db2462ce7b2a0488976c686930730ed50fd16e824ed51ea5237376b10"
+  },
+  "warnings": [
+    "ABSOLUTE_GEOMETRY_REMAINS_INVALID_PENDING_INDEPENDENT_GROUND_OR_KNOWN_HEIGHT_VALIDATION",
+    "STAGE7B_NOMINAL_RAYS_NOT_MANUFACTURER_PER_ZONE_MEASURED"
+  ],
+  "unresolved_fields": [
+    "absolute_geometry_validation_against_real_ground_or_known_height_object",
+    "manufacturer_measured_per_zone_tof_rays"
+  ],
+  "world_pose": {
+    "status": "measured"
+  },
+  "world_pose_resolved": true,
+  "absolute_geometry_valid": false
+}

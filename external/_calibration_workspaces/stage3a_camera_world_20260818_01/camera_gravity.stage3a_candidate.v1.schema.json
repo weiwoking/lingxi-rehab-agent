@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "camera_gravity.stage3a_candidate.v1.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "status",
+    "gravity_status",
+    "yaw_status",
+    "gravity_authority",
+    "camera_height_mm",
+    "camera_height_uncertainty_mm",
+    "fixed_board_active_bottom_mm",
+    "fixed_board_uncertainty_mm",
+    "W01_W02_W03_cross_distance_validation",
+    "provenance",
+    "no_promotion",
+    "promotion"
+  ],
+  "properties": {
+    "schema_version": {"const": "camera_gravity.stage3a_candidate.v1"},
+    "status": {"const": "CANDIDATE_NOT_PROMOTED"},
+    "gravity_status": {"const": "READY_FOR_STAGE3B_Z_VALIDATION"},
+    "yaw_status": {"const": "SEPARATE_LOW_CONFIDENCE"},
+    "gravity_authority": {
+      "type": "object",
+      "required": ["u_up_camera", "uncertainty_deg", "source_pose_id", "source_scan_id", "vector_first", "full_world_rotation_authority"],
+      "properties": {
+        "u_up_camera": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number"}},
+        "uncertainty_deg": {"type": "number", "minimum": 0},
+        "source_pose_id": {"const": "W04G"},
+        "source_scan_id": {"type": "string"},
+        "vector_first": {"const": true},
+        "matrix_first": {"const": false},
+        "full_world_rotation_authority": {"const": false}
+      }
+    },
+    "camera_height_mm": {"const": 972.0},
+    "camera_height_uncertainty_mm": {"const": 10.0},
+    "fixed_board_active_bottom_mm": {"const": 912.0},
+    "fixed_board_uncertainty_mm": {"const": 5.0},
+    "no_promotion": {"const": true},
+    "promotion": {"const": false}
+  }
+}

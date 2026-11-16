@@ -1,0 +1,15 @@
+idf_component_register(
+    SRCS
+        "src/rehab_sensor_rx.c"
+        "src/rehab_training_recorder.c"
+    INCLUDE_DIRS
+        "include"
+    PRIV_INCLUDE_DIRS
+        "src"
+    PRIV_REQUIRES
+        esp_app_format
+        esp_timer
+        json
+        lwip
+        rehab_business_audio
+)

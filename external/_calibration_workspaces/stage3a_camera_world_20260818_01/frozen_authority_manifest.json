@@ -1,0 +1,55 @@
+{
+  "schema_version": "stage3a_frozen_authority_manifest.v1",
+  "stage2_final_bundle": {
+    "path": "C:\\ec\\_calibration_workspaces\\stage2_final_bundle_20260818_01\\calibration_bundle.stage2_final_candidate.v1.json",
+    "sha256": "63c974cd2ff64dd0f135d47d8c92eb170d06658cb315563fb93588862ba8b057",
+    "numeric_authority": true,
+    "uses": ["Camera K/D", "640x360 RGB565_LE raster contract", "ChArUco board contract"]
+  },
+  "old_stage7c": {
+    "path": "C:\\calibration\\stage7c_world_result_robustfix_20260724_044035\\camera_world_pose.v1.json",
+    "sha256": "5c730171f850ff3e05ab777eecca9849714aa20376c6d1f001da2b378ad24619",
+    "classification": "STALE_PRE_REMOUNT_REFERENCE_ONLY",
+    "numeric_authority": false,
+    "allowed_uses": ["software semantics", "matrix direction", "world convention", "schema comparison"],
+    "forbidden_uses": ["initial pose", "prior truth", "fallback pose", "candidate numeric values"]
+  },
+  "camera_height": {
+    "camera_height_mm": 972.0,
+    "camera_height_uncertainty_mm": 10.0,
+    "measurement_method": "manual_tape_visual",
+    "old_969_mm_value_used": false
+  },
+  "fixed_board_height": {
+    "board_mode": "FIXED_VERTICAL_BOARD",
+    "board_moved_between_poses": false,
+    "fixed_board_active_bottom_height_mm": 912.0,
+    "fixed_board_height_uncertainty_mm": 5.0,
+    "raw_manual_observation_mm": 911.5,
+    "measurement_method": "manual_tape_visual",
+    "capture_mode": "VEHICLE_MULTI_DISTANCE"
+  },
+  "world_contract": {
+    "x": "vehicle_right",
+    "y": "vehicle_forward",
+    "z": "up",
+    "origin": "ground point directly below Camera optical centre",
+    "transform": "T_world_from_camera",
+    "equation": "p_world = R_world_from_camera * p_camera + t_world_from_camera",
+    "vectors": "column",
+    "json_matrices": "row-major",
+    "translation_unit": "mm"
+  },
+  "board_contract": {
+    "family": "opencv_charuco",
+    "dictionary": "DICT_5X5_100",
+    "squares": [7, 5],
+    "square_length_mm": 25.0,
+    "marker_length_mm": 18.0,
+    "active_size_mm": [175.0, 125.0],
+    "opencv_board_x": "+X_world",
+    "opencv_board_y": "-Z_world",
+    "opencv_board_z": "+Y_world (through board away from vehicle)",
+    "printed_front_normal": "-Y_world (toward vehicle)"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": "rehab.wechat_tool_choice_fixture.v1",
+  "cases": [
+    {"message": "开始决策", "expected_tool": "rehab_task_decision_formal_input_get"},
+    {"message": "决策任务", "expected_tool": "rehab_task_decision_formal_input_get"},
+    {"message": "根据最新扫描结果决定任务", "expected_tool": "rehab_task_decision_formal_input_get"},
+    {"message": "重新决策", "expected_tool": "rehab_task_decision_formal_input_get"},
+    {"message": "帮我安排任务", "expected_tool": "rehab_task_decision_formal_input_get"},
+    {"message": "帮我决定一个任务", "expected_tool": "rehab_task_decision_formal_input_get"},
+    {"message": "直接决策", "expected_tool": "rehab_task_decision_formal_input_get"},
+    {"message": "查看决策状态", "expected_tool": "rehab_task_decision_status"},
+    {"message": "任务决定好了吗", "expected_tool": "rehab_task_decision_status"},
+    {"message": "现在决策到哪了", "expected_tool": "rehab_task_decision_status"},
+    {"message": "决策结果出来了吗", "expected_tool": "rehab_task_decision_status"},
+    {"message": "扫描环境", "expected_tool": "rehab_environment_scan_start"},
+    {"message": "开始扫描", "expected_tool": "rehab_environment_scan_start"},
+    {"message": "重新扫描环境", "expected_tool": "rehab_environment_scan_start"},
+    {"message": "查看扫描进度", "expected_tool": "rehab_environment_scan_status"}
+  ]
+}

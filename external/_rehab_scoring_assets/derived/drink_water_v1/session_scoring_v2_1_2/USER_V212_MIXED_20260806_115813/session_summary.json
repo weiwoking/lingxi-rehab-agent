@@ -1,0 +1,107 @@
+{
+  "session_version": "drink_water_session_v1_2",
+  "session_id": "USER_V212_MIXED_20260806_115813",
+  "action_type": "drink_water",
+  "baseline_version": "drink_water_v2.1.2",
+  "segmentation_version": "drink_hybrid_segmentation_v2_1",
+  "sensor_mapping_version": "rehab_sensor_mapping_20260806",
+  "source_mode": "offline_validation",
+  "source_origin": "v2_1_2_session_orchestrator",
+  "source_session_path": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\标准\\喝水标准动作数据集_裁剪版_校正版_20260805\\05_正常-代偿-正常_2组\\喝水_正常-前倾代偿-正常_01_seq8739-10307.csv",
+  "source_sha256": "d0347f05a131c409ff618bbfae6a7cdca82eeddcc21fe1686f16245ad7d5fa8c",
+  "source_row_count": 1569,
+  "source_column_count": 86,
+  "baseline_template_path": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\drink_water_v1\\baseline_v2_1_2_sensor_mapping_fixed\\drink_water_baseline_v2_1_2_scoring_template.json",
+  "baseline_template_sha256": "e5bc6de2ed7c05c4039928005e37beefec3d5873fa9e69b4e92d447aafe8e1e5",
+  "session_started_at_ms": 928160,
+  "session_ended_at_ms": 959660,
+  "session_duration_ms": 31500.0,
+  "activity_started_at_ms": 931240,
+  "activity_ended_at_ms": 954880,
+  "activity_duration_ms": 23640.0,
+  "segmented_candidate_count": 3,
+  "segmentation_valid_repetition_count": 3,
+  "rejected_repetition_count": 0,
+  "scored_repetition_count": 3,
+  "score_valid_repetition_count": 3,
+  "score_invalid_repetition_count": 0,
+  "average_score": 78.42,
+  "median_score": 75.04,
+  "best_score": 86.2,
+  "worst_score": 74.02,
+  "score_trend": [
+    {
+      "rep_index": 1,
+      "final_score": 75.04,
+      "valid": true
+    },
+    {
+      "rep_index": 2,
+      "final_score": 74.02,
+      "valid": true
+    },
+    {
+      "rep_index": 3,
+      "final_score": 86.2,
+      "valid": true
+    }
+  ],
+  "subscore_averages": {
+    "speed_score": 10.74,
+    "ROM_score": 16.146667,
+    "smoothness_score": 18.8,
+    "coordination_score": 9.036667,
+    "muscle_score": 23.693333
+  },
+  "compensation_summary": {
+    "detected_repetition_count": 0,
+    "types": [],
+    "max_severity": null
+  },
+  "repetitions": [
+    {
+      "rep_index": 1,
+      "valid": true,
+      "final_score": 75.04,
+      "score_file": "per_rep_scores\\rep_01_score.json",
+      "score_metadata_file": "per_rep_scores\\rep_01_score_metadata.json",
+      "rep_csv": "repetitions\\rep_01.csv",
+      "start_index": 150,
+      "end_index": 453,
+      "start_time_ms": 931240,
+      "end_time_ms": 937300,
+      "duration_ms": 6060.0,
+      "compensation_detected": false
+    },
+    {
+      "rep_index": 2,
+      "valid": true,
+      "final_score": 74.02,
+      "score_file": "per_rep_scores\\rep_02_score.json",
+      "score_metadata_file": "per_rep_scores\\rep_02_score_metadata.json",
+      "rep_csv": "repetitions\\rep_02.csv",
+      "start_index": 560,
+      "end_index": 905,
+      "start_time_ms": 939440,
+      "end_time_ms": 946340,
+      "duration_ms": 6900.0,
+      "compensation_detected": false
+    },
+    {
+      "rep_index": 3,
+      "valid": true,
+      "final_score": 86.2,
+      "score_file": "per_rep_scores\\rep_03_score.json",
+      "score_metadata_file": "per_rep_scores\\rep_03_score_metadata.json",
+      "rep_csv": "repetitions\\rep_03.csv",
+      "start_index": 1016,
+      "end_index": 1332,
+      "start_time_ms": 948560,
+      "end_time_ms": 954880,
+      "duration_ms": 6320.0,
+      "compensation_detected": false
+    }
+  ],
+  "rejected_repetitions": [],
+  "scoring_rejections": []
+}

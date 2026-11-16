@@ -1,0 +1,144 @@
+{
+  "allowed_files": [
+    "src/deltar_p4_pipeline/all_object_geometry.py",
+    "src/deltar_p4_pipeline/geometry_v2/generic_support.py",
+    "src/deltar_p4_pipeline/geometry_v2/multimodal_support.py",
+    "tests/m3_w4_unittest.py"
+  ],
+  "forbidden_source_tokens": {
+    "0.68": false,
+    "1.85": false,
+    "frame_history": false,
+    "late_dominant_probability": false,
+    "late_dominant_ratio": false,
+    "previous_frame": false,
+    "rolling_median": false,
+    "temporal_posterior": false,
+    "truth_mm": false
+  },
+  "gates": {
+    "allowed_diff_set_exact": true,
+    "compileall_pass": true,
+    "contract_regressions_pass": true,
+    "cross_frame_source_absent": true,
+    "diff_check_pass": true,
+    "downloads_web_static_pass": true,
+    "m3_mode_generation_research_parity": true,
+    "mapping_complete": true,
+    "protected_boundaries_unchanged": true,
+    "single_frame_independence_pass": true,
+    "support_authority_changed": true,
+    "truth_fit_source_absent": true,
+    "w0_hard_switch_absent": true,
+    "w4_research_parity": true
+  },
+  "git_status_short": [
+    " M src/deltar_p4_pipeline/all_object_geometry.py",
+    " M src/deltar_p4_pipeline/geometry_v2/generic_support.py",
+    "?? src/deltar_p4_pipeline/geometry_v2/multimodal_support.py",
+    "?? tests/m3_w4_unittest.py"
+  ],
+  "intake_head": "67d623a1719d72581a7c123529940e8dfcdf3b9a",
+  "modified_and_untracked_files": [
+    "src/deltar_p4_pipeline/all_object_geometry.py",
+    "src/deltar_p4_pipeline/geometry_v2/generic_support.py",
+    "src/deltar_p4_pipeline/geometry_v2/multimodal_support.py",
+    "tests/m3_w4_unittest.py"
+  ],
+  "pre_freeze_pass": true,
+  "production_source_hashes": {
+    "src/deltar_p4_pipeline/all_object_geometry.py": "1fb0b22aba35531f65dbd2a21046b06e6b127bfa9947a129f039f34d7d746e2e",
+    "src/deltar_p4_pipeline/geometry_v2/generic_support.py": "ea9b3517b503784aa279ec1977a31e6703a1b53111759343df500917bebe9257",
+    "src/deltar_p4_pipeline/geometry_v2/multimodal_support.py": "190fad0a7f892024095b9095b44e6760d317186e69d756ff0193cde252e15e1a",
+    "tests/m3_w4_unittest.py": "9820b0f8d379236ba3efa05f73dd2a325c6cb65fc46507b4154dc35d4deeff2b"
+  },
+  "protected_hashes": {
+    "checkpoint": {
+      "expected_to_change": false,
+      "path": "C:\\ec\\_deltar_formal\\assets\\nyu.pt",
+      "post_sha256": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+      "pre_sha256": "a402ffbffade70f0a0ef77a28b465d8fb625dd2fcdef0115b65c98193ce1e3ef",
+      "unchanged": true
+    },
+    "decoder": {
+      "expected_to_change": false,
+      "path": "C:\\ec\\_deltar_formal\\work\\deltar_f3c5175_win_cu128\\src\\models\\decoder.py",
+      "post_sha256": "117948cc412852ec9b3d27743911ce885c0fd8eecaf713032ff520bd9ad2729c",
+      "pre_sha256": "117948cc412852ec9b3d27743911ce885c0fd8eecaf713032ff520bd9ad2729c",
+      "unchanged": true
+    },
+    "formal_deltar_d": {
+      "expected_to_change": false,
+      "path": "C:\\ec\\_deltar_p4_pipeline\\src\\deltar_p4_pipeline\\formal_deltar_d.py",
+      "post_sha256": "7fa43ac52b007b6b3f3e76e78ee5beb7a622aa4a559fb1f612f32408ce29bd03",
+      "pre_sha256": "7fa43ac52b007b6b3f3e76e78ee5beb7a622aa4a559fb1f612f32408ce29bd03",
+      "unchanged": true
+    },
+    "fusion": {
+      "expected_to_change": false,
+      "path": "C:\\ec\\_deltar_formal\\work\\deltar_f3c5175_win_cu128\\src\\models\\fusion.py",
+      "post_sha256": "18eda86acafb105a7ac2e39437edcdafa6f213c1ba2037e615c8de0de2bd0179",
+      "pre_sha256": "18eda86acafb105a7ac2e39437edcdafa6f213c1ba2037e615c8de0de2bd0179",
+      "unchanged": true
+    },
+    "stage2_payload": {
+      "expected_to_change": false,
+      "path": "C:\\ec\\_deltar_p4_pipeline\\profiles\\formal_geometry_v2\\stage2_calibration.json",
+      "post_sha256": "63c974cd2ff64dd0f135d47d8c92eb170d06658cb315563fb93588862ba8b057",
+      "pre_sha256": "63c974cd2ff64dd0f135d47d8c92eb170d06658cb315563fb93588862ba8b057",
+      "unchanged": true
+    },
+    "stage2_projection": {
+      "expected_to_change": false,
+      "path": "C:\\ec\\_deltar_p4_pipeline\\src\\deltar_p4_pipeline\\stage2_projection.py",
+      "post_sha256": "018d5dadee035e60d9f699692ed6bb2abce2d303dd2c5c0b742315266b6ac85f",
+      "pre_sha256": "018d5dadee035e60d9f699692ed6bb2abce2d303dd2c5c0b742315266b6ac85f",
+      "unchanged": true
+    },
+    "stage3a": {
+      "expected_to_change": false,
+      "path": "C:\\ec\\_deltar_p4_pipeline\\profiles\\formal_geometry_v2\\stage3a_gravity.json",
+      "post_sha256": "a00f9cc7099dfb5eed1a85210d1f78a6220a468c95fb85d0d40f827cf9972112",
+      "pre_sha256": "a00f9cc7099dfb5eed1a85210d1f78a6220a468c95fb85d0d40f827cf9972112",
+      "unchanged": true
+    },
+    "support_config": {
+      "expected_to_change": false,
+      "path": "C:\\ec\\_deltar_p4_pipeline\\profiles\\formal_geometry_v2\\all_object_geometry_v2.json",
+      "post_sha256": "fde6b6ab9f4bc3df23c19b339bdf5e1e6ba3564223e6437e2930dfd0264273d5",
+      "pre_sha256": "fde6b6ab9f4bc3df23c19b339bdf5e1e6ba3564223e6437e2930dfd0264273d5",
+      "unchanged": true
+    },
+    "support_selector": {
+      "expected_to_change": false,
+      "path": "C:\\ec\\_deltar_p4_pipeline\\src\\deltar_p4_pipeline\\geometry_v2\\support_selector.py",
+      "post_sha256": "299a3baa6ace87d36e5a39c8d608fa899f94c8b6324529de2f16707b7304664d",
+      "pre_sha256": "299a3baa6ace87d36e5a39c8d608fa899f94c8b6324529de2f16707b7304664d",
+      "unchanged": true
+    },
+    "support_source": {
+      "expected_to_change": true,
+      "path": "C:\\ec\\_deltar_p4_pipeline\\src\\deltar_p4_pipeline\\all_object_geometry.py",
+      "post_sha256": "1fb0b22aba35531f65dbd2a21046b06e6b127bfa9947a129f039f34d7d746e2e",
+      "pre_sha256": "bf61f3ea8c4cd350bbb34726defca96d4f4f1d44fb6a78e762d88e652d824fad",
+      "unchanged": false
+    },
+    "transformer": {
+      "expected_to_change": false,
+      "path": "C:\\ec\\_deltar_formal\\work\\deltar_f3c5175_win_cu128\\src\\models\\transformer.py",
+      "post_sha256": "75bc439fede61db173b80f6f8363bd6398a7aaf6b1bd5250dfac5719dea2e3c6",
+      "pre_sha256": "75bc439fede61db173b80f6f8363bd6398a7aaf6b1bd5250dfac5719dea2e3c6",
+      "unchanged": true
+    }
+  },
+  "research_m3_source": {
+    "compact_path": "C:\\ec\\_calibration_workspaces\\single_frame_candidate_information_audit_20260819_02\\round2_compact_candidate_data.json",
+    "compact_sha256": "b8f6b9d8d47f2023e9e61aeddfc888de08d34a1cfd956c041242b6d3bbfa3282",
+    "current_script_path": "C:\\ec\\_calibration_workspaces\\m3_peak_weighting_audit_20260819_06\\freeze_peak_weighting.py",
+    "current_script_sha256": "903701c598cadbb6549e3a9324c87a00c8c619b131b38e82f6e76f94c93c89f8",
+    "m3_source_path": "C:\\ec\\_calibration_workspaces\\single_frame_candidate_information_audit_20260819_02\\extract_and_counterfactual.py",
+    "m3_source_sha256": "fbbaab4fe73b2ed74cce54b5a10d51a4e02b0a6f3b3a76527d51de366e2b2b0e"
+  },
+  "schema_version": "m3_w4_pre_freeze_audit.v1",
+  "w4_formula_source_sha256": "190fad0a7f892024095b9095b44e6760d317186e69d756ff0193cde252e15e1a"
+}

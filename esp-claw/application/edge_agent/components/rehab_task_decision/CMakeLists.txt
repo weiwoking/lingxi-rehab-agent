@@ -1,0 +1,46 @@
+idf_component_register(
+    SRCS
+        "src/rehab_task_decision_core.c"
+        "src/rehab_decision_trace.c"
+        "src/rehab_environment_aggregate.c"
+        "src/rehab_task_decision_context.c"
+        "src/rehab_task_decision_policy.c"
+        "src/rehab_task_decision_scoring.c"
+        "src/rehab_task_decision_rules.c"
+        "src/rehab_task_decision_event.c"
+        "src/rehab_task_decision_selected_task.c"
+        "src/rehab_task_decision_details.c"
+        "src/rehab_task_decision_details_binding.c"
+        "src/rehab_task_decision_validate.c"
+        "src/rehab_task_decision_capabilities.c"
+        "src/rehab_task_target_resolver.c"
+        "src/rehab_task_decision_coordinator.c"
+        "src/rehab_task_decision_confirmed_start.c"
+        "src/rehab_task_decision_coordinator_capabilities.c"
+        "src/rehab_task_decision_formal_input_artifact.c"
+        "src/rehab_task_decision_preparation.c"
+        "src/rehab_task_decision_llm_input_adapter.c"
+        "src/rehab_task_decision_llm_input_artifact.c"
+        "src/rehab_task_decision_reasoning_artifact.c"
+        "src/rehab_task_decision_coordinator_console.c"
+    INCLUDE_DIRS "include"
+    PRIV_INCLUDE_DIRS "src"
+    REQUIRES
+        rehab_car
+        rehab_business_audio
+        rehab_capture
+        rehab_tof
+        rehab_cloud_fusion
+        rehab_score_bridge
+        rehab_environment_scan
+        claw_cap
+        claw_core
+        claw_memory
+        claw_manager
+        claw_event_router
+        json
+        freertos
+        esp_timer
+        mbedtls
+        console
+)

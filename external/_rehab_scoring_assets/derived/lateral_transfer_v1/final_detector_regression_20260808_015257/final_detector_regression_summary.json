@@ -1,0 +1,45 @@
+{
+  "regression_version": "lateral_transfer_final_detector_regression_v1",
+  "approved_session_count": 31,
+  "approved_rep_count": 59,
+  "healthy_normal_rep_count": 48,
+  "segmentation_wrapper_version": "lateral_transfer_segmentation_drink_reuse_v1",
+  "segmentation_core_version": "drink_hybrid_segmentation_v2_1_1",
+  "template_version": "lateral_transfer_healthy_template_v1",
+  "lf_algorithm_version": "drink_water_lf_v2",
+  "tremor_algorithm_version": "drink_water_tremor_v1_1",
+  "lateral_lf_parameters": {
+    "angle_threshold_deg": 10.0,
+    "persistence_seconds": 1.0
+  },
+  "lateral_tremor_parameters": {
+    "band_ratio_threshold": 0.18,
+    "band_rms_threshold": 5.0,
+    "positive_window_fraction": 0.35
+  },
+  "tremor_confusion": {
+    "TP": 5,
+    "FN": 0,
+    "FP": 0,
+    "TN": 54
+  },
+  "lf_confusion": {
+    "TP": 6,
+    "FN": 0,
+    "FP": 2,
+    "TN": 51
+  },
+  "expected_tremor_confusion": {
+    "TP": 5,
+    "FN": 0,
+    "FP": 0,
+    "TN": 54
+  },
+  "expected_lf_confusion": {
+    "TP": 6,
+    "FN": 0,
+    "FP": 2,
+    "TN": 51
+  },
+  "final_detector_regression": "PASS"
+}

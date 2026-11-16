@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "deltar_horizontal_planes.v1.schema.json",
+  "title": "DELTAR Stage 7D horizontal planes",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "scan_id",
+    "frame_id",
+    "depth_hypothesis",
+    "depth_unit",
+    "world_geometry_unit",
+    "camera_profile",
+    "camera_world_profile",
+    "camera_tof_profile",
+    "world_frame",
+    "world_height_statistics",
+    "planes",
+    "rejected_candidates",
+    "warnings"
+  ],
+  "properties": {
+    "schema_version": {"const": "deltar_horizontal_planes.v1"},
+    "scan_id": {"type": "string"},
+    "frame_id": {"type": "string"},
+    "depth_hypothesis": {"enum": ["axial_z", "radial_range"]},
+    "depth_unit": {"const": "m"},
+    "world_geometry_unit": {"const": "mm"},
+    "camera_profile": {"$ref": "#/$defs/profile"},
+    "camera_world_profile": {"$ref": "#/$defs/profile"},
+    "camera_tof_profile": {
+      "oneOf": [{"type": "null"}, {"$ref": "#/$defs/profile"}]
+    },
+    "world_frame": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x_axis", "y_axis", "z_axis", "origin"],
+      "properties": {
+        "x_axis": {"const": "vehicle_right"},
+        "y_axis": {"const": "vehicle_forward"},
+        "z_axis": {"const": "up"},
+        "origin": {"const": "ground_point_below_camera_optical_centre"}
+      }
+    },
+    "world_height_statistics": {"$ref": "#/$defs/heightStatistics"},
+    "planes": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/plane"}
+    },
+    "rejected_candidates": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/rejected"}
+    },
+    "warnings": {"type": "array", "items": {"type": "string"}}
+  },
+  "$defs": {
+    "profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "profile_id", "sha256"],
+      "properties": {
+        "path": {"type": "string"},
+        "profile_id": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "heightStatistics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["valid_pixel_count", "min_mm", "median_mm", "max_mm"],
+      "properties": {
+        "valid_pixel_count": {"type": "integer", "minimum": 0},
+        "min_mm": {"type": ["number", "null"]},
+        "median_mm": {"type": ["number", "null"]},
+        "max_mm": {"type": ["number", "null"]}
+      }
+    },
+    "vector3": {
+      "type": "array",
+      "prefixItems": [{"type": "number"}, {"type": "number"}, {"type": "number"}],
+      "items": false
+    },
+    "bbox": {
+      "type": "array",
+      "prefixItems": [
+        {"type": "integer"}, {"type": "integer"},
+        {"type": "integer"}, {"type": "integer"}
+      ],
+      "items": false
+    },
+    "contour": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "prefixItems": [{"type": "integer"}, {"type": "integer"}],
+        "items": false
+      }
+    },
+    "plane": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "normal_world", "median_height_mm", "plane_offset_mm",
+        "residual_rms_mm", "residual_p95_mm", "residual_max_mm",
+        "pixel_count", "bbox_xyxy", "contour_xy",
+        "confidence_diagnostics", "label", "plane_id"
+      ],
+      "properties": {
+        "plane_id": {"type": "string"},
+        "label": {"enum": ["ground", "support_surface"]},
+        "normal_world": {"$ref": "#/$defs/vector3"},
+        "median_height_mm": {"type": "number"},
+        "plane_offset_mm": {"type": "number"},
+        "residual_rms_mm": {"type": "number", "minimum": 0},
+        "residual_p95_mm": {"type": "number", "minimum": 0},
+        "residual_max_mm": {"type": "number", "minimum": 0},
+        "pixel_count": {"type": "integer", "minimum": 1},
+        "bbox_xyxy": {"$ref": "#/$defs/bbox"},
+        "contour_xy": {"$ref": "#/$defs/contour"},
+        "confidence_diagnostics": {"type": "object"}
+      }
+    },
+    "rejected": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reason", "normal", "height", "pixel_count", "bbox_xyxy",
+        "contour_xy", "confidence_diagnostics"
+      ],
+      "properties": {
+        "reason": {"type": "string"},
+        "normal": {"$ref": "#/$defs/vector3"},
+        "height": {"type": "number"},
+        "pixel_count": {"type": "integer", "minimum": 1},
+        "bbox_xyxy": {"$ref": "#/$defs/bbox"},
+        "contour_xy": {"$ref": "#/$defs/contour"},
+        "confidence_diagnostics": {"type": "object"}
+      }
+    }
+  }
+}

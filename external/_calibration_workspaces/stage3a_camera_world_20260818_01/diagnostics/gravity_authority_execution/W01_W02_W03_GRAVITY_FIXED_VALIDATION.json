@@ -1,0 +1,530 @@
+{
+  "schema_version": "stage3a_gravity_fixed_cross_distance_validation.v1",
+  "status": "READY_FOR_STAGE3B_Z_VALIDATION",
+  "gravity_source_pose": "W04G",
+  "yaw_status": "SEPARATE_LOW_CONFIDENCE",
+  "fit_layer": {
+    "fixed": [
+      "Stage2 K/D",
+      "u_up_camera",
+      "board metric geometry"
+    ],
+    "free_per_frame": [
+      "relative_yaw_nuisance",
+      "translation_x",
+      "translation_y",
+      "translation_z"
+    ],
+    "uses_camera_height_or_board_world_height": false
+  },
+  "validation_layer": {
+    "camera_height_mm": 972.0,
+    "camera_height_uncertainty_mm": 10.0,
+    "board_active_bottom_mm": 912.0,
+    "board_active_top_mm": 1037.0,
+    "board_height_uncertainty_mm": 5.0
+  },
+  "per_pose": {
+    "W01": {
+      "scan_id": "scan_20260817_194252_000",
+      "distance_mm": 605.8206448679481,
+      "bottom_signed_residual_mm": {
+        "count": 11,
+        "min": 3.0183439821693128,
+        "p05": 3.0266719155822557,
+        "median": 3.210404771437993,
+        "p95": 5.700601250539876,
+        "max": 6.249071067984687,
+        "rms": 3.89998791703854
+      },
+      "bottom_absolute_residual_mm": {
+        "count": 11,
+        "min": 3.0183439821693128,
+        "p05": 3.0266719155822557,
+        "median": 3.210404771437993,
+        "p95": 5.700601250539876,
+        "max": 6.249071067984687,
+        "rms": 3.89998791703854
+      },
+      "top_signed_residual_mm": {
+        "count": 11,
+        "min": 3.0183439821694265,
+        "p05": 3.0266719155822557,
+        "median": 3.2104047714378794,
+        "p95": 5.700601250539876,
+        "max": 6.249071067984687,
+        "rms": 3.89998791703854
+      },
+      "top_absolute_residual_mm": {
+        "count": 11,
+        "min": 3.0183439821694265,
+        "p05": 3.0266719155822557,
+        "median": 3.2104047714378794,
+        "p95": 5.700601250539876,
+        "max": 6.249071067984687,
+        "rms": 3.89998791703854
+      },
+      "reprojection_rms_px": {
+        "count": 11,
+        "min": 0.18254575412874222,
+        "p05": 0.1857793315847864,
+        "median": 0.21438453482119377,
+        "p95": 0.5414179865108837,
+        "max": 0.6043098705441435,
+        "rms": 0.3148417571123708
+      },
+      "frames": [
+        {
+          "frame": "frame_000000",
+          "plane_distance_mm": 603.9137647938599,
+          "reprojection_rms_px": 0.4020682173887617,
+          "reconstructed_bottom_z_mm": 916.6476976063898,
+          "bottom_signed_residual_mm": 4.647697606389784,
+          "reconstructed_top_z_mm": 1041.6476976063898,
+          "top_signed_residual_mm": 4.647697606389784
+        },
+        {
+          "frame": "frame_000001",
+          "plane_distance_mm": 601.59508774021,
+          "reprojection_rms_px": 0.6043098705441435,
+          "reconstructed_bottom_z_mm": 918.2490710679847,
+          "bottom_signed_residual_mm": 6.249071067984687,
+          "reconstructed_top_z_mm": 1043.2490710679847,
+          "top_signed_residual_mm": 6.249071067984687
+        },
+        {
+          "frame": "frame_000002",
+          "plane_distance_mm": 603.4094292938788,
+          "reprojection_rms_px": 0.47852610247762384,
+          "reconstructed_bottom_z_mm": 917.1521314330951,
+          "bottom_signed_residual_mm": 5.1521314330950645,
+          "reconstructed_top_z_mm": 1042.152131433095,
+          "top_signed_residual_mm": 5.1521314330950645
+        },
+        {
+          "frame": "frame_000003",
+          "plane_distance_mm": 605.8206448679481,
+          "reprojection_rms_px": 0.21438453482119377,
+          "reconstructed_bottom_z_mm": 915.2475503304013,
+          "bottom_signed_residual_mm": 3.247550330401282,
+          "reconstructed_top_z_mm": 1040.2475503304013,
+          "top_signed_residual_mm": 3.247550330401282
+        },
+        {
+          "frame": "frame_000004",
+          "plane_distance_mm": 605.8735781372636,
+          "reprojection_rms_px": 0.18254575412874222,
+          "reconstructed_bottom_z_mm": 915.2066129310924,
+          "bottom_signed_residual_mm": 3.2066129310924225,
+          "reconstructed_top_z_mm": 1040.2066129310924,
+          "top_signed_residual_mm": 3.2066129310924225
+        },
+        {
+          "frame": "frame_000005",
+          "plane_distance_mm": 605.6771612411957,
+          "reprojection_rms_px": 0.22102135241366272,
+          "reconstructed_bottom_z_mm": 915.1775323108544,
+          "bottom_signed_residual_mm": 3.177532310854417,
+          "reconstructed_top_z_mm": 1040.1775323108545,
+          "top_signed_residual_mm": 3.177532310854531
+        },
+        {
+          "frame": "frame_000006",
+          "plane_distance_mm": 605.7767940640542,
+          "reprojection_rms_px": 0.22533882950582956,
+          "reconstructed_bottom_z_mm": 915.210404771438,
+          "bottom_signed_residual_mm": 3.210404771437993,
+          "reconstructed_top_z_mm": 1040.2104047714379,
+          "top_signed_residual_mm": 3.2104047714378794
+        },
+        {
+          "frame": "frame_000007",
+          "plane_distance_mm": 606.0979674040656,
+          "reprojection_rms_px": 0.19632035979454818,
+          "reconstructed_bottom_z_mm": 915.2521310394044,
+          "bottom_signed_residual_mm": 3.2521310394043894,
+          "reconstructed_top_z_mm": 1040.2521310394045,
+          "top_signed_residual_mm": 3.252131039404503
+        },
+        {
+          "frame": "frame_000008",
+          "plane_distance_mm": 606.0334963626993,
+          "reprojection_rms_px": 0.20549551500110325,
+          "reconstructed_bottom_z_mm": 915.1594591197817,
+          "bottom_signed_residual_mm": 3.1594591197816726,
+          "reconstructed_top_z_mm": 1040.1594591197816,
+          "top_signed_residual_mm": 3.159459119781559
+        },
+        {
+          "frame": "frame_000009",
+          "plane_distance_mm": 606.1670435960759,
+          "reprojection_rms_px": 0.19782434847034072,
+          "reconstructed_bottom_z_mm": 915.0349998489952,
+          "bottom_signed_residual_mm": 3.0349998489951986,
+          "reconstructed_top_z_mm": 1040.034999848995,
+          "top_signed_residual_mm": 3.034999848995085
+        },
+        {
+          "frame": "frame_000010",
+          "plane_distance_mm": 606.0887692253782,
+          "reprojection_rms_px": 0.1890129090408306,
+          "reconstructed_bottom_z_mm": 915.0183439821693,
+          "bottom_signed_residual_mm": 3.0183439821693128,
+          "reconstructed_top_z_mm": 1040.0183439821694,
+          "top_signed_residual_mm": 3.0183439821694265
+        }
+      ]
+    },
+    "W02": {
+      "scan_id": "scan_20260817_194937_000",
+      "distance_mm": 796.7296351028499,
+      "bottom_signed_residual_mm": {
+        "count": 11,
+        "min": 4.448120537542195,
+        "p05": 4.466204990238282,
+        "median": 4.602010431982762,
+        "p95": 4.891971912050792,
+        "max": 5.118480086991553,
+        "rms": 4.628244887330952
+      },
+      "bottom_absolute_residual_mm": {
+        "count": 11,
+        "min": 4.448120537542195,
+        "p05": 4.466204990238282,
+        "median": 4.602010431982762,
+        "p95": 4.891971912050792,
+        "max": 5.118480086991553,
+        "rms": 4.628244887330952
+      },
+      "top_signed_residual_mm": {
+        "count": 11,
+        "min": 4.448120537542309,
+        "p05": 4.466204990238339,
+        "median": 4.602010431982762,
+        "p95": 4.891971912050735,
+        "max": 5.11848008699144,
+        "rms": 4.628244887330972
+      },
+      "top_absolute_residual_mm": {
+        "count": 11,
+        "min": 4.448120537542309,
+        "p05": 4.466204990238339,
+        "median": 4.602010431982762,
+        "p95": 4.891971912050735,
+        "max": 5.11848008699144,
+        "rms": 4.628244887330972
+      },
+      "reprojection_rms_px": {
+        "count": 11,
+        "min": 0.24505511018585524,
+        "p05": 0.24733166721572203,
+        "median": 0.26041652984285263,
+        "p95": 0.2989056572177629,
+        "max": 0.3155889402808707,
+        "rms": 0.26790975673175804
+      },
+      "frames": [
+        {
+          "frame": "frame_000000",
+          "plane_distance_mm": 797.1222885953773,
+          "reprojection_rms_px": 0.25318155137744536,
+          "reconstructed_bottom_z_mm": 916.6020104319828,
+          "bottom_signed_residual_mm": 4.602010431982762,
+          "reconstructed_top_z_mm": 1041.6020104319828,
+          "top_signed_residual_mm": 4.602010431982762
+        },
+        {
+          "frame": "frame_000001",
+          "plane_distance_mm": 796.5496949308781,
+          "reprojection_rms_px": 0.27269118940786263,
+          "reconstructed_bottom_z_mm": 916.6090191319066,
+          "bottom_signed_residual_mm": 4.609019131906621,
+          "reconstructed_top_z_mm": 1041.6090191319067,
+          "top_signed_residual_mm": 4.609019131906734
+        },
+        {
+          "frame": "frame_000002",
+          "plane_distance_mm": 796.357377564534,
+          "reprojection_rms_px": 0.24505511018585524,
+          "reconstructed_bottom_z_mm": 916.6400993204727,
+          "bottom_signed_residual_mm": 4.6400993204727,
+          "reconstructed_top_z_mm": 1041.6400993204727,
+          "top_signed_residual_mm": 4.6400993204727
+        },
+        {
+          "frame": "frame_000003",
+          "plane_distance_mm": 796.297594161513,
+          "reprojection_rms_px": 0.26041652984285263,
+          "reconstructed_bottom_z_mm": 916.6642794044292,
+          "bottom_signed_residual_mm": 4.66427940442918,
+          "reconstructed_top_z_mm": 1041.6642794044292,
+          "top_signed_residual_mm": 4.66427940442918
+        },
+        {
+          "frame": "frame_000004",
+          "plane_distance_mm": 796.8824699465835,
+          "reprojection_rms_px": 0.3155889402808707,
+          "reconstructed_bottom_z_mm": 917.1184800869916,
+          "bottom_signed_residual_mm": 5.118480086991553,
+          "reconstructed_top_z_mm": 1042.1184800869914,
+          "top_signed_residual_mm": 5.11848008699144
+        },
+        {
+          "frame": "frame_000005",
+          "plane_distance_mm": 796.7296351028499,
+          "reprojection_rms_px": 0.24960822424558882,
+          "reconstructed_bottom_z_mm": 916.66546373711,
+          "bottom_signed_residual_mm": 4.665463737110031,
+          "reconstructed_top_z_mm": 1041.66546373711,
+          "top_signed_residual_mm": 4.665463737110031
+        },
+        {
+          "frame": "frame_000006",
+          "plane_distance_mm": 796.4544849469083,
+          "reprojection_rms_px": 0.2783538070498358,
+          "reconstructed_bottom_z_mm": 916.5360615645412,
+          "bottom_signed_residual_mm": 4.536061564541228,
+          "reconstructed_top_z_mm": 1041.5360615645413,
+          "top_signed_residual_mm": 4.536061564541342
+        },
+        {
+          "frame": "frame_000007",
+          "plane_distance_mm": 797.212670011998,
+          "reprojection_rms_px": 0.2822223741546551,
+          "reconstructed_bottom_z_mm": 916.4842894429344,
+          "bottom_signed_residual_mm": 4.484289442934369,
+          "reconstructed_top_z_mm": 1041.4842894429344,
+          "top_signed_residual_mm": 4.484289442934369
+        },
+        {
+          "frame": "frame_000008",
+          "plane_distance_mm": 796.5267337499506,
+          "reprojection_rms_px": 0.25331984274631447,
+          "reconstructed_bottom_z_mm": 916.4481205375422,
+          "bottom_signed_residual_mm": 4.448120537542195,
+          "reconstructed_top_z_mm": 1041.4481205375423,
+          "top_signed_residual_mm": 4.448120537542309
+        },
+        {
+          "frame": "frame_000009",
+          "plane_distance_mm": 797.0180848351856,
+          "reprojection_rms_px": 0.25864697795283764,
+          "reconstructed_bottom_z_mm": 916.5910853331733,
+          "bottom_signed_residual_mm": 4.591085333173282,
+          "reconstructed_top_z_mm": 1041.5910853331734,
+          "top_signed_residual_mm": 4.591085333173396
+        },
+        {
+          "frame": "frame_000010",
+          "plane_distance_mm": 797.0636483019074,
+          "reprojection_rms_px": 0.2703732593031127,
+          "reconstructed_bottom_z_mm": 916.5172601436979,
+          "bottom_signed_residual_mm": 4.517260143697854,
+          "reconstructed_top_z_mm": 1041.5172601436977,
+          "top_signed_residual_mm": 4.51726014369774
+        }
+      ]
+    },
+    "W03": {
+      "scan_id": "scan_20260817_195209_000",
+      "distance_mm": 984.7257081010133,
+      "bottom_signed_residual_mm": {
+        "count": 11,
+        "min": 6.328084107637437,
+        "p05": 6.332904569936659,
+        "median": 6.393820347084443,
+        "p95": 6.589640219786759,
+        "max": 6.591836251675318,
+        "rms": 6.434059671866831
+      },
+      "bottom_absolute_residual_mm": {
+        "count": 11,
+        "min": 6.328084107637437,
+        "p05": 6.332904569936659,
+        "median": 6.393820347084443,
+        "p95": 6.589640219786759,
+        "max": 6.591836251675318,
+        "rms": 6.434059671866831
+      },
+      "top_signed_residual_mm": {
+        "count": 11,
+        "min": 6.328084107637551,
+        "p05": 6.332904569936659,
+        "median": 6.3938203470845565,
+        "p95": 6.589640219786816,
+        "max": 6.591836251675431,
+        "rms": 6.434059671866843
+      },
+      "top_absolute_residual_mm": {
+        "count": 11,
+        "min": 6.328084107637551,
+        "p05": 6.332904569936659,
+        "median": 6.3938203470845565,
+        "p95": 6.589640219786816,
+        "max": 6.591836251675431,
+        "rms": 6.434059671866843
+      },
+      "reprojection_rms_px": {
+        "count": 11,
+        "min": 0.15387435684856138,
+        "p05": 0.15624294196699878,
+        "median": 0.1859694560466122,
+        "p95": 0.20306982905274734,
+        "max": 0.20798611660881627,
+        "rms": 0.1849035020415271
+      },
+      "frames": [
+        {
+          "frame": "frame_000000",
+          "plane_distance_mm": 985.612757490021,
+          "reprojection_rms_px": 0.18323194005788349,
+          "reconstructed_bottom_z_mm": 918.5874441878982,
+          "bottom_signed_residual_mm": 6.5874441878982,
+          "reconstructed_top_z_mm": 1043.5874441878982,
+          "top_signed_residual_mm": 6.5874441878982
+        },
+        {
+          "frame": "frame_000001",
+          "plane_distance_mm": 986.5490436872798,
+          "reprojection_rms_px": 0.1859694560466122,
+          "reconstructed_bottom_z_mm": 918.5918362516753,
+          "bottom_signed_residual_mm": 6.591836251675318,
+          "reconstructed_top_z_mm": 1043.5918362516754,
+          "top_signed_residual_mm": 6.591836251675431
+        },
+        {
+          "frame": "frame_000002",
+          "plane_distance_mm": 984.7009539736932,
+          "reprojection_rms_px": 0.19808358116966193,
+          "reconstructed_bottom_z_mm": 918.3938203470844,
+          "bottom_signed_residual_mm": 6.393820347084443,
+          "reconstructed_top_z_mm": 1043.3938203470846,
+          "top_signed_residual_mm": 6.3938203470845565
+        },
+        {
+          "frame": "frame_000003",
+          "plane_distance_mm": 986.4185035371854,
+          "reprojection_rms_px": 0.1898126177042771,
+          "reconstructed_bottom_z_mm": 918.3377250322359,
+          "bottom_signed_residual_mm": 6.3377250322358805,
+          "reconstructed_top_z_mm": 1043.3377250322358,
+          "top_signed_residual_mm": 6.337725032235767
+        },
+        {
+          "frame": "frame_000004",
+          "plane_distance_mm": 984.4049846855082,
+          "reprojection_rms_px": 0.1981535414966784,
+          "reconstructed_bottom_z_mm": 918.5159613732575,
+          "bottom_signed_residual_mm": 6.515961373257483,
+          "reconstructed_top_z_mm": 1043.5159613732576,
+          "top_signed_residual_mm": 6.515961373257596
+        },
+        {
+          "frame": "frame_000005",
+          "plane_distance_mm": 984.2997265731094,
+          "reprojection_rms_px": 0.17268606652360466,
+          "reconstructed_bottom_z_mm": 918.4889139150396,
+          "bottom_signed_residual_mm": 6.488913915039575,
+          "reconstructed_top_z_mm": 1043.4889139150396,
+          "top_signed_residual_mm": 6.488913915039575
+        },
+        {
+          "frame": "frame_000006",
+          "plane_distance_mm": 984.2990878383575,
+          "reprojection_rms_px": 0.1835695019000548,
+          "reconstructed_bottom_z_mm": 918.344653260374,
+          "bottom_signed_residual_mm": 6.3446532603740025,
+          "reconstructed_top_z_mm": 1043.344653260374,
+          "top_signed_residual_mm": 6.344653260373889
+        },
+        {
+          "frame": "frame_000007",
+          "plane_distance_mm": 983.9800630955762,
+          "reprojection_rms_px": 0.20798611660881627,
+          "reconstructed_bottom_z_mm": 918.4368303046631,
+          "bottom_signed_residual_mm": 6.43683030466309,
+          "reconstructed_top_z_mm": 1043.436830304663,
+          "top_signed_residual_mm": 6.43683030466309
+        },
+        {
+          "frame": "frame_000008",
+          "plane_distance_mm": 984.8416910883551,
+          "reprojection_rms_px": 0.15387435684856138,
+          "reconstructed_bottom_z_mm": 918.3709959953175,
+          "bottom_signed_residual_mm": 6.3709959953174575,
+          "reconstructed_top_z_mm": 1043.3709959953173,
+          "top_signed_residual_mm": 6.370995995317344
+        },
+        {
+          "frame": "frame_000009",
+          "plane_distance_mm": 986.2069318676189,
+          "reprojection_rms_px": 0.19437493100238265,
+          "reconstructed_bottom_z_mm": 918.3280841076374,
+          "bottom_signed_residual_mm": 6.328084107637437,
+          "reconstructed_top_z_mm": 1043.3280841076376,
+          "top_signed_residual_mm": 6.328084107637551
+        },
+        {
+          "frame": "frame_000010",
+          "plane_distance_mm": 984.7257081010133,
+          "reprojection_rms_px": 0.15861152708543616,
+          "reconstructed_bottom_z_mm": 918.370913194693,
+          "bottom_signed_residual_mm": 6.370913194693003,
+          "reconstructed_top_z_mm": 1043.370913194693,
+          "top_signed_residual_mm": 6.370913194693003
+        }
+      ]
+    }
+  },
+  "bottom_residual_summary_mm": {
+    "count": 33,
+    "min": 3.0183439821693128,
+    "p05": 3.109675411467083,
+    "median": 4.647697606389784,
+    "p95": 6.54455449911377,
+    "max": 6.591836251675318,
+    "rms": 5.099924193923371
+  },
+  "reprojection_rms_px": {
+    "count": 33,
+    "min": 0.15387435684856138,
+    "p05": 0.16705625074833727,
+    "median": 0.21438453482119377,
+    "p95": 0.43265137142430643,
+    "max": 0.6043098705441435,
+    "rms": 0.261464003157156
+  },
+  "residual_vs_distance_slope_mm_per_m": 8.398745855534603,
+  "baseline_slope_mm_per_m": 52.89366143717401,
+  "slope_reduction_fraction": 0.8412145117707448,
+  "camera_height_sensitivity": {
+    "962": {
+      "per_pose_median_bottom_residual_mm": {
+        "W01": -6.789595228562007,
+        "W02": -5.397989568017238,
+        "W03": -3.606179652915557
+      },
+      "slope_mm_per_m": 8.398745855534603
+    },
+    "972": {
+      "per_pose_median_bottom_residual_mm": {
+        "W01": 3.210404771437993,
+        "W02": 4.602010431982762,
+        "W03": 6.393820347084443
+      },
+      "slope_mm_per_m": 8.398745855534603
+    },
+    "982": {
+      "per_pose_median_bottom_residual_mm": {
+        "W01": 13.210404771437993,
+        "W02": 14.602010431982762,
+        "W03": 16.393820347084443
+      },
+      "slope_mm_per_m": 8.398745855534612
+    }
+  },
+  "camera_height_used_to_change_slope_decision": false,
+  "no_second_oblique_capture_recommended": false,
+  "candidate_export_allowed": true,
+  "promotion": false
+}

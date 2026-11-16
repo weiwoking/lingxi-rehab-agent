@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "camera_orientation_manifest.v1.schema.json",
+  "title": "Stage 7A camera orientation manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "width", "height", "physical_orientation", "software_rotation_degrees", "scene_upright_confirmed", "confirmed_at", "source_image_sha256", "notes", "exif_orientation"],
+  "properties": {
+    "schema_version": {"const": "camera_orientation_manifest.v1"},
+    "width": {"const": 640},
+    "height": {"const": 360},
+    "physical_orientation": {"const": "landscape"},
+    "software_rotation_degrees": {"const": 0},
+    "scene_upright_confirmed": {"type": "boolean"},
+    "confirmed_at": {"type": ["string", "null"], "format": "date-time"},
+    "source_image_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "notes": {"type": "string"},
+    "exif_orientation": {"const": 1}
+  }
+}

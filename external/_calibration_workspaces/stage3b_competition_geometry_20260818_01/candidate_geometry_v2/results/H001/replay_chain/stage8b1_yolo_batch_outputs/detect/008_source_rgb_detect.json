@@ -1,0 +1,223 @@
+{
+  "schema_version": "deltar_stage3_yolo.v1",
+  "model": {
+    "path": "C:\\ec\\_deltar_p4_pipeline\\models\\rehab_scan_yolo11n_coco80_volleyball_detect_v5b_exp.pt",
+    "sha256": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+    "expected_sha256": "74ef3ac06f7b623731284dd36d983ea94207d0254525729303c1057715f613ce",
+    "hash_verified": true,
+    "size_bytes": 21024452,
+    "task": "detect",
+    "expected_task": "detect",
+    "task_verified": true,
+    "device": "cuda:0",
+    "actual_model_device": "cuda:0",
+    "precision": "FP32",
+    "half": false,
+    "ultralytics_version": "8.4.93",
+    "torch_version": "2.7.1+cu128",
+    "class_names": {
+      "0": "person",
+      "1": "bicycle",
+      "2": "car",
+      "3": "motorcycle",
+      "4": "airplane",
+      "5": "bus",
+      "6": "train",
+      "7": "truck",
+      "8": "boat",
+      "9": "traffic light",
+      "10": "fire hydrant",
+      "11": "stop sign",
+      "12": "parking meter",
+      "13": "bench",
+      "14": "bird",
+      "15": "cat",
+      "16": "dog",
+      "17": "horse",
+      "18": "sheep",
+      "19": "cow",
+      "20": "elephant",
+      "21": "bear",
+      "22": "zebra",
+      "23": "giraffe",
+      "24": "backpack",
+      "25": "umbrella",
+      "26": "handbag",
+      "27": "tie",
+      "28": "suitcase",
+      "29": "frisbee",
+      "30": "skis",
+      "31": "snowboard",
+      "32": "sports ball",
+      "33": "kite",
+      "34": "baseball bat",
+      "35": "baseball glove",
+      "36": "skateboard",
+      "37": "surfboard",
+      "38": "tennis racket",
+      "39": "bottle",
+      "40": "wine glass",
+      "41": "cup",
+      "42": "fork",
+      "43": "knife",
+      "44": "spoon",
+      "45": "bowl",
+      "46": "banana",
+      "47": "apple",
+      "48": "sandwich",
+      "49": "orange",
+      "50": "broccoli",
+      "51": "carrot",
+      "52": "hot dog",
+      "53": "pizza",
+      "54": "donut",
+      "55": "cake",
+      "56": "chair",
+      "57": "couch",
+      "58": "potted plant",
+      "59": "bed",
+      "60": "dining table",
+      "61": "toilet",
+      "62": "tv",
+      "63": "laptop",
+      "64": "mouse",
+      "65": "remote",
+      "66": "keyboard",
+      "67": "cell phone",
+      "68": "microwave",
+      "69": "oven",
+      "70": "toaster",
+      "71": "sink",
+      "72": "refrigerator",
+      "73": "book",
+      "74": "clock",
+      "75": "vase",
+      "76": "scissors",
+      "77": "teddy bear",
+      "78": "hair drier",
+      "79": "toothbrush"
+    }
+  },
+  "image": {
+    "path": "C:\\ec\\_calibration_workspaces\\stage3b_competition_geometry_20260818_01\\candidate_geometry_v2\\results\\H001\\replay_chain\\logs\\frame_000008\\source_rgb.png",
+    "width": 640,
+    "height": 360
+  },
+  "instances": [
+    {
+      "instance_id": 0,
+      "class_id": 39,
+      "class_name": "bottle",
+      "confidence": 0.6089920401573181,
+      "bbox_xyxy": [
+        232.36648559570312,
+        163.4620361328125,
+        243.66195678710938,
+        191.20880126953125
+      ],
+      "bbox_normalized": [
+        0.36307263374328613,
+        0.4540612114800347,
+        0.3807218074798584,
+        0.5311355590820312
+      ],
+      "mask_key": null
+    },
+    {
+      "instance_id": 1,
+      "class_id": 39,
+      "class_name": "bottle",
+      "confidence": 0.607313871383667,
+      "bbox_xyxy": [
+        514.4927978515625,
+        27.100311279296875,
+        542.5787353515625,
+        98.10896301269531
+      ],
+      "bbox_normalized": [
+        0.8038949966430664,
+        0.07527864244249131,
+        0.8477792739868164,
+        0.27252489725748696
+      ],
+      "mask_key": null
+    },
+    {
+      "instance_id": 2,
+      "class_id": 72,
+      "class_name": "refrigerator",
+      "confidence": 0.42658960819244385,
+      "bbox_xyxy": [
+        450.06689453125,
+        101.16888427734375,
+        639.851806640625,
+        356.8753356933594
+      ],
+      "bbox_normalized": [
+        0.7032295227050781,
+        0.2810246785481771,
+        0.9997684478759765,
+        0.9913203769259983
+      ],
+      "mask_key": null
+    },
+    {
+      "instance_id": 3,
+      "class_id": 32,
+      "class_name": "sports ball",
+      "confidence": 0.3671811819076538,
+      "bbox_xyxy": [
+        580.6951293945312,
+        7.688026428222656,
+        640.0,
+        93.96173095703125
+      ],
+      "bbox_normalized": [
+        0.9073361396789551,
+        0.021355628967285156,
+        1.0,
+        0.2610048082139757
+      ],
+      "mask_key": null
+    },
+    {
+      "instance_id": 4,
+      "class_id": 39,
+      "class_name": "bottle",
+      "confidence": 0.26645633578300476,
+      "bbox_xyxy": [
+        602.5454711914062,
+        173.39743041992188,
+        631.5549926757812,
+        258.3675842285156
+      ],
+      "bbox_normalized": [
+        0.9414772987365723,
+        0.4816595289442274,
+        0.9868046760559082,
+        0.7176877339680989
+      ],
+      "mask_key": null
+    },
+    {
+      "instance_id": 5,
+      "class_id": 68,
+      "class_name": "microwave",
+      "confidence": 0.20641809701919556,
+      "bbox_xyxy": [
+        220.05491638183594,
+        115.26910400390625,
+        303.635986328125,
+        189.50827026367188
+      ],
+      "bbox_normalized": [
+        0.34383580684661863,
+        0.32019195556640623,
+        0.4744312286376953,
+        0.526411861843533
+      ],
+      "mask_key": null
+    }
+  ],
+  "warnings": []
+}

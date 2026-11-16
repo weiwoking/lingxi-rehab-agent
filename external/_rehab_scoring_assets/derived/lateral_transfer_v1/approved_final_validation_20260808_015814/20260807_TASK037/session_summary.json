@@ -1,0 +1,161 @@
+{
+  "session_version": "lateral_transfer_session_scoring_v1",
+  "motion_family": "lateral_transfer",
+  "session_id": "20260807_TASK037",
+  "source_session": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK037\\DATA_SEQ0000001263.csv",
+  "source_sha256": "5449c5937e542650f941be9161815b9dc1757aea8906576e5864205c478d87cc",
+  "template_path": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\template\\lateral_transfer_healthy_template_v1.json",
+  "template_sha256": "9650ccb8f882a9cf7b8fe6592c95897112b0d4f8e19e40c65825e8266d425469",
+  "segmentation": {
+    "segmentation_version": "lateral_transfer_segmentation_drink_reuse_v1",
+    "segmentation_wrapper_version": "lateral_transfer_segmentation_drink_reuse_v1",
+    "segmentation_core_version": "drink_hybrid_segmentation_v2_1_1",
+    "segmentation_strategy": "REUSE_DRINK_HYBRID_SEGMENTATION_V2_1_1",
+    "segmentation_source": "drink_hybrid_reuse",
+    "motion_family": "lateral_transfer",
+    "source_csv": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\sessions\\20260807_TASK037\\DATA_SEQ0000001263.csv",
+    "source_sha256": "5449c5937e542650f941be9161815b9dc1757aea8906576e5864205c478d87cc",
+    "row_count": 553,
+    "candidate_rep_count": 1,
+    "valid_rep_count": 1,
+    "expected_count_used_by_segmenter": false,
+    "task_id_used_by_segmenter": false,
+    "lateral_independent_segmenter_present": false,
+    "compatibility_adapter": "metadata_only",
+    "core_diagnostic": {
+      "method": "drink_hybrid_segmentation_v2_1_1",
+      "fallback_used": false,
+      "repetition_count": 1,
+      "incomplete_cycle": false,
+      "diagnostic": null,
+      "initial_baseline": {
+        "start_time_s": 0.0,
+        "end_time_s": 0.5
+      },
+      "departure_threshold_deg": {
+        "forearm": 10.0,
+        "hand_wrist": 10.0
+      },
+      "start_motion_threshold_deg_s": 25.0,
+      "quiet_motion_threshold_deg_s": 90.0,
+      "return_peak_ratio": 0.65,
+      "quiet_confirm_s": 3.0,
+      "last_confirmation_time_s": 9.92,
+      "base_method": "drink_complete_cycle_dynamic_rest_v1",
+      "base_repetition_count": 1,
+      "base_segments": [
+        {
+          "action_index": 1,
+          "start_index": 60,
+          "end_index": 369,
+          "start_time_s": 1.24,
+          "end_time_s": 7.42
+        }
+      ],
+      "hybrid_v2_enabled": true,
+      "imu_mapping": {
+        "upperarm": "imu1",
+        "trunk": "imu2",
+        "forearm": "imu3",
+        "hand_wrist": "imu4"
+      },
+      "motion_envelope_sources": [
+        "imu1_upperarm",
+        "imu3_forearm",
+        "imu4_wrist"
+      ],
+      "trunk_imu_role": "imu2_trunk_quality_only_not_primary_cycle_signal",
+      "boundary_count": 0,
+      "boundaries": [],
+      "boundary_clusters": [],
+      "cycle_candidates": [
+        {
+          "start_index": 60,
+          "end_index": 369,
+          "start_boundary": null,
+          "end_boundary": null,
+          "full_cycle_quality": {
+            "full_cycle_score": 0.840863,
+            "duration_score": 0.955882,
+            "departure_score": 1.0,
+            "peak_score": 1.0,
+            "return_score": 1.0,
+            "start_boundary_quality": 0.35,
+            "end_boundary_quality": 0.35,
+            "activity_coverage": 0.86129,
+            "valid": true,
+            "invalid_reason": null,
+            "incomplete_candidate": false,
+            "merged_candidate": false,
+            "confidence": 0.840863,
+            "duration_ms": 6180.0
+          }
+        }
+      ],
+      "global_selection": [
+        {
+          "start_index": 60,
+          "end_index": 369,
+          "start_boundary": null,
+          "end_boundary": null,
+          "full_cycle_quality": {
+            "full_cycle_score": 0.840863,
+            "duration_score": 0.955882,
+            "departure_score": 1.0,
+            "peak_score": 1.0,
+            "return_score": 1.0,
+            "start_boundary_quality": 0.35,
+            "end_boundary_quality": 0.35,
+            "activity_coverage": 0.86129,
+            "valid": true,
+            "invalid_reason": null,
+            "incomplete_candidate": false,
+            "merged_candidate": false,
+            "confidence": 0.840863,
+            "duration_ms": 6180.0
+          }
+        }
+      ],
+      "cycle_duration_prior": {
+        "source": "bootstrap_template_manifest",
+        "sample_count": 10,
+        "median_duration_ms": 6630.0,
+        "q1": 6505.0,
+        "q3": 7004.75,
+        "iqr": 499.75,
+        "robust_min_cycle_duration_ms": 5755.375,
+        "robust_max_cycle_duration_ms": 7754.375,
+        "merged_duration_threshold_ms": 10276.5,
+        "boundary_cluster_window_ms": 1060.8
+      },
+      "rejected_cycle_candidates": [],
+      "config": {
+        "strong_quiet_min_ms": 450,
+        "weak_quiet_min_ms": 180,
+        "motion_valley_prominence": 0.28,
+        "pose_return_threshold": 0.35,
+        "merged_duration_factor": 1.55,
+        "min_cycle_duration_ms": 1400,
+        "max_cycle_duration_ms": 9500,
+        "min_peak_distance_ms": 1200,
+        "boundary_cluster_window_factor": 0.16,
+        "full_cycle_valid_threshold": 0.62
+      }
+    },
+    "notes": [
+      "lateral_transfer intentionally reuses the frozen drink_hybrid_segmentation_v2_1_1 core",
+      "this wrapper only adapts metadata/schema for lateral_transfer downstream tools",
+      "expected labels and task ids are not inputs to the segmentation core"
+    ]
+  },
+  "rep_count": 1,
+  "average_score": 85.83,
+  "repetitions": [
+    {
+      "rep_index": 1,
+      "final_score": 85.83,
+      "types": []
+    }
+  ],
+  "generated_at": "2026-08-07T17:58:23.422942+00:00"
+}

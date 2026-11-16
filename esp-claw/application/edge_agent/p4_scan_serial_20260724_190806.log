@@ -1,0 +1,1891 @@
+ESP-ROM:esp32p4-eco7-20260109
+Build:Jan  9 2026
+rst:0x17 (CHIP_USB_UART_RESET),boot:0x30c (SPI_FAST_FLASH_BOOT)
+Core0 Saved PC:0x4fc1a574
+Core1 Saved PC:0x4ff2dd84
+SPI mode:DIO, clock div:1
+load:0x4ffb60d0,len:0x17b8
+load:0x4ffac2c0,len:0x1010
+load:0x4ffaefc0,len:0x3664
+entry 0x4ffac2ca
+I (8) boot: ESP-IDF v5.5.4-dirty 2nd stage bootloader
+I (8) boot: compile time Jul 24 2026 14:45:57
+I (9) boot: Multicore bootloader
+I (10) boot: chip revision: v3.2
+I (10) boot: efuse block revision: v1.2
+I (10) qio_mode: Enabling default flash chip QIO
+I (10) boot.esp32p4: SPI Speed      : 80MHz
+I (11) boot.esp32p4: SPI Mode       : QIO
+I (11) boot.esp32p4: SPI Flash Size : 16MB
+I (11) boot: Enabling RNG early entropy source...
+I (12) boot: Partition Table:
+I (12) boot: ## Label            Usage          Type ST Offset   Length
+I (13) boot:  0 nvs              WiFi data        01 02 0000a000 00006000
+I (13) boot:  1 otadata          OTA data         01 00 00010000 00002000
+I (14) boot:  2 phy_init         RF data          01 01 00012000 00001000
+I (14) boot:  3 ota_0            OTA app          00 10 00020000 00540000
+I (15) boot:  4 ota_1            OTA app          00 11 00560000 00540000
+I (15) boot:  5 emote            Unknown data     01 82 00aa0000 00300000
+I (16) boot:  6 system           Unknown data     01 81 00da0000 00100000
+I (16) boot:  7 storage          Unknown data     01 81 00ea0000 00100000
+I (18) boot: End of partition table
+I (19) esp_image: segment 0: paddr=00020020 vaddr=48280020 size=12f298h (1241752) map
+I (163) esp_image: segment 1: paddr=0014f2c0 vaddr=30100000 size=00144h (   324) load
+I (164) esp_image: segment 2: paddr=0014f40c vaddr=30100150 size=00048h (    72) load
+I (165) esp_image: segment 3: paddr=0014f45c vaddr=4ff20000 size=00bbch (  3004) load
+I (167) esp_image: segment 4: paddr=00150020 vaddr=48000020 size=274ce0h (2575584) map
+I (464) esp_image: segment 5: paddr=003c4d08 vaddr=4ff20bbc size=16e7ch ( 93820) load
+I (478) esp_image: segment 6: paddr=003dbb8c vaddr=4ff37a80 size=06068h ( 24680) load
+I (483) esp_image: segment 7: paddr=003e1bfc vaddr=50108080 size=00020h (    32) load
+I (488) boot: Loaded app from partition at offset 0x20000
+I (489) boot: Disabling RNG early entropy source...
+I (492) hex_psram: vendor id    : 0x0d (AP)
+I (492) hex_psram: Latency      : 0x01 (Fixed)
+I (493) hex_psram: DriveStr.    : 0x00 (25 Ohm)
+I (493) hex_psram: dev id       : 0x03 (generation 4)
+I (493) hex_psram: density      : 0x07 (256 Mbit)
+I (494) hex_psram: good-die     : 0x06 (Pass)
+I (494) hex_psram: SRF          : 0x02 (Slow Refresh)
+I (494) hex_psram: BurstType    : 0x00 ( Wrap)
+I (495) hex_psram: BurstLen     : 0x03 (2048 Byte)
+I (495) hex_psram: BitMode      : 0x01 (X16 Mode)
+I (495) hex_psram: Readlatency  : 0x04 (14 cycles@Fixed)
+I (496) hex_psram: DriveStrength: 0x00 (1/1)
+I (496) MSPI Timing: Enter psram timing tuning
+I esp_psram: Found 32MB PSRAM device
+I esp_psram: Speed: 200MHz
+I (716) mmu_psram: .rodata xip on psram
+I (853) mmu_psram: .text xip on psram
+I (854) hex_psram: psram CS IO is dedicated
+I (854) cpu_start: Multicore app
+I (864) cpu_start: Pro cpu start user code
+I (864) cpu_start: cpu freq: 400000000 Hz
+I (864) app_init: Application information:
+I (864) app_init: Project name:     edge_agent
+I (864) app_init: App version:      0734df2-dirty
+I (865) app_init: Compile time:     Jul 24 2026 18:59:57
+I (865) app_init: ELF file SHA256:  22f98b453...
+I (865) app_init: ESP-IDF:          v5.5.4-dirty
+I (865) efuse_init: Min chip rev:     v3.1
+I (865) efuse_init: Max chip rev:     v3.99 
+I (866) efuse_init: Chip rev:         v3.2
+I (866) heap_init: Initializing. RAM available for dynamic allocation:
+I (866) heap_init: At 4FF49A90 len 00071530 (453 KiB): RETENT_RAM
+I (866) heap_init: At 4FFBAFC0 len 00004BF0 (18 KiB): RAM
+I (867) heap_init: At 501080A0 len 00007F60 (31 KiB): RTCRAM
+I (867) heap_init: At 30100198 len 00001E68 (7 KiB): TCM
+I (867) esp_psram: Adding pool of 28979K of PSRAM memory to heap allocator
+I (867) esp_psram: Adding pool of 44K of PSRAM memory gap generated due to end address alignment of irom to the heap allocator
+I (868) esp_psram: Adding pool of 3K of PSRAM memory gap generated due to end address alignment of drom to the heap allocator
+I (869) spi_flash: detected chip: gd
+I (869) spi_flash: flash io: qio
+I (870) sleep_gpio: Configure to isolate all GPIO pins in sleep state
+I (870) sleep_gpio: Enable automatic switching of GPIO sleep configuration
+I (871) H_SDIO_DRV: sdio_data_to_rx_buf_task started
+I (871) main_task: Started on CPU0
+I (872) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations
+I (872) main_task: Calling app_main()
+I (872) app: Starting app
+I (885) app: Timezone set to CST-8
+I (886) PERIPH_I2C: I2C master bus initialized successfully
+I (886) PERIPH_I2S: I2S[0] STD,  TX, ws: 10, bclk: 12, dout: 9, din: 11
+I (886) PERIPH_I2S: I2S[0] initialize success: 0x482784e4
+I (887) PERIPH_I2S: I2S[0] STD, RX, ws: 10, bclk: 12, dout: 9, din: 11
+I (887) PERIPH_I2S: I2S[0] initialize success: 0x482786b8
+I (887) PERIPH_GPIO: Initialize success, pin: 53, set the default level: 0
+I (887) PERIPH_LDO: LDO initialize success
+I (888) PERIPH_DSI: MIPI DSI bus initialize success
+I (888) PERIPH_LEDC: LEDC initialized: speed_mode=0, channel=1, gpio=26, freq=4000Hz
+I (888) BOARD_MANAGER: All peripherals initialized
+I (888) BOARD_PERIPH: Reuse periph: i2s_audio_out, ref_count=2
+I (888) DEV_AUDIO_CODEC: DAC is ENABLED
+I (888) BOARD_PERIPH: Reuse periph: gpio_pa_control, ref_count=2
+I (888) BOARD_PERIPH: Reuse periph: i2c_master, ref_count=2
+I (894) ES8311: Work in Slave mode
+I (896) DEV_AUDIO_CODEC: Successfully initialized codec: audio_dac
+I (896) DEV_AUDIO_CODEC: Create esp_codec_dev success, dev:0x48278c64, chip:es8311
+I (897) BOARD_PERIPH: Reuse periph: i2s_audio_in, ref_count=2
+I (897) DEV_AUDIO_CODEC: ADC over I2S is enabled
+I (897) BOARD_PERIPH: Reuse periph: i2c_master, ref_count=3
+I (902) ES8311: Work in Slave mode
+I (905) DEV_AUDIO_CODEC: Successfully initialized codec: audio_adc
+I (905) DEV_AUDIO_CODEC: Create esp_codec_dev success, dev:0x48278e1c, chip:es8311
+W (905) ldo: The voltage value 0 is out of the recommended range [500, 2700]
+I (905) DEV_FS_FAT_SUB_SDMMC: slot_config: cd=-1, wp=-1, clk=0, cmd=0, d0=0, d1=0, d2=0, d3=0, d4=0, d5=0, d6=0, d7=0, width=4, flags=0x1
+I (906) sdmmc_periph: sdmmc_host_init: SDMMC host already initialized, skipping init flow
+Name: SD32G
+Type: SDHC
+Speed: 40.00 MHz (limit: 40.00 MHz)
+Size: 30448MB
+CSD: ver=2, sector_size=512, capacity=62357504 read_bl_len=9
+SSR: bus_width=4
+I (950) DEV_FS_FAT: Filesystem mounted, base path: /sdcard
+I (950) DEV_DISPLAY_LCD: Initializing LCD display: display_lcd, chip: ek79007, sub_type: dsi
+I (951) DEV_DISPLAY_LCD_SUB_DSI: Initializing DSI LCD display: display_lcd, chip: ek79007
+I (951) BOARD_PERIPH: Reuse periph: ldo_mipi, ref_count=2
+I (951) BOARD_PERIPH: Reuse periph: dsi_display, ref_count=2
+I (951) ek79007: version: 1.0.4
+E (1115) lcd_panel: esp_lcd_panel_swap_xy(50): swap_xy is not supported by this panel
+W (1115) DEV_DISPLAY_LCD: Failed to swap LCD panel XY: ESP_ERR_NOT_SUPPORTED
+E (1115) lcd_panel: esp_lcd_panel_disp_on_off(71): disp_on_off is not supported by this panel
+I (1115) DEV_DISPLAY_LCD: Successfully initialized LCD display: display_lcd (sub_type: dsi), panel: 0x4ffbed44, io: 0x4ffbe2c4
+I (1115) BOARD_PERIPH: Reuse periph: i2c_master, ref_count=4
+I (1116) GT911: I2C address initialization procedure skipped - using default GT9xx setup
+I (1117) GT911: TouchPad_ID:0x39,0x31,0x31
+I (1117) GT911: TouchPad_Config_Version:89
+I (1117) DEV_LCD_TOUCH_SUB_I2C: Successfully initialized LCD touch: lcd_touch, addr: 0xba, touch:0x48279280, io:0x48279210
+I (1118) DEV_LCD_TOUCH: Successfully initialized LCD touch: lcd_touch, chip: gt911, sub_type: i2c
+I (1118) BOARD_PERIPH: Reuse periph: ledc_backlight, ref_count=2
+I (1118) BOARD_PERIPH: Peripheral ledc_backlight config found: 0x483336b8 (size: 36)
+I (1118) DEV_LEDC_CTRL: LEDC control device lcd_brightness initialized: channel=1, default_percent=100%, duty=8191
+I (1119) DEV_CAMERA_SUB_CSI: Initializing CSI camera...
+I (1119) BOARD_PERIPH: Reuse periph: i2c_master, ref_count=5
+I (1119) BOARD_PERIPH: Reuse periph: ldo_mipi, ref_count=3
+I (1120) sc2336: Detected Camera sensor PID=0xcb3a
+I (1193) DEV_CAMERA_SUB_CSI: CSI camera initialized successfully, dev_path: /dev/video0
+I (1193) DEV_CAMERA: Successfully initialized camera device: camera, sub_type: csi, dev_path: /dev/video0
+I (1194) BOARD_MANAGER: Board manager initialized
+I (1194) BOARD_DEVICE: Device handle camera found, Handle: 0x48279314 TO: 0x48279314
+I (1194) rehab_camera: CAM_OWNER_CHECK camera_lua=disabled conflict=0 provider=rehab_follow
+I (1194) rehab_camera: CAM_PROVIDER_START path=/dev/video0 preview_interval_ms=500 timeout_ms=1000 reopen_max=3 backoff_ms=1000 jpeg_quality=60
+I (1195) rehab_camera: CAM_SOURCE path=/dev/video0 width=1280 height=720 fourcc=RGBP format=RGB565 byte_order=little_endian effective_stride=2560 sizeimage=0 payload=1843200
+I (1195) rehab_camera: CAM_OUTPUT width=640 height=360 format=RGB565 byte_order=little_endian stride=1280 payload=460800 scaler_mode=software_2x_nearest
+I (1195) rehab_camera: CAM_BUF index=0 length=1843200
+I (1195) rehab_camera: CAM_BUF index=1 length=1843200
+I (1196) rehab_camera: CAM_BUF index=2 length=1843200
+I (1196) rehab_camera: CAM_HEAP phase=before_slots psram_free=22887920 psram_min=22887920 psram_largest=22544384 internal_free=430139 internal_min=430139 internal_largest=352256
+I (1196) rehab_camera: CAM_RAW_SLOTS count=2 capacity_each=460800 storage=psram alignment=16
+I (1197) rehab_cam_jpeg: CAM_JPEG_SLOTS count=2 width=640 height=360 byte_order=little_endian quality=60 slot_capacity=460800 slots=2
+I (1197) rehab_camera: CAM_JPEG_SLOTS count=2 width=640 height=360 capacity_each=460800 quality=60
+I (1197) rehab_camera: CAM_HEAP phase=after_slots psram_free=21020128 psram_min=21020128 psram_largest=20971520 internal_free=391451 internal_min=390255 internal_largest=311296
+I (1198) rehab_tof: TOF_START_ATTEMPT attempt=1/3
+I (1198) rehab_tof: TOF_I2C owner=rehab_tof port=1 sda=21 scl=22 frequency=400000 address=0x29
+I (1198) rehab_capture: CAPTURE_READY candidate_count=1 max_candidates=8 image_bytes=460800
+I (1198) cloud_fusion: PC_LOCAL_FUSION_READY default_url=http://192.168.137.1:8000/api/v1/vision/fuse response_max=65536
+I (1199) BOARD_DEVICE: Device handle display_lcd found, Handle: 0x48279130 TO: 0x48279130
+I (1199) BOARD_DEVICE: Device display_lcd config found: 0x483331f4 (size: 124)
+I (1199) BOARD_DEVICE: Device display_lcd config found: 0x483331f4 (size: 124)
+I (1199) gfx_timer: Timer manager initialized with FPS: 10 (period: 100 ms)
+I (1200) Expression_setup: emote_config_label_obj: 0x4827d418
+I (1200) Expression_init: Create default label: [0x4827d418]
+I (1200) Expression_load: Loading assets from partition: label=emote
+I (1479) mmap_assets: Partition 'emote' successfully created, version: 1.4.0
+I (1479) Expression_load: Found index.json, size: 1768
+I (1480) Expression_load: Found 2 emoji items
+I (1480) Expression_load: Found 1 icon items
+I (1480) Expression_load: Found 4 layout items
+I (1653) app_fs: FATFS at /system total=1019904 used=991232
+I (1654) BOARD_DEVICE: Device handle fs_sdcard found, Handle: 0x48278e5c TO: 0x48278e5c
+I (1654) app_fs: Using SD card at '/sdcard' as fatfs storage
+I (1669) app_fs: FATFS at /sdcard total=1849688064 used=189235200
+I (1669) app_fs: RAMFS mounted at /ramfs max_files=8 max_bytes=524288
+I (1670) transport: Attempt connection with slave: retry[0]
+W (1670) H_SDIO_DRV: Reset slave using GPIO[54]
+I (1670) os_wrapper_esp: GPIO [54] configured
+I (3190) sdio_wrapper: SDIO master: Slot 1, Data-Lines: 4-bit Freq(KHz)[40000 KHz]
+I (3190) sdio_wrapper: GPIOs: CLK[18] CMD[19] D0[14] D1[15] D2[16] D3[17] Slave_Reset[54]
+I (3190) sdio_wrapper: Queues: Tx[20] Rx[20] SDIO-Rx-Mode[1]
+I (3224) sdio_wrapper: Function 0 Blocksize: 512
+I (3224) sdio_wrapper: Function 1 Blocksize: 512
+I (3324) H_SDIO_DRV: Card init success, TRANSPORT_RX_ACTIVE
+I (3324) transport: set_transport_state: 1
+I (3324) transport: Waiting for esp_hosted slave to be ready
+I (3371) H_SDIO_DRV: SDIO Host operating in STREAMING MODE
+I (3371) H_SDIO_DRV: Open data path at slave
+I (3371) H_SDIO_DRV: Starting SDIO process rx task
+I (3373) H_SDIO_DRV: Received ESP_PRIV_IF type message
+I (3373) transport: Received INIT event from ESP32 peripheral
+I (3373) transport: EVENT: 12
+I (3373) transport: Identified slave [esp32c6]
+I (3374) transport: EVENT: 11
+I (3374) transport: capabilities: 0xd
+I (3374) transport: Features supported are:
+I (3374) transport: 	 * WLAN
+I (3374) transport: 	   - HCI over SDIO
+I (3374) transport: 	   - BLE only
+I (3375) transport: EVENT: 13
+W (3375) transport: Version mismatch: Host [2.12.0] > Co-proc [0.0.0] ==> Upgrade co-proc to avoid RPC timeouts
+I (3375) transport: ESP board type is : 13 
+
+I (3375) transport: Base transport is set-up, TRANSPORT_TX_ACTIVE
+I (3375) H_API: Transport active
+I (3376) transport: Slave chip Id[12]
+I (3376) transport: raw_tp_dir[-], flow_ctrl: low[60] high[80]
+I (3376) transport: transport_delayed_init
+I (3376) esp_cli: Registering command: crash
+I (3376) esp_cli: Registering command: reboot
+I (3376) esp_cli: Registering command: mem-dump
+I (3376) esp_cli: Registering command: task-dump
+I (3376) esp_cli: Registering command: cpu-dump
+I (3377) esp_cli: Registering command: heap-trace
+I (3377) esp_cli: Registering command: sock-dump
+I (3377) esp_cli: Registering command: host-power-save
+I (3377) hci_stub_drv: Host BT Support: Disabled
+I (3377) H_SDIO_DRV: Received INIT event
+I (3377) H_SDIO_DRV: Event type: 0x22
+I (3377) H_SDIO_DRV: Write thread started
+I (3704) rehab_tof: TOF_CONFIGURED phase=startup api=VL53L5CX_1.3.0 resolution=8x8 frequency=15Hz mode=continuous
+I (3767) rehab_tof: TOF_STREAM_STARTED mode=continuous startup_discard=0 packet_bytes=448 i2c_hz=400000
+I (3871) RPC_WRAP: Coprocessor Boot-up
+I (3898) rehab_tof: TOF_FRAME seq=1 ready_wait_us=120548 get_us=10381 i2c_read_us=10365 parse_copy_us=26 publish_us=10403 packet_bytes=448
+I (3898) rehab_tof: TOF_EXT_SUMMARY seq=1 valid_zones=0 target0_zones=64 target1_zones=0 target_gt1_zones=0 status5=0 status6=0 status9=0 status255=64 status_other=0 distance_min_mm=-1 distance_median_mm=-1 distance_max_mm=-1 sigma_min_mm=-1 sigma_median_mm=-1 sigma_max_mm=-1 sigma_zero_zones=0
+E (3983) system_api: 1 mac type is incorrect (not found)
+E (3983) system_api: 0 mac type is incorrect (not found)
+I (3984) wifi_manager: Provisioning AP SSID: esp-claw-000000
+I (3984) app: Wi-Fi state: sta_connected=0 ap_active=0 mode=off ap_ssid=(none)
+I (4145) app: Wi-Fi startup STA: ssid=WEIWOK pwd_len=8
+I (4145) app: Wi-Fi startup AP: ssid=(auto:mac-suffix) pwd_len=0 behavior=keep
+E (4145) system_api: 1 mac type is incorrect (not found)
+E (4145) system_api: 0 mac type is incorrect (not found)
+I (4145) wifi_manager: Provisioning AP SSID: esp-claw-000000
+I (4146) wifi_manager: Applying Wi-Fi config: sta_configured=1 sta_ssid_len=6 sta_password_empty=0 ap_password_empty=1 ap_behavior=keep
+I (4284) http_camera: CAM_HTTP_ROUTES preview=/camera-preview frame=/api/camera/frame.jpg status=/api/camera/status mode=short_request
+I (4284) http_tof: TOF_HTTP_ROUTES status=/api/tof/status snapshot=/api/tof/snapshot
+I (4285) capture_http: CAPTURE_HTTP_ROUTES count=3
+I (4290) RPC_WRAP: ESP Event: wifi station started
+I (4308) wifi_manager: STA start: ssid_len=6 auth_threshold=wpa2_psk mode=apsta
+I (4308) H_API: esp_wifi_remote_connect
+I (4329) RPC_WRAP: ESP Event: softap started
+I (4343) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1
+W (4344) wifi_manager: *** Provisioning AP active: esp-claw-000000 @ 192.168.4.1 ***
+I (4344) app: Wi-Fi state: sta_connected=0 ap_active=1 mode=apsta ap_ssid=esp-claw-000000
+I (7716) RPC_WRAP: ESP Event: Station mode: Connected
+I (7717) esp_wifi_remote: esp_wifi_internal_reg_rxcb: sta: 0x4822ad3c
+I (8755) esp_netif_handlers: sta ip: 192.168.137.175, mask: 255.255.255.0, gw: 192.168.137.1
+I (8755) app: Wi-Fi state: sta_connected=1 ap_active=1 mode=sta_ok ap_ssid=esp-claw-000000
+I (8901) app: Wi-Fi STA ready: 192.168.137.175
+W (8901) app: *** Provisioning portal: SSID="esp-claw-000000" (auth=open) IP=192.168.4.1 URL=http://192.168.4.1/ ***
+I (8907) claw_event_router: Rules path: /sdcard/router_rules/router_rules.json
+I (8915) claw_event_router: Loaded 7 router rules
+I (8933) cap_scheduler: Saved normalized scheduler definitions to /sdcard/scheduler/schedules.json
+I (8935) cap_scheduler: Loaded scheduler runtime state from primary /sdcard/scheduler/schedules.json.state
+I (8938) cap_scheduler: Loaded 3 scheduler entries from /sdcard/scheduler/schedules.json
+I (8944) claw_memory: Async memory extract worker ready
+I (8979) claw_memory: Initialized memory root=/sdcard/memory
+I (8980) claw_skill: Initialized skill registry (awaiting directories)
+I (9152) claw_skill: Reloaded registry with 21 skill(s)
+W (9328) claw_skill: skills root /sdcard/skills not present, skipping
+I (9328) claw_skill: Reloaded registry with 21 skill(s)
+I (9329) claw_cap: Initialized runtime with dynamic capacity growth
+I (9329) app_capabilities: Register agent manager cap ok (groups=1, caps=6)
+I (9329) app_capabilities: Register QQ cap ok (groups=2, caps=10)
+I (9329) app_capabilities: Register Feishu cap ok (groups=3, caps=14)
+I (9330) app_capabilities: Register Telegram cap ok (groups=4, caps=18)
+I (9330) app_capabilities: Register WeChat cap ok (groups=5, caps=21)
+I (9330) app_capabilities: Register local / Web IM cap ok (groups=6, caps=23)
+I (9330) app_capabilities: Register files cap ok (groups=7, caps=29)
+I (9331) app_capabilities: Register scheduler cap ok (groups=8, caps=40)
+I (9331) app_lua_modules: Skipping Lua module at init: camera
+I (9331) cap_lua_rt: Lua runtime ready: registered_modules=25
+I (9332) app_capabilities: Register Lua cap ok (groups=9, caps=47)
+I (9333) mdns_mem: mDNS task will be created from SPIRAM
+I (9333) app_capabilities: Register MCP client cap ok (groups=10, caps=50)
+I (9333) app_capabilities: Register MCP server cap ok (groups=11, caps=51)
+I (9333) app_capabilities: Register skill cap ok (groups=12, caps=55)
+I (9334) app_capabilities: Register system cap ok (groups=13, caps=61)
+I (9334) app_capabilities: Register claw_memory group ok (groups=14, caps=66)
+I (9334) app_capabilities: Register time cap ok (groups=15, caps=67)
+I (9335) app_capabilities: Register LLM inspect cap ok (groups=16, caps=68)
+I (9335) app_capabilities: Register HTTP request cap ok (groups=17, caps=69)
+I (9335) app_capabilities: Register web search cap ok (groups=18, caps=70)
+I (9336) app_capabilities: Register router manager cap ok (groups=19, caps=76)
+I (9336) app_capabilities: Register session manager cap ok (groups=20, caps=77)
+I (9336) claw_cap: Configured 10 LLM-visible capability groups
+W (9336) cap_im_qq: QQ credentials not configured
+W (9336) cap_im_qq: QQ not configured, skipping gateway start
+W (9336) cap_im_feishu: Feishu credentials not configured
+W (9336) cap_im_feishu: Feishu not configured, skip start
+W (9337) cap_im_tg: Telegram bot token not configured
+W (9337) cap_im_tg: Telegram not configured, skipping start
+I (9341) cap_mcp_srv: MCP server ready: http://esp-claw.local:18791/mcp_server (ctrl_port=18792)
+I (9341) app_claw: Starting LLM backend=openai_compatible base_url=https://api.deepseek.com model=deepseek-v4-pro
+I (9342) claw_core_agent_0: Initialized
+I (9342) claw_core_agent_0: Started worker task
+I (9342) claw_agent_mgr: Created root agent id=0
+I (9342) app_claw: Root agent ready id=0
+I (9342) claw_event_router: event router task started
+I (9343) cap_scheduler: scheduler task started
+I (9345) app_claw: Scheduler rebased after first successful time sync
+I (9346) app_claw_cli: Starting console REPL
+[5nType 'help', 'auto rules', 'auto last', or 'auto emit_message qq_gateway qq 123 hello'
+
+Type 'help' to get the list of commands.
+Use UP/DOWN arrows to navigate through command history.
+Press TAB when typing command name to auto-complete.
+
+Your terminal application does not support escape sequences.
+
+Line editing and history features are disabled.
+
+On Windows, try using Windows Terminal or Putty instead.
+app>  I (10097) app_claw: Publishing startup trigger event: startup/boot_completed
+I (10098) claw_event_router: processing event=evt-1784891295355 type=startup source=app_claw channel= chat=
+I (10099) REHAB_CAR: transport=uart uart=1 tx_gpio=46 rx_gpio=47 baud=115200 data=8 parity=none stop_bits=1 flow_control=none rx_policy=bounded_discard init=ok
+I (10100) REHAB_CAR: initialized target_ip=255.255.255.255 target_port=5010 default_transport=uart speed=3 socket=lazy_closed uart_initialized=1 action_sent=0
+I (10101) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=STOP payload=STOP wire_len=5 send_result=5 speed=3 last_error=0
+I (10116) app: Car startup default_transport=uart transport=uart uart_initialized=1 startup_stop=ok result=local_uart_write_succeeded_no_ack
+I (10117) REHAB_CAR_CAP: registered safe_group=rehab_car_safe count=4 motion_group=rehab_car_motion count=2 car_move_llm_visible=0 handheld_debug_llm_visible=0
+I (10124) rehab_decision_rules: RULES_READY bytes=3120 version=rehab.phase4.3b.rules.v1
+I (10135) rehab_decision_file: SELECTED_TASK_RECOVERY available=1 generation=2 task_id=OT_DRINK_WATER_01
+I (10136) claw_cap: Added LLM-visible capability group: rehab_task_decision (count=11)
+I (10136) rehab_decision_cap: registered group=rehab_task_decision visibility=always
+I (10137) target_follow_cap: registered safe_group=rehab_target_follow_safe start_group=rehab_target_follow_start visibility=session_skill
+I (10138) person_follow: PF_SNAPSHOT_MEMORY slots=2 bytes_each=131072 psram_before=18910468 psram_after=18648316
+I (10139) person_follow_cap: registered person-follow capability groups
+I (10139) app: Person-follow registered provider=real endpoint=http://192.168.137.1:8000/api/v1/person-follow/detect action_enabled=1
+I (10140) rehab_system: rehab init begin
+I (10140) rehab_sensor_rx: UDP receiver listening on 0.0.0.0:5005
+I (10141) rehab_sensor_rx: initialized udp=5005 queue=64 output=50Hz storage=/sdcard
+I (10180) rehab_fatigue: fatigue initialized value=0 counted=15
+I (10180) rehab_score: score bridge initialized (manual-or-STA-gateway resolver)
+I (10182) claw_cap: Added LLM-visible capability group: rehab_integration (count=12)
+I (10182) rehab_cap: rehab capability group registered id=rehab_integration count=9
+I (10183) rehab_system: rehab init success mode=mock state=idle generation=1
+W (10186) rehab_score: skip invalid finalized session 20260714_TASK001: ESP_ERR_INVALID_RESPONSE
+P4_REHAB_UI_ENTRY_BEGIN
+I (10321) BOARD_DEVICE: Device handle display_lcd found, Handle: 0x48279130 TO: 0x48279130
+I (10322) BOARD_DEVICE: Device display_lcd config found: 0x483331f4 (size: 124)
+I (10322) display_arbiter: display owner changed to lua
+I (10334) BOARD_DEVICE: Device handle lcd_touch found, Handle: 0x482791cc TO: 0x482791cc
+I (10336) cap_lua_async: Queued Lua async job ffcff8da name=rehab_ui_phase1 exclusive=rehab_ui_phase1 timeout_ms=0 log_bytes=4096 path=/system/ui/rehab/start_rehab_ui.lua
+I (10370) lua_lvgl_indev: registered touch indev handle=0x48279280
+P4_REHAB_UI_FONT_LOAD_BEGIN
+I (10641) rehab_sensor_rx: summary node1_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 node2_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 required_ok=0 record_queue_drop=0 sd_write_error=0
+I (10862) lua_lvgl_font: P4_REHAB_UI_FONT_LOADED path=/system/ui/fonts/rehab_cn_20.bin size=41868 glyphs=461
+P4_REHAB_UI_FONT_GLYPH_CHECK missing=0
+P4_REHAB_UI_FONT_APPLIED
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (10875) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (10883) rehab_ui: REHAB_UI_START_SUBMITTED path=/system/ui/rehab/start_rehab_ui.lua output=Started Lua job ffcff8da (name=rehab_ui_phase1, exclusive=rehab_ui_phase1, timeout_ms=0 [until cancelled], log_bytes=4096, status=running) for /system/ui/rehab/start_rehab_ui.lua. Use lua_get_async_job or lua_tail_async_job with job_id=ffcff8da to read logs/results.
+I (10886) http_webim: Web IM outbound -> WebSocket (no server-side history)
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (10892) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+I (10904) main_task: Returned from app_main()
+REHAB_UI_PAGE_HOME
+REHAB_UI_ENTRY_READY
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (12222) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (13280) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (13930) rehab_tof: TOF_FRAME seq=152 ready_wait_us=59577 get_us=10388 i2c_read_us=10374 parse_copy_us=21 publish_us=10404 packet_bytes=448
+I (13931) rehab_tof: TOF_EXT_SUMMARY seq=152 valid_zones=0 target0_zones=64 target1_zones=0 target_gt1_zones=0 status5=0 status6=0 status9=0 status255=64 status_other=0 distance_min_mm=-1 distance_median_mm=-1 distance_max_mm=-1 sigma_min_mm=-1 sigma_median_mm=-1 sigma_max_mm=-1 sigma_zero_zones=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (14338) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (15395) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (16221) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (16494) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (17551) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (18609) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+rehab_env_scan start
+I (18735) rehab_env_scan: stack_high_water point="task start" remaining_bytes=7668
+state=WARMING_CAMERA busy=0 scan_id=scan_20260724_110823_000
+app>  I (18804) rehab_camera: CAM_SNAPSHOT kind=raw_only result=0x0 generation=1 capture_us=41588 downscale_us=19064 jpeg_us=0 total_us=61472 output_length=460800 output_format=rgb565 scaler_mode=software_2x_nearest
+I (18808) rehab_camera: CAM_STATUS state=RUNNING generation=1 captures=1 jpeg=0 drops=0 dq_err=0 q_err=0 interval_us=0 fps_milli=0 jpeg_us_latest=0 jpeg_us_max=0 jpeg_us_avg=0 loop_us_latest=61472 loop_us_max=61472 loop_us_avg=61472 psram_free=17595028 psram_min=17593692 psram_largest=17301504 internal_free=198735 internal_min=198543 internal_largest=118784
+I (18870) rehab_camera: CAM_SNAPSHOT kind=raw_only result=0x0 generation=2 capture_us=41457 downscale_us=19105 jpeg_us=0 total_us=61262 output_length=460800 output_format=rgb565 scaler_mode=software_2x_nearest
+I (18933) rehab_camera: CAM_SNAPSHOT kind=raw_only result=0x0 generation=3 capture_us=41587 downscale_us=19622 jpeg_us=0 total_us=61905 output_length=460800 output_format=rgb565 scaler_mode=software_2x_nearest
+I (18986) rehab_camera: CAM_SNAPSHOT kind=raw_only result=0x0 generation=4 capture_us=31369 downscale_us=19226 jpeg_us=0 total_us=51313 output_length=460800 output_format=rgb565 scaler_mode=software_2x_nearest
+I (19038) rehab_camera: CAM_SNAPSHOT kind=raw_only result=0x0 generation=5 capture_us=31381 downscale_us=19220 jpeg_us=0 total_us=51281 output_length=460800 output_format=rgb565 scaler_mode=software_2x_nearest
+I (19039) rehab_env_scan: stack_high_water point="after warmup" remaining_bytes=5268
+I (19197) rehab_camera: CAM_SNAPSHOT kind=raw_only result=0x0 generation=6 capture_us=31633 downscale_us=19251 jpeg_us=0 total_us=51564 output_length=460800 output_format=rgb565 scaler_mode=software_2x_nearest
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (19823) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (19885) rehab_env_scan: stack_high_water point="after formal frame 0" remaining_bytes=5268
+I (19885) rehab_scan: frame=0 camera_ts=18309614 tof_ts=18308686 pair_delta_us=928 before_seq=230 after_seq=231
+I (19888) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (19931) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (19974) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (20016) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (20058) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (20100) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (20142) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (20184) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (20226) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (20269) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (20311) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (20353) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (20386) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=STOP payload=STOP wire_len=5 send_result=5 speed=3 last_error=0
+I (20387) REHAB_CAR: command=rotate_ccw payload=PAD,128,128,21,128,NONE hold_ms=500 interval_ms=40 send_count=12 final_stop_result=0 last_error=0
+I (20388) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=STOP payload=STOP wire_len=5 send_result=5 speed=3 last_error=0
+I (20640) rehab_camera: CAM_SNAPSHOT kind=raw_only result=0x0 generation=7 capture_us=31421 downscale_us=19326 jpeg_us=0 total_us=51463 output_length=460800 output_format=rgb565 scaler_mode=software_2x_nearest
+I (20643) rehab_sensor_rx: summary node1_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 node2_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 required_ok=0 record_queue_drop=0 sd_write_error=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (21263) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (21322) rehab_scan: frame=1 camera_ts=19752505 tof_ts=19766127 pair_delta_us=13622 before_seq=252 after_seq=253
+I (21325) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (21368) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (21410) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (21452) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (21494) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (21537) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (21553) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+I (21580) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (21623) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (21666) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (21708) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (21750) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (21792) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (21823) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=STOP payload=STOP wire_len=5 send_result=5 speed=3 last_error=0
+I (21824) REHAB_CAR: command=rotate_ccw payload=PAD,128,128,21,128,NONE hold_ms=500 interval_ms=40 send_count=12 final_stop_result=0 last_error=0
+I (21825) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=STOP payload=STOP wire_len=5 send_result=5 speed=3 last_error=0
+I (22077) rehab_camera: CAM_SNAPSHOT kind=raw_only result=0x0 generation=8 capture_us=31400 downscale_us=19115 jpeg_us=0 total_us=51486 output_length=460800 output_format=rgb565 scaler_mode=software_2x_nearest
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (22143) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (22753) rehab_scan: frame=2 camera_ts=21189485 tof_ts=21163683 pair_delta_us=25802 before_seq=273 after_seq=274
+I (22756) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (22799) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (22841) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (22883) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (22925) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (22967) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (23009) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (23051) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (23093) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (23135) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (23178) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (23220) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (23221) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (23254) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=STOP payload=STOP wire_len=5 send_result=5 speed=3 last_error=0
+I (23255) REHAB_CAR: command=rotate_ccw payload=PAD,128,128,21,128,NONE hold_ms=500 interval_ms=40 send_count=12 final_stop_result=0 last_error=0
+I (23256) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=STOP payload=STOP wire_len=5 send_result=5 speed=3 last_error=0
+I (23509) rehab_camera: CAM_SNAPSHOT kind=raw_only result=0x0 generation=9 capture_us=31656 downscale_us=19625 jpeg_us=0 total_us=51966 output_length=460800 output_format=rgb565 scaler_mode=software_2x_nearest
+I (23961) rehab_tof: TOF_FRAME seq=303 ready_wait_us=61396 get_us=11457 i2c_read_us=11439 parse_copy_us=27 publish_us=11473 packet_bytes=448
+I (23961) rehab_tof: TOF_EXT_SUMMARY seq=303 valid_zones=0 target0_zones=63 target1_zones=1 target_gt1_zones=0 status5=0 status6=0 status9=0 status255=63 status_other=1 distance_min_mm=-1 distance_median_mm=-1 distance_max_mm=-1 sigma_min_mm=-1 sigma_median_mm=-1 sigma_max_mm=-1 sigma_zero_zones=0
+I (24200) rehab_scan: frame=3 camera_ts=22620739 tof_ts=22630158 pair_delta_us=9419 before_seq=295 after_seq=296
+I (24203) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (24245) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (24288) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (24330) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (24353) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (24372) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (24415) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (24457) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (24499) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (24541) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (24584) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (24626) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (24669) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (24700) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=STOP payload=STOP wire_len=5 send_result=5 speed=3 last_error=0
+I (24701) REHAB_CAR: command=rotate_ccw payload=PAD,128,128,21,128,NONE hold_ms=500 interval_ms=40 send_count=12 final_stop_result=0 last_error=0
+I (24702) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=STOP payload=STOP wire_len=5 send_result=5 speed=3 last_error=0
+I (24952) rehab_camera: CAM_SNAPSHOT kind=raw_only result=0x0 generation=10 capture_us=29853 downscale_us=18887 jpeg_us=0 total_us=49433 output_length=460800 output_format=rgb565 scaler_mode=software_2x_nearest
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (25577) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (25629) rehab_scan: frame=4 camera_ts=24064938 tof_ts=24088031 pair_delta_us=23093 before_seq=317 after_seq=318
+I (25632) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (25675) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (25717) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (25759) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (25801) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (25843) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (25886) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (25928) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (25970) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (26013) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (26055) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (26097) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (26130) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=STOP payload=STOP wire_len=5 send_result=5 speed=3 last_error=0
+I (26131) REHAB_CAR: command=rotate_ccw payload=PAD,128,128,21,128,NONE hold_ms=500 interval_ms=40 send_count=12 final_stop_result=0 last_error=0
+I (26132) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=STOP payload=STOP wire_len=5 send_result=5 speed=3 last_error=0
+I (26382) rehab_camera: CAM_SNAPSHOT kind=raw_only result=0x0 generation=11 capture_us=29789 downscale_us=19245 jpeg_us=0 total_us=49694 output_length=460800 output_format=rgb565 scaler_mode=software_2x_nearest
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (26994) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (27056) rehab_env_scan: stack_high_water point="after formal frame 5" remaining_bytes=5268
+I (27056) rehab_scan: frame=5 camera_ts=25494892 tof_ts=25483689 pair_delta_us=11203 before_seq=338 after_seq=339
+I (27059) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (27063) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+I (27102) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (27145) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (27188) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (27230) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (27273) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (27315) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (27357) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (27399) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (27441) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (27484) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (27526) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (27557) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=STOP payload=STOP wire_len=5 send_result=5 speed=3 last_error=0
+I (27558) REHAB_CAR: command=rotate_ccw payload=PAD,128,128,21,128,NONE hold_ms=500 interval_ms=40 send_count=12 final_stop_result=0 last_error=0
+I (27559) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=STOP payload=STOP wire_len=5 send_result=5 speed=3 last_error=0
+I (27809) rehab_camera: CAM_SNAPSHOT kind=raw_only result=0x0 generation=12 capture_us=29969 downscale_us=19213 jpeg_us=0 total_us=49860 output_length=460800 output_format=rgb565 scaler_mode=software_2x_nearest
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (28439) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (28511) rehab_scan: frame=6 camera_ts=26922053 tof_ts=26941984 pair_delta_us=19931 before_seq=360 after_seq=361
+I (28514) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (28557) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (28599) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (28641) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (28684) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (28727) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (28769) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (28811) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (28853) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (28895) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (28937) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (28979) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (28985) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (29012) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=STOP payload=STOP wire_len=5 send_result=5 speed=3 last_error=0
+I (29013) REHAB_CAR: command=rotate_ccw payload=PAD,128,128,21,128,NONE hold_ms=500 interval_ms=40 send_count=12 final_stop_result=0 last_error=0
+I (29014) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=STOP payload=STOP wire_len=5 send_result=5 speed=3 last_error=0
+I (29264) rehab_camera: CAM_SNAPSHOT kind=raw_only result=0x0 generation=13 capture_us=28409 downscale_us=20197 jpeg_us=0 total_us=49310 output_length=460800 output_format=rgb565 scaler_mode=software_2x_nearest
+I (29268) rehab_camera: CAM_STATUS state=RUNNING generation=13 captures=13 jpeg=0 drops=0 dq_err=0 q_err=0 interval_us=1453442 fps_milli=688 jpeg_us_latest=0 jpeg_us_max=0 jpeg_us_avg=0 loop_us_latest=49310 loop_us_max=61905 loop_us_avg=53231 psram_free=17458816 psram_min=17356340 psram_largest=17301504 internal_free=198735 internal_min=198447 internal_largest=118784
+I (29951) rehab_scan: frame=7 camera_ts=28375495 tof_ts=28409054 pair_delta_us=33559 before_seq=382 after_seq=383
+I (29954) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (29997) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (30039) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (30082) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (30116) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (30125) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (30168) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (30211) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (30253) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (30295) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (30338) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (30380) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (30423) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (30452) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=STOP payload=STOP wire_len=5 send_result=5 speed=3 last_error=0
+I (30453) REHAB_CAR: command=rotate_ccw payload=PAD,128,128,21,128,NONE hold_ms=500 interval_ms=40 send_count=12 final_stop_result=0 last_error=0
+I (30454) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=STOP payload=STOP wire_len=5 send_result=5 speed=3 last_error=0
+I (30656) rehab_sensor_rx: summary node1_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 node2_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 required_ok=0 record_queue_drop=0 sd_write_error=0
+I (30703) rehab_camera: CAM_SNAPSHOT kind=raw_only result=0x0 generation=14 capture_us=28174 downscale_us=18886 jpeg_us=0 total_us=48238 output_length=460800 output_format=rgb565 scaler_mode=software_2x_nearest
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (31333) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (31402) rehab_scan: frame=8 camera_ts=29815265 tof_ts=29801706 pair_delta_us=13559 before_seq=403 after_seq=404
+I (31404) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (31447) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (31489) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (31532) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (31574) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (31617) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (31659) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (31702) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (31745) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (31787) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (31830) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (31872) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (31889) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+I (31902) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=STOP payload=STOP wire_len=5 send_result=5 speed=3 last_error=0
+I (31903) REHAB_CAR: command=rotate_ccw payload=PAD,128,128,21,128,NONE hold_ms=500 interval_ms=40 send_count=12 final_stop_result=0 last_error=0
+I (31904) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=STOP payload=STOP wire_len=5 send_result=5 speed=3 last_error=0
+I (32153) rehab_camera: CAM_SNAPSHOT kind=raw_only result=0x0 generation=15 capture_us=28299 downscale_us=19386 jpeg_us=0 total_us=48740 output_length=460800 output_format=rgb565 scaler_mode=software_2x_nearest
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (32769) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (32861) rehab_scan: frame=9 camera_ts=31265389 tof_ts=31256701 pair_delta_us=8688 before_seq=425 after_seq=426
+I (32864) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (32906) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (32949) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (32992) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (33035) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (33077) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (33120) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (33162) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (33204) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (33247) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (33289) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (33332) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=rotate_ccw payload=PAD,128,128,21,128,NONE wire_len=24 send_result=24 speed=3 last_error=0
+I (33362) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=STOP payload=STOP wire_len=5 send_result=5 speed=3 last_error=0
+I (33363) REHAB_CAR: command=rotate_ccw payload=PAD,128,128,21,128,NONE hold_ms=500 interval_ms=40 send_count=12 final_stop_result=0 last_error=0
+I (33364) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=STOP payload=STOP wire_len=5 send_result=5 speed=3 last_error=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (33572) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (33612) rehab_camera: CAM_SNAPSHOT kind=raw_only result=0x0 generation=16 capture_us=27492 downscale_us=18897 jpeg_us=0 total_us=47108 output_length=460800 output_format=rgb565 scaler_mode=software_2x_nearest
+I (33992) rehab_tof: TOF_FRAME seq=454 ready_wait_us=60379 get_us=10842 i2c_read_us=10821 parse_copy_us=30 publish_us=11445 packet_bytes=448
+I (33993) rehab_tof: TOF_EXT_SUMMARY seq=454 valid_zones=1 target0_zones=61 target1_zones=3 target_gt1_zones=0 status5=1 status6=0 status9=0 status255=61 status_other=2 distance_min_mm=1921 distance_median_mm=1921 distance_max_mm=1921 sigma_min_mm=19 sigma_median_mm=19 sigma_max_mm=19 sigma_zero_zones=0
+I (34351) rehab_env_scan: stack_high_water point="after formal frame 10" remaining_bytes=5268
+I (34352) rehab_scan: frame=10 camera_ts=32724583 tof_ts=32718781 pair_delta_us=5802 before_seq=447 after_seq=448
+I (34397) rehab_env_scan: stack_high_water point="before final commit" remaining_bytes=5268
+I (34421) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=STOP payload=STOP wire_len=5 send_result=5 speed=3 last_error=0
+I (34422) rehab_env_scan: stack_high_water point="before upload submit" remaining_bytes=5268
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (34713) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (35780) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (36844) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (37235) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (38040) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (39110) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (40181) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (40664) rehab_sensor_rx: summary node1_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 node2_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 required_ok=0 record_queue_drop=0 sd_write_error=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (41259) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (42329) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (42383) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (43445) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (44017) rehab_tof: TOF_FRAME seq=605 ready_wait_us=59597 get_us=10393 i2c_read_us=10378 parse_copy_us=26 publish_us=10411 packet_bytes=448
+I (44018) rehab_tof: TOF_EXT_SUMMARY seq=605 valid_zones=2 target0_zones=62 target1_zones=2 target_gt1_zones=0 status5=2 status6=0 status9=0 status255=62 status_other=0 distance_min_mm=1768 distance_median_mm=1883 distance_max_mm=1998 sigma_min_mm=17 sigma_median_mm=17 sigma_max_mm=18 sigma_zero_zones=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (44504) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (45561) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (46618) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (47089) rehab_env_scan: stack_high_water point="after upload completion" remaining_bytes=3312
+I (47089) rehab_env_scan: stack_high_water point="before worker exit" remaining_bytes=3312
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (47435) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (47707) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (48765) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (49824) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (50666) rehab_sensor_rx: summary node1_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 node2_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 required_ok=0 record_queue_drop=0 sd_write_error=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (50894) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (51951) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (52490) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (53023) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (54043) rehab_tof: TOF_FRAME seq=756 ready_wait_us=49626 get_us=10400 i2c_read_us=10382 parse_copy_us=26 publish_us=10414 packet_bytes=448
+I (54044) rehab_tof: TOF_EXT_SUMMARY seq=756 valid_zones=2 target0_zones=62 target1_zones=2 target_gt1_zones=0 status5=2 status6=0 status9=0 status255=62 status_other=0 distance_min_mm=1890 distance_median_mm=1922 distance_max_mm=1955 sigma_min_mm=18 sigma_median_mm=21 sigma_max_mm=24 sigma_zero_zones=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (54080) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (55138) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (56197) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (57254) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (57537) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (58331) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (59388) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (60446) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (60667) rehab_sensor_rx: summary node1_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 node2_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 required_ok=0 record_queue_drop=0 sd_write_error=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (61502) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (62558) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (62579) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (63631) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (64076) rehab_tof: TOF_FRAME seq=907 ready_wait_us=59603 get_us=10390 i2c_read_us=10375 parse_copy_us=22 publish_us=10403 packet_bytes=448
+I (64077) rehab_tof: TOF_EXT_SUMMARY seq=907 valid_zones=1 target0_zones=63 target1_zones=1 target_gt1_zones=0 status5=1 status6=0 status9=0 status255=63 status_other=0 distance_min_mm=1880 distance_median_mm=1880 distance_max_mm=1880 sigma_min_mm=13 sigma_median_mm=13 sigma_max_mm=13 sigma_zero_zones=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (64687) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (65743) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (66802) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (67601) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (67873) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (68932) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (70085) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (70668) rehab_sensor_rx: summary node1_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 node2_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 required_ok=0 record_queue_drop=0 sd_write_error=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (71141) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+W (71496) rehab_score: skip invalid finalized session 20260714_TASK001: ESP_ERR_INVALID_RESPONSE
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (72199) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (72738) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (73269) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (74104) rehab_tof: TOF_FRAME seq=1058 ready_wait_us=59588 get_us=10380 i2c_read_us=10366 parse_copy_us=21 publish_us=10412 packet_bytes=448
+I (74105) rehab_tof: TOF_EXT_SUMMARY seq=1058 valid_zones=1 target0_zones=63 target1_zones=1 target_gt1_zones=0 status5=1 status6=0 status9=0 status255=63 status_other=0 distance_min_mm=1847 distance_median_mm=1847 distance_max_mm=1847 sigma_min_mm=13 sigma_median_mm=13 sigma_max_mm=13 sigma_zero_zones=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (74326) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (75385) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (76440) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (77496) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (77799) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (78590) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (79646) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (80669) rehab_sensor_rx: summary node1_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 node2_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 required_ok=0 record_queue_drop=0 sd_write_error=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (80702) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+W (81657) rehab_score: skip invalid finalized session 20260714_TASK001: ESP_ERR_INVALID_RESPONSE
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (81760) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (82817) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (82835) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (83888) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (84137) rehab_tof: TOF_FRAME seq=1209 ready_wait_us=59602 get_us=10382 i2c_read_us=10369 parse_copy_us=21 publish_us=10398 packet_bytes=448
+I (84138) rehab_tof: TOF_EXT_SUMMARY seq=1209 valid_zones=1 target0_zones=63 target1_zones=1 target_gt1_zones=0 status5=1 status6=0 status9=0 status255=63 status_other=0 distance_min_mm=1812 distance_median_mm=1812 distance_max_mm=1812 sigma_min_mm=19 sigma_median_mm=19 sigma_max_mm=19 sigma_zero_zones=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (84944) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (86000) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (87056) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (87855) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (88127) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (89184) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (90236) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (90670) rehab_sensor_rx: summary node1_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 node2_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 required_ok=0 record_queue_drop=0 sd_write_error=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (91292) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+W (91834) rehab_score: skip invalid finalized session 20260714_TASK001: ESP_ERR_INVALID_RESPONSE
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (92349) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (92889) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (93420) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (94160) rehab_tof: TOF_FRAME seq=1360 ready_wait_us=49600 get_us=10381 i2c_read_us=10366 parse_copy_us=22 publish_us=10392 packet_bytes=448
+I (94161) rehab_tof: TOF_EXT_SUMMARY seq=1360 valid_zones=21 target0_zones=38 target1_zones=26 target_gt1_zones=0 status5=21 status6=0 status9=0 status255=38 status_other=5 distance_min_mm=552 distance_median_mm=604 distance_max_mm=693 sigma_min_mm=4 sigma_median_mm=8 sigma_max_mm=15 sigma_zero_zones=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (94479) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (95535) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (96592) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (97648) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (97930) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (98721) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (99777) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (100671) rehab_sensor_rx: summary node1_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 node2_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 required_ok=0 record_queue_drop=0 sd_write_error=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (100834) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (101893) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+W (102008) rehab_score: skip invalid finalized session 20260714_TASK001: ESP_ERR_INVALID_RESPONSE
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (102948) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (102966) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (104018) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (104194) rehab_tof: TOF_FRAME seq=1511 ready_wait_us=59582 get_us=10388 i2c_read_us=10373 parse_copy_us=24 publish_us=10419 packet_bytes=448
+I (104195) rehab_tof: TOF_EXT_SUMMARY seq=1511 valid_zones=4 target0_zones=60 target1_zones=4 target_gt1_zones=0 status5=4 status6=0 status9=0 status255=60 status_other=0 distance_min_mm=936 distance_median_mm=976 distance_max_mm=994 sigma_min_mm=14 sigma_median_mm=17 sigma_max_mm=22 sigma_zero_zones=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (105076) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (106132) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (107189) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (107990) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (108262) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (109318) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (110376) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (110672) rehab_sensor_rx: summary node1_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 node2_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 required_ok=0 record_queue_drop=0 sd_write_error=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (111433) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+W (112174) rehab_score: skip invalid finalized session 20260714_TASK001: ESP_ERR_INVALID_RESPONSE
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (112490) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (113030) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (113562) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (114220) rehab_tof: TOF_FRAME seq=1662 ready_wait_us=59640 get_us=10382 i2c_read_us=10367 parse_copy_us=22 publish_us=10395 packet_bytes=448
+I (114221) rehab_tof: TOF_EXT_SUMMARY seq=1662 valid_zones=1 target0_zones=62 target1_zones=2 target_gt1_zones=0 status5=1 status6=0 status9=0 status255=62 status_other=1 distance_min_mm=1984 distance_median_mm=1984 distance_max_mm=1984 sigma_min_mm=15 sigma_median_mm=15 sigma_max_mm=15 sigma_zero_zones=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (114618) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (115674) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (116731) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (117788) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (118067) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (118859) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (119915) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (120673) rehab_sensor_rx: summary node1_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 node2_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 required_ok=0 record_queue_drop=0 sd_write_error=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (120971) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (122027) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+W (122342) rehab_score: skip invalid finalized session 20260714_TASK001: ESP_ERR_INVALID_RESPONSE
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (123083) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (123102) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (124154) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (124249) rehab_tof: TOF_FRAME seq=1813 ready_wait_us=59565 get_us=10384 i2c_read_us=10368 parse_copy_us=40 publish_us=10413 packet_bytes=448
+I (124250) rehab_tof: TOF_EXT_SUMMARY seq=1813 valid_zones=0 target0_zones=64 target1_zones=0 target_gt1_zones=0 status5=0 status6=0 status9=0 status255=64 status_other=0 distance_min_mm=-1 distance_median_mm=-1 distance_max_mm=-1 sigma_min_mm=-1 sigma_median_mm=-1 sigma_max_mm=-1 sigma_zero_zones=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (125210) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (126266) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (127322) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (128121) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (128394) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (129450) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (130507) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (130674) rehab_sensor_rx: summary node1_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 node2_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 required_ok=0 record_queue_drop=0 sd_write_error=0
+W (130687) HTTP_CLIENT: Connection timed out before data was ready!
+W (130688) cap_im_wechat: WeChat polling failed, retrying
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (131562) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+W (132517) rehab_score: skip invalid finalized session 20260714_TASK001: ESP_ERR_INVALID_RESPONSE
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (132619) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (133158) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (133692) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (134274) rehab_tof: TOF_FRAME seq=1964 ready_wait_us=49585 get_us=10380 i2c_read_us=10366 parse_copy_us=21 publish_us=10393 packet_bytes=448
+I (134275) rehab_tof: TOF_EXT_SUMMARY seq=1964 valid_zones=0 target0_zones=64 target1_zones=0 target_gt1_zones=0 status5=0 status6=0 status9=0 status255=64 status_other=0 distance_min_mm=-1 distance_median_mm=-1 distance_max_mm=-1 sigma_min_mm=-1 sigma_median_mm=-1 sigma_max_mm=-1 sigma_zero_zones=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (134748) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (135805) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (136864) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (137920) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (138223) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (139014) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+E (139689) esp-tls: couldn't get hostname for :ilinkai.weixin.qq.com: getaddrinfo() returns 202, addrinfo=0x0
+E (139689) esp-tls: Failed to open new connection
+E (139689) transport_base: Failed to open a new connection
+E (139690) HTTP_CLIENT: Connection failed, sock < 0
+W (139690) cap_im_wechat: WeChat polling failed, retrying
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (140072) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (140675) rehab_sensor_rx: summary node1_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 node2_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 required_ok=0 record_queue_drop=0 sd_write_error=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (141128) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (142184) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+W (142686) rehab_score: skip invalid finalized session 20260714_TASK001: ESP_ERR_INVALID_RESPONSE
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (143242) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (143260) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (144311) rehab_tof: TOF_FRAME seq=2115 ready_wait_us=59608 get_us=10445 i2c_read_us=10421 parse_copy_us=36 publish_us=10468 packet_bytes=448
+I (144312) rehab_tof: TOF_EXT_SUMMARY seq=2115 valid_zones=0 target0_zones=64 target1_zones=0 target_gt1_zones=0 status5=0 status6=0 status9=0 status255=64 status_other=0 distance_min_mm=-1 distance_median_mm=-1 distance_max_mm=-1 sigma_min_mm=-1 sigma_median_mm=-1 sigma_max_mm=-1 sigma_zero_zones=0
+I (144312) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (145370) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (146427) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (147483) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_ACTION_QUEUED type=set_handheld_debug requested_mode=BLE
+I (148012) REHAB_CAR_CAP: handheld_debug requested_mode=BLE
+I (148013) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=STOP payload=STOP wire_len=5 send_result=5 speed=3 last_error=0
+I (148014) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=MODE BLE payload=MODE BLE wire_len=9 send_result=9 speed=3 last_error=0
+I (148015) REHAB_CAR: command=s3_input_mode requested_mode=BLE sequence=STOP_then_MODE confirmation=local_uart_write_only_no_ack result=ESP_OK
+REHAB_UI_CAP_CALL name=car_handheld_debug_set ok=true state= session=
+REHAB_UI_ACTION_DONE type=set_handheld_debug ok=true requested_mode=BLE reason=OK
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (148287) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (148558) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+E (148691) esp-tls: couldn't get hostname for :ilinkai.weixin.qq.com: getaddrinfo() returns 202, addrinfo=0x0
+E (148691) esp-tls: Failed to open new connection
+E (148691) transport_base: Failed to open a new connection
+E (148692) HTTP_CLIENT: Connection failed, sock < 0
+W (148692) cap_im_wechat: WeChat polling failed, retrying
+REHAB_UI_ACTION_QUEUED type=set_handheld_debug requested_mode=SERIAL
+I (149348) REHAB_CAR_CAP: handheld_debug requested_mode=SERIAL
+I (149349) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=STOP payload=STOP wire_len=5 send_result=5 speed=3 last_error=0
+I (149350) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=MODE SERIAL payload=MODE SERIAL wire_len=12 send_result=12 speed=3 last_error=0
+I (149351) REHAB_CAR: command=s3_input_mode requested_mode=SERIAL sequence=STOP_then_MODE confirmation=local_uart_write_only_no_ack result=ESP_OK
+REHAB_UI_CAP_CALL name=car_handheld_debug_set ok=true state= session=
+REHAB_UI_ACTION_DONE type=set_handheld_debug ok=true requested_mode=SERIAL reason=OK
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (149619) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (150676) rehab_sensor_rx: summary node1_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 node2_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 required_ok=0 record_queue_drop=0 sd_write_error=0
+I (150677) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (151733) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (152789) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+W (152858) rehab_score: skip invalid finalized session 20260714_TASK001: ESP_ERR_INVALID_RESPONSE
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (153328) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (153860) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (154334) rehab_tof: TOF_FRAME seq=2266 ready_wait_us=49588 get_us=10384 i2c_read_us=10368 parse_copy_us=23 publish_us=10411 packet_bytes=448
+I (154335) rehab_tof: TOF_EXT_SUMMARY seq=2266 valid_zones=0 target0_zones=63 target1_zones=1 target_gt1_zones=0 status5=0 status6=0 status9=0 status255=63 status_other=1 distance_min_mm=-1 distance_median_mm=-1 distance_max_mm=-1 sigma_min_mm=-1 sigma_median_mm=-1 sigma_max_mm=-1 sigma_zero_zones=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (154916) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (155972) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (157028) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+E (157693) esp-tls: couldn't get hostname for :ilinkai.weixin.qq.com: getaddrinfo() returns 202, addrinfo=0x0
+E (157693) esp-tls: Failed to open new connection
+E (157693) transport_base: Failed to open a new connection
+E (157694) HTTP_CLIENT: Connection failed, sock < 0
+W (157694) cap_im_wechat: WeChat polling failed, retrying
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (158084) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (158363) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (159154) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (160210) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (160677) rehab_sensor_rx: summary node1_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 node2_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 required_ok=0 record_queue_drop=0 sd_write_error=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (161267) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (162323) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+W (163027) rehab_score: skip invalid finalized session 20260714_TASK001: ESP_ERR_INVALID_RESPONSE
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (163379) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (163397) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+I (164366) rehab_tof: TOF_FRAME seq=2417 ready_wait_us=59606 get_us=10382 i2c_read_us=10367 parse_copy_us=24 publish_us=10397 packet_bytes=448
+I (164367) rehab_tof: TOF_EXT_SUMMARY seq=2417 valid_zones=0 target0_zones=64 target1_zones=0 target_gt1_zones=0 status5=0 status6=0 status9=0 status255=64 status_other=0 distance_min_mm=-1 distance_median_mm=-1 distance_max_mm=-1 sigma_min_mm=-1 sigma_median_mm=-1 sigma_max_mm=-1 sigma_zero_zones=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (164450) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (165507) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (166563) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+E (166694) esp-tls: couldn't get hostname for :ilinkai.weixin.qq.com: getaddrinfo() returns 202, addrinfo=0x0
+E (166694) esp-tls: Failed to open new connection
+E (166694) transport_base: Failed to open a new connection
+E (166695) HTTP_CLIENT: Connection failed, sock < 0
+W (166695) cap_im_wechat: WeChat polling failed, retrying
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (167619) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (168420) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (168692) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (169749) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (170678) rehab_sensor_rx: summary node1_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 node2_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 required_ok=0 record_queue_drop=0 sd_write_error=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (170808) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (171864) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (172920) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+W (173193) rehab_score: skip invalid finalized session 20260714_TASK001: ESP_ERR_INVALID_RESPONSE
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (173459) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_ACTION_QUEUED type=set_handheld_debug requested_mode=BLE
+I (173732) REHAB_CAR_CAP: handheld_debug requested_mode=BLE
+I (173732) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=STOP payload=STOP wire_len=5 send_result=5 speed=3 last_error=0
+I (173734) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=MODE BLE payload=MODE BLE wire_len=9 send_result=9 speed=3 last_error=0
+I (173735) REHAB_CAR: command=s3_input_mode requested_mode=BLE sequence=STOP_then_MODE confirmation=local_uart_write_only_no_ack result=ESP_OK
+REHAB_UI_CAP_CALL name=car_handheld_debug_set ok=true state= session=
+REHAB_UI_ACTION_DONE type=set_handheld_debug ok=true requested_mode=BLE reason=OK
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (174016) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (174397) rehab_tof: TOF_FRAME seq=2568 ready_wait_us=59596 get_us=10382 i2c_read_us=10368 parse_copy_us=21 publish_us=10393 packet_bytes=448
+I (174398) rehab_tof: TOF_EXT_SUMMARY seq=2568 valid_zones=0 target0_zones=64 target1_zones=0 target_gt1_zones=0 status5=0 status6=0 status9=0 status255=64 status_other=0 distance_min_mm=-1 distance_median_mm=-1 distance_max_mm=-1 sigma_min_mm=-1 sigma_median_mm=-1 sigma_max_mm=-1 sigma_zero_zones=0
+REHAB_UI_ACTION_QUEUED type=set_handheld_debug requested_mode=SERIAL
+I (174806) REHAB_CAR_CAP: handheld_debug requested_mode=SERIAL
+I (174807) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=STOP payload=STOP wire_len=5 send_result=5 speed=3 last_error=0
+I (174808) REHAB_CAR: transport=uart target_ip=255.255.255.255 target_port=5010 command=MODE SERIAL payload=MODE SERIAL wire_len=12 send_result=12 speed=3 last_error=0
+I (174809) REHAB_CAR: command=s3_input_mode requested_mode=SERIAL sequence=STOP_then_MODE confirmation=local_uart_write_only_no_ack result=ESP_OK
+REHAB_UI_CAP_CALL name=car_handheld_debug_set ok=true state= session=
+REHAB_UI_ACTION_DONE type=set_handheld_debug ok=true requested_mode=SERIAL reason=OK
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (175080) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+E (175696) esp-tls: couldn't get hostname for :ilinkai.weixin.qq.com: getaddrinfo() returns 202, addrinfo=0x0
+E (175696) esp-tls: Failed to open new connection
+E (175696) transport_base: Failed to open a new connection
+E (175697) HTTP_CLIENT: Connection failed, sock < 0
+W (175697) cap_im_wechat: WeChat polling failed, retrying
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (176138) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (177194) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (178250) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (178531) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (179323) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (180379) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (180679) rehab_sensor_rx: summary node1_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 node2_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 required_ok=0 record_queue_drop=0 sd_write_error=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (181436) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (182492) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+W (183371) rehab_score: skip invalid finalized session 20260714_TASK001: ESP_ERR_INVALID_RESPONSE
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (183548) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (183564) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+I (184424) rehab_tof: TOF_FRAME seq=2719 ready_wait_us=59585 get_us=10384 i2c_read_us=10370 parse_copy_us=36 publish_us=10412 packet_bytes=448
+I (184425) rehab_tof: TOF_EXT_SUMMARY seq=2719 valid_zones=0 target0_zones=64 target1_zones=0 target_gt1_zones=0 status5=0 status6=0 status9=0 status255=64 status_other=0 distance_min_mm=-1 distance_median_mm=-1 distance_max_mm=-1 sigma_min_mm=-1 sigma_median_mm=-1 sigma_max_mm=-1 sigma_zero_zones=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (184617) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+E (184697) esp-tls: couldn't get hostname for :ilinkai.weixin.qq.com: getaddrinfo() returns 202, addrinfo=0x0
+E (184697) esp-tls: Failed to open new connection
+E (184697) transport_base: Failed to open a new connection
+E (184698) HTTP_CLIENT: Connection failed, sock < 0
+W (184698) cap_im_wechat: WeChat polling failed, retrying
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (185673) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (186729) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (187785) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (188584) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (188855) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (189912) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (190680) rehab_sensor_rx: summary node1_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 node2_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 required_ok=0 record_queue_drop=0 sd_write_error=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (190971) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (192026) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (193082) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+W (193537) rehab_score: skip invalid finalized session 20260714_TASK001: ESP_ERR_INVALID_RESPONSE
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (193630) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+E (193698) esp-tls: couldn't get hostname for :ilinkai.weixin.qq.com: getaddrinfo() returns 202, addrinfo=0x0
+E (193698) esp-tls: Failed to open new connection
+E (193698) transport_base: Failed to open a new connection
+E (193699) HTTP_CLIENT: Connection failed, sock < 0
+W (193699) cap_im_wechat: WeChat polling failed, retrying
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (194162) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (194458) rehab_tof: TOF_FRAME seq=2870 ready_wait_us=59599 get_us=10380 i2c_read_us=10366 parse_copy_us=22 publish_us=10394 packet_bytes=448
+I (194459) rehab_tof: TOF_EXT_SUMMARY seq=2870 valid_zones=2 target0_zones=62 target1_zones=2 target_gt1_zones=0 status5=2 status6=0 status9=0 status255=62 status_other=0 distance_min_mm=1866 distance_median_mm=1887 distance_max_mm=1909 sigma_min_mm=10 sigma_median_mm=16 sigma_max_mm=23 sigma_zero_zones=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (195219) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (196276) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (197332) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (198388) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (198690) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (199481) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (200537) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (200681) rehab_sensor_rx: summary node1_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 node2_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 required_ok=0 record_queue_drop=0 sd_write_error=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (201593) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (202651) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+E (202700) esp-tls: couldn't get hostname for :ilinkai.weixin.qq.com: getaddrinfo() returns 202, addrinfo=0x0
+E (202700) esp-tls: Failed to open new connection
+E (202700) transport_base: Failed to open a new connection
+E (202701) HTTP_CLIENT: Connection failed, sock < 0
+W (202701) cap_im_wechat: WeChat polling failed, retrying
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (203707) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+W (203710) rehab_score: skip invalid finalized session 20260714_TASK001: ESP_ERR_INVALID_RESPONSE
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (203735) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+I (204481) rehab_tof: TOF_FRAME seq=3021 ready_wait_us=49592 get_us=10383 i2c_read_us=10368 parse_copy_us=22 publish_us=10395 packet_bytes=448
+I (204482) rehab_tof: TOF_EXT_SUMMARY seq=3021 valid_zones=0 target0_zones=64 target1_zones=0 target_gt1_zones=0 status5=0 status6=0 status9=0 status255=64 status_other=0 distance_min_mm=-1 distance_median_mm=-1 distance_max_mm=-1 sigma_min_mm=-1 sigma_median_mm=-1 sigma_max_mm=-1 sigma_zero_zones=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (204788) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (205846) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (206902) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (207958) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (208759) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (209031) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (210087) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (210682) rehab_sensor_rx: summary node1_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 node2_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 required_ok=0 record_queue_drop=0 sd_write_error=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (211145) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+E (211702) esp-tls: couldn't get hostname for :ilinkai.weixin.qq.com: getaddrinfo() returns 202, addrinfo=0x0
+E (211702) esp-tls: Failed to open new connection
+E (211702) transport_base: Failed to open a new connection
+E (211703) HTTP_CLIENT: Connection failed, sock < 0
+W (211703) cap_im_wechat: WeChat polling failed, retrying
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (212201) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (213257) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (213796) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+W (213893) rehab_score: skip invalid finalized session 20260714_TASK001: ESP_ERR_INVALID_RESPONSE
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (214330) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (214515) rehab_tof: TOF_FRAME seq=3172 ready_wait_us=59596 get_us=10382 i2c_read_us=10368 parse_copy_us=21 publish_us=10395 packet_bytes=448
+I (214516) rehab_tof: TOF_EXT_SUMMARY seq=3172 valid_zones=0 target0_zones=64 target1_zones=0 target_gt1_zones=0 status5=0 status6=0 status9=0 status255=64 status_other=0 distance_min_mm=-1 distance_median_mm=-1 distance_max_mm=-1 sigma_min_mm=-1 sigma_median_mm=-1 sigma_max_mm=-1 sigma_zero_zones=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (215386) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (216442) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (217499) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (218555) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (218834) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (219626) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (220682) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+I (220683) rehab_sensor_rx: summary node1_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 node2_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 required_ok=0 record_queue_drop=0 sd_write_error=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+E (220703) esp-tls: couldn't get hostname for :ilinkai.weixin.qq.com: getaddrinfo() returns 202, addrinfo=0x0
+E (220703) esp-tls: Failed to open new connection
+E (220703) transport_base: Failed to open a new connection
+E (220704) HTTP_CLIENT: Connection failed, sock < 0
+W (220704) cap_im_wechat: WeChat polling failed, retrying
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (221739) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (222795) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (223852) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (223869) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+W (224066) rehab_score: skip invalid finalized session 20260714_TASK001: ESP_ERR_INVALID_RESPONSE
+I (224543) rehab_tof: TOF_FRAME seq=3323 ready_wait_us=59637 get_us=10381 i2c_read_us=10367 parse_copy_us=21 publish_us=10394 packet_bytes=448
+I (224544) rehab_tof: TOF_EXT_SUMMARY seq=3323 valid_zones=0 target0_zones=64 target1_zones=0 target_gt1_zones=0 status5=0 status6=0 status9=0 status255=64 status_other=0 distance_min_mm=-1 distance_median_mm=-1 distance_max_mm=-1 sigma_min_mm=-1 sigma_median_mm=-1 sigma_max_mm=-1 sigma_zero_zones=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (224923) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (225979) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (227035) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (228092) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (228891) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (229163) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+E (229705) esp-tls: couldn't get hostname for :ilinkai.weixin.qq.com: getaddrinfo() returns 202, addrinfo=0x0
+E (229705) esp-tls: Failed to open new connection
+E (229705) transport_base: Failed to open a new connection
+E (229706) HTTP_CLIENT: Connection failed, sock < 0
+W (229706) cap_im_wechat: WeChat polling failed, retrying
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (230219) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (230684) rehab_sensor_rx: summary node1_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 node2_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 required_ok=0 record_queue_drop=0 sd_write_error=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (231275) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (232332) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (233388) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (233927) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+W (234235) rehab_score: skip invalid finalized session 20260714_TASK001: ESP_ERR_INVALID_RESPONSE
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (234460) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (234567) rehab_tof: TOF_FRAME seq=3474 ready_wait_us=49586 get_us=10382 i2c_read_us=10366 parse_copy_us=24 publish_us=10396 packet_bytes=448
+I (234568) rehab_tof: TOF_EXT_SUMMARY seq=3474 valid_zones=0 target0_zones=64 target1_zones=0 target_gt1_zones=0 status5=0 status6=0 status9=0 status255=64 status_other=0 distance_min_mm=-1 distance_median_mm=-1 distance_max_mm=-1 sigma_min_mm=-1 sigma_median_mm=-1 sigma_max_mm=-1 sigma_zero_zones=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (235516) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (236572) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (237631) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (238688) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+E (238707) esp-tls: couldn't get hostname for :ilinkai.weixin.qq.com: getaddrinfo() returns 202, addrinfo=0x0
+E (238707) esp-tls: Failed to open new connection
+E (238707) transport_base: Failed to open a new connection
+E (238708) HTTP_CLIENT: Connection failed, sock < 0
+W (238708) cap_im_wechat: WeChat polling failed, retrying
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (238967) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (239758) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (240685) rehab_sensor_rx: summary node1_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 node2_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 required_ok=0 record_queue_drop=0 sd_write_error=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (240816) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (241872) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (242929) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+rehab_env_scan status
+state=COMPLETED active=0 scan_id=scan_20260724_110823_000 warmup=5/5 directions=11/11 direction=10 cancel=0 final_path=/sdcard/rehab/scans/scan_20260724_110823_000 upload_state=completed upload_error= retryable=0 last_error=0 reason=
+app>  REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (243987) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (244005) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+W (244392) rehab_score: skip invalid finalized session 20260714_TASK001: ESP_ERR_INVALID_RESPONSE
+I (244605) rehab_tof: TOF_FRAME seq=3625 ready_wait_us=59550 get_us=10382 i2c_read_us=10366 parse_copy_us=24 publish_us=10396 packet_bytes=448
+I (244606) rehab_tof: TOF_EXT_SUMMARY seq=3625 valid_zones=0 target0_zones=64 target1_zones=0 target_gt1_zones=0 status5=0 status6=0 status9=0 status255=64 status_other=0 distance_min_mm=-1 distance_median_mm=-1 distance_max_mm=-1 sigma_min_mm=-1 sigma_median_mm=-1 sigma_max_mm=-1 sigma_zero_zones=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (245058) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (246114) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (247172) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+rehab_scan status
+state=completed scan_id=scan_20260724_110823_000 requested=11 committed=11 last_error=0 last_errno=0 failed_frame=4294967295 aborted=0 path=/sdcard/rehab/scans/scan_20260724_110823_000
+app>  E (247709) esp-tls: couldn't get hostname for :ilinkai.weixin.qq.com: getaddrinfo() returns 202, addrinfo=0x0
+E (247709) esp-tls: Failed to open new connection
+E (247709) transport_base: Failed to open a new connection
+E (247710) HTTP_CLIENT: Connection failed, sock < 0
+W (247710) cap_im_wechat: WeChat polling failed, retrying
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (248230) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (249029) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (249303) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (250359) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (250686) rehab_sensor_rx: summary node1_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 node2_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 required_ok=0 record_queue_drop=0 sd_write_error=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (251416) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+rehab_scan_send status
+state=completed scan_id=scan_20260724_110823_000 service_job_id=svc_92da89def02d4156a41b8070c2ab5653 pipeline_job_id= bytes_sent=5088487 result_bytes=0 polls=0 http_status=200 last_error=0 last_errno=0 aborted=0 error_code= result_path=
+app>  REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (252473) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (253529) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (254091) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+W (254567) rehab_score: skip invalid finalized session 20260714_TASK001: ESP_ERR_INVALID_RESPONSE
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (254624) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (254631) rehab_tof: TOF_FRAME seq=3776 ready_wait_us=59709 get_us=10521 i2c_read_us=10492 parse_copy_us=47 publish_us=10549 packet_bytes=448
+I (254632) rehab_tof: TOF_EXT_SUMMARY seq=3776 valid_zones=0 target0_zones=64 target1_zones=0 target_gt1_zones=0 status5=0 status6=0 status9=0 status255=64 status_other=0 distance_min_mm=-1 distance_median_mm=-1 distance_max_mm=-1 sigma_min_mm=-1 sigma_median_mm=-1 sigma_max_mm=-1 sigma_zero_zones=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (255682) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+E (256710) esp-tls: couldn't get hostname for :ilinkai.weixin.qq.com: getaddrinfo() returns 202, addrinfo=0x0
+E (256710) esp-tls: Failed to open new connection
+E (256710) transport_base: Failed to open a new connection
+E (256711) HTTP_CLIENT: Connection failed, sock < 0
+W (256711) cap_im_wechat: WeChat polling failed, retrying
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (256739) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (257795) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (258852) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (259130) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (259922) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (260687) rehab_sensor_rx: summary node1_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 node2_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 required_ok=0 record_queue_drop=0 sd_write_error=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (260978) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (262034) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (263091) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (264147) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (264166) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+I (264655) rehab_tof: TOF_FRAME seq=3927 ready_wait_us=49599 get_us=10384 i2c_read_us=10370 parse_copy_us=22 publish_us=10399 packet_bytes=448
+I (264656) rehab_tof: TOF_EXT_SUMMARY seq=3927 valid_zones=0 target0_zones=64 target1_zones=0 target_gt1_zones=0 status5=0 status6=0 status9=0 status255=64 status_other=0 distance_min_mm=-1 distance_median_mm=-1 distance_max_mm=-1 sigma_min_mm=-1 sigma_median_mm=-1 sigma_max_mm=-1 sigma_zero_zones=0
+W (264732) rehab_score: skip invalid finalized session 20260714_TASK001: ESP_ERR_INVALID_RESPONSE
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (265218) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+E (265711) esp-tls: couldn't get hostname for :ilinkai.weixin.qq.com: getaddrinfo() returns 202, addrinfo=0x0
+E (265711) esp-tls: Failed to open new connection
+E (265711) transport_base: Failed to open a new connection
+E (265712) HTTP_CLIENT: Connection failed, sock < 0
+W (265712) cap_im_wechat: WeChat polling failed, retrying
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (266275) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (267331) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (268387) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (269186) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (269458) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (270514) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (270688) rehab_sensor_rx: summary node1_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 node2_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 required_ok=0 record_queue_drop=0 sd_write_error=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (271570) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (272626) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (273685) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (274224) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+I (274690) rehab_tof: TOF_FRAME seq=4078 ready_wait_us=59602 get_us=10384 i2c_read_us=10368 parse_copy_us=25 publish_us=10398 packet_bytes=448
+I (274691) rehab_tof: TOF_EXT_SUMMARY seq=4078 valid_zones=0 target0_zones=64 target1_zones=0 target_gt1_zones=0 status5=0 status6=0 status9=0 status255=64 status_other=0 distance_min_mm=-1 distance_median_mm=-1 distance_max_mm=-1 sigma_min_mm=-1 sigma_median_mm=-1 sigma_max_mm=-1 sigma_zero_zones=0
+E (274712) esp-tls: couldn't get hostname for :ilinkai.weixin.qq.com: getaddrinfo() returns 202, addrinfo=0x0
+E (274712) esp-tls: Failed to open new connection
+E (274712) transport_base: Failed to open a new connection
+E (274713) HTTP_CLIENT: Connection failed, sock < 0
+W (274713) cap_im_wechat: WeChat polling failed, retrying
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (274755) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+W (274903) rehab_score: skip invalid finalized session 20260714_TASK001: ESP_ERR_INVALID_RESPONSE
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (275811) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (276869) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (277925) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (278982) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (279263) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (280056) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (280689) rehab_sensor_rx: summary node1_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 node2_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 required_ok=0 record_queue_drop=0 sd_write_error=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (281112) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (282170) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (283226) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+E (283714) esp-tls: couldn't get hostname for :ilinkai.weixin.qq.com: getaddrinfo() returns 202, addrinfo=0x0
+E (283714) esp-tls: Failed to open new connection
+E (283714) transport_base: Failed to open a new connection
+E (283715) HTTP_CLIENT: Connection failed, sock < 0
+W (283715) cap_im_wechat: WeChat polling failed, retrying
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (284282) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (284300) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+I (284718) rehab_tof: TOF_FRAME seq=4229 ready_wait_us=59522 get_us=10381 i2c_read_us=10367 parse_copy_us=22 publish_us=10394 packet_bytes=448
+I (284719) rehab_tof: TOF_EXT_SUMMARY seq=4229 valid_zones=0 target0_zones=64 target1_zones=0 target_gt1_zones=0 status5=0 status6=0 status9=0 status255=64 status_other=0 distance_min_mm=-1 distance_median_mm=-1 distance_max_mm=-1 sigma_min_mm=-1 sigma_median_mm=-1 sigma_max_mm=-1 sigma_zero_zones=0
+W (285069) rehab_score: skip invalid finalized session 20260714_TASK001: ESP_ERR_INVALID_RESPONSE
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (285356) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (286412) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (287468) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (288525) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (289324) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (289595) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (290651) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (290690) rehab_sensor_rx: summary node1_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 node2_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 required_ok=0 record_queue_drop=0 sd_write_error=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (291707) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+E (292716) esp-tls: couldn't get hostname for :ilinkai.weixin.qq.com: getaddrinfo() returns 202, addrinfo=0x0
+E (292716) esp-tls: Failed to open new connection
+E (292716) transport_base: Failed to open a new connection
+E (292717) HTTP_CLIENT: Connection failed, sock < 0
+W (292717) cap_im_wechat: WeChat polling failed, retrying
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (292763) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (293820) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (294360) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+I (294741) rehab_tof: TOF_FRAME seq=4380 ready_wait_us=49600 get_us=10380 i2c_read_us=10366 parse_copy_us=22 publish_us=10393 packet_bytes=448
+I (294742) rehab_tof: TOF_EXT_SUMMARY seq=4380 valid_zones=0 target0_zones=64 target1_zones=0 target_gt1_zones=0 status5=0 status6=0 status9=0 status255=64 status_other=0 distance_min_mm=-1 distance_median_mm=-1 distance_max_mm=-1 sigma_min_mm=-1 sigma_median_mm=-1 sigma_max_mm=-1 sigma_zero_zones=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (294892) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+W (295235) rehab_score: skip invalid finalized session 20260714_TASK001: ESP_ERR_INVALID_RESPONSE
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (295949) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (297005) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (298062) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (299119) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (299398) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (300191) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (300691) rehab_sensor_rx: summary node1_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 node2_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 required_ok=0 record_queue_drop=0 sd_write_error=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (301247) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+E (301718) esp-tls: couldn't get hostname for :ilinkai.weixin.qq.com: getaddrinfo() returns 202, addrinfo=0x0
+E (301718) esp-tls: Failed to open new connection
+E (301718) transport_base: Failed to open a new connection
+E (301719) HTTP_CLIENT: Connection failed, sock < 0
+W (301719) cap_im_wechat: WeChat polling failed, retrying
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (302303) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (303360) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (304415) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (304434) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+I (304772) rehab_tof: TOF_FRAME seq=4531 ready_wait_us=49599 get_us=10383 i2c_read_us=10368 parse_copy_us=22 publish_us=10396 packet_bytes=448
+I (304773) rehab_tof: TOF_EXT_SUMMARY seq=4531 valid_zones=0 target0_zones=64 target1_zones=0 target_gt1_zones=0 status5=0 status6=0 status9=0 status255=64 status_other=0 distance_min_mm=-1 distance_median_mm=-1 distance_max_mm=-1 sigma_min_mm=-1 sigma_median_mm=-1 sigma_max_mm=-1 sigma_zero_zones=0
+W (305402) rehab_score: skip invalid finalized session 20260714_TASK001: ESP_ERR_INVALID_RESPONSE
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (305487) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (306544) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (307602) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (308659) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (309460) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (309732) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (310692) rehab_sensor_rx: summary node1_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 node2_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 required_ok=0 record_queue_drop=0 sd_write_error=0
+E (310720) esp-tls: couldn't get hostname for :ilinkai.weixin.qq.com: getaddrinfo() returns 202, addrinfo=0x0
+E (310720) esp-tls: Failed to open new connection
+E (310720) transport_base: Failed to open a new connection
+E (310721) HTTP_CLIENT: Connection failed, sock < 0
+W (310721) cap_im_wechat: WeChat polling failed, retrying
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (310788) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (311846) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (312903) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (313960) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (314522) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+I (314806) rehab_tof: TOF_FRAME seq=4682 ready_wait_us=59602 get_us=10380 i2c_read_us=10365 parse_copy_us=23 publish_us=10396 packet_bytes=448
+I (314807) rehab_tof: TOF_EXT_SUMMARY seq=4682 valid_zones=0 target0_zones=64 target1_zones=0 target_gt1_zones=0 status5=0 status6=0 status9=0 status255=64 status_other=0 distance_min_mm=-1 distance_median_mm=-1 distance_max_mm=-1 sigma_min_mm=-1 sigma_median_mm=-1 sigma_max_mm=-1 sigma_zero_zones=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (315057) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+W (315571) rehab_score: skip invalid finalized session 20260714_TASK001: ESP_ERR_INVALID_RESPONSE
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (316113) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (317169) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (318227) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (319283) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (319563) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+E (319722) esp-tls: couldn't get hostname for :ilinkai.weixin.qq.com: getaddrinfo() returns 202, addrinfo=0x0
+E (319722) esp-tls: Failed to open new connection
+E (319722) transport_base: Failed to open a new connection
+E (319723) HTTP_CLIENT: Connection failed, sock < 0
+W (319723) cap_im_wechat: WeChat polling failed, retrying
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (320356) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+I (320693) rehab_sensor_rx: summary node1_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 node2_online=0 pps=0.0 valid=0 udp=unknown gap=0.0% window_rx=0 window_gap=0 required_ok=0 record_queue_drop=0 sd_write_error=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (321414) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (322471) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (323526) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (324583) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+REHAB_UI_CAP_CALL name=rehab_task_decision_selected_get ok=true state= session=
+I (324601) rehab_cap: rehab_fatigue_status request_id=0 available=1 fatigue=0
+REHAB_UI_CAP_CALL name=rehab_fatigue_status ok=true state= session=
+I (324829) rehab_tof: TOF_FRAME seq=4833 ready_wait_us=49575 get_us=10381 i2c_read_us=10367 parse_copy_us=21 publish_us=10393 packet_bytes=448
+I (324830) rehab_tof: TOF_EXT_SUMMARY seq=4833 valid_zones=0 target0_zones=64 target1_zones=0 target_gt1_zones=0 status5=0 status6=0 status9=0 status255=64 status_other=0 distance_min_mm=-1 distance_median_mm=-1 distance_max_mm=-1 sigma_min_mm=-1 sigma_median_mm=-1 sigma_max_mm=-1 sigma_zero_zones=0
+REHAB_UI_CAP_CALL name=person_follow_status ok=true state=IDLE session=
+I (325654) rehab_cap: rehab_training_status request_id=0 err=ESP_OK state=idle generation=0
+REHAB_UI_CAP_CALL name=rehab_training_status ok=true state=idle session=
+W (325728) rehab_score: skip invalid finalized session 20260714_TASK001: ESP_ERR_INVALID_RESPONSE

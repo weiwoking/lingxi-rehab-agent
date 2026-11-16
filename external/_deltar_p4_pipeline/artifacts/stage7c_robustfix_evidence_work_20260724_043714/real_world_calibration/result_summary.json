@@ -1,0 +1,78 @@
+﻿{
+    "status":  "PASS",
+    "profile_path":  "C:\\calibration\\stage7c_world_result_robustfix_20260724_044035\\camera_world_pose.v1.json",
+    "profile_id":  "camera_world_pose_9b9147068f6cd2ae",
+    "validation_status":  "PASS",
+    "world_pose_status":  "measured",
+    "world_pose_resolved":  true,
+    "absolute_geometry_valid":  false,
+    "camera_height_mm":  969.0,
+    "camera_height_uncertainty_mm":  5.0,
+    "translation_world_from_camera_mm":  [
+                                             0.0,
+                                             0.0,
+                                             969.0
+                                         ],
+    "roll_deg":  3.25258318305635,
+    "pitch_deg":  -1.1167526521438145,
+    "yaw_deg":  0.9216118243222312,
+    "captured_frame_count":  15,
+    "base_valid_frame_count":  15,
+    "orientation_inlier_count":  14,
+    "orientation_rejected_frame_count":  1,
+    "per_pose_orientation_inlier_count":  {
+                                              "world_front_near":  5,
+                                              "world_front_mid":  5,
+                                              "world_front_far":  4
+                                          },
+    "orientation_inlier_metrics":  {
+                                       "count":  14,
+                                       "rms_deg":  0.44056578867773977,
+                                       "p95_deg":  0.6038137371970655,
+                                       "max_deg":  0.6403999569373947
+                                   },
+    "rejected_frames":  [
+                            {
+                                "pose_name":  "world_front_far",
+                                "role":  "world_front_far",
+                                "frame_name":  "frame_000001",
+                                "orientation_residual_deg":  1.7185400001775901,
+                                "orientation_inlier":  false
+                            }
+                        ],
+    "pose_mean_pairwise":  [
+                               {
+                                   "left":  "world_front_near",
+                                   "right":  "world_front_mid",
+                                   "angle_deg":  0.7335288047313013
+                               },
+                               {
+                                   "left":  "world_front_near",
+                                   "right":  "world_front_far",
+                                   "angle_deg":  0.33491648826512316
+                               },
+                               {
+                                   "left":  "world_front_mid",
+                                   "right":  "world_front_far",
+                                   "angle_deg":  0.7191393796689197
+                               }
+                           ],
+    "tof":  {
+                "world_front_near":  {
+                                         "normal_angular_error_deg":  0.3604417210557249,
+                                         "plane_rms_mm":  2.0500750296836165,
+                                         "plane_p95_mm":  3.602810964337726
+                                     },
+                "world_front_far":  {
+                                        "normal_angular_error_deg":  0.7052931570257432,
+                                        "plane_rms_mm":  3.320842193578441,
+                                        "plane_p95_mm":  6.100387446335969
+                                    },
+                "world_front_mid":  {
+                                        "normal_angular_error_deg":  0.3713511070288059,
+                                        "plane_rms_mm":  1.4211379764817034,
+                                        "plane_p95_mm":  2.3502583452822705
+                                    }
+            },
+    "formal_profile_sha256":  "fe30aa724248c08c414286255cc1ed4f6322ef273bd7b68cfef2c741fc0bd571"
+}

@@ -1,0 +1,23 @@
+idf_component_register(
+    SRCS
+        "src/rehab_score_bridge_core.c"
+        "src/rehab_score_bridge_query.c"
+        "src/rehab_score_bridge_network.c"
+        "src/rehab_score_bridge_storage.c"
+        "src/rehab_score_bridge_http.c"
+        "src/rehab_score_bridge_contract.c"
+    INCLUDE_DIRS
+        "include"
+    PRIV_INCLUDE_DIRS
+        "src"
+    REQUIRES
+        app_config
+        esp_http_client
+        esp_netif
+        esp_timer
+        freertos
+        heap
+        json
+        mbedtls
+        rehab_sensor_recording
+)

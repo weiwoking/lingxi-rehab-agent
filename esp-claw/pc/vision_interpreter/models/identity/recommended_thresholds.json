@@ -1,0 +1,78 @@
+{
+  "final_model": "E:\\wulianwang\\yolo\\zxl_identity_training\\output\\best_zxl_identity.pt",
+  "note": "This file does not overwrite recommended_threshold.json.",
+  "safety_threshold": {
+    "threshold": 0.86,
+    "zxl_tp": 11,
+    "zxl_fn": 9,
+    "zxl_recall": 0.55,
+    "zxl_precision": 1.0,
+    "zxl_f1": 0.7096774193548387,
+    "voc_person_test_fp": 0,
+    "hard_final_person_fp": 0,
+    "custom_person_test_fp": 0,
+    "person_total_fp": 0,
+    "false_positive_images": "",
+    "target_met": true
+  },
+  "balanced_threshold": {
+    "threshold": 0.74,
+    "zxl_tp": 12,
+    "zxl_fn": 8,
+    "zxl_recall": 0.6,
+    "zxl_precision": 0.9230769230769231,
+    "zxl_f1": 0.7272727272727273,
+    "voc_person_test_fp": 0,
+    "hard_final_person_fp": 0,
+    "custom_person_test_fp": 1,
+    "person_total_fp": 1,
+    "false_positive_images": "zxlraw_person_98_003.jpg:0.857:custom_person_test",
+    "target_met": false,
+    "target": "zxl recall >= 0.75 and total person FP <= 1",
+    "selection_reason": "No threshold in 0.50-0.86 satisfies both conditions. This is the closest operational threshold that keeps total person false positives within 1; recall-side reference is threshold 0.55 with recall 0.75 but 4 person false positives."
+  },
+  "demo_threshold": {
+    "threshold": 0.59,
+    "zxl_tp": 13,
+    "zxl_fn": 7,
+    "zxl_recall": 0.65,
+    "zxl_precision": 0.8125,
+    "zxl_f1": 0.7222222222222222,
+    "voc_person_test_fp": 2,
+    "hard_final_person_fp": 0,
+    "custom_person_test_fp": 1,
+    "person_total_fp": 3,
+    "false_positive_images": "zxlraw_person_98_003.jpg:0.857:custom_person_test; voc_train_009869_001.jpg:0.733:voc_person_test; voc_val_001028_002.jpg:0.604:voc_person_test",
+    "target_met": false,
+    "target": "zxl recall >= 0.85 and total person FP <= 3",
+    "selection_reason": "No threshold in 0.50-0.86 satisfies both conditions. The maximum observed zxl recall is 0.80 at threshold 0.50, but it has 7 total person false positives. This threshold keeps total person false positives within 3 and is the closest operational demo setting."
+  },
+  "recall_side_references": {
+    "balanced_recall_reference": {
+      "threshold": 0.55,
+      "zxl_tp": 15,
+      "zxl_fn": 5,
+      "zxl_recall": 0.75,
+      "zxl_precision": 0.7894736842105263,
+      "zxl_f1": 0.7692307692307692,
+      "voc_person_test_fp": 3,
+      "hard_final_person_fp": 0,
+      "custom_person_test_fp": 1,
+      "person_total_fp": 4,
+      "false_positive_images": "zxlraw_person_98_003.jpg:0.857:custom_person_test; voc_train_007572_005.jpg:0.586:voc_person_test; voc_train_009869_001.jpg:0.733:voc_person_test; voc_val_001028_002.jpg:0.604:voc_person_test"
+    },
+    "demo_recall_reference": {
+      "threshold": 0.5,
+      "zxl_tp": 16,
+      "zxl_fn": 4,
+      "zxl_recall": 0.8,
+      "zxl_precision": 0.6956521739130435,
+      "zxl_f1": 0.7441860465116279,
+      "voc_person_test_fp": 3,
+      "hard_final_person_fp": 0,
+      "custom_person_test_fp": 4,
+      "person_total_fp": 7,
+      "false_positive_images": "zxlraw_person_90_002.jpg:0.544:custom_person_test; zxlraw_person_94_002.jpg:0.543:custom_person_test; zxlraw_person_98_003.jpg:0.857:custom_person_test; zxlraw_person_98_004.jpg:0.521:custom_person_test; voc_train_007572_005.jpg:0.586:voc_person_test; voc_train_009869_001.jpg:0.733:voc_person_test; voc_val_001028_002.jpg:0.604:voc_person_test"
+    }
+  }
+}

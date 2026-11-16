@@ -1,0 +1,253 @@
+{
+  "title": "上肢康复训练评估报告",
+  "patient": {
+    "patient_id": "P-0217",
+    "affected_side": "右侧上肢",
+    "brs": "",
+    "task": "饮水动作训练",
+    "difficulty": "",
+    "training_time": "2026-07-14T14:43:43+00:00",
+    "session_id": "20260714_TASK004",
+    "device_id": "P4_REHAB_01"
+  },
+  "completion": {
+    "planned_reps": 10,
+    "completed_reps": 1,
+    "valid_reps": 1,
+    "duration_sec": 35.0,
+    "pause_count": null,
+    "fully_completed": true,
+    "end_reason": "user_stop"
+  },
+  "score": {
+    "session_id": "20260714_TASK004",
+    "score_version": "v3.0",
+    "valid": true,
+    "final_score": 49.52,
+    "subscores": {},
+    "available_metrics": [
+      "final_score",
+      "imu_dtw_score",
+      "emg_score",
+      "compensation",
+      "feedback"
+    ],
+    "compensation": {
+      "events": [
+        {
+          "event_type": "compensation_detected",
+          "patient_id": "S001",
+          "session_id": "20260714_TASK004",
+          "task_number": 12,
+          "compensation_detected": true,
+          "action_index": 1,
+          "timestamp_s": 23.07,
+          "stage": "execution",
+          "type": "LF",
+          "severity": "medium",
+          "severity_score": 40.0,
+          "feedback": "检测到可能存在代偿，请暂停当前动作，调整姿势后再继续训练。"
+        },
+        {
+          "event_type": "compensation_detected",
+          "patient_id": "S001",
+          "session_id": "20260714_TASK004",
+          "task_number": 12,
+          "compensation_detected": true,
+          "action_index": 1,
+          "timestamp_s": 23.07,
+          "stage": "execution",
+          "type": "TR",
+          "severity": "medium",
+          "severity_score": 40.0,
+          "feedback": "检测到可能存在代偿，请暂停当前动作，调整姿势后再继续训练。"
+        }
+      ],
+      "action_count": 1,
+      "detected": true
+    },
+    "fatigue": {},
+    "brs": null,
+    "feedback": [
+      "IMU 动作时序与模板差异较大，建议按标准动作节奏重新完成。",
+      "肌肉激活模式存在一定偏差。",
+      "检测到代偿表现，请调整姿势后继续训练。"
+    ],
+    "data_quality_level": "use_with_caution",
+    "warnings": [
+      "large sampling gaps over 100 ms detected"
+    ],
+    "completed_at": null
+  },
+  "available_metrics": [
+    "final_score",
+    "imu_dtw_score",
+    "emg_score",
+    "compensation",
+    "feedback"
+  ],
+  "action_summaries": [
+    {
+      "rep_index": 1,
+      "valid": true,
+      "final_score": 49.52,
+      "imu_dtw_score": 33.01,
+      "emg_score": 16.51,
+      "compensation": {
+        "detected": true,
+        "events": [
+          {
+            "event_type": "compensation_detected",
+            "patient_id": "S001",
+            "session_id": "20260714_TASK004",
+            "task_number": 12,
+            "compensation_detected": true,
+            "action_index": 1,
+            "timestamp_s": 23.07,
+            "stage": "execution",
+            "type": "LF",
+            "severity": "medium",
+            "severity_score": 40.0,
+            "feedback": "检测到可能存在代偿，请暂停当前动作，调整姿势后再继续训练。"
+          },
+          {
+            "event_type": "compensation_detected",
+            "patient_id": "S001",
+            "session_id": "20260714_TASK004",
+            "task_number": 12,
+            "compensation_detected": true,
+            "action_index": 1,
+            "timestamp_s": 23.07,
+            "stage": "execution",
+            "type": "TR",
+            "severity": "medium",
+            "severity_score": 40.0,
+            "feedback": "检测到可能存在代偿，请暂停当前动作，调整姿势后再继续训练。"
+          }
+        ],
+        "quality_findings": [
+          "abnormal_muscle_recruitment",
+          "excessive_pauses",
+          "forearm_coordination_abnormal",
+          "insufficient_upperarm_ROM"
+        ],
+        "details": {
+          "LF": {
+            "pitch_offset_deg": 87.94,
+            "reason": "躯干前倾角超过阈值"
+          },
+          "TR": {
+            "yaw_offset_deg": 160.09,
+            "reason": "躯干旋转角超过阈值"
+          },
+          "insufficient_upperarm_ROM": {
+            "value": 1.4499999999999977,
+            "template_mean": 197.2701361318977,
+            "reason": "上臂活动范围低于模板，可能存在关节活动度不足"
+          },
+          "forearm_coordination_abnormal": {
+            "value": 5.299999999999997,
+            "template_mean": 301.58320986366175,
+            "reason": "前臂旋转范围偏离健康模板，可能存在肩肘腕协调异常"
+          },
+          "pause_compensation": {
+            "pause_count": 3.0,
+            "reason": "动作中停顿较多，可能存在发力不足或代偿调整"
+          },
+          "abnormal_muscle_recruitment": [
+            {
+              "muscle": "Triceps_brachii",
+              "feature": "RMS",
+              "z_score": 9.764,
+              "reason": "Triceps_brachii 激活明显高于模板，可能存在异常募集或代偿"
+            },
+            {
+              "muscle": "Extensor_carpi_ulnaris",
+              "feature": "RMS",
+              "z_score": 18.497,
+              "reason": "Extensor_carpi_ulnaris 激活明显高于模板，可能存在异常募集或代偿"
+            }
+          ]
+        }
+      },
+      "feedback": [
+        "IMU 动作时序与模板差异较大，建议按标准动作节奏重新完成。",
+        "肌肉激活模式存在一定偏差。",
+        "检测到代偿表现，请调整姿势后继续训练。"
+      ]
+    }
+  ],
+  "rep_details": [
+    {
+      "rep_index": 1,
+      "final_score": 49.52,
+      "ROM": "暂无数据",
+      "smoothness": "暂无数据",
+      "coordination": "暂无数据",
+      "muscle_performance": "暂无数据",
+      "fatigue": {
+        "level": "暂无数据",
+        "trend": "暂无数据"
+      },
+      "compensation": {
+        "risk": "暂无数据",
+        "status": "detected"
+      }
+    }
+  ],
+  "kinematics": {},
+  "emg_analysis": {},
+  "compensation_analysis": {
+    "events": [
+      {
+        "event_type": "compensation_detected",
+        "patient_id": "S001",
+        "session_id": "20260714_TASK004",
+        "task_number": 12,
+        "compensation_detected": true,
+        "action_index": 1,
+        "timestamp_s": 23.07,
+        "stage": "execution",
+        "type": "LF",
+        "severity": "medium",
+        "severity_score": 40.0,
+        "feedback": "检测到可能存在代偿，请暂停当前动作，调整姿势后再继续训练。"
+      },
+      {
+        "event_type": "compensation_detected",
+        "patient_id": "S001",
+        "session_id": "20260714_TASK004",
+        "task_number": 12,
+        "compensation_detected": true,
+        "action_index": 1,
+        "timestamp_s": 23.07,
+        "stage": "execution",
+        "type": "TR",
+        "severity": "medium",
+        "severity_score": 40.0,
+        "feedback": "检测到可能存在代偿，请暂停当前动作，调整姿势后再继续训练。"
+      }
+    ],
+    "action_count": 1,
+    "detected": true
+  },
+  "fatigue_analysis": {},
+  "summary": "",
+  "next_recommendations": [
+    "IMU 动作时序与模板差异较大，建议按标准动作节奏重新完成。",
+    "肌肉激活模式存在一定偏差。",
+    "检测到代偿表现，请调整姿势后继续训练。"
+  ],
+  "versions": {
+    "source_mode": "device",
+    "source_origin": "pc_udp_6006_ingest",
+    "score_version": "v3.0",
+    "schema_version": "cloud_session_result_v3",
+    "device_id": "P4_REHAB_01",
+    "generated_at": "2026-07-26T01:39:16.320378+00:00",
+    "raw_score_result_path": "score_result.json",
+    "compact_score_result_path": "score_job_result.json"
+  },
+  "disclaimer": "报告仅供康复专业人员参考。",
+  "demo_notice": ""
+}

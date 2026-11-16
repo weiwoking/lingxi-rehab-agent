@@ -1,0 +1,70 @@
+{
+  "scan_version": "drink_water_compensation_threshold_scan_v1",
+  "generated_at": "2026-08-06T07:58:59.081084Z",
+  "input_dir": "C:\\ec\\esp-claw\\pc\\rehab_score_service\\runtime_data\\derived\\drink_water_v1\\compensation_feature_diagnosis_v1_1",
+  "scanned_features": [
+    "TrunkCompensationRatio",
+    "TrunkROM",
+    "imu2_roll_range",
+    "imu2_yaw_range",
+    "imu2_gyro_norm_p95",
+    "imu2_pitch_positive_excursion",
+    "imu2_positive_excursion_duration_ms",
+    "imu2_pitch_absolute_excursion"
+  ],
+  "scan_rules": [
+    "feature >= threshold",
+    "TrunkCompensationRatio >= ratio_threshold AND TrunkROM >= rom_threshold",
+    "TrunkCompensationRatio >= ratio_threshold OR TrunkROM >= rom_threshold"
+  ],
+  "total_rep_count": 40,
+  "ground_truth_normal_count": 33,
+  "ground_truth_compensation_count": 7,
+  "input_detector_hit_count": 0,
+  "production_detector_modified": false,
+  "threshold_modified": false,
+  "formal_baseline_modified": false,
+  "recommended_candidate": {
+    "rule_id": "single_TrunkCompensationRatio_034",
+    "rule_expression": "TrunkCompensationRatio >= 0.0988535051569",
+    "feature_names": [
+      "TrunkCompensationRatio"
+    ],
+    "thresholds": {
+      "TrunkCompensationRatio": 0.09885350515694372
+    },
+    "TP": 7,
+    "FN": 0,
+    "FP": 0,
+    "TN": 33,
+    "recall": 1.0,
+    "precision": 1.0,
+    "specificity": 1.0,
+    "accuracy": 1.0,
+    "f1": 1.0,
+    "balanced_accuracy": 1.0,
+    "normal_false_positive_count": 0,
+    "compensation_false_negative_count": 0,
+    "pure_normal_false_positive_count": 0,
+    "mixed_normal_false_positive_count": 0,
+    "pure_compensation_true_positive_count": 5,
+    "mixed_compensation_true_positive_count": 2,
+    "false_positive_rep_ids": [],
+    "false_negative_rep_ids": []
+  },
+  "manual_decision_required": true,
+  "exploratory_only": true,
+  "current_dataset_only": true,
+  "not_clinically_validated": true,
+  "leave_one_source_session_out": {
+    "fold_count": 22,
+    "mean_recall": 0.2727272727272727,
+    "mean_specificity": 0.7727272727272727,
+    "total_false_positives": 0,
+    "total_false_negatives": 1,
+    "unstable_fold_count": 1,
+    "exploratory_only": true,
+    "current_dataset_only": true,
+    "not_clinically_validated": true
+  }
+}

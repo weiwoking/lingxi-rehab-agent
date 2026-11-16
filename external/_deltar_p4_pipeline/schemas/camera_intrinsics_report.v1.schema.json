@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "camera_intrinsics_report.v1.schema.json",
+  "title": "Stage 7A intrinsics quality report",
+  "type": "object",
+  "required": ["schema_version", "status", "generated_at", "images", "fit_images", "heldout_images", "measured_profile_generated"],
+  "properties": {
+    "schema_version": {"const": "camera_intrinsics_report.v1"},
+    "status": {"enum": ["PASS", "PASS_DEMO_ONLY", "FAIL"]},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "images": {"type": "array", "items": {"type": "object"}},
+    "fit_images": {"type": "array", "items": {"type": "string"}},
+    "heldout_images": {"type": "array", "items": {"type": "string"}},
+    "measured_profile_generated": {"type": "boolean"},
+    "error": {"type": "object"},
+    "model": {"const": "opencv_brown"},
+    "opencv_flags": {"type": "integer"},
+    "accepted_images": {"type": "integer", "minimum": 0},
+    "rejected_images": {"type": "integer", "minimum": 0},
+    "total_corners": {"type": "integer", "minimum": 0},
+    "coverage": {"type": "object"},
+    "solution": {"type": "object"},
+    "degeneracy_warnings": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

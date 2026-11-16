@@ -1,0 +1,128 @@
+Traceback (most recent call last):
+  File "C:\ec\_deltar_p4_pipeline\workers\frozen_scan_runtime_worker.py", line 30, in <module>
+    from deltar_p4_pipeline.scan_job import run_scan_job
+  File "C:\ec\_deltar_p4_pipeline\src\deltar_p4_pipeline\scan_job.py", line 31, in <module>
+    from .stage7e_contracts import bind_stage7e_profiles
+  File "C:\ec\_deltar_p4_pipeline\src\deltar_p4_pipeline\stage7e_contracts.py", line 12, in <module>
+    from .stage7d_contracts import (
+ImportError: cannot import name 'FORMAL_CAMERA_PROFILE_ID' from 'deltar_p4_pipeline.stage7d_contracts' (C:\ec\_deltar_p4_pipeline\src\deltar_p4_pipeline\stage7d_contracts.py)
+Traceback (most recent call last):
+  File "C:\ec\_deltar_p4_pipeline\workers\frozen_scan_runtime_worker.py", line 136, in serve
+    result, report = run_scan_job(request, resources)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ec\_deltar_p4_pipeline\src\deltar_p4_pipeline\scan_job.py", line 693, in run_scan_job
+    return run_scan(
+           ^^^^^^^^^
+  File "C:\ec\_deltar_p4_pipeline\src\deltar_p4_pipeline\scan_job.py", line 196, in run_scan
+    stage7d_context = bind_stage7d_profiles(stage7d_profile)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ec\_deltar_p4_pipeline\src\deltar_p4_pipeline\stage7d_contracts.py", line 126, in bind_stage7d_profiles
+    authority = load_formal_geometry_authority(authority_dir)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ec\_deltar_p4_pipeline\src\deltar_p4_pipeline\formal_geometry_authority.py", line 96, in load_formal_geometry_authority
+    raise ValueError(f"promoted {name} SHA-256 mismatch: {actual}")
+ValueError: promoted all_object_v2 SHA-256 mismatch: 800954f5233ce5ff68d0e44e5fd9ea10880c810d579a1542fd07ecbe490e3f56
+Traceback (most recent call last):
+  File "C:\ec\_deltar_p4_pipeline\workers\frozen_scan_runtime_worker.py", line 136, in serve
+    result, report = run_scan_job(request, resources)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ec\_deltar_p4_pipeline\src\deltar_p4_pipeline\scan_job.py", line 693, in run_scan_job
+    return run_scan(
+           ^^^^^^^^^
+  File "C:\ec\_deltar_p4_pipeline\src\deltar_p4_pipeline\scan_job.py", line 196, in run_scan
+    stage7d_context = bind_stage7d_profiles(stage7d_profile)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ec\_deltar_p4_pipeline\src\deltar_p4_pipeline\stage7d_contracts.py", line 126, in bind_stage7d_profiles
+    authority = load_formal_geometry_authority(authority_dir)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ec\_deltar_p4_pipeline\src\deltar_p4_pipeline\formal_geometry_authority.py", line 96, in load_formal_geometry_authority
+    raise ValueError(f"promoted {name} SHA-256 mismatch: {actual}")
+ValueError: promoted all_object_v2 SHA-256 mismatch: dcd63de03e5fb776e3b5f1eb6f49c81282457d5a3351ccf4f243e4fbb1293296
+Traceback (most recent call last):
+  File "C:\ec\_deltar_p4_pipeline\workers\frozen_scan_runtime_worker.py", line 210, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "C:\ec\_deltar_p4_pipeline\workers\frozen_scan_runtime_worker.py", line 206, in main
+    return serve(parser.parse_args().serve)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ec\_deltar_p4_pipeline\workers\frozen_scan_runtime_worker.py", line 68, in serve
+    resources = create_shared_runtime_resources(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ec\_deltar_p4_pipeline\src\deltar_p4_pipeline\frozen_runtime_resources.py", line 137, in create_shared_runtime_resources
+    _warmup(bundle, bridge)
+  File "C:\ec\_deltar_p4_pipeline\src\deltar_p4_pipeline\frozen_runtime_resources.py", line 104, in _warmup
+    pipeline = FramePipeline(bundle, Path.cwd(), device=bridge.device, shared_bridge=bridge)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 16, in __init__
+  File "C:\ec\_deltar_p4_pipeline\src\deltar_p4_pipeline\frame_pipeline.py", line 247, in __post_init__
+    self.formal_authority = load_formal_geometry_authority()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ec\_deltar_p4_pipeline\src\deltar_p4_pipeline\formal_geometry_authority.py", line 96, in load_formal_geometry_authority
+    raise ValueError(f"promoted {name} SHA-256 mismatch: {actual}")
+ValueError: promoted all_object_v2 SHA-256 mismatch: dcd63de03e5fb776e3b5f1eb6f49c81282457d5a3351ccf4f243e4fbb1293296
+Traceback (most recent call last):
+  File "C:\ec\_deltar_p4_pipeline\workers\frozen_scan_runtime_worker.py", line 136, in serve
+    result, report = run_scan_job(request, resources)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ec\_deltar_p4_pipeline\src\deltar_p4_pipeline\scan_job.py", line 756, in run_scan_job
+    return run_scan(
+           ^^^^^^^^^
+  File "C:\ec\_deltar_p4_pipeline\src\deltar_p4_pipeline\scan_job.py", line 722, in run_scan
+    validate_scan_result_v1_1(result)
+  File "C:\ec\_deltar_p4_pipeline\src\deltar_p4_pipeline\stage6_schema.py", line 549, in validate_scan_result_v1_1
+    _enum(obj["status"], {"success", "partial_success", "rejected", "failed"}, "status", code)
+  File "C:\ec\_deltar_p4_pipeline\src\deltar_p4_pipeline\stage6_schema.py", line 79, in _enum
+    if value not in choices:
+       ^^^^^^^^^^^^^^^^^^^^
+TypeError: unhashable type: 'dict'
+Traceback (most recent call last):
+  File "C:\ec\_deltar_p4_pipeline\workers\frozen_scan_runtime_worker.py", line 136, in serve
+    result, report = run_scan_job(request, resources)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ec\_deltar_p4_pipeline\src\deltar_p4_pipeline\scan_job.py", line 756, in run_scan_job
+    return run_scan(
+           ^^^^^^^^^
+  File "C:\ec\_deltar_p4_pipeline\src\deltar_p4_pipeline\scan_job.py", line 722, in run_scan
+    validate_scan_result_v1_1(result)
+  File "C:\ec\_deltar_p4_pipeline\src\deltar_p4_pipeline\stage6_schema.py", line 549, in validate_scan_result_v1_1
+    _enum(obj["status"], {"success", "partial_success", "rejected", "failed"}, "status", code)
+  File "C:\ec\_deltar_p4_pipeline\src\deltar_p4_pipeline\stage6_schema.py", line 79, in _enum
+    if value not in choices:
+       ^^^^^^^^^^^^^^^^^^^^
+TypeError: unhashable type: 'dict'
+Traceback (most recent call last):
+  File "C:\ec\_deltar_p4_pipeline\workers\frozen_scan_runtime_worker.py", line 136, in serve
+    result, report = run_scan_job(request, resources)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ec\_deltar_p4_pipeline\src\deltar_p4_pipeline\scan_job.py", line 756, in run_scan_job
+    return run_scan(
+           ^^^^^^^^^
+  File "C:\ec\_deltar_p4_pipeline\src\deltar_p4_pipeline\scan_job.py", line 624, in run_scan
+    all_object_geometry_processor.write()
+  File "C:\ec\_deltar_p4_pipeline\src\deltar_p4_pipeline\all_object_geometry.py", line 567, in write
+    atomic_write_json(path, self.document())
+                            ^^^^^^^^^^^^^^^
+  File "C:\ec\_deltar_p4_pipeline\src\deltar_p4_pipeline\all_object_geometry.py", line 563, in document
+    return validate_geometry_document(document)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ec\_deltar_p4_pipeline\src\deltar_p4_pipeline\geometry_contracts.py", line 65, in validate_geometry_document
+    raise ValueError("mask confidence must be at least 0.5")
+ValueError: mask confidence must be at least 0.5
+Traceback (most recent call last):
+  File "C:\ec\_deltar_p4_pipeline\workers\frozen_scan_runtime_worker.py", line 136, in serve
+    result, report = run_scan_job(request, resources)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ec\_deltar_p4_pipeline\src\deltar_p4_pipeline\scan_job.py", line 756, in run_scan_job
+    return run_scan(
+           ^^^^^^^^^
+  File "C:\ec\_deltar_p4_pipeline\src\deltar_p4_pipeline\scan_job.py", line 624, in run_scan
+    all_object_geometry_processor.write()
+  File "C:\ec\_deltar_p4_pipeline\src\deltar_p4_pipeline\all_object_geometry.py", line 567, in write
+    atomic_write_json(path, self.document())
+                            ^^^^^^^^^^^^^^^
+  File "C:\ec\_deltar_p4_pipeline\src\deltar_p4_pipeline\all_object_geometry.py", line 563, in document
+    return validate_geometry_document(document)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ec\_deltar_p4_pipeline\src\deltar_p4_pipeline\geometry_contracts.py", line 65, in validate_geometry_document
+    raise ValueError("mask confidence must be at least 0.5")
+ValueError: mask confidence must be at least 0.5
