@@ -235,9 +235,15 @@ P4 通过 PC `8765` 端口的 HTTP 服务提交文本并获取音频，设备侧
 | S3 Right | `s3/node_right` | ESP-IDF 5.5.4 / `esp32s3` |
 | S3 Car | `s3/car_node/arduino/QGP_Car_TextCommand_A0` | Arduino / ESP32 Core，ESP32-S3 |
 
-P4 使用工程内当前 `esp-claw/application/edge_agent/sdkconfig`、board 定义和依赖配置。穿戴节点的接线、节点编号及采集说明见各自 README；小车从 sketch 进入，并配合项目内 QGP_EVMotor 库使用。
+P4 使用 ESP-IDF 构建。公开配置依据为 [通用默认配置](esp-claw/application/edge_agent/sdkconfig.defaults)、[P4 默认配置](esp-claw/application/edge_agent/sdkconfig.defaults.esp32p4)、[Function-EV 板卡定义](esp-claw/application/edge_agent/boards/espressif/esp32_p4_function_ev/board_info.yaml)、[板级默认配置](esp-claw/application/edge_agent/boards/espressif/esp32_p4_function_ev/sdkconfig.defaults.board)、[构建入口](esp-claw/application/edge_agent/CMakeLists.txt)和[组件依赖清单](esp-claw/application/edge_agent/main/idf_component.yml)。`sdkconfig` 在本地板卡配置、menuconfig / 构建过程中生成，不作为仓库固定文件提交；配置与构建步骤见 [P4 子工程](esp-claw/application/edge_agent/README.md)。穿戴节点的接线、节点编号及采集说明见各自 README；小车从 sketch 进入，并配合项目内 QGP_EVMotor 库使用。
 
 ## 18. 项目专用环境与系统工具链
+
+Windows 克隆时，为该仓库启用 Git 长路径支持（不修改全局设置）：
+
+```powershell
+git -c core.longpaths=true clone --config core.longpaths=true https://github.com/weiwoking/lingxi-rehab-agent.git
+```
 
 初次 clone 后，先恢复不随 Git 再分发的第三方运行依赖，再安装环境和按对应工程入口运行：
 
@@ -247,6 +253,8 @@ P4 使用工程内当前 `esp-claw/application/edge_agent/sdkconfig`、board 定
 # 只检查依赖是否齐全（不联网、不启动服务）
 .\scripts\fetch-third-party-assets.ps1 -CheckOnly
 ```
+
+恢复脚本兼容 Windows PowerShell 5.1 和 PowerShell 7+。`-CheckOnly` 不下载文件；尚未恢复的依赖会列为 `MISSING` 并返回非零退出码，恢复齐全且哈希匹配后返回成功。
 
 恢复脚本从官方来源获取 DELTAR NYU 权重、QGP 1.0.0 core 和左右 S3 的 WitMotion C SDK，按固定提交/包和 SHA256 核验；已有且匹配的文件跳过，未知或不同内容报错且不覆盖。运行 Scan 前需恢复两份 `nyu.pt`；编译 Car 前需恢复 QGP；编译左右 S3 前需恢复 WitMotion。脚本不构建、不运行服务，也不下载可选 demo / ST 文档。可用 `-Components DELTAR`、`QGP` 或 `WitMotion` 只恢复对应依赖。官方链接、全部预期路径和哈希见 [第三方本地资产清单](third_party/local-only-assets.csv)。上游撤回下载或更新包导致哈希改变时应停止并重新核查，不改用未知镜像。
 
@@ -283,7 +291,7 @@ QGP 电机与手柄控制实现随 `s3/libraries/QGP_EVMotor` 保存。板级外
 
 | 范围 | 当前 authority |
 | --- | --- |
-| P4 主控与外设 | P4 主入口、当前 sdkconfig、选中 board 和对应组件 |
+| P4 主控与外设 | P4 主入口、已提交的默认配置与板卡定义、构建与依赖清单；实际构建采用本地生成配置 |
 | S3 穿戴节点 | 各自 main、Sensor Packet v5 与 P4 接收协议 |
 | S3 小车 | P4 主入口选择的 UART 后端，以及当前 Arduino sketch |
 | Doctor / Patient / Score 启动 | 主 PC CMD 和其调用的 `start_pc_only.ps1` |

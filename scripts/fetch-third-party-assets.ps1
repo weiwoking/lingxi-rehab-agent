@@ -8,7 +8,7 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 $root = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
-$manifest = Get-Content -LiteralPath (Join-Path $root 'third_party/runtime-assets.json') -Raw | ConvertFrom-Json
+$manifest = Get-Content -LiteralPath (Join-Path $root 'third_party/runtime-assets.json') -Raw -Encoding UTF8 | ConvertFrom-Json
 if ($manifest.schema_version -ne 1) { throw 'Unsupported runtime asset manifest.' }
 $assets = @($manifest.assets | Where-Object { $_.component -in $Components })
 $pending = @()
