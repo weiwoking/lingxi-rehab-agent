@@ -1,9 +1,18 @@
+[CmdletBinding()]
+param([switch]$Plan)
+
 $ErrorActionPreference = 'Stop'
 
 $pipelineRoot = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
-$python = 'C:\ec\_deltar_formal\envs\deltar_py311_torch271_cu128\python.exe'
-$validatedRoot = 'C:\ec\_deltar_scan_service_data\validated'
+$externalRoot = Split-Path -Parent $pipelineRoot
+$python = Join-Path $externalRoot '_deltar_formal\envs\deltar_py311_torch271_cu128\python.exe'
+$validatedRoot = Join-Path $externalRoot '_deltar_scan_service_data\validated'
 $verificationRoot = Join-Path $pipelineRoot 'verification_runs'
+
+if ($Plan) {
+    Write-Output "PLAN Geometry replay: $python, inputs $validatedRoot, outputs $verificationRoot"
+    return
+}
 
 if (-not (Test-Path -LiteralPath $python -PathType Leaf)) {
     throw "Formal DELTAR interpreter is missing: $python"

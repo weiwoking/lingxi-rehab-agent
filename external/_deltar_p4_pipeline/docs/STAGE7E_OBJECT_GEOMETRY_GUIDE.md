@@ -1,5 +1,7 @@
 # Stage 7E Object Geometry Guide
 
+Replace `<PROJECT_ROOT>` in the commands with the current repository root.
+
 ## Scope
 
 Stage 7E is an opt-in PC output for competition-demo measurements of opaque
@@ -29,19 +31,19 @@ this check.
 Use a new, nonexistent output directory:
 
 ```powershell
-& 'C:\ec\_deltar_formal\envs\deltar_py311_torch271_cu128\python.exe' `
+& '<PROJECT_ROOT>\external\_deltar_formal\envs\deltar_py311_torch271_cu128\python.exe' `
   -m deltar_p4_pipeline.cli scan-run `
   --scan-dir '<scan_dir>' `
   --output-dir '<new_output_dir>' `
-  --profile-bundle 'C:\ec\_deltar_p4_pipeline\profiles' `
+  --profile-bundle '<PROJECT_ROOT>\external\_deltar_p4_pipeline\profiles' `
   --stage7d-horizontal-planes `
   --camera-intrinsics-profile 'C:\calibration\result_20260719_172703\calibration_profile.v2.json' `
   --camera-world-profile 'C:\calibration\stage7c_world_result_robustfix_20260724_044035\camera_world_pose.v1.json' `
   --camera-tof-profile 'C:\calibration\stage7b_result_unitfix_20260724_012041\camera_tof_extrinsics.v1.json' `
-  --stage7d-profile 'C:\ec\_deltar_p4_pipeline\profiles\stage7d_horizontal_plane_profile.json' `
+  --stage7d-profile '<PROJECT_ROOT>\external\_deltar_p4_pipeline\profiles\stage7d_horizontal_plane_profile.json' `
   --stage7e-object-geometry `
   --stage7d-absolute-validation-profile 'C:\calibration\stage7d_absolute_geometry_validation_20260724\stage7d_absolute_geometry_validation.v1.json' `
-  --stage7e-profile 'C:\ec\_deltar_p4_pipeline\profiles\stage7e_object_geometry_profile.json'
+  --stage7e-profile '<PROJECT_ROOT>\external\_deltar_p4_pipeline\profiles\stage7e_object_geometry_profile.json'
 ```
 
 Stage 7E intentionally refuses to run without the same-run Stage 7D arguments

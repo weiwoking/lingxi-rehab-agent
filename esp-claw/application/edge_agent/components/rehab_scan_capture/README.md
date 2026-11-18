@@ -1,5 +1,7 @@
 # rehab_scan_capture
 
+Replace `<PROJECT_ROOT>` in the commands with the current repository root.
+
 `rehab_scan_capture` is the minimal P4 Camera+ToF scan recorder. It asynchronously captures 1–64 RGB565 frames, pairs each frame with the nearest valid ToF Extended sample, and commits a frozen DELTAR scan v1 directory to writable storage. It does not upload data, run inference, control motion, or expose Agent/Capability/Web/HTTP entry points.
 
 Console commands:
@@ -19,8 +21,8 @@ For each frame the worker reads ToF `before`, acquires and validates one 640×36
 After manually copying a final scan directory to the PC, validate it with:
 
 ```powershell
-$env:PYTHONPATH='C:\ec\_deltar_p4_pipeline\src'
-C:\ec\_deltar_formal\envs\deltar_py311_torch271_cu128\python.exe -m deltar_p4_pipeline.cli scan-validate --scan-dir '<copied_scan_dir>' --profile-bundle 'C:\ec\_deltar_p4_pipeline\profiles'
+$env:PYTHONPATH='<PROJECT_ROOT>\external\_deltar_p4_pipeline\src'
+'<PROJECT_ROOT>\external\_deltar_formal\envs\deltar_py311_torch271_cu128\python.exe' -m deltar_p4_pipeline.cli scan-validate --scan-dir '<copied_scan_dir>' --profile-bundle '<PROJECT_ROOT>\external\_deltar_p4_pipeline\profiles'
 ```
 
 Codex did not run firmware build, flash, monitor, or hardware tests for this implementation.

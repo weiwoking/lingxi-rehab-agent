@@ -17,22 +17,17 @@ Session 级 weighted-DTW 管线已退出正式运行路径。
 ## 环境合同
 
 - Python：3.10.x。
-- 独立 Conda prefix：`C:\ec\_conda_envs\rehab_score`。
-- 不与 `C:\ec\_conda_envs\vision_interpreter`（YOLO/视觉）混用。
+- 独立 Conda prefix：`external/_conda_envs/rehab_score`。
+- 不与 `external/_conda_envs/vision_interpreter`（YOLO/视觉）混用。
 - `requirements.txt` 是直接依赖清单。
 - `requirements-lock.txt` 是首个 Windows Python 3.10 复现基线，只冻结已经验证的直接依赖，不伪装成完整传递依赖 lock。
 
-用户本地创建和安装（本次 Codex 实施未执行）：
+从项目根目录运行以下命令，按仓库中的环境定义创建评分环境：
 
 ```powershell
-& 'C:\ProgramData\anaconda3\Scripts\conda.exe' create `
-  --prefix 'C:\ec\_conda_envs\rehab_score' python=3.10 pip -y
-& 'C:\ec\_conda_envs\rehab_score\python.exe' -m pip install `
-  -r 'C:\ec\esp-claw\pc\rehab_score_service\requirements-lock.txt'
-& 'C:\ec\_conda_envs\rehab_score\python.exe' -m pip check
+.\scripts\setup-pc-environments.ps1 -Environment score
+.\scripts\setup-pc-environments.ps1 -Environment score -CheckExisting
 ```
-
-安装并完成本机验证后，再决定是否生成和保存完整 `pip freeze`。
 
 ## 服务合同（0.2.1）
 
@@ -40,8 +35,8 @@ Session 级 weighted-DTW 管线已退出正式运行路径。
 - 默认监听：`0.0.0.0:8020`；launcher 仍支持显式绑定具体 PC LAN IPv4。
 - 健康：`GET /api/v1/score/health`
 - 启动命令由 `tools\score_launcher` 固定为单 worker、无 reload。
-- 训练数据唯一根为 `REHAB_TRAINING_DATA_ROOT`（默认 `C:\ec\_rehab_training_data`）。
-- 评分资产唯一根为 `REHAB_SCORING_ASSETS_ROOT`（默认 `C:\ec\_rehab_scoring_assets`）。
+- 训练数据唯一根为 `REHAB_TRAINING_DATA_ROOT`（默认 `external/_rehab_training_data`）。
+- 评分资产唯一根为 `REHAB_SCORING_ASSETS_ROOT`（默认 `external/_rehab_scoring_assets`）。
 
 保留端点：
 

@@ -1,5 +1,7 @@
 # DELTAR PC Stage 2 fake-P4 adapter
 
+Replace `<PROJECT_ROOT>` in the commands with the current repository root.
+
 ## PC-local all-object geometry and standalone UI
 
 The current 11-frame chain writes `stage8b_all_object_geometry.v1.json` after
@@ -39,8 +41,8 @@ Stage 6.1 is the final PC-side packaging layer. It validates a frozen `deltar_sc
 Use the frozen Python and `PYTHONPATH=src`:
 
 ```powershell
-$python = 'C:\ec\_deltar_formal\envs\deltar_py311_torch271_cu128\python.exe'
-$env:PYTHONPATH = 'C:\ec\_deltar_p4_pipeline\src'
+$python = '<PROJECT_ROOT>\external\_deltar_formal\envs\deltar_py311_torch271_cu128\python.exe'
+$env:PYTHONPATH = '<PROJECT_ROOT>\external\_deltar_p4_pipeline\src'
 & $python -m deltar_p4_pipeline.cli profile-validate --profile-bundle profiles
 & $python -m deltar_p4_pipeline.cli scan-validate --scan-dir C:\data\scan_0001 --profile-bundle profiles
 & $python -m deltar_p4_pipeline.cli scan-run --scan-dir C:\data\scan_0001 --output-dir C:\data\scan_0001_result --profile-bundle profiles
@@ -71,10 +73,10 @@ The measured verdict is **PARTIAL**: all engineering paths ran and no GT entered
 
 ## Frozen runtime and assets
 
-- Python: `C:\ec\_deltar_formal\envs\deltar_py311_torch271_cu128\python.exe`
-- Official derived worktree: `C:\ec\_deltar_formal\work\deltar_f3c5175_win_cu128`
-- Checkpoint: `C:\ec\_deltar_formal\assets\nyu.pt`
-- Set `PYTHONPATH=C:\ec\_deltar_p4_pipeline\src`; no system install is required.
+- Python: `<PROJECT_ROOT>\external\_deltar_formal\envs\deltar_py311_torch271_cu128\python.exe`
+- Official derived worktree: `<PROJECT_ROOT>\external\_deltar_formal\work\deltar_f3c5175_win_cu128`
+- Checkpoint: `<PROJECT_ROOT>\external\_deltar_formal\assets\nyu.pt`
+- Set `PYTHONPATH=<PROJECT_ROOT>\external\_deltar_p4_pipeline\src`; no system install is required.
 
 The CLI checks the checkpoint SHA-256 before inference and imports the official `Deltar`, checkpoint loader, hypothesis sampler, and `patch_info_from_rect_data` from that worktree. No upstream source or weight is copied here.
 
@@ -87,15 +89,15 @@ Stage 5.2A evaluates all 287 official Zhejiang University demo HDF5 samples at t
 From PowerShell:
 
 ```powershell
-$python = 'C:\ec\_deltar_formal\envs\deltar_py311_torch271_cu128\python.exe'
-$env:PYTHONPATH = 'C:\ec\_deltar_p4_pipeline\src'
+$python = '<PROJECT_ROOT>\external\_deltar_formal\envs\deltar_py311_torch271_cu128\python.exe'
+$env:PYTHONPATH = '<PROJECT_ROOT>\external\_deltar_p4_pipeline\src'
 & $python scripts\build_official_reverse_samples.py
 & $python scripts\build_synthetic_samples.py
 & $python -m deltar_p4_pipeline.cli run --sample samples\official_reverse\official_000_letterbox --output-root outputs
 & $python scripts\run_stage2_matrix.py
-$env:PYTHONPATH = 'C:\ec\_deltar_p4_pipeline\tests\pytest_support;C:\ec\_deltar_p4_pipeline\src'
+$env:PYTHONPATH = '<PROJECT_ROOT>\external\_deltar_p4_pipeline\tests\pytest_support;<PROJECT_ROOT>\external\_deltar_p4_pipeline\src'
 & $python -m pytest -q
-$env:PYTHONPATH = 'C:\ec\_deltar_p4_pipeline\src'
+$env:PYTHONPATH = '<PROJECT_ROOT>\external\_deltar_p4_pipeline\src'
 & $python -m unittest -v tests.unittest_stage2 tests.unittest_rejections tests.unittest_hardening tests.unittest_integration
 ```
 
@@ -111,7 +113,7 @@ Run the frozen matrix with the formal DELTAR Python and `PYTHONPATH=src`:
 python -m deltar_p4_pipeline.cli stage3-matrix
 ```
 
-The worker subprocess uses `C:\ec\_conda_envs\vision_interpreter\python.exe`; Ultralytics is not installed into the DELTAR environment. See `docs/STAGE3_OBJECT_DEPTH_CONTRACT.md` and `outputs_stage3/stage3_matrix.json`.
+The worker subprocess uses `<PROJECT_ROOT>\external\_conda_envs\vision_interpreter\python.exe`; Ultralytics is not installed into the DELTAR environment. See `docs/STAGE3_OBJECT_DEPTH_CONTRACT.md` and `outputs_stage3/stage3_matrix.json`.
 
 ## Stage 3.1 method and contract hardening
 
@@ -141,8 +143,8 @@ See [INPUT_CONTRACT.md](docs/INPUT_CONTRACT.md), [PROFILE_CONTRACT.md](docs/PROF
 Run the controlled PC HTTP service in the existing Vision Python environment:
 
 ```powershell
-& C:\ec\_conda_envs\vision_interpreter\python.exe `
-  C:\ec\_deltar_p4_pipeline\scripts\run_scan_service.py `
+& '<PROJECT_ROOT>\external\_conda_envs\vision_interpreter\python.exe' `
+  '<PROJECT_ROOT>\external\_deltar_p4_pipeline\scripts\run_scan_service.py' `
   --host 127.0.0.1 --port 8030
 ```
 

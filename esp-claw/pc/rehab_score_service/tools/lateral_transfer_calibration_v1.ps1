@@ -1,7 +1,8 @@
 $ErrorActionPreference = "Stop"
-$python = "C:\ec\_conda_envs\rehab_score\python.exe"
-$root = "C:\ec\esp-claw\pc\rehab_score_service"
-$assetRoot = if ($env:REHAB_SCORING_ASSETS_ROOT) { $env:REHAB_SCORING_ASSETS_ROOT } else { "C:\ec\_rehab_scoring_assets" }
+$projectRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..\..\..\..'))
+$python = Join-Path $projectRoot 'external\_conda_envs\rehab_score\python.exe'
+$root = Split-Path -Parent $PSScriptRoot
+$assetRoot = if ($env:REHAB_SCORING_ASSETS_ROOT) { $env:REHAB_SCORING_ASSETS_ROOT } else { Join-Path $projectRoot 'external\_rehab_scoring_assets' }
 $outputRoot = Join-Path $assetRoot ("derived\lateral_transfer_v1\calibration_" + (Get-Date -Format "yyyyMMdd_HHmmss"))
 Set-Location $root
 New-Item -ItemType Directory -Force $outputRoot | Out-Null

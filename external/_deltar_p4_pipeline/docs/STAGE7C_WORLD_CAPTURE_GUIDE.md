@@ -1,5 +1,7 @@
 # Stage 7C-1 Camera 世界位姿实采指南
 
+将命令中的 `<PROJECT_ROOT>` 替换为当前仓库根目录。
+
 ## 目标与冻结前提
 
 本指南用于最终车体安装状态下的 Camera 世界姿态采集。此轮只采集
@@ -133,9 +135,9 @@ deltar-p4 camera-world-calibrate `
   --capture-manifest C:\calibration\stage7c_capture\camera_world_capture.v1.json `
   --camera-profile C:\calibration\result_20260719_172703\calibration_profile.v2.json `
   --camera-tof-profile C:\calibration\stage7b_result_unitfix_20260724_012041\camera_tof_extrinsics.v1.json `
-  --board-manifest C:\ec\_deltar_p4_pipeline\board_assets\board_manifest.json `
+  --board-manifest '<PROJECT_ROOT>\external\_deltar_p4_pipeline\board_assets\board_manifest.json' `
   --output-dir C:\calibration\stage7c_result `
-  --profile-bundle C:\ec\_deltar_p4_pipeline\profiles
+  --profile-bundle '<PROJECT_ROOT>\external\_deltar_p4_pipeline\profiles'
 ```
 
 输出目录必须为空或不存在。PASS 后可独立复核：
@@ -145,7 +147,7 @@ deltar-p4 camera-world-validate `
   --profile C:\calibration\stage7c_result\camera_world_pose.v1.json `
   --capture-manifest C:\calibration\stage7c_capture\camera_world_capture.v1.json `
   --output-dir C:\calibration\stage7c_validation `
-  --profile-bundle C:\ec\_deltar_p4_pipeline\profiles
+  --profile-bundle '<PROJECT_ROOT>\external\_deltar_p4_pipeline\profiles'
 ```
 
 ## roll / pitch / yaw 诊断符号

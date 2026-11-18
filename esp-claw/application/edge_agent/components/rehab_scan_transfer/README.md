@@ -1,5 +1,7 @@
 # rehab_scan_transfer
 
+Replace `<PROJECT_ROOT>` in the commands with the current repository root.
+
 `rehab_scan_transfer` is an independent ESP-IDF component that consumes an
 already committed `rehab_scan_capture` directory. It never opens Camera/ToF,
 does not run inference, and does not delete scans.
@@ -46,8 +48,8 @@ There is no automatic retry, queue, resume/range upload, database, TLS, or
 authentication. To run the PC service:
 
 ```powershell
-& "C:\ec\_conda_envs\vision_interpreter\python.exe" `
-  "C:\ec\_deltar_p4_pipeline\scripts\run_scan_service.py" `
+& "<PROJECT_ROOT>\external\_conda_envs\vision_interpreter\python.exe" `
+  "<PROJECT_ROOT>\external\_deltar_p4_pipeline\scripts\run_scan_service.py" `
   --host 192.168.137.1 --port 8030
 ```
 

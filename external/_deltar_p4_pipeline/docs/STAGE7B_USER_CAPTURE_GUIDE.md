@@ -1,5 +1,7 @@
 # Stage 7B Camera–ToF 真实采集操作指南
 
+将命令中的 `<PROJECT_ROOT>` 替换为当前仓库根目录。
+
 本指南用于已经固定好的 SC2336 Camera + VL53L5CX 8×8 ToF。目标是采集 **12 个静止姿态 × 每姿态 5 帧**，供 PC 工具求 `T_camera_from_tof`。这不是 Stage 7C 世界坐标或离地高度标定。
 
 ## 1. 准备标定目标
@@ -31,8 +33,8 @@ heldout_left heldout_right heldout_up heldout_down
 先确认 PC scan service 已在 `192.168.137.1:8030` 运行：
 
 ```powershell
-& "C:\ec\_conda_envs\vision_interpreter\python.exe" `
-  "C:\ec\_deltar_p4_pipeline\scripts\run_scan_service.py" `
+& "<PROJECT_ROOT>\external\_conda_envs\vision_interpreter\python.exe" `
+  "<PROJECT_ROOT>\external\_deltar_p4_pipeline\scripts\run_scan_service.py" `
   --host 192.168.137.1 --port 8030
 ```
 
@@ -61,18 +63,18 @@ rehab_scan_send scan_<timestamp>_<seq>
 服务端的完整上传通常位于：
 
 ```text
-C:\ec\_deltar_scan_service_data\validated\scan_<timestamp>_<seq>
+<PROJECT_ROOT>\external\_deltar_scan_service_data\validated\scan_<timestamp>_<seq>
 ```
 
 为本次采集建立独立目录；可以让 manifest 引用 validated 中的绝对路径，无需修改或复制冻结的 `scan.json`：
 
 ```powershell
 New-Item -ItemType Directory -Path 'C:\calibration\stage7b_capture_YYYYMMDD_HHMMSS'
-$env:PYTHONPATH='C:\ec\_deltar_p4_pipeline\src'
-$python='C:\ec\_deltar_formal\envs\deltar_py311_torch271_cu128\python.exe'
+$env:PYTHONPATH='<PROJECT_ROOT>\external\_deltar_p4_pipeline\src'
+$python='<PROJECT_ROOT>\external\_deltar_formal\envs\deltar_py311_torch271_cu128\python.exe'
 & $python -m deltar_p4_pipeline.cli scan-validate `
-  --scan-dir 'C:\ec\_deltar_scan_service_data\validated\scan_REPLACE' `
-  --profile-bundle 'C:\ec\_deltar_p4_pipeline\profiles'
+  --scan-dir '<PROJECT_ROOT>\external\_deltar_scan_service_data\validated\scan_REPLACE' `
+  --profile-bundle '<PROJECT_ROOT>\external\_deltar_p4_pipeline\profiles'
 ```
 
 每个 scan 必须输出 `status=valid`、`frame_count=5`。检查每帧都含：
@@ -86,8 +88,8 @@ tof.json        # 64 个 distance/sigma/status/target-count
 ## 5. 生成并填写 capture manifest
 
 ```powershell
-$env:PYTHONPATH='C:\ec\_deltar_p4_pipeline\src'
-$python='C:\ec\_deltar_formal\envs\deltar_py311_torch271_cu128\python.exe'
+$env:PYTHONPATH='<PROJECT_ROOT>\external\_deltar_p4_pipeline\src'
+$python='<PROJECT_ROOT>\external\_deltar_formal\envs\deltar_py311_torch271_cu128\python.exe'
 & $python -m deltar_p4_pipeline.cli camera-tof-manifest-template `
   --output 'C:\calibration\stage7b_capture_YYYYMMDD_HHMMSS\calibration_manifest.json'
 ```
@@ -110,7 +112,7 @@ $python='C:\ec\_deltar_formal\envs\deltar_py311_torch271_cu128\python.exe'
 & $python -m deltar_p4_pipeline.cli camera-tof-calibrate `
   --capture-manifest 'C:\calibration\stage7b_capture_YYYYMMDD_HHMMSS\calibration_manifest.json' `
   --camera-profile 'C:\calibration\result_20260719_172703\calibration_profile.v2.json' `
-  --board-manifest 'C:\ec\_deltar_p4_pipeline\board_assets\board_manifest.json' `
+  --board-manifest '<PROJECT_ROOT>\external\_deltar_p4_pipeline\board_assets\board_manifest.json' `
   --output-dir 'C:\calibration\stage7b_result_YYYYMMDD_HHMMSS'
 ```
 

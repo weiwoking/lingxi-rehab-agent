@@ -12,8 +12,9 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
-$root = "C:\ec\esp-claw\pc\rehab_score_service"
-$assetRoot = if ($env:REHAB_SCORING_ASSETS_ROOT) { $env:REHAB_SCORING_ASSETS_ROOT } else { "C:\ec\_rehab_scoring_assets" }
+$projectRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..\..\..\..'))
+$root = Split-Path -Parent $PSScriptRoot
+$assetRoot = if ($env:REHAB_SCORING_ASSETS_ROOT) { $env:REHAB_SCORING_ASSETS_ROOT } else { Join-Path $projectRoot 'external\_rehab_scoring_assets' }
 $profilePath = Join-Path $root "feature_extractors\lateral_transfer_profile.py"
 $derivedRoot = Join-Path $assetRoot "derived\lateral_transfer_v1\approved_profiles"
 Set-Location $root

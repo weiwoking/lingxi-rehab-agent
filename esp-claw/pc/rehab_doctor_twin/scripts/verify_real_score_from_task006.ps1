@@ -8,7 +8,8 @@ $ScoreBaseUrl = $ScoreBaseUrl.TrimEnd("/")
 
 $RuntimeRoot = $env:REHAB_TRAINING_DATA_ROOT
 if ([string]::IsNullOrWhiteSpace($RuntimeRoot)) {
-    $RuntimeRoot = "C:\ec\_rehab_training_data"
+    $projectRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..\..\..\..'))
+    $RuntimeRoot = Join-Path $projectRoot 'external\_rehab_training_data'
 }
 
 # TASK006 is a fixed repair-verification sample only. The formal product path

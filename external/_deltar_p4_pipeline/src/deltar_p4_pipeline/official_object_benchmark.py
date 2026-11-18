@@ -13,7 +13,10 @@ from .depth_statistics import compute_statistics
 from .object_matching import bbox_iou
 from .object_regions import binary_erosion
 
-OFFICIAL_ROOT = Path(r"C:\ec\_deltar_formal\work\deltar_f3c5175_win_cu128\data\demo")
+OFFICIAL_ROOT = (
+    Path(__file__).resolve().parents[3]
+    / "_deltar_formal" / "work" / "deltar_f3c5175_win_cu128" / "data" / "demo"
+)
 OFFICIAL_INDEX = OFFICIAL_ROOT / "data.json"
 SOURCE_SHAPE = (480, 640)
 MIN_DEPTH_M = 1e-3

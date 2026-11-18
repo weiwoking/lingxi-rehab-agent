@@ -1,5 +1,7 @@
 # Stage 7D horizontal-plane real acceptance
 
+Replace `<PROJECT_ROOT>` in the commands with the current repository root.
+
 Stage 7D is an opt-in PC diagnostic path. It does not change the P4 capture
 protocol, the frozen Stage 6 result schemas, or the Stage 7C profile.
 
@@ -42,14 +44,14 @@ persists `world_height_mm.npy`; `plane_masks.npz` always contains
 ## Example command
 
 ```powershell
-& 'C:\ec\_deltar_formal\envs\deltar_py311_torch271_cu128\python.exe' `
+& '<PROJECT_ROOT>\external\_deltar_formal\envs\deltar_py311_torch271_cu128\python.exe' `
   -m deltar_p4_pipeline.cli scan-run `
   --scan-dir <existing_scan_dir> `
   --output-dir <new_empty_output_dir> `
-  --profile-bundle 'C:\ec\_deltar_p4_pipeline\profiles' `
+  --profile-bundle '<PROJECT_ROOT>\external\_deltar_p4_pipeline\profiles' `
   --stage7d-horizontal-planes `
   --camera-intrinsics-profile 'C:\calibration\result_20260719_172703\calibration_profile.v2.json' `
   --camera-world-profile 'C:\calibration\stage7c_world_result_robustfix_20260724_044035\camera_world_pose.v1.json' `
   --camera-tof-profile 'C:\calibration\stage7b_result_unitfix_20260724_012041\camera_tof_extrinsics.v1.json' `
-  --stage7d-profile 'C:\ec\_deltar_p4_pipeline\profiles\stage7d_horizontal_plane_profile.json'
+  --stage7d-profile '<PROJECT_ROOT>\external\_deltar_p4_pipeline\profiles\stage7d_horizontal_plane_profile.json'
 ```

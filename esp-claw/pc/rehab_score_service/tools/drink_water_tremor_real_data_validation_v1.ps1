@@ -1,7 +1,8 @@
 $ErrorActionPreference = "Stop"
-$python = "C:\ec\_conda_envs\rehab_score\python.exe"
-$scoreRoot = "C:\ec\esp-claw\pc\rehab_score_service"
-$assetRoot = if ($env:REHAB_SCORING_ASSETS_ROOT) { $env:REHAB_SCORING_ASSETS_ROOT } else { "C:\ec\_rehab_scoring_assets" }
+$projectRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..\..\..\..'))
+$python = Join-Path $projectRoot 'external\_conda_envs\rehab_score\python.exe'
+$scoreRoot = Split-Path -Parent $PSScriptRoot
+$assetRoot = if ($env:REHAB_SCORING_ASSETS_ROOT) { $env:REHAB_SCORING_ASSETS_ROOT } else { Join-Path $projectRoot 'external\_rehab_scoring_assets' }
 $sessionRoot = Join-Path $assetRoot "calibration_sessions"
 $baseline = Join-Path $assetRoot "templates\MHH_healthy_template.json"
 $outputRoot = Join-Path $assetRoot ("derived\drink_water_lf_v2_tremor_v1_1_validation_" + (Get-Date -Format "yyyyMMdd_HHmmss"))

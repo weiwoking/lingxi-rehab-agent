@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = "Stop"
-$python = "C:\ec\_conda_envs\rehab_score\python.exe"
-$root = "C:\ec\esp-claw\pc\rehab_score_service"
-$assetRoot = if ($env:REHAB_SCORING_ASSETS_ROOT) { $env:REHAB_SCORING_ASSETS_ROOT } else { "C:\ec\_rehab_scoring_assets" }
+$python = Join-Path $projectRoot 'external\_conda_envs\rehab_score\python.exe'
+$root = Split-Path -Parent $PSScriptRoot
+$assetRoot = if ($env:REHAB_SCORING_ASSETS_ROOT) { $env:REHAB_SCORING_ASSETS_ROOT } else { Join-Path $projectRoot 'external\_rehab_scoring_assets' }
 $template = Join-Path $assetRoot "templates\lateral_transfer_healthy_template_v1.json"
 $manifest = Join-Path $assetRoot "derived\lateral_transfer_v1\approved_calibration_manifest\lateral_transfer_approved_calibration_manifest.json"
 $outputRoot = Join-Path $assetRoot ("derived\lateral_transfer_v1\approved_final_validation_" + (Get-Date -Format "yyyyMMdd_HHmmss"))

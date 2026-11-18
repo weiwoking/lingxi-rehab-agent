@@ -1,9 +1,9 @@
 # Windows 本地启动
 
-在已准备好项目 Python 环境的 PowerShell 中运行：
+准备好项目 Python 环境后，从项目根目录运行：
 
 ```powershell
-Set-Location C:\ec\esp-claw\pc\vision_interpreter
+Set-Location .\esp-claw\pc\vision_interpreter
 .\run_windows.ps1
 ```
 

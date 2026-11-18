@@ -1,5 +1,7 @@
 # SC2336 ChArUco 用户采集指南
 
+将命令中的 `<PROJECT_ROOT>` 替换为当前仓库根目录。
+
 当前 Stage 7A 工具已经就绪，但没有真实 SC2336 内参；请只在开发阶段完成以下一次性采集。完成真实内参前不要进入 Stage 7B。
 
 ## 1. 固定最终硬件与画面
@@ -18,8 +20,8 @@
 可在浏览器逐张保存 JPG，命名为 `charuco_001.jpg` 至 `charuco_040.jpg`；也可运行：
 
 ```powershell
-$py = 'C:\ec\_deltar_formal\envs\deltar_py311_torch271_cu128\python.exe'
-& $py C:\ec\_deltar_p4_pipeline\scripts\collect_camera_calibration_images.py --url http://<设备地址>/camera-preview --output-dir C:\calibration\images --count 30 --interval-seconds 2
+$py = '<PROJECT_ROOT>\external\_deltar_formal\envs\deltar_py311_torch271_cu128\python.exe'
+& $py '<PROJECT_ROOT>\external\_deltar_p4_pipeline\scripts\collect_camera_calibration_images.py' --url http://<设备地址>/camera-preview --output-dir C:\calibration\images --count 30 --interval-seconds 2
 ```
 
 采集姿态清单：中心近/中/远各 2–3 张；左上、右上、左下、右下各 2–3 张；左/右边缘、上/下边缘各 1–2 张；绕水平轴向上/下倾斜各 3 张；绕垂直轴向左/右倾斜各 3 张；顺/逆时针 roll 各 2–3 张；至少三档明显不同距离。
@@ -29,8 +31,8 @@ $py = 'C:\ec\_deltar_formal\envs\deltar_py311_torch271_cu128\python.exe'
 ## 4. 冻结方向并运行标定
 
 ```powershell
-$py = 'C:\ec\_deltar_formal\envs\deltar_py311_torch271_cu128\python.exe'
-$env:PYTHONPATH = 'C:\ec\_deltar_p4_pipeline\src'
+$py = '<PROJECT_ROOT>\external\_deltar_formal\envs\deltar_py311_torch271_cu128\python.exe'
+$env:PYTHONPATH = '<PROJECT_ROOT>\external\_deltar_p4_pipeline\src'
 & $py -m deltar_p4_pipeline.cli camera-orientation-check --image C:\calibration\images\charuco_001.jpg --confirm-upright --output-manifest C:\calibration\camera_orientation_manifest.v1.json
 & $py -m deltar_p4_pipeline.cli camera-calibrate-charuco --images-dir C:\calibration\images --board-manifest C:\calibration\board\board_manifest.json --orientation-manifest C:\calibration\camera_orientation_manifest.v1.json --output-dir C:\calibration\result --seed 7 --heldout-ratio 0.2 --min-valid-images 25 --min-charuco-corners 8
 ```

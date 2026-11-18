@@ -1,10 +1,12 @@
 # Camera Intrinsics Operations
 
+将命令中的 `<PROJECT_ROOT>` 替换为当前仓库根目录。
+
 所有命令使用冻结 Python 环境，且不安装依赖：
 
 ```powershell
-$py = 'C:\ec\_deltar_formal\envs\deltar_py311_torch271_cu128\python.exe'
-$env:PYTHONPATH = 'C:\ec\_deltar_p4_pipeline\src'
+$py = '<PROJECT_ROOT>\external\_deltar_formal\envs\deltar_py311_torch271_cu128\python.exe'
+$env:PYTHONPATH = '<PROJECT_ROOT>\external\_deltar_p4_pipeline\src'
 & $py -m deltar_p4_pipeline.cli generate-charuco-board --output-dir C:\calibration\board
 & $py -m deltar_p4_pipeline.cli camera-orientation-check --image C:\calibration\images\charuco_001.jpg --confirm-upright --output-manifest C:\calibration\camera_orientation_manifest.v1.json
 & $py -m deltar_p4_pipeline.cli camera-calibrate-charuco --images-dir C:\calibration\images --board-manifest C:\calibration\board\board_manifest.json --orientation-manifest C:\calibration\camera_orientation_manifest.v1.json --output-dir C:\calibration\result --seed 7 --heldout-ratio 0.2 --min-valid-images 25 --min-charuco-corners 8
